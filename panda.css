@@ -23,6 +23,12 @@
   padding: 0;
 }
 
+header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;;
+}
+
 .header-container {
   height: 70px;
   width: var(--width);
@@ -39,7 +45,7 @@
   justify-content: center;
 }
 
-.footer {
+.footer-container {
   display: flex;
   justify-content: space-around;
   background-color: #111827;

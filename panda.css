@@ -88,8 +88,9 @@ button {
   height: 540px;
   width: var(--width);
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: 0 200px;
 }
 
 .hero-content-letters {
@@ -98,6 +99,7 @@ button {
   align-items: flex-start;
   justify-content: flex-end;
   gap: 30px;
+  margin-bottom: 100px;
 }
 
 .hero-title {

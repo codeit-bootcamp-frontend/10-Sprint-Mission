@@ -13,6 +13,7 @@
   --secondary-gray-100: #F3F4F6;
   --secondary-gray-50: #F9FAFB;
   --main-font: Pretendard;
+  --width: 1920px;
 }
 
 * {
@@ -29,12 +30,16 @@ header {
   align-items: center;
 }
 
-footer {
+.footer {
   display: flex;
   justify-content: space-around;
   background-color: #111827;
   height: 160px;
   padding: 32px 200px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  width: var(--width);
 }
 
 body {
@@ -45,6 +50,10 @@ body {
 button {
   border: none;
   outline: none;
+}
+
+.container{
+  width: var(--width);
 }
 
 .login {
@@ -74,7 +83,7 @@ button {
 .hero-content-letters {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   gap: 30px;
 }

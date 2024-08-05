@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+}

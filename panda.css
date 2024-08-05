@@ -23,11 +23,20 @@
   padding: 0;
 }
 
-header {
+.header-container {
   height: 70px;
+  width: var(--width);
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+
+.main-container {
+  width: var(--width);
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .footer {
@@ -45,15 +54,12 @@ header {
 body {
   margin: 0;
   padding: 0;
+  width: var(--width);
 }
 
 button {
   border: none;
   outline: none;
-}
-
-.container{
-  width: var(--width);
 }
 
 .login {
@@ -68,9 +74,6 @@ button {
 .hero {
   background-color: var(--main-bg-color);
   height: 540px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
 }
 
 .hero-content {

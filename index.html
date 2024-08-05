@@ -4,32 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="panda.css">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <title>판다마켓</title>
 </head>
 <body>
   <header>
-    <div class="logo">
-      <img src="/images/panda_logo.png" alt="판다 로고" />
-      <a href="/">판다마켓</a>
-    </div>
-    <a href="/login.html">로그인</a>
+    <a href="/">
+      <img src="/images/logo.png" alt="판다 로고" />
+    </a>
+    <button class="login">로그인</button>
   </header>
   <main>
-    <section>
-      <h2>일상의 모든 물건을 거래해 보세요</h2>
-      <a href="/items.html">구경하러 가기</a>
-      <img src="/images/main_banner.png" alt="판다 이미지"/>
-    </section>
+    <article class="hero">
+      <div class="hero-content">
+        <div class="hero-content-letters">
+          <h2 class="hero-title">일상의 모든 물건을<br>거래해 보세요</h2>
+          <button class="btn-items">구경하러 가기</button>
+        </div>
+        <img src="/images/hero.png" alt="판다 이미지" class="hero-image"/>
+      </div>
+    </article>
   </main>
   <footer>
-    <div>
+    <div class="copyright">
       <span>©codeit - 2024</span>
     </div>
-    <div>
+    <div class="footer-mid">
       <span>Privacy Polic</span>
       <span>FAQ</span>
     </div>
-    <div>
+    <div class="footer-social">
       <a href="https://www.facebook.com" target="_blank">
         <img src="/images/ic_facebook.png" alt="ic_facebook.png" />
       </a>

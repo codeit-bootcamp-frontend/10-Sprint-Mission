@@ -160,6 +160,31 @@
   letter-spacing: 0.8px;
 }
 
+.bottom {
+  background-color: var(--main-bg-color);
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-container {
+  height: 540px;
+  display: flex;
+  align-items: flex-end;
+  gap: 69px;  
+}
+
+.bottom-content-letters {
+  margin-bottom: 170px;
+}
+
+.bottom-title {
+  color: var(--secondary-gray-700, #374151);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+}
+
 .copyright {
   color: #9CA3AF;
 }

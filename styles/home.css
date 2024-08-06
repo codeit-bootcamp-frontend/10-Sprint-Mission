@@ -71,15 +71,17 @@
 .hot-item {
   background-color: #fff;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  padding: 138px 605px 138px 360px;
+  height: 720px;
 }
 
 .hot-item-container {
-  height: 720px;
   display: flex;
   align-items: center;
   gap: 64px;
-  margin-left: -200px;
+  width: 955px;
+  background: #FCFCFC;
 }
 
 .hot-item-content-letters {
@@ -92,7 +94,7 @@
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 26px; /* 144.444% */
+  line-height: 26px;
 }
 
 .hot-item-content-letters p {

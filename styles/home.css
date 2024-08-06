@@ -78,8 +78,7 @@
   display: flex;
   align-items: center;
   padding-right: 40px;
-  margin-top: 100px;
-  margin-left: -150px;
+  margin: 100px 0 100px -150px;
   gap: 64px;
   background: #FCFCFC;
 }
@@ -127,8 +126,7 @@
   align-items: center;
   justify-content: flex-end;
   padding-left: 40px;
-  margin-top: 100px;
-  margin-right: -150px;
+  margin: 100px -150px 100px 0;
   gap: 64px;
   background: #FCFCFC;
 }
@@ -168,7 +166,6 @@
 
 .bottom {
   background-color: var(--main-bg-color);
-  margin-top: 100px;
   display: flex;
   justify-content: center;
 }

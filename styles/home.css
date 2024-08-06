@@ -70,13 +70,16 @@
 
 .hot-item, .register {
   background-color: #fff;
-  padding: 138px 605px 138px 360px;
-  height: 720px;
+  display: flex;
+  justify-content: center;
 }
 
 .hot-item-container, .register-container {
   display: flex;
   align-items: center;
+  padding-right: 40px;
+  margin-top: 100px;
+  margin-left: -150px;
   gap: 64px;
   background: #FCFCFC;
 }
@@ -115,14 +118,17 @@
 
 .search {
   background-color: #fff;
-  padding: 138px 360px 138px 591px;
-  height: 720px;
+  display: flex;
+  justify-content: center;
 }
 
 .search-container {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding-left: 40px;
+  margin-top: 100px;
+  margin-right: -150px;
   gap: 64px;
   background: #FCFCFC;
 }
@@ -162,6 +168,7 @@
 
 .bottom {
   background-color: var(--main-bg-color);
+  margin-top: 100px;
   display: flex;
   justify-content: center;
 }

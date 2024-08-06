@@ -70,8 +70,6 @@
 
 .hot-item {
   background-color: #fff;
-  display: flex;
-  align-items: center;
   padding: 138px 605px 138px 360px;
   height: 720px;
 }
@@ -80,7 +78,6 @@
   display: flex;
   align-items: center;
   gap: 64px;
-  width: 955px;
   background: #FCFCFC;
 }
 
@@ -114,6 +111,53 @@
   letter-spacing: 0.8px;
   margin-top: 12px;
   margin-bottom: 24px;
+}
+
+.search {
+  background-color: #fff;
+  padding: 138px 360px 138px 591px;
+  height: 720px;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 64px;
+  background: #FCFCFC;
+}
+
+.search-content-letters {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: end;
+  gap: 24px;
+}
+
+.search-content-letters span {
+  color: var(--primary-100, #3692FF);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.search-content-letters p {
+  color: var(--secondary-gray-700, #374151);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.search-title {
+  color: var(--secondary-gray-700, #374151);
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.8px;
 }
 
 .copyright {

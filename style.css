@@ -6,6 +6,13 @@ body {
   font-family: "Pretendard", sans-serif;
 }
 
+:link,
+:active,
+:visited {
+  color: black;
+  text-decoration: none;
+}
+
 :is(a, button):hover {
   cursor: pointer;
 }
@@ -17,7 +24,7 @@ header {
   padding: 5px 200px;
 }
 
-header button {
+header .head-login {
   padding: 10px 30px;
   background-color: var(--blue-100);
   border: none;
@@ -32,7 +39,6 @@ footer {
   padding: 16px 200px 48px;
   background-color: #111827;
   font-size: 0.8rem;
-  color: var(--gray-200);
 }
 
 footer div {
@@ -44,9 +50,17 @@ footer div {
   justify-content: left;
 }
 
+.foot-copy span {
+  color: var(--gray-200);
+}
+
 .foot-link {
   justify-content: center;
   gap: 30px;
+}
+
+.foot-link a {
+  color: var(--gray-200);
 }
 
 .foot-sns {

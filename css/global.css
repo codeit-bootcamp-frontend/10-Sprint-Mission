@@ -14,6 +14,7 @@
   --secondary-gray-50: #f9fafb;
   --error-red: #f74747;
   --main-font: Pretendard;
+  --size-max-width: 1200px;
 }
 
 * {
@@ -46,4 +47,11 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
+}
+
+footer {
+  background-color: var(--secondary-gray-900);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }

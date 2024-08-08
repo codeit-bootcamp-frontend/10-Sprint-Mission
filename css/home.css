@@ -1,20 +1,13 @@
+.max-container {
+  max-width: var(--size-max-width);
+  margin: auto;
+}
+
 .header-container {
   height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 32px 400px;
-}
-
-.footer-container {
-  height: 160px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  background-color: #111827;
-  padding: 32px 400px;
-  position: fixed;
-  bottom: 0;
 }
 
 .btn-login {
@@ -193,6 +186,13 @@
   font-style: normal;
   font-weight: 700;
   line-height: 56px;
+}
+
+.footer-container {
+  height: 160px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
 }
 
 .copyright {

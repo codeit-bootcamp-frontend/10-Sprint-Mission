@@ -21,7 +21,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 200px;
+  padding: 5px max(calc((100% - 1100px) / 2), 200px);
 }
 
 header .head-login {
@@ -119,7 +119,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  padding: 16px 200px 48px;
+  padding: 16px max(calc((100% - 1100px) / 2), 200px) 48px;
   background-color: #111827;
   font-size: var(--size-sm);
 }

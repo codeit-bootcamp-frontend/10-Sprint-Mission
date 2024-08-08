@@ -1,0 +1,27 @@
+body {
+  background-color: #cfe5ff;
+  margin:0;
+}
+.headercon {
+  float:left;
+  width:50%;
+  margin:0;
+  padding:9px 0px;
+}
+#toplogo {
+  margin-left: 200px;
+}
+#login {
+  width:128px;
+  height: 48px;
+  float:right;
+  margin-right:200px;
+  padding:12px 20px;
+  font-size:20px;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  background-color: #3692ff;
+  border-radius: 8px;
+  color:#ffffff;
+}

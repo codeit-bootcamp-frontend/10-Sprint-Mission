@@ -17,7 +17,7 @@
   bottom: 0;
 }
 
-.login {
+.btn-login {
   background-color: var(--primary-100);
   color: var(--secondary-gray-100);
   padding: 12px 23px 12px 23px;
@@ -38,7 +38,7 @@
   align-items: flex-end;
 }
 
-.hero-content-letters {
+.hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,12 +47,12 @@
   margin-bottom: 100px;
 }
 
-.hero-title {
+.hero-content__h2 {
   font-weight: 700;
   font-size: 40px;
 }
 
-.hero-image {
+.hero__image {
   width: 746px;
   height: 340px;
 }
@@ -85,14 +85,14 @@
   background: #fcfcfc;
 }
 
-.hot-item-content-letters,
-.register-content-letters {
+.hot-item-content,
+.register-content {
   display: flex;
   flex-direction: column;
 }
 
-.hot-item-content-letters span,
-.register-content-letters span {
+.hot-item-content__span,
+.register-content__span {
   color: var(--primary-100, #3692ff);
   font-size: 18px;
   font-style: normal;
@@ -100,8 +100,8 @@
   line-height: 26px;
 }
 
-.hot-item-content-letters p,
-.register-content-letters p {
+.hot-item-content__p,
+.register-content__p {
   color: var(--secondary-gray-700, #374151);
   font-size: 24px;
   font-style: normal;
@@ -109,8 +109,8 @@
   line-height: 32px;
 }
 
-.hot-item-title,
-.register-title {
+.hot-item-content__h2,
+.register-content__h2 {
   color: var(--secondary-gray-700, #374151);
   font-size: 40px;
   font-style: normal;
@@ -137,7 +137,7 @@
   background: #fcfcfc;
 }
 
-.search-content-letters {
+.search-content {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -145,7 +145,7 @@
   gap: 24px;
 }
 
-.search-content-letters span {
+.search-content__span {
   color: var(--primary-100, #3692ff);
   font-size: 18px;
   font-style: normal;
@@ -153,7 +153,7 @@
   line-height: 26px;
 }
 
-.search-content-letters p {
+.search-content__p {
   color: var(--secondary-gray-700, #374151);
   font-size: 24px;
   font-style: normal;
@@ -161,7 +161,7 @@
   line-height: 32px;
 }
 
-.search-title {
+.search-content__h2 {
   color: var(--secondary-gray-700, #374151);
   font-size: 40px;
   font-style: normal;
@@ -183,11 +183,11 @@
   gap: 69px;
 }
 
-.bottom-content-letters {
+.bottom-content {
   margin-bottom: 170px;
 }
 
-.bottom-title {
+.bottom-content__h2 {
   color: var(--secondary-gray-700, #374151);
   font-size: 40px;
   font-style: normal;
@@ -205,7 +205,7 @@
   gap: 30px;
 }
 
-.footer-mid a {
+.footer-mid__a {
   color: #e5e7eb;
 }
 

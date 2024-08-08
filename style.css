@@ -64,6 +64,57 @@ header .head-login {
   color: white;
 }
 
+section {
+  padding: 140px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 280px;
+}
+
+.card {
+  display: flex;
+  border-radius: 15px;
+  background-color: var(--gray-50);
+}
+
+.card:nth-child(2n + 1) {
+  margin-right: 180px;
+  text-align: left;
+}
+
+.card:nth-child(2n) {
+  margin-left: 180px;
+  text-align: right;
+}
+
+.card > div {
+  width: 300px;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card .keyword {
+  margin-bottom: 16px;
+  color: var(--blue-100);
+  font-weight: 700;
+  font-size: var(--size-2lg);
+}
+
+.card .title {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: var(--size-4xl);
+  line-height: var(--line-4xl);
+}
+
+.card .sub {
+  font-size: var(--size-2xl);
+  line-height: var(--line-2xl);
+}
+
 footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

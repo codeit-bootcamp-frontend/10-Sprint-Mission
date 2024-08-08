@@ -32,13 +32,45 @@ header .head-login {
   border-radius: 8px;
 }
 
+.banner {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 540px;
+  background-color: #cfe5ff;
+}
+
+.banner div {
+  width: 350px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner span {
+  font-weight: 600;
+  font-size: var(--size-4xl);
+  line-height: var(--line-4xl);
+}
+
+.banner a {
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px 0;
+  border-radius: 9999px;
+  background-color: var(--blue-100);
+  text-align: center;
+  font-size: var(--size-xl);
+  color: white;
+}
+
 footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
   padding: 16px 200px 48px;
   background-color: #111827;
-  font-size: 0.8rem;
+  font-size: var(--size-sm);
 }
 
 footer div {

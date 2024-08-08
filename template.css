@@ -21,6 +21,7 @@
 
 :root {
   /* Font - Size */
+  --size-4xl: 40px;
   --size-3xl: 32px;
   --size-2xl: 24px;
   --size-xl: 20px;
@@ -31,6 +32,7 @@
   --size-xs: 12px;
 
   /* Font - Line Height */
+  --line-4xl: 52px;
   --line-3xl: 42px;
   --line-2xl: 32px;
   --line-xl: 32px;

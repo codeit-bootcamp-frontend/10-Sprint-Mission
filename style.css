@@ -5,9 +5,6 @@
 
 @font-face {
 	font-family: 'Pretendard Variable';
-	font-weight: 45 920;
-	font-style: normal;
-	font-display: swap;
 	src: url('Pretendard-Regular.ttf');
 }
 
@@ -20,7 +17,7 @@
     padding-right: 400px;
 }
 
-button {
+.navbtn {
     background-color: #3692FF;
     color: #F3F4F6;
     font-size: 16px;
@@ -37,8 +34,35 @@ button {
     
 }
 
-button:active {
-    background-color: #1967D6;
+.topbtn {
+    background-color: #3692FF;
+    color: #F9FAFB;
+    font-size: 20px;
+    font-weight: 600;
+    Line-height: 32px;
+    text-align: center;
+    width: 357px;
+    height: 56px;
+    padding: 16px 124px 16px 124px;
+    gap: 10px;
+    border: 1px;
+    border-color: #DFDFDF;
+    border-radius: 40px;
+    font-family: 'Pretendard Variable';
+    margin-top: 32px;
+    margin-bottom: 60px;
+}
+
+.txtbtn {
+    margin: 240px 7px 40px 0;
+}
+
+.navbtn:active {
+    background-color: #1251AA;
+}
+
+.topbtn:active {
+    background-color: #1251AA;
 }
 
 .logo {
@@ -58,6 +82,58 @@ button:active {
     line-height: 34.6px;
 }
 
+.top-text {
+    font-family: 'Pretendard Variable';
+    font-weight: 700;
+    font-size: 40px;
+    color: #374151;
+    line-height: 56px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.top-img {
+    width: 746px;
+    height: 340px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 69px;
+}
 
 
 
+.top-back {
+    background-color: #CFE5FF;
+    /* margin: 200px 405px 0 405px; */
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.floor-box {
+    height: 720px;
+    width: 1920px;
+}
+
+.secondimg,
+.thirdimg,
+.fourthimg {
+    height: 444px;
+}
+
+.secondimg {
+    margin: 138px 605px 138px 360px;
+    width: 955px;
+}
+
+.thirdimg {
+    margin: 138px 360px 138px 591px;
+    width: 969px;
+}
+
+.fourthimg {
+    margin: 138px 573px 138px 360px;
+    width: 987px;
+}

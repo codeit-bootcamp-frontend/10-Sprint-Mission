@@ -1,6 +1,8 @@
 :root {
   --Cool-Gray-100: #f3f4f6;
   --Primary-100: #3692ff;
+  --brand-blue: #3692ff;
+  --Secondary-700: #374151
 }
 
 * {
@@ -19,6 +21,7 @@ body {
 a {
   text-decoration: none;
   cursor: pointer;
+  white-space: nowrap;
   font-family: 'Pretendard', sans-serif;
 }
 
@@ -27,15 +30,9 @@ header {
   height: 7rem;
   padding: 9.5px 20rem;
   background-color: #fff;
-  border-bottom: 1px solid #DFDFDF;
+  border-bottom: 1px solid #dfdfdf;
   position: sticky;
   top: 0;
-}
-
-@media screen and (min-width: 1920px) {
-  header {
-    padding: 9.5px 40rem;
-  }
 }
 
 .header__inner {
@@ -60,5 +57,55 @@ header {
   font-size: 1.6rem;
 }
 
+.btn__large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 12.4rem;
+  background-color: var(--brand-blue);
+  border-radius: 4rem;
+  color: var(--Cool-Gray-100);
+  font-weight: 600;
+  font-size: 2rem;
+}
 
+.main__background {
+  height: 54rem;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+.main__background img {
+  display: block;
+}
 
+.main__background--text {
+  margin-bottom: 4rem;
+}
+
+.main__background--text .btn__large {
+  margin-bottom: 6rem;
+  height: 56px;
+}
+
+h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  color: var(--Secondary-700);
+  line-height: 5.6rem;
+}
+
+main {
+  background-color: #cfe5ff;
+  padding: 0 20rem;
+}
+
+@media screen and (min-width: 1920px) {
+  header {
+    padding: 0 40rem;
+  }
+
+  main {
+    width: 100%;
+  }
+}

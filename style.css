@@ -7,14 +7,19 @@
 	font-family: 'Pretendard Variable';
 	src: url('Pretendard-Regular.ttf');
 }
+body {
+    width: 1920px;
+}
 
 .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 70px;
-    padding-left: 400px;
-    padding-right: 400px;
+    border: 1px;
+    gap: 10px;
+    margin-left: 400px;
+    margin-right: 400px;
 }
 
 .navbtn {
@@ -31,7 +36,6 @@
     border-color: #DFDFDF;
     border-radius: 8px;
     font-family: 'Pretendard Variable';
-    
 }
 
 .topbtn {
@@ -76,6 +80,7 @@
 
 
 .title-logo {
+    color: #3692FF;
     margin-left: 8.59px;
     font-weight: 700;
     font-size: 25.63px;
@@ -83,11 +88,20 @@
 }
 
 .top-text {
+
+}
+
+.bottom-text {
+    margin: 112.5px 69px 112.5px 0;
+}
+
+.top-text,
+.bottom-text {
     font-family: 'Pretendard Variable';
     font-weight: 700;
     font-size: 40px;
-    color: #374151;
     line-height: 56px;
+    color: #374151;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -105,11 +119,25 @@
 
 .top-back {
     background-color: #CFE5FF;
-    /* margin: 200px 405px 0 405px; */
+    width: 1920px;
     height: 540px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+.bottom-back {
+    background-color: #CFE5FF;
+    width: 1920px;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.blank {
+    height: 138px;
+    background-color:#FCFCFC;
 }
 
 .floor-box {
@@ -136,4 +164,25 @@
 .fourthimg {
     margin: 138px 573px 138px 360px;
     width: 987px;
+}
+
+.foot {
+    height: 160px;
+    background-color: #111827;
+    color: #E5E7EB;
+}
+
+.distan {
+    margin-right: 30px;
+}
+
+.foot-txt {
+    padding-top: 32.5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: #F3F4F6;
 }

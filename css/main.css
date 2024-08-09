@@ -1,0 +1,64 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+:root {
+  --gray900: #111827;
+  --gray800: #1f2937;
+  --gray700: #374151;
+  --gray600: #4b5563;
+  --gray500: #6b7280;
+  --gray400: #9ca3af;
+  --gray200: #e5e7eb;
+  --gray100: #f3f4f6;
+  --gray50: #f9fafb;
+  --blue: #3692ff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+	font-family: Pretendard Variable, Pretendard, sans-serif;
+}
+
+.img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9.5px 200px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+@media screen and (min-width: 1920px) {
+  .nav-header {
+    padding: 9.5px 400px;
+  }
+}
+
+.nav-header > .header-logo {
+  background-image: url(../images/panda_logo.png);
+  width: 153px;
+	height: 51px;
+}
+
+.nav-header > .login {
+  background-color: var(--blue);
+  border-radius: 8px;
+  padding: 11px 43px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+  color:var(--gray100)
+}

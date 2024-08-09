@@ -169,3 +169,34 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
 
 .card-info > span, .card-info > h1, .card-info > p { white-space: nowrap; }
 .card-left span, .card-left h1, .card-left p { text-align: right; }
+
+.footer-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	height: 160px;
+	background-color: #111827;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 19.09px;
+	padding: 32px 400px;
+}
+
+.footer-info { color: var(--gray400); }
+
+.footer-links {
+	display: flex;
+	gap: 30px;
+}
+
+.footer-links > a { color: var(--gray200); }
+
+.footer-social {
+	display: flex;
+	gap: 12px;
+}
+
+.footer-social > a > img {
+	width: 20px;
+	height: 20px;
+}

@@ -1,8 +1,9 @@
 :root {
   --Cool-Gray-100: #f3f4f6;
-  --Primary-100: #3692ff;
   --brand-blue: #3692ff;
-  --Secondary-700: #374151
+  --Primary-100: #3692ff;
+  --Secondary-700: #374151;
+  --Secondary-900: #111827;
 }
 
 * {
@@ -16,6 +17,7 @@ html {
 body {
   font-family: 'Pretendard', sans-serif;
   width: 100%;
+  word-break: keep-all;
 }
 
 a {
@@ -28,7 +30,6 @@ a {
 header {
   width: 100%;
   height: 7rem;
-  padding: 9.5px 20rem;
   background-color: #fff;
   border-bottom: 1px solid #dfdfdf;
   position: sticky;
@@ -37,6 +38,8 @@ header {
 
 .header__inner {
   display: flex;
+  width: 100%;
+  padding: 9.5px 20rem;
   height: 100%;
   justify-content: space-between;
   align-items: center;
@@ -72,9 +75,35 @@ header {
 .main__background {
   height: 54rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: end;
+  width: 1110px;
+  margin: 0 auto;
 }
+
+.main__background--footer {
+  margin-top: 13.8rem;
+  background-color: #cfe5ff;
+}
+
+.main__background--footer > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin: 0 auto;
+  width: 111rem;
+}
+
+.main__background--footer > div img {
+  display: block;
+}
+
+.main__background--footer h3 {
+  margin: 25.55rem 0 17.25rem;
+  font-size: 4rem;
+  line-height: 5.6rem;
+}
+
 .main__background img {
   display: block;
 }
@@ -95,17 +124,82 @@ h2 {
   line-height: 5.6rem;
 }
 
-main {
+main section {
+  background-color: #fff;
+}
+
+main section:last-child {
+  padding-top: 1px;
+  background-color: #fcfcfc;
+}
+
+main section:first-child {
   background-color: #cfe5ff;
-  padding: 0 20rem;
+}
+
+.section__card {
+  display: flex;
+  align-items: center;
+  height: 44.4rem;
+  gap: 6.4rem;
+  background-color: #fcfcfc;
+}
+
+section:nth-of-type(2) {
+  padding: 13.8rem 60.5rem 13.8rem 36rem;
+}
+
+section:nth-of-type(4) {
+  padding: 13.8rem 57.3rem 13.8rem 36rem;
+}
+
+section:nth-of-type(2) .section__card {
+  width: 95.5rem;
+}
+
+section:nth-of-type(3) {
+  padding: 13.8rem 36rem 13.8rem 59.1rem;
+}
+
+section:nth-of-type(3) .section__card {
+  width: 96.9rem;
+  text-align: right;
+}
+
+section:nth-of-type(4) .section__card {
+  width: 98.7rem;
+}
+
+.section__card--text span {
+  color: var(--Primary-100);
+  font-size: 1.8rem;
+  line-height: 2.6rem;
+  font-weight: 700;
+}
+
+.section__card--text h3,
+.main__background h3 {
+  color: var(--Secondary-700);
+  font-size: 4rem;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  line-height: 5.6rem;
+}
+
+.section__card--text p {
+  color: var(--Secondary-700);
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 500;
+}
+
+footer {
+  background-color: var(--Secondary-900);
+  height: 16rem;
 }
 
 @media screen and (min-width: 1920px) {
-  header {
+  .header__inner {
     padding: 0 40rem;
-  }
-
-  main {
-    width: 100%;
   }
 }

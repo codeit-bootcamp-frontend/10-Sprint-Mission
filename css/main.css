@@ -109,3 +109,63 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
 	width: 746px;
 	height: 397px;
 }
+
+.card { height: 720px; }
+
+.card-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 320px;
+}
+
+.card-right { justify-content: flex-start; }
+.card-left { justify-content: flex-end; }
+
+.card-content {
+  display: flex;
+  gap: 64px;
+  background-color: #FCFCFC;
+}
+
+.card-img {
+  width: 588px;
+  height: 444px;
+  border-radius: 12px;
+}
+
+.card-img1 { background-image: url(../images/Img_home_01.png); }
+.card-img2 { background-image: url(../images/Img_home_02.png); }
+.card-img3 { background-image: url(../images/Img_home_03.png); }
+
+.card-info {
+  display: flex;
+	justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.card-info > span {
+	font-size: 18px;
+	font-weight: 700;
+	line-height: 26px;
+  color: var(--blue);
+}
+
+.card-info > h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
+  color: var(--gray700);
+}
+
+.card-info > p {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: var(--gray700);
+}
+
+.card-info > span, .card-info > h1, .card-info > p { white-space: nowrap; }
+.card-left span, .card-left h1, .card-left p { text-align: right; }

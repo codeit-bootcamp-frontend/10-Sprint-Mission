@@ -12,6 +12,11 @@
   display: flex;
 }
 
+/* Q. height의 높이가 차이 나는 이유?
+div, div > a !== div > a > img
+height =  55 !== 51
+display: inline-block or  flex로 해결 */
+
 .header__login-btn {
   text-decoration: none;
   padding: 12px 23px;

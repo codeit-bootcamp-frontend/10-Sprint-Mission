@@ -2,26 +2,34 @@ body {
   background-color: #cfe5ff;
   margin:0;
 }
+.header {
+  background-color: #ffffff;
+  height:70px;
+  padding:0;
+}
 .headercon {
   float:left;
+  height:100%;
   width:50%;
   margin:0;
   padding:9px 0px;
+  box-sizing: border-box;
 }
 #toplogo {
+  height:100%;
   margin-left: 200px;
+  object-fit: contain;
 }
-#login {
+.login {
   width:128px;
-  height: 48px;
+  height:100%;
   float:right;
   margin-right:200px;
   padding:12px 20px;
-  font-size:20px;
-  line-height: 48px;
   text-decoration: none;
   text-align: center;
   background-color: #3692ff;
   border-radius: 8px;
   color:#ffffff;
+  border:0;
 }

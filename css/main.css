@@ -45,7 +45,7 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
 .nav-header > .header-logo {
   background-image: url(../images/panda_logo.png);
   width: 153px;
-	height: 51px;
+  height: 51px;
 }
 
 .nav-header > .login {
@@ -55,7 +55,7 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
   font-size: 16px;
   font-weight: 600;
   line-height: 26px;
-  color:var(--gray100)
+  color: var(--gray100)
 }
 
 .banner {
@@ -78,8 +78,8 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
   padding-bottom: 60px;
 }
 
-.banner-container > .intro-top { margin: 40px 0;}
-.banner-container > .intro-bottom { margin: 112.5px 0;}
+.banner-container > .intro-top { margin: 40px 0; }
+.banner-container > .intro-bottom { margin: 112.5px 0; }
 
 .banner-container > .intro > h1 {
   font-size: 40px;
@@ -100,14 +100,14 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
 
 .banner-top-img {
   background-image: url(../images/Img_home_top.png);
-	width: 746px;
-	height: 340px;
+  width: 746px;
+  height: 340px;
 }
 
 .banner-bottom-img {
   background-image: url(../images/Img_home_bottom.png);
-	width: 746px;
-	height: 397px;
+  width: 746px;
+  height: 397px;
 }
 
 .card { height: 720px; }
@@ -140,15 +140,15 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
 
 .card-info {
   display: flex;
-	justify-content: center;
+  justify-content: center;
   flex-direction: column;
   gap: 12px;
 }
 
 .card-info > span {
-	font-size: 18px;
-	font-weight: 700;
-	line-height: 26px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
   color: var(--blue);
 }
 
@@ -167,36 +167,45 @@ body { font-family: Pretendard Variable, Pretendard, sans-serif; }
   color: var(--gray700);
 }
 
-.card-info > span, .card-info > h1, .card-info > p { white-space: nowrap; }
-.card-left span, .card-left h1, .card-left p { text-align: right; }
+.card-info > span,
+.card-info > h1,
+.card-info > p {
+  white-space: nowrap;
+}
+
+.card-left span,
+.card-left h1,
+.card-left p {
+  text-align: right;
+}
 
 .footer-container {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-start;
-	height: 160px;
-	background-color: #111827;
-	font-size: 16px;
-	font-weight: 400;
-	line-height: 19.09px;
-	padding: 32px 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 160px;
+  background-color: #111827;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19.09px;
+  padding: 32px 400px;
 }
 
 .footer-info { color: var(--gray400); }
 
 .footer-links {
-	display: flex;
-	gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .footer-links > a { color: var(--gray200); }
 
 .footer-social {
-	display: flex;
-	gap: 12px;
+  display: flex;
+  gap: 12px;
 }
 
 .footer-social > a > img {
-	width: 20px;
-	height: 20px;
+  width: 20px;
+  height: 20px;
 }

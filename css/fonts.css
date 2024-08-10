@@ -48,7 +48,7 @@ http://scripts.sil.org/OFL
   font-weight: 500;
   font-display: swap;
   src: local('Pretendard Medium'),
-    url(../assets/fontss/Pretendard-Medium.woff2) format('woff2'),
+    url(../assets/fonts/Pretendard-Medium.woff2) format('woff2'),
     url(../assets/fonts/Pretendard-Medium.woff) format('woff');
 }
 
@@ -66,7 +66,7 @@ http://scripts.sil.org/OFL
   font-weight: 300;
   font-display: swap;
   src: local('Pretendard Light'),
-    url(../assets/fontss/Pretendard-Light.woff2) format('woff2'),
+    url(../assets/fonts/Pretendard-Light.woff2) format('woff2'),
     url(../assets/fonts/Pretendard-Light.woff) format('woff');
 }
 

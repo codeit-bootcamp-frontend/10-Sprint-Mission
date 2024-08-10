@@ -1,0 +1,41 @@
+@import "variables.css";
+
+/* components */
+@import "components/header.css";
+@import "components/footer.css";
+
+/* screens */
+@import "screens/landing-page.css";
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: Pretendard;
+  font-style: normal;
+}
+
+.landing-vertical__wrap,
+.landing-main__wrap,
+.footer__wrap {
+  text-wrap: nowrap;
+}
+
+@media (min-width: 1920px) {
+  .header__wrap {
+    padding: 9px 400px;
+  }
+}
+
+@media (max-width: 1919px) {
+  .header__wrap {
+    padding: 9px 200px;
+  }
+}

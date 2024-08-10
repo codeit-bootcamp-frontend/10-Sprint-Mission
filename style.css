@@ -2,6 +2,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* 요구사항은 1920px 기준 좌우 여백 200px 유지지만,
+  퍼센트 활용값이 더 자연스럽다고 판단하여 max로 결정케 함 */
   padding: 5px max(calc((100% - 1100px) / 2), 200px);
 }
 

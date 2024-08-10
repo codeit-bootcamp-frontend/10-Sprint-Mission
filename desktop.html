@@ -9,11 +9,88 @@
     <header>
       <div class="header">
         <div class="headercon"><a href="/"><img src="/image/md.png" id="toplogo" alt="판다마켓"></a></div>
-        <div class="headercon"><a href="/login.html"><input type="button" value="로그인" class="login"></a></div>
+        <div class="headercon"><input type="button" value="로그인" class="login" onClick="location.href='login.html'"></div>
       </div>
     </header>
+
     <main>
-      <div id="show"><img src="/image/Img_home_top.png"></div>
+      <!-- main_top -->
+      <div class="hometop">
+        <div class="topcon">
+          <div id="top_left">
+            <div id="topinfo">
+              일상의 모든 물건을<br>
+              거래해 보세요<br>
+            </div>
+            <br><input id="goitems" type="button" value="구경하러 가기" onclick="location.href='items.html'">
+          </div>
+          <div id="topimg"><img src="/image/Img_home_top.png"></div>
+        </div>
+      </div>
+
+      <!-- main_show1 -->
+      <div class="show">
+        <div class="showcon" id="show1">
+          <div class="showimg"><img src="/image/Img_home_01.png"></div>
+          <div class="showinfo">
+            <p id="showtitle">Hot item</p>
+            <p id="showmain">인기 상품을<br>확인해 보세요</p>
+            <p id="showdes">가장 HOT한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- main_show2 -->
+      <div class="show">
+        <div class="showcon" id="show2">
+          <div class="showinfo">
+            <p id="showtitle">Search</p>
+            <p id="showmain">구매를 원하는<br>상품을 검색하세요</p>
+            <p id="showdes">구매하고 싶은 물품은 검색해서<br>쉽게 찾아보세요</p>
+          </div>
+          <div class="showimg"><img src="/image/Img_home_02.png"></div>
+        </div>
+      </div>
+
+      <!-- main_show3 -->
+      <div class="show">
+        <div class="showcon" id="show3">
+          <div class="showimg"><img src="/image/Img_home_03.png"></div>
+          <div class="showinfo">
+            <p id="showtitle">Register</p>
+            <p id="showmain">판매를 원하는<br>상품을 등록하세요</p>
+            <p id="showdes">어떤 물건이든 판매하고 싶은 상품을<br>쉽게 등록하세요</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- main_bottom -->
+      <div class="homebot">
+        <div class="botcon">
+          <div id="bot_left">
+            <div id="botinfo">
+              믿을 수 있는<br>
+              판다마켓 중고 거래<br>
+            </div>
+          </div>
+          <div id="botimg"><img src="image/Img_home_bottom.png"></div>
+        </div>
+      </div>
     </main>
+
+    <footer>
+      <div class="footer">
+        <div class="footercon">
+          <div class="footertext">@codeit-2024</div>
+          <div class="footertext">Privacy Policy &emsp; FAQ</div>
+          <div class="footertext">
+            <a href="https://www.facebook.com/" target="_blank"><img src="/image/ic_facebook.png"></a>
+            <a href="https://x.com/" target="_blank"><img src="/image/ic_twitter.png"></a>
+            <a href="https://www.youtube.com/" target="_blank"><img src="/image/ic_youtube.png"></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="/image/ic_instagram.png"></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

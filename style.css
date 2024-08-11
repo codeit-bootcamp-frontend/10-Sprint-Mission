@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "ROKAF Sans";
+    src: url('ROKAF_Sans_Medium.ttf')
+}
+
+@font-face {
+	font-family: 'Pretendard Variable';
+	src: url('Pretendard-Regular.ttf');
+}
+body {
+    width: 100%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    border: 1px;
+    gap: 10px;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+.navbtn {
+    background-color: #3692FF;
+    color: #F3F4F6;
+    font-size: 16px;
+    font-weight: 600;
+    Line-height: 26px;
+    width: 128px;
+    height: 48px;
+    padding: 12px 23px 12px 23px;
+    gap: 10px;
+    border: 1px;
+    border-color: #DFDFDF;
+    border-radius: 8px;
+    font-family: 'Pretendard Variable';
+}
+
+.topbtn {
+    background-color: #3692FF;
+    color: #F9FAFB;
+    font-size: 20px;
+    font-weight: 600;
+    Line-height: 32px;
+    text-align: center;
+    width: 357px;
+    height: 56px;
+    padding: 16px 124px 16px 124px;
+    gap: 10px;
+    border: 1px;
+    border-color: #DFDFDF;
+    border-radius: 40px;
+    font-family: 'Pretendard Variable';
+    margin-top: 32px;
+    margin-bottom: 60px;
+}
+
+.txtbtn {
+    margin: 240px 7px 40px 0;
+}
+
+.navbtn:active {
+    background-color: #1251AA;
+}
+
+.topbtn:active {
+    background-color: #1251AA;
+}
+
+.logo {
+    font-family: "ROKAF Sans";
+    color: #3692FF;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+
+
+.title-logo {
+    color: #3692FF;
+    margin-left: 8.59px;
+    font-weight: 700;
+    font-size: 25.63px;
+    line-height: 34.6px;
+}
+
+
+
+.bottom-text {
+    margin: 112.5px 69px 112.5px 0;
+}
+
+.top-text,
+.bottom-text {
+    font-family: 'Pretendard Variable';
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 56px;
+    color: #374151;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.top-img {
+    width: 746px;
+    height: 340px;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 69px;
+}
+
+
+
+.top-back {
+    background-color: #CFE5FF;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.bottom-back {
+    background-color: #CFE5FF;
+    width: 1920px;
+    height: 540px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.blank {
+    height: 138px;
+    background-color:#FCFCFC;
+}
+
+.floor-box {
+    height: 720px;
+    width: 1920px;
+}
+
+.secondimg,
+.thirdimg,
+.fourthimg {
+    height: 444px;
+}
+
+.secondimg {
+    margin: 138px 605px 138px 360px;
+    width: 955px;
+}
+
+.thirdimg {
+    margin: 138px 360px 138px 591px;
+    width: 969px;
+}
+
+.fourthimg {
+    margin: 138px 573px 138px 360px;
+    width: 987px;
+}
+
+.foot {
+    height: 160px;
+    background-color: #111827;
+    color: #E5E7EB;
+}
+
+.distan {
+    margin-right: 30px;
+}
+
+.foot-txt {
+    padding-top: 32.5px;
+    display: flex;
+    justify-content: space-around;
+}
+
+a {
+    text-decoration: none;
+    color: #F3F4F6;
+}

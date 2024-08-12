@@ -39,7 +39,3 @@ body {
     padding: 9px 200px;
   }
 }
-
-/* Q. header__wrap에 padding: 9px 200px을,
-@media (min-width: 1920px)로 9px 400px을 할당했을 때
-미디어 쿼리가 작동하지 않는 이유? */

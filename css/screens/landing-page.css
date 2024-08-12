@@ -1,0 +1,126 @@
+.landing-vertical {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 540px;
+  background: #cfe5ff;
+}
+
+.landing-vertical__wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 200px 405px 0 405px;
+}
+
+.landing-vertical__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 60px 0;
+  gap: 32px;
+}
+
+.landing-vertical__title {
+  color: var(--Secondary-700);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%; /* 56px */
+  margin: 0;
+}
+
+.landing-vertical__btn-link {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  height: 56px;
+  border-radius: 40px;
+  padding: 16px 124px;
+  color: var(--Secondary-50);
+  background-color: var(--Primary-100);
+}
+
+.landing-vertical__btn-text {
+  /* pretendard/xl-20px-semibold */
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.landing-vertical__wrap--bottom {
+  gap: 69px;
+}
+
+.landing-main {
+  background-color: #fcfcfc;
+  padding: 0 0 138px 0;
+}
+
+.landing-main__wrap {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.landing-main__wrap:first-child {
+  padding: 138px 605px 138px 360px;
+}
+
+.landing-main__wrap--right {
+  justify-content: flex-end;
+  padding: 138px 360px 138px 591px;
+}
+
+.landing-main__wrap:last-child {
+  padding: 138px 573px 138px 360px;
+}
+
+.landing-main__card {
+  display: flex;
+  align-items: center;
+  background: #fcfcfc;
+  gap: 64px;
+}
+
+.landing-main__card--right {
+  justify-content: flex-end;
+}
+
+.landing-main__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-main__content--right {
+  text-align: right;
+}
+
+.landing-main__keyword {
+  color: var(--Primary-100);
+
+  /* pretendard/2lg-18px-bold */
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0;
+}
+
+.landing-main__title {
+  color: var(--Secondary-700);
+  margin: 12px 0 24px;
+
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 140%;
+  letter-spacing: 0.8px;
+}
+
+.landing-main__desc {
+  color: var(--Secondary-700);
+  margin: 0;
+
+  /* pretendard/2xl-24px-medium */
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+}

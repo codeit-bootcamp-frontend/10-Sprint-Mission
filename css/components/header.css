@@ -1,0 +1,31 @@
+.header__wrap {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo {
+  display: flex;
+}
+
+/* Q. height의 높이가 차이 나는 이유?
+div, div > a !== div > a > img
+height =  55 !== 51
+display: inline-block or  flex로 해결 */
+
+.header__login-btn {
+  text-decoration: none;
+  padding: 12px 23px;
+  border-radius: 8px;
+  color: var(--Secondary-100);
+  background-color: var(--Primary-100);
+
+  /* pretendard/lg-16px-semibold */
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 26px;
+}

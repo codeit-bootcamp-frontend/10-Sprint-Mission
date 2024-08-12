@@ -1,25 +1,24 @@
 :root {
-  --primary-100: #3692ff;
-  --primary-200: #1967d6;
-  --primary-300: #1251aa;
+  --Primary-300: #1251aa;
+  --Primary-200: #1967d6;
+  --Primary-100: #3692ff;
   --main-bg-color: #cfe5ff;
-  --secondary-gray-900: #111827;
-  --secondary-gray-800: #1f2937;
-  --secondary-gray-700: #374151;
-  --secondary-gray-600: #4b5563;
-  --secondary-gray-500: #6b7280;
-  --secondary-gray-400: #9ca3af;
-  --secondary-gray-200: #e5e7eb;
-  --secondary-gray-100: #f3f4f6;
-  --secondary-gray-50: #f9fafb;
+  --Secondary-900: #111827;
+  --Secondary-800: #1f2937;
+  --Secondary-700: #374151;
+  --Secondary-600: #4b5563;
+  --Secondary-500: #6b7280;
+  --Secondary-400: #9ca3af;
+  --Secondary-200: #e5e7eb;
+  --Secondary-100: #f3f4f6;
+  --Secondary-50: #f9fafb;
   --error-red: #f74747;
-  --main-font: Pretendard;
   --size-max-width: 1200px;
 }
 
 * {
   box-sizing: border-box;
-  font-family: var(--main-font, sans-serif);
+  font-family: "Pretendard", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -50,7 +49,7 @@ button {
 }
 
 footer {
-  background-color: var(--secondary-gray-900);
+  background-color: var(--Secondary-900);
   position: fixed;
   bottom: 0;
   width: 100%;

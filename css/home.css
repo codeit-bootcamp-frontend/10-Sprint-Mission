@@ -11,9 +11,10 @@
 }
 
 .btn-login {
-  background-color: var(--primary-100);
-  color: var(--secondary-gray-100);
-  padding: 12px 23px 12px 23px;
+  background-color: var(--Primary-100);
+  color: var(--Secondary-100);
+  padding: 12px 0;
+  text-align: center;
   border-radius: 8px;
   width: 128px;
   height: 48px;
@@ -55,8 +56,8 @@
   height: 56px;
   padding: 16px 124px 16px 124px;
   border-radius: 40px;
-  color: var(--secondary-gray-50);
-  background-color: var(--primary-100);
+  color: var(--Secondary-50);
+  background-color: var(--Primary-100);
   font-size: 20px;
   font-weight: 600;
 }
@@ -86,27 +87,24 @@
 
 .hot-item-content__span,
 .register-content__span {
-  color: var(--primary-100, #3692ff);
+  color: var(--Primary-100, #3692ff);
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
   line-height: 26px;
 }
 
 .hot-item-content__description,
 .register-content__description {
-  color: var(--secondary-gray-700, #374151);
+  color: var(--Secondary-700, #374151);
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
   line-height: 32px;
 }
 
 .hot-item-content__title,
 .register-content__title {
-  color: var(--secondary-gray-700, #374151);
+  color: var(--Secondary-700, #374151);
   font-size: 40px;
-  font-style: normal;
   font-weight: 700;
   line-height: 56px;
   letter-spacing: 0.8px;
@@ -139,25 +137,22 @@
 }
 
 .search-content__span {
-  color: var(--primary-100, #3692ff);
+  color: var(--Primary-100, #3692ff);
   font-size: 18px;
-  font-style: normal;
   font-weight: 700;
   line-height: 26px;
 }
 
 .search-content__description {
-  color: var(--secondary-gray-700, #374151);
+  color: var(--Secondary-700, #374151);
   font-size: 24px;
-  font-style: normal;
   font-weight: 500;
   line-height: 32px;
 }
 
 .search-content__title {
-  color: var(--secondary-gray-700, #374151);
+  color: var(--Secondary-700, #374151);
   font-size: 40px;
-  font-style: normal;
   font-weight: 700;
   line-height: 56px;
   letter-spacing: 0.8px;
@@ -181,9 +176,8 @@
 }
 
 .bottom-content__title {
-  color: var(--secondary-gray-700, #374151);
+  color: var(--Secondary-700, #374151);
   font-size: 40px;
-  font-style: normal;
   font-weight: 700;
   line-height: 56px;
 }
@@ -205,7 +199,7 @@
   gap: 30px;
 }
 
-.footer-mid__a {
+.footer-mid__link {
   color: #e5e7eb;
 }
 

@@ -12,6 +12,10 @@
   display: flex;
 }
 
+.header__logo-img {
+  vertical-align: middle;
+}
+
 .header__login-btn {
   text-decoration: none;
   padding: 12px 23px;

@@ -1,0 +1,61 @@
+:root {
+  /* Color - Primary */
+  --blue-100: #3682ff;
+  --blue-200: #1967d6;
+  --blue-300: #1251aa;
+
+  /* Color - Secondary */
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Color - Error */
+  --red: #f74747;
+}
+
+:root {
+  /* Font - Size */
+  --size-4xl: 40px;
+  --size-3xl: 32px;
+  --size-2xl: 24px;
+  --size-xl: 20px;
+  --size-2lg: 18px;
+  --size-lg: 16px;
+  --size-md: 14px;
+  --size-sm: 13px;
+  --size-xs: 12px;
+
+  /* Font - Line Height */
+  --line-4xl: 52px;
+  --line-3xl: 42px;
+  --line-2xl: 32px;
+  --line-xl: 32px;
+  --line-2lg: 26px;
+  --line-lg: 26px;
+  --line-md: 24px;
+  --line-sm: 22px;
+  --line-xs: 18px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Pretendard", sans-serif;
+}
+
+:link,
+:active,
+:visited {
+  color: black;
+  text-decoration: none;
+}
+
+:is(a, button):hover {
+  cursor: pointer;
+}

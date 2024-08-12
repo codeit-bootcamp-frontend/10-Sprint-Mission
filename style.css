@@ -1,0 +1,143 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* 요구사항은 1920px 기준 좌우 여백 200px 유지지만,
+  퍼센트 활용값이 더 자연스럽다고 판단하여 max로 결정케 함 */
+  padding: 5px max(calc((100% - 1100px) / 2), 200px);
+}
+
+header .head-login {
+  padding: 10px 30px;
+  background-color: var(--blue-100);
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+.banner {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  height: 540px;
+  background-color: #cfe5ff;
+}
+
+.banner-content {
+  width: 350px;
+  height: 290px;
+  display: flex;
+  flex-direction: column;
+}
+
+.banner-content span {
+  font-weight: 600;
+  font-size: var(--size-4xl);
+  line-height: var(--line-4xl);
+}
+
+.banner-content a {
+  width: 100%;
+  margin-top: 32px;
+  padding: 16px 0;
+  border-radius: 9999px;
+  background-color: var(--blue-100);
+  text-align: center;
+  font-size: var(--size-xl);
+  color: white;
+}
+
+.cards {
+  padding: 140px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 280px;
+}
+
+.card {
+  display: flex;
+  border-radius: 15px;
+  background-color: var(--gray-50);
+}
+
+.card:nth-child(2n + 1) {
+  margin-right: 180px;
+  text-align: left;
+}
+
+.card:nth-child(2n) {
+  margin-left: 180px;
+  text-align: right;
+}
+
+.card-content {
+  width: 300px;
+  padding: 0 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-content .keyword {
+  margin-bottom: 16px;
+  color: var(--blue-100);
+  font-weight: 700;
+  font-size: var(--size-2lg);
+}
+
+.card-content .title {
+  margin-bottom: 32px;
+  font-weight: 600;
+  font-size: var(--size-4xl);
+  line-height: var(--line-4xl);
+}
+
+.card-content .sub {
+  font-size: var(--size-2xl);
+  line-height: var(--line-2xl);
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 16px max(calc((100% - 1100px) / 2), 200px) 48px;
+  background-color: #111827;
+  font-size: var(--size-sm);
+}
+
+:is(.foot-copy, .foot-link, .foot-sns) {
+  display: flex;
+  align-items: center;
+}
+
+.foot-copy {
+  justify-content: left;
+}
+
+.foot-copy span {
+  color: var(--gray-200);
+}
+
+.foot-link {
+  justify-content: center;
+  gap: 30px;
+}
+
+.foot-link a {
+  color: var(--gray-200);
+}
+
+.foot-sns {
+  justify-content: right;
+  gap: 12px;
+}
+
+.foot-sns a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+}

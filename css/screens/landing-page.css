@@ -24,7 +24,7 @@
   color: var(--Secondary-700);
   font-size: 40px;
   font-weight: 700;
-  line-height: 140%; /* 56px */
+  line-height: 1.4;
   margin: 0;
 }
 
@@ -111,7 +111,7 @@
 
   font-size: 40px;
   font-weight: 700;
-  line-height: 140%;
+  line-height: 1.4;
   letter-spacing: 0.8px;
 }
 

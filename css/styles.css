@@ -11,11 +11,6 @@
   box-sizing: border-box;
 }
 
-html {
-  width: 100vw;
-  overflow-x: hidden;
-}
-
 body {
   margin: 0;
   font-family: Pretendard;
@@ -31,11 +26,5 @@ body {
 @media (min-width: 1920px) {
   .header__wrap {
     padding: 9px 400px;
-  }
-}
-
-@media (max-width: 1919px) {
-  .header__wrap {
-    padding: 9px 200px;
   }
 }

@@ -1,0 +1,168 @@
+body {
+  margin:0px;
+  padding:0px;
+  color:#374151;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.header {
+  background-color: #ffffff;
+  height:70px;
+  padding:0;
+}
+.headercon {
+  float:left;
+  height:100%;
+  width:50%;
+  margin:0;
+  padding:9px 0px;
+  box-sizing: border-box;
+}
+#toplogo {
+  height:100%;
+  margin-left: 200px;
+  object-fit: contain;
+}
+.login {
+  width:128px;
+  height:100%;
+  float:right;
+  margin-right:200px;
+  padding:12px 20px;
+  text-align: center;
+  color:#ffffff;
+  background-color: #3692ff;
+  border-radius: 8px;
+  border:0;
+  cursor: pointer;
+}
+.hometop {
+  width:100%;
+  height:540px;
+  background-color: #cfe5ff;
+  box-sizing: border-box;
+  padding-top:200px;
+}
+.topcon{
+  width:1110px;
+  height:340px;
+  margin:0px auto;
+}
+#top_left {
+  float:left;
+  width:357px;
+  height:260px;
+  position:relative;
+  margin-top: 40px;
+}
+#topinfo {
+  font-size:40px;
+  font-weight: 700;
+  line-height: 56px;
+}
+#topimg {
+  float:left;
+  width:746px;
+}
+#goitems {
+  width:357px;
+  padding:16px 124px;
+  border-radius: 40px;
+  background-color: #3692ff;
+  border:0;
+  text-align: center;
+  color:#ffffff;
+  cursor: pointer;
+}
+.show {
+  width:100%;
+  height:720px;
+  box-sizing: border-box;
+  padding-top:138px;
+}
+.showcon {
+  width:955px;
+  height:444px;
+  margin:0px auto;
+}
+#show1, #show3 {
+  float:left;
+  margin-left:360px;
+}
+#show2 {
+  float:right;
+  margin-right:360px;
+}
+.showimg {
+  width:588px;
+  float:left;
+}
+.showinfo {
+  float:left;
+  position:relative;
+  margin-top:61px;
+}
+#showtitle {
+  color:#3692ff;
+  font-size:18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+#showmain {
+  font-size:40px;
+  font-weight: 700;
+  line-height: 56px;
+}
+#showdes {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+}
+.homebot {
+  width:100%;
+  height:540px;
+  background-color: #cfe5ff;
+  box-sizing: border-box;
+  padding-top:143px;
+}
+.botcon{
+  width:1110px;
+  height:397px;
+  margin:0px auto;
+}
+#bot_left {
+  float:left;
+  width:354px;
+  height:172px;
+  position:relative;
+  margin-top: 100px;
+}
+#botinfo {
+  font-size:40px;
+  font-weight: 700;
+  line-height: 56px;
+}
+#botimg {
+  float:left;
+  width:746px;
+}
+.footer {
+  height:160px;
+  background-color: #111827;
+  padding-top: 32px;
+  box-sizing: border-box;
+}
+.footercon {
+  width:1120px;
+  margin:0px auto;
+  display:flex;
+  justify-content: space-between;
+}
+.footercon > div {
+  color:#9ca3af;
+}
+.footercon > div > a {
+  color:#e5e7eb;
+}

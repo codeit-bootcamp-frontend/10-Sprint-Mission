@@ -1,6 +1,11 @@
 .header__wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
   padding: 9px 200px;
   border-bottom: 1px solid #dfdfdf;
+  background-color: #ffffff;
 }
 
 .header__content {

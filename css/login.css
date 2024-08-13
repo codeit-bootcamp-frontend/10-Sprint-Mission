@@ -67,11 +67,15 @@ input::placeholder {
   width: 100%;
   padding: 16px 124px;
   border-radius: 40px;
-  background: var(--Secondary-400, #9ca3af);
+  background: var(--Primary-100, #3692ff);
   color: var(--Cool-Gray-100, #f3f4f6);
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
+}
+
+input.btn-login:disabled {
+  background: var(--Secondary-400, #9ca3af);
 }
 
 .social-login {

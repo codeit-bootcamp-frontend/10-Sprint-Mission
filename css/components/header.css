@@ -23,11 +23,14 @@
 }
 
 .header__login-btn {
+  width: 128px;
+  height: 48px;
   padding: 12px 23px;
   border-radius: 8px;
   background-color: var(--Primary-100);
   font-size: 16px;
   font-weight: 600;
+  text-align: center;
   text-decoration: none;
   color: var(--Secondary-100);
   /* pretendard/lg-16px-semibold */

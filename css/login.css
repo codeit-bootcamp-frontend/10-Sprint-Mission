@@ -11,10 +11,7 @@
 
 .login-logo {
   text-align: center;
-}
-
-.login-logo__img {
-  width: 100%;
+  margin-bottom: 40px;
 }
 
 .form-container {
@@ -119,5 +116,9 @@ input::placeholder {
 @media screen and (max-width: 767px) {
   .login-container {
     width: 350px;
+  }
+
+  .login-logo__img {
+    width: 300px;
   }
 }

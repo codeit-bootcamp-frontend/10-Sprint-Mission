@@ -1,0 +1,168 @@
+body {
+  
+}
+
+.header {
+  width: 1920px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.header a img {
+  max-height: 100%;
+  margin-left: 360px;
+  margin-right: 360px;
+}
+
+.btn.top {
+  position: relative; /* 상대적인 위치 설정 */
+  top: -70px;
+  display: inline-block;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  
+}
+
+.itemlink {
+  cursor: pointer;
+}
+
+.top_banner {
+  width: 1920px;
+  position: relative;
+  background-color: #F0F8FF;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.top_banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-container {
+  
+  height: 2160px;
+  width: 1920px; 
+  display: flex;
+  flex-direction: column;
+ 
+
+}
+
+h5 {
+  color: rgb(44, 67, 214);
+}
+
+.main-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* 이미지와 텍스트 같이 */
+  background-color: #f8f8f8; /* 각 섹션의 배경색 */
+  padding: 20px;
+  border-radius: 10px; /* 둥근 모서리 추가 */
+}
+
+.main-item.middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* 이미지와 텍스트 같이 */
+  background-color: #f8f8f8; /* 각 섹션의 배경색 */
+  padding: 20px;
+  border-radius: 10px; /* 둥근 모서리 추가 */
+}
+
+.image-container {
+  flex: 1;
+  text-align: center; /* 이미지를 가운데 정렬 */
+  margin-left: 360px;
+}
+
+.middle {
+  flex: 1;
+  text-align: center; /* 이미지를 가운데 정렬 */
+  margin-right: 360px 0;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  margin: 100px;
+}
+
+.text-container {
+  flex: 1; /* 텍스트 영역을 이미지보다 크게 설정 */
+  text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+.text-container.middle {
+  flex: 1; /* 텍스트 영역을 이미지보다 크게 설정 */
+  text-align: right; /* 텍스트를 왼쪽 정렬 */
+}
+
+.text-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+p.focus {
+  font-size: 40px;
+  color: black;
+}
+
+p.focus.small {
+  font-size: 20px;
+  color: black;
+}
+
+.bottom_banner {
+  width: 1920px;
+  position: relative;
+  background-color: #F0F8FF;
+  text-align: center;
+  /* padding: 20px; */
+}
+
+.bottom_banner img {
+  /* max-width: 100%; */
+  height: auto;
+}
+
+.foot-container {
+  width: 1920px;
+  display: flex;
+  height: 160px;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 20px; */
+  background-color: #111827;
+  color: white;
+}
+
+.foot-left {
+  position: relative; /* 이렇게 밀어넣기 */
+  top: -50px; 
+  right: -240px;
+  flex: 1; /*공간이 균등하게 배분된다는 듯*/
+  text-align: left;
+}
+
+.foot-center {
+  position: relative; /* 이렇게 밀어넣기 */
+  top: -50px; 
+  flex: 1; /*공간이 균등하게 배분된다는 듯*/
+  text-align: center;
+}
+
+.foot-right {
+  position: relative; /* 이렇게 밀어넣기 */
+  top: -50px; 
+  left: -240px;
+  flex: 1; /*공간이 균등하게 배분된다는 듯*/
+  text-align: right;
+}
+

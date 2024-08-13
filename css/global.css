@@ -12,6 +12,7 @@
   --Secondary-200: #e5e7eb;
   --Secondary-100: #f3f4f6;
   --Secondary-50: #f9fafb;
+  --Cool-Gray-100: #f3f4f6);
   --error-red: #f74747;
   --size-max-width: 1200px;
 }
@@ -32,14 +33,11 @@ header {
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 a {
   text-decoration: none;
-}
-
-main {
-  margin-bottom: 160px;
 }
 
 button {
@@ -53,4 +51,18 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+input:focus {
+  outline: none;
+  border: none;
+}
+
+input[type="submit"] {
+  cursor: pointer;
 }

@@ -1,3 +1,123 @@
+.login__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .login-container {
   max-width: 640px;
+}
+
+.login-logo {
+  text-align: center;
+}
+
+.login-logo__img {
+  width: 100%;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.form__input {
+  width: 100%;
+  color: var(--Secondary-800, #1f2937);
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: var(--Cool-Gray-100, #f3f4f6);
+}
+
+input::placeholder {
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.password-container {
+  position: relative;
+}
+
+.visible-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5%;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px 124px;
+  border-radius: 40px;
+  background: var(--Secondary-400, #9ca3af);
+  color: var(--Cool-Gray-100, #f3f4f6);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+  outline: none;
+}
+
+.social-login {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 24px auto;
+  border-radius: 8px;
+  background: #e6f2ff;
+  padding: 16px 23px;
+}
+
+.social-login__description {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 26px;
+}
+
+.social-login__icons {
+  display: flex;
+  gap: 16px;
+}
+
+.signup-container {
+  text-align: center;
+}
+
+.signup__description {
+  color: var(--Secondary-800, #1f2937);
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  margin-right: 4px;
+}
+
+.signup__link {
+  color: var(--Primary-100, #3692ff);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration-line: underline;
+}
+
+@media screen and (max-width: 767px) {
+  .login-container {
+    max-width: 350px;
+  }
 }

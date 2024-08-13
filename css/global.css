@@ -60,7 +60,6 @@ input {
 
 input:focus {
   outline: none;
-  border: none;
 }
 
 input[type="submit"] {

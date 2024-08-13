@@ -64,4 +64,5 @@ input:focus {
 
 input[type="submit"] {
   cursor: pointer;
+  outline: none;
 }

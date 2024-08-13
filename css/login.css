@@ -6,7 +6,7 @@
 }
 
 .login-container {
-  max-width: 640px;
+  width: 640px;
 }
 
 .login-logo {
@@ -118,6 +118,6 @@ input::placeholder {
 
 @media screen and (max-width: 767px) {
   .login-container {
-    max-width: 350px;
+    width: 350px;
   }
 }

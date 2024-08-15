@@ -36,3 +36,11 @@
   /* pretendard/lg-16px-semibold */
   line-height: 26px;
 }
+
+.header__login-btn:hover {
+  background-color: var(--Primary-200);
+}
+
+.header__login-btn:active {
+  background-color: #1251aa;
+}

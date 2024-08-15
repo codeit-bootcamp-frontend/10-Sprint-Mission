@@ -36,6 +36,10 @@
   background: var(--Secondary-100);
 }
 
+.login-form__input:focus {
+  outline: 1px solid #3692ff;
+}
+
 .login-form__input[type="placeholder"] {
   font-size: 16px;
   font-weight: 400;
@@ -61,6 +65,11 @@
   gap: 10px;
   /* pretendard/xl-20px-semibold */
   line-height: 1.6;
+  cursor: pointer;
+}
+
+.login-form__btn:active {
+  background: var(--Primary-100);
 }
 
 .social-login {

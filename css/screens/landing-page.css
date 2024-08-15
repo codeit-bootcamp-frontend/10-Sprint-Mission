@@ -39,7 +39,7 @@ footer {
   margin: 0;
 }
 
-.landing-vertical__btn-link {
+.landing-vertical__btn {
   text-decoration: none;
   display: flex;
   justify-content: center;
@@ -50,6 +50,14 @@ footer {
   padding: 16px 124px;
   color: var(--Secondary-50);
   background-color: var(--Primary-100);
+}
+
+.landing-vertical__btn:hover {
+  background-color: var(--Primary-200);
+}
+
+.landing-vertical__btn:active {
+  background-color: #1251aa;
 }
 
 .landing-vertical__btn-text {

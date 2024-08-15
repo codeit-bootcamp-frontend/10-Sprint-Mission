@@ -55,6 +55,9 @@ body {
     font-family: 'Pretendard Variable';
     margin-top: 32px;
     margin-bottom: 60px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .txtbtn {
@@ -181,6 +184,6 @@ body {
 }
 
 a {
-    text-decoration: none;
-    color: #F3F4F6;
+    
+
 }

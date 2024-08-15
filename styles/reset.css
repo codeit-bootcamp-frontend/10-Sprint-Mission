@@ -358,3 +358,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 [hidden] {
   display: none;
 }
+
+/*
+텍스트 요소의 자동 줄바꿈 서식 변경
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+a,
+li {
+  white-space: collapse balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}

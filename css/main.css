@@ -1,11 +1,17 @@
 :root {
-  --Cool-Gray-100: #f3f4f6;
-  --brand-blue: #3692ff;
   --Primary-100: #3692ff;
-  --Secondary-200: #e5e7eb;
-  --Secondary-400: #9ca3af;
-  --Secondary-700: #374151;
-  --Secondary-900: #111827;
+  --Primary-200: #1967d6;
+  --Primary-300: #1251aa;
+  --Gray-50: #f9fafb;
+  --Gray-100: #f3f4f6;
+  --Gray-200: #e5e7eb;
+  --Gray-400: #9ca3af;
+  --Gray-500: #6b7280;
+  --Gray-600: #4b5563;
+  --Gray-700: #374151;
+  --Gray-800: #1f2937;
+  --Gray-900: #111827;
+  --Error-red: #F74747;
 }
 
 * {
@@ -19,7 +25,6 @@ html {
 
 body {
   font-family: 'Pretendard', sans-serif;
-  width: 100%;
   word-break: keep-all;
 }
 
@@ -27,7 +32,6 @@ a {
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
-  font-family: 'Pretendard', sans-serif;
 }
 
 header {
@@ -58,7 +62,7 @@ header {
   padding: 1.2rem 2.3rem;
   background-color: var(--Primary-100);
   border-radius: 0.8rem;
-  color: var(--Cool-Gray-100);
+  color: var(--Gray-100);
   font-weight: 600;
   font-size: 1.6rem;
 }
@@ -68,9 +72,9 @@ header {
   align-items: center;
   justify-content: center;
   padding: 1.2rem 12.4rem;
-  background-color: var(--brand-blue);
+  background-color: var(--Primary-100);
   border-radius: 4rem;
-  color: var(--Cool-Gray-100);
+  color: var(--Gray-100);
   font-weight: 600;
   font-size: 2rem;
 }
@@ -123,7 +127,7 @@ header {
 h2 {
   font-size: 4rem;
   font-weight: 700;
-  color: var(--Secondary-700);
+  color: var(--Gray-700);
   line-height: 5.6rem;
 }
 
@@ -182,7 +186,7 @@ section:nth-of-type(4) .section__card {
 
 .section__card--text h3,
 .main__background h3 {
-  color: var(--Secondary-700);
+  color: var(--Gray-700);
   font-size: 4rem;
   font-weight: 700;
   letter-spacing: 0.08rem;
@@ -190,14 +194,14 @@ section:nth-of-type(4) .section__card {
 }
 
 .section__card--text p {
-  color: var(--Secondary-700);
+  color: var(--Gray-700);
   font-size: 2.4rem;
   line-height: 3.2rem;
   font-weight: 500;
 }
 
 footer {
-  background-color: var(--Secondary-900);
+  background-color: var(--Gray-900);
   height: 16rem;
   padding: 3.2rem 20rem;
 }
@@ -209,7 +213,7 @@ footer {
 }
 
 .footer__text--copyright {
-  color: var(--Secondary-400);
+  color: var(--Gray-400);
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -220,7 +224,7 @@ footer {
 }
 
 .footer__nav-item a {
-  color: var(--Secondary-200);
+  color: var(--Gray-200);
   font-size: 1.6rem;
   font-weight: 400;
 }

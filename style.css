@@ -23,7 +23,7 @@ body {
     gap: 10px;
     padding-left: 400px;
     padding-right: 400px;
-    position: sticky;
+    position: sticky; 
     top:0;
     left:0;
     background-color:#FFFFFF;

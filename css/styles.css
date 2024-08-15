@@ -23,12 +23,6 @@ body {
   font-style: normal;
 }
 
-.landing-vertical__wrap,
-.landing-main__wrap,
-.footer__wrap {
-  text-wrap: nowrap;
-}
-
 @media (min-width: 1920px) {
   .header__wrap {
     padding: 9px 400px;

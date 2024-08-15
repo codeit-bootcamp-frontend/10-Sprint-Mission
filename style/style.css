@@ -34,7 +34,7 @@ header {
     background: #FFF;
 }
 
-.wrap {
+.header-wrap, .bottom-wrap {
     height:100%;
     max-width: 1920px;
     display: flex;
@@ -44,7 +44,7 @@ header {
 }
 
 
-.logo {
+.panda-logo {
     display: flex;
     width: 116px;
     align-items: flex-start;
@@ -52,7 +52,7 @@ header {
     cursor: pointer;
 }
 
-.loginbutton {
+.login-button {
     display: flex;
     width: 128px;
     height: 48px;
@@ -73,8 +73,6 @@ header {
     text-decoration-line: none;
 }
 
-
-
 .banner {
     display:flex;
     width: 100%;
@@ -86,7 +84,7 @@ header {
     justify-content:center;
 }
 
-.banner-wrapper {
+.banner-wrap {
     position:absolute;
     bottom:0px;
     display: inline-flex;
@@ -95,7 +93,7 @@ header {
     
 }
 
-.banner-textbox {
+.banner-textbox, .bottom-textbox {
     height:100%;
     display: flex;
     padding-bottom: 60px;
@@ -105,7 +103,7 @@ header {
     gap: 32px;
 }
 
-h1 {
+.banner-text, .section-text {
     color: #374151;
     margin: 0;
     font-size: 40px;
@@ -113,7 +111,7 @@ h1 {
     line-height: 140%; 
 }
 
-h3 {
+.section-text-detail {
     color:#374151;
     font-size: 24px;
     font-weight: 500;
@@ -129,11 +127,10 @@ h3 {
     font-size: 18px;
     font-weight: 700;
     line-height: 26px; 
-
     margin:12px 0px;
 }
 
-.itemsbutton {
+.items-button {
     display: flex;
     height: 56px;
     padding: 16px 124px;
@@ -167,7 +164,6 @@ h3 {
     justify-content: center;
     align-items: center;
     background: #FFF;
-
     text-align: end;
 }
 
@@ -178,7 +174,7 @@ h3 {
     justify-content: center;
     background: #FFF;
 }
-.section-wrapper {
+.section-wrap {
     max-width:1920px;
     display: flex;
     width: 100%;

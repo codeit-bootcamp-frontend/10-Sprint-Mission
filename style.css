@@ -1,14 +1,17 @@
 @font-face {
-    font-family: "ROKAF Sans";
-    src: url('ROKAF_Sans_Medium.ttf')
-}
-
-@font-face {
 	font-family: 'Pretendard Variable';
 	src: url('Pretendard-Regular.ttf');
 }
+
 body {
     width: 100%;
+    font-family: 'Pretendard Variable';
+}
+
+.txt {
+    text-decoration: none;
+    color: #F9FAFB;
+    font-family: 'Pretendard Variable';
 }
 
 .navbar {
@@ -35,7 +38,6 @@ body {
     border: 1px;
     border-color: #DFDFDF;
     border-radius: 8px;
-    font-family: 'Pretendard Variable';
 }
 
 .topbtn {
@@ -43,7 +45,6 @@ body {
     color: #F9FAFB;
     font-size: 20px;
     font-weight: 600;
-    Line-height: 32px;
     text-align: center;
     width: 357px;
     height: 56px;
@@ -52,13 +53,12 @@ body {
     border: 1px;
     border-color: #DFDFDF;
     border-radius: 40px;
-    font-family: 'Pretendard Variable';
     margin-top: 32px;
     margin-bottom: 60px;
     display: flex;
     align-items: center;
-    text-decoration: none;
 }
+
 
 .txtbtn {
     margin: 240px 7px 40px 0;
@@ -73,21 +73,13 @@ body {
 }
 
 .logo {
-    font-family: "ROKAF Sans";
-    color: #3692FF;
     display: flex;
-    align-items: flex-end;
     justify-content: center;
+    align-items: flex-end;
 }
 
-
-
-.title-logo {
-    color: #3692FF;
-    margin-left: 8.59px;
-    font-weight: 700;
-    font-size: 25.63px;
-    line-height: 34.6px;
+.logotxt {
+    margin: 5px;
 }
 
 
@@ -98,7 +90,6 @@ body {
 
 .top-text,
 .bottom-text {
-    font-family: 'Pretendard Variable';
     font-weight: 700;
     font-size: 40px;
     line-height: 56px;

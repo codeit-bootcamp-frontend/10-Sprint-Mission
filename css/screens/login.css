@@ -1,0 +1,114 @@
+.login__wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 640px;
+}
+
+.main__wrap {
+  margin-top: 40px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form__label {
+  margin-bottom: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--Secondary-800);
+  /* pretendard/2lg-18px-bold */
+  line-height: 1.444;
+}
+
+.login-form__input {
+  display: flex;
+  align-items: center;
+  width: 640px;
+  height: 56px;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  background: var(--Secondary-100);
+}
+
+.login-form__input[type="placeholder"] {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--Secondary-400);
+  /* pretendard/lg-16px-regular */
+  line-height: 1.625;
+}
+
+.login-form__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 640px;
+  height: 56px;
+  padding: 16px 124px;
+  border: none;
+  border-radius: 40px;
+  background: var(--Secondary-400);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--Cool-Gray-100, #f3f4f6);
+  gap: 10px;
+  /* pretendard/xl-20px-semibold */
+  line-height: 1.6;
+}
+
+.social-login {
+  margin: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+  background: #e6f2ff;
+  width: 640px;
+  height: 74px;
+  padding: 16px 23px;
+}
+
+.social-login__title {
+  margin: 0;
+  color: var(--Secondary-800);
+
+  /* pretendard/lg-16px-medium */
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.625; /* 162.5% */
+}
+
+.social-login__shortcuts {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.create-account {
+  text-align: center;
+}
+
+.create-account__info {
+  margin: 0;
+  color: var(--Secondary-800);
+
+  /* pretendard/md-14px-medium */
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.71;
+}
+
+.create-account__link {
+  color: var(--Primary-100, #3692ff);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: underline;
+}

@@ -21,8 +21,12 @@ body {
     height: 70px;
     border: 1px;
     gap: 10px;
-    margin-left: 400px;
-    margin-right: 400px;
+    padding-left: 400px;
+    padding-right: 400px;
+    position: sticky;
+    top:0;
+    left:0;
+    background-color:#FFFFFF;
 }
 
 .navbtn {

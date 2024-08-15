@@ -1,13 +1,10 @@
 * {
     box-sizing: border-box;
 }
-/* 
-@media (min-width: 1920px) {
-   
-} */
+
 
 html {
-    /* word-break: keep-all; */
+    word-break: keep-all;
     font-family: Pretendard, sans-serif;
     
 }
@@ -15,7 +12,6 @@ html {
 body {
     width: 100%;
     height: 100%;
-    /* max-width:1920px; */
     margin: 0;
     background: #FCFCFC;
     color: #fff;
@@ -45,7 +41,6 @@ header {
     justify-content: space-between;
     align-items: center;
     align-self: stretch;
-    /* gap:auto; */
 }
 
 
@@ -72,9 +67,7 @@ header {
 
     cursor: pointer;
 
-    font-family: Pretendard;
     font-size: 16px;
-    font-style: normal;
     font-weight: 600;
     line-height: 162.5%;
     text-decoration-line: none;
@@ -115,20 +108,16 @@ header {
 h1 {
     color: #374151;
     margin: 0;
-    font-family: Pretendard;
     font-size: 40px;
-    font-style: normal;
     font-weight: 700;
     line-height: 140%; 
 }
 
 h3 {
     color:#374151;
-    font-family: Pretendard;
     font-size: 24px;
-    font-style: normal;
     font-weight: 500;
-    line-height: 32px; /* 133.333% */
+    line-height: 32px; 
 }
 
 .section-textbox {
@@ -137,11 +126,9 @@ h3 {
 
 .tag {
     color: #3692FF;
-    font-family: Pretendard;
     font-size: 18px;
-    font-style: normal;
     font-weight: 700;
-    line-height: 26px; /* 144.444% */
+    line-height: 26px; 
 
     margin:12px 0px;
 }
@@ -160,9 +147,7 @@ h3 {
     color: #F9FAFB;
     text-align: center;
 
-    font-family: Pretendard;
     font-size: 20px;
-    font-style: normal;
     font-weight: 600;
     line-height: 32px; 
     text-decoration-line: none;
@@ -170,7 +155,6 @@ h3 {
 
 .section1 {
     width:100%;
-    /* max-width: 1920px; */
     display: flex;
     padding: 138px 605px 138px 360px;
     align-items: center;
@@ -219,8 +203,6 @@ footer {
     justify-content: center;
     width: 100%;
     height: 160px;
-    /* padding: 32px 400px; */
-    /* flex-direction: column; */
     gap: 10px;
     flex-shrink: 0;
     background: #111827;
@@ -240,9 +222,7 @@ footer {
 footer a {
     color: #9CA3AF;
     text-align: center;
-    font-family: Pretendard;
     font-size: 16px;
-    font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-decoration-line: none;
@@ -256,7 +236,7 @@ footer a {
     justify-content:center;    
 }
 
-.logo {
+.sns-wrap {
     display:flex;
     width:116px;
     gap:12px;
@@ -264,7 +244,7 @@ footer a {
     cursor: pointer;
 }
 
-.logo > a {
+.sns-wrap > a {
     width:20px;
     height:20px;
 }

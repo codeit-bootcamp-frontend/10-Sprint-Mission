@@ -1,3 +1,10 @@
+main,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
 .main__divider {
   height: 70px;
 }

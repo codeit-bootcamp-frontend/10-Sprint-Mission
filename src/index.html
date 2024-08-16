@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <title>판다마켓</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="판다마켓 1주차">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/styles/style.css">
 </head>
 
 <body>
 
   <header>
     <div class="header-container">
-      <a href="./">
-        <img src="assets/img/Property 1=sm.png" alt="logo-image">
+      <a href="src/">
+        <img src="src/assets/img/Property 1=sm.png" alt="logo-image">
       </a>
 
-      <button class="login-btn cursor-pointer btn" type="button" onclick="location.href='./login'">로그인</button>
+      <button class="login-btn cursor-pointer btn" type="button"><a href="src/pages/login/">로그인</a></button>
     </div>
   </header>
 
@@ -31,11 +30,10 @@
             일상의 모든 물건을<br>
             거래해 보세요
           </h3>
-          <button class="container-top-btn-01 cursor-pointer btn" type="button" onclick="location.href='./items'">구경하러
-            가기</button>
+          <button class="container-top-btn-01 cursor-pointer btn" type="button"><a href="src/pages/items/">구경하러 가기</a></button>
         </div>
 
-        <img src="assets/img/Img_home_top.png" alt="top-section-img">
+        <img src="src/assets/img/Img_home_top.png" alt="top-section-img">
       </div>
     </section>
 
@@ -43,7 +41,7 @@
     <section class="section-main">
       <div class="container-main">
 
-        <img src="assets/img/Img_home_01.png" alt="section-01-img">
+        <img src="src/assets/img/Img_home_01.png" alt="section-01-img">
 
         <div class="container-content">
           <label for="section-01__container__div__h3">Hot Item</label>
@@ -76,7 +74,7 @@
           </p>
         </div>
 
-        <img src="assets/img/Img_home_02-1.png" alt="section-02-img">
+        <img src="src/assets/img/Img_home_02-1.png" alt="section-02-img">
 
       </div>
     </section>
@@ -85,7 +83,7 @@
     <section class="section-main">
       <div class="container-main">
 
-        <img src="assets/img/Img_home_03.png" alt="section-03-img">
+        <img src="src/assets/img/Img_home_03.png" alt="section-03-img">
 
         <div class="container-content">
           <label for="section-03__container__div__h3">Register</label>
@@ -112,7 +110,7 @@
           </h3>
         </div>
 
-        <img src="assets/img/Img_home_bottom.png" alt="bottom-section-img">
+        <img src="src/assets/img/Img_home_bottom.png" alt="bottom-section-img">
 
       </div>
     </section>
@@ -127,44 +125,28 @@
       </div>
 
       <div style="display: flex; gap: 30px;">
-        <p class="footer-p"><a href="./privacy" style="color: #E5E7EB;">Privacy Policy</a></p>
-        <p class="footer-p"><a href="./faq" style="color: #E5E7EB;">FAQ</a></p>
+        <p class="footer-p"><a href="src/pages/privacy" style="color: #E5E7EB;">Privacy Policy</a></p>
+        <p class="footer-p"><a href="src/pages/faq" style="color: #E5E7EB;">FAQ</a></p>
       </div>
 
       <div>
         <nav>
           <ul>
             <li class="cursor-pointer"><a href="https://www.facebook.com/codeit.kr" target="_blank"
-                rel="noopener noreferrer"><img src="assets/img/ic_facebook.png" alt="facebook-icon"></a></li>
+                rel="noopener noreferrer"><img src="src/assets/img/ic_facebook.png" alt="facebook-icon"></a></li>
             <li class="cursor-pointer"><a href="https://x.com/codeitkr" target="_blank" rel="noopener noreferrer"><img
-                  src="assets/img/ic_twitter.png" alt="x-icon"></a></li>
+                  src="src/assets/img/ic_twitter.png" alt="x-icon"></a></li>
             <li class="cursor-pointer"><a href="https://www.youtube.com/channel/UCCM79CPm2WbBYTRaiNEExbg"
-                target="_blank" rel="noopener noreferrer"><img src="assets/img/ic_youtube.png" alt="youtube-icon"></a>
+                target="_blank" rel="noopener noreferrer"><img src="src/assets/img/ic_youtube.png" alt="youtube-icon"></a>
             </li>
             <li class="cursor-pointer"><a href="https://www.instagram.com/codeit_kr/" target="_blank"
-                rel="noopener noreferrer"><img src="assets/img/ic_instagram.png" alt="instagram-icon"></a></li>
+                rel="noopener noreferrer"><img src="src/assets/img/ic_instagram.png" alt="instagram-icon"></a></li>
           </ul>
         </nav>
       </div>
 
     </div>
   </footer>
-
-
-  <script>
-    window.addEventListener('scroll', () => {
-      localStorage.setItem('scrollPosition', window.scrollY);
-    });
-
-    window.addEventListener('load', () => {
-      const savedPosition = localStorage.getItem('scrollPosition');
-      if (savedPosition !== null) {
-        window.scrollTo(0, parseInt(savedPosition, 10));
-      }
-    });
-
-
-  </script>
 
 </body>
 

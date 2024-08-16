@@ -1,0 +1,148 @@
+.auth-container {
+    width:100%;
+    display: flex;
+    justify-content: center;
+}
+.auth-wrap {
+    width:100%;
+    max-width: 640px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    flex-shrink: 0;
+    margin-top:60px;
+}
+
+.pando-logo {
+    width:396px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+
+label {
+    color:#1F2937;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+
+.input-box {
+    width:100%;
+    margin:0 auto;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+input {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    padding: 16px 24px;
+    align-items: center;
+    gap: 10px;
+
+    border:#F3F4F6;
+    border-radius: 12px;
+    background: #F3F4F6;
+
+    justify-content: space-between;
+    align-self: stretch;
+}
+
+input::placeholder {
+    color: #9ca3af;
+    font-size: 16px;
+    line-height: 24px;
+}
+  
+input:focus {
+    outline-color: #3692FF;;
+}
+
+.visibility-btn {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    position:absolute;
+    right:24px;
+    top:58px;
+    
+}
+
+.login-button {
+    display: flex;
+    width: 100%;
+    height: 56px;
+    padding: 16px 124px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 40px;
+    border:0px;
+    background: #9CA3AF;
+    color: #F3F4F6;
+    font-size: 20px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.simple-login-box {
+    display:flex;
+    width:100%;
+    height: 74px;
+    padding: 16px 23px;
+   
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    border-radius: 8px;
+    background: #E6F2FF;
+}
+
+.simple-login-text {
+    color:#1F2937;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.simple-login-sns-logo {
+    width:42px;
+    cursor: pointer;
+}
+
+.auth-switch-box {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.auth-switch-text {
+    color: #1F2937;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px; 
+}
+.switch-to-signup {
+    color:  #3692FF;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    text-decoration-line: underline;
+}

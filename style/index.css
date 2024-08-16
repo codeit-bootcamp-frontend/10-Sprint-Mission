@@ -1,24 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-
-html {
-    word-break: keep-all;
-    font-family: Pretendard, sans-serif;
-    
-}
-
-body {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    background: #FCFCFC;
-    color: #fff;
-}
-
-
-
 header {
     display: flex;
     position:sticky;

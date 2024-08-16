@@ -1,14 +1,3 @@
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a { text-decoration: none; }
-body { font-family: Pretendard Variable, Pretendard, sans-serif; }
-
 .img {
   background-size: cover;
   background-position: center;

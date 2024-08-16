@@ -38,7 +38,7 @@ header {
   flex-direction: column;
 }
 
-.banner-content span {
+.banner-content h2 {
   font-weight: 600;
   font-size: var(--size-4xl);
   line-height: var(--line-4xl);
@@ -117,6 +117,7 @@ footer {
   padding: 16px max(calc((100% - 1100px) / 2), 200px) 48px;
   background-color: #111827;
   font-size: var(--size-sm);
+  color: var(--gray-200);
 }
 
 :is(.foot-copy, .foot-link, .foot-sns) {
@@ -128,17 +129,9 @@ footer {
   justify-content: left;
 }
 
-.foot-copy span {
-  color: var(--gray-200);
-}
-
 .foot-link {
   justify-content: center;
   gap: 30px;
-}
-
-.foot-link a {
-  color: var(--gray-200);
 }
 
 .foot-sns {

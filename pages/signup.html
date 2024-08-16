@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
+    <title>회원가입 | 판다마켓</title>
+  </head>
+  <body>
+    <main>
+      <section class="signup">
+        <h2 class="signup__header">
+          <a href="/">
+            <img src="/assets/images/logo-lg.png" alt="판다마켓 로고" />
+          </a>
+        </h2>
+        <form action="#" method="post">
+          <label for="email" class="signup__label">이메일</label>
+          <div class="signup__field signup__field--id">
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="이메일을 입력해주세요"
+              class="signup__input"
+              required
+            />
+          </div>
+          <label for="nickname" class="signup__label">닉네임</label>
+          <div class="signup__field signup__field--nickname">
+            <input
+              type="text"
+              id="nickname"
+              name="nickname"
+              placeholder="닉네임을 입력해주세요"
+              class="signup__input"
+              required
+            />
+          </div>
+          <label for="password" class="signup__label signup__label--password"
+            >비밀번호</label
+          >
+          <div class="signup__field signup__field--password">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 입력해주세요"
+              class="signup__input"
+              required
+            />
+            <button
+              type="button"
+              class="signup__password-toggle"
+              aria-label="비밀번호 보기"
+            >
+              <img
+                src="/assets/images/btn-visibility-off.svg"
+                class="signup__password-toggle-icon signup__password-toggle-icon--inactive"
+                alt="비밀번호 숨기기 아이콘"
+              />
+              <img
+                class="signup__password-toggle-icon signup__password-toggle-icon--active"
+                src="/assets/images/btn-visibility-on.svg"
+                alt="비밀번호 보기 아이콘"
+              />
+            </button>
+          </div>
+          <label for="password" class="signup__label signup__label--password"
+            >비밀번호 확인
+          </label>
+          <div class="signup__field signup__field--password">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 다시 한 번 입력해주세요"
+              class="signup__input"
+              required
+            />
+            <button
+              type="button"
+              class="signup__password-toggle"
+              aria-label="비밀번호 보기"
+            >
+              <img
+                src="/assets/images/btn-visibility-off.svg"
+                class="signup__password-toggle-icon signup__password-toggle-icon--inactive"
+                alt="비밀번호 숨기기 아이콘"
+              />
+              <img
+                class="signup__password-toggle-icon signup__password-toggle-icon--active"
+                src="/assets/images/btn-visibility-on.svg"
+                alt="비밀번호 보기 아이콘"
+              />
+            </button>
+          </div>
+          <button type="submit" class="signup__submit">회원가입</button>
+        </form>
+      </section>
+      <aside class="social-login">
+        <h3 class="social-login__header">간편 로그인하기</h3>
+        <ul class="social-login__list">
+          <li>
+            <a
+              href="https://www.google.com/"
+              class="social-button social-button--google"
+            >
+              <img src="/assets/images/ic-google.svg" alt="구글 아이콘" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.kakaocorp.com/page/"
+              class="social-button social-button--kakao"
+              ><img src="/assets/images/ic-kakao.svg" alt="카카오 아이콘" />
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <section class="login-link">
+        <p class="login-link__text">
+          이미 회원이신가요? <a href="/pages/login.html">로그인</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

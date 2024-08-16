@@ -81,7 +81,7 @@ input:focus {
     
 }
 
-.login-button {
+.login-button, .signup-button {
     display: flex;
     width: 100%;
     height: 56px;
@@ -92,12 +92,26 @@ input:focus {
 
     border-radius: 40px;
     border:0px;
-    background: #9CA3AF;
+    background: #9CA3AF; 
     color: #F3F4F6;
     font-size: 20px;
     font-weight: 600;
 
     cursor: pointer;
+}
+
+button:hover {
+    background-color: #1967d6;
+}
+  
+button:focus {
+    background-color: #1251aa;
+}
+  
+button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+    pointer-events: none;
 }
 
 .simple-login-box {
@@ -120,6 +134,11 @@ input:focus {
     font-weight: 500;
     line-height: 26px;
 }
+.simple-login-sns-box {
+    display: flex;
+    justify-content: space-between;
+    gap:16px;
+}
 
 .simple-login-sns-logo {
     width:42px;
@@ -139,7 +158,7 @@ input:focus {
     font-weight: 500;
     line-height: 24px; 
 }
-.switch-to-signup {
+.switch-to-signup, .switch-to-login {
     color:  #3692FF;
     font-size: 14px;
     font-weight: 500;

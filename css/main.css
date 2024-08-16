@@ -1,39 +1,3 @@
-:root {
-  --Primary-100: #3692ff;
-  --Primary-200: #1967d6;
-  --Primary-300: #1251aa;
-  --Gray-50: #f9fafb;
-  --Gray-100: #f3f4f6;
-  --Gray-200: #e5e7eb;
-  --Gray-400: #9ca3af;
-  --Gray-500: #6b7280;
-  --Gray-600: #4b5563;
-  --Gray-700: #374151;
-  --Gray-800: #1f2937;
-  --Gray-900: #111827;
-  --Error-red: #F74747;
-}
-
-* {
-  box-sizing: border-box;
-  list-style: none;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-family: 'Pretendard', sans-serif;
-  word-break: keep-all;
-}
-
-a {
-  text-decoration: none;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
 header {
   width: 100%;
   height: 7rem;
@@ -120,7 +84,7 @@ header {
 }
 
 .main__background--text .btn__large {
-  margin-bottom: 6rem;
+  margin: 3.2rem 0 6rem;
   height: 56px;
 }
 
@@ -191,6 +155,10 @@ section:nth-of-type(4) .section__card {
   font-weight: 700;
   letter-spacing: 0.08rem;
   line-height: 5.6rem;
+}
+
+.section__card--text h3 {
+  margin: 1.2rem 0 2.4rem;
 }
 
 .section__card--text p {

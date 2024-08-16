@@ -7,7 +7,11 @@ header {
   padding: 8px max(calc((100% - 1100px) / 2), 200px);
 }
 
-header .head-login {
+.head-logo {
+  width: 153px;
+}
+
+.head-login {
   padding: 8px 32px;
   background-color: var(--blue-100);
   border: none;
@@ -21,6 +25,10 @@ header .head-login {
   justify-content: center;
   height: 540px;
   background-color: #cfe5ff;
+}
+
+.banner-image {
+  width: 746px;
 }
 
 .banner-content {
@@ -69,6 +77,10 @@ header .head-login {
 .card:nth-child(2n) {
   margin-left: 180px;
   text-align: right;
+}
+
+.card-image {
+  width: 588px;
 }
 
 .card-content {

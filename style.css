@@ -1,0 +1,359 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-family: Pretendard, sans-serif;
+
+    background-color: #ffffff;
+}
+
+/* main page */
+/* main page - header */
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    height: 70px;
+    width: 100%;
+    max-width: 1920px;
+    background-color: #ffffff;
+
+    padding: 5px 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-button {
+    padding: 12px 23px;
+    border-radius: 8px;
+    background-color: #3692FF;
+    color: #F3F4F6;
+    text-decoration: none;
+
+    cursor:pointer;
+}
+
+/* main page - top banner */
+.top-banner {
+    margin-top: 70px;
+
+    background-color: #CFE5FF;
+    height: 540px;
+
+    position: relative;
+}
+
+.top-banner-contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:7px;
+   
+    position: absolute;
+    bottom: 0;
+}
+
+.top-banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 0 0 60px 0;
+}
+
+.top-banner-text>p {
+    font-size: 40px;
+    font-weight: 700;
+    color: #374151;
+}
+
+.top-banner-text>a {
+    padding: 16px 124px;
+    border-radius: 40px;
+    background-color: #3692FF;
+    color: #F3F4F6;
+    text-decoration: none;
+
+    cursor:pointer;
+}
+
+/* main page - main content */
+.main-content>section {
+    height: 720px;
+    background-color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content>section.odd {
+    margin-left: -100px;
+}
+
+.main-content>section.even {
+    margin-right: -100px;
+}
+
+.card {
+    background-color: #FCFCFC;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 44px;
+}
+
+/* 
+.main-content:nth-child(2)> {
+    flex-direction: row-reverse;
+} 
+    
+위 방법으로 구현하고자 했으나(본문 카드 추가시 수정용이함)
+예상과 바르게 짝수번째 카드 선택이 안됨
+부모태그의 자식중에 2번째를 고르는거라 card가 아니라 section 태그를 선택하는것을 확인
+-> 카드에 odd even 클래스값 주는것으로 변경.. */
+
+.card.odd {
+    flex-direction: row;
+}
+
+.card.even {
+    flex-direction: row-reverse;
+}
+
+.card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 20px;
+}
+
+.card-header {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #3692FF;
+    margin: 0;
+}
+
+.card-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    color: #374151;
+    margin: 12px 0 24px 0;
+}
+
+.card-explain {
+
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 32px;
+    color: #374151;
+    margin: 0;
+}
+
+/* main page - bottom banner */
+.bottom-banner {
+    background-color: #CFE5FF;
+    height: 540px;
+
+    position: relative;
+}
+
+.bottom-banner-contents {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:69px;
+   
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom-banner-text {
+    gap: 10px;
+    padding: 0 0 60px 0;
+
+    font-size: 40px;
+    font-weight: 700;
+    color: #374151;
+}
+
+/* main page - footer */
+.footer {
+    background-color: #111827;
+    height: 160px;
+    width: 100%;
+    max-width: 1920px;
+    padding: 32px 400px;
+}
+
+.footer-content {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.footer-content>p {
+    color: #9CA3AF;
+}
+
+.footer-content>.text {
+    display: flex;
+    gap: 30px;
+}
+.footer-content>.text>a {
+    text-decoration: none;
+    color: #E5E7EB;
+}
+
+.footer-content>.icons {
+    display: flex;
+    gap:12px;
+}
+
+
+/* login page & sign-in page */
+/* login page & sign-in page - every fields & submit button */
+.form {
+    width: 640px;
+    margin: 100px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.field>label {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+    color: #1F2937;
+}
+
+.field>input {
+    width: 640px;
+    height: 56px;
+    border-radius: 12px;
+    padding: 16px 24px;
+    background-color: #F3F4F6;
+    border-width: 0px;
+
+    font-family: Pretendard, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #1F2937;
+
+}
+
+.field>input::placeholder {
+    color: #9CA3AF;
+}
+
+.field>input:focus {
+    border-width: 2px;
+    border-color: #3692FF;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    position: relative;
+}
+
+/* 심화과제: 인풋 필드 안에 눈 아이콘 넣기 */
+.field>.visibility-icon {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+}
+
+.fields>button {
+    width: 640px;
+    height: 56px;
+    border-radius: 40px;
+    background-color: #9CA3AF;
+    border-width: 0px;
+
+    font-family: Pretendard, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #F3F4F6;
+}
+
+.fields>button:active {
+    background-color: #3692FF;
+}
+/* 필드가 다 채워지면 제출버튼 색이 변하는 기능...
+지금은 채워지면x 버튼 클릭시 바뀜. 개선예정 */
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* login page & sign-in page - sns login  */
+.sns-login {
+    width: 640px;
+    height: 74px;
+    border-radius: 8px;
+    background-color: #E6F2FF;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 23px;
+}
+
+.sns-login>p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2937;
+}
+
+.sns-login-imgs {
+    display: flex;
+    gap: 16px;
+}
+
+/* login page & sign-in page - ask login/signup  */
+.ask-signup,
+.ask-login {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: 500;
+    color: #1F2937;
+}
+
+.ask-signup>a,
+.ask-login>a {
+    color:#3692FF;
+    text-decoration: underline;
+}
+
+.login.main-content,
+.sign-up.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}

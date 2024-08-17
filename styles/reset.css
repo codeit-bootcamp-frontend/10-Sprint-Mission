@@ -398,3 +398,11 @@ address {
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
 }
+
+/*
+고정적으로 뷰포트 스크롤바 생성
+*/
+
+body {
+  overflow-y: scroll;
+}

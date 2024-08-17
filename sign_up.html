@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>로그인</title>
+    <title>회원가입</title>
     <link rel="stylesheet" href="로그인&회원가입.css" />
   </head>
   <body id="body">
@@ -16,11 +16,19 @@
     <main id="content">
       <label class="label">이메일</label>
       <input type="email" class="input" placeholder="이메일을 입력해주세요" />
+      <label class="label">닉네임</label>
+      <input type="text" class="input" placeholder="닉네임을 입력해주세요" />
       <label class="label">비밀번호</label>
       <input
         type="password"
         class="input"
         placeholder="비밀번호를 입력해주세요"
+      />
+      <label class="label">비밀번호 확인</label>
+      <input
+        type="password"
+        class="input"
+        placeholder="비밀번호를 다시 한 번 입력해주세요"
       />
       <div id="login_box">로그인</div>
       <div id="nav_footer_box">
@@ -34,7 +42,7 @@
       </div>
     </main>
     <footer id="footer">
-      판다마켓이 처음이신가요? <a href="sign_up.html" id="gaip">회원가입</a>
+      판다마켓이 처음이신가요? <a href="login.html" id="gaip">로그인</a>
     </footer>
   </body>
 </html>

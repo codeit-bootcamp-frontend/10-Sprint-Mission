@@ -13,22 +13,21 @@ body{
     width: 640px;
 }
 
-.email-box{
+.email-box,
+.nickname-box,
+.pw-box,
+.pw-repeat-box {
     display: flex;
     flex-direction: column;
 }
 
 .email-label,
-.pw-label {
+.nickname-label,
+.pw-label,
+.pw-repeat-label {
     font-weight: 700;
     font-size:18px;
     line-height: 26px;
-}
-
-.pw-box{
-    display: flex;
-    flex-direction: column;
-    margin-top: 24px;
 }
 
 .input{
@@ -65,7 +64,9 @@ body{
     height: 56px;
 }
 
+.nickname-box,
 .pw-box,
+.pw-repeat-box,
 .login-btn,
 .signup-box,
 .easy-login-box {

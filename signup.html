@@ -1,10 +1,59 @@
+<!-- 
+    <VS Code에서 HTML 기본구조 자동생성하기>
+
+    - `!` 입력 후 tab 키를 누르면 HTML 기본 양식이 입력됩니다.
+
+    - 이때, <html lang="en"> 부분을 매번 lang="ko"로 바꾸는 것이 번거로우니 양식을 바꿔봅시다.
+      command/ctrl + 쉼표 를 눌러 VS Code 설정창을 열고 emmet을 검색해 주세요. 
+      스크롤을 내려 Emmet: Variables 섹션에 Add Item을 누르고 lang Item의 Value를 ko로 바꿔 입력해 주세요. 
+      마지막으로 Add Item 버튼을 눌러 저장하면 끝!
+-->
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>회원 가입</title>
-</head>
-<body>
-    회원가입~~~
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>판다마켓 - 로그인</title>
+    <link rel="icon" href="images/logo/favicon.ico" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="reset.css" />
+  </head>
+
+  <body>
+    <div>
+      <img src="image/login_logo.svg"/>
+    </div>
+    <main class="container">
+      <form class="email-box">
+        <label class="email-label">이메일</label>
+        <input class="input" placeholder="이메일을 입력해주세요">
+      </form>
+      <form class="nickname-box">
+        <label class="nickname-label">닉네임</label>
+        <input class="input" placeholder="닉네임을 입력해주세요">
+      </form>
+      <form class="pw-box">
+        <label class="pw-label">비밀번호</label>
+        <input class="input" placeholder="비밀번호를 입력해주세요"  type="password">
+      </form>
+      <form class="pw-repeat-box">
+        <label class="pw-repeat-label">비밀번호 확인</label>
+        <input class="input" placeholder="비밀번호를 다시 한 번 입력해주세요"  type="password">
+      </form>
+      <button class="login-btn" onclick="location.href='/login'">회원가입</button>
+      <article class="easy-login-box">
+        <div class="easy-content">
+          <span>간편 로그인하기</span>
+          <div class="easy-icon-box">
+            <img class="easy-icon" src="image/login_google.svg" onclick="location.href='https&#58//www.google.com'"/>
+            <img class="easy-icon" src="image/login_kakao.svg" onclick="location.href='https&#58//www.kakaocorp.com/page/'"/>
+          </div>
+        </div>
+      </article>
+      <section class="signup-box">
+        이미 회원이신가요?&nbsp
+        <a href="login.html">로그인</a>
+      </section>
+    </main>
+  </body>
 </html>

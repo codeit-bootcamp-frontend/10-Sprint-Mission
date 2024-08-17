@@ -6,9 +6,29 @@
     <link rel="stylesheet" href="style_signup.css">
   </head>
   <body>
-    <div class="logo"></div>
-    <div class="inputcon"></div>
-    <div class="social"></div>
-    <div class="login"></div>
+    <main>
+      <div class="logo">
+        <img src="/image/lg.png">
+      </div>
+      <div class="inputcon">
+        이메일<br>
+        <input type="text" name="email" placeholder="이메일을 입력해주세요"><br>
+        닉네임<br>
+        <input type="text" name="nickname" placeholder="닉네임을 입력해주세요"><br>
+        비밀번호<br>
+        <input type="password" name="pwd" placeholder="비밀번호를 입력해주세요"><br>
+        비밀번호 확인<br>
+        <input type="password" name="pwd_check" placeholder="비밀번호를 다시 입력해주세요"><br>
+        <input type="submit" value="회원가입" id="signup">
+      </div>
+      <div class="social">
+        <div id="socialinfo">간편 로그인하기</div>
+        <div id="socialicon">
+          <img src="/image/social_google.png">
+          <img src="/image/social_kakao.png">
+        </div>
+      </div>
+      <div class="login">이미 회원이신가요? <a href="/login.html">로그인</a></div>
+    </main>
   </body>
 </html>

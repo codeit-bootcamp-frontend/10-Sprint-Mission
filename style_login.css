@@ -1,3 +1,52 @@
 body {
-  
+  color:#1f2937;
+  font-size:18px;
+  margin:10px;
+  padding:0px;
+  line-height: 26px;
+}
+main {
+  margin:231px auto;
+  width:640px;
+}
+.logo {
+  width:640px;
+  display: flex;
+  justify-content: center;
+}
+input {
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  border:0;
+  width:640px;
+  height: 56px;
+  margin:15px 0px;;
+  padding:16px 24px;
+  box-sizing: border-box;
+}
+input#login {
+  border-radius: 40px;
+  background-color: #9ca3af;
+  color:#f3f4f6;
+  font-size: 20px;
+  line-height: 32px;
+}
+.social {
+  width:640px;
+  height:74px;
+  background-color: #e6f2ff;
+  box-sizing: border-box;
+  padding:16px 23px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.socialinfo {
+  font-size:16px;
+}
+.signup {
+  text-align: center;
+  padding-top:30px;
+  font-size:14px;
+  line-height: 24px;
 }

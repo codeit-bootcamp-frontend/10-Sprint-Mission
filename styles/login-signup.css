@@ -65,7 +65,7 @@
   justify-content: center;
 }
 
-.email-pw-box {
+.form-box {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -124,7 +124,7 @@ button.active {
 }
 
 
-.login-3rd-box {
+.social-login-box {
   background-color: #e6f2ff;
   border-radius: 8px;
   display: flex;
@@ -138,7 +138,7 @@ button.active {
 }
  
 
-.login-3rd {
+.social-login {
   text-decoration: none;
 }
 

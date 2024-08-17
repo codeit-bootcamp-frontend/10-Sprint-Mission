@@ -132,13 +132,17 @@ input {
   overflow: hidden;
 }
 
+input:focus {
+  border: var(--primary-100);
+}
+
 input::placeholder {
   color: var(--secondary-400);
   font-size: 16px;
   font-family: Pretendard;
   font-weight: 400;
   line-height: 26px;
-  word-wrap: break-word
+  word-wrap: break-word;
 }
 
 .is-cursor-pointer {
@@ -150,6 +154,10 @@ input::placeholder {
 }
 
 .btn:active {
+  background-color: var(--primary-300);
+}
+
+.btn:focus {
   background-color: var(--primary-300);
 }
 

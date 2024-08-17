@@ -5,8 +5,8 @@
 @import "components/footer.css";
 
 /* screens */
-@import "screens/landing-page.css";
-@import "screens/login.css";
+@import "screens/landing.css";
+@import "screens/login-signup.css";
 
 * {
   box-sizing: border-box;

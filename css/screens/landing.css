@@ -11,16 +11,16 @@ footer {
 
 .landing-vertical {
   display: flex;
-  justify-content: center;
   align-items: flex-end;
+  justify-content: center;
   height: 540px;
   background: #cfe5ff;
 }
 
 .landing-vertical__wrap {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin: 200px 405px 0 405px;
 }
 
@@ -32,24 +32,24 @@ footer {
 }
 
 .landing-vertical__title {
-  color: var(--Secondary-700);
+  margin: 0;
   font-size: 40px;
   font-weight: 700;
+  color: var(--Secondary-700);
   line-height: 1.4;
-  margin: 0;
 }
 
 .landing-vertical__btn {
-  text-decoration: none;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
   height: 56px;
-  border-radius: 40px;
   padding: 16px 124px;
-  color: var(--Secondary-50);
+  border-radius: 40px;
   background-color: var(--Primary-100);
+  text-decoration: none;
+  color: var(--Secondary-50);
+  gap: 10px;
 }
 
 .landing-vertical__btn:hover {
@@ -61,9 +61,9 @@ footer {
 }
 
 .landing-vertical__btn-text {
-  /* pretendard/xl-20px-semibold */
   font-size: 20px;
   font-weight: 600;
+  /* pretendard/xl-20px-semibold */
   line-height: 32px;
 }
 
@@ -72,8 +72,8 @@ footer {
 }
 
 .landing-main {
-  background-color: #fcfcfc;
   padding: 0 0 138px 0;
+  background-color: #fcfcfc;
 }
 
 .landing-main__wrap {
@@ -115,31 +115,28 @@ footer {
 }
 
 .landing-main__keyword {
-  color: var(--Primary-100);
-
-  /* pretendard/2lg-18px-bold */
+  margin: 0;
   font-size: 18px;
   font-weight: 700;
+  color: var(--Primary-100);
+  /* pretendard/2lg-18px-bold */
   line-height: 26px;
-  margin: 0;
 }
 
 .landing-main__title {
-  color: var(--Secondary-700);
   margin: 12px 0 24px;
-
   font-size: 40px;
   font-weight: 700;
+  color: var(--Secondary-700);
   line-height: 1.4;
   letter-spacing: 0.8px;
 }
 
 .landing-main__desc {
-  color: var(--Secondary-700);
   margin: 0;
-
-  /* pretendard/2xl-24px-medium */
   font-size: 24px;
   font-weight: 500;
+  color: var(--Secondary-700);
+  /* pretendard/2xl-24px-medium */
   line-height: 32px;
 }

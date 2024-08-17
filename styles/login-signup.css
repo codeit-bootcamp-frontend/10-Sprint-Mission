@@ -103,19 +103,43 @@ input {
   padding: 15px 24px 15px 24px ;
 }
 
+.password-container {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.toggle-password i {
+  font-size: 18px;
+}
+
 button {
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
+  color: var(--secondary-color-gray100);
   align-items: center;
   justify-content: center;
   width:100%;
-  color: var(--secondary-color-gray100);
-  background-color: var(--secondary-color-gray400);
   border-radius: 40px;
   outline: none;
   border: none;
   padding: 16px 124px 16px 124px;
+}
+
+.button-off {
+  background-color: var(--secondary-color-gray400);
+}
+
+.button-on {
+  background-color: var(--primary-color100);
 }
 
 button.active {

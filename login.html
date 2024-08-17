@@ -12,6 +12,7 @@
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
     <link rel="stylesheet" href="styles/login-signup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
     <div class="login-background">
@@ -31,13 +32,20 @@
             placeholder="이메일을 입력해주세요"
           />
           <label>비밀번호</label>
+          <div class="password-container">
           <input
+            class="password-input"
+            autocomplete="off"
             name="password"
             type="password"
             placeholder="비밀번호를 입력해주세요"
           />
+          <span class="toggle-password">
+            <i class="fas fa-eye-slash"></i>
+          </span>
+          </div>
+          <button class="button-off">로그인</button>
       </div>
-      <button>로그인</button>
       <div class="social-login-box">
         <p class="social-login-p">간편 로그인하기</p>
         <div class="social-login-link">

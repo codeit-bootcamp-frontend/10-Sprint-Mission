@@ -1,0 +1,120 @@
+@font-face {
+  font-family: Pretendard;
+  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+}
+
+:root {
+  --primary-100: #3692ff;
+  --primary-200: #1967d6;
+  --primary-300: #1251aa;
+  --secondary-100: #f9fafb;
+  --secondary-200: #f3f4f6;
+  --secondary-300: #e5e7eb;
+  --secondary-400: #9ca3af;
+  --secondary-500: #6b7280;
+  --secondary-600: #4b5563;
+  --secondary-700: #374151;
+  --secondary-800: #1f2937;
+  --secondary-900: #111827;
+  --error-red: #f74747;
+  --background-color: #ffffff;
+  --background-top-bottom-color: #cfe5ff;
+
+}
+
+/* P 태그의 폰트 사이즈 기준 설정*/
+html {
+  font-size: 24px;
+}
+
+@media(max-width: 1024px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media(max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--secondary-700);
+  font-family: "Pretendard", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background-color: var(--primary-100);
+  border: none;
+  color: var(--secondary-100);
+}
+
+h3 {
+  font-size: 1.67rem;
+  font-family: Pretendard;
+  font-weight: 29.17rem;
+  line-height: 2.33rem;
+}
+
+p {
+  font-size: 1rem;
+  font-family: Pretendard;
+  font-weight: 20.83rem;
+  line-height: 1.33rem;
+  word-wrap: break-word;
+  
+}
+
+label {
+  color: var(--primary-100);
+  font-size: 0.75rem;
+  font-family: Pretendard;
+  font-weight: 29.17rem;
+  line-height: 1.08rem;
+  word-wrap: break-word;
+}
+
+header {
+  width: 100%;
+  height: 2.92rem;
+  padding: 0.38rem 8.33rem;
+}
+
+main {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  gap: 0.5rem;
+}
+
+nav ul>li {
+  width: 0.83rem;
+  display: inline-block;
+  list-style: none;
+}
+
+h3 {
+  font-size: 1.67rem;
+  font-family: Pretendard;
+  font-weight: 29.17rem;
+  line-height: 2.33rem;
+}

@@ -6,46 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="판다마켓 1주차">
   
-  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="stylesheet" href="/src/styles/base.css">
+  <link rel="stylesheet" href="/src/styles/home/module.css">
+  <link rel="stylesheet" href="/src/styles/home/layout.css">
+  <link rel="stylesheet" href="/src/styles/home/state.css">
+  <link rel="stylesheet" href="/src/styles/home/theme.css">
 </head>
 
 <body>
 
   <header>
-    <div class="header-container">
-      <a href="src/">
-        <img src="src/assets/img/Property 1=sm.png" alt="logo-image">
+    <div class="header">
+      <a href="/src/">
+        <img src="/src/assets/img/logo_sm.png" alt="로고 이미지">
       </a>
-
-      <button class="login-btn cursor-pointer btn" type="button"><a href="src/pages/login/">로그인</a></button>
+      <button class="login-btn is-cursor-pointer btn" type="button"><a href="/src/pages/login/">로그인</a></button>
     </div>
   </header>
 
   <main>
-    <section class="section-top-bottom">
-      <div class="container-top-bottom">
-
-        <div class="container-top-div">
-          <h3 class="h3-top-bottom">
+    <section class="top-bottom">
+      <div class="top-bottom-content">
+        <div class="top-letter-wrapper">
+          <h3>
             일상의 모든 물건을<br>
             거래해 보세요
           </h3>
-          <button class="container-top-btn-01 cursor-pointer btn" type="button"><a href="src/pages/items/">구경하러 가기</a></button>
+          <button class="top-btn is-cursor-pointer btn" type="button"><a href="/src/pages/items/">구경하러 가기</a></button>
         </div>
-
-        <img src="src/assets/img/Img_home_top.png" alt="top-section-img">
+        <img src="/src/assets/img/img_home_top.png" alt="배너 이미지">
       </div>
     </section>
 
-
-    <section class="section-main">
-      <div class="container-main">
-
-        <img src="src/assets/img/Img_home_01.png" alt="section-01-img">
-
-        <div class="container-content">
-          <label for="section-01__container__div__h3">Hot Item</label>
-          <h3 class="h3-main">
+    <section class="main-items">
+      <div class="item-content">
+        <img src="/src/assets/img/img_home_01.png" alt="인기 이미지">
+        <div class="item-letter-wrapper">
+          <label for="first-label">Hot Item</label>
+          <h3 id="first-label" class="item-big-letter">
             인기 상품을<br>
             확인해 보세요
           </h3>
@@ -54,17 +52,15 @@
             판다 마켓에서 확인해 보세요
           </p>
         </div>
-
       </div>
     </section>
 
 
-    <section class="section-main">
-      <div class="container-main">
-
-        <div class="container-content">
-          <label for="section-02__container__div__h3">Search</label>
-          <h3 class="h3-main">
+    <section class="main-items">
+      <div class="item-content">
+        <div class="item-letter-wrapper">
+          <label for="second-label">Search</label>
+          <h3 id="second-label" class="item-big-letter">
             구매를 원하는<br>
             상품을 검색하세요
           </h3>
@@ -73,21 +69,16 @@
             쉽게 찾아보세요
           </p>
         </div>
-
-        <img src="src/assets/img/Img_home_02-1.png" alt="section-02-img">
-
+        <img src="/src/assets/img/img_home_02-1.png" alt="구매 이미지">
       </div>
     </section>
 
-
-    <section class="section-main">
-      <div class="container-main">
-
-        <img src="src/assets/img/Img_home_03.png" alt="section-03-img">
-
-        <div class="container-content">
-          <label for="section-03__container__div__h3">Register</label>
-          <h3 class="h3-main">
+    <section class="main-items">
+      <div class="item-content">
+        <img src="/src/assets/img/img_home_03.png" alt="판매 이미지">
+        <div class="item-letter-wrapper">
+          <label for="third-label">Register</label>
+          <h3 id="third-label" class="item-big-letter">
             판매를 원하는<br>
             상품을 등록하세요
           </h3>
@@ -96,51 +87,44 @@
             쉽게 등록하세요
           </p>
         </div>
-
       </div>
     </section>
 
-    <section class="section-top-bottom">
-      <div class="container-top-bottom c-bottom">
-
+    <section class="top-bottom">
+      <div class="top-bottom-content bottom-content">
         <div>
-          <h3 class="h3-top-bottom">
+          <h3>
             믿을 수 있는<br>
             판다마켓 중고 거래
           </h3>
         </div>
-
-        <img src="src/assets/img/Img_home_bottom.png" alt="bottom-section-img">
-
+        <img src="/src/assets/img/img_home_bottom.png" alt="소개 이미지">
       </div>
     </section>
 
   </main>
 
   <footer class="footer">
-    <div class="footer-container">
-
+    <div class="footer-content">
       <div>
-        <p class="footer-p" style="color: #9CA3AF;">&#x24D2;codeit - 2024</p>
+        <p class="footer-letter" style="color: #9CA3AF;">&#x24D2;codeit - 2024</p>
       </div>
-
       <div style="display: flex; gap: 30px;">
-        <p class="footer-p"><a href="src/pages/privacy" style="color: #E5E7EB;">Privacy Policy</a></p>
-        <p class="footer-p"><a href="src/pages/faq" style="color: #E5E7EB;">FAQ</a></p>
+        <p class="footer-letter"><a href="/src/pages/privacy" style="color: #E5E7EB;">Privacy Policy</a></p>
+        <p class="footer-letter"><a href="/src/pages/faq" style="color: #E5E7EB;">FAQ</a></p>
       </div>
-
       <div>
         <nav>
           <ul>
-            <li class="cursor-pointer"><a href="https://www.facebook.com/codeit.kr" target="_blank"
-                rel="noopener noreferrer"><img src="src/assets/img/ic_facebook.png" alt="facebook-icon"></a></li>
-            <li class="cursor-pointer"><a href="https://x.com/codeitkr" target="_blank" rel="noopener noreferrer"><img
-                  src="src/assets/img/ic_twitter.png" alt="x-icon"></a></li>
-            <li class="cursor-pointer"><a href="https://www.youtube.com/channel/UCCM79CPm2WbBYTRaiNEExbg"
-                target="_blank" rel="noopener noreferrer"><img src="src/assets/img/ic_youtube.png" alt="youtube-icon"></a>
+            <li class="is-cursor-pointer"><a href="https://www.facebook.com/codeit.kr" target="_blank"
+                rel="noopener noreferrer"><img src="/src/assets/img/ic_facebook.png" alt="페이스북"></a></li>
+            <li class="is-cursor-pointer"><a href="https://x.com/codeitkr" target="_blank" rel="noopener noreferrer"><img
+                  src="/src/assets/img/ic_twitter.png" alt="X"></a></li>
+            <li class="is-cursor-pointer"><a href="https://www.youtube.com/channel/UCCM79CPm2WbBYTRaiNEExbg"
+                target="_blank" rel="noopener noreferrer"><img src="/src/assets/img/ic_youtube.png" alt="유튜브"></a>
             </li>
-            <li class="cursor-pointer"><a href="https://www.instagram.com/codeit_kr/" target="_blank"
-                rel="noopener noreferrer"><img src="src/assets/img/ic_instagram.png" alt="instagram-icon"></a></li>
+            <li class="is-cursor-pointer"><a href="https://www.instagram.com/codeit_kr/" target="_blank"
+                rel="noopener noreferrer"><img src="/src/assets/img/ic_instagram.png" alt="인스타그램"></a></li>
           </ul>
         </nav>
       </div>

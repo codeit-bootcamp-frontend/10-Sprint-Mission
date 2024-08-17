@@ -89,7 +89,6 @@ main {
   background-color: #e6f2ff;
   border-radius: 0.8rem;
   color: var(--Gray-800);
-  cursor: pointer;
 }
 
 .social-login__header {

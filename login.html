@@ -14,26 +14,38 @@
     <meta charset="UTF-8" />
     <title>판다마켓 - 로그인</title>
     <link rel="icon" href="images/logo/favicon.ico" />
-    <link
-      rel="stylesheet"
-      as="style"
-      crossorigin
-      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
-    />
-    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="reset.css" />
   </head>
 
   <body>
-    <header>
-      로고 아이콘, 로고 텍스트
-    </header>
-    <main>
-      
-      이메일 라벨 , 이메일 인풋 , 비밀번호 라벨, 비밀번호 인풋
-      로그인 버튼
-      간편 로그인 배너
-      <article>구글 아이콘, 카톡 아이콘</article>
-      회원가입 이동 안내
+    <div>
+      <img src="image/login_logo.svg"/>
+    </div>
+    <main class="container">
+      <form class="email-box">
+        <label class="email-label">이메일</label>
+        <input class="input" placeholder="이메일을 입력해주세요">
+      </form>
+      <form class="pw-box">
+        <label class="pw-label">비밀번호</label>
+        <input class="input" placeholder="비밀번호를 입력해주세요" type="password">
+      </form>
+      <button class="login-btn" onclick="location.href='/login'">로그인</button>
+      <article class="easy-login-box">
+        <div class="easy-content">
+          <span>간편 로그인하기</span>
+          <div class="easy-icon-box">
+            <img class="easy-icon" src="image/login_google.svg" onclick="location.href='https&#58//www.google.com'"/>
+            <img class="easy-icon" src="image/login_kakao.svg" onclick="location.href='https&#58//www.kakaocorp.com/page/'"/>
+          </div>
+        </div>
+      </article>
+      <section class="signup-box">
+        판다마켓이 처음이신가요?&nbsp
+        <a href="signup.html">회원가입</a>
+      </section>
     </main>
   </body>
 </html>

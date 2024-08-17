@@ -1,0 +1,109 @@
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pretendard Variable';
+}
+
+.container{
+    margin-top:40px;
+    width: 640px;
+}
+
+.email-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.email-label,
+.pw-label {
+    font-weight: 700;
+    font-size:18px;
+    line-height: 26px;
+}
+
+.pw-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.input{
+    margin-top:16px;
+    background-color: #F3F4F6;
+    border: 0;
+    border-radius: 12px;
+    height: 56px;
+    padding-left: 24px;
+    /* gap:10px 이거 있고 없고의 차이가 무엇인가요 ?*/
+}
+
+.input:focus {
+    outline-color: #3692FF;;
+}
+
+.input::placeholder{
+    color: #9CA3AF;
+    font-family: 'Pretendard Variable';
+    font-weight: 400;
+}
+
+.login-btn {
+    font-family: 'Pretendard Variable';
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    width: 100%;
+    background-color: #9CA3AF;
+    color: #F3F4F6;
+    border-radius:40px;
+    border: 0px;
+    height: 56px;
+}
+
+.pw-box,
+.login-btn,
+.signup-box,
+.easy-login-box {
+    margin-top:24px
+}
+
+.easy-login-box {
+    background-color: #E6F2FF;
+    height: 74px;
+    font-weight: 500;
+    border: 0;
+    border-radius: 8px;
+}
+
+.easy-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin: 0 23px 0 23px;
+    
+}
+
+.easy-icon-box {
+    display: flex;
+    width: 100px;
+    justify-content: space-between
+}
+
+.easy-icon {
+    width: 42px;
+    height: 42px;
+}
+
+.signup-box {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+}
+

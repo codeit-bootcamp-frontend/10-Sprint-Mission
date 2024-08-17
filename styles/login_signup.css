@@ -1,0 +1,110 @@
+body {
+  color: var(--gray-800);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0 40px;
+}
+
+.head-logo {
+  width: 396px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 640px;
+  margin: 0 auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 16px;
+  font-size: var(--size-2lg);
+  font-weight: bold;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background-color: var(--gray-100);
+  border: 2px solid #00000000;
+  outline: none;
+  font-size: var(--size-lg);
+}
+
+input::placeholder {
+  color: var(--gray-400);
+}
+
+input:focus {
+  border: 2px solid var(--blue-100);
+}
+
+.password-div {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.password-div input {
+  margin: 0;
+}
+
+.password-show {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateX(-24px) translateY(-50%);
+}
+
+button[type="submit"] {
+  padding: 13px 0;
+  border-radius: 9999px;
+  background-color: var(--gray-400);
+  text-align: center;
+  font-size: var(--size-xl);
+  font-weight: 500;
+  color: var(--gray-100);
+}
+
+.easy-login-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 23px;
+  border-radius: 8px;
+  background-color: var(--blue-50);
+  font-size: var(--size-lg);
+}
+
+.easy-login-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.switch-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 24px;
+  font-size: var(--size-md);
+}
+
+.switch-div a {
+  text-decoration-line: underline;
+  color: var(--blue-100);
+}

@@ -1,10 +1,12 @@
 :root {
   /* Color - Primary */
+  --blue-50: #e6f2ff;
   --blue-100: #3692ff;
   --blue-200: #1967d6;
   --blue-300: #1251aa;
 
   /* Color - Secondary */
+  --gray-10: #fcfcfc;
   --gray-50: #f9fafb;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;

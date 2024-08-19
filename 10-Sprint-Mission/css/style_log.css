@@ -1,0 +1,164 @@
+/* 기본 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+/* 로그인 컨테이너 */
+.login-container {
+  width: 640px;
+  height: auto;
+  Gap: 40px;
+  Top: 231px;
+  Left: 640px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* 회원가입 컨테이너 */
+.signUp-container {
+  /* margin:0; */
+  width: 640px;
+  height: auto;
+  Gap: 40px;
+  Top: 60px;
+  Left: 640px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* 로고 */
+.logo img {
+  width: 400px;
+  height: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* 로그인 폼  */
+.login-form {
+  width: 100%;
+}
+
+/* 회원가입 폼  */
+.signUp-form {
+  width: 100%;
+}
+
+/* 폼 공통 */
+.form-group {
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 20px;
+  font-size: 17px;
+  border: 1px solid #E3E7EB;
+  border-radius: 15px;
+  box-sizing: border-box;
+  background-color: #E5E7EB; /* 아주 연한 회색 */
+}
+
+.form-group input:focus {
+  border-color: #3692FF;
+  outline: none;
+  background-color: #f0f0f0; /* 포커스 시 약간 더 진한 회색 */
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-input .toggle-password {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.password-input .toggle-password img {
+  width: 20px;
+  height: 20px;
+}
+
+/* 로그인 버튼 스타일 */
+.login-button {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  background-color: #6B7280;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.login-button:hover {
+  background-color: #007BFF;
+}
+
+/* 간편 로그인 */
+.easy-login p {
+  margin-right: auto;
+  font-size: 14px;
+}
+
+.easy-login-buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e0f7fa; /* 옅은 하늘색 배경 */
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.easy-login-buttons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none; /* 링크의 기본 밑줄 제거 */
+}
+
+.easy-login-buttons img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 회원가입 스타일 */
+.signup-link p {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.signup-link a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

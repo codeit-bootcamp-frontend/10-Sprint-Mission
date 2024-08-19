@@ -6,8 +6,8 @@
     <title>판다마켓 로그인</title>
     <link rel="stylesheet" href="/10-Sprint-Mission/css/style_log.css"> 
 </head>
-<body>
-    <div class="login-container">
+<body class="signUp">
+    <div class="signUp-container">
         <!-- 상단 로고 -->
         <div class="logo">
           <a href="http://127.0.0.1:5500/10-Sprint-Mission/index.html">
@@ -15,18 +15,32 @@
           </a>  
         </div>
 
-        <!-- 로그인폼 -->
+        <!-- 회원 가입폼 -->
         <form class="login-form">
             <div class="form-group">
                 <label for="email">이메일</label>
                 <input type="email" id="email" placeholder="이메일을 입력해 주세요">
             </div>
             <div class="form-group">
+                <label for="nick_name">닉네임</label>
+                <input type="text" id="email" placeholder="닉네임을 입력해 주세요">
+            </div>
+            <div class="form-group">
                 <label for="password">비밀번호</label>
                 <div class="password-input">
                     <input type="password" id="password" placeholder="비밀번호를 입력해 주세요">
                     <button type="button" class="toggle-password">
-                        <img src="/10-Sprint-Mission/img/icons/Property 1=Default.png" alt="보인다."> 
+                        <!-- <img src="/10-Sprint-Mission/img/icons/Property 1=Default.png" alt="보인다.">  -->
+                        <img src="/10-Sprint-Mission/img/icons/Property 1=Variant2.png" alt="안보인다."> 
+                    </button>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">비밀번호 확인</label>
+                <div class="password-input">
+                    <input type="password" id="password" placeholder="비밀번호를 다시 한 번 입력해 주세요">
+                    <button type="button" class="toggle-password">
+                        <!-- <img src="/10-Sprint-Mission/img/icons/Property 1=Default.png" alt="보인다.">  -->
                         <img src="/10-Sprint-Mission/img/icons/Property 1=Variant2.png" alt="안보인다."> 
                     </button>
                 </div>
@@ -48,8 +62,8 @@
         </div>
 
         <!-- 회원가입 -->
-        <div class="login-link">
-            <p>판다마켓이 처음이신가요? <a href="/10-Sprint-Mission/links/signUp.html">회원가입</a></p>
+        <div class="signup-link">
+            <p>이미 회원이신가요? <a href="/10-Sprint-Mission/links/login.html">로그인</a></p>
         </div>
     </div>
 </body>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="style/global.css">
+    <link rel="stylesheet" href="style/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-wrap">
+            <div class="home-button">
+                <a href ="/">
+                    <img class="panda-logo" src="./img/logo/logo.png" alt="판다마켓 홈 버튼">
+                </a>
+            </div>
+            <form method="post">
+                <div class="input-box">
+                    <label for="email">이메일</label>
+                    <input
+                        name="email"
+                        id="email"
+                        type="email"
+                        placeholder="이메일을 입력해주세요"
+                        required
+                    />
+                </div>
+                <div class="input-box">
+                    <label for="password">비밀번호</label>
+                    <input
+                        name="password"
+                        id="password"
+                        type="password"
+                        placeholder="비밀번호를 입력해주세요"
+                        required
+                    />
+                    <img class="visibility-btn" src="img/btn_visibility_off.png" alt="비밀번호 숨김">
+                </div>
+                <button class="login-button" type="submit" >로그인</button>
+            </form>
+            <div class="simple-login-box">
+                <p class="simple-login-text">간편 로그인하기</p>
+                <div class="simple-login-sns-box">
+                    <a href="https://www.google.com/" target="_blank"
+                    ><img
+                        class="simple-login-sns-logo"
+                        src="img/icon/ic_google.png"
+                        alt="구글 로그인"
+                    /></a>
+                    <a href="https://www.kakaocorp.com/page/" target="_blank"
+                    ><img
+                        class="simple-login-sns-logo"
+                        src="img/icon/ic_kakao.png"
+                        alt="카카오톡 로그인"
+                    /></a>
+                </div>
+            </div>
+            <div class="auth-switch-box">
+                <p class="auth-switch-text">판다마켓이 처음이신가요?</p>
+                <a class="switch-to-signup" href="/signup.html">회원가입</a>
+            </div>
+        </div>
+    </div>
+    
+        
+</body>
+</html>

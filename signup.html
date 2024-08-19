@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="/images/common/logo_icon_w16x3.png" />
     <link rel="apple-touch-icon" href="/images/common/logo_icon_w16x3.png" />
-    <title>로그인 - 판다마켓</title>
+    <title>회원가입 - 판다마켓</title>
     <link
       rel="stylesheet"
       as="style"
@@ -27,18 +27,24 @@
       </a>
     </header>
     <main>
-      <h1 class="blind">판다마켓 로그인</h1>
+      <h1 class="blind">판다마켓 회원가입</h1>
       <form>
-        <label for="login_email">이메일</label>
+        <label for="signup_email">이메일</label>
         <input
-          id="login_email"
+          id="signup_email"
           type="email"
           placeholder="이메일을 입력해주세요"
         />
-        <label for="login_pw">비밀번호</label>
+        <label for="signup_name">닉네임</label>
+        <input
+          id="signup_name"
+          type="text"
+          placeholder="닉네임을 입력해주세요"
+        />
+        <label for="signup_pw">비밀번호</label>
         <div class="password-div">
           <input
-            id="login_pw"
+            id="signup_pw"
             type="password"
             placeholder="비밀번호를 입력해주세요"
           />
@@ -46,7 +52,18 @@
             <img src="/images/login_signup/eye_close.svg" alt="비밀번호 보기" />
           </button>
         </div>
-        <button type="submit">로그인</button>
+        <label for="signup_pwpw">비밀번호 확인</label>
+        <div class="password-div">
+          <input
+            id="signup_pwpw"
+            type="password"
+            placeholder="비밀번호를 다시 한 번 입력해주세요"
+          />
+          <button class="password-show">
+            <img src="/images/login_signup/eye_close.svg" alt="비밀번호 보기" />
+          </button>
+        </div>
+        <button type="submit">회원가입</button>
       </form>
       <div class="easy-login-div">
         <span>간편 로그인하기</span>
@@ -66,8 +83,8 @@
         </div>
       </div>
       <div class="switch-div">
-        <span>판다마켓이 처음이신가요?</span>
-        <a href="/signup.html">회원가입</a>
+        <span>이미 회원이신가요?</span>
+        <a href="/login.html">로그인</a>
       </div>
     </main>
   </body>

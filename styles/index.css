@@ -1,17 +1,25 @@
+body {
+  color: var(--gray-700);
+}
+
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   /* 요구사항은 1920px 기준 좌우 여백 200px 유지지만,
   퍼센트 활용값이 더 자연스럽다고 판단하여 max로 결정케 함 */
-  padding: 5px max(calc((100% - 1100px) / 2), 200px);
+  padding: 8px max(calc((100% - 1100px) / 2), 200px);
 }
 
-header .head-login {
-  padding: 10px 30px;
+.head-logo {
+  width: 153px;
+}
+
+.head-login {
+  padding: 8px 32px;
   background-color: var(--blue-100);
   border: none;
-  color: white;
+  color: var(--gray-100);
   border-radius: 8px;
 }
 
@@ -23,6 +31,10 @@ header .head-login {
   background-color: #cfe5ff;
 }
 
+.banner-image {
+  width: 746px;
+}
+
 .banner-content {
   width: 350px;
   height: 290px;
@@ -30,7 +42,7 @@ header .head-login {
   flex-direction: column;
 }
 
-.banner-content span {
+.banner-content h2 {
   font-weight: 600;
   font-size: var(--size-4xl);
   line-height: var(--line-4xl);
@@ -39,12 +51,12 @@ header .head-login {
 .banner-content a {
   width: 100%;
   margin-top: 32px;
-  padding: 16px 0;
+  padding: 12px 0;
   border-radius: 9999px;
   background-color: var(--blue-100);
   text-align: center;
   font-size: var(--size-xl);
-  color: white;
+  color: var(--gray-100);
 }
 
 .cards {
@@ -58,7 +70,7 @@ header .head-login {
 .card {
   display: flex;
   border-radius: 15px;
-  background-color: var(--gray-50);
+  background-color: var(--gray-10);
 }
 
 .card:nth-child(2n + 1) {
@@ -71,8 +83,12 @@ header .head-login {
   text-align: right;
 }
 
+.card-image {
+  width: 588px;
+}
+
 .card-content {
-  width: 300px;
+  width: 400px;
   padding: 0 48px;
   display: flex;
   flex-direction: column;
@@ -114,18 +130,12 @@ footer {
 
 .foot-copy {
   justify-content: left;
-}
-
-.foot-copy span {
-  color: var(--gray-200);
+  color: var(--gray-400);
 }
 
 .foot-link {
   justify-content: center;
   gap: 30px;
-}
-
-.foot-link a {
   color: var(--gray-200);
 }
 

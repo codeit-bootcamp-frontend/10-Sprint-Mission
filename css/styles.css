@@ -5,41 +5,27 @@
 @import "components/footer.css";
 
 /* screens */
-@import "screens/landing-page.css";
+@import "screens/landing.css";
+@import "screens/login-signup.css";
+
 
 * {
   box-sizing: border-box;
 }
 
-html {
-  width: 100vw;
-  overflow-x: hidden;
-}
-
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   margin: 0;
   font-family: Pretendard;
   font-style: normal;
 }
 
-.landing-vertical__wrap,
-.landing-main__wrap,
-.footer__wrap {
-  text-wrap: nowrap;
-}
-
-@media (min-width: 1920px) {
+@media (max-width: 1919px) {
   .header__wrap {
     padding: 9px 400px;
   }
 }
-
-@media (max-width: 1919px) {
-  .header__wrap {
-    padding: 9px 200px;
-  }
-}
-
-/* Q. header__wrap에 padding: 9px 200px을,
-@media (min-width: 1920px)로 9px 400px을 할당했을 때
-미디어 쿼리가 작동하지 않는 이유? */

@@ -1,20 +1,19 @@
 .footer__wrap {
-  background: var(--Secondary-900);
   padding: 32px 400px;
+  background: var(--Secondary-900);
 }
 
 .footer__content {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
+  justify-content: space-between;
 }
 
 .footer__copyright {
-  color: var(--Secondary-400);
-  text-align: center;
-
   font-size: 16px;
   font-weight: 400;
+  text-align: center;
+  color: var(--Secondary-400);
   line-height: normal;
 }
 
@@ -24,12 +23,11 @@
 }
 
 .footer__info {
-  text-decoration: none;
-  color: var(--Secondary-200);
-  text-align: center;
-
   font-size: 16px;
   font-weight: 400;
+  text-align: center;
+  text-decoration: none;
+  color: var(--Secondary-200);
   line-height: normal;
 }
 
@@ -39,8 +37,8 @@
 
 .footer__shortcut-btns {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .footer__shortcut-btn {

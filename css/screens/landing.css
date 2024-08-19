@@ -1,0 +1,142 @@
+main,
+footer {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.main__divider {
+  height: 70px;
+}
+
+.landing-vertical {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 540px;
+  background: #cfe5ff;
+}
+
+.landing-vertical__wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 200px 405px 0 405px;
+}
+
+.landing-vertical__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 60px 0;
+  gap: 32px;
+}
+
+.landing-vertical__title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--Secondary-700);
+  line-height: 1.4;
+}
+
+.landing-vertical__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  padding: 16px 124px;
+  border-radius: 40px;
+  background-color: var(--Primary-100);
+  text-decoration: none;
+  color: var(--Secondary-50);
+  gap: 10px;
+}
+
+.landing-vertical__btn:hover {
+  background-color: var(--Primary-200);
+}
+
+.landing-vertical__btn:active {
+  background-color: #1251aa;
+}
+
+.landing-vertical__btn-text {
+  font-size: 20px;
+  font-weight: 600;
+  /* pretendard/xl-20px-semibold */
+  line-height: 32px;
+}
+
+.landing-vertical__wrap--bottom {
+  gap: 69px;
+}
+
+.landing-main {
+  padding: 0 0 138px 0;
+  background-color: #fcfcfc;
+}
+
+.landing-main__wrap {
+  display: flex;
+  background-color: #ffffff;
+}
+
+.landing-main__wrap:first-child {
+  padding: 138px 605px 138px 360px;
+}
+
+.landing-main__wrap--right {
+  justify-content: flex-end;
+  padding: 138px 360px 138px 591px;
+}
+
+.landing-main__wrap:last-child {
+  padding: 138px 573px 138px 360px;
+}
+
+.landing-main__card {
+  display: flex;
+  align-items: center;
+  background: #fcfcfc;
+  gap: 64px;
+}
+
+.landing-main__card--right {
+  justify-content: flex-end;
+}
+
+.landing-main__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.landing-main__content--right {
+  text-align: right;
+}
+
+.landing-main__keyword {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--Primary-100);
+  /* pretendard/2lg-18px-bold */
+  line-height: 26px;
+}
+
+.landing-main__title {
+  margin: 12px 0 24px;
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--Secondary-700);
+  line-height: 1.4;
+  letter-spacing: 0.8px;
+}
+
+.landing-main__desc {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--Secondary-700);
+  /* pretendard/2xl-24px-medium */
+  line-height: 32px;
+}

@@ -8,6 +8,7 @@
 @import "screens/landing.css";
 @import "screens/login-signup.css";
 
+
 * {
   box-sizing: border-box;
 }
@@ -23,7 +24,7 @@ body {
   font-style: normal;
 }
 
-@media (min-width: 1920px) {
+@media (max-width: 1919px) {
   .header__wrap {
     padding: 9px 400px;
   }

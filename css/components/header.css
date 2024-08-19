@@ -33,8 +33,7 @@
   text-align: center;
   text-decoration: none;
   color: var(--Secondary-100);
-  /* pretendard/lg-16px-semibold */
-  line-height: 26px;
+  line-height: 1.62;
 }
 
 .header__login-btn:hover {

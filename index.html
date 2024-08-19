@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,28 +11,28 @@
 <body>
   <header>
     <div class="header-container max-container ">
-      <a href="/">
+      <a href="/" title="판다 홈으로 이동">
         <img src="/images/logo.png" alt="판다 로고" />
       </a>
-      <button class="btn-login" onclick="location.href='/login.html'">로그인</button>
+      <a class="btn-login" onclick="location.href='/login.html'">로그인</a>
     </div>
   </header>
-  <main>
+  <main class="index__main">
     <section class="hero">
       <div class="hero-container">
         <div class="hero-content">
-          <h2 class="hero-content__title">일상의 모든 물건을<br>거래해 보세요</h2>
-          <button class="btn-items" onclick="location.href='/items.html'">구경하러 가기</button>
+          <h3 class="hero-content__title">일상의 모든 물건을<br>거래해 보세요</h3>
+          <a class="btn-login" href="/items.html">구경하러 가기</a>
         </div>
         <img src="/images/hero.png" alt="판다 이미지" class="hero__image" />
       </div>
     </section>
     <section class="hot-item">
       <div class="hot-item-container">
-        <img src="/images/Img_home_01.png" alt="Img_home_01.png" class="hot-item__image" />
+        <img src="/images/Img_home_01.png" alt="쇼핑하는 판다 둘 이미지" class="hot-item__image" />
         <div class="hot-item-content">
           <span class="hot-item-content__span">Hot item</span>
-          <h2 class="hot-item-content__title">인기 상품을<br>확인해 보세요</h2>
+          <h3 class="hot-item-content__title">인기 상품을<br>확인해 보세요</h3>
           <p class="hot-item-content__description">가장 HOT한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
         </div>
       </div>
@@ -41,18 +41,18 @@
       <div class="search-container">
         <div class="search-content">
           <span class="search-content__span">Search</span>
-          <h2 class="search-content__title">구매를 원하는<br>상품을 검색하세요</h2>
+          <h3 class="search-content__title">구매를 원하는<br>상품을 검색하세요</h3>
           <p class="search-content__description">가구매하고 싶은 물품은 검색해서<br>쉽게 찾아보세요</p>
         </div>
-        <img src="/images/Img_home_02.png" alt="Img_home_02.png" class="search__image" />
+        <img src="/images/Img_home_02.png" alt="돋보기 검색 이미지" class="search__image" />
       </div>
     </section>
     <section class="register">
       <div class="register-container">
-        <img src="/images/Img_home_03.png" alt="Img_home_03.png" class="register__image" />
+        <img src="/images/Img_home_03.png" alt="상품 선택 이미지" class="register__image" />
         <div class="register-content">
           <span class="register-content__span">Register</span>
-          <h2 class="register-content__title">판매를 원하는<br>상품을 등록하세요</h2>
+          <h3 class="register-content__title">판매를 원하는<br>상품을 등록하세요</h3>
           <p class="register-contents__description">어떤 물건이든 판매하고 싶은 상품을<br>쉽게 등록하세요</p>
         </div>
       </div>
@@ -60,9 +60,9 @@
     <section class="bottom">
       <div class="bottom-container">
         <div class="bottom-content">
-          <h2 class="bottom-content__title">믿을 수 있는<br>판다마켓 중고 거래</h2>
+          <h3 class="bottom-content__title">믿을 수 있는<br>판다마켓 중고 거래</h3>
         </div>
-        <img src="/images/Img_home_bottom.png" alt="Img_home_bottom.png" class="bottom-image" />
+        <img src="/images/Img_home_bottom.png" alt="대화하는 판다 둘 이미지" class="bottom-image" />
       </div>
     </section>
   </main>
@@ -72,20 +72,20 @@
         <span>©codeit - 2024</span>
       </section>
       <section class="footer-mid">
-        <a href="/privacy.html" target="_blank" class="footer-mid__a">Privacy Policy</a>
-        <a href="/faq.html" target="_blank" class="footer-mid__a">FAQ</a>
+        <a href="/privacy.html" target="_blank" class="footer-mid__link">Privacy Policy</a>
+        <a href="/faq.html" target="_blank" class="footer-mid__link">FAQ</a>
       </section>
       <section class="footer-social">
-        <a href="https://www.facebook.com" target="_blank">
+        <a href="https://www.facebook.com" target="_blank" title="페이스북 바로가기">
           <img src="/images/ic_facebook.png" alt="ic_facebook.png" />
         </a>
-        <a href="https://x.com/?lang=en" target="_blank">
+        <a href="https://x.com/?lang=en" target="_blank" title="트위터 바로가기">
           <img src="/images/ic_twitter.png" alt="ic_twitter.png" />
         </a>
-        <a href="https://www.youtube.com" target="_blank">
+        <a href="https://www.youtube.com" target="_blank" title="유튜브 바로가기">
           <img src="/images/ic_youtube.png" alt="ic_youtube.png" />
         </a>
-        <a href="https://www.instagram.com" target="_blank">
+        <a href="https://www.instagram.com" target="_blank" title="인스타그램 바로가기">
           <img src="/images/ic_instagram.png" alt="ic_instagram.png" />
         </a>
       </section>

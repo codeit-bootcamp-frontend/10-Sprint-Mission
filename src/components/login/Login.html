@@ -1,0 +1,66 @@
+<section class="login-wrapper">
+  <div class="login-content">
+    <form class="form">
+      <a href="/src/"><img src="/src/assets/img/logo_lg.png" alt="로고 이미지"></a>
+      <div class="login-content-without-img">
+        <div class="login-content-without-signup">
+          <div class="login-content-without-btn">
+            <div class="input-email">
+              <label class="label-font" for="email-tag">이메일</label>
+              <div class="input-content">
+                <input class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요"
+                  required>
+                <div
+                  style="margin-left: 12px; margin-right: 24px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
+                </div>
+              </div>
+            </div>
+            <div class="input-password">
+              <label class="label-font" for="password-tag">비밀번호</label>
+              <div class="input-content">
+                <input class="password-tag" autocomplete="off" id="password-tag" type="password"
+                  placeholder="비밀번호를 입력해주세요" required>
+                <img
+                  style="margin-left: 12px; margin-right: 24px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;"
+                  class="password-icon" src="/src/assets/img/btn_visibility_off.svg">
+              </div>
+            </div>
+          </div>
+          <button class="login-submit-btn btn is-cursor-pointer" type="submit" disabled>로그인</button>
+        </div>
+        <div class="convenience-login">
+          <div class="convenience-login-content">
+            <p>간편 로그인하기</p>
+            <nav>
+              <ul>
+                <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+                  <li
+                    style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: white; border-radius: 9999px; border: 1px #F9FAFB">
+                    <img src="/src/assets/img/ic_google.png" alt="구글 로그인">
+                  </li>
+                </a>
+                <a href="https://www.kakaocorp.com/page/" target="_blank" rel="noopener noreferrer">
+                  <li
+                    style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: #F5E14B; border-radius: 9999px; border: 1px #F9FAFB">
+                    <img src="/src/assets/img/ic_kakao.png" alt="카카오톡 로그인">
+                  </li>
+                </a>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+        <div style="gap:4px; display: flex; align-items: center; justify-content: center;">
+          <p
+            style="color: #1F2937; font-size: 14px; font-family: Pretendard; font-weight: 500; line-height: 24px; word-wrap: break-word">
+            판다마켓이 처음이신가요?</p><a
+            style="color: #3692FF; font-size: 14px; font-family: Pretendard; font-weight: 500; text-decoration: underline; word-wrap: break-word"
+            href="/src/pages/signup/">회원가입</a>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</section>
+
+<script src="/src/js/Login.js"></script>

@@ -2,21 +2,20 @@
 <html lang="ko">
 
 <head>
-  <title>판다마켓</title>
+  <title>판다마켓 - 상품</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="판다마켓 구경오라이">
-  
   <link rel="icon" href="/src/assets/img/panda_head.svg">
-  
   <link rel="stylesheet" href="/src/styles/base.css">
+
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; align-items: center;">
 
-  <div data-include-html="/src/pages/home.html"></div>
+  <div data-include-component="/src/components/items/Items.html"></div>
 
-  <script src="/src/js/IncludeHtml.js"></script>
+  <script src="/src/js/IncludeComponent.js"></script>
 </body>
 
 </html>

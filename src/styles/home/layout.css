@@ -1,0 +1,118 @@
+.header {
+  display: flex;
+  height: 2.08rem;
+  justify-content: space-between;
+}
+
+.login-btn {
+  padding: 0.5rem 0.96rem;
+  font-size: 0.67rem;
+  font-family: Pretendard;
+  font-weight: 25rem;
+  line-height: 1.08rem;
+  word-wrap: break-word;
+  border-radius: 0.33rem;
+}
+
+.top-bottom {
+  background-color: var(--background-top-bottom-color);
+  width: 100%;
+  height: 22.5rem;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+.top-bottom-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-letter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.33rem;
+}
+
+.top-btn {
+  font-size: 0.83rem;
+  font-family: Pretendard;
+  font-weight: 25rem;
+  line-height: 1.33rem;
+  word-wrap: break-word;
+  padding: 0.67rem 5.17rem;
+  border-radius: 1.67rem;
+  margin-bottom: 2.5rem;
+}
+
+.main-items {
+  width: 100%;
+  height: 30rem;
+  padding: 5.75rem 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-items:nth-of-type(odd){
+  padding-left: 15rem;
+}
+
+.main-items:nth-of-type(even){
+  padding-right: 15rem;
+}
+
+.item-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.67rem;
+}
+
+.item-letter-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item-letter-wrapper > h3 {
+  padding-bottom: 0.5rem;
+}
+
+.item-big-letter {
+  font-size: 1.67rem;
+  font-family: Pretendard;
+  font-weight: 29.17rem;
+  line-height: 2.33rem;
+  letter-spacing: 0.03rem;
+}
+
+.bottom-content {
+  display: flex;
+  gap: 2.875rem;
+}
+
+.footer{
+  width: 100%;
+  height: 6.67rem;
+  background-color: var(--secondary-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+  width: 46.67rem;
+  height: 4rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+.footer-letter {
+  font-size: 0.67rem;
+  font-family: Pretendard;
+  font-weight: 16.67rem;
+  word-wrap: break-word
+  }

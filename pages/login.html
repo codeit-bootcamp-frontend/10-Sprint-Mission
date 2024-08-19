@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/login.css" />
+    <title>로그인 | 판다마켓</title>
+  </head>
+  <body>
+    <main>
+      <section class="login">
+        <h2 class="login__header">
+          <a href="/">
+            <img src="/assets/images/logo-lg.png" alt="판다마켓 로고" />
+          </a>
+        </h2>
+        <form action="#" method="post">
+          <label for="email" class="login__label">이메일</label>
+          <div class="login__field--id">
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="이메일을 입력해주세요"
+              class="login__input"
+              required
+            />
+          </div>
+          <label for="password" class="login__label login__label--password"
+            >비밀번호</label
+          >
+          <div class="login__field--password">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="비밀번호를 입력해주세요"
+              class="login__input"
+              required
+            />
+            <button
+              type="button"
+              class="login__password-toggle"
+              aria-label="비밀번호 보기"
+            >
+              <img
+                src="/assets/images/btn-visibility-off.svg"
+                class="login__password-toggle-icon login__password-toggle-icon--inactive"
+                alt="비밀번호 숨기기 아이콘"
+              />
+              <img
+                class="login__password-toggle-icon login__password-toggle-icon--active"
+                src="/assets/images/btn-visibility-on.svg"
+                alt="비밀번호 보기 아이콘"
+              />
+            </button>
+          </div>
+          <button type="submit" class="login__submit">로그인</button>
+        </form>
+      </section>
+      <aside class="social-login">
+        <h3 class="social-login__header">간편 로그인하기</h3>
+        <ul class="social-login__list">
+          <li>
+            <a
+              href="https://www.google.com/"
+              class="social-button social-button--google"
+            >
+              <img src="/assets/images/ic-google.svg" alt="구글 아이콘" />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.kakaocorp.com/page/"
+              class="social-button social-button--kakao"
+              ><img src="/assets/images/ic-kakao.svg" alt="카카오 아이콘" />
+            </a>
+          </li>
+        </ul>
+      </aside>
+      <section class="signup-link">
+        <p class="signup-link__text">
+          판다마켓이 처음이신가요? <a href="/pages/signup.html">회원가입</a>
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

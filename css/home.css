@@ -83,6 +83,7 @@
 .register-content {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
 .hot-item-content__span,
@@ -103,12 +104,6 @@
   color: var(--Secondary-700, #374151);
   font-size: 24px;
   font-weight: 500;
-}
-
-.hot-item .content-title,
-.register-content .content-title {
-  margin-top: 12px;
-  margin-bottom: 24px;
 }
 
 .search {

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>판다마켓 - 로그인</title>
+    <link rel="icon" href="images/logo/favicon.ico" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="styles/login-signup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+  <body>
+    <div class="login-background">
+    <div class="login-container">
+      <div class="login-logo-box">
+        <a class="gohome" href="/">
+         <img class="login-logo1" src="images/pandaface.png" alt="판다얼굴 로고 그림">
+         <img class="login-logo2" src="images/pandamarket.png" alt="판다마켓 글씨 그림">
+        </a>
+      </div>
+      <div class="form-box">
+        <form>
+          <label>이메일</label>
+          <input
+            name="email"
+            type="email"
+            placeholder="이메일을 입력해주세요"
+          />
+          <label>비밀번호</label>
+          <div class="password-container">
+          <input
+            class="password-input"
+            autocomplete="off"
+            name="password"
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+          <span class="toggle-password">
+            <i class="fas fa-eye-slash"></i>
+          </span>
+          </div>
+          <button class="button-off">로그인</button>
+      </div>
+      <div class="social-login-box">
+        <p class="social-login-p">간편 로그인하기</p>
+        <div class="social-login-link">
+          <a class="social-login google" href="https://accounts.google.com/ServiceLogin?hl=ko&passive=true">
+           <img src="images/Component 2.png" alt="구글 로그인">
+          </a>
+          <a class="social-login kakao" href="https://accounts.kakao.com/login">
+           <img src="images/Component 3.png" alt="카카오톡 로그인">
+          </a>
+        </div>
+      </div>
+      <p class="sign-up-login">판다마켓이 처음이신가요?
+        <a href="signup.html">회원가입</a>
+      </p>
+    </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

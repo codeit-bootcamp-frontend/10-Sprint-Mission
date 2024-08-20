@@ -64,13 +64,7 @@
   font-weight: 700;
   line-height: 26px;
   word-wrap: break-word;
-
 }
-
-.login-content-without-img {
-  gap: 24px;
-}
-
 
 .login-submit-btn {
   width: 100%;

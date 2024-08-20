@@ -62,11 +62,6 @@
   word-wrap: break-word;
 }
 
-.login-content-without-img {
-  gap: 24px;
-}
-
-
 .login-submit-btn {
   width: 100%;
   height: 56px;

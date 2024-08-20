@@ -1,6 +1,7 @@
 .login-content {
   width: 640px;
   height: 618px;
+  text-align: center;
 }
 
 .login-wrapper {
@@ -52,6 +53,7 @@
 }
 
 .label-font {
+  text-align: left;
   color: var(--secondary-800);
   font-size: 18px;
   font-family: Pretendard;

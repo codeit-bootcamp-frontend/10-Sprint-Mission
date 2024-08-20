@@ -1,0 +1,117 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  padding: 6rem 0;
+}
+
+.auth-logo > img {
+  width: 39.6rem;
+  height: 13.2rem;
+}
+
+.auth-form {
+  width: 64rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.auth-form > label {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 2.6rem;
+  color: var(--gray800);
+}
+
+.auth-form > .auth-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: var(--gray100);
+  border-radius: 1.2rem;
+  padding: 1.6rem 2.4rem;
+}
+
+.auth-form > .auth-input:focus-within {
+  outline: 1px solid var(--blue);
+}
+
+.auth-form > .auth-input > input {
+  background-color: var(--gray100);
+  width: 100%;
+  height: 2.6rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+}
+
+.auth-form > .auth-input > input::placeholder {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: var(--gray400);
+}
+
+.auth-form > .auth-input > input:focus {
+  outline: none;
+}
+
+.auth-form > .auth-input > .visibility {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.auth-form > button {
+  background-color: var(--gray400);
+  padding: 1.6rem 12.4rem;
+  gap: 1rem;
+  border-radius: 4rem;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 3.2rem;
+  color: var(--gray100);
+  cursor: pointer;
+}
+
+.auth-form > .other-account {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E6F2FF; 
+  padding: 1.6rem 2.3rem;
+  gap: 1rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 2.6rem;
+  color: var(--gary800);
+}
+
+.auth-form > .other-account > .icon-container {
+  display: flex;
+  gap: 1.6rem;
+}
+
+.auth-form > .other-account img {
+  width: 4.2rem;
+  height: 4.2rem;
+}
+
+.auth-form > .auth-link {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 2.4rem;
+  text-align: center;
+  color: var(--gary800);
+}
+
+.auth-form > .auth-link > a {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--blue);
+  text-decoration: underline;
+}

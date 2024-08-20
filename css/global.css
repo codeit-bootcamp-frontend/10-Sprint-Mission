@@ -16,6 +16,11 @@
   --size-max-width: 1200px;
 }
 
+@font-face {
+  font-family: 'ROKAF Sans'; /* 폰트 이름 정의 */
+  src: url('../fonts/ROKAF_Sans_Bold.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Pretendard', sans-serif;

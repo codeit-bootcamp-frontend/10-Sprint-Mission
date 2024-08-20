@@ -3,6 +3,10 @@
   margin: auto;
 }
 
+.panda-market {
+  display: none;
+}
+
 .header-container {
   width: 100%;
   height: 70px;
@@ -47,14 +51,14 @@
   margin-bottom: 100px;
 }
 
-.hero__image {
+.hero-image {
   height: 340px;
 }
 
 .btn-items {
   width: 357px;
   height: 56px;
-  padding: 16px 124px 16px 124px;
+  padding: 16px 124px;
   border-radius: 40px;
   color: var(--Secondary-50);
   background-color: var(--Primary-100);
@@ -204,8 +208,9 @@
     align-items: center;
   }
 
-  .hero__image {
+  .hero-image {
     width: 100%;
+    object-fit: cover;
   }
 
   .hero-content {
@@ -217,6 +222,13 @@
 
   .hero-content .content-br {
     display: none;
+  }
+
+  .hot-item,
+  .register,
+  .search {
+    display: block;
+    margin: 0 15px;
   }
 
   .hot-item-container,
@@ -242,12 +254,18 @@
     order: 1;
   }
 
+  .content-image {
+    width: 100%;
+    object-fit: cover;
+  }
+
   .content-br {
     display: none;
   }
 
   .content-title {
     font-size: 32px;
+    text-align: center;
   }
 
   .content-description {
@@ -258,6 +276,11 @@
     height: 927px;
   }
 
+  .bottom-image {
+    width: 100%;
+    object-fit: cover;
+  }
+
   .bottom-container {
     height: 100%;
     flex-direction: column;
@@ -265,7 +288,36 @@
     align-items: center;
   }
 
-  .bottom-content {
-    text-align: center;
+  @media screen and (max-width: 767px) {
+    .panda-market-logo {
+      display: none;
+    }
+
+    .panda-market {
+      display: inline;
+      color: var(--Primary-100, #3692ff);
+      font-family: 'ROKAF Sans';
+      font-size: 25.633px;
+      font-weight: 700;
+    }
+
+    .hero {
+      height: 540px;
+    }
+
+    .hero-image {
+      height: 207px;
+    }
+
+    .hero-content .content-br {
+      display: inline;
+    }
+
+    .btn-items {
+      width: 240px;
+      height: 48px;
+      padding: 12px 71px;
+      font-size: 18px;
+    }
   }
 }

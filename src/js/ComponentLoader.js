@@ -1,7 +1,7 @@
 import {ComponentCheckFunction} from './ComponentCheckFunction.js';
 
 const ComponentLoader = () => {
-  let allElements = document.getElementsByTagName('*');
+  const allElements = document.getElementsByTagName('*');
   Array.prototype.forEach.call(allElements, (element) => {
     ComponentCheckFunction(element);
   })

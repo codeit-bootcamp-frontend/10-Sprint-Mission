@@ -1,9 +1,9 @@
 import {ComponentCheckFunction} from "./ComponentCheckFunction.js";
 
 const HtmlLoader = () => {
-  let allElements = document.getElementsByTagName('*');
+  const allElements = document.getElementsByTagName('*');
   Array.prototype.forEach.call(allElements, (element) => {
-    let includeHtml = element.dataset.includeHtml;
+    const includeHtml = element.dataset.includeHtml;
     if (includeHtml) {
       fetch(includeHtml)
         .then(response => {
@@ -14,7 +14,7 @@ const HtmlLoader = () => {
           element.outerHTML = data;
           const loadEvent = new Event('load');
           element.addEventListener('load', () => { 
-            let allElements = document.getElementsByTagName('*');
+            const allElements = document.getElementsByTagName('*');
             Array.prototype.forEach.call(allElements, (element) => {
               ComponentCheckFunction(element);
             })

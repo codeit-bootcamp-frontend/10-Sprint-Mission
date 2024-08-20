@@ -1,5 +1,5 @@
 export const ComponentCheckFunction = (element) => {
-  let includeComponent = element.dataset.includeComponent;
+  const includeComponent = element.dataset.includeComponent;
   if (includeComponent) {
     fetch(includeComponent)
       .then(response => {
@@ -22,7 +22,7 @@ export const ComponentCheckFunction = (element) => {
           const srcMatch = s.match(/src=['"]?([^'"]+)['"]?/);
   
           if (srcMatch && srcMatch[1]) newScript.src = srcMatch[1];
-          else newScript.text = s.replace(/<script.*?>|<\/script>/g, '');
+            else newScript.text = s.replace(/<script.*?>|<\/script>/g, '');
   
           document.body.appendChild(newScript);
         }

@@ -1,8 +1,10 @@
-import {ComponentLoader} from './ComponentCheckFunction.js';
+import {ComponentCheckFunction} from './ComponentCheckFunction.js';
 
-window.addEventListener('load', () => {
+const ComponentLoader = () => {
   let allElements = document.getElementsByTagName('*');
   Array.prototype.forEach.call(allElements, (element) => {
-    ComponentLoader(element);
+    ComponentCheckFunction(element);
   })
-})
+}
+
+window.addEventListener('load', ComponentLoader)

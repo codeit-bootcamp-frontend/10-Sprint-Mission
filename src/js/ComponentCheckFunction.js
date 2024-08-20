@@ -1,4 +1,4 @@
-export const ComponentLoader = (element) => {
+export const ComponentCheckFunction = (element) => {
   let includeComponent = element.dataset.includeComponent;
   if (includeComponent) {
     fetch(includeComponent)

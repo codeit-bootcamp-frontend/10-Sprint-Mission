@@ -1,6 +1,6 @@
-import {ComponentLoader} from "./ComponentCheckFunction.js";
+import {ComponentCheckFunction} from "./ComponentCheckFunction.js";
 
-window.addEventListener('load', () => {
+const HtmlLoader = () => {
   let allElements = document.getElementsByTagName('*');
   Array.prototype.forEach.call(allElements, (element) => {
     let includeHtml = element.dataset.includeHtml;
@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
           element.addEventListener('load', () => { 
             let allElements = document.getElementsByTagName('*');
             Array.prototype.forEach.call(allElements, (element) => {
-              ComponentLoader(element);
+              ComponentCheckFunction(element);
             })
           });
           element.dispatchEvent(loadEvent);
@@ -28,4 +28,6 @@ window.addEventListener('load', () => {
 
     }
   })
-})
+}
+
+window.addEventListener('load', HtmlLoader);

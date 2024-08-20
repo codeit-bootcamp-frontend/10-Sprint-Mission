@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <div class="signup-container">
+        <img id="logo" src="images/Property 1=sm.png">
+        <div class="email_nickname_passwordFrame">
+            <div class="emailFrame">
+                <p class="email_nickname_password">이메일</p>
+                <input type="email" id="email" placeholder="이메일을 입력해주세요">
+            </div>
+            <div class="nicknameFrame">
+                <p class="email_nickname_password">닉네임</p>
+                <input type="text" id="nickname" placeholder="닉네임을 입력해주세요">
+            </div>
+            
+            <div class="passwordFrame">
+                <p class="email_nickname_password">비밀번호</p>
+                <div class="password-input-container">
+                    <input type="password" id="password" placeholder="비밀번호를 입력해주세요">
+                    <img src="images/Property 1=Variant2.svg" class="eyeicon">
+                </div>
+            </div>
+            <div class="password_checkFrame">
+                <p class="email_nickname_password">비밀번호 확인</p>
+                <div class="password-input-container">
+                    <input type="text" id="password-check" placeholder="비밀번호를 입력해주세요">
+                    <img src="images/Property 1=Default.svg" class="eyeicon">
+                </div>
+            </div>
+        </div>
+        <button type="button" id="signup_button">회원가입</button>
+        <div class="easy-loginFrame">
+            <div class="easy-login">
+                <p>간편 로그인</p>
+                <div class="icon_box">
+                    <a href="https://www.google.com/"><img src="images/Component 2.svg" alt="Google"></a> 
+                    <a href="https://www.kakaocorp.com/page/"><img src="images/Component 3.svg"></a>
+                </div>
+            </div>
+        </div>
+        <div class="text_footer">
+            <p>이미 회원이신가요? <a href="/login.html" id="login">로그인</a></p>
+        </div>
+    </div>
+</body>
+</html>

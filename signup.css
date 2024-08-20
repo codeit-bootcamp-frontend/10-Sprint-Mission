@@ -1,0 +1,110 @@
+html {
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+.signup-container {
+    width: 640px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    place-items: center;
+}
+#logo {
+    width: 396px;
+    height: 132px;
+    margin-bottom: 40px;
+}
+.email_nickname_passwordFrame {
+    margin-bottom: 24px;
+}
+.email_nickname_password {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+}
+#email {
+    background-color: #F3F4F6;
+    width: 640px;
+    height: 56px;
+    border-radius: 12px;
+    border: none;
+    padding-left: 10px;
+}
+#nickname {
+    background-color: #F3F4F6;
+    width: 640px;
+    height: 56px;
+    border-radius: 12px;
+    border: none;
+    padding-left: 10px;
+}
+.password-input-container {
+    position: relative;
+}
+#password {
+    background-color: #F3F4F6;
+    width: calc(100% - 36px); 
+    height: 56px;
+    border-radius: 12px;
+    border: none;
+    padding-left: 10px;
+}
+#password-check {
+    background-color: #F3F4F6;
+    width: calc(100% - 36px); 
+    height: 56px;
+    border-radius: 12px;
+    border: none;
+    padding-left: 10px;
+}
+.eyeicon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+}
+#signup_button {
+    background-color: #9CA3AF;
+    color: #F3F4F6;
+    width: 640px;
+    height: 56px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 40px;
+    border: none;
+}
+.easy-loginFrame {
+    width: 640px;
+    height: 74px;
+    background-color: #E6F2FF;
+    border-radius: 8px;
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.easy-login {
+    color: #1F2937;
+    width: 596px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    align-items: center;
+    justify-content: space-between;
+}
+.text_footer {
+    display: flex;
+    font-size: 14px;
+    font-weight: 500;
+}
+#login {
+    color: #3692FF;
+    text-decoration: underline;
+}

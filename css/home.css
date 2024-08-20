@@ -4,6 +4,7 @@
 }
 
 .header-container {
+  width: 100%;
   height: 70px;
   display: flex;
   justify-content: space-between;
@@ -18,6 +19,10 @@
   border-radius: 8px;
   width: 128px;
   height: 48px;
+}
+
+.index__main {
+  width: 100%;
 }
 
 .hero {
@@ -47,19 +52,7 @@
 }
 
 .hero__image {
-  width: 746px;
   height: 340px;
-}
-
-.btn-items {
-  width: 357px;
-  height: 56px;
-  padding: 16px 124px 16px 124px;
-  border-radius: 40px;
-  color: var(--Secondary-50);
-  background-color: var(--Primary-100);
-  font-size: 20px;
-  font-weight: 600;
 }
 
 .hot-item,
@@ -183,6 +176,7 @@
 }
 
 .footer-container {
+  width: 100%;
   height: 160px;
   display: flex;
   justify-content: space-between;

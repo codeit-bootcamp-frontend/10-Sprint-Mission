@@ -185,7 +185,7 @@
   .index__main {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 4rem;
   }
 
@@ -193,8 +193,12 @@
     padding: 0 24px;
   }
 
-  .hero-container {
+  .hero {
     height: 771px;
+  }
+
+  .hero-container {
+    height: 100%;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -248,5 +252,20 @@
 
   .content-description {
     font-size: 18px;
+  }
+
+  .bottom {
+    height: 927px;
+  }
+
+  .bottom-container {
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .bottom-content {
+    text-align: center;
   }
 }

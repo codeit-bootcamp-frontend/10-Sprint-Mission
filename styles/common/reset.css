@@ -360,49 +360,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 /*
-텍스트 요소의 자동 줄바꿈 서식 변경
-*/
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-span,
-p,
-a,
-li {
-  white-space: collapse balance;
-  word-break: keep-all;
-  overflow-wrap: break-word;
-}
-
-/*
 address 요소 스타일링 초기화
 */
 
 address {
   font-style: inherit;
-}
-
-/*
-웹 접근성을 고려한 요소 은폐
-*/
-
-.blind {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip-path: polygon(0 0, 0 0, 0 0);
-}
-
-/*
-고정적으로 뷰포트 스크롤바 생성
-*/
-
-body {
-  overflow-y: scroll;
 }

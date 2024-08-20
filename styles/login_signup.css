@@ -1,3 +1,6 @@
+@import url("/styles/common/variable.css");
+@import url("/styles/common/global.css");
+
 body {
   color: var(--gray-800);
 }

@@ -1,3 +1,6 @@
+@import url("/styles/common/variable.css");
+@import url("/styles/common/global.css");
+
 body {
   color: var(--gray-700);
 }
@@ -79,6 +82,7 @@ header {
 }
 
 .card:nth-child(2n) {
+  flex-direction: row-reverse;
   margin-left: 180px;
   text-align: right;
 }

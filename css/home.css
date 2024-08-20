@@ -185,6 +185,7 @@
   gap: 12px;
 }
 
+/* tablet */
 @media screen and (max-width: 1199px) {
   .index__main {
     display: flex;
@@ -206,11 +207,6 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .hero-image {
-    width: 100%;
-    object-fit: cover;
   }
 
   .hero-content {
@@ -293,7 +289,13 @@
   }
 }
 
+/* mobile */
 @media screen and (max-width: 767px) {
+  .max-container {
+    max-width: 400px;
+    margin: auto;
+  }
+
   .panda-market-logo {
     display: none;
   }
@@ -304,6 +306,10 @@
     font-family: 'ROKAF Sans';
     font-size: 25.633px;
     font-weight: 700;
+  }
+
+  .header-container {
+    padding: 0 16px;
   }
 
   .hero {

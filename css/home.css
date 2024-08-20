@@ -86,12 +86,10 @@
   line-height: 26px;
 }
 
-.hot-item-content__description,
-.register-content__description {
+.content-description {
   color: var(--Secondary-700, #374151);
   font-size: 24px;
   font-weight: 500;
-  line-height: 32px;
 }
 
 .hot-item-content__title,
@@ -134,13 +132,6 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 26px;
-}
-
-.search-content__description {
-  color: var(--Secondary-700, #374151);
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 32px;
 }
 
 .search-content__title {
@@ -200,4 +191,17 @@
 .footer-social {
   display: flex;
   gap: 12px;
+}
+
+@media screen and (max-width: 1199px) {
+  .hot-item-container,
+  .register-container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .search-container {
+    padding: 0;
+    margin: 0;
+  }
 }

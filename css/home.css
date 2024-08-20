@@ -318,6 +318,8 @@
 
   .hero-image {
     height: 207px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .hero-content .content-br {

@@ -127,4 +127,8 @@ input.btn-login:disabled {
   .login-logo__img {
     width: 300px;
   }
+
+  .login__main {
+    margin: 40px auto;
+  }
 }

@@ -70,3 +70,9 @@ input[type='submit'] {
   cursor: pointer;
   outline: none;
 }
+
+@media screen and (max-width: 767px) {
+  body {
+    height: 100%;
+  }
+}

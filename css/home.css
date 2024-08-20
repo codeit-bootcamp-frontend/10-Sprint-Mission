@@ -158,7 +158,7 @@
   width: 100%;
   height: 160px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding-top: 32px;
 }
 

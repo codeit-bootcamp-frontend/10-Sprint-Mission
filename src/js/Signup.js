@@ -8,7 +8,8 @@ import {
   showPasswordCheckErrorMessage,
   hidePasswordCheckErrorMessage,
   togglePasswordIcon,
-  togglePasswordCheckIcon
+  togglePasswordCheckIcon,
+  routeToSignin,
 } from './LoginSignupUtils.js';
 
 const loadEvent = new Event('load');
@@ -23,6 +24,8 @@ window.addEventListener('load', () => {
   const nicknameErrorMessage = document.querySelector('.nickname-error-message');
   const passwordErrorMessage = document.querySelector('.password-error-message');
   const passwordCheckErrorMessage = document.querySelector('.password-check-error-message');
+  const signupForm = document.querySelector('.signup-form');
+  const signupSubmitBtn = document.querySelector('.signup-submit-btn');
 
   emailInput.addEventListener('focusout', () => showEmailErrorMessage(emailInput, emailErrorMessage));
   emailInput.addEventListener('focusin', () => hideEmailErrorMessage(emailErrorMessage));
@@ -34,6 +37,21 @@ window.addEventListener('load', () => {
   passwordCheckInput.addEventListener('focusin', () => hidePasswordCheckErrorMessage(passwordCheckErrorMessage));
   passwordIcon.addEventListener('click', () => togglePasswordIcon(passwordInput, passwordIcon));
   passwordCheckIcon.addEventListener('click', () => togglePasswordCheckIcon(passwordCheckInput, passwordCheckIcon));
-})
+  signupForm.addEventListener('submit', (event) => {
+    let bubblingFlag = routeToSignin(event, emailInput, passwordInput, nicknameInput, passwordCheckInput, emailErrorMessage, passwordErrorMessage, nicknameErrorMessage, passwordCheckErrorMessage);
+    if(bubblingFlag) {
+      event.preventDefault();
+      signupSubmitBtn.blur();
+      showEmailErrorMessage(emailInput, emailErrorMessage);
+      showNicknameErrorMessage(nicknameInput, nicknameErrorMessage);
+      showPasswordErrorMessage(passwordInput, passwordErrorMessage);
+      showPasswordCheckErrorMessage(passwordInput, passwordCheckInput, passwordCheckErrorMessage);
+    } else {
+      event.preventDefault();
+      window.location.href = '/src/pages/signin/';
+    }
+  });
+  
+});
 
 window.dispatchEvent(loadEvent);

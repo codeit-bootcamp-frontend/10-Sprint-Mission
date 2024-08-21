@@ -1,30 +1,30 @@
-<section class="login-wrapper">
-  <div class="login-content">
+<section class="signup-wrapper">
+  <div class="signup-content">
     <a href="/" class="logo-link">
       <img width="396px" height="132px" src="/src/assets/img/logo_lg.svg" alt="로고 이미지" class="logo-img">
     </a>
 
-    <div class="login-content-without-img">
-      <form class="form">
-        <div class="login-content-without-signup">
-          <div class="login-content-without-btn">
+    <div class="signup-content-without-img">
+      <form class="signup-form" action="/src/pages/signin/" method="post">
+        <div class="signup-content-without-signup">
+          <div class="signup-content-without-btn">
             <div class="input-email">
               <label class="label-font" for="email-tag">이메일</label>
-              <input class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요"
+              <input name="email" class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요"
                 >
               <p class="email-error-message" style="display: none;"></p>
             </div>
 
             <div class="input-nickname">
               <label class="label-font" for="nickname-tag">닉네임</label>
-              <input class="nickname-tag" autocomplete="off" id="nickname-tag" type="text" placeholder="닉네임을 입력해주세요"
+              <input name="nickname" class="nickname-tag" autocomplete="off" id="nickname-tag" type="text" placeholder="닉네임을 입력해주세요"
               >
               <p class="nickname-error-message" style="display: none;"></p>
             </div>
 
             <div class="input-password">
               <label class="label-font" for="password-tag">비밀번호</label>
-              <input class="password-tag" autocomplete="off" id="password-tag" type="password"
+              <input name="password" class="password-tag" autocomplete="off" id="password-tag" type="password"
                 placeholder="비밀번호를 입력해주세요" >
               <button type="button" class="password-icon-btn">
                 <span class="password-icon"></span>
@@ -34,7 +34,7 @@
 
             <div class="input-password-check">
               <label class="label-font" for="password-check-tag">비밀번호 확인</label>
-              <input class="password-check-tag" autocomplete="off" id="password-check-tag" type="password"
+              <input name="passwordCheck" class="password-check-tag" autocomplete="off" id="password-check-tag" type="password"
                 placeholder="비밀번호를 다시 한 번 입력해주세요" >
                 <button type="button" class="password-check-icon-btn">
                   <span class="password-check-icon"></span>
@@ -43,10 +43,10 @@
             </div>
           </div>
           
-          <button class="login-submit-btn btn is-cursor-pointer" type="submit">회원가입</button>
+          <button class="signup-submit-btn btn is-cursor-pointer" type="submit">회원가입</button>
 
-          <div class="convenience-login">
-            <div class="convenience-login-content">
+          <div class="convenience-signup">
+            <div class="convenience-signup-content">
               <p>간편 로그인하기</p>
               <nav>
                 <ul>

@@ -111,10 +111,6 @@
     background-color: var(--primary-300);
   }
 
-  .btn:focus {
-    background-color: var(--primary-300);
-  }
-
   .btn:disabled {
     background-color: var(--secondary-400);
   }

@@ -28,16 +28,7 @@
     flex-direction: column;
     gap: 8px;
     padding-bottom: 16px;
-  }
-  
-  .input-content {
-    height: 56px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    background: #f3f4f6;
-    border-radius: 12px;
+    position: relative;
   }
   
   .email-tag,
@@ -57,6 +48,38 @@
     font-weight: 400;
     line-height: 26px;
     word-wrap: break-word;
+  }
+
+  .password-icon-btn {
+    background-color: var(--secondary-200);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 32px;
+    right: 24px;
+    display: flex;
+  }
+
+  .password-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('/src/assets/img/btn_visibility_off.svg');
+  }
+
+  .password-check-icon-btn {
+    background-color: var(--secondary-200);
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    bottom: 32px;
+    right: 24px;
+    display: flex;
+  }
+
+  .password-check-icon {
+    width: 24px;
+    height: 24px;
+    background-image: url('/src/assets/img/btn_visibility_off.svg');
   }
   
   .label-font {

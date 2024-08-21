@@ -75,6 +75,10 @@
     word-wrap: break-word
   }
 
+  button {
+    cursor: pointer;
+  }
+
   input {
     border: none;
     background: var(--secondary-200);

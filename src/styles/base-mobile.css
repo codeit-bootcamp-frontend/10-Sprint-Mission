@@ -83,6 +83,10 @@
     overflow: hidden;
   }
 
+  button {
+    cursor: pointer;
+  }
+
   input:focus {
     outline: var(--primary-100);
   }

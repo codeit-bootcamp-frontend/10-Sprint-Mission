@@ -1,0 +1,10 @@
+@media (min-width:768px) and (max-width: 1199px) {
+  .password-icon-btn:hover {
+    border: 1px solid var(--secondary-700);
+    background-color: var(--secondary-300);
+  }
+  
+  .password-icon-btn:active{
+    background-color: var(--secondary-400);
+  }
+}

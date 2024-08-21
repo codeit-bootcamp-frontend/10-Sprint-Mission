@@ -6,7 +6,10 @@ window.addEventListener('load', () => {
   const togglePasswordIcon = () => {
     const type = passwordInput.type == 'password' ? 'text' : 'password';
     passwordInput.type = type;
-    passwordIcon.src = type == 'password' ? '/src/assets/img/btn_visibility_off.svg' : '/src/assets/img/btn_visibility_on.svg';
+    passwordIcon.style.backgroundImage = type == 
+      'password' ? 
+      "url('/src/assets/img/btn_visibility_off.svg')" : 
+      "url('/src/assets/img/btn_visibility_on.svg')";
   }
 
   passwordIcon.addEventListener('click', togglePasswordIcon);

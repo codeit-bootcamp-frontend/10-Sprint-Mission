@@ -1,0 +1,19 @@
+@media (min-width:375px) and (max-width: 767px) {
+  .password-icon-btn:hover {
+    border: 1px solid var(--secondary-700);
+    background-color: var(--secondary-300);
+  }
+  
+  .password-icon-btn:active{
+    background-color: var(--secondary-400);
+  }
+
+  .password-check-icon-btn:hover {
+    border: 1px solid var(--secondary-700);
+    background-color: var(--secondary-300);
+  }
+  
+  .password-check-icon-btn:active{
+    background-color: var(--secondary-400);
+  }
+}

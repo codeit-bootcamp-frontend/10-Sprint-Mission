@@ -31,7 +31,7 @@ window.addEventListener('load', () => {
   passwordInput.addEventListener('focusout', () => showPasswordErrorMessage(passwordInput, passwordErrorMessage));
   passwordInput.addEventListener('focusin', () => hidePasswordErrorMessage(passwordErrorMessage));
   passwordCheckInput.addEventListener('focusout', () => showPasswordCheckErrorMessage(passwordInput, passwordCheckInput, passwordCheckErrorMessage));
-  passwordCheckInput.addEventListener('focusin', hidePasswordCheckErrorMessage(passwordCheckErrorMessage));
+  passwordCheckInput.addEventListener('focusin', () => hidePasswordCheckErrorMessage(passwordCheckErrorMessage));
   passwordIcon.addEventListener('click', () => togglePasswordIcon(passwordInput, passwordIcon));
   passwordCheckIcon.addEventListener('click', () => togglePasswordCheckIcon(passwordCheckInput, passwordCheckIcon));
 })

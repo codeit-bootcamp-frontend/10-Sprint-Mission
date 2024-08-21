@@ -75,7 +75,7 @@
     width: 24px;
     height: 24px;
     position: absolute;
-    bottom: 32px;
+    top: 56px;
     right: 24px;
     display: flex;
   }

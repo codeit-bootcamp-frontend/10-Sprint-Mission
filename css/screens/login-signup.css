@@ -20,7 +20,6 @@
   font-size: 18px;
   font-weight: 700;
   color: var(--Secondary-800);
-  /* pretendard/2lg-18px-bold */
   line-height: 1.444;
 }
 
@@ -44,7 +43,6 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--Secondary-400);
-  /* pretendard/lg-16px-regular */
   line-height: 1.625;
 }
 
@@ -63,7 +61,6 @@
   text-align: center;
   color: var(--Cool-Gray-100, #f3f4f6);
   gap: 10px;
-  /* pretendard/xl-20px-semibold */
   line-height: 1.6;
   cursor: pointer;
 }
@@ -89,9 +86,7 @@
   font-size: 16px;
   font-weight: 500;
   color: var(--Secondary-800);
-  /* pretendard/lg-16px-medium */
-  line-height: 1.625; /* 162.5% */
-  line-height: 1.625; /* 162.5% */
+  line-height: 1.62;
 }
 
 .social-login__shortcuts {
@@ -109,7 +104,6 @@
   font-size: 14px;
   font-weight: 500;
   color: var(--Secondary-800);
-  /* pretendard/md-14px-medium */
   line-height: 1.71;
 }
 
@@ -118,5 +112,4 @@
   font-weight: 500;
   text-decoration-line: underline;
   color: var(--Primary-100, #3692ff);
-  line-height: normal;
 }

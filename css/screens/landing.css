@@ -63,8 +63,7 @@ footer {
 .landing-vertical__btn-text {
   font-size: 20px;
   font-weight: 600;
-  /* pretendard/xl-20px-semibold */
-  line-height: 32px;
+  line-height: 1.6;
 }
 
 .landing-vertical__wrap--bottom {
@@ -119,8 +118,7 @@ footer {
   font-size: 18px;
   font-weight: 700;
   color: var(--Primary-100);
-  /* pretendard/2lg-18px-bold */
-  line-height: 26px;
+  line-height: 1.44;
 }
 
 .landing-main__title {
@@ -137,6 +135,5 @@ footer {
   font-size: 24px;
   font-weight: 500;
   color: var(--Secondary-700);
-  /* pretendard/2xl-24px-medium */
-  line-height: 32px;
+  line-height: 1.33;
 }

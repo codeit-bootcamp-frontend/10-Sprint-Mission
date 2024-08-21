@@ -71,26 +71,21 @@ footer {
 }
 
 .landing-main {
-  padding: 0 0 138px 0;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   background-color: #fcfcfc;
 }
 
 .landing-main__wrap {
   display: flex;
+  padding: 138px 0;
   background-color: #ffffff;
 }
 
-.landing-main__wrap:first-child {
-  padding: 138px 605px 138px 360px;
-}
-
 .landing-main__wrap--right {
+  display: flex;
   justify-content: flex-end;
-  padding: 138px 360px 138px 591px;
-}
-
-.landing-main__wrap:last-child {
-  padding: 138px 573px 138px 360px;
 }
 
 .landing-main__card {

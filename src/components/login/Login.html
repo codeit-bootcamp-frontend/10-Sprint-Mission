@@ -1,11 +1,11 @@
 <section class="login-wrapper">
   <div class="login-content">
     <a href="/" class="logo-link">
-      <img src="/src/assets/img/logo_lg.png" alt="로고 이미지" class="logo-img">
+      <img width="396" height="132" src="/src/assets/img/logo_lg.svg" alt="로고 이미지" class="logo-img">
     </a>
 
-    <form>
-      <div class="login-content-without-img">
+    <div class="login-content-without-img">
+      <form>
         <div class="login-content-without-signup">
           <div class="login-content-without-btn">
             <div class="input-email">
@@ -18,6 +18,7 @@
                 </div>
               </div>
             </div>
+            
             <div class="input-password">
               <label class="label-font" for="password-tag">비밀번호</label>
               <div class="input-content">
@@ -29,41 +30,44 @@
               </div>
             </div>
           </div>
+
           <button class="login-submit-btn btn is-cursor-pointer" type="submit">로그인</button>
+
+          <div class="convenience-login">
+            <div class="convenience-login-content">
+              <p>간편 로그인하기</p>
+              <nav>
+                <ul>
+                  <li
+                    style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: white; border-radius: 9999px; border: 1px #F9FAFB">
+                    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/src/assets/img/ic_google.png" alt="구글 로그인">
+                    </a>
+                  </li>
+                  <li
+                    style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: #F5E14B; border-radius: 9999px; border: 1px #F9FAFB">
+                    <a href="https://www.kakaocorp.com/page/" target="_blank" rel="noopener noreferrer">
+                      <img src="/src/assets/img/ic_kakao.png" alt="카카오톡 로그인">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
-    </form>
+      </form>
 
-    <div class="convenience-login">
-      <div class="convenience-login-content">
-        <p>간편 로그인하기</p>
-        <nav>
-          <ul>
-            <li
-              style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: white; border-radius: 9999px; border: 1px #F9FAFB">
-              <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/img/ic_google.png" alt="구글 로그인">
-              </a>
-            </li>
-            <li
-              style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: #F5E14B; border-radius: 9999px; border: 1px #F9FAFB">
-              <a href="https://www.kakaocorp.com/page/" target="_blank" rel="noopener noreferrer">
-                <img src="/src/assets/img/ic_kakao.png" alt="카카오톡 로그인">
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <div style="gap:4px; display: flex; align-items: center; justify-content: center;">
+        <p
+          style="color: #1F2937; font-size: 14px; font-family: Pretendard; font-weight: 500; line-height: 24px; word-wrap: break-word">
+          판다마켓이 처음이신가요?</p><a
+          style="color: #3692FF; font-size: 14px; font-family: Pretendard; font-weight: 500; text-decoration: underline; word-wrap: break-word"
+          href="/src/pages/signup/">회원가입</a>
       </div>
-    </div>
 
-    <div style="gap:4px; display: flex; align-items: center; justify-content: center;">
-      <p
-        style="color: #1F2937; font-size: 14px; font-family: Pretendard; font-weight: 500; line-height: 24px; word-wrap: break-word">
-        판다마켓이 처음이신가요?</p><a
-        style="color: #3692FF; font-size: 14px; font-family: Pretendard; font-weight: 500; text-decoration: underline; word-wrap: break-word"
-        href="/src/pages/signup/">회원가입</a>
     </div>
-
   </div>
+
 </section>
 
 <script src="/src/js/Login.js"></script>

@@ -10,17 +10,18 @@
           <div class="login-content-without-btn">
             <div class="input-email">
               <label class="label-font" for="email-tag">이메일</label>
-              <input class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요"
-                required>
+              <input class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요">
+              <p class="email-error-message" style="display: none;"></p>
             </div>
-            
+
             <div class="input-password">
               <label class="label-font" for="password-tag">비밀번호</label>
               <input class="password-tag" autocomplete="off" id="password-tag" type="password"
-                placeholder="비밀번호를 입력해주세요" required>
+                placeholder="비밀번호를 입력해주세요">
               <button type="button" class="password-icon-btn">
                 <span class="password-icon"></span>
               </button>
+              <p class="password-error-message" style="display: none;"></p>
             </div>
           </div>
 
@@ -62,4 +63,4 @@
 
 </section>
 
-<script src="/src/js/Login.js"></script>
+<script type="module" src="/src/js/Login.js"></script>

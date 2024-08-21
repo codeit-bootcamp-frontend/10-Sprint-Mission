@@ -50,6 +50,20 @@
     word-wrap: break-word;
   }
 
+  .email-error-message,
+  .password-error-message,
+  .nickname-error-message,
+  .password-check-error-message {
+    color: var(--error-red);
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+    word-wrap: break-word;
+    text-align: left;
+    margin-top: -8px;
+    margin-left: 16px;
+  }
+
   .password-icon-btn {
     background-color: var(--secondary-200);
     width: 24px;

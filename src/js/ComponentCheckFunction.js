@@ -7,6 +7,8 @@ export const ComponentCheckFunction = (element) => {
         return response.text();
       })
       .then(data => {
+        
+
         const regex = /<script[\s\S]*?<\/script>/g;
         let match;
         const results = [];
@@ -24,6 +26,9 @@ export const ComponentCheckFunction = (element) => {
           if (srcMatch && srcMatch[1]) newScript.src = srcMatch[1];
             else newScript.text = s.replace(/<script.*?>|<\/script>/g, '');
   
+          const typeMatch = s.match(/type=['"]?([^'"]+)['"]?/);
+          if (typeMatch && typeMatch[1]) newScript.type = typeMatch[1];
+
           document.body.appendChild(newScript);
         }
       })

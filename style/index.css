@@ -4,6 +4,7 @@ header {
     top:0px;
     z-index:10;
     width: 100%;
+    max-width: 1920px;
     height: 70px;
     padding: 9px 400px;
     flex-direction: column;
@@ -16,9 +17,10 @@ header {
     background: #FFF;
 }
 
+
 .header-wrap, .bottom-wrap {
     height:100%;
-    max-width: 1920px;
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -132,38 +134,43 @@ header {
     text-decoration-line: none;
 }
 
-.section1 {
+.section-left {
     width:100%;
+    height:720px;
     display: flex;
-    padding: 138px 605px 138px 360px;
     align-items: center;
     justify-content: center;
 }
 
-.section2 {
+.section-right {
+    width:100%;
+    height:720px;
     display: flex;
-    padding: 138px 360px 138px 591px;
-    justify-content: center;
     align-items: center;
-    background: #FFF;
+    justify-content: center; 
     text-align: end;
 }
 
-.section3 {
-    display: flex;
-    padding: 138px 573px 138px 360px;
-    align-items: center;
-    justify-content: center;
-    background: #FFF;
-}
-.section-wrap {
-    max-width:1920px;
-    display: flex;
+.section-left-wrap {
     width: 100%;
-    justify-content: center;
+    max-width:1200px;
+    height:444px;
+    display: flex;
+    justify-content: flex-start;
     align-items: center;
     gap: 64px;
 }
+
+.section-right-wrap {
+    width: 100%;
+    max-width:1200px;
+    height:444px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 64px;
+}
+
 .bottom {
     display:flex;
     width: 100%;
@@ -171,7 +178,6 @@ header {
     flex-shrink: 0;
     background: #CFE5FF;
     position:relative;
-    top:138px;
     align-items:center;
     justify-content:center;
 }
@@ -179,25 +185,25 @@ header {
 footer {
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     height: 160px;
     gap: 10px;
     flex-shrink: 0;
     background: #111827;
     position:relative;
-    top:138px;
 }
 
 .footer-wrap {
-    padding: 34px 400px;
     width:100%;
-    height:100%;
+    max-width:1120px;
+    height:96px;
     position: absolute;
     display: flex;
     justify-content: space-between;
 }
 
-footer a {
+footer a, span {
     color: #9CA3AF;
     text-align: center;
     font-size: 16px;

@@ -66,6 +66,10 @@ footer {
   line-height: 1.6;
 }
 
+.landing-vertical__img {
+  width: 746px;
+}
+
 .landing-vertical__wrap--bottom {
   gap: 69px;
 }
@@ -97,6 +101,9 @@ footer {
 
 .landing-main__card--right {
   justify-content: flex-end;
+}
+.landing-main__img {
+  width: 588px;
 }
 
 .landing-main__content {

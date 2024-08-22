@@ -15,7 +15,7 @@ body {
 .header {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 1030;
 
     height: 70px;
     width: 100%;
@@ -116,7 +116,7 @@ body {
 } 
     
 위 방법으로 구현하고자 했으나(본문 카드 추가시 수정용이함)
-예상과 바르게 짝수번째 카드 선택이 안됨
+예상과 다르게 짝수번째 카드 선택이 안됨
 부모태그의 자식중에 2번째를 고르는거라 card가 아니라 section 태그를 선택하는것을 확인
 -> 카드에 odd even 클래스값 주는것으로 변경.. */
 
@@ -251,7 +251,6 @@ body {
     background-color: #F3F4F6;
     border-width: 0px;
 
-    font-family: Pretendard, sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 26px;

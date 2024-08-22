@@ -11,10 +11,11 @@ export const togglePasswordIcon = (passwordInput, passwordIcon) => {
 export const togglePasswordCheckIcon = (passwordCheckInput, passwordCheckIcon) => {
   const type = passwordCheckInput.type == 'password' ? 'text' : 'password';
   passwordCheckInput.type = type;
-  passwordCheckIcon.style.backgroundImage = type ==
-    'password' ?
-    "url('/src/assets/img/btn_visibility_off.svg')" :
-    "url('/src/assets/img/btn_visibility_on.svg')";
+  passwordCheckIcon.style.backgroundImage = 
+    type ==
+      'password' ?
+      "url('/src/assets/img/btn_visibility_off.svg')" :
+      "url('/src/assets/img/btn_visibility_on.svg')";
 }
 
 export const showEmailErrorMessage = (emailInput, emailErrorMessage) => {

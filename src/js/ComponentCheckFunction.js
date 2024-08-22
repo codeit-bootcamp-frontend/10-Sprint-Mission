@@ -7,8 +7,6 @@ export const ComponentCheckFunction = (element) => {
         return response.text();
       })
       .then(data => {
-        
-
         const regex = /<script[\s\S]*?<\/script>/g;
         let match;
         const results = [];
@@ -36,6 +34,5 @@ export const ComponentCheckFunction = (element) => {
         console.error('Fetch 에러\n', error);
         alert('Fetch 에러!');
       })
-  
   }
 }

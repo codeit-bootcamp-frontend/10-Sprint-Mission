@@ -9,15 +9,15 @@
     gap: 24px;
   }
 
-  .top-img {
-    width: 100%;
-    height: 204px;
-  }
-  
   .signup-wrapper {
     display: flex;
     align-items: center;
     margin: 24px 16px auto;
+  }
+
+  .top-img {
+    width: 100%;
+    height: 204px;
   }
   
   .input-email,

@@ -58,6 +58,7 @@
     background-color: var(--primary-100);
     border: none;
     color: var(--secondary-100);
+    cursor: pointer;
   }
 
   p {
@@ -91,7 +92,6 @@
       padding: 9px 400px;
     }
   }
-  
 
   main {
     width: 100%;
@@ -119,10 +119,6 @@
     background: var(--secondary-200);
     border-radius: 12px;
     overflow: hidden;
-  }
-
-  button {
-    cursor: pointer;
   }
 
   input:focus {

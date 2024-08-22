@@ -25,6 +25,7 @@
     background-color: var(--primary-100);
     border: none;
     color: var(--secondary-100);
+    cursor: pointer;
   }
 
   p {
@@ -73,10 +74,6 @@
     font-weight: 700;
     line-height: 42px;
     word-wrap: break-word
-  }
-
-  button {
-    cursor: pointer;
   }
 
   input {

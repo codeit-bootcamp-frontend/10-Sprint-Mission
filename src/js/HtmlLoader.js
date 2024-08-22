@@ -1,4 +1,4 @@
-import {ComponentCheckFunction} from "./ComponentCheckFunction.js";
+import { ComponentCheckFunction } from "./ComponentCheckFunction.js";
 
 const HtmlLoader = () => {
   const allElements = document.getElementsByTagName('*');
@@ -13,7 +13,7 @@ const HtmlLoader = () => {
         .then(data => {
           element.outerHTML = data;
           const loadEvent = new Event('load');
-          element.addEventListener('load', () => { 
+          element.addEventListener('load', () => {
             const allElements = document.getElementsByTagName('*');
             Array.prototype.forEach.call(allElements, (element) => {
               ComponentCheckFunction(element);
@@ -25,7 +25,6 @@ const HtmlLoader = () => {
           console.error('Fetch 에러\n', error);
           alert('Fetch 에러!');
         })
-
     }
   })
 }

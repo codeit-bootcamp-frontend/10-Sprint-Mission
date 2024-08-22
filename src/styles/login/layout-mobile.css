@@ -1,15 +1,4 @@
 @media (min-width:375px) and (max-width: 767px) {
-  .login-content {
-    width: 100%;
-    max-width: 400px;
-    height: 501x;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    margin: 80px 16px auto;
-  }
-
   .logo-img {
     width: 198px;
     height: 66px;
@@ -21,6 +10,18 @@
     align-items: center;
     justify-content: center;
   }
+
+  .login-content {
+    width: 100%;
+    max-width: 400px;
+    height: 501x;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 80px 16px auto;
+  }
+
   
   .input-email,
   .input-password {
@@ -125,5 +126,4 @@
     line-height: 24px;
     word-wrap: break-word;
   }
-  
 }

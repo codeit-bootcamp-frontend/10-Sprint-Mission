@@ -101,8 +101,7 @@
   }
   
   .footer-content {
-    margin: 32px 400px;
-    width: 100%;
+    width: 1120px;
     height: 60px;
     display: flex;
     align-items: start;

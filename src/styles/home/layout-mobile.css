@@ -160,25 +160,25 @@
   }
   
   .footer-content {
-    margin: 32px 32px auto;
-    width: 100%;
+    padding: 32px auto 64px;
+    width: 311px;
     height: 96px;
     display: flex;
     justify-content: space-between;
-    position: relative;
+    flex-wrap: wrap;
   }
 
   .footer-content > div:nth-child(1) {
-    position: absolute;
-    bottom: 0;
+    order: 3;
+    display: flex;
+    flex-direction: column;
   }
   
-  .footer-content > div:nth-child(2) {
-    order: 1;
-  }
-  
+  .footer-content > div:nth-child(2) ,
   .footer-content > div:nth-child(3) {
-    order: 2;
+    order: 1;
+    display: flex;
+    flex-direction: row;
   }
   
   .footer-letter {

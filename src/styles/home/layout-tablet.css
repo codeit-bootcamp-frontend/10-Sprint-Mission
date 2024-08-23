@@ -153,8 +153,8 @@
   }
   
   .footer-content {
-    padding: 32px 104px 64px;
-    width: 100%;
+    padding: 32px auto 64px;
+    width: 536px;
     height: 64px;
     display: flex;
     align-items: start;

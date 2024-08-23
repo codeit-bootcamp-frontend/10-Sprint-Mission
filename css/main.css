@@ -8,16 +8,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9.5px 200px;
+  padding: 9px 200px;
   border-bottom: 1px solid #dfdfdf;
 }
 
 @media screen and (min-width: 1920px) {
-  .nav-header { padding: 9.5px 400px; }
+  .nav-header { padding: 9px 400px; }
 }
 
-.nav-header > .header-logo {
-  background-image: url(../images/panda_logo.png);
+.nav-header > .header-logo > img {
   width: 153px;
   height: 51px;
 }
@@ -89,8 +88,9 @@
 .card-container {
   display: flex;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
   height: 100%;
-  padding: 0 320px;
 }
 
 .card-right { justify-content: flex-start; }
@@ -102,15 +102,17 @@
   background-color: #FCFCFC;
 }
 
+.card-left .card-content { flex-direction: row-reverse; }
+
 .card-img {
   width: 588px;
   height: 444px;
   border-radius: 12px;
 }
 
-.card-img1 { background-image: url(../images/Img_home_01.png); }
-.card-img2 { background-image: url(../images/Img_home_02.png); }
-.card-img3 { background-image: url(../images/Img_home_03.png); }
+.card:nth-child(2) .card-img { background-image: url(../images/Img_home_01.png); }
+.card:nth-child(3) .card-img { background-image: url(../images/Img_home_02.png); }
+.card:nth-child(4) .card-img { background-image: url(../images/Img_home_03.png); }
 
 .card-info {
   display: flex;

@@ -6,6 +6,11 @@
   padding: 60px 0;
 }
 
+.auth-logo > img {
+  width: 396px;
+  height: 132px;
+}
+
 .auth-form {
   width: 640px;
   display: flex;

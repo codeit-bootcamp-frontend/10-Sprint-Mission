@@ -2,27 +2,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-  padding: 60px 0;
-}
-
-.auth-logo > img {
-  width: 396px;
-  height: 132px;
-}
-
-.auth-form {
-  width: 640px;
-  display: flex;
-  flex-direction: column;
   gap: 24px;
 }
 
+.auth.login { padding: 80px 16px 0; }
+.auth.signup { padding: 24px 16px 0; }
+
+.auth-logo > img {
+  width: 198px;
+  height: 66px;
+}
+
+.auth-form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
 .auth-form > label {
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  line-height: 1.625rem;
+  line-height: 1.5rem;
   color: var(--gray800);
+  margin-bottom: 8px;
 }
 
 .auth-form > .auth-input {
@@ -32,10 +34,11 @@
   width: 100%;
   background-color: var(--gray100);
   border-radius: 12px;
-  padding: 16px 24px;
+  padding: 15px 24px;
+  margin-bottom: 16px;
 }
 
-.auth-form > .auth-input:focus-within { outline: 1px solid var(--blue); }
+.auth-form > .auth-input:focus-within { outline: 2px solid var(--blue); }
 
 .auth-form > .auth-input > input {
   background-color: var(--gray100);
@@ -57,14 +60,14 @@
 
 .auth-form > button {
   background-color: var(--gray400);
-  padding: 16px 124px;
-  gap: 10px;
+  padding: 12px 145px;
   border-radius: 40px;
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 2rem;
   color: var(--gray100);
   cursor: pointer;
+  margin-bottom: 24px;
 }
 
 .auth-form > .other-account {
@@ -79,6 +82,7 @@
   font-weight: 500;
   line-height: 1.625rem;
   color: var(--gary800);
+  margin-bottom: 24px;
 }
 
 .auth-form > .other-account > .icon-container {
@@ -102,4 +106,39 @@
 .auth-form > .auth-link > a {
   color: var(--blue);
   text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+  .auth { gap: 40px; }
+  .auth.login { padding-top: 190px; }
+  .auth.signup { padding-top: 48px; }
+
+  .auth-logo > img {
+    width: 396px;
+    height: 132px;
+  }
+  
+  .auth-form {
+    max-width: 100%;
+    width: 640px;
+    gap: 24px;
+  }
+
+  .auth-form > label {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+    margin-bottom: 0; 
+  }
+
+  .auth-form > .auth-input { 
+    padding: 16px 24px; 
+    margin-bottom: 0;
+  }
+
+  .auth-form > button { 
+    padding: 16px 124px;
+    margin-bottom: 0; 
+  }
+
+  .auth-form > .other-account { margin-bottom: 0; }
 }

@@ -1,0 +1,13 @@
+@media (max-width:767px){
+    .auth-container {
+        padding: 0 16px;
+        display:inline-flex;
+    }
+    .panda-logo {
+        width:198px;
+    }
+    .auth-wrap {
+        max-width: 400px;
+        margin:24px 0;
+    }
+}

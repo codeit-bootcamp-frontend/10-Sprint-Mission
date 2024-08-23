@@ -1,3 +1,4 @@
+/* desktop */
 header {
     width:100%;
     display: flex;
@@ -87,7 +88,7 @@ header {
     gap: 32px;
 }
 
-.banner-text, .section-text {
+.banner-text, .section-text, .bottom-text {
     color: #374151;
     margin: 0;
     font-size: 40px;
@@ -219,6 +220,7 @@ footer a, span {
 }
 
 .footer-center {
+    color: #CFCFCF;
     display: flex;
     gap: 30px;
     justify-content:center;    

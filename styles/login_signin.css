@@ -17,7 +17,6 @@
 }
 
 .field>input {
-    width: 640px;
     height: 56px;
     border-radius: 12px;
     padding: 16px 24px;
@@ -56,7 +55,6 @@
 }
 
 .fields>button {
-    width: 640px;
     height: 56px;
     border-radius: 40px;
     background-color: #9CA3AF;
@@ -82,7 +80,6 @@
 
 /* login page & sign-in page - sns login  */
 .sns-login {
-    width: 640px;
     height: 74px;
     border-radius: 8px;
     background-color: #E6F2FF;
@@ -128,4 +125,27 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
+
+    width: 100%;
+}
+
+/* 반응형: Tablet 에서 */
+@media (max-width: 1199px) {
+    /* pc와 동일 */
+}
+
+/* 반응형: Mobile 이하 에서 */
+@media (max-width: 767px) {
+    /* 로고 사이즈 바뀜 */
+    .login.title>img,
+    .sign-up.title>img {
+        content: url("../assets/logo_md.svg");
+    }
+    /* 폼 사이즈 바뀜 */
+    .form {
+        width: 100%;
+        max-width: 400px;
+        padding: 0 16px;
+    }
+
 }

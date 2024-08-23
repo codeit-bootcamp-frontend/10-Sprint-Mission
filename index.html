@@ -8,6 +8,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
   />
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/style_tablet.css">
+  <link rel="stylesheet" href="styles/style_mobile.css">
 </head>
 <body>
   <!-- 네비게이션 바 -->
@@ -21,11 +23,15 @@
     <!-- 상단 배너 -->
     <section class="top-banner">
       <div class="top-banner-contents">
+        <!-- 반응형 적용하며 html 태그 구조 변경
+          - <img> 대신 background image 이용
+          - contents / text / a의 포함관계 변경
+          - <p><br></p> 대신 <p></p><p></p> 이용 -->
         <div class="top-banner-text">
-          <p>일상의 모든 물건을<br>거래해 보세요</p>
-          <a href="items.html">구경하러 가기</a>
+          <p>일상의 모든 물건을</p>
+          <p>거래해 보세요</p>
         </div>
-        <img class="top-banner-img" src="assets/Img_home_top.svg">
+        <a href="items.html">구경하러 가기</a>
       </div>
     </section>
     <!-- 본문 -->
@@ -33,7 +39,7 @@
       <section class="odd">
         <div class="card odd">
           <img class="card-image" src="assets/Img_home_01.svg">
-          <div class="card-text">
+          <div class="card-text odd">
             <h1 class="card-header">Hot item</h1>
             <h2 class="card-title">인기 상품을<br>확인해 보세요</h2>
             <h3 class="card-explain">가장 HOT한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</h3>
@@ -43,7 +49,7 @@
       <section class="even">
         <div class="card even">
           <img class="card-image" src="assets/Img_home_02.svg">
-          <div class="card-text">
+          <div class="card-text even">
             <h1 class="card-header">Search</h1>
             <h2 class="card-title">구매를 원하는<br>상품을 검색하세요</h2>
             <h3 class="card-explain">구매하고 싶은 물품은 검색해서<br>쉽게 찾아보세요</h3>
@@ -53,7 +59,7 @@
       <section class="odd">
         <div class="card odd">
           <img class="card-image" src="assets/Img_home_03.svg">
-          <div class="card-text">
+          <div class="card-text odd">
             <h1 class="card-header">Register</h1>
             <h2 class="card-title">판매를 원하는<br>상품을 등록하세요</h2>
             <h3 class="card-explain">어떤 물건이든 판매하고 싶은 상품을<br>쉽게 등록하세요</h3>
@@ -63,19 +69,17 @@
     </section>
     <!-- 하단 배너 -->
     <section class="bottom-banner">
-      <div class="bottom-banner-contents">
         <div class="bottom-banner-text">
-          <p>믿을 수 있는<br>판다마켓 중고거래</p>
+          <p>믿을 수 있는</p>
+          <p>판다마켓 중고거래</p>
         </div>
-        <img class="bottom-banner-img" src="assets/Img_home_bottom.svg">
-      </div>
     </section>
   </main>
   <!-- 푸터 -->
   <footer class="footer">
     <div class="footer-content">
-      <p>@codeit - 2024</p>
-      <div class="text">
+      <p class="copy-right">@codeit - 2024</p>
+      <div class="menu">
         <a href="privacy">Privacy Policy</a>
         <a href="faq">FAQ</a>
       </div>

@@ -1,3 +1,9 @@
+/* 반응형 설계
+    PC(기본): 1200px 이상
+    Tablet: 768px 이상 1199px 이하
+    Mobile: 375px 이상 767px 이하
+    375px 미만은 고려x */
+
 * {
     box-sizing: border-box;
 }
@@ -44,41 +50,43 @@ body {
 
     background-color: #CFE5FF;
     height: 540px;
+    
+    background-image: url("../assets/Img_home_top.svg");
+    background-repeat: no-repeat;
+    background-position: 75% 100%;
 
     position: relative;
 }
 
 .top-banner-contents {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:7px;
-   
-    position: absolute;
-    bottom: 0;
-}
-
-.top-banner-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
-    padding: 0 0 60px 0;
+
+    position: absolute;
+    bottom: 80px;
+    left: 15%;
+    top:auto;
+    right: auto;
 }
 
 .top-banner-text>p {
     font-size: 40px;
     font-weight: 700;
     color: #374151;
+    line-height: 56px;
+    margin: 0;
 }
 
-.top-banner-text>a {
+.top-banner-contents>a {
+    font-size: 20px;
+    line-height: 32px;
     padding: 16px 124px;
     border-radius: 40px;
     background-color: #3692FF;
     color: #F3F4F6;
     text-decoration: none;
+    margin-top: 32px;
 
     cursor:pointer;
 }
@@ -102,10 +110,13 @@ body {
 }
 
 .card {
+    /* 카드 width 지정.
+    다만 설명이 줄내림 되지않게 더 늘어날수도 있게 함 */
+    min-width: 955px;
     background-color: #FCFCFC;
 
     display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     gap: 44px;
 }
@@ -131,8 +142,18 @@ body {
 .card-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 0 20px;
+}
+
+.card-text.odd>.card-header,
+.card-text.odd>.card-title,
+.card-text.odd>.card-explain {
+    text-align: left;
+}
+
+.card-text.even>.card-header,
+.card-text.even>.card-title,
+.card-text.even>.card-explain {
+    text-align: right;
 }
 
 .card-header {
@@ -165,27 +186,27 @@ body {
     background-color: #CFE5FF;
     height: 540px;
 
+    background-image: url("../assets/Img_home_bottom.svg");
+    background-repeat: no-repeat;
+    background-position: 75% 100%;
+
     position: relative;
 }
 
-.bottom-banner-contents {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:69px;
-   
-    position: absolute;
-    bottom: 0;
-}
-
 .bottom-banner-text {
-    gap: 10px;
-    padding: 0 0 60px 0;
+    position: absolute;
+    top: 270px;
+    left: 15%;
 
+    gap: 10px;
+
+}
+.bottom-banner-text>p {
     font-size: 40px;
+    line-height: 56px;
     font-weight: 700;
     color: #374151;
+    margin: 0;
 }
 
 /* main page - footer */
@@ -194,7 +215,7 @@ body {
     height: 160px;
     width: 100%;
     max-width: 1920px;
-    padding: 32px 400px;
+    padding: 32px 200px;
 }
 
 .footer-content {
@@ -206,15 +227,15 @@ body {
     font-weight: 400;
 }
 
-.footer-content>p {
+.footer-content>.copy-right {
     color: #9CA3AF;
 }
 
-.footer-content>.text {
+.footer-content>.menu {
     display: flex;
     gap: 30px;
 }
-.footer-content>.text>a {
+.footer-content>.menu>a {
     text-decoration: none;
     color: #E5E7EB;
 }
@@ -223,5 +244,3 @@ body {
     display: flex;
     gap:12px;
 }
-
-

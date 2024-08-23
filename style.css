@@ -8,11 +8,17 @@ body {
     font-family: 'Pretendard Variable';
 }
 
+span {
+    text-decoration: none;
+}
+
 .txt {
     text-decoration: none;
     color: #F9FAFB;
     font-family: 'Pretendard Variable';
 }
+
+
 
 .navbar {
     display: flex;

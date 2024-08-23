@@ -29,7 +29,7 @@ export const togglePasswordCheckIcon = (passwordCheckInput, passwordCheckIcon) =
 }
 
 /**
- * emailInput의 value가 비어있거나 @를 포함하지 않을 때 에러메시지를 보여주는 함수
+ * emailInput의 value가 비어있거나 '@'를 포함하지 않을 때 에러메시지를 보여주는 함수
  * @param {input} emailInput - 이메일 input
  * @param {p} emailErrorMessage - 이메일 에러 메시지
  */

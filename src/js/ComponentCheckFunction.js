@@ -1,8 +1,7 @@
 /**
  * HTML 파일에 data-include-component 속성이 있으면 그 속성값의 경로의 파일을 가져와서 innerHTML로 대체한다.
- * @param {div} element
+ * @param {div} element - DIV 요소
  */
-
 export const ComponentCheckFunction = (element) => {
   const includeComponent = element.dataset.includeComponent;
   if (includeComponent) {

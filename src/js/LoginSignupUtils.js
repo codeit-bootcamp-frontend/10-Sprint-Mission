@@ -1,7 +1,7 @@
 /**
  * passwordInput의 type을 text와 password로 toggle하는 함수
- * @param {input} passwordInput 
- * @param {span} passwordIcon 
+ * @param {input} passwordInput - 비밀번호 input
+ * @param {span} passwordIcon - 비밀번호 아이콘
  */
 export const togglePasswordIcon = (passwordInput, passwordIcon) => {
   const type = passwordInput.type == 'password' ? 'text' : 'password';
@@ -15,8 +15,8 @@ export const togglePasswordIcon = (passwordInput, passwordIcon) => {
 
 /**
  * passwordCheckInput의 type을 text와 password로 toggle하는 함수
- * @param {input} passwordCheckInput 
- * @param {span} passwordCheckIcon 
+ * @param {input} passwordCheckInput - 비밀번호 확인 input
+ * @param {span} passwordCheckIcon - 비밀번호 확인 아이콘
  */
 export const togglePasswordCheckIcon = (passwordCheckInput, passwordCheckIcon) => {
   const type = passwordCheckInput.type == 'password' ? 'text' : 'password';
@@ -30,8 +30,8 @@ export const togglePasswordCheckIcon = (passwordCheckInput, passwordCheckIcon) =
 
 /**
  * emailInput의 value가 비어있거나 @를 포함하지 않을 때 에러메시지를 보여주는 함수
- * @param {input} emailInput 
- * @param {p} emailErrorMessage 
+ * @param {input} emailInput - 이메일 input
+ * @param {p} emailErrorMessage - 이메일 에러 메시지
  */
 export const showEmailErrorMessage = (emailInput, emailErrorMessage) => {
   if (emailInput.value == '') {
@@ -45,8 +45,8 @@ export const showEmailErrorMessage = (emailInput, emailErrorMessage) => {
 
 /**
  * nicknameInput의 value가 비어있을 때 에러메시지를 보여주는 함수
- * @param {input} nicknameInput 
- * @param {p} nicknameErrorMessage 
+ * @param {input} nicknameInput - 닉네임 input
+ * @param {p} nicknameErrorMessage - 닉네임 에러 메시지
  */
 export const showNicknameErrorMessage = (nicknameInput, nicknameErrorMessage) => {
   if (nicknameInput.value == '') {
@@ -57,8 +57,8 @@ export const showNicknameErrorMessage = (nicknameInput, nicknameErrorMessage) =>
 
 /**
  * passwordInput의 value가 비어있거나 8자 미만일 때 에러메시지를 보여주는 함수
- * @param {input} passwordInput 
- * @param {p} passwordErrorMessage 
+ * @param {input} passwordInput - 비밀번호 input
+ * @param {p} passwordErrorMessage - 비밀번호 에러 메시지
  */
 export const showPasswordErrorMessage = (passwordInput, passwordErrorMessage) => {
   if (passwordInput.value == '') {
@@ -72,9 +72,9 @@ export const showPasswordErrorMessage = (passwordInput, passwordErrorMessage) =>
 
 /** 
  * passwordCheckInput의 value가 passwordInput의 value와 다를 때 에러메시지를 보여주는 함수
- * @param {input} passwordInput
- * @param {input} passwordCheckInput
- * @param {p} passwordCheckErrorMessage
+ * @param {input} passwordInput - 비밀번호 input
+ * @param {input} passwordCheckInput - 비밀번호 확인 input
+ * @param {p} passwordCheckErrorMessage - 비밀번호 확인 에러 메시지
  */
 export const showPasswordCheckErrorMessage = (passwordInput, passwordCheckInput, passwordCheckErrorMessage) => {
   if (passwordCheckInput.value !== passwordInput.value) {
@@ -86,7 +86,7 @@ export const showPasswordCheckErrorMessage = (passwordInput, passwordCheckInput,
 
 /**
  * emailErrorMessage를 숨기는 함수
- * @param {p} emailErrorMessage 
+ * @param {p} emailErrorMessage - 이메일 에러 메시지 
  */
 export const hideEmailErrorMessage = (emailErrorMessage) => {
   emailErrorMessage.style.display = 'none';
@@ -94,7 +94,7 @@ export const hideEmailErrorMessage = (emailErrorMessage) => {
 
 /**
  * nicknameErrorMessage를 숨기는 함수
- * @param {p} nicknameErrorMessage 
+ * @param {p} nicknameErrorMessage - 닉네임 에러 메시지 
  */
 export const hideNicknameErrorMessage = (nicknameErrorMessage) => {
   nicknameErrorMessage.style.display = 'none';
@@ -102,7 +102,7 @@ export const hideNicknameErrorMessage = (nicknameErrorMessage) => {
 
 /**
  * passwordErrorMessage를 숨기는 함수
- * @param {p} passwordErrorMessage 
+ * @param {p} passwordErrorMessage - 비밀번호 에러 메시지
  */
 export const hidePasswordErrorMessage = (passwordErrorMessage) => {
   passwordErrorMessage.style.display = 'none';
@@ -110,7 +110,7 @@ export const hidePasswordErrorMessage = (passwordErrorMessage) => {
 
 /**
  * passwordCheckErrorMessage를 숨기는 함수
- * @param {p} passwordCheckErrorMessage 
+ * @param {p} passwordCheckErrorMessage - 비밀번호 확인 에러 메시지
  */
 export const hidePasswordCheckErrorMessage = (passwordCheckErrorMessage) => {
   passwordCheckErrorMessage.style.display = 'none';
@@ -119,20 +119,14 @@ export const hidePasswordCheckErrorMessage = (passwordCheckErrorMessage) => {
 
 /**
  * input 값들의 유효성을 검사하여 버튼을 클릭했을 때 페이지 이동을 결정하는 함수
- * @param {input} emailInput
- * @param {input} passwordInput
- * @param {p} emailErrorMessage
- * @param {p} passwordErrorMessage
- * @returns {boolean} bubblingFlag
+ * @param {input} emailInput - 이메일 input
+ * @param {input} passwordInput - 비밀번호 input
+ * @param {p} emailErrorMessage - 이메일 에러 메시지
+ * @param {p} passwordErrorMessage - 비밀번호 에러 메시지
+ * @param  {...any} rest - 나머지 인자들
+ * @returns {boolean} bubblingFlag - 이벤트 버블링 여부 및 페이지 이동 여부
  */
-export const routeToItems = (...args) => {
-  const [
-    emailInput,
-    passwordInput,
-    emailErrorMessage,
-    passwordErrorMessage
-  ] = args;
-
+export const routeToItems = (emailInput, passwordInput, emailErrorMessage, passwordErrorMessage, ...rest) => {
   let bubblingFlag = false;
 
   if (emailInput.value == ''
@@ -147,28 +141,18 @@ export const routeToItems = (...args) => {
 
 /**
  * input 값들의 유효성을 검사하여 버튼을 클릭했을 때 페이지 이동을 결정하는 함수
- * @param {input} emailInput
- * @param {input} passwordInput
- * @param {input} nicknameInput
- * @param {input} passwordCheckInput
- * @param {p} emailErrorMessage
- * @param {p} nicknameErrorMessage
- * @param {p} passwordErrorMessage
- * @param {p} passwordCheckErrorMessage
- * @returns {boolean} bubblingFlag
+ * @param {input} emailInput - 이메일 input
+ * @param {input} passwordInput - 비밀번호 input
+ * @param {input} nicknameInput - 닉네임 input
+ * @param {input} passwordCheckInput - 비밀번호 확인 input
+ * @param {p} emailErrorMessage - 이메일 에러 메시지
+ * @param {p} nicknameErrorMessage - 닉네임 에러 메시지
+ * @param {p} passwordErrorMessage - 비밀번호 에러 메시지
+ * @param {p} passwordCheckErrorMessage - 비밀번호 확인 에러 메시지
+ * @param  {...any} rest - 나머지 인자들
+ * @returns {boolean} bubblingFlag - 이벤트 버블링 여부 및 페이지 이동 여부
  */
-export const routeToSignin = (...args) => {
-  const [
-    emailInput,
-    passwordInput,
-    nicknameInput,
-    passwordCheckInput,
-    emailErrorMessage,
-    nicknameErrorMessage,
-    passwordErrorMessage,
-    passwordCheckErrorMessage,
-  ] = args;
-
+export const routeToSignin = (emailInput, passwordInput, nicknameInput, passwordCheckInput, emailErrorMessage, nicknameErrorMessage, passwordErrorMessage, passwordCheckErrorMessage, ...rest) => {
   let bubblingFlag = false;
 
   if (emailInput.value == ''

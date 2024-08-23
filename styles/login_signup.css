@@ -1,22 +1,22 @@
 @import url("/styles/common/variable.css");
 @import url("/styles/common/global.css");
 
-body {
+.body {
   color: var(--gray-800);
 }
 
-header {
+.header {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 40px 0 40px;
 }
 
-.head-logo {
+.header__logo {
   width: 396px;
 }
 
-main {
+.main {
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -24,22 +24,28 @@ main {
   margin: 0 auto;
 }
 
-form {
+.form {
   display: flex;
   flex-direction: column;
+  gap: 24px;
 }
 
-label {
-  margin-bottom: 16px;
+.formField {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formField__label {
   font-size: var(--size-2lg);
   font-weight: bold;
 }
 
-input {
+.formField__input {
   display: block;
   width: 100%;
   padding: 16px 24px;
-  margin-bottom: 24px;
   border-radius: 12px;
   background-color: var(--gray-100);
   border: 2px solid #00000000;
@@ -47,31 +53,22 @@ input {
   font-size: var(--size-lg);
 }
 
-input::placeholder {
+.formField__input::placeholder {
   color: var(--gray-400);
 }
 
-input:focus {
+.formField__input:focus {
   border: 2px solid var(--blue-100);
 }
 
-.password-div {
-  position: relative;
-  margin-bottom: 24px;
-}
-
-.password-div input {
-  margin: 0;
-}
-
-.password-show {
+.formField__toggleButton {
   position: absolute;
   top: 50%;
   right: 0;
-  transform: translateX(-24px) translateY(-50%);
+  transform: translate(-24px, calc(((27px + 16px) / 2) - 50%));
 }
 
-button[type="submit"] {
+.form__submitButton {
   padding: 13px 0;
   border-radius: 9999px;
   background-color: var(--gray-400);
@@ -81,7 +78,7 @@ button[type="submit"] {
   color: var(--gray-100);
 }
 
-.easy-login-div {
+.easyLogin {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -91,14 +88,22 @@ button[type="submit"] {
   font-size: var(--size-lg);
 }
 
-.easy-login-icons {
+.easyLogin__social {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
 }
 
-.switch-div {
+.easyLogin__sns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+}
+
+.pageSwitch {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,7 +112,7 @@ button[type="submit"] {
   font-size: var(--size-md);
 }
 
-.switch-div a {
+.pageSwitch__link {
   text-decoration-line: underline;
   color: var(--blue-100);
 }

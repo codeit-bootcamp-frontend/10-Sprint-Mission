@@ -1,11 +1,11 @@
 @import url("/styles/common/variable.css");
 @import url("/styles/common/global.css");
 
-body {
+.body {
   color: var(--gray-700);
 }
 
-header {
+.header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -14,11 +14,11 @@ header {
   padding: 8px max(calc((100% - 1100px) / 2), 200px);
 }
 
-.head-logo {
+.header__logo {
   width: 153px;
 }
 
-.head-login {
+.header__loginButton {
   padding: 8px 32px;
   background-color: var(--blue-100);
   border: none;
@@ -34,24 +34,24 @@ header {
   background-color: #cfe5ff;
 }
 
-.banner-image {
+.banner__image {
   width: 746px;
 }
 
-.banner-content {
+.banner__content {
   width: 350px;
   height: 290px;
   display: flex;
   flex-direction: column;
 }
 
-.banner-content h2 {
+.banner__title {
   font-weight: 600;
   font-size: var(--size-4xl);
   line-height: var(--line-4xl);
 }
 
-.banner-content a {
+.banner__watchButton {
   width: 100%;
   margin-top: 32px;
   padding: 12px 0;
@@ -62,7 +62,7 @@ header {
   color: var(--gray-100);
 }
 
-.cards {
+.cardList {
   padding: 140px 0;
   display: flex;
   flex-direction: column;
@@ -87,11 +87,11 @@ header {
   text-align: right;
 }
 
-.card-image {
+.card__image {
   width: 588px;
 }
 
-.card-content {
+.card__content {
   width: 400px;
   padding: 0 48px;
   display: flex;
@@ -99,26 +99,26 @@ header {
   justify-content: center;
 }
 
-.card-content .keyword {
+.card__keyword {
   margin-bottom: 16px;
   color: var(--blue-100);
   font-weight: 700;
   font-size: var(--size-2lg);
 }
 
-.card-content .title {
+.card__title {
   margin-bottom: 32px;
   font-weight: 600;
   font-size: var(--size-4xl);
   line-height: var(--line-4xl);
 }
 
-.card-content .sub {
+.card__description {
   font-size: var(--size-2xl);
   line-height: var(--line-2xl);
 }
 
-footer {
+.footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
@@ -127,28 +127,28 @@ footer {
   font-size: var(--size-sm);
 }
 
-:is(.foot-copy, .foot-link, .foot-sns) {
+:is(.footer__address, .footer__support, .footer__social) {
   display: flex;
   align-items: center;
 }
 
-.foot-copy {
+.footer__address {
   justify-content: left;
   color: var(--gray-400);
 }
 
-.foot-link {
+.footer__support {
   justify-content: center;
   gap: 30px;
   color: var(--gray-200);
 }
 
-.foot-sns {
+.footer__social {
   justify-content: right;
   gap: 12px;
 }
 
-.foot-sns a {
+.footer__sns {
   display: flex;
   align-items: center;
   justify-content: center;

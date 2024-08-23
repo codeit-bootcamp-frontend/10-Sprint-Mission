@@ -15,91 +15,99 @@
     <link rel="stylesheet" href="/styles/common/reset.css" />
     <link rel="stylesheet" href="/styles/index.css" />
   </head>
-  <body>
-    <header>
-      <a href="/"
-        ><img
-          class="head-logo"
+  <body class="body">
+    <header class="header">
+      <a href="/">
+        <img
+          class="header__logo"
           src="/images/common/logo_w153x3.png"
           alt="판다마켓 바로가기"
-      /></a>
-      <a class="head-login" href="/login.html">로그인</a>
+        />
+      </a>
+      <a class="header__loginButton" href="/login.html">로그인</a>
     </header>
     <main>
       <h1 class="blind">판다마켓 홈페이지</h1>
       <section class="banner">
-        <div class="banner-content">
-          <h2>일상의 모든 물건을 거래해 보세요</h2>
-          <a href="/items.html">구경하러 가기</a>
+        <div class="banner__content">
+          <h2 class="banner__title">일상의 모든 물건을 거래해 보세요</h2>
+          <a class="banner__watchButton" href="/items.html">구경하러 가기</a>
         </div>
         <img
-          class="banner-image"
+          class="banner__image"
           src="/images/index/panda_1_w746x3.png"
           alt=""
         />
       </section>
-      <section class="cards">
+      <section class="cardList">
         <div class="card">
           <img
-            class="card-image"
+            class="card__image"
             src="/images/index/explain_1_w588x3.png"
             alt=""
           />
-          <div class="card-content">
-            <span class="keyword">Hot Item</span>
-            <h2 class="title">인기 상품을 확인해 보세요</h2>
-            <p class="sub">
+          <div class="card__content">
+            <span class="card__keyword">Hot Item</span>
+            <h2 class="card__title">인기 상품을 확인해 보세요</h2>
+            <p class="card__description">
               가장 HOT한 중고거래 물품을 판다 마켓에서 확인해 보세요
             </p>
           </div>
         </div>
         <div class="card">
           <img
-            class="card-image"
+            class="card__image"
             src="/images/index/explain_2_w588x3.png"
             alt=""
           />
-          <div class="card-content">
-            <span class="keyword">Serch</span>
-            <h2 class="title">구매를 원하는 상품을 검색하세요</h2>
-            <p class="sub">구매하고 싶은 물품은 검색해서 쉽게 찾아보세요</p>
+          <div class="card__content">
+            <span class="card__keyword">Serch</span>
+            <h2 class="card__title">구매를 원하는 상품을 검색하세요</h2>
+            <p class="card__description">
+              구매하고 싶은 물품은 검색해서 쉽게 찾아보세요
+            </p>
           </div>
         </div>
         <div class="card">
           <img
-            class="card-image"
+            class="card__image"
             src="/images/index/explain_3_w588x3.png"
             alt=""
           />
-          <div class="card-content">
-            <span class="keyword">Register</span>
-            <h2 class="title">판매를 원하는 상품을 등록하세요</h2>
-            <p class="sub">
+          <div class="card__content">
+            <span class="card__keyword">Register</span>
+            <h2 class="card__title">판매를 원하는 상품을 등록하세요</h2>
+            <p class="card__description">
               어떤 물건이든 판매하고 싶은 상품을 쉽게 등록하세요
             </p>
           </div>
         </div>
       </section>
       <section class="banner">
-        <div class="banner-content">
-          <h2>믿을 수 있는 판다마켓 중고 거래</h2>
+        <div class="banner__content">
+          <h2 class="banner__title">믿을 수 있는 판다마켓 중고 거래</h2>
         </div>
         <img
-          class="banner-image"
+          class="banner__image"
           src="/images/index/panda_2_w746x3.png"
           alt=""
         />
       </section>
     </main>
-    <footer>
-      <address class="foot-copy">&copy;codeit - 2024</address>
-      <ul class="foot-link">
-        <li><a href="/privacy.html">Privacy Policy</a></li>
-        <li><a href="/faq.html">FAQ</a></li>
+    <footer class="footer">
+      <address class="footer__address">&copy;codeit - 2024</address>
+      <ul class="footer__support">
+        <li>
+          <a href="/privacy.html">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="/faq.html">FAQ</a>
+        </li>
       </ul>
-      <ul class="foot-sns">
+      <ul class="footer__social">
         <li>
           <a
+            class="footer__sns"
             href="https://www.facebook.com/codeit.kr"
             target="_blank"
             rel="noopener noreferrer"
@@ -109,6 +117,7 @@
         </li>
         <li>
           <a
+            class="footer__sns"
             href="https://twitter.com/codeitkr"
             target="_blank"
             rel="noopener noreferrer"
@@ -118,6 +127,7 @@
         </li>
         <li>
           <a
+            class="footer__sns"
             href="https://www.youtube.com/@codeit-kr"
             target="_blank"
             rel="noopener noreferrer"
@@ -127,6 +137,7 @@
         </li>
         <li>
           <a
+            class="footer__sns"
             href="https://www.instagram.com/codeit_kr"
             target="_blank"
             rel="noopener noreferrer"

@@ -1,26 +1,22 @@
 header {
+    width:100%;
     display: flex;
     position:sticky;
     top:0px;
     z-index:10;
-    width: 100%;
-    max-width: 1920px;
     height: 70px;
-    padding: 9px 400px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     flex-shrink: 0;
-
     border-bottom: 1px solid #DFDFDF;
     background: #FFF;
 }
 
 
-.header-wrap, .bottom-wrap {
+.header-wrap {
+    width:100%;
+    max-width:1120px; 
     height:100%;
-    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,13 +64,17 @@ header {
     justify-content:center;
 }
 
-.banner-wrap {
+.banner-wrap , .bottom-wrap{
     position:absolute;
     bottom:0px;
     display: inline-flex;
     align-items: center;
     gap: 7px;
     
+}
+
+.img-home-top, .img-home-bottom {
+    width:746px;
 }
 
 .banner-textbox, .bottom-textbox {
@@ -169,6 +169,10 @@ header {
     justify-content: flex-end;
     align-items: center;
     gap: 64px;
+}
+
+.img-section {
+    max-width:558px;
 }
 
 .bottom {

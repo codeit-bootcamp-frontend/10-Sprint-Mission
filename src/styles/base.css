@@ -98,11 +98,11 @@
   }
 
   nav ul {
-    display: flex;
-    gap: 12px;
+    width: 100%;
   }
-
   nav ul>li {
+    display: flex;
+    justify-content: space-between;
     width: 20px;
     display: inline-block;
     list-style: none;

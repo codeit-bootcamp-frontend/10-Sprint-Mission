@@ -79,11 +79,11 @@
   }
   
   .main-items:nth-of-type(odd){
-    padding-left: 360px;
+    padding-left: 200px;
   }
   
   .main-items:nth-of-type(even){
-    padding-right: 360px;
+    padding-right: 200px;
   }
   
   .bottom-content {

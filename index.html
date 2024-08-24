@@ -12,7 +12,8 @@
       <div class="header__inner">
         <h1>
           <a href="/">
-            <img src="assets/images/logo-sm.png" alt="판다마켓 로고" />
+            <img src="assets/images/logo-sm.png" alt="판다마켓 로고"
+            class="logo"/ >
           </a>
         </h1>
         <a href="pages/login.html" class="btn__small">로그인</a>
@@ -22,10 +23,13 @@
       <section>
         <div class="main__background">
           <div class="main__background--text">
-            <h2>일상의 모든 물건을 거래해 보세요</h2>
+            <h2>
+              일상의 모든 물건을<br />
+              거래해 보세요
+            </h2>
             <a href="/items" class="btn__large">구경하러가기</a>
           </div>
-          <div>
+          <div class="main__backgroun--img">
             <img
               src="./assets/images/img-home-top.png"
               alt="판다마켓 상단 배경 이미지"
@@ -34,47 +38,62 @@
         </div>
       </section>
       <section>
-        <div class="section__card">
-          <div>
-            <img
-              src="./assets/images/img-home-01.jpg"
-              alt="인기상품 안내 배경 이미지"
-            />
-          </div>
-          <div class="section__card--text">
-            <span>Hot item</span>
-            <h3>인기 상품을<br />확인해 보세요</h3>
-            <p>가장 HOT한 중고거래 물품을 판다 마켓에서 확인해 보세요</p>
-          </div>
-        </div>
-      </section>
-      <section>
-        <div class="section__card">
-          <div class="section__card--text">
-            <span>Search</span>
-            <h3>구매를 원하는 상품을 검색하세요</h3>
-            <p>구매하고 싶은 물품은 검색해서 쉽게 찾아보세요</p>
-          </div>
-          <div>
-            <img
-              src="./assets/images/img-home-02.jpg"
-              alt="인기상품 안내 배경 이미지"
-            />
+        <div class="section-2__card--wrapper">
+          <div class="section__card">
+            <div class="section__card--img">
+              <img
+                src="./assets/images/img-home-01.jpg"
+                alt="인기상품 안내 배경 이미지"
+              />
+            </div>
+            <div class="section__card--text">
+              <span>Hot item</span>
+              <h3>인기 상품을 <br />확인해 보세요</h3>
+              <p>
+                가장 HOT한 중고거래 물품을<br />
+                판다 마켓에서 확인해 보세요
+              </p>
+            </div>
           </div>
         </div>
       </section>
       <section>
-        <div class="section__card">
-          <div>
-            <img
-              src="./assets/images/img-home-03.jpg"
-              alt="인기상품 안내 배경 이미지"
-            />
+        <div class="section-3__card--wrapper">
+          <div class="section__card">
+            <div class="section__card--text">
+              <span>Search</span>
+              <h3>구매를 원하는 상품을 검색하세요</h3>
+              <p>
+                구매하고 싶은 물품은 검색해서<br />
+                쉽게 찾아보세요
+              </p>
+            </div>
+            <div class="section__card--img">
+              <img
+                src="./assets/images/img-home-02.jpg"
+                alt="인기상품 안내 배경 이미지"
+              />
+            </div>
           </div>
-          <div class="section__card--text">
-            <span>Register</span>
-            <h3>판매를 원하는 상품을 등록하세요</h3>
-            <p>어떤 물건이든 판매하고 싶은 상품을 쉽게 등록하세요</p>
+        </div>
+      </section>
+      <section>
+        <div class="section-4__card--wrapper">
+          <div class="section__card">
+            <div class="section__card--img">
+              <img
+                src="./assets/images/img-home-03.jpg"
+                alt="인기상품 안내 배경 이미지"
+              />
+            </div>
+            <div class="section__card--text">
+              <span>Register</span>
+              <h3>판매를 원하는 상품을 등록하세요</h3>
+              <p>
+                어떤 물건이든 판매하고 싶은 상품을<br />
+                쉽게 등록하세요
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -100,6 +119,7 @@
         <div class="footer__text footer__text--copyright">
           &copy;codeit - 2024
         </div>
+
         <ul class="footer__nav">
           <li class="footer__nav-item">
             <a href="/privacy">Privacy Policy</a>

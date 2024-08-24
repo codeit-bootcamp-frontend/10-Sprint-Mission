@@ -1,8 +1,8 @@
 name: delete branch on close pr
 
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types: [closed]
 
 jobs:
   delete-branch:

@@ -47,11 +47,21 @@
   .header__wrap {
     padding: 10px 16px;
   }
+
+  .header__logo-img {
+    width: 105px;
+    height: 35px;
+  }
 }
 
 @media (min-width: 768px) {
   .header__wrap {
     padding: 10px 24px;
+  }
+
+  .header__logo-img {
+    width: 153px;
+    height: 51px;
   }
 }
 

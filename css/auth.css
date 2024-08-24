@@ -151,3 +151,26 @@ main {
   margin-bottom: 2.4rem;
   height: 5.6rem;
 }
+
+/* Tablet: 768px ~ 1199px 이하 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  main {
+    width: auto;
+    margin: 19rem 5.2rem 32.5rem;
+  }
+}
+
+/* Mobile: 375px ~ 767px 이하 */
+@media (min-width: 375px) and (max-width: 767.99px) {
+  main {
+    width: 100%;
+    max-width: calc(100% - 3.2rem);
+    margin: 8rem 1.6rem 23.1rem;
+  }
+
+  .login__header img,
+  .signup__header img {
+    max-width: 19.7rem;
+    height: auto;
+  }
+}

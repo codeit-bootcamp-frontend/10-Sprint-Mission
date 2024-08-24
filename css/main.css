@@ -147,7 +147,6 @@ section:nth-of-type(3) .section__card {
   text-align: right;
 }
 
-
 .section__card--text {
   width: 42.6rem;
 }
@@ -213,7 +212,6 @@ footer {
   gap: 1.2rem;
 }
 
-
 /* PC: 1200px 이상 */
 @media (min-width: 1200px) {
   .header__inner {
@@ -261,7 +259,7 @@ footer {
   }
 }
 
-/* Tablet: 769px ~ 1199px 이하 */
+/* Tablet: 768px ~ 1199px 이하 */
 @media (min-width: 768px) and (max-width: 1199px) {
   .header__inner {
     padding: 1rem 2.4rem;

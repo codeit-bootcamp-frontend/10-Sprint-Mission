@@ -51,7 +51,6 @@ window.addEventListener('load', () => {
       window.location.href = '/src/pages/signin/';
     }
   });
-  
 });
 
 window.dispatchEvent(loadEvent);

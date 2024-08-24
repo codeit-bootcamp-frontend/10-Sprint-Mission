@@ -17,9 +17,3 @@ body {
   font-family: Pretendard;
   font-style: normal;
 }
-
-@media (max-width: 1919px) {
-  .header__wrap {
-    padding: 9px 200px;
-  }
-}

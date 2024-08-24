@@ -3,7 +3,6 @@
   left: 0;
   top: 0;
   width: 100%;
-  padding: 9px 400px;
   border-bottom: 1px solid #dfdfdf;
   background-color: #ffffff;
 }
@@ -42,4 +41,28 @@
 
 .header__login-btn:active {
   background-color: #1251aa;
+}
+
+@media (min-width: 375px) {
+  .header__wrap {
+    padding: 10px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .header__wrap {
+    padding: 10px 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__wrap {
+    padding: 9px 200px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header__wrap {
+    padding: 9px 400px;
+  }
 }

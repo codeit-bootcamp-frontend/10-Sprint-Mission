@@ -160,18 +160,22 @@
   }
   
   .footer-content {
-    padding: 32px auto 64px;
-    width: 311px;
+    padding: 32px 16px 64px;
+    width: 100%;
     height: 96px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: relative;
   }
 
   .footer-content > div:nth-child(1) {
     order: 3;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    
   }
   
   .footer-content > div:nth-child(2) ,

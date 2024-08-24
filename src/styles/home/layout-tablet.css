@@ -1,9 +1,8 @@
 @media (min-width: 768px) and (max-width: 1199px) {
-
-
   .header {
     display: flex;
     height: 70px;
+    width: 100%;
     justify-content: space-between;
   }
   
@@ -125,6 +124,7 @@
   }
 
   .bottom-content {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -153,8 +153,8 @@
   }
   
   .footer-content {
-    padding: 32px auto 64px;
-    width: 536px;
+    padding: 32px 24px 64px;
+    width: 100%;
     height: 64px;
     display: flex;
     align-items: start;

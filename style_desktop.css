@@ -1,8 +1,11 @@
+:root {
+  --primary_color:var(--blue100);
+  --secondary_color:#cfe5ff;
+}
 body {
   margin:0px;
   padding:0px;
-  --primary_color: #374151;
-  color:var(--primary_color);
+  color:var(--gray700);
   box-sizing: border-box;
 }
 a {
@@ -10,7 +13,7 @@ a {
   cursor: pointer;
 }
 .header {
-  background-color: #ffffff;
+  background-color:var(--white);
   height:70px;
   padding:0;
 }
@@ -34,8 +37,8 @@ a {
   margin-right:200px;
   padding:12px 20px;
   text-align: center;
-  color:#ffffff;
-  background-color: #3692ff;
+  color:var(--white);
+  background-color:var(--primary_color);
   border-radius: 8px;
   border:0;
   cursor: pointer;
@@ -43,7 +46,7 @@ a {
 .hometop {
   width:100%;
   height:540px;
-  background-color: #cfe5ff;
+  background-color:var(--secondary_color);
   padding-top:200px;
 }
 .topcon{
@@ -71,10 +74,10 @@ a {
   width:357px;
   padding:16px 124px;
   border-radius: 40px;
-  background-color: #3692ff;
+  background-color: var(--primary_color);
   border:0;
   text-align: center;
-  color:#ffffff;
+  color:var(--white);
   cursor: pointer;
 }
 .show {
@@ -105,7 +108,7 @@ a {
   margin-top:61px;
 }
 #showtitle {
-  color:#3692ff;
+  color:var(--primary_color);
   font-size:18px;
   font-weight: 700;
   line-height: 26px;
@@ -123,7 +126,7 @@ a {
 .homebot {
   width:100%;
   height:540px;
-  background-color: #cfe5ff;
+  background-color:var(--secondary_color);
   padding-top:143px;
 }
 .botcon{
@@ -149,7 +152,7 @@ a {
 }
 .footer {
   height:160px;
-  background-color: #111827;
+  background-color: var(--gray900);
   padding-top: 32px;
 }
 .footercon {
@@ -159,8 +162,8 @@ a {
   justify-content: space-between;
 }
 .footercon > div {
-  color:#9ca3af;
+  color:var(--gray400);
 }
 .footercon > div > a {
-  color:#e5e7eb;
+  color:var(--gray200);
 }

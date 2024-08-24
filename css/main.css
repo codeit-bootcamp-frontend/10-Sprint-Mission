@@ -50,14 +50,12 @@ header {
 
 .section-2__card--wrapper,
 .section-4__card--wrapper {
-  /* width: 120rem; */
   width: 100%;
   display: flex;
   margin: 0 auto;
 }
 
 .section-3__card--wrapper {
-  /* width: 120rem; */
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -82,7 +80,6 @@ header {
   justify-content: space-between;
   align-items: end;
   margin: 0 20rem;
-  /* width: 111rem; */
 }
 
 .main__background--footer h3 {
@@ -96,7 +93,6 @@ header {
 .main__background--footer > div img {
   display: block;
   width: 100%;
-  /* height: auto; */
 }
 
 .main__background--text {
@@ -141,15 +137,16 @@ section:nth-of-type(4) {
   padding: 13.8rem 20rem;
 }
 
+section:nth-of-type(2) .section__card,
+section:nth-of-type(4) .section__card {
+  width: 98.7rem;
+}
+
 section:nth-of-type(3) .section__card {
   width: 96.9rem;
   text-align: right;
 }
 
-section:nth-of-type(2) .section__card,
-section:nth-of-type(4) .section__card {
-  width: 98.7rem;
-}
 
 .section__card--text {
   width: 42.6rem;
@@ -216,10 +213,6 @@ footer {
   gap: 1.2rem;
 }
 
-/* .footer__links-wrapper {
-  display: flex;
-  align-items: center;
-} */
 
 /* PC: 1200px 이상 */
 @media (min-width: 1200px) {
@@ -239,6 +232,7 @@ footer {
   }
 }
 
+/* 대형 PC: 1920px 이상 */
 @media screen and (min-width: 1920px) {
   .header__inner {
     padding: 0 40rem;
@@ -280,7 +274,7 @@ footer {
     height: auto;
     align-items: center;
   }
-  
+
   .main__background--text h2 > br {
     display: none;
   }
@@ -307,17 +301,17 @@ footer {
     gap: 2.4rem;
   }
 
-  section:nth-of-type(3),
-  section:nth-of-type(4) {
-    padding: 0 2.4rem 0;
-  }
-
   section:nth-of-type(2) {
     padding: 2.4rem 2.4rem 0;
   }
 
   section:nth-of-type(3) {
     margin: 5.2rem 0;
+    padding: 0 2.4rem 0;
+  }
+
+  section:nth-of-type(4) {
+    padding: 0 2.4rem 0;
   }
 
   section:nth-of-type(2) .section__card,
@@ -445,19 +439,15 @@ footer {
   }
 
   section:nth-of-type(2) .section__card,
-  section:nth-of-type(3) .section__card,
-  section:nth-of-type(4) .section__card {
-    width: auto;
-  }
-
-  section:nth-of-type(2) .section__card,
   section:nth-of-type(4) .section__card {
     align-items: flex-start;
+    width: 100%;
   }
 
   section:nth-of-type(3) .section__card {
     flex-direction: column-reverse;
     align-items: flex-end;
+    width: 100%;
   }
 
   .section__card--img {
@@ -510,14 +500,14 @@ footer {
 
   .footer__nav {
     order: 1;
+    gap: 3rem;
+    flex-basis: 50%;
   }
 
   .footer__social-icons {
     order: 2;
-  }
-
-  .footer__nav {
-    gap: 3rem;
+    flex-basis: 50%;
+    justify-content: flex-end;
   }
 
   .footer__text--copyright {

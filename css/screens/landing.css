@@ -46,7 +46,6 @@ footer {
   text-decoration: none;
   color: var(--Secondary-50);
   gap: 10px;
-  margin: 0 auto;
 }
 
 .landing-vertical__btn:hover {
@@ -81,7 +80,7 @@ footer {
 
 .landing-main__card {
   display: flex;
-  background: #fcfcfc;
+  background-color: #fcfcfc;
 }
 
 .landing-main__card--right {
@@ -90,14 +89,16 @@ footer {
   text-align: right;
 }
 
-.landing-main_content {
-  background-color: #1251aa;
+.landing-main__content-wrap {
+  display: inline-block;
 }
+
+/* card 배경색 img 둥근 모서리 영역 없애기 */
+/* title 줄바꿈 설정*/
 
 .landing-main__img {
   border-radius: 12px;
   max-width: 100%;
-  height: auto;
 }
 
 .landing-main__keyword {
@@ -127,7 +128,7 @@ footer {
   }
   .landing-vertical__content {
     gap: 18px;
-    margin: 48px auto 0;
+    margin: 48px auto 131px;
   }
 
   .landing-vertical__content-bottom {
@@ -136,12 +137,12 @@ footer {
 
   .landing-vertical__title {
     font-size: 32px;
-    width: 240px;
   }
 
   .landing-vertical__img {
     max-width: 100%;
     height: auto;
+    overflow: hidden;
   }
 
   .landing-vertical__btn {
@@ -166,9 +167,7 @@ footer {
   .landing-main__card {
     flex-direction: column;
     gap: 24px;
-    /* margin: 0 auto; */
-    /* 마진 오토 확인 필요 */
-    width: 100%;
+    margin: 0 auto;
   }
 
   .landing-main__keyword {
@@ -190,49 +189,6 @@ footer {
 
 /* 375 영역 끝 */
 @media (min-width: 768px) {
-  .landing-vertical__wrap {
-    height: 771px;
-  }
-
-  .landing-vertical__content {
-    gap: 24px;
-    margin: 84px auto 0;
-  }
-
-  .landing-vertical__title {
-    font-size: 40px;
-    width: 512px;
-  }
-
-  .landing-vertical__btn {
-    height: 56px;
-    padding: 16px 124px;
-  }
-
-  .landing-main__wrap {
-    margin: 24px 0 56px;
-    gap: 52px;
-  }
-
-  .landing-main__section {
-    margin: 0 24px;
-  }
-
-  .landing-main__keyword {
-    font-size: 18px;
-    line-height: 1.44;
-  }
-
-  .landing-main__title {
-    font-size: 32px;
-    line-height: 1.31;
-    margin: 16px 0 24px;
-  }
-
-  .landing-main__desc {
-    font-size: 18px;
-    line-height: 1.44;
-  }
 }
 
 /* 768 영역 끝 */
@@ -281,6 +237,7 @@ footer {
 
   .landing-main__section {
     padding: 138px 0;
+    margin: 0;
   }
 
   .landing-main__section--right {
@@ -291,8 +248,6 @@ footer {
     flex-direction: row;
     align-items: center;
     gap: 64px;
-    background: #fcfcfc;
-    flex-grow: 0;
     margin: 0;
   }
 

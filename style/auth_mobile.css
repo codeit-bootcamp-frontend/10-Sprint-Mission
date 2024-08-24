@@ -1,4 +1,7 @@
 @media (max-width:767px){
+    br{
+        display:none !important;
+    }
     .auth-container {
         padding: 0 16px;
         display:inline-flex;

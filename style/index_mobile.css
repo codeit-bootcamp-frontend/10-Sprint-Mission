@@ -1,4 +1,10 @@
 @media (max-width:767px){
+    .section-text> br{
+        display:none !important;
+    }
+    .banner-text> br{
+        display:none !important;
+    }
     .banner {
         height: 540px;
     }

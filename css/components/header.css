@@ -13,12 +13,14 @@
   justify-content: space-between;
 }
 
-.header__logo {
-  display: flex;
+.header__logo-img,
+.header__logo-img--typo {
+  height: 51px;
+  vertical-align: middle;
 }
 
 .header__logo-img {
-  vertical-align: middle;
+  display: none;
 }
 
 .header__login-btn {
@@ -48,9 +50,8 @@
     padding: 10px 16px;
   }
 
-  .header__logo-img {
-    width: 105px;
-    height: 35px;
+  .header__logo-img--typo {
+    width: 103px;
   }
 }
 
@@ -60,8 +61,12 @@
   }
 
   .header__logo-img {
+    display: inline;
     width: 153px;
-    height: 51px;
+  }
+
+  .header__logo-img--typo {
+    display: none;
   }
 }
 

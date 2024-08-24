@@ -8,9 +8,7 @@ body {
     font-family: 'Pretendard Variable';
 }
 
-span {
-    text-decoration: none;
-}
+
 
 .txt {
     text-decoration: none;
@@ -56,8 +54,6 @@ span {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    width: 357px;
-    height: 56px;
     padding: 16px 124px 16px 124px;
     gap: 10px;
     border: 1px;

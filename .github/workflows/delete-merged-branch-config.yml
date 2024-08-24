@@ -1,13 +1,22 @@
 name: delete branch on close pr
 
 on:
-  pull_request:
-    types: [closed]
+  issue_comment:
+    types: [created]
 
 jobs:
   delete-branch:
     runs-on: ubuntu-latest
     steps:
+      - name: Check if branch exists
+        id: check_branch
+        run: |
+          if git show-ref --verify --quiet refs/heads/${{ github.head_ref }}; then
+            echo "branch_exists=true" >> $GITHUB_ENV
+          else
+            echo "branch_exists=false" >> $GITHUB_ENV
+          fi
+
       - name: delete branch
         uses: SvanBoxel/delete-merged-branch@main
         env:

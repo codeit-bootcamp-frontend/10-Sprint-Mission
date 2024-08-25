@@ -6,7 +6,13 @@
 
 /* screens */
 @import "screens/landing.css";
-@import "screens/login-signup.css";
+@import "screens/auth.css";
+
+/* responsive */
+@import "responsive/header-res.css";
+@import "responsive/footer-res.css";
+@import "responsive/landing-res.css";
+@import "responsive/auth-res.css";
 
 * {
   box-sizing: border-box;

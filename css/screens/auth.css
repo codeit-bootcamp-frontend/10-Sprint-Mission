@@ -112,7 +112,7 @@
   color: var(--Primary-100, #3692ff);
 }
 
-@media (min-width: 376px) {
+@media (min-width: 375px) {
   .login__wrap {
     margin: 80px auto 0;
     max-width: 400px;

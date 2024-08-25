@@ -93,9 +93,6 @@ footer {
   display: inline-block;
 }
 
-/* card 배경색 img 둥근 모서리 영역 없애기 */
-/* title 줄바꿈 설정*/
-
 .landing-main__img {
   border-radius: 12px;
   max-width: 100%;
@@ -168,6 +165,7 @@ footer {
     flex-direction: column;
     gap: 24px;
     margin: 0 auto;
+    flex-grow: 1;
   }
 
   .landing-main__keyword {
@@ -185,13 +183,27 @@ footer {
     font-size: 16px;
     line-height: 1.62;
   }
+
+  .line-break--cta {
+    display: block;
+  }
 }
 
 /* 375 영역 끝 */
+
 @media (min-width: 768px) {
+  .landing-main__section {
+    margin: 0 24px;
+  }
+
+  .line-break,
+  .line-break--cta {
+    display: inline;
+  }
 }
 
 /* 768 영역 끝 */
+
 @media (min-width: 1200px) {
   .landing-vertical__wrap {
     align-items: flex-end;
@@ -249,6 +261,7 @@ footer {
     align-items: center;
     gap: 64px;
     margin: 0;
+    flex-grow: 0;
   }
 
   .landing-main__card--right {
@@ -270,5 +283,10 @@ footer {
   .landing-main__desc {
     font-size: 24px;
     line-height: 1.33;
+  }
+
+  .line-break,
+  .line-break--cta {
+    display: block;
   }
 }

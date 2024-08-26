@@ -1,25 +1,31 @@
 .footer__wrap {
-  padding: 32px 400px;
   background: var(--Secondary-900);
+  height: 160px;
+  padding: 32px 400px;
 }
 
 .footer__content {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+}
+
+.footer__content-info {
+  display: flex;
+  width: 66.66%;
 }
 
 .footer__copyright {
   font-size: 16px;
   font-weight: 400;
-  text-align: center;
   color: var(--Secondary-400);
-  line-height: normal;
+  width: 50%;
 }
 
 .footer__info-wrap {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
+  width: 50%;
 }
 
 .footer__info {
@@ -28,17 +34,13 @@
   text-align: center;
   text-decoration: none;
   color: var(--Secondary-200);
-  line-height: normal;
-}
-
-.footer__info:first-child {
-  margin: 0 30px 0 0;
 }
 
 .footer__shortcut-btns {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  width: 33.33%;
 }
 
 .footer__shortcut-btn {
@@ -47,4 +49,77 @@
 
 .footer__shortcut-btn:not(:last-child) {
   margin: 0 12px 0 0;
+}
+
+@media (min-width: 375px) {
+  .footer__wrap {
+    padding: 32px;
+  }
+
+  .footer__content {
+    align-items: flex-start;
+  }
+
+  .footer__content-info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 60px;
+    text-wrap: nowrap;
+  }
+
+  .footer__copyright {
+    color: #676767;
+    font-family: Arial;
+  }
+
+  .footer__info-wrap {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .footer__info {
+    color: #cfcfcf;
+    font-family: Arial;
+  }
+}
+
+/* 375 영역 끝 */
+
+@media (min-width: 768px) {
+  .footer__wrap {
+    padding: 32px 104px 64px;
+  }
+
+  .footer__content {
+    align-items: center;
+  }
+
+  .footer__content-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .footer__copyright {
+    font-family: Abel;
+  }
+
+  .footer__info-wrap {
+    justify-content: center;
+    width: 50%;
+  }
+
+  .footer__info {
+    font-family: Abel;
+  }
+}
+/* 768 영역 끝 */
+
+@media (min-width: 1200px) {
+  .footer__copyright {
+    font-family: Pretendard;
+  }
+
+  .footer__info {
+    font-family: Pretendard;
+  }
 }

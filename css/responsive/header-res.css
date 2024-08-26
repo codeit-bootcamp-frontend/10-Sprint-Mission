@@ -7,6 +7,7 @@
     width: 103px;
   }
 }
+/* 375 영역 끝 */
 
 @media (min-width: 768px) {
   .header__wrap {
@@ -22,6 +23,7 @@
     display: none;
   }
 }
+/* 768 영역 끝 */
 
 @media (min-width: 1200px) {
   .header__wrap {

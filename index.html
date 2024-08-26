@@ -3,7 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      property="og:image"
+      content="https://pbs.twimg.com/media/GS_9-yyXwAAryDS?format=jpg&name=medium"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://pbs.twimg.com/media/GS_9-yyXwAAryDS?format=jpg&name=medium"
+    />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건을 거래해보세요"
+    />
+
     <title>판다마켓</title>
+    <link rel="icon" href="images/icon/favicon-panda.png" />
     <link
       rel="stylesheet"
       as="style"
@@ -19,7 +43,12 @@
           <a href="/" class="header__logo">
             <img
               class="header__logo-img"
-              src="images/logo/logo-sm.png"
+              src="images/logo/logo.png"
+              alt="판다마켓 로고"
+            />
+            <img
+              class="header__logo-img--typo"
+              src="images/logo/logo-typo.png"
               alt="판다마켓 로고"
             />
           </a>
@@ -33,18 +62,23 @@
       <section>
         <div class="landing-vertical">
           <div class="landing-vertical__wrap">
-            <div class="landing-vertical__content">
-              <h1 class="landing-vertical__title">
-                일상의 모든 물건을<br />
-                거래해 보세요
-              </h1>
-              <a class="landing-vertical__btn" href="/items.html"
-                ><span class="landing-vertical__btn-text"
-                  >구경하러 가기</span
-                ></a
-              >
+            <div class="landing-vertical__card">
+              <div class="landing-vertical__content">
+                <h1 class="landing-vertical__title">
+                  일상의 모든 물건을 거래해보세요
+                </h1>
+                <a class="landing-vertical__btn" href="/items.html"
+                  ><span class="landing-vertical__btn-text"
+                    >구경하러 가기</span
+                  ></a
+                >
+              </div>
+              <img
+                class="landing-vertical__img"
+                src="images/landing-top.png"
+                alt="거래하러 가는 판다"
+              />
             </div>
-            <img src="images/landing-top.png" alt="거래하러 가는 판다" />
           </div>
         </div>
       </section>
@@ -52,58 +86,70 @@
       <section>
         <div class="landing-main">
           <div class="landing-main__wrap">
-            <div class="landing-main__card">
-              <img
-                src="images/landing-main-01.png"
-                alt="인기 상품 검색하는 판다"
-              />
+            <div class="landing-main__section">
+              <div class="landing-main__card">
+                <img
+                  class="landing-main__img"
+                  src="images/landing-main-01.png"
+                  alt="인기 상품 검색하는 판다"
+                />
 
-              <div class="landing-main__content">
-                <p class="landing-main__keyword">Hot item</p>
-                <h1 class="landing-main__title">
-                  인기 상품을<br />확인해 보세요
-                </h1>
-                <p class="landing-main__desc">
-                  가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해 보세요
-                </p>
+                <div class="landing-main__content">
+                  <div class="landing-main__content-wrap">
+                    <p class="landing-main__keyword">Hot item</p>
+                    <h1 class="landing-main__title">
+                      인기 상품을 확인해보세요
+                    </h1>
+                    <p class="landing-main__desc">
+                      가장 HOT한 중고거래 물품을<br />판다 마켓에서 확인해
+                      보세요
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="landing-main__wrap landing-main__wrap--right">
-            <div class="landing-main__card landing-main__card--right">
-              <div class="landing-main__content landing-main__content--right">
-                <p class="landing-main__keyword">Search</p>
-                <h1 class="landing-main__title">
-                  구매를 원하는<br />상품을 검색하세요
-                </h1>
-                <p class="landing-main__desc">
-                  구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
-                </p>
+            <div class="landing-main__section landing-main__section--right">
+              <div class="landing-main__card landing-main__card--right">
+                <img
+                  class="landing-main__img"
+                  src="images/landing-main-02.png"
+                  alt="구매할 상품을 찾는 중"
+                />
+
+                <div class="landing-main__content">
+                  <div class="landing-main__content-wrap">
+                    <p class="landing-main__keyword">Search</p>
+                    <h1 class="landing-main__title">
+                      구매를 원하는 상품을 검색하세요
+                    </h1>
+                    <p class="landing-main__desc">
+                      구매하고 싶은 물품은 검색해서<br />쉽게 찾아보세요
+                    </p>
+                  </div>
+                </div>
               </div>
-
-              <img
-                src="images/landing-main-02.png"
-                alt="구매할 상품을 찾는 중"
-              />
             </div>
-          </div>
 
-          <div class="landing-main__wrap">
-            <div class="landing-main__card">
-              <img
-                src="images/landing-main-03.png"
-                alt="판매할 상품을 등록하는 중"
-              />
+            <div class="landing-main__section">
+              <div class="landing-main__card">
+                <img
+                  class="landing-main__img"
+                  src="images/landing-main-03.png"
+                  alt="판매할 상품을 등록하는 중"
+                />
 
-              <div class="landing-main__content">
-                <p class="landing-main__keyword">Register</p>
-                <h1 class="landing-main__title">
-                  판매를 원하는<br />상품을 등록하세요
-                </h1>
-                <p class="landing-main__desc">
-                  어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
-                </p>
+                <div class="landing-main__content">
+                  <div class="landing-main__content-wrap">
+                    <p class="landing-main__keyword">Register</p>
+                    <h1 class="landing-main__title">
+                      판매를 원하는 상품을 등록하세요
+                    </h1>
+                    <p class="landing-main__desc">
+                      어떤 물건이든 판매하고 싶은 상품을<br />쉽게 등록하세요
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -113,13 +159,21 @@
       <section>
         <div class="landing-vertical">
           <div class="landing-vertical__wrap landing-vertical__wrap--bottom">
-            <div class="landing-vertical__content">
-              <h1 class="landing-vertical__title">
-                믿을 수 있는<br />
-                판다마켓 중고 거래
-              </h1>
+            <div class="landing-vertical__card">
+              <div
+                class="landing-vertical__content landing-vertical__content-bottom"
+              >
+                <h1 class="landing-vertical__title">
+                  믿을 수 있는<br />
+                  판다마켓 중고 거래
+                </h1>
+              </div>
+              <img
+                class="landing-vertical__img"
+                src="images/landing-bottom.png"
+                alt="거래하러 가는 판다"
+              />
             </div>
-            <img src="images/landing-bottom.png" alt="거래하러 가는 판다" />
           </div>
         </div>
       </section>
@@ -128,11 +182,13 @@
     <footer>
       <div class="footer__wrap">
         <div class="footer__content">
-          <span class="footer__copyright">©codeit - 2024</span>
+          <div class="footer__content-info">
+            <span class="footer__copyright">©codeit - 2024</span>
 
-          <div class="footer__info-wrap">
-            <a class="footer__info" href="/privacy.html">Privacy Policy</a>
-            <a class="footer__info" href="/faq">FAQ</a>
+            <div class="footer__info-wrap">
+              <a class="footer__info" href="/privacy.html">Privacy Policy</a>
+              <a class="footer__info" href="/faq">FAQ</a>
+            </div>
           </div>
 
           <div class="footer__shortcut-btns">

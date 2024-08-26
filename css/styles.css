@@ -8,24 +8,12 @@
 @import "screens/landing.css";
 @import "screens/login-signup.css";
 
-
 * {
   box-sizing: border-box;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
   margin: 0;
   font-family: Pretendard;
   font-style: normal;
-}
-
-@media (max-width: 1919px) {
-  .header__wrap {
-    padding: 9px 400px;
-  }
 }

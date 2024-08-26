@@ -1,0 +1,80 @@
+@media (min-width: 375px) {
+  .login__wrap {
+    margin: 80px auto 0;
+    max-width: 400px;
+    gap: 24px;
+  }
+
+  .header__auth-img {
+    width: 198px;
+    height: 66px;
+  }
+
+  .main__wrap {
+    margin: 0 16px;
+  }
+
+  .login-form__label {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.71;
+  }
+
+  .login-form__input {
+    margin-bottom: 16px;
+    width: 100%;
+  }
+
+  .login-form__btn {
+    width: 100%;
+  }
+
+  .social-login {
+    width: 100%;
+    padding: 16px 24px;
+  }
+}
+/* 375 영역 끝 */
+@media (min-width: 768px) {
+  .login__wrap {
+    max-width: 640px;
+    margin: 48px auto 0;
+    gap: 40px;
+  }
+
+  .header__auth-img {
+    width: 396px;
+    height: 132px;
+  }
+
+  .main__wrap {
+    margin: 0;
+  }
+
+  .login-form__label {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1.444;
+  }
+
+  .login-form__input {
+    width: 640px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+  }
+
+  .login-form__btn {
+    width: 640px;
+  }
+
+  .social-login {
+    width: 640px;
+    padding: 16px 23px;
+  }
+}
+/* 768 영역 끝 */
+@media (min-width: 1200px) {
+  .login__wrap {
+    margin: 60px auto 0;
+  }
+}

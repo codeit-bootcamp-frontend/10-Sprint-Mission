@@ -18,10 +18,7 @@
   font-size: 16px;
   font-weight: 400;
   color: var(--Secondary-400);
-<<<<<<< HEAD
-=======
   width: 50%;
->>>>>>> b569ab8bdee651573e1c1ccbc436e5481b0dfd41
 }
 
 .footer__info-wrap {
@@ -37,13 +34,6 @@
   text-align: center;
   text-decoration: none;
   color: var(--Secondary-200);
-<<<<<<< HEAD
-}
-
-.footer__info:first-child {
-  margin: 0 30px 0 0;
-=======
->>>>>>> b569ab8bdee651573e1c1ccbc436e5481b0dfd41
 }
 
 .footer__shortcut-btns {
@@ -90,46 +80,5 @@
   .footer__info {
     color: #cfcfcf;
     font-family: Arial;
-  }
-}
-
-/* 375 영역 끝 */
-
-@media (min-width: 768px) {
-  .footer__wrap {
-    padding: 32px 104px 64px;
-  }
-
-  .footer__content {
-    align-items: center;
-  }
-
-  .footer__content-info {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .footer__copyright {
-    font-family: Abel;
-  }
-
-  .footer__info-wrap {
-    justify-content: center;
-    width: 50%;
-  }
-
-  .footer__info {
-    font-family: Abel;
-  }
-}
-/* 768 영역 끝 */
-
-@media (min-width: 1200px) {
-  .footer__copyright {
-    font-family: Pretendard;
-  }
-
-  .footer__info {
-    font-family: Pretendard;
   }
 }

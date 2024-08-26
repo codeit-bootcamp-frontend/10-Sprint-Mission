@@ -6,8 +6,17 @@
 
 /* screens */
 @import "screens/landing.css";
-@import "screens/login-signup.css";
+@import "screens/auth.css";
 
+<<<<<<< HEAD
+=======
+/* responsive */
+@import "responsive/header-res.css";
+@import "responsive/footer-res.css";
+@import "responsive/landing-res.css";
+@import "responsive/auth-res.css";
+
+>>>>>>> fix-sprint3
 * {
   box-sizing: border-box;
 }
@@ -16,4 +25,8 @@ body {
   margin: 0;
   font-family: Pretendard;
   font-style: normal;
+<<<<<<< HEAD
+=======
+  min-width: 375px;
+>>>>>>> fix-sprint3
 }

@@ -12,8 +12,8 @@ http://scripts.sil.org/OFL
   font-weight: 700;
   font-display: swap;
   src: local('Pretendard Bold'),
-    url(../assets/fonts/Pretendard-Bold.woff2) format('woff2'),
-    url(../assets/fonts/Pretendard-Bold.woff) format('woff');
+    url(../assets/fonts/pretendard-bold.woff2) format('woff2'),
+    url(../assets/fonts/pretendard-bold.woff) format('woff');
 }
 
 @font-face {
@@ -21,8 +21,8 @@ http://scripts.sil.org/OFL
   font-weight: 600;
   font-display: swap;
   src: local('Pretendard SemiBold'),
-    url(../assets/fonts/Pretendard-SemiBold.woff2) format('woff2'),
-    url(../assets/fonts/Pretendard-SemiBold.woff) format('woff');
+    url(../assets/fonts/pretendard-semibold.woff2) format('woff2'),
+    url(../assets/fonts/pretendard-semibold.woff) format('woff');
 }
 
 @font-face {
@@ -30,8 +30,8 @@ http://scripts.sil.org/OFL
   font-weight: 500;
   font-display: swap;
   src: local('Pretendard Medium'),
-    url(../assets/fonts/Pretendard-Medium.woff2) format('woff2'),
-    url(../assets/fonts/Pretendard-Medium.woff) format('woff');
+    url(../assets/fonts/pretendard-medium.woff2) format('woff2'),
+    url(../assets/fonts/pretendard-medium.woff) format('woff');
 }
 
 @font-face {
@@ -39,6 +39,6 @@ http://scripts.sil.org/OFL
   font-weight: 400;
   font-display: swap;
   src: local('Pretendard Regular'),
-    url(../assets/fonts/Pretendard-Regular.woff2) format('woff2'),
-    url(../assets/fonts/Pretendard-Regular.woff) format('woff');
+    url(../assets/fonts/pretendard-regular.woff2) format('woff2'),
+    url(../assets/fonts/pretendard-regular.woff) format('woff');
 }

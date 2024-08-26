@@ -3,12 +3,14 @@ main {
   margin: 23.1rem auto;
 }
 
-.signup__header {
+.signup__header,
+.login__header {
   text-align: center;
   margin-bottom: 4rem;
 }
 
-.signup__label {
+.signup__label,
+.login__label {
   font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 1.6rem;
@@ -16,7 +18,8 @@ main {
   color: var(--Gray-800);
 }
 
-.signup__input {
+.signup__input,
+.login__input {
   width: 100%;
   height: 100%;
   padding: 1.6rem 2.4rem;
@@ -27,24 +30,34 @@ main {
   border-radius: 1.2rem;
 }
 
-.signup__input::placeholder {
+.signup__input::placeholder,
+.login__input::placeholder {
   color: var(--Gray-400);
 }
 
-.signup__input:focus {
+.signup__input:focus,
+.login__input:focus {
   outline: 1px solid #3692ff;
 }
 
-.signup__field {
+.signup__field,
+.login__field--password {
   height: 5.6rem;
   margin-bottom: 2.4rem;
 }
 
-.signup__field--password {
+.signup__field--password,
+.login__field--password {
   position: relative;
 }
 
-.signup__field--password button {
+.signup__password-toggle-icon--active,
+.login__password-toggle-icon--active {
+  display: none;
+}
+
+.signup__field--password button,
+.login__field--password button {
   position: absolute;
   top: 50%;
   right: 2.4rem;
@@ -56,11 +69,8 @@ main {
   background: none;
 }
 
-.signup__password-toggle-icon--active {
-  display: none;
-}
-
-.signup__submit {
+.signup__submit,
+.login__submit {
   width: 100%;
   height: 5.6rem;
   padding: 1.6rem 0;
@@ -74,7 +84,8 @@ main {
   transition: background-color 0.2s;
 }
 
-.signup__submit:hover {
+.signup__submit:hover,
+.login__submit:hover {
   background-color: var(--Primary-100);
 }
 
@@ -116,18 +127,50 @@ main {
   background-color: #fff;
 }
 
-.login-link {
+.login-link,
+.signup-link {
   text-align: center;
 }
 
-.login-link__text {
+.login-link__text,
+.signup-link__text {
   font-size: 1.4rem;
   font-weight: 500;
   color: var(--Gray-800);
 }
 
-.login-link__text a {
+.login-link__text a,
+.signup-link__text a {
   margin-left: 0.4rem;
   color: var(--Primary-100);
   border-bottom: 1px solid var(--Primary-100);
+}
+
+/* 로그인 영역만 해당부분 */
+.login__field--id {
+  margin-bottom: 2.4rem;
+  height: 5.6rem;
+}
+
+/* Tablet: 768px ~ 1199px 이하 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  main {
+    width: auto;
+    margin: 19rem 5.2rem 32.5rem;
+  }
+}
+
+/* Mobile: 375px ~ 767px 이하 */
+@media (min-width: 375px) and (max-width: 767.99px) {
+  main {
+    width: 100%;
+    max-width: calc(100% - 3.2rem);
+    margin: 8rem 1.6rem 23.1rem;
+  }
+
+  .login__header img,
+  .signup__header img {
+    max-width: 19.7rem;
+    height: auto;
+  }
 }

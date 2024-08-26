@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/common.css" />
-    <link rel="stylesheet" href="/css/signup.css" />
+    <link rel="stylesheet" href="/css/auth.css" />
     <title>회원가입 | 판다마켓</title>
   </head>
   <body>
@@ -56,25 +56,27 @@
               aria-label="비밀번호 보기"
             >
               <img
-                src="/assets/images/btn-visibility-off.svg"
+                src="/assets/images/ic-visibility-off.svg"
                 class="signup__password-toggle-icon signup__password-toggle-icon--inactive"
                 alt="비밀번호 숨기기 아이콘"
               />
               <img
                 class="signup__password-toggle-icon signup__password-toggle-icon--active"
-                src="/assets/images/btn-visibility-on.svg"
+                src="/assets/images/ic-visibility-on.svg"
                 alt="비밀번호 보기 아이콘"
               />
             </button>
           </div>
-          <label for="password" class="signup__label signup__label--password"
+          <label
+            for="password-confirm"
+            class="signup__label signup__label--password"
             >비밀번호 확인
           </label>
           <div class="signup__field signup__field--password">
             <input
               type="password"
-              id="password"
-              name="password"
+              id="password-confirm"
+              name="password-confirm"
               placeholder="비밀번호를 다시 한 번 입력해주세요"
               class="signup__input"
               required
@@ -85,13 +87,13 @@
               aria-label="비밀번호 보기"
             >
               <img
-                src="/assets/images/btn-visibility-off.svg"
+                src="/assets/images/ic-visibility-off.svg"
                 class="signup__password-toggle-icon signup__password-toggle-icon--inactive"
                 alt="비밀번호 숨기기 아이콘"
               />
               <img
                 class="signup__password-toggle-icon signup__password-toggle-icon--active"
-                src="/assets/images/btn-visibility-on.svg"
+                src="/assets/images/ic-visibility-on.svg"
                 alt="비밀번호 보기 아이콘"
               />
             </button>

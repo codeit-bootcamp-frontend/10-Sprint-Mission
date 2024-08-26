@@ -1,3 +1,9 @@
+/* 반응형 설계
+    PC(기본): 1200px 이상
+    Tablet: 768px 이상 1199px 이하
+    Mobile: 375px 이상 767px 이하
+    375px 미만은 고려x */
+
 * {
     box-sizing: border-box;
 }
@@ -15,7 +21,7 @@ body {
 .header {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 1030;
 
     height: 70px;
     width: 100%;
@@ -44,41 +50,43 @@ body {
 
     background-color: #CFE5FF;
     height: 540px;
+    
+    background-image: url("../assets/Img_home_top.svg");
+    background-repeat: no-repeat;
+    background-position: 75% 100%;
 
     position: relative;
 }
 
 .top-banner-contents {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:7px;
-   
-    position: absolute;
-    bottom: 0;
-}
-
-.top-banner-text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 32px;
-    padding: 0 0 60px 0;
+
+    position: absolute;
+    bottom: 80px;
+    left: 15%;
+    top:auto;
+    right: auto;
 }
 
 .top-banner-text>p {
     font-size: 40px;
     font-weight: 700;
     color: #374151;
+    line-height: 56px;
+    margin: 0;
 }
 
-.top-banner-text>a {
+.top-banner-contents>a {
+    font-size: 20px;
+    line-height: 32px;
     padding: 16px 124px;
     border-radius: 40px;
     background-color: #3692FF;
     color: #F3F4F6;
     text-decoration: none;
+    margin-top: 32px;
 
     cursor:pointer;
 }
@@ -102,10 +110,13 @@ body {
 }
 
 .card {
+    /* 카드 width 지정.
+    다만 설명이 줄내림 되지않게 더 늘어날수도 있게 함 */
+    min-width: 955px;
     background-color: #FCFCFC;
 
     display: flex;
-    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     gap: 44px;
 }
@@ -116,7 +127,7 @@ body {
 } 
     
 위 방법으로 구현하고자 했으나(본문 카드 추가시 수정용이함)
-예상과 바르게 짝수번째 카드 선택이 안됨
+예상과 다르게 짝수번째 카드 선택이 안됨
 부모태그의 자식중에 2번째를 고르는거라 card가 아니라 section 태그를 선택하는것을 확인
 -> 카드에 odd even 클래스값 주는것으로 변경.. */
 
@@ -131,8 +142,18 @@ body {
 .card-text {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin: 0 20px;
+}
+
+.card-text.odd>.card-header,
+.card-text.odd>.card-title,
+.card-text.odd>.card-explain {
+    text-align: left;
+}
+
+.card-text.even>.card-header,
+.card-text.even>.card-title,
+.card-text.even>.card-explain {
+    text-align: right;
 }
 
 .card-header {
@@ -165,27 +186,27 @@ body {
     background-color: #CFE5FF;
     height: 540px;
 
+    background-image: url("../assets/Img_home_bottom.svg");
+    background-repeat: no-repeat;
+    background-position: 75% 100%;
+
     position: relative;
 }
 
-.bottom-banner-contents {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap:69px;
-   
-    position: absolute;
-    bottom: 0;
-}
-
 .bottom-banner-text {
-    gap: 10px;
-    padding: 0 0 60px 0;
+    position: absolute;
+    top: 270px;
+    left: 15%;
 
+    gap: 10px;
+
+}
+.bottom-banner-text>p {
     font-size: 40px;
+    line-height: 56px;
     font-weight: 700;
     color: #374151;
+    margin: 0;
 }
 
 /* main page - footer */
@@ -194,7 +215,7 @@ body {
     height: 160px;
     width: 100%;
     max-width: 1920px;
-    padding: 32px 400px;
+    padding: 32px 200px;
 }
 
 .footer-content {
@@ -206,15 +227,15 @@ body {
     font-weight: 400;
 }
 
-.footer-content>p {
+.footer-content>.copy-right {
     color: #9CA3AF;
 }
 
-.footer-content>.text {
+.footer-content>.menu {
     display: flex;
     gap: 30px;
 }
-.footer-content>.text>a {
+.footer-content>.menu>a {
     text-decoration: none;
     color: #E5E7EB;
 }
@@ -222,138 +243,4 @@ body {
 .footer-content>.icons {
     display: flex;
     gap:12px;
-}
-
-
-/* login page & sign-in page */
-/* login page & sign-in page - every fields & submit button */
-.form {
-    width: 640px;
-    margin: 100px auto 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 40px;
-}
-
-.field>label {
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 26px;
-    color: #1F2937;
-}
-
-.field>input {
-    width: 640px;
-    height: 56px;
-    border-radius: 12px;
-    padding: 16px 24px;
-    background-color: #F3F4F6;
-    border-width: 0px;
-
-    font-family: Pretendard, sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 26px;
-    color: #1F2937;
-
-}
-
-.field>input::placeholder {
-    color: #9CA3AF;
-}
-
-.field>input:focus {
-    border-width: 2px;
-    border-color: #3692FF;
-}
-
-.field {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    position: relative;
-}
-
-/* 심화과제: 인풋 필드 안에 눈 아이콘 넣기 */
-.field>.visibility-icon {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
-}
-
-.fields>button {
-    width: 640px;
-    height: 56px;
-    border-radius: 40px;
-    background-color: #9CA3AF;
-    border-width: 0px;
-
-    font-family: Pretendard, sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: #F3F4F6;
-}
-
-.fields>button:active {
-    background-color: #3692FF;
-}
-/* 필드가 다 채워지면 제출버튼 색이 변하는 기능...
-지금은 채워지면x 버튼 클릭시 바뀜. 개선예정 */
-
-.fields {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-/* login page & sign-in page - sns login  */
-.sns-login {
-    width: 640px;
-    height: 74px;
-    border-radius: 8px;
-    background-color: #E6F2FF;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 23px;
-}
-
-.sns-login>p {
-    font-size: 16px;
-    font-weight: 500;
-    color: #1F2937;
-}
-
-.sns-login-imgs {
-    display: flex;
-    gap: 16px;
-}
-
-/* login page & sign-in page - ask login/signup  */
-.ask-signup,
-.ask-login {
-    display: flex;
-    gap: 4px;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 14px;
-    font-weight: 500;
-    color: #1F2937;
-}
-
-.ask-signup>a,
-.ask-login>a {
-    color:#3692FF;
-    text-decoration: underline;
-}
-
-.login.main-content,
-.sign-up.main-content {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
 }

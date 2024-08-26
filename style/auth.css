@@ -165,3 +165,21 @@ button:disabled {
     line-height: normal;
     text-decoration-line: underline;
 }
+
+/* mobile */
+@media (max-width:767px){
+    br{
+        display:none !important;
+    }
+    .auth-container {
+        padding: 0 16px;
+        display:inline-flex;
+    }
+    .panda-logo {
+        width:198px;
+    }
+    .auth-wrap {
+        max-width: 400px;
+        margin:24px 0;
+    }
+}

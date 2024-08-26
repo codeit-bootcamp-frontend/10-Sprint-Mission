@@ -1,24 +1,39 @@
+import { 
+  showEmailErrorMessage, 
+  hideEmailErrorMessage, 
+  showPasswordErrorMessage, 
+  hidePasswordErrorMessage,
+  togglePasswordIcon,
+  routeToItems,
+} from './LoginSignupUtils.js';
+
 const loadEvent = new Event('load');
 window.addEventListener('load', () => {
-  const btnStatus = document.querySelector('.login-submit-btn');
   const emailInput = document.querySelector('.email-tag');
   const passwordInput = document.querySelector('.password-tag');
   const passwordIcon = document.querySelector('.password-icon');
+  const emailErrorMessage = document.querySelector('.email-error-message');
+  const passwordErrorMessage = document.querySelector('.password-error-message');
+  const loginForm = document.querySelector('.login-form');
+  const loginSubmitBtn = document.querySelector('.login-submit-btn');
 
-  const checkInputs = () => {
-    if (emailInput.value.trim() !== '' && passwordInput.value.trim() !== '') btnStatus.disabled = false;
-    else btnStatus.disabled = true;
-  }
-
-  const togglePasswordIcon = () => {
-    const type = passwordInput.type == 'password' ? 'text' : 'password';
-    passwordInput.type = type;
-    passwordIcon.src = type == 'password' ? '/src/assets/img/btn_visibility_off.svg' : '/src/assets/img/btn_visibility_on.svg';
-  }
-
-  emailInput.addEventListener('input', checkInputs);
-  passwordInput.addEventListener('input', checkInputs);
-  passwordIcon.addEventListener('click', togglePasswordIcon);
+  emailInput.addEventListener('focusout', () => showEmailErrorMessage(emailInput, emailErrorMessage));
+  emailInput.addEventListener('focusin', () => hideEmailErrorMessage(emailErrorMessage));
+  passwordInput.addEventListener('focusout', () => showPasswordErrorMessage(passwordInput, passwordErrorMessage));
+  passwordInput.addEventListener('focusin', () => hidePasswordErrorMessage(passwordErrorMessage));
+  passwordIcon.addEventListener('click', () => togglePasswordIcon(passwordInput, passwordIcon));
+  loginForm.addEventListener('submit', (event) => {
+    let bubblingFlag = routeToItems(emailInput, passwordInput, emailErrorMessage, passwordErrorMessage)
+    if(bubblingFlag) {
+      event.preventDefault();
+      loginSubmitBtn.blur();
+      showEmailErrorMessage(emailInput, emailErrorMessage);
+      showPasswordErrorMessage(passwordInput, passwordErrorMessage);
+    } else {
+      event.preventDefault();
+      window.location.href = '/src/pages/items/';
+    }
+  });
 })
 
 window.dispatchEvent(loadEvent);

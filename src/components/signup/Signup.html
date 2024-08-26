@@ -1,87 +1,80 @@
-<section class="login-wrapper">
-  <div class="login-content">
-    <form class="form">
-      <a href="/src/"><img src="/src/assets/img/logo_lg.png" alt="로고 이미지"></a>
-      <div class="login-content-without-img">
-        <div class="login-content-without-signup">
-          <div class="login-content-without-btn">
+<section class="signup-wrapper">
+  <div class="signup-content">
+    <a href="/" class="logo-link">
+      <img width="396px" height="132px" src="/src/assets/img/logo_lg.svg" alt="로고 이미지" class="logo-img">
+    </a>
+    <div class="signup-content-without-img">
+      <form class="signup-form" action="/src/pages/signin/" method="post">
+        <div class="signup-content-without-signup">
+          <div class="signup-content-without-btn">
             <div class="input-email">
               <label class="label-font" for="email-tag">이메일</label>
-              <div class="input-content">
-                <input class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요"
-                  required>
-                <div
-                  style="margin-left: 12px; margin-right: 24px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
-                </div>
-              </div>
+              <input name="email" class="email-tag" autocomplete="off" id="email-tag" type="email" placeholder="이메일을 입력해주세요"
+                >
+              <p class="email-error-message" style="display: none;"></p>
+            </div>
+            <div class="input-nickname">
+              <label class="label-font" for="nickname-tag">닉네임</label>
+              <input name="nickname" class="nickname-tag" autocomplete="off" id="nickname-tag" type="text" placeholder="닉네임을 입력해주세요"
+              >
+              <p class="nickname-error-message" style="display: none;"></p>
+            </div>
+            <div class="input-password">
+              <label class="label-font" for="password-tag">비밀번호</label>
+              <input name="password" class="password-tag" autocomplete="off" id="password-tag" type="password"
+                placeholder="비밀번호를 입력해주세요" >
+              <button type="button" class="password-icon-btn">
+                <span class="password-icon"></span>
+              </button>
+              <p class="password-error-message" style="display: none;"></p>
+            </div>
+            <div class="input-password-check">
+              <label class="label-font" for="password-check-tag">비밀번호 확인</label>
+              <input name="passwordCheck" class="password-check-tag" autocomplete="off" id="password-check-tag" type="password"
+                placeholder="비밀번호를 다시 한 번 입력해주세요" >
+                <button type="button" class="password-check-icon-btn">
+                  <span class="password-check-icon"></span>
+                </button>
+                <p class="password-check-error-message" style="display: none;"></p>
             </div>
           </div>
-          <div class="input-nickname">
-            <label class="label-font" for="nickname-tag">닉네임</label>
-            <div class="input-content">
-              <input class="nickname-tag" autocomplete="off" id="nickname-tag" type="text" placeholder="닉네임을 입력해주세요"
-                required>
-              <div
-                style="margin-left: 12px; margin-right: 24px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;">
-              </div>
-            </div>
-          </div>
-          <div class="input-password">
-            <label class="label-font" for="password-tag">비밀번호</label>
-            <div class="input-content">
-              <input class="password-tag" autocomplete="off" id="password-tag" type="password"
-                placeholder="비밀번호를 입력해주세요" required>
-              <img
-                style="margin-left: 12px; margin-right: 24px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;"
-                class="password-icon" src="/src/assets/img/btn_visibility_off.svg">
-            </div>
-          </div>
-          <div class="input-password-check">
-            <label class="label-font" for="password-check-tag">비밀번호 확인</label>
-            <div class="input-content">
-              <input class="password-check-tag" autocomplete="off" id="password-check-tag" type="password"
-                placeholder="비밀번호를 입력해주세요" required>
-              <img
-                style="margin-left: 12px; margin-right: 24px; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center;"
-                class="password-check-icon" src="/src/assets/img/btn_visibility_off.svg">
+          <button class="signup-submit-btn btn is-cursor-pointer" type="submit">회원가입</button>
+          <div class="convenience-signup">
+            <div class="convenience-signup-content">
+              <p>간편 로그인하기</p>
+              <nav>
+                <ul>
+                  <li
+                    style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: white; border-radius: 9999px; border: 1px #F9FAFB">
+                    <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
+                      <img src="/src/assets/img/ic_google.png" alt="구글 로그인">
+                    </a>
+                  </li>
+                  <li
+                    style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: #F5E14B; border-radius: 9999px; border: 1px #F9FAFB">
+                    <a href="https://www.kakaocorp.com/page/" target="_blank" rel="noopener noreferrer">
+                      <img src="/src/assets/img/ic_kakao.png" alt="카카오톡 로그인">
+                    </a>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
-        <button class="login-submit-btn btn is-cursor-pointer" type="submit" disabled>회원가입</button>
-      </div>
-      <div class="convenience-login">
-        <div class="convenience-login-content">
-          <p>간편 로그인하기</p>
-          <nav>
-            <ul>
-              <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">
-                <li
-                  style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: white; border-radius: 9999px; border: 1px #F9FAFB">
-                  <img src="/src/assets/img/ic_google.png" alt="구글 로그인">
-                </li>
-              </a>
-              <a href="https://www.kakaocorp.com/page/" target="_blank" rel="noopener noreferrer">
-                <li
-                  style="display: flex; justify-content: center; align-items: center; width: 42px; height: 42px; background: #F5E14B; border-radius: 9999px; border: 1px #F9FAFB">
-                  <img src="/src/assets/img/ic_kakao.png" alt="카카오톡 로그인">
-                </li>
-              </a>
-            </ul>
-          </nav>
-        </div>
-
-      </div>
+      </form>
       <div style="gap:4px; display: flex; align-items: center; justify-content: center;">
         <p
           style="color: #1F2937; font-size: 14px; font-family: Pretendard; font-weight: 500; line-height: 24px; word-wrap: break-word">
-          이미 회원이신가요?</p><a
+          이미 회원이신가요?
+        </p>
+        <a
           style="color: #3692FF; font-size: 14px; font-family: Pretendard; font-weight: 500; text-decoration: underline; word-wrap: break-word"
-          href="/src/pages/login/">로그인</a>
+          href="/src/pages/login/">
+          로그인
+        </a>
       </div>
+    </div>
   </div>
-  </form>
-  </div>
-
 </section>
 
-<script src="/src/js/Signup.js"></script>
+<script type="module" src="/src/js/Signup.js"></script>

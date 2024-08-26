@@ -1,41 +1,4 @@
-@font-face {
-  font-family: Pretendard;
-  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-}
-
-:root {
-  --primary-100: #3692ff;
-  --primary-200: #1967d6;
-  --primary-300: #1251aa;
-  --secondary-100: #f9fafb;
-  --secondary-200: #f3f4f6;
-  --secondary-300: #e5e7eb;
-  --secondary-400: #9ca3af;
-  --secondary-500: #6b7280;
-  --secondary-600: #4b5563;
-  --secondary-700: #374151;
-  --secondary-800: #1f2937;
-  --secondary-900: #111827;
-  --gray-50: #f9fafb;
-  --gray-100: #f3f4f6;
-  --gray-200: #e5e7eb;
-  --gray-400: #9ca3af;
-  --gray-500: #6b7280;
-  --gray-600: #4b5563;
-  --gray-700: #374151;
-  --gray-800: #1f2937;
-  --gray-900: #111827;
-  --blue: #3692ff;
-  --error-red: #f74747;
-  --background-color: #ffffff;
-  --background-top-bottom-color: #cfe5ff;
-}
-
-h3, p {
-  white-space: nowrap;
-}
-
-@media (min-width:1200px) {
+@media (min-width:375px) and (max-width:767px) {
   * {
     box-sizing: border-box;
     margin: 0;
@@ -66,18 +29,18 @@ h3, p {
   }
 
   p {
-    font-size: 24px;
-    font-weight: 500px;
-    line-height: 32px;
-    word-wrap: break-word;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    word-wrap: break-word
   }
 
   h5 {
     color: var(--primary-100);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 26px;
-    word-wrap: break-word;
+    word-wrap: break-word
   }
 
   header {
@@ -87,17 +50,8 @@ h3, p {
     left: 0;
     width: 100%;
     height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 9px 200px;
+    padding: 10px 16px 9px;
     border-bottom: 1px #dfdfdf;
-  }
-  
-  @media (min-width: 1920px) {
-    header {
-      padding: 9px 400px;
-    }
   }
 
   main {
@@ -116,9 +70,11 @@ h3, p {
   }
 
   h3 {
-    font-size: 40px;
-    font-weight: 700px;
-    line-height: 56px;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 33.60px;
+    letter-spacing: 0.48px;
+    word-wrap: break-word
   }
 
   input {

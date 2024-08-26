@@ -1,14 +1,17 @@
-@media (min-width:1200px) {
+@media (min-width:768px) and (max-width:1199px) {
   .signup-content {
     width: 640px;
     height: 842px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
   
   .signup-wrapper {
     display: flex;
     align-items: center;
-    margin: 60px 640px 178px;
+    margin: 48px 56px 243px 51px;
   }
   
   .input-email,
@@ -54,7 +57,7 @@
     margin-top: -8px;
     margin-left: 16px;
   }
-  
+
   .password-icon-btn {
     background-color: var(--secondary-200);
     width: 24px;
@@ -86,7 +89,7 @@
     height: 24px;
     background-image: url('/src/assets/img/btn_visibility_off.svg');
   }
-
+  
   .label-font {
     text-align: left;
     color: var(--secondary-800);

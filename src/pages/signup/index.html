@@ -8,19 +8,25 @@
   <meta name="description" content="판다마켓 구경오라이">
 
   <link rel="icon" href="/src/assets/img/panda_head.svg">
-
+  
   <link rel="stylesheet" href="/src/styles/base.css">
-  <link rel="stylesheet" href="/src/styles/signup/module.css">
+  <link rel="stylesheet" href="/src/styles/base-mobile.css">
+  <link rel="stylesheet" href="/src/styles/base-tablet.css">
+
   <link rel="stylesheet" href="/src/styles/signup/layout.css">
+  <link rel="stylesheet" href="/src/styles/signup/layout-tablet.css">
+  <link rel="stylesheet" href="/src/styles/signup/layout-mobile.css">
+
   <link rel="stylesheet" href="/src/styles/signup/state.css">
-  <link rel="stylesheet" href="/src/styles/signup/theme.css">
+  <link rel="stylesheet" href="/src/styles/signup/state-tablet.css">
+  <link rel="stylesheet" href="/src/styles/signup/state-mobile.css">
 </head>
 
 <body>
 
   <div data-include-component="/src/components/signup/Signup.html"></div>
 
-  <script src="/src/js/IncludeComponent.js"></script>
+  <script type="module" src="/src/js/ComponentLoader.js"></script>
 </body>
 
 </html>

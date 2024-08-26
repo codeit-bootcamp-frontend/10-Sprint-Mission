@@ -1,14 +1,31 @@
-@media (min-width:1200px) {
+@media (min-width:375px) and (max-width:767px) {
   .signup-content {
-    width: 640px;
+    width: 100%;
     height: 842px;
     text-align: center;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
-  
+
+  .logo-img {
+    width: 198px;
+    height: 66px;
+  }
+
   .signup-wrapper {
     display: flex;
+    width: 100%;
+    max-width: 400px;
     align-items: center;
-    margin: 60px 640px 178px;
+    justify-content: center;
+    margin: 24px 16px auto;
+  }
+
+  .top-img {
+    width: 100%;
+    height: 204px;
   }
   
   .input-email,
@@ -17,8 +34,8 @@
   .input-nickname {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding-bottom: 24px;
+    gap: 8px;
+    padding-bottom: 16px;
     position: relative;
   }
   
@@ -54,13 +71,13 @@
     margin-top: -8px;
     margin-left: 16px;
   }
-  
+
   .password-icon-btn {
     background-color: var(--secondary-200);
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 59px;
+    top: 43px;
     right: 24px;
     display: flex;
   }
@@ -76,7 +93,7 @@
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 59px;
+    top: 43px;
     right: 24px;
     display: flex;
   }
@@ -86,13 +103,12 @@
     height: 24px;
     background-image: url('/src/assets/img/btn_visibility_off.svg');
   }
-
+  
   .label-font {
     text-align: left;
     color: var(--secondary-800);
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 700;
-    line-height: 26px;
     word-wrap: break-word;
   }
   
@@ -121,9 +137,9 @@
   
   .convenience-signup-content>p {
     color: var(--secondary-800);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
-    line-height: 26px;
+    line-height: 24px;
     word-wrap: break-word;
   }
 }

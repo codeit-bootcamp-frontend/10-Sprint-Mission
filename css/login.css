@@ -30,7 +30,6 @@
   gap: 16px;
   font-size: 18px;
   font-weight: 700;
-  line-height: 26px;
 }
 
 .form__input {
@@ -127,5 +126,9 @@ input.btn-login:disabled {
 
   .login-logo__img {
     width: 300px;
+  }
+
+  .login__main {
+    margin: 40px auto;
   }
 }

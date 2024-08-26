@@ -105,13 +105,8 @@ footer {
   color: var(--Primary-100);
   font-size: 18px;
   font-weight: 700;
-<<<<<<< HEAD
-  color: var(--Primary-100);
-  line-height: 1.44;
-=======
   line-height: 1.44;
   margin: 0;
->>>>>>> b569ab8bdee651573e1c1ccbc436e5481b0dfd41
 }
 
 .landing-main__title {
@@ -121,9 +116,6 @@ footer {
 
 .landing-main__desc {
   color: var(--Secondary-700);
-<<<<<<< HEAD
-  line-height: 1.33;
-=======
   font-weight: 500;
   margin: 0;
 }
@@ -279,5 +271,4 @@ footer {
     font-size: 24px;
     line-height: 1.33;
   }
->>>>>>> b569ab8bdee651573e1c1ccbc436e5481b0dfd41
 }

@@ -1,30 +1,9 @@
+@import url('./variables.css');
+
 * {
   box-sizing: border-box;
   font-family: var(--font-family1);
 }
-
-
-:root {
-  --primary-color100: #3692FF;
-  --primary-color200: #1967D6;
-  --primary-color300: #1251AA;
-  --error-color: #F74747;
-  --background-color0: #ffffff;
-  --background-color1: #d2e5ff;
-  --background-color2: #FCFCFC;
-  --secondary-color-gray900: #111827;
-  --secondary-color-gray800: #1F2937;
-  --secondary-color-gray700: #374151;
-  --secondary-color-gray600: #4B5563;
-  --secondary-color-gray500: #6B7280;
-  --secondary-color-gray400: #9CA3AF;
-  --secondary-color-gray200: #E5E7EB;
-  --secondary-color-gray100: #F3F4F6;
-  --secondary-color-gray50: #F9FAFB;
-  --font-family1: 'Pretendard', sans-serif;
-  --font-family2: 'rokaf-sans-bold'
-}
-
 
 .login-background {
   background-color: var(--background-color0);
@@ -81,7 +60,7 @@ form {
 label {
   font-size: 18px;
   font-weight: 700;
-  font-family: 'pretendard';
+  font-family: var(--font-family1);
   color: var(--secondary-color-gray800);
   display: block;
   margin: 0px 0px 8px;

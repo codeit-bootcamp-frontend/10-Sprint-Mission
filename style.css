@@ -3,15 +3,143 @@
 	src: url('Pretendard-Regular.ttf');
 }
 
+
+/* Mobile */
+@media (min-width: 375px) { 
+    .navbar {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .panda-logo {
+        display: none;
+    }
+
+    .top-back {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .txtbtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:48px;
+    }
+
+}
+
+/* Tablet */
+@media (min-width:768px) { 
+    .navbar {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .panda-logo {
+        display: inline-block;
+    }
+    .top-text {
+        text-align: left;
+    }
+
+    .txtbtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top:84px;
+    }
+
+    .txt-align-box {
+        display: flex;
+        flex-direction: row;
+    }
+    .secondimg {
+        margin: 0;
+    }
+    
+    .thirdimg {
+        margin: 0;
+    }
+    
+    .fourthimg {
+        margin: 0;
+        width: 987px;
+    }
+    .top-text,
+    .bottom-text {
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 56px;
+        color: #374151;
+        /* display: flex;
+        justify-content: flex-start;
+        align-items: center; */
+    }
+}
+
+/* Desktop */
+@media (min-width:1200px) { 
+    .navbar {
+        padding-left: 400px;
+        padding-right: 400px;
+    }
+
+    .top-box {
+        display: flex;
+        margin-top:200px;
+
+    }
+
+    .txtbtn {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .top-back {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .txt-align-box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .top-img {
+        width: 746px;
+        height: 340px;
+        display: flex;
+        justify-content: center;
+    }
+    .secondimg {
+        margin: 138px 605px 138px 360px;
+    }
+    
+    .thirdimg {
+        margin: 138px 50% 138px 50%;
+    }
+    
+    .fourthimg {
+        margin: 138px 573px 138px 360px;
+        width: 987px;
+    }
+}
+
 body {
     width: 100%;
     font-family: 'Pretendard Variable';
+    white-space: nowrap;
 }
 
 .txt {
     text-decoration: none;
     color: #F9FAFB;
-    font-family: 'Pretendard Variable';
 }
 
 .navbar {
@@ -21,8 +149,6 @@ body {
     height: 70px;
     border: 1px;
     gap: 10px;
-    padding-left: 400px;
-    padding-right: 400px;
     position: sticky; 
     top:0;
     left:0;
@@ -35,7 +161,7 @@ body {
     font-size: 16px;
     font-weight: 600;
     Line-height: 26px;
-    width: 128px;
+    /* width: 128px; */
     height: 48px;
     padding: 12px 23px 12px 23px;
     gap: 10px;
@@ -50,8 +176,6 @@ body {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
-    width: 357px;
-    height: 56px;
     padding: 16px 124px 16px 124px;
     gap: 10px;
     border: 1px;
@@ -64,9 +188,7 @@ body {
 }
 
 
-.txtbtn {
-    margin: 240px 7px 40px 0;
-}
+
 
 .navbtn:active {
     background-color: #1251AA;
@@ -103,28 +225,15 @@ body {
     align-items: center;
 }
 
-.top-img {
-    width: 746px;
-    height: 340px;
-    display: flex;
-    justify-content: flex-end;
-    margin-left: 69px;
-}
 
 
 
 .top-back {
     background-color: #CFE5FF;
-    width: 100%;
-    height: 540px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
 }
 
 .bottom-back {
     background-color: #CFE5FF;
-    width: 1920px;
     height: 540px;
     display: flex;
     justify-content: center;
@@ -138,7 +247,9 @@ body {
 
 .floor-box {
     height: 720px;
-    width: 1920px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .secondimg,
@@ -147,20 +258,7 @@ body {
     height: 444px;
 }
 
-.secondimg {
-    margin: 138px 605px 138px 360px;
-    width: 955px;
-}
 
-.thirdimg {
-    margin: 138px 360px 138px 591px;
-    width: 969px;
-}
-
-.fourthimg {
-    margin: 138px 573px 138px 360px;
-    width: 987px;
-}
 
 .foot {
     height: 160px;
@@ -168,8 +266,8 @@ body {
     color: #E5E7EB;
 }
 
-.distan {
-    margin-right: 30px;
+.active-txt {
+    gap: 30px;
 }
 
 .foot-txt {
@@ -177,3 +275,17 @@ body {
     display: flex;
     justify-content: space-around;
 }
+
+
+
+.active-txt,
+.foot-txt > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    gap: 12px
+}
+

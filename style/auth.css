@@ -165,12 +165,18 @@ button:disabled {
     line-height: normal;
     text-decoration-line: underline;
 }
+.error-message {
+    color: #f74747;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 8px;
+    display: none;
+    padding-left: 16px;
+}
 
 /* mobile */
 @media (max-width:767px){
-    br{
-        display:none !important;
-    }
     .auth-container {
         padding: 0 16px;
         display:inline-flex;

@@ -241,9 +241,7 @@ footer a, span {
 
 /* tablet */
 @media (max-width:1199px) {
-    .section-text> br{
-        display:none;
-    }
+    .section-text> br, 
     .banner-text > br {
         display:none;
     }

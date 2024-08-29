@@ -56,7 +56,7 @@ function getPasswordErrorMsg(passwordValue) {
 function validateEmail() {
   const emailErrorMsg = getEmailErrorMsg(emailInput.value);
   isEmailValid = !emailErrorMsg;
-  setErrorMessage(emailError, emailErrorMsg || '');
+  setErrorMessage(emailError, emailErrorMsg ?? '');
   updateErrorDisplay(emailInput, emailError, !!emailErrorMsg);
   updateButtonState();
 }
@@ -64,7 +64,7 @@ function validateEmail() {
 function validatePassword() {
   const passwordErrorMsg = getPasswordErrorMsg(passwordInput.value);
   isPasswordValid = !passwordErrorMsg;
-  setErrorMessage(passwordError, passwordErrorMsg || '');
+  setErrorMessage(passwordError, passwordErrorMsg ?? '');
   updateErrorDisplay(passwordInput, passwordError, !!passwordErrorMsg);
   updateButtonState();
 }

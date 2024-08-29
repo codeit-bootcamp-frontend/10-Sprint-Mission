@@ -6,20 +6,20 @@ const emailError = document.querySelector('.email + .input-validation-error');
 
 const passwordInput = document.querySelector('.password');
 const passwordError = document.querySelector('.password-container + .input-validation-error');
-const passwordVerificationInput = document.querySelector('.password-verification');
-const passwordVerificationError = document.querySelector('.password-verification-container + .input-validation-error');
+const passwordMatchInput = document.querySelector('.password-match');
+const passwordMatchError = document.querySelector('.password-match-container + .input-validation-error');
 
 const submitButton = document.querySelector('.btn-login');
 
 const visibleIcon = document.querySelector('.visible-icon');
 const invisibleIcon = document.querySelector('.invisible-icon');
-const verificationVisibleIcon = document.querySelector('.verification-visible-icon');
-const verificationInvisibleIcon = document.querySelector('.verification-invisible-icon');
+const matchVisibleIcon = document.querySelector('.match-visible-icon');
+const matchInvisibleIcon = document.querySelector('.match-invisible-icon');
 
 // State tracking
 let isEmailValid = false;
 let isPasswordValid = false;
-let isPasswordVerificationValid = false;
+let isPasswordMatchValid = false;
 
 // 에러 표시를 업데이트하는 함수
 function updateErrorDisplay(inputElement, errorElement, showError) {
@@ -56,7 +56,7 @@ function getPasswordErrorMsg(passwordValue) {
 
 // 비밀번호 일치 검증 함수
 function getPasswordMatchErrorMsg() {
-  if (passwordInput.value !== passwordVerificationInput.value) {
+  if (passwordInput.value !== passwordMatchInput.value) {
     return passwordNotMatch;
   }
 }
@@ -80,15 +80,15 @@ function validatePassword() {
 
 function validatePasswordMatch() {
   const passwordMatchErrorMsg = getPasswordMatchErrorMsg();
-  isPasswordVerificationValid = !passwordMatchErrorMsg;
-  setErrorMessage(passwordVerificationError, passwordMatchErrorMsg ?? '');
-  updateErrorDisplay(passwordVerificationInput, passwordVerificationError, !!passwordMatchErrorMsg);
+  isPasswordMatchValid = !passwordMatchErrorMsg;
+  setErrorMessage(passwordMatchError, passwordMatchErrorMsg ?? '');
+  updateErrorDisplay(passwordMatchInput, passwordMatchError, !!passwordMatchErrorMsg);
   updateButtonState();
 }
 
 // 버튼 상태 업데이트 함수
 function updateButtonState() {
-  submitButton.disabled = !(isEmailValid && isPasswordValid && isPasswordVerificationValid);
+  submitButton.disabled = !(isEmailValid && isPasswordValid && isPasswordMatchValid);
 }
 
 // 비밀번호 보이기/숨기기 토글 함수
@@ -103,14 +103,14 @@ function toggleVisibility(inputElement, visibleIcon, invisibleIcon) {
 // 이벤트 리스너
 emailInput.addEventListener('focusout', validateEmail);
 passwordInput.addEventListener('focusout', validatePassword);
-passwordVerificationInput.addEventListener('focusout', validatePasswordMatch);
+passwordMatchInput.addEventListener('focusout', validatePasswordMatch);
 
 const bindVisibilityToggle = (inputElement, visibleIcon, invisibleIcon) => {
   visibleIcon.addEventListener('click', () => toggleVisibility(inputElement, visibleIcon, invisibleIcon));
   invisibleIcon.addEventListener('click', () => toggleVisibility(inputElement, visibleIcon, invisibleIcon));
 };
 bindVisibilityToggle(passwordInput, visibleIcon, invisibleIcon);
-bindVisibilityToggle(passwordVerificationInput, verificationVisibleIcon, verificationInvisibleIcon);
+bindVisibilityToggle(passwordMatchInput, matchVisibleIcon, matchInvisibleIcon);
 
 const form = document.querySelector('.form-login');
 form.addEventListener('submit', function (e) {
@@ -118,8 +118,9 @@ form.addEventListener('submit', function (e) {
 
   validateEmail();
   validatePassword();
+  validatePasswordMatch();
 
-  if (isEmailValid && isPasswordValid) {
+  if (isEmailValid && isPasswordValid && isPasswordMatchValid) {
     window.location.href = '/items';
   }
 });

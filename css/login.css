@@ -63,14 +63,14 @@ input::placeholder {
 }
 
 .password-container,
-.password-verification-container {
+.password-match-container {
   position: relative;
 }
 
 .visible-icon,
 .invisible-icon,
-.verification-visible-icon,
-.verification-invisible-icon {
+.match-visible-icon,
+.match-invisible-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

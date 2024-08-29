@@ -32,3 +32,9 @@ header {
 footer {
   background-color: var(--Secondary-900);
 }
+
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 375px;
+  }
+}

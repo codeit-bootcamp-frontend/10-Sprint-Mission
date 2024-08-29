@@ -349,6 +349,7 @@
 
   .footer-container {
     flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .footer-mid {
@@ -358,6 +359,5 @@
   .copyright {
     order: 3;
     flex: 100%;
-    margin-left: 35px;
   }
 }

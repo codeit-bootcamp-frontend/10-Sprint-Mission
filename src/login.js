@@ -9,6 +9,9 @@ const passwordError = document.querySelector('.password-container + .input-valid
 
 const submitButton = document.querySelector('.btn-login');
 
+const visibleIcon = document.querySelector('.visible-icon');
+const invisibleIcon = document.querySelector('.invisible-icon');
+
 // State tracking
 let isEmailValid = false;
 let isPasswordValid = false;
@@ -71,9 +74,21 @@ function updateButtonState() {
   submitButton.disabled = !(isEmailValid && isPasswordValid);
 }
 
+// 비밀번호 보이기/숨기기 토글 함수
+function togglePasswordVisibility() {
+  const isPassword = passwordInput.type === 'password';
+  passwordInput.type = isPassword ? 'text' : 'password';
+
+  visibleIcon.style.display = isPassword ? 'inline' : 'none';
+  invisibleIcon.style.display = isPassword ? 'none' : 'inline';
+}
+
 // 이벤트 리스너
 emailInput.addEventListener('focusout', validateEmail);
 passwordInput.addEventListener('focusout', validatePassword);
+
+visibleIcon.addEventListener('click', togglePasswordVisibility);
+invisibleIcon.addEventListener('click', togglePasswordVisibility);
 
 const form = document.querySelector('.form-login');
 form.addEventListener('submit', function (e) {

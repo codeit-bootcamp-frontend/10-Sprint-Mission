@@ -1,4 +1,4 @@
-import { emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength } from './validationConstants.js';
+import { emailRegex, emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength } from './validationConstants.js';
 
 // Elements
 const emailInput = document.querySelector('.email');
@@ -21,7 +21,6 @@ function updateErrorDisplay(inputElement, errorElement, showError) {
   if (showError) {
     inputElement.classList.add('error');
     errorElement.style.visibility = 'visible';
-    inputElement.focus();
   } else {
     inputElement.classList.remove('error');
     errorElement.style.visibility = 'hidden';
@@ -38,7 +37,7 @@ function getEmailErrorMsg(emailValue) {
   if (!emailValue) {
     return emptyEmailMsg;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+  if (!emailRegex.test(emailValue)) {
     return invalidEmailMsg;
   }
 }
@@ -48,7 +47,6 @@ function getPasswordErrorMsg(passwordValue) {
   if (!passwordValue || passwordValue.length < passwordMinLength) {
     return invalidPasswordLengthMsg;
   }
-  return null;
 }
 
 // 유효성 검사 함수

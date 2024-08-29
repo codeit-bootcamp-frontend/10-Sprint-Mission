@@ -62,12 +62,15 @@ input::placeholder {
   line-height: 26px;
 }
 
-.password-container {
+.password-container,
+.password-verification-container {
   position: relative;
 }
 
 .visible-icon,
-.invisible-icon {
+.invisible-icon,
+.verification-visible-icon,
+.verification-invisible-icon {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

@@ -1,4 +1,4 @@
-import { emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength } from './validation.js';
+import { emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength } from './validationConstants.js';
 
 // Elements
 const emailInput = document.querySelector('.email');
@@ -41,7 +41,6 @@ function getEmailErrorMsg(emailValue) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
     return invalidEmailMsg;
   }
-  return null;
 }
 
 // 비밀번호 검증 함수

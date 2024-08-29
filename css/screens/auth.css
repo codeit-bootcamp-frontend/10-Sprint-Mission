@@ -111,3 +111,18 @@
   text-decoration-line: underline;
   color: var(--Primary-100, #3692ff);
 }
+
+/* JS */
+
+.login-form__input.invalid:focus,
+.js-error {
+  outline: 1px solid var(--error-red);
+}
+
+.js-error-message {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.71;
+  color: var(--error-red);
+  margin: 8px 0 0 16px;
+}

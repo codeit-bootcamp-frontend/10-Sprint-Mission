@@ -20,8 +20,11 @@
     line-height: 1.71;
   }
 
-  .login-form__input {
+  .login-form__input-wrap {
     margin-bottom: 16px;
+  }
+
+  .login-form__input {
     width: 100%;
   }
 

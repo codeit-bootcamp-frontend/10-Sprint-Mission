@@ -32,27 +32,33 @@
         <div class="main__wrap">
           <form class="login-form">
             <label for="email" class="login-form__label">이메일</label>
-            <input
-              id="email"
-              class="login-form__input"
-              name="email"
-              type="text"
-              placeholder="이메일을 입력해주세요"
-              required
-            />
+            <div class="login-form__input-wrap">
+              <input
+                id="email"
+                class="login-form__input js-input"
+                name="email"
+                type="text"
+                placeholder="이메일을 입력해주세요"
+              />
+              <div class="js-email-error js-error-message"></div>
+            </div>
 
             <label for="password" class="login-form__label">비밀번호</label>
-            <input
-              id="password"
-              class="login-form__input"
-              name="password"
-              type="password"
-              minlength="8"
-              placeholder="비밀번호를 입력해주세요"
-              required
-            />
-            <!-- view, hidden 아이콘 추가 -->
-            <button type="submit" class="login-form__btn">로그인</button>
+            <div class="login-form__input-wrap">
+              <input
+                id="password"
+                class="login-form__input js-input"
+                name="password"
+                type="password"
+                minlength="8"
+                placeholder="비밀번호를 입력해주세요"
+              />
+              <!-- view, hidden 아이콘 추가 -->
+              <div class="js-pw-error js-error-message"></div>
+            </div>
+            <button type="submit" class="login-form__btn js-button">
+              로그인
+            </button>
           </form>
           <div class="social-login">
             <p class="social-login__title">간편 로그인하기</p>
@@ -82,5 +88,6 @@
         </div>
       </main>
     </div>
+    <script src="auth-validation.js"></script>
   </body>
 </html>

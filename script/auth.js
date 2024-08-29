@@ -140,5 +140,28 @@ function submitButtonInvalidate() {
     }
 }
 
-submitButtonInvalidate();  // 초기 상태에서 버튼 비활성화 상태 유지
+// 처음에 비활성화 되도록
+submitButtonInvalidate();  
 
+// 비밀번호 표시/숨김 함수
+function passwordVisibility(event) {
+    const button = event.currentTarget; 
+    // const passwordInput = document.getElementById('password');
+    // const visibilityIcon = document.querySelector('.input-box img'); 
+    const passwordInput = button.previousElementSibling;
+    const visibilityIcon = button;
+    const isPasswordVisible = passwordInput.type;
+
+    if (isPasswordVisible === "text") {
+        passwordInput.type = "password";
+        visibilityIcon.src = "../img/btn_visibility_off.png";
+    } else {
+        passwordInput.type = "text";
+        visibilityIcon.src = "../img/btn_visibility_on.png";
+    }
+}
+
+const visibilityButtons = document.querySelectorAll('.visibility-btn'); 
+visibilityButtons.forEach((button) => 
+    button.addEventListener("click", passwordVisibility)
+);

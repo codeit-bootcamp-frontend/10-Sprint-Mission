@@ -35,9 +35,12 @@
               id="email"
               name="email"
               placeholder="이메일을 입력해주세요"
-              class="login__input"
+              class="login__input error"
               required
             />
+            <span class="login__error-message" id="email-error"
+              >이메일을 입력해주세요.</span
+            >
           </div>
           <label for="password" class="login__label login__label--password"
             >비밀번호</label
@@ -48,9 +51,12 @@
               id="password"
               name="password"
               placeholder="비밀번호를 입력해주세요"
-              class="login__input"
+              class="login__input error"
               required
             />
+            <span class="login__error-message" id="password-error"
+              >비밀번호를 입력해주세요.</span
+            >
             <button
               type="button"
               class="login__password-toggle"

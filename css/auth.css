@@ -43,7 +43,7 @@ main {
 .signup__field,
 .login__field--password {
   height: 5.6rem;
-  margin-bottom: 2.4rem;
+  margin-bottom: 2.6rem;
 }
 
 .signup__field--password,
@@ -87,6 +87,10 @@ main {
 .signup__submit:hover,
 .login__submit:hover {
   background-color: var(--Primary-100);
+}
+
+.login__submit {
+  margin-top: 2.4rem;
 }
 
 .social-login {
@@ -149,7 +153,24 @@ main {
 /* 로그인 영역만 해당부분 */
 .login__field--id {
   margin-bottom: 2.4rem;
+}
+
+.login__input {
   height: 5.6rem;
+}
+
+.login__input.error {
+  border: 1px solid var(--Error-red);
+}
+
+.login__error-message {
+  color: var(--Error-red);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 0.8rem;
+  display: block;
+  position: relative;
+  left: 1.6rem;
 }
 
 /* Tablet: 768px ~ 1199px 이하 */

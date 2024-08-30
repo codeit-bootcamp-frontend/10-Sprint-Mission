@@ -41,14 +41,21 @@ function valueValidation() {
   });
 }
 
+const PASSED = 0;
+const FAILED = 1;
+let valueStatus = [];
+
 function emailCheck(el) {
   if (!el.value) {
+    valueStatus.push(FAILED);
     el.classList.add("js-error");
     emailError.textContent = "이메일을 입력해주세요";
   } else {
     const pattern = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-za-z0-9\-]+/;
     if (pattern.test(el.value)) {
+      valueStatus.push(PASSED);
     } else {
+      valueStatus.push(FAILED);
       el.classList.add("invalid", "js-error");
       emailError.textContent = "잘못된 이메일 형식입니다";
     }
@@ -58,11 +65,14 @@ function emailCheck(el) {
 
 function pwCheck(el) {
   if (!el.value) {
+    valueStatus.push(FAILED);
     el.classList.add("js-error");
     pwError.textContent = "비밀번호를 입력해주세요";
   } else {
     if (el.value.length > 8) {
+      valueStatus.push(PASSED);
     } else {
+      valueStatus.push(FAILED);
       el.classList.add("invalid", "js-error");
       pwError.textContent = "비밀번호를 8자 이상 입력해주세요";
     }
@@ -72,7 +82,11 @@ function pwCheck(el) {
   // 비밀번호 형식 체크
 }
 
-function buttonActivation() {}
+function buttonActivation() {
+  if (!valueStatus.includes(1)) form.submit();
+  console.log(valueStatus);
+  //버튼 활성화 여부 체크
+}
 
 // 이벤트 리스너
 input.forEach((el) => {
@@ -94,4 +108,5 @@ input.forEach((el) => {
 button.addEventListener("click", (e) => {
   e.preventDefault();
   valueValidation();
+  valueStatus = [];
 });

@@ -1,4 +1,4 @@
-import { emailRegex, emptyEmailMsg, invalidEmailMsg, emptyNicknameMsg, invalidPasswordLengthMsg, passwordMinLength, passwordNotMatch } from './validationConstants.js';
+import { getEmailErrorMsg, getPasswordErrorMsg, getPasswordMatchErrorMsg, getNicknameErrorMsg } from './validationErrorMessage.js';
 
 // Elements
 const emailInput = document.querySelector('#email');
@@ -41,37 +41,6 @@ function setErrorMessage(errorElement, message) {
   errorElement.textContent = message;
 }
 
-// 이메일 검증 함수
-function getEmailErrorMsg(emailValue) {
-  if (!emailValue) {
-    return emptyEmailMsg;
-  }
-  if (!emailRegex.test(emailValue)) {
-    return invalidEmailMsg;
-  }
-}
-
-// 비밀번호 검증 함수
-function getPasswordErrorMsg(passwordValue) {
-  if (!passwordValue || passwordValue.length < passwordMinLength) {
-    return invalidPasswordLengthMsg;
-  }
-}
-
-// 비밀번호 일치 검증 함수
-function getPasswordMatchErrorMsg() {
-  if (passwordInput.value !== passwordMatchInput.value) {
-    return passwordNotMatch;
-  }
-}
-
-// 닉네임 검증 함수
-function getNicknameErrorMsg(nicknameValue) {
-  if (!nicknameValue) {
-    return emptyNicknameMsg;
-  }
-}
-
 // 유효성 검사 확인 & 에러 표시처리 함수
 function validateEmail() {
   const emailErrorMsg = getEmailErrorMsg(emailInput.value);
@@ -98,7 +67,7 @@ function validatePassword() {
 }
 
 function validatePasswordMatch() {
-  const passwordMatchErrorMsg = getPasswordMatchErrorMsg();
+  const passwordMatchErrorMsg = getPasswordMatchErrorMsg(passwordInput.value, passwordMatchInput.value);
   isPasswordMatchValid = !passwordMatchErrorMsg;
   setErrorMessage(passwordMatchError, passwordMatchErrorMsg ?? '');
   updateErrorDisplay(passwordMatchInput, passwordMatchError, !!passwordMatchErrorMsg);

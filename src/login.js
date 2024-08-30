@@ -1,4 +1,4 @@
-import { emailRegex, emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength } from './validationConstants.js';
+import { getEmailErrorMsg, getPasswordErrorMsg, getNicknameErrorMsg } from './validationErrorMessage.js';
 
 // Elements
 const emailInput = document.querySelector('#email');
@@ -30,23 +30,6 @@ function updateErrorDisplay(inputElement, errorElement, showError) {
 // 에러 메시지를 설정하는 함수
 function setErrorMessage(errorElement, message) {
   errorElement.textContent = message;
-}
-
-// 이메일 검증 함수
-function getEmailErrorMsg(emailValue) {
-  if (!emailValue) {
-    return emptyEmailMsg;
-  }
-  if (!emailRegex.test(emailValue)) {
-    return invalidEmailMsg;
-  }
-}
-
-// 비밀번호 검증 함수
-function getPasswordErrorMsg(passwordValue) {
-  if (!passwordValue || passwordValue.length < passwordMinLength) {
-    return invalidPasswordLengthMsg;
-  }
 }
 
 // 유효성 검사 확인 & 에러 표시처리 함수

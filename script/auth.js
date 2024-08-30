@@ -146,8 +146,6 @@ submitButtonInvalidate();
 // 비밀번호 표시/숨김 함수
 function passwordVisibility(event) {
     const button = event.currentTarget; 
-    // const passwordInput = document.getElementById('password');
-    // const visibilityIcon = document.querySelector('.input-box img'); 
     const passwordInput = button.previousElementSibling;
     const visibilityIcon = button;
     const isPasswordVisible = passwordInput.type;

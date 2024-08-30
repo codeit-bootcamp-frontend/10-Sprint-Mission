@@ -47,13 +47,19 @@
             <div class="login-form__input-wrap">
               <input
                 id="password"
-                class="login-form__input js-input"
+                class="login-form__input login-form__pw js-input js-pw"
                 name="password"
                 type="password"
                 minlength="8"
                 placeholder="비밀번호를 입력해주세요"
               />
-              <!-- view, hidden 아이콘 추가 -->
+
+              <img
+                class="login-form__icon js-pw-icon"
+                src="/images/icon/pw-hidden.png"
+                alt="비밀번호 숨기기 버튼"
+              />
+
               <div class="js-pw-error js-error-message"></div>
             </div>
             <button type="submit" class="login-form__btn js-button">
@@ -89,5 +95,6 @@
       </main>
     </div>
     <script src="auth-validation.js"></script>
+    <script src="toggle-pw.js"></script>
   </body>
 </html>

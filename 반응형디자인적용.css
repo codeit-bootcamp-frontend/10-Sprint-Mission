@@ -1,0 +1,33 @@
+/* PC: 1200px 이상 */
+@media (min-width: 1200px) {
+}
+
+/* Tablet: 768px 이상 ~ 1199px 이하 */
+@media (min-width: 768px) and (max-width: 1199px) {
+  #panda {
+    position: relative;
+    left: 24px;
+  }
+  .login {
+    position: relative;
+    right: 24px;
+  }
+  footer {
+    gap: 15px;
+  }
+}
+
+/* Mobile: 375px 이상 ~ 767px 이하 */
+@media (min-width: 375px) and (max-width: 767px) {
+  #panda {
+    position: relative;
+    left: 16px;
+  }
+  .login {
+    position: relative;
+    right: 16px;
+  }
+  footer {
+    gap: 10px;
+  }
+}

@@ -1,4 +1,4 @@
-import { emailRegex, emptyEmailMsg, invalidEmailMsg, emptyNicknameMsg, invalidPasswordLengthMsg, passwordMinLength, passwordNotMatch } from './validationConstants.js';
+import { emailRegex, emptyEmailMsg, invalidEmailMsg, emptyNicknameMsg, emptyPasswordMsg, invalidPasswordLengthMsg, passwordMinLength, passwordNotMatch } from './validationConstants.js';
 
 // 이메일 검증 함수
 export function getEmailErrorMsg(emailValue) {
@@ -12,7 +12,11 @@ export function getEmailErrorMsg(emailValue) {
 
 // 비밀번호 검증 함수
 export function getPasswordErrorMsg(passwordValue) {
-  if (!passwordValue || passwordValue.length < passwordMinLength) {
+  if (!passwordValue) {
+    return emptyPasswordMsg;
+  }
+
+  if (passwordValue.length < passwordMinLength) {
     return invalidPasswordLengthMsg;
   }
 }

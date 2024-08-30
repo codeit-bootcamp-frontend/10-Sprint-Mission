@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="/styles/common/reset.css" />
     <link rel="stylesheet" href="/styles/login_signup.css" />
+    <script type="modules" src="/scripts/login_signup.js"></script>
   </head>
   <body class="body">
     <header class="header">
@@ -38,6 +39,7 @@
               type="email"
               placeholder="이메일을 입력해 주세요"
             />
+            <span class="formField__error"></span>
           </div>
           <div class="formField">
             <label class="formField__label" for="signup_name">닉네임</label>
@@ -48,6 +50,7 @@
               type="text"
               placeholder="닉네임을 입력해 주세요"
             />
+            <span class="formField__error"></span>
           </div>
           <div class="formField">
             <label class="formField__label" for="signup_pw">비밀번호</label>
@@ -64,6 +67,7 @@
                 alt="비밀번호 보기"
               />
             </button>
+            <span class="formField__error"></span>
           </div>
           <div class="formField">
             <label class="formField__label" for="signup_pwcf">
@@ -82,6 +86,7 @@
                 alt="비밀번호 보기"
               />
             </button>
+            <span class="formField__error"></span>
           </div>
           <button class="form__submitButton" type="submit">회원가입</button>
         </form>

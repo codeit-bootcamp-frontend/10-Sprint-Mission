@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/styles/common/reset.css" />
     <link rel="stylesheet" href="/styles/login_signup.css" />
-    <script type="modules" src="/scripts/login_signup.js"></script>
+    <script type="module" src="/scripts/login_signup.js"></script>
   </head>
   <body class="body">
     <header class="header">
@@ -31,10 +31,10 @@
         <h1 class="blind">판다마켓 회원가입</h1>
         <form class="form" method="post">
           <div class="formField">
-            <label class="formField__label" for="signup_email">이메일</label>
+            <label class="formField__label" for="emailInput">이메일</label>
             <input
               class="formField__input"
-              id="signup_email"
+              id="emailInput"
               name="email"
               type="email"
               placeholder="이메일을 입력해 주세요"
@@ -42,21 +42,21 @@
             <span class="formField__error"></span>
           </div>
           <div class="formField">
-            <label class="formField__label" for="signup_name">닉네임</label>
+            <label class="formField__label" for="nickname">닉네임</label>
             <input
               class="formField__input"
-              id="signup_name"
-              name="nickName"
+              id="nicknameInput"
+              name="nickname"
               type="text"
               placeholder="닉네임을 입력해 주세요"
             />
             <span class="formField__error"></span>
           </div>
           <div class="formField">
-            <label class="formField__label" for="signup_pw">비밀번호</label>
+            <label class="formField__label" for="passwordInput">비밀번호</label>
             <input
               class="formField__input"
-              id="signup_pw"
+              id="passwordInput"
               name="password"
               type="password"
               placeholder="비밀번호를 입력해 주세요"
@@ -70,13 +70,13 @@
             <span class="formField__error"></span>
           </div>
           <div class="formField">
-            <label class="formField__label" for="signup_pwcf">
+            <label class="formField__label" for="passwordConfirmInput">
               비밀번호 확인
             </label>
             <input
               class="formField__input"
-              id="signup_pwcf"
-              name="passwordConfirmation"
+              id="passwordConfirmInput"
+              name="passwordConfirm"
               type="password"
               placeholder="비밀번호를 다시 한 번 입력해 주세요"
             />

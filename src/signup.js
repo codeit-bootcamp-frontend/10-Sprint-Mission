@@ -1,12 +1,12 @@
-import { emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength, passwordNotMatch } from './validationConstants.js';
+import { emailRegex, emptyEmailMsg, invalidEmailMsg, emptyNicknameMsg, invalidPasswordLengthMsg, passwordMinLength, passwordNotMatch } from './validationConstants.js';
 
 // Elements
-const emailInput = document.querySelector('.email');
-const emailError = document.querySelector('.email + .input-validation-error');
+const emailInput = document.querySelector('#email');
+const emailError = document.querySelector('#email + .input-validation-error');
 
-const passwordInput = document.querySelector('.password');
+const passwordInput = document.querySelector('#password');
 const passwordError = document.querySelector('.password-container + .input-validation-error');
-const passwordMatchInput = document.querySelector('.password-match');
+const passwordMatchInput = document.querySelector('#password-match');
 const passwordMatchError = document.querySelector('.password-match-container + .input-validation-error');
 
 const submitButton = document.querySelector('.btn-login');
@@ -16,8 +16,12 @@ const invisibleIcon = document.querySelector('.invisible-icon');
 const matchVisibleIcon = document.querySelector('.match-visible-icon');
 const matchInvisibleIcon = document.querySelector('.match-invisible-icon');
 
+const nicknameInput = document.querySelector('#nickname');
+const nicknameError = document.querySelector('#nickname + .input-validation-error');
+
 // State tracking
 let isEmailValid = false;
+let isNicknameValid = false;
 let isPasswordValid = false;
 let isPasswordMatchValid = false;
 
@@ -42,7 +46,7 @@ function getEmailErrorMsg(emailValue) {
   if (!emailValue) {
     return emptyEmailMsg;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue)) {
+  if (!emailRegex.test(emailValue)) {
     return invalidEmailMsg;
   }
 }
@@ -61,12 +65,27 @@ function getPasswordMatchErrorMsg() {
   }
 }
 
-// 유효성 검사 함수
+// 닉네임 검증 함수
+function getNicknameErrorMsg(nicknameValue) {
+  if (!nicknameValue) {
+    return emptyNicknameMsg;
+  }
+}
+
+// 유효성 검사 확인 & 에러 표시처리 함수
 function validateEmail() {
   const emailErrorMsg = getEmailErrorMsg(emailInput.value);
   isEmailValid = !emailErrorMsg;
   setErrorMessage(emailError, emailErrorMsg ?? '');
   updateErrorDisplay(emailInput, emailError, !!emailErrorMsg);
+  updateButtonState();
+}
+
+function validateNickname() {
+  const nicknameErrorMsg = getNicknameErrorMsg(nicknameInput.value);
+  isNicknameValid = !nicknameErrorMsg;
+  setErrorMessage(nicknameError, nicknameErrorMsg ?? '');
+  updateErrorDisplay(nicknameInput, nicknameError, !!nicknameErrorMsg);
   updateButtonState();
 }
 
@@ -86,12 +105,16 @@ function validatePasswordMatch() {
   updateButtonState();
 }
 
-// 버튼 상태 업데이트 함수
-function updateButtonState() {
-  submitButton.disabled = !(isEmailValid && isPasswordValid && isPasswordMatchValid);
+function isValidationCompleted() {
+  return isEmailValid && isNicknameValid && isPasswordValid && isPasswordMatchValid;
 }
 
-// 비밀번호 보이기/숨기기 토글 함수
+// 버튼 상태 업데이트 함수
+function updateButtonState() {
+  submitButton.disabled = !isValidationCompleted();
+}
+
+// 비밀번호, 비밀번호 확인 보이기/숨기기 토글 함수
 function toggleVisibility(inputElement, visibleIcon, invisibleIcon) {
   const isPassword = inputElement.type === 'password';
   inputElement.type = isPassword ? 'text' : 'password';
@@ -102,6 +125,7 @@ function toggleVisibility(inputElement, visibleIcon, invisibleIcon) {
 
 // 이벤트 리스너
 emailInput.addEventListener('focusout', validateEmail);
+nicknameInput.addEventListener('focusout', validateNickname);
 passwordInput.addEventListener('focusout', validatePassword);
 passwordMatchInput.addEventListener('focusout', validatePasswordMatch);
 
@@ -120,7 +144,7 @@ form.addEventListener('submit', function (e) {
   validatePassword();
   validatePasswordMatch();
 
-  if (isEmailValid && isPasswordValid && isPasswordMatchValid) {
-    window.location.href = '/items';
+  if (isValidationCompleted()) {
+    window.location.href = '/signup';
   }
 });

@@ -1,10 +1,10 @@
 import { emailRegex, emptyEmailMsg, invalidEmailMsg, invalidPasswordLengthMsg, passwordMinLength } from './validationConstants.js';
 
 // Elements
-const emailInput = document.querySelector('.email');
-const emailError = document.querySelector('.email + .input-validation-error');
+const emailInput = document.querySelector('#email');
+const emailError = document.querySelector('#email + .input-validation-error');
 
-const passwordInput = document.querySelector('.password');
+const passwordInput = document.querySelector('#password');
 const passwordError = document.querySelector('.password-container + .input-validation-error');
 
 const submitButton = document.querySelector('.btn-login');
@@ -49,7 +49,7 @@ function getPasswordErrorMsg(passwordValue) {
   }
 }
 
-// 유효성 검사 함수
+// 유효성 검사 확인 & 에러 표시처리 함수
 function validateEmail() {
   const emailErrorMsg = getEmailErrorMsg(emailInput.value);
   isEmailValid = !emailErrorMsg;
@@ -66,9 +66,13 @@ function validatePassword() {
   updateButtonState();
 }
 
+function isValidationCompleted() {
+  return isEmailValid && isPasswordValid;
+}
+
 // 버튼 상태 업데이트 함수
 function updateButtonState() {
-  submitButton.disabled = !(isEmailValid && isPasswordValid);
+  submitButton.disabled = !isValidationCompleted();
 }
 
 // 비밀번호 보이기/숨기기 토글 함수
@@ -94,7 +98,7 @@ form.addEventListener('submit', function (e) {
   validateEmail();
   validatePassword();
 
-  if (isEmailValid && isPasswordValid) {
+  if (isValidationCompleted()) {
     window.location.href = '/items';
   }
 });

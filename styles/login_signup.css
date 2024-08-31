@@ -101,6 +101,10 @@
   border: 2px solid var(--blue-100);
 }
 
+.formField__input--error {
+  border: 2px solid var(--red);
+}
+
 .formField__toggleButton {
   position: absolute;
   top: 50%;
@@ -113,14 +117,29 @@
   }
 }
 
+.formField__error {
+  height: 21px;
+  padding: 0 16px;
+  font-size: var(--size-md);
+  color: white;
+}
+
+.formField__error--active {
+  color: var(--red);
+}
+
 .form__submitButton {
   padding: 13px 0;
   border-radius: 9999px;
-  background-color: var(--gray-400);
+  background-color: var(--blue-100);
   text-align: center;
   font-size: var(--size-xl);
   font-weight: 500;
   color: var(--gray-100);
+}
+
+.form__submitButton:disabled {
+  background-color: var(--gray-400);
 }
 
 .easyLogin {

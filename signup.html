@@ -35,51 +35,67 @@
 
       <main>
         <div class="main__wrap">
-          <form class="login-form">
+          <form class="login-form js-form">
             <label for="email" class="login-form__label">이메일</label>
-            <input
-              id="email"
-              class="login-form__input"
-              name="email"
-              type="email"
-              placeholder="이메일을 입력해주세요"
-              required
-            />
+            <div class="login-form__input-wrap">
+              <input
+                id="email"
+                class="login-form__input js-input"
+                name="email"
+                type="text"
+                placeholder="이메일을 입력해주세요"
+              />
+              <div class="js-email-error js-error-message"></div>
+            </div>
 
             <label for="nick-name" class="login-form__label">닉네임</label>
-            <input
-              id="nick-name"
-              class="login-form__input"
-              name="nick-name"
-              type="text"
-              placeholder="닉네임을 입력해주세요"
-              required
-            />
+            <div class="login-form__input-wrap">
+              <input
+                id="nick-name"
+                class="login-form__input js-input"
+                name="nickname"
+                type="text"
+                placeholder="닉네임을 입력해주세요"
+              />
+              <div class="js-nickname-error js-error-message"></div>
+            </div>
 
             <label for="password" class="login-form__label">비밀번호</label>
-            <input
-              id="password"
-              class="login-form__input"
-              name="password"
-              type="password"
-              minlength="8"
-              placeholder="비밀번호를 입력해주세요"
-              required
-            />
+            <div class="login-form__input-wrap">
+              <input
+                id="password"
+                class="login-form__input login-form__pw js-input js-pw"
+                name="password"
+                type="password"
+                minlength="8"
+                placeholder="비밀번호를 입력해주세요"
+              />
+
+              <img
+                class="login-form__icon js-pw-icon"
+                src="/images/icon/pw-hidden.png"
+                alt="비밀번호 숨기기 버튼"
+              />
+              <div class="js-pw-error js-error-message"></div>
+            </div>
 
             <label for="password-check" class="login-form__label"
               >비밀번호 확인</label
             >
-            <input
-              id="password-check"
-              class="login-form__input"
-              name="password"
-              type="password"
-              placeholder="비밀번호를 다시 한 번 입력해주세요"
-              required
-            />
+            <div class="login-form__input-wrap">
+              <input
+                id="password-check"
+                class="login-form__input js-input js-pw-check"
+                name="password-check"
+                type="password"
+                placeholder="비밀번호를 다시 한 번 입력해주세요"
+              />
+              <div class="js-pw-check-error js-error-message"></div>
+            </div>
 
-            <button type="submit" class="login-form__btn">로그인</button>
+            <button type="submit" class="login-form__btn js-button">
+              로그인
+            </button>
           </form>
           <div class="social-login">
             <p class="social-login__title">간편 로그인하기</p>
@@ -103,5 +119,7 @@
         </div>
       </main>
     </div>
+    <script type="module" src="auth-validation.js"></script>
+    <script type="module" src="toggle-pw.js"></script>
   </body>
 </html>

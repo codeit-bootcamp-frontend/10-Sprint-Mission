@@ -1,4 +1,4 @@
-const pw = document.querySelector(".js-pw");
+export const pw = document.querySelector(".js-pw");
 const pwIcon = document.querySelector(".js-pw-icon");
 
 const hidden = "/images/icon/pw-hidden.png";

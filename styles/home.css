@@ -228,12 +228,12 @@ main {
 
   .section-content-p-box {
     height: 608px;
-    padding: 103px 29px 103px 29px;
+    padding: 103px 29px;
   }
 
   .section-content-p-box-right {
     height: 608px;
-    padding: 103px 29px 103px 29px;
+    padding: 103px 29px;
   }
 
   .section-content-p1,
@@ -384,33 +384,33 @@ main {
   }
 
   .section-box {
-    width: 696px;
+    width: 100%;
   }
   
   .section-box-right {
-    width: 696px;
+    width: 100%;
   }
 
   .section-content {
     float: left;
-    width: 696px;
+    width: 100%;
   }
 
   .section-content-right {
     float: right;
-    width: 696px;
+    width: 100%;
   }
 
   .section-content-p-box {
     height: 220px;
     width: 696px;
-    padding: 103px 29px 103px 29px;
+    padding: 103px 29px;
   }
 
   .section-content-p-box-right {
     height: 220px;
     width: 696px;
-    padding: 103px 29px 103px 29px;
+    padding: 103px 29px;
   }
 
   .section-content-p1,
@@ -548,13 +548,11 @@ main {
   .section-container {
     max-width: 375px;
     height: 560px;
-    padding: 24px;
   } 
 
    .section-container-right {
     max-width: 375px;
     height: 560px;
-    padding: 24px;
   }
 
   .section-box {
@@ -567,12 +565,12 @@ main {
 
   .section-content {
     float: left;
-    width: 375px;
+    width: 100%;
   }
 
   .section-content-right {
     float: right;
-    width: 375px;
+    width: 100%;
   }
 
   .section-content-p-box {

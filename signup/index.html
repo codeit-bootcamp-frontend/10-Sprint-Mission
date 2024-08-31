@@ -19,8 +19,7 @@
     <div class="login-container">
       <div class="login-logo-box">
         <a class="gohome" href="/">
-         <img class="login-logo1" src="../images/pandaface.png" alt="판다얼굴 로고 그림">
-         <img class="login-logo2" src="../images/pandamarket.png" alt="판다마켓 글씨 그림">
+         <img class="login-logo" src="../images/logo/logo.svg" alt="판다마켓 로고">
         </a>
       </div>
       <div class="form-box">
@@ -31,12 +30,14 @@
             type="email"
             placeholder="이메일을 입력해주세요"
           />
+          <p class="error-message email-error"></p>
           <label>닉네임</label>
           <input
             name="username"
             type="text"
             placeholder="닉네임을 입력해주세요"
           />
+          <p class="error-message username-error"></p>
           <label>비밀번호</label>
           <div class="password-container">
           <input
@@ -50,10 +51,11 @@
             <i class="fas fa-eye-slash"></i>
           </span>
           </div>
+          <p class="error-message password-error"></p>
           <label>비밀번호 확인</label>
           <div class="password-container">
           <input
-            class="password-input"
+            class="confirm-password-input"
             autocomplete="off"
             name="password-repeat"
             type="password"
@@ -63,7 +65,10 @@
             <i class="fas fa-eye-slash"></i>
           </span>
           </div>
-          <button class="button-off">회원가입</button>
+          <p class="error-message confirm-password-error"></p>
+          <form action="../login">
+          <button type="submit" class="button-off" id="signup-button">회원가입</button>
+          </form>
       </div>
       <div class="social-login-box">
         <p class="social-login-p">간편 로그인하기</p>
@@ -81,6 +86,6 @@
       </p>
     </div>
     </div>
-    <script src="../index.js"></script>
+    <script src="./index.js"></script>
   </body>
 </html>

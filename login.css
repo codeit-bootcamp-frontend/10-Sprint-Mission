@@ -43,6 +43,22 @@ body{
     outline-color: #3692FF;;
 }
 
+.error {
+    border:1px solid red;
+}
+
+.error-message-pw {
+    outline-color: red;
+    color: red;
+    display: none;
+}
+
+.error-message {
+    outline-color: red;
+    color: red;
+    display: none;
+}
+
 .input::placeholder{
     color: #9CA3AF;
     font-weight: 400;

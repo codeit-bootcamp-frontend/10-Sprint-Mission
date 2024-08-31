@@ -76,6 +76,7 @@ body {
     color: #374151;
     line-height: 56px;
     margin: 0;
+    white-space: pre-line;
 }
 
 .top-banner-contents>a {
@@ -120,16 +121,6 @@ body {
     align-items: center;
     gap: 44px;
 }
-
-/* 
-.main-content:nth-child(2)> {
-    flex-direction: row-reverse;
-} 
-    
-위 방법으로 구현하고자 했으나(본문 카드 추가시 수정용이함)
-예상과 다르게 짝수번째 카드 선택이 안됨
-부모태그의 자식중에 2번째를 고르는거라 card가 아니라 section 태그를 선택하는것을 확인
--> 카드에 odd even 클래스값 주는것으로 변경.. */
 
 .card.odd {
     flex-direction: row;
@@ -207,6 +198,7 @@ body {
     font-weight: 700;
     color: #374151;
     margin: 0;
+    white-space: pre-line;
 }
 
 /* main page - footer */
@@ -244,3 +236,221 @@ body {
     display: flex;
     gap:12px;
 }
+
+
+/* 반응형: Tablet 에서 */
+@media (max-width: 1199px) {
+    /* main page - header */
+    .header {
+        padding: 5px 24px;
+    }
+
+    /* main page - top banner */
+    .top-banner {
+        height: 744px;
+
+        background-position: 50% 100%;
+        background-size: 740px auto;
+    }
+    .top-banner-contents {
+        /* 중앙배치 & pc버전 설정값 지우기 */
+        position: absolute;
+        top: 84px;
+        left: 50%; 
+        bottom: auto;
+        right: auto;
+        transform: translate(-50%, 0);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .top-banner-text {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+
+    }
+    .top-banner-text>p {
+        white-space: nowrap;
+    }
+    .top-banner-contents>a {
+        margin-top: 24px;
+    }
+
+    /* main page - main content */
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+        padding: 30px 0 60px 0;
+    }
+
+    .main-content>section {
+        height: auto;
+        width: 100%;
+    }
+    
+    .main-content>section.odd {
+        margin-left: 0;
+    }
+    
+    .main-content>section.even {
+        margin-right: 0;
+    }
+    .card {
+        width: 696px;
+        min-width: auto;
+    }
+    
+    .card.odd {
+        flex-direction: column;
+        gap: 24px;
+        align-items:flex-start;
+    }
+    
+    .card.even {
+        flex-direction: column;
+        gap: 24px;
+        align-items:flex-end;
+    }
+    .card-image {
+        height: 524px;
+    }
+
+    .card-title {
+        font-size: 32px;
+        line-height: 42px;
+        margin: 16px 0 24px 0;
+    }
+    
+    .card-explain {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    
+    /* main page - bottom banner */
+    .bottom-banner {
+        height: 927px;
+        background-position: 50% 100%;
+        background-size:  740px auto;
+    }
+    
+    .bottom-banner-text {
+        top: 200px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: auto;
+        right: auto;
+    }
+    .bottom-banner-text>p {
+        text-align: center;
+    }
+     
+    /* main page - footer */
+    .footer {
+        padding: 32px 100px;
+    }
+    
+
+}
+
+
+/* 반응형: Mobile 이하 에서 */
+@media (max-width: 767px) {
+    /* header */
+    .header {
+        padding: 5px 16px;
+    }
+    
+    .header-typo>img {
+        /* 모바일 버전에서 로고 바뀜 */
+        content: url(../assets/logo_text.svg);
+    }
+
+    /* top banner */
+    .top-banner {
+        height: 540px;
+        background-size: 450px auto;
+    }
+    .top-banner-contents {
+        top: 48px;
+    }
+    .top-banner-text {
+        flex-direction: column;
+        gap: 0;
+
+    }
+    .top-banner-text>p {
+        font-size: 32px;
+        line-height: 44.8px;
+        text-align: center;
+        white-space: pre-line;
+    }
+    .top-banner-contents>a {
+        margin-top: 18px;
+        /* 구경하러가기 버튼 사이즈 변경 */
+        font-size: 18px;
+        line-height: 26px;
+        padding: 12px 71px;
+        white-space: nowrap;
+    }
+
+    /* main-content */
+    .main-content {
+    
+        gap: 40px;
+        padding: 60px 0 80px 0;
+    }
+
+    .card {
+        width: 344px;
+        min-width: auto;
+    }
+    
+    .card-image {
+        height: 259px;
+    }
+    
+    .card-header {
+        font-size: 16px;
+    }
+    
+    .card-title {
+        font-size: 24px;
+        line-height: 32px;
+        margin: 8px 0 16px 0;
+    }
+    
+    .card-explain {
+        font-size: 16px;
+    }
+
+    /* bottom banner */
+    .bottom-banner {
+        height: 540px;
+        background-size:  450px auto;
+
+    }
+    
+    .bottom-banner-text {
+        top: 120px;
+
+    
+    }
+    .bottom-banner-text>p {
+        font-size: 32px;
+        line-height: 44.8px;
+    }
+    
+    /* main page - footer */
+    .footer {
+        padding: 32px 30px;
+    }
+ 
+    .footer-content>.menu {
+        gap: 10px; 
+    }
+
+} 

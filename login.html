@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/variables.css" />
   <link rel="stylesheet" href="css/auth.css" />
+  <script type="module" src="./src/login.js"></script>
   <title>로그인 | 판다마켓</title>
 </head>
 <body>
@@ -14,14 +15,20 @@
     <section class="auth login">
       <a href="/" class="auth-logo"><img src="./images/panda_logo.svg" alt="판다마켓 로고"/></a>
       <form class="auth-form">
-        <label for="email">이메일</label>
-        <div class="auth-input">
-          <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요" />
+        <div class="email-container">
+          <label for="email">이메일</label>
+          <div class="auth-input">
+            <input type="text" id="email" name="email" placeholder="이메일을 입력해주세요" />
+          </div>
+          <span class="validation-message"></span>
         </div>
-        <label for="password">비밀번호</label>
-        <div class="auth-input">
-          <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
-          <img src="./images/btn_hidden.svg" class="visibility" alt="비밀번호 표시"/>
+        <div class="password-container">
+          <label for="password">비밀번호</label>
+          <div class="auth-input">
+            <input type="password" id="password" name="password" placeholder="비밀번호를 입력해주세요" />
+            <img src="./images/btn_hidden.svg" class="visibility" alt="비밀번호 표시"/>
+          </div>
+          <span class="validation-message"></span>
         </div>
         <button type="submit">로그인</button>
         <div class="other-account">

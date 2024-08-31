@@ -30,7 +30,6 @@ label {
 
 button {
   border-radius: 40px;
-  background: var(--Primary-100, #3692FF);
   border: none;
   display: block;
   height: 56px;
@@ -43,7 +42,7 @@ button {
 
 input {
   display: block;
-  margin: 24px 0;
+  margin: 20px 0;
   padding: 16px 24px;
   background-color: #f3f4f6;
   border: none;
@@ -97,7 +96,8 @@ footer {
   height: 42px;
 }
 
-.loginclick {
+#loginclick {
+  background-color: gray;
   color: var(--Cool-Gray-100, #F3F4F6);
   text-align: center;
   font-family: Pretendard;
@@ -105,6 +105,14 @@ footer {
   font-style: normal;
   font-weight: 600;
   line-height: 32px;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+#loginclick.active {
+  background-color: #3692ff;
+  cursor: pointer;
+  pointer-events: auto;
 }
 
 .login-partner {
@@ -135,6 +143,18 @@ footer {
   line-height: 24px;
   text-align: center;
 }
+
+input.error {
+  border: 2px solid red;
+  margin: 20px 0 10px 0;
+}
+
+.error-message{
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
 
 @media (min-width: 375px) and (max-width: 767px) {
   body {

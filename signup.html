@@ -9,7 +9,7 @@
       crossorigin
       href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
     />
-    <link rel="stylesheet" href="styles/signin.css">
+    <link rel="stylesheet" href="styles/sign.css">
   </head>
 
     <body>
@@ -22,6 +22,7 @@
         </div> 
       </header>
         <form class=" login">
+          <div class="form-group">
           <label>이메일</label>
           <input
             id="email"
@@ -29,6 +30,9 @@
             type="email"
             placeholder="이메일을 입력해주세요"
           />
+          <span class="error-message"></span>
+          </div>
+          <div class="form-group">
           <label>닉네임</label>
           <input
             id="nickname"
@@ -36,21 +40,29 @@
             type="nickname"
             placeholder="닉네임을 입력해주세요"
           />
+          <span class="error-message"></span>
+          </div>
+          <div class="form-group">
           <label>비밀번호</label>
           <input
-            id=""password"
+            id="password"
             name="password"
             type="password"
             placeholder="비밀번호를 입력해주세요"
           />
+          <span class="error-message"></span>
+          </div>
+          <div class="form-group">
           <label>비밀번호 확인</label>
           <input
-            id=""repassword"
+            id="repassword"
             name="repassword"
-            type="repassword"
+            type="password"
             placeholder="비밀번호를 다시 한 번 입력해주세요"
           />
-          <button type="submit" onclick="location.href='/submit'" class="loginclick">
+          <span class="error-message"></span>
+          </div>
+          <button type="submit" onclick="location.href='/submit'" id="loginclick">
             회원가입
           </button>
         <div class="linklog">
@@ -73,5 +85,6 @@
           <a class="login-signin-link" href="login.html">로그인</a>
         </div>
       </footer>
+      <script src="JavaScript/upscript.js"></script>
     </body>
 </html>

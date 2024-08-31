@@ -93,6 +93,12 @@ main {
   margin-top: 2.4rem;
 }
 
+.login__submit.enabled {
+  background-color: var(--Primary-100);
+  color: var(--Gray-100);
+  cursor: not-allowed;
+}
+
 .social-login {
   display: flex;
   justify-content: space-between;
@@ -168,7 +174,7 @@ main {
   font-size: 1.4rem;
   font-weight: 600;
   margin-top: 0.8rem;
-  display: block;
+  display: none;
   position: relative;
   left: 1.6rem;
 }

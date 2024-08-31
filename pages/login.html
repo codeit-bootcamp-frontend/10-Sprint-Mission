@@ -35,12 +35,10 @@
               id="email"
               name="email"
               placeholder="이메일을 입력해주세요"
-              class="login__input error"
+              class="login__input"
               required
             />
-            <span class="login__error-message" id="email-error"
-              >이메일을 입력해주세요.</span
-            >
+            <span class="login__error-message" id="email-error"></span>
           </div>
           <label for="password" class="login__label login__label--password"
             >비밀번호</label
@@ -51,12 +49,10 @@
               id="password"
               name="password"
               placeholder="비밀번호를 입력해주세요"
-              class="login__input error"
+              class="login__input"
               required
             />
-            <span class="login__error-message" id="password-error"
-              >비밀번호를 입력해주세요.</span
-            >
+            <span class="login__error-message" id="password-error"></span>
             <button
               type="button"
               class="login__password-toggle"
@@ -74,7 +70,13 @@
               />
             </button>
           </div>
-          <button type="submit" class="login__submit">로그인</button>
+          <button
+            id="login-button"
+            type="submit"
+            class="login__submit"
+          >
+            로그인
+          </button>
         </form>
       </section>
       <aside class="social-login">
@@ -103,5 +105,6 @@
         </p>
       </section>
     </main>
+    <script src="/scripts/login.js"></script>
   </body>
 </html>

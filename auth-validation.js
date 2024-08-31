@@ -117,7 +117,11 @@ function pwMatch() {
 }
 
 function buttonActivation() {
-  if (!valueStatus.includes(FAILED)) form.submit(); // 모든 유효성 검사를 통과하면 폼 제출
+  if (!valueStatus.includes(FAILED)) {
+    form.submit();
+    location.href = "items.html";
+  }
+  //버튼 활성화 및 페이지 이동
 }
 
 // 이벤트 리스너

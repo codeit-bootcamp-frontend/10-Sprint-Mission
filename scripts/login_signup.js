@@ -26,6 +26,14 @@ function updateSubmit() {
   submit.disabled = !isFormValid;
 }
 
+// 폼 제출 이벤트 변경
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!!nickname) document.location.href = "/signin.html";
+  else document.location.href = "/items.html";
+});
+
 // 폼 입력 유효성 판단
 
 function errorChange(input, errorMessage = "") {

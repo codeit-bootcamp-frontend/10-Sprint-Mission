@@ -23,6 +23,27 @@ const hideMessage = (messageElement, inputElement) => {
   inputElement.parentNode.classList.remove('validation-focus');
 }
 
+const isFormComplete = () => {
+  const existValiation = document.querySelector('.validation-focus');
+  const fields = [...document.querySelectorAll('input')];
+  const allCompleted = fields.every((field) => field.value.trim() !== '');
+
+  return allCompleted && !existValiation;
+}
+
+const toggleButtonActive = (isFromComplete) => {
+  const $submitButton = document.querySelector('.auth-form > button');
+  
+  if(isFromComplete) {
+    $submitButton.classList.add('active');
+    $submitButton.disabled = false;
+    return;
+  }
+
+  $submitButton.classList.remove('active');
+  $submitButton.disabled = true;
+}
+
 export const validateEmail = (inputElement, messageElement) => {
   const email = inputElement.value.trim();
 
@@ -37,6 +58,7 @@ export const validateEmail = (inputElement, messageElement) => {
   } 
   
   hideMessage(messageElement, inputElement);
+  toggleButtonActive(isFormComplete());
 }
 
 
@@ -54,6 +76,7 @@ export const validatePassword = (inputElement, messageElement) => {
   }
 
   hideMessage(messageElement, inputElement);
+  toggleButtonActive(isFormComplete());
 }
 
 export const validateNickname = (inputElement, messageElement) => {
@@ -65,6 +88,7 @@ export const validateNickname = (inputElement, messageElement) => {
   }
 
   hideMessage(messageElement, inputElement);
+  toggleButtonActive(isFormComplete());
 }
 
 export const validatePasswordCheck = (inputElement, messageElement, confirmPassword) => {
@@ -76,5 +100,10 @@ export const validatePasswordCheck = (inputElement, messageElement, confirmPassw
   }
 
   hideMessage(messageElement, inputElement);
+  toggleButtonActive(isFormComplete());
 }
 
+export const handleSubmitButton = (event, url) => {
+  event.preventDefault();
+  location.href = url;
+}

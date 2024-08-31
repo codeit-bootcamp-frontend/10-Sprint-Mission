@@ -70,6 +70,9 @@
   cursor: pointer;
   margin-bottom: 8px;
 }
+.auth-form > button.active {
+  background-color: var(--blue);
+}
 
 .auth-form > .other-account {
   display: flex;

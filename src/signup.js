@@ -2,7 +2,8 @@ import {
   validateEmail, 
   validateNickname, 
   validatePassword, 
-  validatePasswordCheck 
+  validatePasswordCheck,
+  handleSubmitButton
 } from './auth.js';
 
 const $emailInput = document.querySelector('#email');
@@ -21,6 +22,8 @@ const $passwordCheckInput = document.querySelector('#password-check');
 const $passwordCheckContainer = document.querySelector('.password-check-container');
 const $passwordCheckValidationMessage = $passwordCheckContainer.querySelector('.validation-message');
 
+const $submitButton = document.querySelector('.auth-form > button');
+
 $emailInput.addEventListener('focusout', () => validateEmail($emailInput, $emailValidationMessage));
 $nicknameInput.addEventListener('focusout', () => validateNickname($nicknameInput, $nicknameValidationMessage));
 $passwordInput.addEventListener('focusout', () => {
@@ -35,3 +38,5 @@ $passwordCheckInput.addEventListener(
     $passwordInput.value
   )
 );
+
+$submitButton.addEventListener('click', (event) => handleSubmitButton(event, './login'));

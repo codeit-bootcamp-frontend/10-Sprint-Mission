@@ -3,94 +3,97 @@
   <head>
     <meta charset="utf-8">
     <title>판다마켓</title>
-    <link rel="stylesheet" href="style_desktop.css">
+    <link rel="stylesheet" href="./style/style_color.css">
+    <link rel="stylesheet" href="./style/style_desktop.css">
   </head>
   <body>
-    <header>
-      <div class="header">
-        <div class="headercon"><a href="/"><img src="/image/md.png" id="toplogo" alt="판다마켓"></a></div>
-        <div class="headercon"><input type="button" value="로그인" class="login" onClick="location.href='login.html'"></div>
-      </div>
-    </header>
-
-    <main>
-      <!-- main_top -->
-      <div class="hometop">
-        <div class="topcon">
-          <div id="topleft">
-            <div id="topinfo">
-              일상의 모든 물건을<br>
-              거래해 보세요<br>
+    <div id="wrapper">
+      <header>
+        <div class="header">
+          <div class="header-con"><a href="/"><img src="./image/md.png" class="header-logo" alt="판다마켓"></a></div>
+          <div class="header-con"><input type="button" value="로그인" class="login" onClick="location.href='login.html'"></div>
+        </div>
+      </header>
+  
+      <main>
+        <!-- main_top -->
+        <div class="home-top">
+          <div class="top-con">
+            <div id="top-left">
+              <div id="top-info">
+                일상의 모든 물건을<br>
+                거래해 보세요<br>
+              </div>
+              <br><input id="goitems" type="button" value="구경하러 가기" onclick="location.href='items.html'">
             </div>
-            <br><input id="goitems" type="button" value="구경하러 가기" onclick="location.href='items.html'">
-          </div>
-          <div id="topimg"><img src="/image/Img_home_top.png"></div>
-        </div>
-      </div>
-
-      <!-- main_show1 -->
-      <div class="show">
-        <div class="showcon" id="show1">
-          <div class="showimg"><img src="/image/Img_home_01.png"></div>
-          <div class="showinfo">
-            <p id="showtitle">Hot item</p>
-            <p id="showmain">인기 상품을<br>확인해 보세요</p>
-            <p id="showdes">가장 HOT한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
+            <div id="top-img"><img src="./image/Img_home_top.png"></div>
           </div>
         </div>
-      </div>
-
-      <!-- main_show2 -->
-      <div class="show">
-        <div class="showcon" id="show2">
-          <div class="showinfo">
-            <p id="showtitle">Search</p>
-            <p id="showmain">구매를 원하는<br>상품을 검색하세요</p>
-            <p id="showdes">구매하고 싶은 물품은 검색해서<br>쉽게 찾아보세요</p>
-          </div>
-          <div class="showimg"><img src="/image/Img_home_02.png"></div>
-        </div>
-      </div>
-
-      <!-- main_show3 -->
-      <div class="show">
-        <div class="showcon" id="show3">
-          <div class="showimg"><img src="/image/Img_home_03.png"></div>
-          <div class="showinfo">
-            <p id="showtitle">Register</p>
-            <p id="showmain">판매를 원하는<br>상품을 등록하세요</p>
-            <p id="showdes">어떤 물건이든 판매하고 싶은 상품을<br>쉽게 등록하세요</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- main_bottom -->
-      <div class="homebot">
-        <div class="botcon">
-          <div id="botleft">
-            <div id="botinfo">
-              믿을 수 있는<br>
-              판다마켓 중고 거래<br>
+  
+        <!-- main_show1 -->
+        <div class="show">
+          <div class="show-con" id="show1">
+            <div class="show-img"><img src="./image/Img_home_01.png"></div>
+            <div class="show-info">
+              <p id="show-title">Hot item</p>
+              <p id="show-main">인기 상품을<br>확인해 보세요</p>
+              <p id="show-des">가장 HOT한 중고거래 물품을<br>판다 마켓에서 확인해 보세요</p>
             </div>
           </div>
-          <div id="botimg"><img src="image/Img_home_bottom.png"></div>
         </div>
-      </div>
-    </main>
-
-    <footer>
-      <div class="footer">
-        <div class="footercon">
-          <div class="footertext">@codeit - 2024</div>
-          <div class="footertext"><a href="/privacy.html">Privacy Policy</a> &emsp; <a href="/faq.html">FAQ</a></div>
-          <div class="footertext">
-            <a href="https://www.facebook.com/" target="_blank"><img src="/image/ic_facebook.png"></a>
-            <a href="https://x.com/" target="_blank"><img src="/image/ic_twitter.png"></a>
-            <a href="https://www.youtube.com/" target="_blank"><img src="/image/ic_youtube.png"></a>
-            <a href="https://www.instagram.com/" target="_blank"><img src="/image/ic_instagram.png"></a>
+  
+        <!-- main_show2 -->
+        <div class="show">
+          <div class="show-con" id="show2">
+            <div class="show-info">
+              <p id="show-title">Search</p>
+              <p id="show-main">구매를 원하는<br>상품을 검색하세요</p>
+              <p id="show-des">구매하고 싶은 물품은 검색해서<br>쉽게 찾아보세요</p>
+            </div>
+            <div class="show-img"><img src="./image/Img_home_02.png"></div>
           </div>
         </div>
-      </div>
-    </footer>
+  
+        <!-- main_show3 -->
+        <div class="show">
+          <div class="show-con" id="show3">
+            <div class="show-img"><img src="./image/Img_home_03.png"></div>
+            <div class="show-info">
+              <p id="show-title">Register</p>
+              <p id="show-main">판매를 원하는<br>상품을 등록하세요</p>
+              <p id="show-des">어떤 물건이든 판매하고 싶은 상품을<br>쉽게 등록하세요</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- main_bottom -->
+        <div class="home-bottom">
+          <div class="bottom-con">
+            <div id="bottom-left">
+              <div id="bottom-info">
+                믿을 수 있는<br>
+                판다마켓 중고 거래<br>
+              </div>
+            </div>
+            <div id="bottom-img"><img src="./image/Img_home_bottom.png"></div>
+          </div>
+        </div>
+      </main>
+  
+      <footer>
+        <div class="footer">
+          <div class="footer-con">
+            <div class="footer-text">@codeit - 2024</div>
+            <div class="footer-text"><a href="./privacy.html">Privacy Policy</a> &emsp; <a href="./faq.html">FAQ</a></div>
+            <div class="footer-text">
+              <a href="https://www.facebook.com/" target="_blank"><img src="./image/ic_facebook.png"></a>
+              <a href="https://x.com/" target="_blank"><img src="./image/ic_twitter.png"></a>
+              <a href="https://www.youtube.com/" target="_blank"><img src="./image/ic_youtube.png"></a>
+              <a href="https://www.instagram.com/" target="_blank"><img src="./image/ic_instagram.png"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>

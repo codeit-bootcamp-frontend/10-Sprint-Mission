@@ -1,36 +1,37 @@
 import { isValidEmail, isValidPassword } from "./utils/validate.js";
 
-const submit = document.forms[0].lastElementChild;
-submit.disabled = true;
+const form = document.forms[0];
+const email = form["email"];
+const nickname = form["nickname"];
+const password = form["password"];
+const passwordConfirm = form["passwordConfirm"];
+const submit = form.lastElementChild;
+
+// 폼 유효성 & 활성화 초기화
 
 let isEmailValid = false;
 let isNicknameValid = false;
 let isPasswordValid = false;
 let isPasswordConfirmValid = false;
-
-const email = document.forms[0]["email"];
-const nickname = document.forms[0]["nickname"];
-const password = document.forms[0]["password"];
-const passwordConfirm = document.forms[0]["passwordConfirm"];
+submit.disabled = true;
 
 // 폼 제출 활성화 판단
 
 function updateSubmit() {
-  const isSignup = !!nickname;
   let isFormValid = isEmailValid && isPasswordValid;
 
-  if (isSignup)
+  if (!!nickname)
     isFormValid = isFormValid && isNicknameValid && isPasswordConfirmValid;
 
   submit.disabled = !isFormValid;
 }
 
-// 폼 입력 유효성 판단 기능
+// 폼 입력 유효성 판단
 
 function errorChange(input, errorMessage = "") {
   const error = input.parentElement.lastElementChild;
 
-  if (errorMessage) {
+  if (!!errorMessage) {
     input.classList.add("formField__input--error");
     error.classList.add("formField__error--active");
   } else {
@@ -82,8 +83,11 @@ password.addEventListener("focusout", () => {
   updateSubmit();
 });
 
-passwordConfirm?.addEventListener("input", () => {
-  if (!passwordConfirm.value) {
+passwordConfirm?.addEventListener("focusout", () => {
+  if (!isPasswordValid) {
+    errorChange(passwordConfirm, "먼저 위에 적절한 비밀번호를 입력해 주세요.");
+    isPasswordConfirmValid = false;
+  } else if (!passwordConfirm.value) {
     errorChange(passwordConfirm, "비밀번호를 입력해 주세요.");
     isPasswordConfirmValid = false;
   } else if (!isValidPassword(passwordConfirm.value)) {
@@ -100,7 +104,7 @@ passwordConfirm?.addEventListener("input", () => {
   updateSubmit();
 });
 
-// 비밀번호 토글 기능
+// 비밀번호 표시 전환
 
 const toggles = document.querySelectorAll(".formField__toggleButton");
 

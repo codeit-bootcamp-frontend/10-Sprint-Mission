@@ -55,26 +55,25 @@
             <span class="login__error-message" id="password-error"></span>
             <button
               type="button"
+              id="password-toggle"
               class="login__password-toggle"
               aria-label="비밀번호 보기"
             >
               <img
+                id="password-toggle-off"
                 src="/assets/images/ic-visibility-off.svg"
-                class="login__password-toggle-icon login__password-toggle-icon--inactive"
+                class="login__password-toggle-icon login__password-toggle-icon--inactive visible"
                 alt="비밀번호 숨기기 아이콘"
               />
               <img
+                id="password-toggle-on"
                 class="login__password-toggle-icon login__password-toggle-icon--active"
                 src="/assets/images/ic-visibility-on.svg"
                 alt="비밀번호 보기 아이콘"
               />
             </button>
           </div>
-          <button
-            id="login-button"
-            type="submit"
-            class="login__submit"
-          >
+          <button id="login-button" type="submit" class="login__submit">
             로그인
           </button>
         </form>

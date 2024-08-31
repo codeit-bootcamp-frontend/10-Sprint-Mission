@@ -56,6 +56,15 @@ main {
   display: none;
 }
 
+.login__password-toggle-icon--inactive.visible,
+.login__password-toggle-icon--active.visible {
+  display: block;
+}
+
+.login__password-toggle-icon--inactive {
+  display: none;
+}
+
 .signup__field--password button,
 .login__field--password button {
   position: absolute;
@@ -165,11 +174,13 @@ main {
   height: 5.6rem;
 }
 
-.login__input.error {
+.login__input.error,
+.signup__input.error {
   border: 1px solid var(--Error-red);
 }
 
-.login__error-message {
+.login__error-message,
+.signup__error-message {
   color: var(--Error-red);
   font-size: 1.4rem;
   font-weight: 600;

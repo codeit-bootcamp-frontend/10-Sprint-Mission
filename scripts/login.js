@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const passwordInput = document.getElementById('password');
   const passwordError = document.getElementById('password-error');
   const loginButton = document.getElementById('login-button');
+  const passwordToggle = document.getElementById('password-toggle');
 
   emailInput.addEventListener('blur', handleEmailBlur);
   passwordInput.addEventListener('keydown', handlePasswordKeydown);
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   loginButton.addEventListener('click', handleLogin);
   emailInput.addEventListener('keydown', handleEnterKey);
   passwordInput.addEventListener('keydown', handleEnterKey);
+  passwordToggle.addEventListener('click', handlePasswordToggle);
 
   function handleEmailBlur() {
     const emailValue = emailInput.value.trim();
@@ -101,6 +103,22 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!loginButton.disabled) {
         handleLogin(event); // 로그인 처리
       }
+    }
+  }
+
+  function handlePasswordToggle() {
+    const passwordInput = document.getElementById('password');
+    const passwordToggleOn = document.getElementById('password-toggle-on');
+    const passwordToggleOff = document.getElementById('password-toggle-off');
+
+    if (passwordInput.type === 'password') {
+      passwordInput.type = 'text';
+      passwordToggleOn.classList.add('visible');
+      passwordToggleOff.classList.remove('visible');
+    } else {
+      passwordInput.type = 'password';
+      passwordToggleOn.classList.remove('visible');
+      passwordToggleOff.classList.add('visible');
     }
   }
 

@@ -26,7 +26,7 @@ header {
   height:70px;
   padding:0;
 }
-.header-con {
+.header-container {
   float:left;
   height:100%;
   width:50%;
@@ -60,7 +60,7 @@ header {
   display: flex;
   justify-content: center;
 }
-.top-con{
+.top-container {
   width:1110px;
   height:340px;
   position: absolute;
@@ -83,7 +83,7 @@ header {
   float:left;
   width:746px;
 }
-#goitems {
+#go-items {
   width:357px;
   padding:16px 124px;
   border-radius: 40px;
@@ -100,7 +100,7 @@ header {
   display:flex;
   justify-content: center;
 }
-.show-con {
+.show-container {
   width:955px;
   height:444px;
   margin:0px auto;
@@ -134,7 +134,7 @@ header {
   font-weight: 700;
   line-height: 56px;
 }
-#show-des {
+#show-descript {
   font-size: 22px;
   font-weight: 500;
   line-height: 32px;
@@ -147,7 +147,7 @@ header {
   display: flex;
   justify-content: center;
 }
-.bottom-con{
+.bottom-container {
   width:1110px;
   height:397px;
   position: absolute;
@@ -176,16 +176,16 @@ header {
   background-color: var(--gray900);
   padding-top: 32px;
 }
-.footer-con {
+.footer-container {
   width:1120px;
   margin:0px auto;
   display:flex;
   justify-content: space-between;
 }
-.footer-con .footer-text {
+.footer-container .footer-text {
   color:var(--gray400);
 }
-.footer-con .footer-text a {
+.footer-container .footer-text a {
   color:var(--gray200);
 }
 
@@ -200,7 +200,7 @@ header {
   #top-info {
     text-align: center;
   }
-  .footer-con {
+  .footer-container {
     width:90%;
   }
 }
@@ -228,7 +228,7 @@ header {
     display: flex;
     justify-content: center;
   }
-  .top-con {
+  .top-container {
     width:400px;
     height:100%;
     justify-content: center;
@@ -240,7 +240,7 @@ header {
     justify-content: center;
     top:50px;
   }
-  #goitems {
+  #go-items {
     display: block;
     margin:0 auto;
   }
@@ -267,7 +267,7 @@ header {
     display: flex;
     justify-content: center;
   }
-  .bottom-con {
+  .bottom-container {
     width:400px;
     height:100%;
     justify-content: center;
@@ -284,7 +284,7 @@ header {
     position:absolute;
     bottom:0px;
   }
-  .footer-con {
+  .footer-container {
     width:90%;
   }
 }

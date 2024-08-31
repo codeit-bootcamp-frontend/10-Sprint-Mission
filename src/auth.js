@@ -16,11 +16,13 @@ const showMessage = (message, messageElement, inputElement) => {
   messageElement.textContent = message;
   messageElement.style.display = 'inline-block';
   inputElement.parentNode.classList.add('validation-focus');
+  toggleButtonActive();
 }
 
 const hideMessage = (messageElement, inputElement) => {
   messageElement.style.display = 'none';
   inputElement.parentNode.classList.remove('validation-focus');
+  toggleButtonActive();
 }
 
 const isFormComplete = () => {
@@ -31,10 +33,10 @@ const isFormComplete = () => {
   return allCompleted && !existValiation;
 }
 
-const toggleButtonActive = (isFromComplete) => {
+const toggleButtonActive = () => {
   const $submitButton = document.querySelector('.auth-form > button');
-  
-  if(isFromComplete) {
+
+  if(isFormComplete()) {
     $submitButton.classList.add('active');
     $submitButton.disabled = false;
     return;
@@ -71,7 +73,6 @@ export const validateEmail = (inputElement, messageElement) => {
   } 
   
   hideMessage(messageElement, inputElement);
-  toggleButtonActive(isFormComplete());
 }
 
 
@@ -89,7 +90,6 @@ export const validatePassword = (inputElement, messageElement) => {
   }
 
   hideMessage(messageElement, inputElement);
-  toggleButtonActive(isFormComplete());
 }
 
 export const validateNickname = (inputElement, messageElement) => {
@@ -101,7 +101,6 @@ export const validateNickname = (inputElement, messageElement) => {
   }
 
   hideMessage(messageElement, inputElement);
-  toggleButtonActive(isFormComplete());
 }
 
 export const validatePasswordCheck = (inputElement, messageElement, confirmPassword) => {
@@ -113,7 +112,6 @@ export const validatePasswordCheck = (inputElement, messageElement, confirmPassw
   }
 
   hideMessage(messageElement, inputElement);
-  toggleButtonActive(isFormComplete());
 }
 
 export const handleSubmitButton = (event, url) => {

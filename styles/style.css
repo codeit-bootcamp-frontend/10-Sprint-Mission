@@ -1,0 +1,450 @@
+:root {
+    /* Gray scale */
+    --gray-900: #1b1d1f;
+    --gray-800: #26282b;
+    --gray-600: #454c53;
+    --gray-500: #72787f;
+    --gray-400: #9ea4a8;
+    --gray-200: #e5e7eb;
+    --gray-100: #e8ebed;
+    --gray-50: #f7f7f8;
+    --blue: #3692ff;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #374151;
+    word-break: keep-all;
+    font-family: "Pretendard", sans-serif;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  img {
+    vertical-align: bottom;
+  }
+  
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 56px;
+    letter-spacing: 0.02em;
+  }
+  
+  .button {
+    background-color: var(--blue);
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button:hover {
+    background-color: #1967d6;
+  }
+  
+  .button:focus {
+    background-color: #1251aa;
+  }
+  
+  .button:disabled {
+    background-color: #9ca3af;
+    cursor: default;
+    pointer-events: none;
+  }
+  
+  .pill-button {
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 16px 124px;
+  }
+  
+  /* 헤더 스타일 */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 200px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #dfdfdf;
+  }
+  
+  #loginLinkButton {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 11.5px 23px;
+  }
+  
+  main {
+    margin-top: 70px;
+  }
+  
+  .banner {
+    background-color: #cfe5ff;
+    height: 540px;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 80% bottom;
+    background-size: 55%;
+  }
+  
+  #hero {
+    background-image: url("../images/home/hero-image.png");
+  }
+  
+  #bottomBanner {
+    background-image: url("../images/home/bottom-banner-image.png");
+  }
+  
+  #features {
+    padding-bottom: 138px;
+  }
+  
+  .feature {
+    padding: 138px 0;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+  }
+  
+  .feature:nth-child(2) {
+    text-align: right;
+  }
+  
+  .feature-content {
+    flex: 1;
+  }
+  
+  .feature-tag {
+    color: var(--blue);
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  
+  .feature-description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.08em;
+    margin-top: 24px;
+  }
+  
+  .feature img {
+    max-width: 100%;
+  }
+  
+  .feature:nth-child(1) img {
+    background-image: url("images/Img_home_01.png");
+  }
+  
+  .feature:nth-child(2) img {
+    background-image: url("images/Img_home_02.png");
+  }
+  
+  .feature:nth-child(3) img {
+    background-image: url("images/Img_home_03.png");
+  }
+  
+  footer {
+    background-color: #111827;
+    color: #9ca3af;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 32px 200px 108px 200px;
+    font-size: 16px;
+  }
+  
+  #footerMenu {
+    display: flex;
+    gap: 30px;
+    color: var(--gray-200);
+  }
+  
+  #socialMedia {
+    display: flex;
+    gap: 12px;
+  }
+  
+  @media (min-width: 768px) and (max-width: 1199px) {
+  
+    header {
+      padding: 0 24px;
+    }
+  
+    .banner {
+      height: 100vh;
+      background-size: 120%;
+      display:flex;
+      flex-direction: column;
+      padding-top: 84px;
+      padding-bottom: 24px;
+    }
+  
+    .banner h1 {
+      font-size: 40px;
+      line-height: 56px;
+    }
+  
+    #banner-content{
+      display:flex;
+    }
+  
+    #hero {
+      background-image: url("../images/home/hero-image.png");
+      background-size: 100%;
+      background-position: bottom;
+      height: 100vh;
+    }
+  
+    #features {
+      padding-top: 24px;
+      padding-bottom: 16px;
+    }
+  
+    .feature{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding:0 0 52px;
+      gap:24px;
+    }
+  
+    .feature-image{
+      display:block;
+      width:100%;
+    }
+    
+    .feature-content{
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  
+    .feature-content h2 {
+      font-size: 18px;
+      line-height: 25.2px;
+      margin-bottom: 12px;
+    }
+  
+    .feature-content h1 {
+      font-size: 32px;
+      line-height: 44.8px;
+    }
+  
+    .feature-description {
+      font-size: 18px;
+      line-height: 21.6px;
+    }
+  
+    #feature-reverse{
+      display:flex;
+      flex-direction:column-reverse;
+      align-items: flex-end;
+    }
+  
+    .wrapper {
+      display:flex;
+      flex-direction: column;
+      padding: 0 24px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    #bottomBanner{
+    background-image: url("../images/home/bottom-banner-image.png");
+    background-size: 100%;
+    background-position: bottom;
+    height: 100vh;
+    }  
+  
+    #bottom-content{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pill-button {
+      width:50%;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 16px 126px;
+      margin-top:24px;
+    }
+  
+    footer {
+      padding: 32px 104px 108px 104px;
+    }
+  
+    #copyright {
+      flex-basis: auto;
+      order: 0;
+    }
+  }
+  
+  @media (min-width: 1280px) {
+    header {
+      padding: 0 200px;
+    }
+  
+    .break-on-desktop {
+      display: inline;
+    }
+  
+    footer {
+      padding: 32px 200px 108px 200px;
+    }
+  }
+  
+  @media (min-width: 375px) and (max-width: 767px) {
+    header {
+      padding: 0 16px;
+    }
+  
+    .banner {
+      height: 100vh;
+      background-size: 120%;
+      display:flex;
+      flex-direction: column;
+      padding-top: 84px;
+      padding-bottom: 24px;
+    }
+  
+    .banner h1 {
+      font-size: 40px;
+      line-height: 56px;
+    }
+  
+    #banner-content{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    #hero {
+      background-image: url("../images/home/hero-image.png");
+      background-size: 100%;
+      background-position: bottom;
+      height: 100vh;
+    }
+  
+    #features {
+      padding-top: 24px;
+      padding-bottom: 16px;
+    }
+  
+    .feature{
+      display:flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding:0 0 52px;
+      gap:24px;
+    }
+  
+    .feature-image{
+      display:block;
+      width:100%;
+    }
+    
+    .feature-content{
+      display:flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  
+    .feature-content h2 {
+      font-size: 18px;
+      line-height: 25.2px;
+      margin-bottom: 12px;
+    }
+  
+    .feature-content h1 {
+      font-size: 32px;
+      line-height: 44.8px;
+    }
+  
+    .feature-description {
+      font-size: 18px;
+      line-height: 21.6px;
+    }
+  
+    #feature-reverse{
+      display:flex;
+      flex-direction:column-reverse;
+      align-items: flex-end;
+    }
+  
+    .wrapper {
+      display:flex;
+      flex-direction: column;
+      padding: 0 24px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+  
+    #bottomBanner{
+    background-image: url("../images/home/bottom-banner-image.png");
+    background-size: 100%;
+    background-position: bottom;
+    height: 100vh;
+    }  
+  
+    #bottom-content{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pill-button {
+      width:70%;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 16px 126px;
+      margin-top:24px;
+    }
+  
+    footer {
+      padding: 32px 104px 108px 104px;
+    }
+  }
+  
+  

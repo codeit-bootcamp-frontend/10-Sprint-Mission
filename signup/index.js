@@ -70,7 +70,7 @@ confirmPasswordInput.addEventListener('focusout', function () {
   const confirmPasswordValue = confirmPasswordInput.value.trim();
 
   if (confirmPasswordValue === '') {
-    confirmPasswordError.textContent = '비밀번호를 다시 한 번 입력해주세요.';
+    confirmPasswordError.textContent = '비밀번호를 입력해주세요.';
     confirmPasswordInput.classList.add('error');
   } else if (passwordValue.length < 8) {
     confirmPasswordError.textContent = '비밀번호를 8자 이상 입력해주세요.';

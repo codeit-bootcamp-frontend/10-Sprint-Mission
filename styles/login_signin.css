@@ -16,8 +16,9 @@
     color: #1F2937;
 }
 
-.field>input {
+.input {
     height: 56px;
+    width: 100%;
     border-radius: 12px;
     padding: 16px 24px;
     background-color: #F3F4F6;
@@ -30,47 +31,75 @@
 
 }
 
-.field>input::placeholder {
+.input::placeholder {
     color: #9CA3AF;
 }
 
-.field>input:focus {
+.input:focus {
     border-width: 2px;
     border-color: #3692FF;
+    outline: none;
+}
+/* warning 적용시의 스타일 */
+.input-container.warning > .input {
+    border-width: 2px;
+    border-color: #F74747;
+}
+
+.input-container > .valid-msg {
+    display: none;
+}
+
+.input-container.warning > .valid-msg {
+    display: block;
 }
 
 .field {
     display: flex;
     flex-direction: column;
     gap: 16px;
-
-    position: relative;
 }
 
 /* 심화과제: 인풋 필드 안에 눈 아이콘 넣기 */
-.field>.visibility-icon {
-    position: absolute;
-    right: 16px;
-    bottom: 16px;
+.input-container{
+    width: 100%;
+    position: relative;
 }
 
-.fields>button {
-    height: 56px;
+.input-container>.visibility-icon {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.valid-msg {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 600;
+    color:#F74747;
+    padding:  0 0 0 16px;
+}
+
+#login-button,
+#signup-button {
+    padding: 12px 0;
     border-radius: 40px;
-    background-color: #9CA3AF;
-    border-width: 0px;
+    background-color: #3692FF;
+    border-width: 0px; 
+    text-align: center;
+    text-decoration: none;
 
     font-family: Pretendard, sans-serif;
     font-size: 20px;
+    line-height: 32px;
     font-weight: 600;
     color: #F3F4F6;
 }
 
-.fields>button:active {
-    background-color: #3692FF;
+#login-button:disabled,
+#signup-button:disabled {
+    background-color: #9CA3AF;
 }
-/* 필드가 다 채워지면 제출버튼 색이 변하는 기능...
-지금은 채워지면x 버튼 클릭시 바뀜. 개선예정 */
 
 .fields {
     display: flex;

@@ -19,23 +19,35 @@
           <form class="fields">
             <div class="field">
               <label for="email">이메일</label>
-              <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요">
+              <div id="email-input-container" class="input-container">
+                <input id="email" class="input" name="email" type="email" placeholder="이메일을 입력해주세요">
+                <p id="email-msg" class="valid-msg"></p>
+              </div>
             </div>
             <div class="field">
                 <label for="name">닉네임</label>
-                <input id="name" name="name" type="text" placeholder="닉네임을 입력해주세요">
+                <div id="name-input-container" class="input-container">
+                  <input id="name" class="input" name="name" type="text" placeholder="닉네임을 입력해주세요">
+                  <p id="name-msg" class="valid-msg"></p>
+                </div>
               </div>
             <div class="field">
               <label for="password">비밀번호</label>
-              <input id="password" name="password" type="password" placeholder="비밀번호를 입력해주세요">
-              <img class="visibility-icon" src="assets/btn_visibility_off_24px.svg">
+              <div id="password-input-container" class="input-container">
+                <input id="password" class="input" name="password" type="password" placeholder="비밀번호를 입력해주세요">
+                <img class="visibility-icon" src="assets/btn_visibility_off_24px.svg">
+                <p id="password-msg" class="valid-msg"></p>
+              </div>
             </div>
             <div class="field">
                 <label for="password-check">비밀번호 확인</label>
-                <input id="password-check" name="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
-                <img class="visibility-icon" src="assets/btn_visibility_off_24px.svg">
+                <div id="password-check-input-container" class="input-container">
+                  <input id="password-check" class="input" name="password-check" type="password" placeholder="비밀번호를 다시 한 번 입력해주세요">
+                  <img class="visibility-icon" src="assets/btn_visibility_off_24px.svg">
+                  <p id="password-check-msg" class="valid-msg"></p>
+                </div>
             </div>
-            <button>회원가입</button>
+            <a id="signup-button" href="login.html">회원가입</a>
           </form>
           <!-- sns 로그인 안내 -->
           <div class="sns-login">
@@ -49,5 +61,6 @@
           <div class="ask-login"><p>이미 회원이신가요?</p><a href="login.html">로그인</a></div>
         </div>
       </div>
+      <script src="src/signup.js"></script>
 </body>
 </html>

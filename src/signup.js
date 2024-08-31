@@ -24,7 +24,7 @@ const $passwordCheckContainer = document.querySelector('.password-check-containe
 const $passwordCheckValidationMessage = $passwordCheckContainer.querySelector('.validation-message');
 
 const $submitButton = document.querySelector('.auth-form > button');
-const $passwordVisibility = document.querySelector('.btn-eye');
+const $passwordVisibilities = document.querySelectorAll('.btn-eye');
 
 $emailInput.addEventListener('focusout', () => validateEmail($emailInput, $emailValidationMessage));
 $nicknameInput.addEventListener('focusout', () => validateNickname($nicknameInput, $nicknameValidationMessage));
@@ -42,4 +42,4 @@ $passwordCheckInput.addEventListener(
 );
 
 $submitButton.addEventListener('click', (event) => handleSubmitButton(event, './login'));
-$passwordVisibility.addEventListener('click', togglePasswordVisibility);
+$passwordVisibilities.forEach(($passwordVisibility) => $passwordVisibility.addEventListener('click', togglePasswordVisibility));

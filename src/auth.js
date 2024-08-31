@@ -44,6 +44,19 @@ const toggleButtonActive = (isFromComplete) => {
   $submitButton.disabled = true;
 }
 
+export const togglePasswordVisibility = (event) => {
+  const $passwordInput = event.target.parentNode.querySelector('input');
+  
+  if (event.target.classList.contains('show')) {
+    event.target.classList.remove('show');
+    $passwordInput.type = 'password';
+    return;
+  }
+
+  event.target.classList.add('show');
+  $passwordInput.type = 'text';
+} 
+
 export const validateEmail = (inputElement, messageElement) => {
   const email = inputElement.value.trim();
 

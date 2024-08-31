@@ -53,10 +53,14 @@
 .auth-form .auth-input > input::placeholder { color: var(--gray400); }
 .auth-form .auth-input > input:focus { outline: none; }
 
-.auth-form .auth-input > .visibility {
+.auth-input > .btn-eye {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.auth-input > .btn-eye.show {
+  content: url('../images/btn_show.svg');
 }
 
 .auth-form > button {

@@ -3,7 +3,8 @@ import {
   validateNickname, 
   validatePassword, 
   validatePasswordCheck,
-  handleSubmitButton
+  handleSubmitButton,
+  togglePasswordVisibility
 } from './auth.js';
 
 const $emailInput = document.querySelector('#email');
@@ -23,6 +24,7 @@ const $passwordCheckContainer = document.querySelector('.password-check-containe
 const $passwordCheckValidationMessage = $passwordCheckContainer.querySelector('.validation-message');
 
 const $submitButton = document.querySelector('.auth-form > button');
+const $passwordVisibility = document.querySelector('.btn-eye');
 
 $emailInput.addEventListener('focusout', () => validateEmail($emailInput, $emailValidationMessage));
 $nicknameInput.addEventListener('focusout', () => validateNickname($nicknameInput, $nicknameValidationMessage));
@@ -40,3 +42,4 @@ $passwordCheckInput.addEventListener(
 );
 
 $submitButton.addEventListener('click', (event) => handleSubmitButton(event, './login'));
+$passwordVisibility.addEventListener('click', togglePasswordVisibility);

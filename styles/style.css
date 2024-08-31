@@ -1,5 +1,4 @@
 :root {
-    /* Gray scale */
     --gray-900: #1b1d1f;
     --gray-800: #26282b;
     --gray-600: #454c53;
@@ -446,5 +445,3 @@
       padding: 32px 104px 108px 104px;
     }
   }
-  
-  

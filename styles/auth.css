@@ -1,35 +1,33 @@
+/* Mobile styles */
+
 .auth-container {
-  max-width: 400px;
+  padding: 24px 16px;
+  max-width: 432px;
   margin: 0 auto;
-  padding: 0 16px;
 }
 
-.logo-home-button {
-  margin: 0 auto;
+.logo-home-link {
   display: block;
-  margin-top: 24px;
   margin-bottom: 24px;
-  width: 198px;
+  text-align: center;
 }
 
-.logo-home-button img {
-  width: 100%;
+.logo-home-link img {
+  width: 198px;
 }
 
 .input-item {
   margin-bottom: 24px;
-  display: flex;
-  flex-direction: column;
 }
 
-label {
+.input-item label {
   display: block;
   font-weight: 700;
   font-size: 14px;
   margin-bottom: 8px;
 }
 
-input {
+.input-item input {
   padding: 16px 24px;
   background-color: #f3f4f6;
   border: none;
@@ -39,13 +37,13 @@ input {
   width: 100%;
 }
 
-input::placeholder {
+.input-item input::placeholder {
   color: #9ca3af;
   font-size: 16px;
   line-height: 24px;
 }
 
-input:focus {
+.input-item input:focus {
   outline-color: var(--blue);
 }
 
@@ -55,10 +53,19 @@ input:focus {
   align-items: center;
 }
 
-.toggle-password {
+.error-message {
+  color: #f74747;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  margin-top: 8px;
+  display: none;
+  padding-left: 16px;
+}
+
+.password-toggle-button {
   position: absolute;
   right: 24px;
-  cursor: pointer;
 }
 
 .social-login-container {
@@ -77,7 +84,7 @@ input:focus {
   line-height: 24px;
 }
 
-.social-login-buttons-container {
+.social-login-links-container {
   display: flex;
   gap: 16px;
 }
@@ -94,26 +101,32 @@ input:focus {
   text-underline-offset: 2px;
 }
 
+/* Tablet styles */
+
 @media (min-width: 768px) {
   .auth-container {
     max-width: 640px;
+    padding: 48px 0;
   }
 
-  .logo-home-button {
-    width: 396px;
-    margin-top: 48px;
+  .logo-home-link {
     margin-bottom: 40px;
   }
 
-  label {
+  .logo-home-link img {
+    width: 396px;
+  }
+
+  .input-item label {
     font-size: 18px;
     margin-bottom: 16px;
   }
 }
 
+/* Desktop styles */
+
 @media (min-width: 1280px) {
-  .logo-home-button {
-    margin-top: 60px;
-    margin-bottom: 40px;
+  .auth-container {
+    padding: 60px 0;
   }
 }

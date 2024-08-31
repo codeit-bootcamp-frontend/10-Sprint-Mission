@@ -1,3 +1,5 @@
+/* Mobile styles */
+
 :root {
   /* Gray scale */
   --gray-900: #1b1d1f;
@@ -11,6 +13,9 @@
 
   /* Primary color */
   --blue: #3692ff;
+
+  /* Layout dimensions */
+  --header-height: 70px;
 }
 
 * {
@@ -19,10 +24,40 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+img {
+  vertical-align: bottom;
+}
+
 body {
   color: #374151;
   word-break: keep-all;
-  font-family: "Arial", sans-serif;
+  font-family: "Pretendard", sans-serif;
 }
 
 header {
@@ -30,7 +65,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  height: 70px;
+  height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -39,14 +74,15 @@ header {
   border-bottom: 1px solid #dfdfdf;
 }
 
-main {
-  margin-top: 70px;
+.with-header {
+  margin-top: var(--header-height);
 }
 
 footer {
   background-color: #111827;
-  padding: 32px;
+  color: #9ca3af;
   font-size: 16px;
+  padding: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -57,7 +93,6 @@ footer {
 #copyright {
   order: 3;
   flex-basis: 100%;
-  color: #9ca3af;
 }
 
 #footerMenu {
@@ -71,35 +106,16 @@ footer {
   gap: 12px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  vertical-align: bottom;
-}
-
 .wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
   width: 100%;
   padding: 0 16px;
 }
 
-button {
-  background: none;
-  border: none;
-  outline: none;
-  box-shadow: none;
-  cursor: pointer;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+h1 {
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  letter-spacing: 0.02em;
 }
 
 .button {
@@ -139,6 +155,8 @@ button {
   display: none;
 }
 
+/* Tablet styles */
+
 @media (min-width: 768px) {
   header {
     padding: 0 24px;
@@ -164,9 +182,16 @@ button {
   }
 }
 
+/* Desktop styles */
+
 @media (min-width: 1280px) {
   header {
     padding: 0 200px;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .break-on-desktop {

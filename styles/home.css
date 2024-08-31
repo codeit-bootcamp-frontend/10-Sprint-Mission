@@ -1,3 +1,5 @@
+/* Mobile styles */
+
 .banner {
   background-color: #cfe5ff;
   height: 60vh;
@@ -23,11 +25,11 @@
   background-image: url("../images/home/bottom-banner-image.png");
 }
 
-#signinLinkButton {
+#loginLink {
   font-size: 16px;
   font-weight: 600;
   border-radius: 8px;
-  padding: 14.5px 43px;
+  padding: 11.5px 23px;
 }
 
 #features {
@@ -73,6 +75,8 @@
   margin-top: 20px;
 }
 
+/* Tablet styles */
+
 @media (min-width: 768px) {
   .banner {
     height: 90vh;
@@ -111,6 +115,8 @@
     line-height: 21.6px;
   }
 }
+
+/* Desktop styles */
 
 @media (min-width: 1280px) {
   .banner {

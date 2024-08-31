@@ -119,7 +119,8 @@ function pwMatch() {
 function buttonActivation() {
   if (!valueStatus.includes(FAILED)) {
     form.submit();
-    location.href = "items.html";
+    if (!pwCheck) location.href = "items.html";
+    else location.href = "login.html";
   }
   //버튼 활성화 및 페이지 이동
 }

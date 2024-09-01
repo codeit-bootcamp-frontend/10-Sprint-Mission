@@ -124,7 +124,7 @@ pwInputElement.addEventListener('change',pwValid);
 
 function signupButton(e){
   if(signupValid){
-    window.location.href = "/login.html"
+    window.location.href = "/login"
   }
 }
 

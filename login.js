@@ -4,8 +4,6 @@ const errorMessage = document.querySelector('.error-message');
 const pwErrorMessage = document.querySelector('.error-message-pw');
 
 function emailForm(e) {
-  console.log("focus out 발생")
-  // 이메일 input이 비어있음
   if (emailInputElement.value === '') {
     emailInputElement.classList.add('error');
     errorMessage.textContent ="이메일을 입력해주세요."
@@ -60,15 +58,11 @@ const loginElement = document.querySelector("#login")
 function activateLogin(e){
   if(emailInputElement.classList.contains('error') 
     || pwInputElement.classList.contains('error')){
-      //드모르간 극혐
-      //deactivate
       loginElement.style.backgroundColor = "#9CA3AF"
       
   } else if(emailInputElement.value === '' || pwInputElement.value === ''){
-      //deactivate
       loginElement.style.backgroundColor = "#9CA3AF"
   }else{
-    //activate
       loginElement.style.backgroundColor = "#3692FF"
   }
 }
@@ -78,5 +72,3 @@ emailInputElement.addEventListener('blur', activateLogin)
 
 
 
-// 로그인 버튼을 활성화시키는 함수 
-//  ( if-else 써서, 둘다 충족이 되는거면 로그인 버튼 활성화,아니면? 비활성화)

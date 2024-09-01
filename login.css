@@ -47,13 +47,11 @@ body{
     border:1px solid red;
 }
 
-.error-message-pw {
-    outline-color: red;
-    color: red;
-    display: none;
-}
 
-.error-message {
+.error-message,
+.error-message-pw,
+.error-message-nick,
+.error-message-pwcheck {
     outline-color: red;
     color: red;
     display: none;

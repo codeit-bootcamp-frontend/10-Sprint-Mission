@@ -20,8 +20,6 @@ function emailForm(e) {
 }
 
 function pwForm(e) {
-  console.log("focus out 발생")
-  // 이메일 input이 비어있음
   if (pwInputElement.value === '') {
     pwInputElement.classList.add('error');
     pwErrorMessage.textContent ="비밀번호를 입력해주세요."

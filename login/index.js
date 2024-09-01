@@ -10,13 +10,13 @@ emailInput.addEventListener('focusout', function () {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
       emailError.textContent = '이메일을 입력해주세요.';
-      emailInput.classList.add('error', 'error-border');
+      emailInput.classList.add('error-border');
   } else if (!validateEmail(emailValue)) {
       emailError.textContent = '잘못된 이메일입니다.';
-      emailInput.classList.add('error', 'error-border');
+      emailInput.classList.add('error-border');
   } else {
       emailError.textContent = '';
-      emailInput.classList.remove('error', 'error-border');
+      emailInput.classList.remove('error-border');
   }
   toggleLoginButton();
 });
@@ -34,13 +34,13 @@ passwordInput.addEventListener('focusout', function () {
   const passwordValue = passwordInput.value.trim();
   if (passwordValue === '') {
       passwordError.textContent = '비밀번호를 입력해주세요.';
-      passwordInput.classList.add('error', 'error-border');
+      passwordInput.classList.add('error-border');
   } else if (passwordValue.length < 8) {
       passwordError.textContent = '비밀번호를 8자 이상 입력해주세요.';
-      passwordInput.classList.add('error', 'error-border');
+      passwordInput.classList.add('error-border');
   } else {
       passwordError.textContent = '';
-      passwordInput.classList.remove('error', 'error-border');
+      passwordInput.classList.remove('error-border');
   }
   toggleLoginButton();
 });
@@ -64,7 +64,7 @@ document.addEventListener("click", function(event) {
 
 // 로그인 버튼 활성화/비활성화
 function toggleLoginButton() {
-  const hasError = emailInput.classList.contains('error') || passwordInput.classList.contains('error');
+  const hasError = emailInput.classList.contains('error-border') || passwordInput.classList.contains('error-border');
 
   const isEmpty = emailInput.value.trim() === '' || passwordInput.value.trim() === '';
 

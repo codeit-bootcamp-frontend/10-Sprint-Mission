@@ -14,13 +14,13 @@ emailInput.addEventListener('focusout', function () {
   const emailValue = emailInput.value.trim();
   if (emailValue === '') {
       emailError.textContent = '이메일을 입력해주세요.';
-      emailInput.classList.add('error');
+      emailInput.classList.add('error', 'error-border');
   } else if (!validateEmail(emailValue)) {
       emailError.textContent = '잘못된 이메일입니다.';
-      emailInput.classList.add('error');
+      emailInput.classList.add('error', 'error-border');
   } else {
       emailError.textContent = '';
-      emailInput.classList.remove('error');
+      emailInput.classList.remove('error','error-border');
   }
   toggleSignupButton();
 });
@@ -38,10 +38,10 @@ usernameInput.addEventListener('focusout', function () {
   const usernameValue = usernameInput.value.trim();
   if (usernameValue === '') {
       usernameError.textContent = '닉네임을 입력해주세요.';
-      usernameInput.classList.add('error');
+      usernameInput.classList.add('error', 'error-border');
   } else {
      usernameError.textContent = '';
-     usernameInput.classList.remove('error');
+     usernameInput.classList.remove('error', 'error-border');
   }
   toggleSignupButton();
 });
@@ -52,13 +52,13 @@ passwordInput.addEventListener('focusout', function () {
   const passwordValue = passwordInput.value.trim();
   if (passwordValue === '') {
       passwordError.textContent = '비밀번호를 입력해주세요.';
-      passwordInput.classList.add('error');
+      passwordInput.classList.add('error', 'error-border');
   } else if (passwordValue.length < 8) {
       passwordError.textContent = '비밀번호를 8자 이상 입력해주세요.';
-      passwordInput.classList.add('error');
+      passwordInput.classList.add('error', 'error-border');
   } else {
       passwordError.textContent = '';
-      passwordInput.classList.remove('error');
+      passwordInput.classList.remove('error', 'error-border');
   }
   toggleSignupButton();
 });
@@ -71,17 +71,17 @@ confirmPasswordInput.addEventListener('focusout', function () {
 
   if (confirmPasswordValue === '') {
     confirmPasswordError.textContent = '비밀번호를 입력해주세요.';
-    confirmPasswordInput.classList.add('error');
+    confirmPasswordInput.classList.add('error', 'error-border');
   } else if (passwordValue.length < 8) {
     confirmPasswordError.textContent = '비밀번호를 8자 이상 입력해주세요.';
-    confirmPasswordError.classList.add('error');
+    confirmPasswordError.classList.add('error', 'error-border');
   } 
     else if (passwordValue !== confirmPasswordValue) {
     confirmPasswordError.textContent = '비밀번호가 일치하지 않습니다.';
-    confirmPasswordInput.classList.add('error');
+    confirmPasswordInput.classList.add('error', 'error-border');
   } else {
     confirmPasswordError.textContent = '';
-    confirmPasswordInput.classList.remove('error');
+    confirmPasswordInput.classList.remove('error', 'error-border');
   }
   toggleSignupButton();
 });

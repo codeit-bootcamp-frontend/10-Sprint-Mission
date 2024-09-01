@@ -123,6 +123,9 @@ input:focus {
   border: 2px solid var(--primary-color100); 
 }
 
+input.error-border {
+  border: 2px solid var(--error-color); 
+}
 
 @media (min-width: 767px) {
 

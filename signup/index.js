@@ -74,7 +74,7 @@ confirmPasswordInput.addEventListener('focusout', function () {
     confirmPasswordInput.classList.add('error', 'error-border');
   } else if (passwordValue.length < 8) {
     confirmPasswordError.textContent = '비밀번호를 8자 이상 입력해주세요.';
-    confirmPasswordError.classList.add('error', 'error-border');
+    confirmPasswordInput.classList.add('error', 'error-border');
   } 
     else if (passwordValue !== confirmPasswordValue) {
     confirmPasswordError.textContent = '비밀번호가 일치하지 않습니다.';

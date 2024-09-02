@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'ROKAF Sans'; /* 폰트 이름 정의 */
-  src: url('../fonts/ROKAF_Sans_Bold.ttf') format('truetype');
+  src: url('/fonts/ROKAF_Sans_Bold.ttf') format('truetype');
 }
 
 * {
@@ -31,4 +31,10 @@ header {
 
 footer {
   background-color: var(--Secondary-900);
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    min-width: 375px;
+  }
 }

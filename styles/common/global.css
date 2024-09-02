@@ -12,7 +12,7 @@ span,
 p,
 a,
 li {
-  text-wrap: balance;
+  text-wrap: wrap;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -36,4 +36,12 @@ li {
 
 body {
   overflow-y: scroll;
+}
+
+/*
+화면의 최소 너비 제한
+*/
+
+body {
+  min-width: 375px;
 }

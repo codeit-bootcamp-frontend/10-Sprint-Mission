@@ -14,6 +14,7 @@
     />
     <link rel="stylesheet" href="/styles/common/reset.css" />
     <link rel="stylesheet" href="/styles/login_signup.css" />
+    <script type="module" src="/scripts/login_signup.js"></script>
   </head>
   <body class="body">
     <header class="header">
@@ -30,20 +31,21 @@
         <h1 class="blind">판다마켓 로그인</h1>
         <form class="form" method="post">
           <div class="formField">
-            <label class="formField__label" for="login_email">이메일</label>
+            <label class="formField__label" for="emailInput">이메일</label>
             <input
               class="formField__input"
-              id="login_email"
+              id="emailInput"
               name="email"
               type="email"
               placeholder="이메일을 입력해 주세요"
             />
+            <span class="formField__error"></span>
           </div>
           <div class="formField">
-            <label class="formField__label" for="login_pw">비밀번호</label>
+            <label class="formField__label" for="passwordInput">비밀번호</label>
             <input
               class="formField__input"
-              id="login_pw"
+              id="passwordInput"
               name="password"
               type="password"
               placeholder="비밀번호를 입력해 주세요"
@@ -54,6 +56,7 @@
                 alt="비밀번호 보기"
               />
             </button>
+            <span class="formField__error"></span>
           </div>
           <button class="form__submitButton" type="submit">로그인</button>
         </form>

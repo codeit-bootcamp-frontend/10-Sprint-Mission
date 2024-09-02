@@ -66,7 +66,7 @@ input::placeholder {
     font-size: 16px;
     line-height: 24px;
 }
-  
+
 input:focus {
     outline-color: #3692FF;;
 }
@@ -96,7 +96,7 @@ input:focus {
     color: #F3F4F6;
     font-size: 20px;
     font-weight: 600;
-
+    
     cursor: pointer;
 }
 
@@ -164,4 +164,28 @@ button:disabled {
     font-weight: 500;
     line-height: normal;
     text-decoration-line: underline;
+}
+.error-message {
+    color: #f74747;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    margin-top: 8px;
+    display: none;
+    padding-left: 16px;
+}
+
+/* mobile */
+@media (max-width:767px){
+    .auth-container {
+        padding: 0 16px;
+        display:inline-flex;
+    }
+    .panda-logo {
+        width:198px;
+    }
+    .auth-wrap {
+        max-width: 400px;
+        margin:24px 0;
+    }
 }

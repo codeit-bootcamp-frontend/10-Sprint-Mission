@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="판다마켓">
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요">
+    <meta property="og:image" content="./img/logo/logo.png">
     <title>회원가입</title>
     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/auth.css">
-    <link rel="stylesheet" href="style/auth_mobile.css">
 </head>
 <body>
     <div class="auth-container">
@@ -16,7 +19,7 @@
                     <img class="panda-logo" src="./img/logo/logo.png" alt="판다마켓 홈 버튼">
                 </a>
             </div>
-            <form method="input-box">
+            <form id="signup-form" method="input-box">
                 <div class="input-box">
                     <label for="email">이메일</label>
                     <input
@@ -26,6 +29,10 @@
                         placeholder="이메일을 입력해주세요"
                         required
                     />
+                    <span id="email-empty" class="error-message">
+                        이메일을 입력해 주세요</span>
+                    <span id="email-invalidate" class="error-message">
+                        잘못된 이메일 형식입니다</span>
                 </div>
                 <div class="input-box">
                     <label for="name">닉네임</label>
@@ -36,6 +43,8 @@
                         placeholder="닉네임을 입력해주세요"
                         required
                     />
+                    <span id="name-empty" class="error-message">
+                        닉네임을 입력해 주세요</span>
                 </div>
                 <div class="input-box">
                     <label for="password">비밀번호</label>
@@ -47,19 +56,27 @@
                         required
                     />
                     <img class="visibility-btn" src="img/btn_visibility_off.png" alt="비밀번호 숨김">
+                    <span id="password-empty" class="error-message">
+                        비밀번호를 입력해 주세요</span>
+                    <span id="password-invalidate" class="error-message">
+                        비밀번호를 8자 이상 입력해주세요</span>
                 </div>
-                <div class="input-box">
-                    <label for="passwordConfirmation">비밀번호 확인</label>
+                <div  class="input-box">
+                    <label for="password-confirm">비밀번호 확인</label>
                     <input
-                        name="passwordConfirmation"
-                        id="passwordConfirmation"
+                        name="password-confirm"
+                        id="password-confirm"
                         type="password"
                         placeholder="비밀번호를 입력해주세요"
                         required
                     />
                     <img class="visibility-btn" src="img/btn_visibility_off.png" alt="비밀번호 숨김">
+                    <span id="password-confirm-empty" class="error-message">
+                        비밀번호를 입력해 주세요</span>
+                    <span id="password-confirm-invalidate" class="error-message">
+                        비밀번호가 일치하지 않습니다</span>
                 </div>
-                <button class="signup-button" type="submit" >회원가입</button>
+                <button id="signup-button" class="signup-button" type="submit" >회원가입</button>
             </form>
             <div class="simple-login-box">
                 <p class="simple-login-text">간편 로그인하기</p>
@@ -84,5 +101,6 @@
             </div>
         </div>
     </div>
+    <script src="script/auth.js"></script>  
 </body>
 </html>

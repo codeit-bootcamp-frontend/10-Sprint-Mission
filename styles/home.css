@@ -1,68 +1,356 @@
-.banner {
-  background-color: #cfe5ff;
-  height: 540px;
-  display: flex;
-  align-items: center;
-  background-repeat: no-repeat;
-  background-position: 80% bottom;
-  background-size: 55%;
+@media (min-width:1200px){
+  .banner {
+    background-color: #cfe5ff;
+    height: 540px;
+    display: flex;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 80% bottom;
+    background-size: 55%;
+  }
+
+  #hero {
+    background-image: url("../images/home/hero-image.png");
+  }
+
+  #features {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 138px;
+  }
+
+  #bottomBanner {
+    background-image: url("../images/home/bottom-banner-image.png");
+  }
+
+ #loginLinkButton {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 11.5px 23px;
+  }
+
+  .banner .pill-button {
+    margin-top: 32px;
+  }
+
+  .feature {
+    padding: 138px 0;
+    display: flex;
+    align-items: center;
+    gap: 5%;
+  }
+
+  .feature:nth-child(2) {
+    text-align: right;
+  }
+
+  .feature-content {
+    flex: 1;
+  }
+
+  .feature-tag {
+    color: #3692ff;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .feature-description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.08em;
+    margin-top: 24px;
+  }
 }
 
-#hero {
-  background-image: url("../images/home/hero-image.png");
+@media  (min-width: 768px) and (max-width: 1199px) {
+  .banner {
+    background-color: #cfe5ff;
+    width: 100%;
+    height: 771px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 80% bottom;
+    background-size: 55%;
+  }
+
+  #hero {
+    background-image: url("../images/home/hero-image.png");
+  }
+  #hero.banner .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 84px;
+    margin-right: 116px;
+    margin-left: 116px;
+    width: 512px;
+  }
+
+  #hero.banner .wrapper h1{
+    width: 512px;
+    font-size:36px;
+    font-weight: 700px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: auto; 
+  }
+  #hero.banner .wrapper h1 br{
+    display:none;
+  }
+  .pill-button{
+    width: 357px;
+    height : 56px;
+    line-height: 28px;
+  }
+
+  #features.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 138px;
+    padding:24px
+  }
+
+ 
+  #features.wrapper img{
+    width: 100%;
+  }
+
+  #bottomBanner {
+    background-image: url("../images/home/bottom-banner-image.png");
+  }
+
+ #loginLinkButton {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 11.5px 23px;
+  }
+
+  .banner .pill-button {
+    margin-top: 32px;
+  }
+
+  .feature {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top:52px;
+    gap: 5%;
+  }
+
+  .feature:nth-child(2) {
+    text-align: right;
+  }
+
+  .feature-content {
+    width: 100%;
+    text-align: left;
+  }
+
+  .feature-tag {
+    color: #3692ff;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .feature-description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.08em;
+    margin-top: 24px;
+  }
+
+  .feature.purchase {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+  }
+  .feature.purchase  .feature-content {
+    order: 2; 
+    text-align: right;
+  }
+  
+  .feature.purchase img {
+    order: 1; 
+    width: 50%;
+  }
+  .feature-tag {
+    margin-top : 24px;
+  }
+  #bottomBanner.banner .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .MenuPrivacyMedia{
+    display:flex;
+  }
 }
 
-#features {
-  padding-bottom: 138px;
-}
+@media  (min-width: 375px) and (max-width: 767px) {
+  .banner {
+    background-color: #cfe5ff;
+    width: 100%;
+    height: 540px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-position: 80% bottom;
+    background-size: 55%;
+  }
 
-#bottomBanner {
-  background-image: url("../images/home/bottom-banner-image.png");
-}
+  #hero {
+    background-image: url("../images/home/hero-image.png");
+  }
+  #hero.banner .wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 48px;
+    margin-right: 16px;
+    margin-left: 16px;
+    width: 342px;
+  }
 
-/* 버튼 등의 요소에 고정된 width나 height을 부여하는 것보다 내부 콘텐츠에 padding을 적용해서 요소의 전체 크기를 유동적으로 조정하는 방법이 반응형 웹 디자인과 접근성(accessibility) 측면에서 더 적합합니다. */
-#loginLinkButton {
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 11.5px 23px;
-}
+  #hero.banner .wrapper h1{
+    width: 240px;
+    font-size:28px;
+    font-weight: 700px;
+    display: flex;
+    justify-content: center; 
+    text-align: center; 
+  }
+  #hero.banner .wrapper h1 br{
+    display:none;
+  }
+  .pill-button{
+    width: 240px;
+    height : 56px;
+    line-height: 26px;
+    padding: 12px 71px;
+    font-size:18px;
+  }
 
-/* banner 요소 내의 pill-button을 선택해 스타일 적용. ID 선택자 대신 이렇게 캐스캐이딩을 활용하는 방법은 특정 컨텍스트 내에서만 스타일을 적용하고자 할 때 유용해요. */
-.banner .pill-button {
-  margin-top: 32px;
-}
+  #features.wrapper{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 138px;
+    padding:24px
+  }
 
-/* flex 요소에서는 gap 속성을 사용해 자식 요소 사이의 간격을 조정할 수 있어요. */
-.feature {
-  padding: 138px 0;
-  display: flex;
-  align-items: center;
-  gap: 5%;
-}
+ 
+  #features.wrapper img{
+    width: 100%;
+  }
 
-/* pseudo-selector인 nth-child(2)를 통해 feature 클래스를 가진 요소 중 두 번째 아이템에만 다른 스타일을 적용했어요. */
-.feature:nth-child(2) {
-  text-align: right;
-}
+  #bottomBanner {
+    background-image: url("../images/home/bottom-banner-image.png");
+  }
 
-/* flex: 1을 통해 부모 요소인 feature의 남은 공간을 모두 차지하도록 설정할 수 있어요. */
-.feature-content {
-  flex: 1;
-}
+  #loginLinkButton {
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 11.5px 23px;
+  }
 
-.feature-tag {
-  color: #3692ff;
-  font-size: 18px;
-  line-height: 25px;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
+  .banner .pill-button {
+    margin-top: 32px;
+  }
 
-.feature-description {
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 120%;
-  letter-spacing: 0.08em;
-  margin-top: 24px;
+  .feature {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top:52px;
+    gap: 5%;
+  }
+
+  .feature:nth-child(2) {
+    text-align: right;
+  }
+
+  .feature-content {
+    width: 100%;
+    text-align: left;
+  }
+
+  .feature-tag {
+    color: #3692ff;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .feature-description {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0.08em;
+    margin-top: 24px;
+  }
+
+  .feature.purchase {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;  
+  }
+  .feature.purchase  .feature-content {
+    order: 2; 
+    text-align: right;
+  }
+  
+  .feature.purchase img {
+    order: 1; 
+    width: 50%;
+  }
+  .feature-tag {
+    margin-top : 24px;
+  }
+  #bottomBanner.banner .wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin:121px auto;
+  }
+  #footerMenu,#socialMedia,#codeit{
+    position:absolute;
+  }
+  #footerMenu{
+    display:flex;
+    justify-content: space-between;
+    left: 32px;
+    width: 181px;
+    padding-right: 18px;
+  }
+  #socialMedia{
+    right : 32px;
+  }
+  #codeit{
+    bottom: 32px;
+    left:32px;
+  }
 }

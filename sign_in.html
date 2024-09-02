@@ -7,19 +7,19 @@
 </head>
 <body>
   <div class="sign_container">
-    <a href="/FE-Sprint-Mission1-week1">
+    <a href="/">
       <img src="images/logo/panda-market-logo.png" width="392px" height="132px">
     </a>
-    <form class="signform">
-      <label id="sign_email">이메일</label>
-      <input id="sign_input_email" type="text" placeholder="이메일을 입력해주세요">
-      <label id="sign_nickname">닉네임</label>
-      <input id="sign_input_nickname" type="text" placeholder="닉네임을 입력해주세요">
-      <label id="sign_password">비밀번호</label>
-      <input id="sign_input_password"type="password" placeholder="비밀번호를 입력해주세요">
-      <label id="sign_repassword">비밀번호 확인</label>
-      <input id="sign_input_repassword"type="password" placeholder="비밀번호를 다시 입력해주세요">
-      <input id="sign_btn"type="submit" value="회원가입">
+    <form class="signform" action="./signin.html" method="post">
+      <label class="sign_email">이메일</label>
+      <input class="sign_input_email" type="text" placeholder="이메일을 입력해주세요">
+      <label class="sign_nickname">닉네임</label>
+      <input class="sign_input_nickname" type="text" placeholder="닉네임을 입력해주세요">
+      <label class="sign_password">비밀번호</label>
+      <input class="sign_input_password"type="password" placeholder="비밀번호를 입력해주세요">
+      <label class="sign_repassword">비밀번호 확인</label>
+      <input class="sign_input_repassword"type="password" placeholder="비밀번호를 다시 입력해주세요">
+      <button class="button"type="submit">회원가입</button>
     </form>
     <div class="simple_login">
       <p>간편 로그인하기</p>
@@ -29,7 +29,7 @@
       </div>
     </div>
     <p class="sign_up">판다마켓이 처음이신가요? <a href="login.html">로그인</a></p>
-   
   </div>
+  <script src="./signin_focus.js"></script>
 </body>
 </html>

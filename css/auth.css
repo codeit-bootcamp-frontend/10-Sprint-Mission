@@ -5,8 +5,13 @@
   gap: 24px;
 }
 
-.auth.login { padding: 80px 16px; }
-.auth.signup { padding: 24px 16px; }
+.auth.login {
+  padding: 80px 16px;
+}
+
+.auth.signup {
+  padding: 24px 16px;
+}
 
 .auth-logo > img {
   width: 198px;
@@ -39,7 +44,9 @@
   padding: 15px 24px;
 }
 
-.auth-input:focus-within { outline: 1px solid var(--blue); }
+.auth-input:focus-within {
+  outline: 1px solid var(--blue);
+}
 
 .auth-input > input {
   background-color: var(--gray100);
@@ -50,8 +57,13 @@
   line-height: 1.625rem;
 }
 
-.auth-input > input::placeholder { color: var(--gray400); }
-.auth-input > input:focus { outline: none; }
+.auth-input > input::placeholder {
+  color: var(--gray400);
+}
+
+.auth-input > input:focus {
+  outline: none;
+}
 
 .auth-input > .btn-eye {
   width: 24px;
@@ -60,7 +72,7 @@
 }
 
 .auth-input > .btn-eye.show {
-  content: url('../images/btn_show.svg');
+  content: url("../images/btn_show.svg");
 }
 
 .auth-form > button {
@@ -83,7 +95,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E6F2FF; 
+  background-color: #e6f2ff;
   padding: 16px 23px;
   gap: 10px;
   border-radius: 8px;
@@ -132,15 +144,23 @@
 }
 
 @media screen and (min-width: 768px) {
-  .auth { gap: 40px; }
-  .auth.login { padding-top: 190px; }
-  .auth.signup { padding-top: 48px; }
+  .auth {
+    gap: 40px;
+  }
+
+  .auth.login {
+    padding-top: 190px;
+  }
+
+  .auth.signup {
+    padding-top: 48px;
+  }
 
   .auth-logo > img {
     width: 396px;
     height: 132px;
   }
-  
+
   .auth-form {
     max-width: 100%;
     width: 640px;
@@ -150,15 +170,19 @@
   .auth-form label {
     font-size: 1.125rem;
     line-height: 1.625rem;
-    margin-bottom: 16px; 
+    margin-bottom: 16px;
   }
 
-  .auth-form .auth-input { padding: 16px 24px; }
+  .auth-form .auth-input {
+    padding: 16px 24px;
+  }
 
-  .auth-form > button { 
+  .auth-form > button {
     padding: 16px 124px;
-    margin-bottom: 0; 
+    margin-bottom: 0;
   }
 
-  .auth-form > .other-account { margin-bottom: 0; }
+  .auth-form > .other-account {
+    margin-bottom: 0;
+  }
 }

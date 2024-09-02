@@ -29,12 +29,14 @@
       <form class="email-box">
         <label class="email-label" for ="email">이메일</label>
         <input class="input" placeholder="이메일을 입력해주세요" id="email">
+        <div class="error-message"></div>
       </form>
       <form class="pw-box">
         <label class="pw-label" for ="pw">비밀번호</label>
         <input class="input" placeholder="비밀번호를 입력해주세요" type="password" id="pw">
+        <div class='error-message-pw'></div>
       </form>
-      <button class="login-btn" onclick="location.href='/login'">로그인</button>
+      <button id="login" class="login-btn" onclick="location.href='/items'">로그인</button>
       <article class="easy-login-box">
         <div class="easy-content">
           <span>간편 로그인하기</span>
@@ -49,5 +51,6 @@
         <a href="signup.html">회원가입</a>
       </section>
     </main>
+    <script src="login.js"></script>
   </body>
 </html>

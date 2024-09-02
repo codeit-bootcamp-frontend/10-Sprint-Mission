@@ -1,11 +1,67 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FAQ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Frequently Asked Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            margin-top: 20px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .faq-answer {
+            display: none;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+    </style>
 </head>
 <body>
-  <h1>FAQ 화면입니다.</h1>
+    <main class="faq-container">
+        <h1>Frequently Asked Questions</h1>
+        <hr />
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: What is your return policy?</div>
+            <div class="faq-answer">A: We offer a 30-day return policy for all unused items in their original packaging.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: How long does shipping take?</div>
+            <div class="faq-answer">A: Shipping typically takes 3-5 business days for domestic orders and 7-14 business days for international orders.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Q: Do you offer international shipping?</div>
+            <div class="faq-answer">A: Yes, we ship to most countries worldwide. Shipping costs and delivery times may vary depending on the destination.</div>
+        </div>
+    </main>
+
+    <footer>
+      <hr />
+      <div id="copyright">©codeit - 2024</div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>

@@ -2,8 +2,34 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0,maximum-scale=1.0"
+    />
+
+    <meta
+      property="og:image"
+      content="https://pbs.twimg.com/media/GS_9-yyXwAAryDS?format=jpg&name=medium"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="판다마켓" />
+    <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content="https://pbs.twimg.com/media/GS_9-yyXwAAryDS?format=jpg&name=medium"
+    />
+    <meta name="twitter:title" content="판다마켓" />
+    <meta
+      name="twitter:description"
+      content="일상의 모든 물건을 거래해보세요"
+    />
     <title>판다마켓 - 로그인</title>
+    <link rel="icon" href="images/icon/favicon-panda.png" />
     <link
       rel="stylesheet"
       as="style"
@@ -26,29 +52,41 @@
 
       <main>
         <div class="main__wrap">
-          <form class="login-form">
+          <form class="login-form js-form">
             <label for="email" class="login-form__label">이메일</label>
-            <input
-              id="email"
-              class="login-form__input"
-              name="email"
-              type="text"
-              placeholder="이메일을 입력해주세요"
-              required
-            />
+            <div class="login-form__input-wrap">
+              <input
+                id="email"
+                class="login-form__input js-input"
+                name="email"
+                type="text"
+                placeholder="이메일을 입력해주세요"
+              />
+              <div class="js-email-error js-error-message"></div>
+            </div>
 
             <label for="password" class="login-form__label">비밀번호</label>
-            <input
-              id="password"
-              class="login-form__input"
-              name="password"
-              type="password"
-              minlength="8"
-              placeholder="비밀번호를 입력해주세요"
-              required
-            />
-            <!-- view, hidden 아이콘 추가 -->
-            <button type="submit" class="login-form__btn">로그인</button>
+            <div class="login-form__input-wrap">
+              <input
+                id="password"
+                class="login-form__input login-form__pw js-input js-pw"
+                name="password"
+                type="password"
+                minlength="8"
+                placeholder="비밀번호를 입력해주세요"
+              />
+
+              <img
+                class="login-form__icon js-pw-icon"
+                src="/images/icon/pw-hidden.png"
+                alt="비밀번호 숨기기 버튼"
+              />
+
+              <div class="js-pw-error js-error-message"></div>
+            </div>
+            <button type="submit" class="login-form__btn js-button">
+              로그인
+            </button>
           </form>
           <div class="social-login">
             <p class="social-login__title">간편 로그인하기</p>
@@ -78,5 +116,7 @@
         </div>
       </main>
     </div>
+    <script type="module" src="auth-validation.js"></script>
+    <script type="module" src="toggle-pw.js"></script>
   </body>
 </html>

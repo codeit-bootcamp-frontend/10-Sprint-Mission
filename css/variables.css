@@ -14,5 +14,7 @@
   --Secondary-200: #e5e7eb;
   --Secondary-100: #f3f4f6;
   --Secondary-50: #f9fafb;
-}
 
+  /* Error color */
+  --error-red: #f74747;
+}

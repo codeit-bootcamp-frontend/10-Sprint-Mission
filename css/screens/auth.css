@@ -21,6 +21,10 @@
   color: var(--Secondary-800);
 }
 
+.login-form__input-wrap {
+  position: relative;
+}
+
 .login-form__input {
   display: flex;
   align-items: center;
@@ -40,6 +44,18 @@
 .login-form__input::placeholder {
   font-weight: 400;
   color: var(--Secondary-400);
+}
+
+.login-form__pw {
+  padding: 16px 72px 16px 24px;
+}
+
+.login-form__icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 16px 24px;
+  cursor: pointer;
 }
 
 .login-form__btn {
@@ -112,83 +128,17 @@
   color: var(--Primary-100, #3692ff);
 }
 
-@media (min-width: 376px) {
-  .login__wrap {
-    margin: 80px auto 0;
-    max-width: 400px;
-    gap: 24px;
-  }
+/* JS */
 
-  .header__auth-img {
-    width: 198px;
-    height: 66px;
-  }
-
-  .main__wrap {
-    margin: 0 16px;
-  }
-
-  .login-form__label {
-    margin-bottom: 8px;
-    font-size: 14px;
-    line-height: 1.71;
-  }
-
-  .login-form__input {
-    margin-bottom: 16px;
-    width: 100%;
-  }
-
-  .login-form__btn {
-    width: 100%;
-  }
-
-  .social-login {
-    width: 100%;
-    padding: 16px 24px;
-  }
+.login-form__input.invalid:focus,
+.js-error {
+  outline: 1px solid var(--error-red);
 }
-/* 375 영역 끝 */
-@media (min-width: 768px) {
-  .login__wrap {
-    max-width: 640px;
-    margin: 48px auto 0;
-    gap: 40px;
-  }
 
-  .header__auth-img {
-    width: 396px;
-    height: 132px;
-  }
-
-  .main__wrap {
-    margin: 0;
-  }
-
-  .login-form__label {
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 1.444;
-  }
-
-  .login-form__input {
-    width: 640px;
-    margin-bottom: 24px;
-    border-radius: 12px;
-  }
-
-  .login-form__btn {
-    width: 640px;
-  }
-
-  .social-login {
-    width: 640px;
-    padding: 16px 23px;
-  }
-}
-/* 768 영역 끝 */
-@media (min-width: 1200px) {
-  .login__wrap {
-    margin: 60px auto 0;
-  }
+.js-error-message {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.71;
+  color: var(--error-red);
+  margin: 8px 0 0 16px;
 }

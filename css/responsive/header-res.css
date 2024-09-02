@@ -1,0 +1,38 @@
+@media (min-width: 375px) {
+  .header__wrap {
+    padding: 10px 16px;
+  }
+
+  .header__logo-img--typo {
+    width: 103px;
+  }
+}
+/* 375 영역 끝 */
+
+@media (min-width: 768px) {
+  .header__wrap {
+    padding: 10px 24px;
+  }
+
+  .header__logo-img {
+    display: inline;
+    width: 153px;
+  }
+
+  .header__logo-img--typo {
+    display: none;
+  }
+}
+/* 768 영역 끝 */
+
+@media (min-width: 1200px) {
+  .header__wrap {
+    padding: 9px 200px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .header__wrap {
+    padding: 9px 400px;
+  }
+}

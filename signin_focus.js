@@ -4,14 +4,13 @@ const PasswordInput = document.querySelector('.sign_input_password');
 const repasswordInput = document.querySelector('.sign_input_repassword');
 const signinButton = document.querySelector('.button');
 
-let formState = {
+const formState = {
   id: false,
   password: false,
   nickname: false,
   repassword: false
 };
 
-// 버튼 상태 및 배경색을 업데이트하는 함수
 function updateButtonState() {
   if (formState.id && formState.password 
     && formState.nickname && formState.repassword) {
@@ -23,14 +22,15 @@ function updateButtonState() {
   }
 }
 
-IdInput.addEventListener('focusout', (event) => {
-  const email = IdInput.value;
-  if (email.length === 0) {
+
+IdInput.addEventListener('focusout', () => {
+  const emailValue = IdInput.value;
+  if (emailValue.length === 0) {
     IdInput.style.border = '1px solid red';
     showError(IdInput, '잘못된 이메일 형식입니다'); 
     formState.id = false;
   } 
-  else if(!(email.includes('@') && email.includes('.'))){
+  else if(!(emailValue.includes('@') && emailValue.includes('.'))){
     IdInput.style.border = '1px solid red';
     showError(IdInput, '잘못된 이메일 형식입니다'); 
     formState.id = false;
@@ -44,9 +44,9 @@ IdInput.addEventListener('focusout', (event) => {
   updateButtonState();
 });
 
-PasswordInput.addEventListener('focusout', (event) => {
-  const password = PasswordInput.value;
-  if (password.length < 8) {
+PasswordInput.addEventListener('focusout', () => {
+  const passwordValue = PasswordInput.value;
+  if (passwordValue.length < 8) {
     PasswordInput.style.border = '1px solid red';
     showError(PasswordInput, '비밀번호를 8자이상 입력해주세요');
     formState.password = false; 
@@ -59,9 +59,9 @@ PasswordInput.addEventListener('focusout', (event) => {
   updateButtonState();
 });
 
-nicknameInput.addEventListener('focusout',(event) => {
-  const name = nicknameInput.value;
-  if(name.length === 0){
+nicknameInput.addEventListener('focusout',() => {
+  const nameValue = nicknameInput.value;
+  if(nameValue.length === 0){
     nicknameInput.style.border ='1px solid red';
     showError(nicknameInput,'닉네임을 입력해주세요.');
     formState.nickname = false;
@@ -73,9 +73,9 @@ nicknameInput.addEventListener('focusout',(event) => {
   updateButtonState();
 });
 
-repasswordInput.addEventListener('focusout',(event) => {
-  const repassword = repasswordInput.value;
-  if(repassword.length === 0 || PasswordInput.value !== repassword){
+repasswordInput.addEventListener('focusout',() => {
+  const repasswordValue = repasswordInput.value;
+  if(repasswordValue.length === 0 || PasswordInput.value !== repasswordValue){
     repasswordInput.style.border ='1px solid red';
     showError(repasswordInput,'비밀번호를 다시 입력해주세요.');
     formState.repassword = false;
@@ -87,41 +87,23 @@ repasswordInput.addEventListener('focusout',(event) => {
   updateButtonState();
 });
 
-IdInput.addEventListener('focusin', (event) => {
+IdInput.addEventListener('focusin', () => {
   IdInput.style.border = '1px solid white';
   removeError(IdInput); 
 });
 
-PasswordInput.addEventListener('focusin', (event) => {
+PasswordInput.addEventListener('focusin', () => {
   PasswordInput.style.border = '1px solid white';
   removeError(PasswordInput); 
 });
 
-nicknameInput.addEventListener('focusin',(event) => {
+nicknameInput.addEventListener('focusin',() => {
   nicknameInput.style.border = '1px solid white';
   removeError(nicknameInput);
 })
 
-repasswordInput.addEventListener('focusin',(event) => {
+repasswordInput.addEventListener('focusin',() => {
   repasswordInput.style.border = '1px solid white';
   removeError(repasswordInput);
 })
 
-function showError(input, message) {
-  removeError(input);
-
-  const error = document.createElement('span');
-  error.classList.add('error-message');
-  error.textContent = message;
-
-  input.parentNode.insertBefore(error, input.nextSibling);
-}
-
-
-function removeError(input) {
-  const existingError = input.parentNode.querySelector('.error-message');
-  
-  if (existingError) {
-    existingError.remove();
-  }
-}

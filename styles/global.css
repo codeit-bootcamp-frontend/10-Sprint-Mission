@@ -140,10 +140,6 @@ h1 {
   height: 300px;
 }
 
-.username:focus, .password:focus {
-  background-color: #3692ff;
-}
-
 .username,.password{
   margin-top:16px;
   width: 640px;

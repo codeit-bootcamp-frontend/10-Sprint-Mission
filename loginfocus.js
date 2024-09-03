@@ -1,69 +1,12 @@
 const IdInput = document.querySelector('.username');
-const PasswordInput = document.querySelector('.password');
+const passwordInput = document.querySelector('.password');
 const loginButton = document.querySelector('.login_button');
 const simpleButton = document.querySelector('.simple_login');
 
-let formState = {
+const formState = {
   id: false,
   password: false
 };
-
-// 버튼 상태 및 배경색을 업데이트하는 함수
-function updateButtonState() {
-  if (formState.id && formState.password) {
-    loginButton.disabled = false;
-    loginButton.style.backgroundColor = '#3692ff';
-  } else {
-    loginButton.disabled = true;
-    loginButton.style.backgroundColor = '#9CA3AF';
-  }
-}
-
-IdInput.addEventListener('focusout', (event) => {
-  const email = IdInput.value;
-  if (email.length === 0) {
-    IdInput.style.border = '1px solid red';
-    showError(IdInput, '잘못된 이메일 형식입니다'); 
-    formState.id = false;
-  } 
-  else if(!(email.includes('@') && email.includes('.'))){
-    IdInput.style.border = '1px solid red';
-    showError(IdInput, '잘못된 이메일 형식입니다'); 
-    formState.id = false;
-  }
-  else {
-    formState.id = true;
-    IdInput.style.border = '1px solid white';
-    removeError(IdInput); 
-  }
-
-  updateButtonState();
-});
-
-PasswordInput.addEventListener('focusout', (event) => {
-  const password = PasswordInput.value;
-  if (password.length < 8) {
-    PasswordInput.style.border = '1px solid red';
-    showError(PasswordInput, '비밀번호를 8자이상 입력해주세요');
-    formState.password = false; 
-  } else {
-    PasswordInput.style.border = '1px solid white';
-    removeError(PasswordInput);
-    formState.password = true; 
-  }
-
-  updateButtonState();
-});
-
-IdInput.addEventListener('focusin', (event) => {
-  IdInput.style.border = '1px solid white';
-  removeError(IdInput); 
-});
-
-PasswordInput.addEventListener('focusin', (event) => {
-  PasswordInput.style.border = '1px solid white';
-  removeError(PasswordInput); 
-});
 
 function showError(input, message) {
   removeError(input);
@@ -71,7 +14,7 @@ function showError(input, message) {
   const error = document.createElement('span');
   error.classList.add('error-message');
   error.textContent = message;
-
+  error.style.color = 'red';
   input.parentNode.insertBefore(error, input.nextSibling);
   simpleButton.style.marginTop = '48px';
 }
@@ -85,3 +28,63 @@ function removeError(input) {
   }
   simpleButton.style.marginTop = '36px';
 }
+
+
+function updateButtonState() {
+  if (formState.id && formState.password) {
+    loginButton.disabled = false;
+    loginButton.style.backgroundColor = '#3692ff';
+  } else {
+    loginButton.disabled = true;
+    loginButton.style.backgroundColor = '#9CA3AF';
+  }
+}
+
+IdInput.addEventListener('focusout', () => {
+  const emailValue = IdInput.value;
+  if (emailValue.length === 0) {
+    IdInput.style.border = '1px solid red';
+    showError(IdInput, '잘못된 이메일 형식입니다'); 
+    formState.id = false;
+  } 
+  else if(!(emailValue.includes('@') && emailValue.includes('.'))){
+    IdInput.style.border = '1px solid red';
+    showError(IdInput, '잘못된 이메일 형식입니다'); 
+    formState.id = false;
+  }
+  else {
+    formState.id = true;
+    IdInput.style.border = '1px solid white';
+    removeError(IdInput); 
+  }
+
+  updateButtonState();
+});
+
+passwordInput.addEventListener('focusout', () => {
+  const passwordValue = passwordInput.value;
+  if (passwordValue.length < 8) {
+    passwordInput.style.border = '1px solid red';
+    showError(passwordInput, '비밀번호를 8자이상 입력해주세요');
+    formState.password = false; 
+  } else {
+    passwordInput.style.border = '1px solid white';
+    removeError(passwordInput);
+    formState.password = true; 
+  }
+
+  updateButtonState();
+});
+
+IdInput.addEventListener('focusin', () => {
+  IdInput.style.border = '1px solid white';
+  removeError(IdInput); 
+  removeError(passwordInput); 
+});
+
+passwordInput.addEventListener('focusin', () => {
+  passwordInput.style.border = '1px solid white';
+  removeError(IdInput); 
+  removeError(passwordInput); 
+});
+

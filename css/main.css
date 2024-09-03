@@ -321,6 +321,7 @@ footer {
   section:nth-of-type(3) .section__card {
     flex-direction: column-reverse;
     align-items: flex-end;
+    width: 100%;
   }
 
   .section__card--img {
@@ -357,8 +358,8 @@ footer {
   }
 }
 
-/* Mobile: 375px ~ 767px 이하 */
-@media (min-width: 375px) and (max-width: 767px) {
+/* Mobile: 767px 이하 */
+@media (max-width: 767px) {
   .header__inner {
     padding: 1rem 1.6rem;
   }
@@ -415,6 +416,10 @@ footer {
     height: auto;
     flex-direction: column;
     gap: 2.4rem;
+  }
+
+  .section__card--text {
+    width: 100%;
   }
 
   .section__card--text p {

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="판다 마켓" />
+    <meta property="og:title" content="로그인 | 판다 마켓" />
     <meta property="og:description" content="일상의 모든 물건을 거래해보세요" />
     <meta
       property="og:image"
@@ -38,6 +38,7 @@
               class="login__input"
               required
             />
+            <span class="login__error-message" id="email-error"></span>
           </div>
           <label for="password" class="login__label login__label--password"
             >비밀번호</label
@@ -51,24 +52,30 @@
               class="login__input"
               required
             />
+            <span class="login__error-message" id="password-error"></span>
             <button
               type="button"
+              id="password-toggle"
               class="login__password-toggle"
               aria-label="비밀번호 보기"
             >
               <img
+                id="password-toggle-off"
                 src="/assets/images/ic-visibility-off.svg"
-                class="login__password-toggle-icon login__password-toggle-icon--inactive"
+                class="login__password-toggle-icon login__password-toggle-icon--inactive visible"
                 alt="비밀번호 숨기기 아이콘"
               />
               <img
+                id="password-toggle-on"
                 class="login__password-toggle-icon login__password-toggle-icon--active"
                 src="/assets/images/ic-visibility-on.svg"
                 alt="비밀번호 보기 아이콘"
               />
             </button>
           </div>
-          <button type="submit" class="login__submit">로그인</button>
+          <button id="login-button" type="submit" class="login__submit">
+            로그인
+          </button>
         </form>
       </section>
       <aside class="social-login">
@@ -97,5 +104,6 @@
         </p>
       </section>
     </main>
+    <script src="/scripts/login.js"></script>
   </body>
 </html>

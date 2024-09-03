@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>회원가입</title>
     <link rel="stylesheet" href="로그인&회원가입.css" />
+    <link rel="stylesheet" href="로그인&회원가입반응형.css" />
   </head>
   <body id="body">
     <header id="main_header">
@@ -15,21 +16,27 @@
     </header>
     <main id="content">
       <label class="label">이메일</label>
-      <input type="email" class="input" placeholder="이메일을 입력해주세요" />
+      <input id="email" class="input" placeholder="이메일을 입력해주세요" />
+      <p id="error_email" class="error_message"></p>
       <label class="label">닉네임</label>
       <input type="text" class="input" placeholder="닉네임을 입력해주세요" />
       <label class="label">비밀번호</label>
       <input
+        id="password"
         type="password"
         class="input"
         placeholder="비밀번호를 입력해주세요"
       />
+      <p id="error_password" class="error_message"></p>
       <label class="label">비밀번호 확인</label>
       <input
+        id="verifypassword"
         type="password"
         class="input"
         placeholder="비밀번호를 다시 한 번 입력해주세요"
       />
+      <p id="error_verifypassword" class="error_message"></p>
+
       <div id="login_box">회원가입</div>
       <div id="nav_footer_box">
         <p id="nav_footer_p"><b>간편 로그인하기</b></p>
@@ -45,4 +52,5 @@
       판다마켓이 처음이신가요? <a href="login.html" id="gaip">로그인</a>
     </footer>
   </body>
+  <script src="로그인&회원가입.js"></script>
 </html>

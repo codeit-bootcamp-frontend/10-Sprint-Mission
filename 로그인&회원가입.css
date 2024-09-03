@@ -64,6 +64,7 @@
   color: #f3f4f6;
   font-size: 20px;
   line-height: 32px;
+  cursor: pointer;
 }
 #nav_footer_box {
   display: flex;
@@ -101,4 +102,19 @@
 }
 #gaip {
   color: #3692ff;
+}
+.error_message {
+  color: #f74747;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.input-error {
+  border: 1px solid #f74747;
+}
+
+#login_box.disable {
+  background-color: gray;
+  pointer-events: none;
 }

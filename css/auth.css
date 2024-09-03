@@ -5,8 +5,13 @@
   gap: 24px;
 }
 
-.auth.login { padding: 80px 16px 0; }
-.auth.signup { padding: 24px 16px 0; }
+.auth.login {
+  padding: 80px 16px;
+}
+
+.auth.signup {
+  padding: 24px 16px;
+}
 
 .auth-logo > img {
   width: 198px;
@@ -17,9 +22,11 @@
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
-.auth-form > label {
+.auth-form label {
+  display: inline-block;
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.5rem;
@@ -27,7 +34,7 @@
   margin-bottom: 8px;
 }
 
-.auth-form > .auth-input {
+.auth-form .auth-input {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,12 +42,13 @@
   background-color: var(--gray100);
   border-radius: 12px;
   padding: 15px 24px;
-  margin-bottom: 16px;
 }
 
-.auth-form > .auth-input:focus-within { outline: 2px solid var(--blue); }
+.auth-input:focus-within {
+  outline: 1px solid var(--blue);
+}
 
-.auth-form > .auth-input > input {
+.auth-input > input {
   background-color: var(--gray100);
   width: 100%;
   height: 26px;
@@ -49,13 +57,22 @@
   line-height: 1.625rem;
 }
 
-.auth-form > .auth-input > input::placeholder { color: var(--gray400); }
-.auth-form > .auth-input > input:focus { outline: none; }
+.auth-input > input::placeholder {
+  color: var(--gray400);
+}
 
-.auth-form > .auth-input > .visibility {
+.auth-input > input:focus {
+  outline: none;
+}
+
+.auth-input > .btn-eye {
   width: 24px;
   height: 24px;
   cursor: pointer;
+}
+
+.auth-input > .btn-eye.show {
+  content: url("../images/btn_show.svg");
 }
 
 .auth-form > button {
@@ -67,14 +84,18 @@
   line-height: 2rem;
   color: var(--gray100);
   cursor: pointer;
-  margin-bottom: 24px;
+  margin-bottom: 8px;
+}
+
+.auth-form > button.active {
+  background-color: var(--blue);
 }
 
 .auth-form > .other-account {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #E6F2FF; 
+  background-color: #e6f2ff;
   padding: 16px 23px;
   gap: 10px;
   border-radius: 8px;
@@ -82,15 +103,15 @@
   font-weight: 500;
   line-height: 1.625rem;
   color: var(--gary800);
-  margin-bottom: 24px;
+  margin-bottom: 8px;
 }
 
-.auth-form > .other-account > .icon-container {
+.other-account > .icon-container {
   display: flex;
   gap: 16px;
 }
 
-.auth-form > .other-account img {
+.other-account img {
   width: 42px;
   height: 42px;
 }
@@ -103,42 +124,65 @@
   color: var(--gary800);
 }
 
-.auth-form > .auth-link > a {
+.auth-link > a {
   color: var(--blue);
   text-decoration: underline;
 }
 
+.validation-focus {
+  outline: 1px solid var(--red);
+}
+
+.validation-message {
+  display: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--red);
+  padding-left: 16px;
+  margin-top: 8px;
+}
+
 @media screen and (min-width: 768px) {
-  .auth { gap: 40px; }
-  .auth.login { padding-top: 190px; }
-  .auth.signup { padding-top: 48px; }
+  .auth {
+    gap: 40px;
+  }
+
+  .auth.login {
+    padding-top: 190px;
+  }
+
+  .auth.signup {
+    padding-top: 48px;
+  }
 
   .auth-logo > img {
     width: 396px;
     height: 132px;
   }
-  
+
   .auth-form {
     max-width: 100%;
     width: 640px;
     gap: 24px;
   }
 
-  .auth-form > label {
+  .auth-form label {
     font-size: 1.125rem;
     line-height: 1.625rem;
-    margin-bottom: 0; 
+    margin-bottom: 16px;
   }
 
-  .auth-form > .auth-input { 
-    padding: 16px 24px; 
+  .auth-form .auth-input {
+    padding: 16px 24px;
+  }
+
+  .auth-form > button {
+    padding: 16px 124px;
     margin-bottom: 0;
   }
 
-  .auth-form > button { 
-    padding: 16px 124px;
-    margin-bottom: 0; 
+  .auth-form > .other-account {
+    margin-bottom: 0;
   }
-
-  .auth-form > .other-account { margin-bottom: 0; }
 }

@@ -2,7 +2,12 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>판다마켓-login</title>
+  <link
+      rel="stylesheet"
+      href="/node_modules/normalize.css/normalize.css"
+  />
   <link rel="stylesheet" href="styles/style.css">
   <link rel="stylesheet" href="styles/login_signin.css">
 </head>
@@ -14,14 +19,20 @@
       <form class="fields">
         <div class="field">
           <label for="email">이메일</label>
-          <input id="email" name="email" type="email" placeholder="이메일을 입력해주세요">
+          <div id="email-input-container" class="input-container">
+            <input id="email" class="input" name="email" type="email" placeholder="이메일을 입력해주세요">
+            <p id="email-msg" class="valid-msg"></p>
+          </div>
         </div>
         <div class="field">
           <label for="password">비밀번호</label>
-          <input id="password" name="password"type="password" placeholder="비밀번호를 입력해주세요">
-          <img class="visibility-icon" src="assets/btn_visibility_off_24px.svg">
+          <div id="password-input-container" class="input-container">
+            <input id="password"  class="input" name="password"type="password" placeholder="비밀번호를 입력해주세요">
+            <img class="visibility-icon" src="assets/btn_visibility_off_24px.svg">
+            <p id="password-msg" class="valid-msg"></p>
+          </div>
         </div>
-        <button>로그인</button>
+        <a id="login-button" href="/items.html">로그인</a>
       </form>
       <!-- sns 로그인 안내 -->  
       <div class="sns-login">
@@ -35,5 +46,6 @@
       <div class="ask-signup"><p>판다마켓이 처음이신가요?</p><a href="signup.html">회원가입</a></div>
     </div>
   </div>
+  <script src="src/login.js"></script>
 </body>
 </html>

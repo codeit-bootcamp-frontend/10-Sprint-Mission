@@ -22,6 +22,26 @@ function updateButtonState() {
   }
 }
 
+function showError(input, message) {
+  removeError(input);
+
+  const error = document.createElement('span');
+  error.classList.add('error-message');
+  error.textContent = message;
+  error.style.color = 'red';
+
+  input.parentNode.insertBefore(error, input.nextSibling);
+}
+
+
+function removeError(input) {
+  const existingError = input.parentNode.querySelector('.error-message');
+  
+  if (existingError) {
+    existingError.remove();
+  }
+}
+
 
 IdInput.addEventListener('focusout', () => {
   const emailValue = IdInput.value;

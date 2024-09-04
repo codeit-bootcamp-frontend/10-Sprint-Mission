@@ -1,0 +1,25 @@
+.AllItems-title {
+  color: var(--Secondary-900, #111827);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.AllItems-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.AllItems-control-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.AllItems-list {
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px 40px;
+}

@@ -1,4 +1,5 @@
 import BestItems from '../components/item/BestItems';
+import AllItems from '../components/item/AllItems';
 import './Items.css';
 
 function Items() {
@@ -6,6 +7,7 @@ function Items() {
     <div className="Items">
       <div className="max-container">
         <BestItems />
+        <AllItems />
       </div>
     </div>
   );

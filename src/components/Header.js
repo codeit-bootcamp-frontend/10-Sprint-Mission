@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <header className="Header">
-      <div className="header-container max-container">
+      <div className="header-container">
         <img src={logo} alt="판다마켓 로고" onClick={handleImageClick} />
         <nav className="nav">
           <ul className="nav-menu">

@@ -1,0 +1,12 @@
+.BestItems-title {
+  color: var(--Secondary-900, #111827);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.BestItems-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 16px 0;
+  gap: 24px;
+}

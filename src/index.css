@@ -15,7 +15,7 @@
   --Secondary-100: #f3f4f6;
   --Secondary-50: #f9fafb;
   --error-red: #f74747;
-  --size-max-width: 1200px;
+  --size-max-width: 1140px;
 }
 
 * {
@@ -28,4 +28,8 @@ header {
 
 footer {
   background-color: var(--Secondary-900);
+}
+
+.max-container {
+  max-width: var(--size-max-width);
 }

@@ -1,0 +1,29 @@
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.header-container {
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  margin: auto;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}

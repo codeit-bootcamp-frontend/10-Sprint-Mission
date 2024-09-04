@@ -1,3 +1,7 @@
+.BestItems {
+  margin-bottom: 40px;
+}
+
 .BestItems-title {
   color: var(--Secondary-900, #111827);
   font-size: 20px;

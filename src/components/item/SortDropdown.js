@@ -1,5 +1,5 @@
 import './SortDropdown.css';
-import arrowIcon from '../assets/ic_arrow_down.svg';
+import arrowIcon from '../../assets/ic_arrow_down.svg';
 
 function SortDropdown() {
   return (

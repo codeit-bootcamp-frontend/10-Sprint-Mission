@@ -1,7 +1,7 @@
 import './AllItems.css';
 import Item from './Item';
-import SearchInput from '../SearchBar';
-import SortDropdown from '../SortDropdown';
+import SearchInput from './SearchBar';
+import SortDropdown from './SortDropdown';
 import PrimaryButton from '../PrimaryButton';
 
 function AllItems() {

@@ -38,7 +38,7 @@
 .SortDropdown-options > li:last-child {
   border-radius: 0px 0px 12px 12px;
   height: 42px;
-  border-top: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  border-bottom: 1px solid var(--Cool-Gray-200, #e5e7eb);
   border-right: 1px solid var(--Cool-Gray-200, #e5e7eb);
   border-left: 1px solid var(--Cool-Gray-200, #e5e7eb);
   background: #fff;

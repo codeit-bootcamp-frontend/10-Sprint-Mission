@@ -16,6 +16,7 @@ function AllItems() {
         </div>
       </div>
       <div className="AllItems-list">
+        {/* <Item />
         <Item />
         <Item />
         <Item />
@@ -24,8 +25,7 @@ function AllItems() {
         <Item />
         <Item />
         <Item />
-        <Item />
-        <Item />
+        <Item /> */}
       </div>
     </section>
   );

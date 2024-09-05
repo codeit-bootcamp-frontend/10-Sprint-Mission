@@ -34,7 +34,7 @@ function BestItems() {
       <h3 className="BestItems-title">베스트 상품</h3>
       <div className="BestItems-list">
         {items.map((item) => (
-          <Item key={item.id} {...item} />
+          <Item key={item.id} {...item} imgSize="large" />
         ))}
       </div>
     </section>

@@ -55,7 +55,7 @@ function AllItems() {
       </div>
       <div className="AllItems-list">
         {items.map((item) => (
-          <Item key={item.id} {...item} />
+          <Item key={item.id} {...item} imgSize="small" />
         ))}
       </div>
     </section>

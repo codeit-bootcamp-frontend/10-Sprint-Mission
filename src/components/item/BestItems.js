@@ -1,18 +1,32 @@
 import './BestItems.css';
 import Item from './Item';
 import { getItems } from '../../services/api';
+import { getPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 
 function BestItems() {
   const [items, setItems] = useState([]);
-
-  const handleLoad = async (queryParam) => {
-    const { list } = await getItems(queryParam);
-    setItems(list);
-  };
+  const [pageSize, setPageSize] = useState(getPageSize());
 
   useEffect(() => {
-    handleLoad({ page: 1, pageSize: 4, orderBy: 'favorite' });
+    const fetchItems = async () => {
+      const { list } = await getItems({
+        page: 1,
+        pageSize,
+        orderBy: 'favorite',
+      });
+      setItems(list);
+    };
+
+    fetchItems();
+  }, [pageSize]);
+
+  useEffect(() => {
+    const handleResize = () => setPageSize(getPageSize());
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (

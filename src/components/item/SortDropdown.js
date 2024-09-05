@@ -6,38 +6,32 @@ function SortDropdown({ handleSortClick }) {
   const [selected, setSelected] = useState('최신순');
   const [isActive, setIsActive] = useState(false);
 
-  const handleSelectedClick = () => {
-    setIsActive(!isActive);
-  };
+  const toggleDropdown = () => setIsActive((prev) => !prev);
 
-  const handleRecentClick = () => {
-    handleSortClick('recent');
-    setSelected('최신순');
-    setIsActive(!isActive);
-  };
-
-  const handleFavoriteClick = () => {
-    handleSortClick('favorite');
-    setSelected('좋아요순');
-    setIsActive(!isActive);
+  const handleOptionClick = (sortType, label) => {
+    handleSortClick(sortType);
+    setSelected(label);
+    setIsActive(false);
   };
 
   return (
     <div className="SortDropdown">
-      <div className="SortDropdown-selected" onClick={handleSelectedClick}>
+      <div className="SortDropdown-selected" onClick={toggleDropdown}>
         <span>{selected}</span>
         <img src={arrowIcon} alt="아래방향 화살표" />
       </div>
-      <div
-        className={`SortDropdown-options-container ${
-          isActive ? '' : 'inactive'
-        }`}
-      >
-        <ul className="SortDropdown-options">
-          <li onClick={handleRecentClick}>최신순</li>
-          <li onClick={handleFavoriteClick}>좋아요순</li>
-        </ul>
-      </div>
+      {isActive && (
+        <div className="SortDropdown-options-container">
+          <ul className="SortDropdown-options">
+            <li onClick={() => handleOptionClick('recent', '최신순')}>
+              최신순
+            </li>
+            <li onClick={() => handleOptionClick('favorite', '좋아요순')}>
+              좋아요순
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

@@ -25,10 +25,6 @@
   width: 100%;
 }
 
-.SortDropdown-options-container.inactive {
-  display: none;
-}
-
 .SortDropdown-options {
   line-height: 42px;
 }

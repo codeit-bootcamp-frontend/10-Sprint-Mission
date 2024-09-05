@@ -2,6 +2,7 @@
   color: var(--Secondary-900, #111827);
   font-size: 20px;
   font-weight: 700;
+  flex: 1;
 }
 
 .AllItems-header {
@@ -15,6 +16,8 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .AllItems-list {
@@ -28,5 +31,19 @@
 @media screen and (max-width: 1199px) {
   .AllItems-list {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .AllItems-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .SearchBar {
+    order: 2;
+  }
+
+  .SortDropdown {
+    order: 3;
   }
 }

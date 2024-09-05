@@ -60,7 +60,7 @@
 /* mobile */
 @media screen and (max-width: 767px) {
   .SortDropdown {
-    width: 42px;
+    width: auto;
   }
 
   .SortDropdown-arrow {
@@ -70,11 +70,17 @@
   }
 
   .SortDropdown-selected {
+    width: 42px;
     display: block;
     padding: 12px;
   }
 
   .SortDropdown-selected-value {
     display: none;
+  }
+
+  .SortDropdown-options {
+    width: 140px;
+    transform: translateX(-70%);
   }
 }

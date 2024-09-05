@@ -29,6 +29,6 @@
 /* mobile */
 @media screen and (max-width: 767px) {
   .SearchBar {
-    width: 288px;
+    width: 285px;
   }
 }

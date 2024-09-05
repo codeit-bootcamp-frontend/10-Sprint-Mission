@@ -17,6 +17,15 @@
   position: relative;
 }
 
+.SortDropdown-arrow {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../assets/ic_arrow_down.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
 .SortDropdown-options-container {
   margin-top: 10px;
   text-align: center;
@@ -46,4 +55,15 @@
 
 .SortDropdown-options > li {
   cursor: pointer;
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .SortDropdown-arrow {
+    background-image: url('../../assets/ic_arrow_down_mobile.svg');
+  }
+
+  .SortDropdown-selected-value {
+    display: none;
+  }
 }

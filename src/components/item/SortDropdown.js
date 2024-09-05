@@ -17,8 +17,8 @@ function SortDropdown({ handleSortClick }) {
   return (
     <div className="SortDropdown">
       <div className="SortDropdown-selected" onClick={toggleDropdown}>
-        <span>{selected}</span>
-        <img src={arrowIcon} alt="아래방향 화살표" />
+        <span className="SortDropdown-selected-value">{selected}</span>
+        <div className="SortDropdown-arrow"></div>
       </div>
       {isActive && (
         <div className="SortDropdown-options-container">

@@ -18,3 +18,17 @@
   font-size: 16px;
   font-weight: 400;
 }
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .SearchBar {
+    width: 242px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .SearchBar {
+    width: 288px;
+  }
+}

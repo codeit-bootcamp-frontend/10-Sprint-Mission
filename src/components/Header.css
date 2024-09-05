@@ -29,3 +29,10 @@
   font-size: 18px;
   font-weight: 700;
 }
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .header-container {
+    padding: 10px 24px;
+  }
+}

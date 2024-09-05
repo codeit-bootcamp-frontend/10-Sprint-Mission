@@ -14,3 +14,25 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 24px;
 }
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .BestItems-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .BestItems-list div:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .BestItems-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .BestItems-list div:nth-child(n + 2) {
+    display: none;
+  }
+}

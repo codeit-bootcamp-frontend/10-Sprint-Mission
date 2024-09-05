@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './pages/Root';
 import Items from './pages/Items';
 import Home from './pages/Home';
+import AddItem from './pages/AddItem';
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: 'items', element: <Items /> },
+      { path: 'addItem', element: <AddItem /> },
     ],
   },
 ]);

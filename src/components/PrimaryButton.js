@@ -1,7 +1,11 @@
 import './PrimaryButton.css';
 
-function PrimaryButton() {
-  return <button className="PrimaryButton">상품등록하기</button>;
+function PrimaryButton({ value, handleOnClick }) {
+  return (
+    <button className="PrimaryButton" onClick={handleOnClick}>
+      {value}
+    </button>
+  );
 }
 
 export default PrimaryButton;

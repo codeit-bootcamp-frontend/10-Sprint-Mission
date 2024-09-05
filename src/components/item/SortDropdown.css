@@ -6,7 +6,7 @@
 
 .SortDropdown-selected {
   border-radius: 12px;
-  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  border: 1px solid var(--Secondary-200, #e5e7eb);
   height: 42px;
   padding: 12px 20px;
   background: #fff;
@@ -31,15 +31,15 @@
 .SortDropdown-options > li:first-child {
   border-radius: 12px 12px 0px 0px;
   height: 42px;
-  border: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  border: 1px solid var(--Secondary-200, #e5e7eb);
   background: #fff;
 }
 
 .SortDropdown-options > li:last-child {
   border-radius: 0px 0px 12px 12px;
   height: 42px;
-  border-bottom: 1px solid var(--Cool-Gray-200, #e5e7eb);
-  border-right: 1px solid var(--Cool-Gray-200, #e5e7eb);
-  border-left: 1px solid var(--Cool-Gray-200, #e5e7eb);
+  border-bottom: 1px solid var(--Secondary-200, #e5e7eb);
+  border-right: 1px solid var(--Secondary-200, #e5e7eb);
+  border-left: 1px solid var(--Secondary-200, #e5e7eb);
   background: #fff;
 }

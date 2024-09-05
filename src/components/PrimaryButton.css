@@ -6,4 +6,5 @@
   color: var(--Cool-Gray-100, #f3f4f6);
   font-size: 16px;
   font-weight: 600;
+  white-space: nowrap;
 }

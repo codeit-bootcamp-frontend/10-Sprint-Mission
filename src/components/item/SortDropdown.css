@@ -59,8 +59,19 @@
 
 /* mobile */
 @media screen and (max-width: 767px) {
+  .SortDropdown {
+    width: 42px;
+  }
+
   .SortDropdown-arrow {
+    width: 24px;
+    height: 100%;
     background-image: url('../../assets/ic_arrow_down_mobile.svg');
+  }
+
+  .SortDropdown-selected {
+    display: block;
+    padding: 12px;
   }
 
   .SortDropdown-selected-value {

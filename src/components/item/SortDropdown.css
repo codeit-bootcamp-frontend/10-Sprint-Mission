@@ -2,6 +2,7 @@
   width: 130px;
   white-space: nowrap;
   position: relative;
+  z-index: 10;
 }
 
 .SortDropdown-selected {
@@ -24,6 +25,10 @@
   width: 100%;
 }
 
+.SortDropdown-options-container.hide {
+  display: none;
+}
+
 .SortDropdown-options {
   line-height: 42px;
 }
@@ -42,4 +47,8 @@
   border-right: 1px solid var(--Secondary-200, #e5e7eb);
   border-left: 1px solid var(--Secondary-200, #e5e7eb);
   background: #fff;
+}
+
+.SortDropdown-options > li {
+  cursor: pointer;
 }

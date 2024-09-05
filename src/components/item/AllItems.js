@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 
 function AllItems() {
   const [items, setItems] = useState([]);
+  const [orderBy, setOrderBy] = useState('recent');
 
   const handleLoad = async (queryParam) => {
     const { list } = await getItems(queryParam);
@@ -21,9 +22,13 @@ function AllItems() {
     navigate('/addItem');
   };
 
+  const handleSortClick = (orderBy) => {
+    setOrderBy(orderBy);
+  };
+
   useEffect(() => {
-    handleLoad({ page: 1, pageSize: 20, orderBy: 'recent' });
-  }, []);
+    handleLoad({ page: 1, pageSize: 20, orderBy });
+  }, [orderBy]);
 
   return (
     <section className="AllItems">
@@ -35,7 +40,7 @@ function AllItems() {
             value="상품등록하기"
             handleOnClick={handleButtonClick}
           />
-          <SortDropdown />
+          <SortDropdown handleSortClick={handleSortClick} />
         </div>
       </div>
       <div className="AllItems-list">

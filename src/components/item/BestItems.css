@@ -10,7 +10,7 @@
 
 .BestItems-list {
   margin: 16px 0;
-  display: flex;
-  justify-content: space-around;
-  gap: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
 }

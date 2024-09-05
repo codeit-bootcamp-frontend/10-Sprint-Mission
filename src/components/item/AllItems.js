@@ -4,17 +4,14 @@ import SearchBar from './SearchBar';
 import SortDropdown from './SortDropdown';
 import PrimaryButton from '../PrimaryButton';
 import { getItems } from '../../services/api';
+import { getAllItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function AllItems() {
   const [items, setItems] = useState([]);
+  const [pageSize, setPageSize] = useState(getAllItemsPageSize());
   const [orderBy, setOrderBy] = useState('recent');
-
-  const handleLoad = async (queryParam) => {
-    const { list } = await getItems(queryParam);
-    setItems(list);
-  };
 
   const navigate = useNavigate();
 
@@ -27,8 +24,21 @@ function AllItems() {
   };
 
   useEffect(() => {
-    handleLoad({ page: 1, pageSize: 20, orderBy });
-  }, [orderBy]);
+    const handleResize = () => setPageSize(getAllItemsPageSize());
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      const { list } = await getItems({ page: 1, pageSize, orderBy });
+      setItems(list);
+    };
+
+    fetchItems();
+  }, [pageSize, orderBy]);
 
   return (
     <section className="AllItems">

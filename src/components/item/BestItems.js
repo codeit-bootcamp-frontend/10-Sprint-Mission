@@ -1,12 +1,20 @@
 import './BestItems.css';
 import Item from './Item';
 import { getItems } from '../../services/api';
-import { getPageSize } from '../../utils/paging';
+import { getBestItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 
 function BestItems() {
   const [items, setItems] = useState([]);
-  const [pageSize, setPageSize] = useState(getPageSize());
+  const [pageSize, setPageSize] = useState(getBestItemsPageSize());
+
+  useEffect(() => {
+    const handleResize = () => setPageSize(getBestItemsPageSize());
+
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -20,14 +28,6 @@ function BestItems() {
 
     fetchItems();
   }, [pageSize]);
-
-  useEffect(() => {
-    const handleResize = () => setPageSize(getPageSize());
-
-    window.addEventListener('resize', handleResize);
-
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <section className="BestItems">

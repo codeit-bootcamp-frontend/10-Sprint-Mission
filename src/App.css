@@ -1,0 +1,180 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Pretendard'
+}
+
+header{
+  display: flex;
+  width: 100%;
+  align-items: center; 
+}
+
+header img{
+  margin-left : 200px;
+}
+
+nav { 
+  display:flex;
+  align-items: center;
+  margin-left: 32px;
+}
+
+nav a{
+  font-size:18px;
+  font-weight: 700;
+  text-decoration: none;
+  color: black;
+  width:120px;
+  height:68px;
+  padding:21px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+}
+main{
+  margin-left:360px;
+  margin-right:360px;
+  margin-top:94px;
+  margin-bottom: 141px;
+}
+
+main h1{
+  font-size:20px;
+  line-height: 32px;
+  margin-bottom: 12px;
+}
+
+
+.profile{
+  position:absolute;
+  right:200px;
+}
+.best{
+  display:flex;
+  width: 100%;
+}
+.best div{
+  margin-right:24px;
+}
+.itemTitle{
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.price {
+  font-weight: 700;
+  font-size:16px;
+  line-height: 26px;
+}
+.favorite_icon{
+  display:flex;
+  align-items: center;
+}
+.favorite_icon img{
+  width: 13.4px;
+  height:11.65px;
+  margin-right:3px;
+}
+
+.entireHeader{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.entireHeader div{
+  display:flex;
+}
+
+.searchInput{
+  width: 325px;
+  height:42px;
+  border-radius: 12px;
+  background-color:#F3F4F6;
+  background-image: url('/src/assets/Vector.png');
+  border : 1px solid #ffffff;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  margin-right:12px;
+  padding-left:30px;
+}
+.RegistButton{
+  width: 133px;
+  height:42px;
+  border-radius: 8px;
+  background-color: #3692FF;
+  border: 1px solid #ffffff;
+  color : #ffffff;
+
+  font-weight: 600;
+  font-size:16px;
+  line-height: 26px;
+  margin-right:12px;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+.Recently_favorite_sortmenu{
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7E8;
+  width: 130px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 12px 20px; 
+}
+
+.dropdown_menu{
+  position:absolute;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top:42px;
+  right: 360px;
+  z-index: 1;
+}
+
+.Recently_btn, .favorite_btn{
+  background-color: #FFFFFF;
+  border: 1px solid #E5E7E8;
+  width: 130px;
+  height: 42px;
+  border-radius: 12px;
+}
+
+.entirePicture {
+  margin-top:24px;
+  display:grid;
+  grid-template-columns: repeat(5, 1fr);  
+  grid-template-rows: repeat(2, auto);   
+  gap:24px;
+}
+
+.pagination{
+  display:flex;
+  margin:0 auto;
+  width: 304px;
+  height:40px;
+  align-items: center;
+}
+.pagination button{
+  border-radius: 50px;
+  width: 40px;
+  height:40px;
+  background-color: #ffffff;
+  border: 1px solid #E5E7E8;
+  margin-left: 4px;
+  margin-top:40px;
+  font-size:16px;
+  line-height: 26px;
+  font-weight: 600;
+}

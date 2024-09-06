@@ -6,6 +6,7 @@ header {
     z-index:10;
     height: 70px;
     justify-content: center;
+    align-items: center;
 
     flex-shrink: 0;
     border-bottom: 1px solid #DFDFDF;
@@ -47,4 +48,26 @@ header {
 }
 .panda-logo {
     width:153px;
+}
+/* tablet */
+@media (max-width:1199px) {
+    .header-container {
+        margin:0 24px;
+    }
+    .header-wrap {
+        gap:20px;
+    }
+}
+
+/* mobile */
+@media (max-width:767px) {
+    .header-container {
+        margin: 0 16px;
+    }
+    .nav-container a {
+        font-size: 16px;
+    }
+    .panda-logo {
+        width:81px;
+    }
 }

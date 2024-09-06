@@ -3,6 +3,7 @@ import Item from './Item';
 import SearchBar from './SearchBar';
 import SortDropdown from './SortDropdown';
 import PrimaryButton from '../PrimaryButton';
+import Pagination from './pagination/Pagination';
 import { getItems } from '../../services/api';
 import { getAllItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
@@ -10,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 
 function AllItems() {
   const [items, setItems] = useState([]);
+  const [totalCount, setTotalCount] = useState(1);
+  const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(getAllItemsPageSize());
   const [orderBy, setOrderBy] = useState('recent');
 
@@ -33,12 +36,17 @@ function AllItems() {
 
   useEffect(() => {
     const fetchItems = async () => {
-      const { list } = await getItems({ page: 1, pageSize, orderBy });
+      const { list, totalCount } = await getItems({
+        page: page,
+        pageSize,
+        orderBy,
+      });
       setItems(list);
+      setTotalCount(totalCount);
     };
 
     fetchItems();
-  }, [pageSize, orderBy]);
+  }, [page, pageSize, orderBy]);
 
   return (
     <section className="AllItems">
@@ -57,6 +65,9 @@ function AllItems() {
         {items.map((item) => (
           <Item key={item.id} {...item} imgSize="small" />
         ))}
+      </div>
+      <div className="pagination-container">
+        <Pagination total={totalCount} page={page} setPage={setPage} />
       </div>
     </section>
   );

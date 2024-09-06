@@ -1,10 +1,10 @@
 import BestItems from '../components/item/BestItems';
 import AllItems from '../components/item/AllItems';
-import './Items.css';
+import './ItemsPage.css';
 
-function Items() {
+function ItemsPage() {
   return (
-    <div className="Items">
+    <div className="ItemsPage">
       <div className="max-container">
         <BestItems />
         <AllItems />
@@ -13,4 +13,4 @@ function Items() {
   );
 }
 
-export default Items;
+export default ItemsPage;

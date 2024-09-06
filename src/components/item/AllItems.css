@@ -27,6 +27,12 @@
   gap: 40px 24px;
 }
 
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
 /* tablet */
 @media screen and (max-width: 1199px) {
   .AllItems-list {

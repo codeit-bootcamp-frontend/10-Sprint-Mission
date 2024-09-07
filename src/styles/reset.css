@@ -7,7 +7,14 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
+
 body {
   font-family: Pretendard Variable, Pretendard, sans-serif;
+}
+
+ul,
+ol {
+  list-style: none;
 }

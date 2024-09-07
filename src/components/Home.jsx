@@ -1,4 +1,4 @@
-const Main = () => {
+const Home = () => {
   return (
     <div>
       나중에 만들어질 메인 페이지
@@ -6,4 +6,4 @@ const Main = () => {
   );
 }
 
-export default Main;
+export default Home;

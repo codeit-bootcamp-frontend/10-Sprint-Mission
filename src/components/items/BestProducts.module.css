@@ -1,0 +1,21 @@
+.best-product-list {
+  display: flex;
+}
+.best-product {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 282px;
+  height: 379px;
+}
+
+.best-product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.best-product-img {
+  width: 282px;
+  height: 282px;
+}

@@ -1,0 +1,11 @@
+.dropdown {
+  background-image: url("../assets/ic_sort.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid var(--gray200);
+  cursor: pointer;
+  order: 1;
+}

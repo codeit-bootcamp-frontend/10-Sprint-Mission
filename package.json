@@ -1,7 +1,8 @@
 {
-  "name": "1-weekly-mission",
+  "name": "pandamarket-jsh",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pandamarket-jsh.netlify.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

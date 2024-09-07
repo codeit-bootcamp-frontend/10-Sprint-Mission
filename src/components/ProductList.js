@@ -8,11 +8,12 @@ import Dropdown from "./Dropdown";
 
 const ProductList = ({ size }) => {
   const [products, setProducts] = useState([]);
+  const [order, setOrder] = useState("recent");
 
   const handleLoad = useCallback(async () => {
-    const { list } = await getProducts({ orderBy: "recent", pageSize: size });
+    const { list } = await getProducts({ orderBy: order, pageSize: size });
     setProducts(list);
-  }, [size]);
+  }, [size, order]);
 
   useEffect(() => {
     handleLoad();
@@ -34,7 +35,7 @@ const ProductList = ({ size }) => {
         <Link to="/additem" className={styles.button}>
           상품등록하기
         </Link>
-        <Dropdown />
+        <Dropdown order={order} onChange={setOrder} />
       </div>
       <ul className={styles.products}>
         {products.length &&

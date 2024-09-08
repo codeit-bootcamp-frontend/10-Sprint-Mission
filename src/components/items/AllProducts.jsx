@@ -5,6 +5,8 @@ import styles from './AllProducts.module.css';
 import {ReactComponent as DropdownArrowDown} from 'assets/imgs/ic_arrow_down.svg';
 import {ReactComponent as PageArrowLeft} from 'assets/imgs/arrow_left.svg';
 import {ReactComponent as PageArrowRight} from 'assets/imgs/arrow_right.svg';
+import {ReactComponent as EmptyHeart} from 'assets/imgs/empty_heart.svg';
+import {ReactComponent as FillHeart} from 'assets/imgs/fill_heart.svg';
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
@@ -12,6 +14,7 @@ const AllProducts = () => {
   const [error, setError] = useState(null);
   const [sortProduct, setSortProduct] = useState('최신순');
   const [isDropdown, setIsDropdown] = useState(false);
+  const [isEmptyHeart, setIsEmptyHeart] = useState(true);
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -45,7 +48,7 @@ const AllProducts = () => {
               <div className={styles['all-product-info']}>
                 <p className={styles['product-title']}>{product.name}</p>
                 <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                <p className={styles['product-favorite-count']}>{product.favoriteCount}</p>
+                <p className={styles['product-favorite-count']}><span onClick={()=> {setIsEmptyHeart(!isEmptyHeart)}}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>}</span>{product.favoriteCount}</p>
               </div>
             </div>
             ))

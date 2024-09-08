@@ -108,15 +108,18 @@ main {
   width: 100%;
 }
 
+ul > li {
+  list-style: none;
+}
+
 nav ul {
   display: flex;
   gap: 12px;
 }
 
-nav ul>li {
+nav ul > li {
   width: 20px;
   display: inline-block;
-  list-style: none;
 }
 
 h3 {

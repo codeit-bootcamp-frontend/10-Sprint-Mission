@@ -1,0 +1,54 @@
+import styles from "./Pagination.module.css";
+import arrowLeftImg from "../assets/arrow_left_gray.svg";
+import arrowRightImg from "../assets/arrow_right.svg";
+
+const Pagination = ({ totalCount, pageSize, currentPage, onChange }) => {
+  const totalPages = Math.ceil(totalCount / pageSize);
+  const PAGE_RANGE = 5;
+
+  const generatePageNumbers = () => {
+    let start = Math.max(1, currentPage - Math.floor(PAGE_RANGE / 2));
+    const end = Math.min(totalPages, start + PAGE_RANGE - 1);
+
+    if (end - start + 1 < PAGE_RANGE) {
+      start = Math.max(end - PAGE_RANGE + 1, 1);
+    }
+
+    return Array.from({ length: end - start + 1 }, (_, index) => start + index);
+  };
+
+  const handleClick = (selectedPage) => {
+    onChange(selectedPage);
+  };
+
+  const handleLeftButton = () => {
+    onChange(currentPage - 1);
+  };
+  const handleRightButton = () => {
+    onChange(currentPage + 1);
+  };
+
+  return (
+    <div className={styles.pagination}>
+      <button onClick={handleLeftButton} disabled={currentPage === 1}>
+        <img src={arrowLeftImg} alt="왼쪽 버튼" />
+      </button>
+      {generatePageNumbers().map((number) => {
+        return (
+          <button
+            className={number === currentPage ? styles.active : ""}
+            onClick={() => handleClick(number)}
+            key={number}
+          >
+            {number}
+          </button>
+        );
+      })}
+      <button onClick={handleRightButton} disabled={currentPage === totalPages}>
+        <img src={arrowRightImg} alt="오른쪽 버튼" />
+      </button>
+    </div>
+  );
+};
+
+export default Pagination;

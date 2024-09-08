@@ -5,15 +5,22 @@ import Card from "./Card";
 import styles from "./ProductList.module.css";
 import searchImg from "../assets/ic_search.svg";
 import Dropdown from "./Dropdown";
+import Pagination from "./Pagination";
 
 const ProductList = ({ size }) => {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState("recent");
-
+  const [totalCount, setTotalCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
   const handleLoad = useCallback(async () => {
-    const { list } = await getProducts({ orderBy: order, pageSize: size });
+    const { list, totalCount } = await getProducts({
+      orderBy: order,
+      pageSize: size,
+      page: currentPage,
+    });
     setProducts(list);
-  }, [size, order]);
+    setTotalCount(totalCount);
+  }, [size, order, currentPage]);
 
   useEffect(() => {
     handleLoad();
@@ -31,18 +38,26 @@ const ProductList = ({ size }) => {
             placeholder="검색할 상품을 입력해주세요"
           />
         </div>
-
         <Link to="/additem" className={styles.button}>
           상품등록하기
         </Link>
         <Dropdown order={order} onChange={setOrder} />
       </div>
-      <ul className={styles.products}>
-        {products.length &&
-          products.map((product) => {
+      {products.length ? (
+        <ul className={styles.products}>
+          {products.map((product) => {
             return <Card key={product.id} product={product} />;
           })}
-      </ul>
+        </ul>
+      ) : (
+        <div>상품 목록이 없습니다.</div>
+      )}
+      <Pagination
+        totalCount={totalCount}
+        pageSize={size}
+        currentPage={currentPage}
+        onChange={setCurrentPage}
+      />
     </section>
   );
 };

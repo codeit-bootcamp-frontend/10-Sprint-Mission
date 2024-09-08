@@ -19,10 +19,13 @@ const BestProducts = ({ size }) => {
     <section className={styles.section}>
       <h2 className={styles.title}>베스트 상품</h2>
       <ul className={styles.products}>
-        {products.length &&
+        {products.length ? (
           products.map((product) => {
             return <Card key={product.id} product={product} />;
-          })}
+          })
+        ) : (
+          <div>상품 목록이 없습니다.</div>
+        )}
       </ul>
     </section>
   );

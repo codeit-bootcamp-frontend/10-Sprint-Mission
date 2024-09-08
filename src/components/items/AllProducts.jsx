@@ -2,9 +2,9 @@ import { API_USEDS_GOODS_PRODUCTS } from "config/api";
 import { fetchData } from "api/fetchData";
 import { useEffect, useState } from "react";
 import styles from './AllProducts.module.css';
-import {Reactcomponent as DropdownArrowDown} from 'assets/imgs/ic_arrow_down.svg';
-import {Reactcomponent as PageArrowLeft} from 'assets/imgs/arrow_left.svg';
-import {Reactcomponent as PageArrowRight} from 'assets/imgs/arrow_right.svg';
+import {ReactComponent as DropdownArrowDown} from 'assets/imgs/ic_arrow_down.svg';
+import {ReactComponent as PageArrowLeft} from 'assets/imgs/arrow_left.svg';
+import {ReactComponent as PageArrowRight} from 'assets/imgs/arrow_right.svg';
 
 const AllProducts = () => {
   const [data, setData] = useState([]);

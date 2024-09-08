@@ -14,7 +14,7 @@ const Header = () => {
           <Link to="/"><img src={logo} alt="로고" /></Link>
           <Link to="/free"><p>자유게시판</p></Link>
           <Link to="/goods"><p>중고마켓</p></Link>
-          <span><img src={UserIcon} /></span>
+          <span><img src={UserIcon} alt='프로필 이미지'/></span>
         </div>
         :
         <div>

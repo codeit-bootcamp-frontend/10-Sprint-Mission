@@ -2,11 +2,14 @@ import { API_USEDS_GOODS_PRODUCTS } from "config/api";
 import { fetchData } from "api/fetchData";
 import { useEffect, useState } from "react";
 import styles from './AllProducts.module.css';
+import {Reactcomponent as DropdownArrowDown} from 'assets/imgs/ic_arrow_down.svg';
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [sortProduct, setSortProduct] = useState('최신순');
+  const [isDropdown, setIsDropdown] = useState(false);
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -23,6 +26,13 @@ const AllProducts = () => {
   return (
     <div className={styles['container']}>
       <h3>전체 상품</h3>
+      <input type="text" placeholder="검색할 상품을 입력해주세요" />
+      <button>상품 등록하기</button>
+      <span>{sortProduct}<DropdownArrowDown/></span>
+      <ul>
+        <li>최신순</li>
+        <li>좋아요순</li>
+      </ul>
       {loading && <p>로딩 중...</p>}
       {error && <p>에러 발생</p>}
       {data && 
@@ -40,6 +50,13 @@ const AllProducts = () => {
           }
         </div>
       }
+      <div className={styles['pagination']}>
+        <button>이전</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>다음</button>
+      </div>
     </div>
   )
 }

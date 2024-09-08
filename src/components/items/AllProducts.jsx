@@ -3,6 +3,8 @@ import { fetchData } from "api/fetchData";
 import { useEffect, useState } from "react";
 import styles from './AllProducts.module.css';
 import {Reactcomponent as DropdownArrowDown} from 'assets/imgs/ic_arrow_down.svg';
+import {Reactcomponent as PageArrowLeft} from 'assets/imgs/arrow_left.svg';
+import {Reactcomponent as PageArrowRight} from 'assets/imgs/arrow_right.svg';
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
@@ -51,11 +53,13 @@ const AllProducts = () => {
         </div>
       }
       <div className={styles['pagination']}>
-        <button>이전</button>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <button>다음</button>
+        <span><PageArrowLeft/></span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span><PageArrowRight/></span>
       </div>
     </div>
   )

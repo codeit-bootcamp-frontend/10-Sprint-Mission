@@ -28,6 +28,7 @@
   height: 220px;
   border-radius: 16px;
   padding-bottom: 16px;
+  cursor: pointer;
 }
 
 .title-container {
@@ -113,7 +114,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; 
+  line-height: 24px;
+  cursor: pointer;
 }
 
 .product-price {
@@ -137,6 +139,7 @@
 .product-heart-img > svg {
   width: 16px;
   height: 16px;
+  cursor: pointer;
 }
 
 .pagination {

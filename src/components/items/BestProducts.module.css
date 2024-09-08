@@ -29,11 +29,13 @@
   width: 282px;
   height: 282px;
   border-radius: 16px;
+  cursor: pointer;
 }
 
 .product-heart-img > svg {
   width: 16px;
   height: 16px;
+  cursor: pointer;
 }
 
 .product-title {
@@ -41,7 +43,8 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 24px; 
+  line-height: 24px;
+  cursor: pointer;
 }
 
 .product-price {

@@ -16,7 +16,7 @@ const Header = () => {
               <Link to="/free"><p>자유게시판</p></Link>
               <Link to="/goods"><p>중고마켓</p></Link>
             </nav>
-            <UserIcon/>
+            <UserIcon className={styles['user-icon']}/>
           </div>
           :
           <div className={styles['header-container']}>

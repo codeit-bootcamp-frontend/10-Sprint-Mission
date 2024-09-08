@@ -25,7 +25,7 @@
   align-items: center;
   gap: 4px;
   background-color: var(--gray100);
-  padding: 9px 70px 9px 16px;
+  padding: 9px 16px;
   border-radius: 12px;
   font-size: 1rem;
   font-weight: 400;
@@ -33,6 +33,11 @@
   text-align: left;
   flex: 1 0 80%;
   order: 1;
+  min-width: 200px;
+}
+
+.inputContainer > input {
+  min-width: 200px;
 }
 
 .inputContainer > img {
@@ -79,6 +84,7 @@
   .inputContainer {
     flex: 0 1 auto;
     order: 0;
+    padding-right: 24px;
   }
 
   .products {
@@ -89,6 +95,10 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .inputContainer {
+    padding-right: 107px;
+  }
+
   .products {
     grid-template-columns: repeat(5, 1fr);
     column-gap: 24px;

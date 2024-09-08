@@ -68,6 +68,14 @@ p {
   word-wrap: break-word;
 }
 
+h4 {
+  color: var(--Secondary-900);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 32px;
+}
+
 h5 {
   color: var(--primary-100);
   font-size: 18px;

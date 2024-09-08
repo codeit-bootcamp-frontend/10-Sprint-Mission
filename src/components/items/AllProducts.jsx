@@ -27,7 +27,7 @@ const AllProducts = () => {
 
   return (
     <div className={styles['container']}>
-      <h3>전체 상품</h3>
+      <h4>전체 상품</h4>
       <input type="text" placeholder="검색할 상품을 입력해주세요" />
       <button>상품 등록하기</button>
       <span>{sortProduct}<DropdownArrowDown/></span>

@@ -2,11 +2,14 @@ import { API_USEDS_GOODS_PRODUCTS } from "config/api";
 import { fetchData } from "api/fetchData";
 import { useEffect, useState } from "react";
 import styles from "./BestProducts.module.css";
+import {ReactComponent as EmptyHeart} from 'assets/imgs/empty_heart.svg';
+import {ReactComponent as FillHeart} from 'assets/imgs/fill_heart.svg';
 
 const BestProducts = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [isEmptyHeart, setIsEmptyHeart] = useState(true);
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -33,7 +36,7 @@ const BestProducts = () => {
               <div className={styles['best-product-info']}>
                 <p className={styles['product-title']}>{product.name}</p>
                 <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                <p className={styles['product-favorite-count']}>{product.favoriteCount}</p>
+                <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={()=> {setIsEmptyHeart(!isEmptyHeart)}}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>}</span>{product.favoriteCount}</p>
               </div>
             </div>
             ))

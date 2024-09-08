@@ -26,6 +26,11 @@
   border-radius: 16px;
 }
 
+.product-heart-img > svg {
+  width: 16px;
+  height: 16px;
+}
+
 .product-title {
   color: var(--secondary-800);
   font-size: 14px;
@@ -48,4 +53,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
+  display: flex;
+  gap: 4px;
 }

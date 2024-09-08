@@ -2,6 +2,10 @@
   width: 1200px;
 }
 
+.title {
+  margin-bottom: 16px;
+}
+
 .best-product-list {
   display: flex;
   gap: 24px;

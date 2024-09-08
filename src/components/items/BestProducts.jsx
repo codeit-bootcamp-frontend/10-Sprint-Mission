@@ -25,7 +25,7 @@ const BestProducts = () => {
 
   return (
     <div className={styles['container']}>
-      <h4>베스트 상품</h4>
+      <h4 className={styles['title']}>베스트 상품</h4>
       {loading && <p>로딩 중...</p>}
       {error && <p>에러 발생</p>}
       {data && 

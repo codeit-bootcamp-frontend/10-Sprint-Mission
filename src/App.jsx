@@ -7,7 +7,6 @@ import Home from 'components/Home';
 const App = () => {
   return (
     <div>
-      <Header/>
       <Routes>
         <Route path={ROUTES.HOME} element={<BestProducts/>}></Route>
         <Route path={ROUTES.LOGIN} element={<Home/>}></Route>

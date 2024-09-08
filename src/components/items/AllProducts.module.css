@@ -4,6 +4,7 @@
 
 .all-product-list {
   display: flex;
+  flex-wrap: wrap;
 }
 .all-product {
   display: flex;

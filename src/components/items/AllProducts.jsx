@@ -7,6 +7,7 @@ import {ReactComponent as PageArrowLeft} from 'assets/imgs/arrow_left.svg';
 import {ReactComponent as PageArrowRight} from 'assets/imgs/arrow_right.svg';
 import {ReactComponent as EmptyHeart} from 'assets/imgs/empty_heart.svg';
 import {ReactComponent as FillHeart} from 'assets/imgs/fill_heart.svg';
+import {ReactComponent as SearchIcon} from 'assets/imgs/ic_search.svg';
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
@@ -33,7 +34,10 @@ const AllProducts = () => {
       <div className={styles['title-container']}>
         <h4>전체 상품</h4>
         <div className={styles['search-container']}>
-          <input className={styles['search-input']} type="text" placeholder="검색할 상품을 입력해주세요" />
+          <div className={styles['search-box']}>
+            <SearchIcon className={styles['search-icon']}/>
+            <input className={styles['search-input']} type="text" placeholder="검색할 상품을 입력해주세요" />
+          </div>
           <button className={styles['search-button']}>상품 등록하기</button>
           <div className={styles['search-dropdown']}>
             <span>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'}/></span>

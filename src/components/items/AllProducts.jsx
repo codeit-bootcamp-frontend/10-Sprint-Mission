@@ -32,9 +32,9 @@ const AllProducts = () => {
     <div className={styles['container']}>
       <h4>전체 상품</h4>
       <div className={styles['search-container']}>
-        <input type="text" placeholder="검색할 상품을 입력해주세요" />
-        <button>상품 등록하기</button>
-        <div className={styles['dropdown']}>
+        <input className={styles['search-input']} type="text" placeholder="검색할 상품을 입력해주세요" />
+        <button className={styles['search-button']}>상품 등록하기</button>
+        <div className={styles['search-dropdown']}>
           <span>{sortProduct}<DropdownArrowDown/></span>
           <ul>
             <li>최신순</li>

@@ -24,3 +24,27 @@
   width: 282px;
   height: 282px;
 }
+
+.product-title {
+  color: var(--secondary-800);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; 
+}
+
+.product-price {
+  color: var(--Secondary-800);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.product-favorite-count {
+  color: var(--Secondary-600);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}

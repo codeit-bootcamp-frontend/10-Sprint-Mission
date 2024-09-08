@@ -5,9 +5,9 @@ import BestProducts from "components/items/BestProducts";
 const Items = () => {
   return (
     <div>
-      <Header/>
-      <BestProducts/>
-      <AllProducts/>
+      <Header />
+      <BestProducts />
+      <AllProducts />
     </div>
   );
 }

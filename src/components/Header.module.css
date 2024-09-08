@@ -1,12 +1,23 @@
 .header {
-  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
   height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 200px;
+  border-bottom: 1px #dfdfdf;
+  width: 100vw;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  min-width: 1120px;
-  max-width: 1120px;
 }
+
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .header {

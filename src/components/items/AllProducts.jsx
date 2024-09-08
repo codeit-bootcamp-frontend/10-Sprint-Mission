@@ -43,7 +43,7 @@ const AllProducts = () => {
             <div key={product.id} className={styles['all-product']}>
               <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
               <div className={styles['all-product-info']}>
-                <p>{product.description}</p>
+                <p>{product.name}</p>
                 <p>{product.price}</p>
                 <p>{product.favoriteCount}</p>
               </div>

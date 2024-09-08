@@ -31,7 +31,7 @@ const BestProducts = () => {
             <div key={product.id} className={styles['best-product']}>
               <img className={styles['best-product-img']} src={product.images} alt="제품 이미지" />
               <div className={styles['best-product-info']}>
-                <p>{product.description}</p>
+                <p>{product.name}</p>
                 <p>{product.price}</p>
                 <p>{product.favoriteCount}</p>
               </div>

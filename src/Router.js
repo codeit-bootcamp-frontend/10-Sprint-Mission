@@ -6,10 +6,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+import Layout from "./components/Layout";
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route element={<Outlet />}>
+      <Route element={<Layout />}>
         <Route index element={<h1>홈페이지</h1>} />
         <Route path="items" element={<h1>중고마켓</h1>} />
       </Route>

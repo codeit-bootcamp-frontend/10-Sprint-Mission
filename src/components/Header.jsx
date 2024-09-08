@@ -1,7 +1,7 @@
 import {ReactComponent as Logo} from 'assets/imgs/logo_sm.svg';
 import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
-import UserIcon from 'assets/imgs/user_icon.svg';
+import {ReactComponent as UserIcon} from 'assets/imgs/user_icon.svg';
 import { useState } from 'react';
 
 const Header = () => {
@@ -12,9 +12,11 @@ const Header = () => {
         {isLogin ?
           <div className={styles['header-container']}>
             <Link to="/"><Logo/></Link>
-            <Link to="/free"><p>자유게시판</p></Link>
-            <Link to="/goods"><p>중고마켓</p></Link>
-            <span><img src={UserIcon} alt='프로필 이미지'/></span>
+            <nav className={styles['header-nav']}>
+              <Link to="/free"><p>자유게시판</p></Link>
+              <Link to="/goods"><p>중고마켓</p></Link>
+            </nav>
+            <UserIcon/>
           </div>
           :
           <div className={styles['header-container']}>

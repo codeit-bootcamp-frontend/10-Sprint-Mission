@@ -14,10 +14,24 @@
 .header-container {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav {
+  display: flex;
+  flex-grow: 1;
   align-items: center;
 }
 
+.header-nav p {
+  color: var(--secondary-600);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  padding: 21px 15px;
+}
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .header {

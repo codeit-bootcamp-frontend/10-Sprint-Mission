@@ -4,6 +4,7 @@
 
 .best-product-list {
   display: flex;
+  gap: 24px;
 }
 .best-product {
   display: flex;

@@ -5,6 +5,7 @@
 .all-product-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 24px;
 }
 .all-product {
   display: flex;

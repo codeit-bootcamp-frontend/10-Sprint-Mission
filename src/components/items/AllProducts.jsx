@@ -30,16 +30,18 @@ const AllProducts = () => {
 
   return (
     <div className={styles['container']}>
-      <h4>전체 상품</h4>
-      <div className={styles['search-container']}>
-        <input className={styles['search-input']} type="text" placeholder="검색할 상품을 입력해주세요" />
-        <button className={styles['search-button']}>상품 등록하기</button>
-        <div className={styles['search-dropdown']}>
-          <span>{sortProduct}<DropdownArrowDown/></span>
-          <ul>
-            <li>최신순</li>
-            <li>좋아요순</li>
-          </ul>
+      <div className={styles['title-container']}>
+        <h4>전체 상품</h4>
+        <div className={styles['search-container']}>
+          <input className={styles['search-input']} type="text" placeholder="검색할 상품을 입력해주세요" />
+          <button className={styles['search-button']}>상품 등록하기</button>
+          <div className={styles['search-dropdown']}>
+            <span>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'}/></span>
+            <ul>
+              <li>최신순</li>
+              <li>좋아요순</li>
+            </ul>
+          </div>
         </div>
       </div>
       {loading && <p>로딩 중...</p>}

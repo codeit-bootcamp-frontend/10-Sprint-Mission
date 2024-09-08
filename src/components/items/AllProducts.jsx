@@ -48,7 +48,7 @@ const AllProducts = () => {
               <div className={styles['all-product-info']}>
                 <p className={styles['product-title']}>{product.name}</p>
                 <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                <p className={styles['product-favorite-count']}><span onClick={()=> {setIsEmptyHeart(!isEmptyHeart)}}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>}</span>{product.favoriteCount}</p>
+                <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={()=> {setIsEmptyHeart(!isEmptyHeart)}}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>}</span>{product.favoriteCount}</p>
               </div>
             </div>
             ))

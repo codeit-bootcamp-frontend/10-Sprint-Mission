@@ -1,5 +1,5 @@
 import { API_USEDS_GOODS_PRODUCTS } from "config/api";
-import { fetchData } from "hooks/fetchData";
+import { fetchData } from "api/fetchData";
 import { useEffect, useState } from "react";
 import styles from "./BestProducts.module.css";
 
@@ -21,7 +21,7 @@ const BestProducts = () => {
 
 
   return (
-    <div>
+    <div className={styles['container']}>
       <h3>베스트 상품</h3>
       {loading && <p>로딩 중...</p>}
       {error && <p>에러 발생</p>}

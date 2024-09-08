@@ -2,24 +2,24 @@
   width: 1200px;
 }
 
-.best-product-list {
+.all-product-list {
   display: flex;
 }
-.best-product {
+.all-product {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 282px;
-  height: 379px;
+  width: 221px;
+  height: 317px;
 }
 
-.best-product-info {
+.all-product-info {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
-.best-product-img {
-  width: 282px;
-  height: 282px;
+.all-product-img {
+  width: 220px;
+  height: 220px;
 }

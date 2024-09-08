@@ -1,7 +1,7 @@
 import { API_USEDS_GOODS_PRODUCTS } from "config/api";
-import { fetchData } from "hooks/fetchData";
+import { fetchData } from "api/fetchData";
 import { useEffect, useState } from "react";
-import styles from "./BestProducts.module.css";
+import styles from './AllProducts.module.css';
 
 const AllProducts = () => {
   const [data, setData] = useState([]);
@@ -10,7 +10,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     const asyncFetch = async () => {
-      const response = await fetchData(API_USEDS_GOODS_PRODUCTS,);
+      const response = await fetchData(API_USEDS_GOODS_PRODUCTS, {});
       setData(response.data.list);
       setLoading(response.loading);
       setError(response.error);
@@ -21,16 +21,16 @@ const AllProducts = () => {
 
 
   return (
-    <div>
-      <h3>베스트 상품</h3>
+    <div className={styles['container']}>
+      <h3>전체 상품</h3>
       {loading && <p>로딩 중...</p>}
       {error && <p>에러 발생</p>}
       {data && 
-        <div className={styles['best-product-list']}>
+        <div className={styles['all-product-list']}>
           {data.map((product) => (
-            <div key={product.id} className={styles['best-product']}>
-              <img className={styles['best-product-img']} src={product.images} alt="제품 이미지" />
-              <div className={styles['best-product-info']}>
+            <div key={product.id} className={styles['all-product']}>
+              <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
+              <div className={styles['all-product-info']}>
                 <p>{product.description}</p>
                 <p>{product.price}</p>
                 <p>{product.favoriteCount}</p>

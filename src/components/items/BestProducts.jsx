@@ -32,7 +32,7 @@ const BestProducts = () => {
               <img className={styles['best-product-img']} src={product.images} alt="제품 이미지" />
               <div className={styles['best-product-info']}>
                 <p>{product.name}</p>
-                <p>{product.price}</p>
+                <p>{Number(product.price)?.toLocaleString()}</p>
                 <p>{product.favoriteCount}</p>
               </div>
             </div>

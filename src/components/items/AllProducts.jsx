@@ -40,17 +40,21 @@ const AllProducts = () => {
           </div>
           <button className={styles['search-button']}>상품 등록하기</button>
           <div className={styles['search-dropdown']}>
-            <span>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'} /></span>
-            <ul>
-              <li>최신순</li>
-              <li>좋아요순</li>
-            </ul>
+            <span className={styles['search-dropdown-selected']} onClick={()=> {setIsDropdown(!isDropdown)}}>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'} /></span>
+            {
+              isDropdown &&
+              <ul className={styles['search-dropdown-list']}>
+                <li onClick={() => { setSortProduct('최신순'); setIsDropdown(!isDropdown) }}>최신순</li>
+                <li onClick={() => { setSortProduct('좋아요순'); setIsDropdown(!isDropdown) }}>좋아요순</li>
+              </ul>
+            }
           </div>
         </div>
       </div>
       {loading && <p>로딩 중...</p>}
       {error && <p>에러 발생</p>}
-      {data &&
+      {
+        data &&
         <div className={styles['all-product-list']}>
           {data.map((product) => (
             <div key={product.id} className={styles['all-product']}>

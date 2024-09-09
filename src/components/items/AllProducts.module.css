@@ -171,8 +171,10 @@
   border-radius: 40px;
   font-size: 15px;
   cursor: pointer;
+  user-select: none;
 }
 
 .pagination > span:hover {
+  transition: background-color 0.3s ease-out;
   background-color: var(--secondary-300);
 }

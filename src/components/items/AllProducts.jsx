@@ -66,7 +66,20 @@ const AllProducts = () => {
           </div>
           <button className={styles['search-button']}>상품 등록하기</button>
           <div className={styles['search-dropdown']}>
-            <span className={styles['search-dropdown-selected']} onClick={() => { setIsDropdown(!isDropdown) }}>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'} /></span>
+            <span 
+              className={styles['search-dropdown-selected']} 
+              onClick={() => { setIsDropdown(!isDropdown) }}
+            >
+              {sortProduct}
+              <DropdownArrowDown 
+                width={'24px'} 
+                height={'24px'}
+                style={{ 
+                  transition: 'transform 0.3s ease-out',
+                  transform: isDropdown ? 'rotate(180deg)' : 'rotate(0deg)' 
+                }}
+              />
+            </span>
             {
               isDropdown &&
               <ul className={styles['search-dropdown-list']}>
@@ -127,9 +140,7 @@ const AllProducts = () => {
               style={{
                 color: pageNumber === page ? '#f9fafb' : '#6b7280', 
                 backgroundColor: pageNumber === page ? '#2f80ed' : '#fff', 
-                border: pageNumber === page ? '' : ' 1px solid #e5e7eb;', 
-                userSelect:'none',
-                transition: 'background-color 0.2s linear',
+                border: pageNumber === page ? '' : ' 1px solid #e5e7eb;',
               }}
             >{page}</span>
           ))

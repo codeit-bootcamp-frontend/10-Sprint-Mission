@@ -1,0 +1,59 @@
+.Header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.header-container {
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.logo {
+  width: 150px;
+  height: 40px;
+  background-image: url('../assets/panda_logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 15px;
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .header-container {
+    padding: 10px 24px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nav-menu {
+    font-size: 16px;
+  }
+
+  .logo {
+    width: 80px;
+    height: 25px;
+    background-image: url('../assets/panda_logo_mobile.svg');
+  }
+}

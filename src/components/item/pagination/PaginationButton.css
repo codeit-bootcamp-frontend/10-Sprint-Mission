@@ -1,0 +1,24 @@
+.PaginationButton {
+  text-align: center;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 600;
+  color: var(--Secondary-500, #6b7280);
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+}
+
+.PaginationButton.active {
+  color: var(--Secondary-50, #f9fafb);
+  background-color: #2f80ed;
+  border: none;
+}
+
+.PaginationButton:disabled {
+  color: var(--Secondary-400);
+  cursor: auto;
+}

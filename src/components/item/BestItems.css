@@ -1,0 +1,30 @@
+.BestItems {
+  margin-bottom: 40px;
+}
+
+.BestItems-title {
+  color: var(--Secondary-900, #111827);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.BestItems-list {
+  margin: 16px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 24px;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .BestItems-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .BestItems-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

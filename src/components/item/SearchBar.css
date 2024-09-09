@@ -1,0 +1,34 @@
+.SearchBar {
+  width: 325px;
+  height: 42px;
+  padding: 9px 20px 9px 16px;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+  display: flex;
+  gap: 4px;
+}
+
+.SearchBar-input {
+  background: var(--Secondary-100, #f3f4f6);
+  width: 100%;
+}
+
+.SearchBar-input::placeholder {
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .SearchBar {
+    width: 242px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .SearchBar {
+    width: 285px;
+  }
+}

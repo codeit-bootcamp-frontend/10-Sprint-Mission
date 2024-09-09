@@ -1,0 +1,86 @@
+.SortDropdown {
+  width: 130px;
+  white-space: nowrap;
+  position: relative;
+  z-index: 10;
+}
+
+.SortDropdown-selected {
+  border-radius: 12px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  height: 42px;
+  padding: 12px 20px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.SortDropdown-arrow {
+  width: 24px;
+  height: 24px;
+  background-image: url('../../assets/ic_arrow_down.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.SortDropdown-options-container {
+  margin-top: 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+}
+
+.SortDropdown-options {
+  line-height: 42px;
+}
+
+.SortDropdown-options > li:first-child {
+  border-radius: 12px 12px 0px 0px;
+  height: 42px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+}
+
+.SortDropdown-options > li:last-child {
+  border-radius: 0px 0px 12px 12px;
+  height: 42px;
+  border-bottom: 1px solid var(--Secondary-200, #e5e7eb);
+  border-right: 1px solid var(--Secondary-200, #e5e7eb);
+  border-left: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+}
+
+.SortDropdown-options > li {
+  cursor: pointer;
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .SortDropdown {
+    width: auto;
+  }
+
+  .SortDropdown-arrow {
+    width: 24px;
+    height: 100%;
+    background-image: url('../../assets/ic_arrow_down_mobile.svg');
+  }
+
+  .SortDropdown-selected {
+    width: 42px;
+    display: block;
+    padding: 12px;
+  }
+
+  .SortDropdown-selected-value {
+    display: none;
+  }
+
+  .SortDropdown-options {
+    width: 140px;
+    transform: translateX(-70%);
+  }
+}

@@ -1,13 +1,50 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+:root {
+  --Primary-300: #1251aa;
+  --Primary-200: #1967d6;
+  --Primary-100: #3692ff;
+  --main-bg-color: #cfe5ff;
+  --Secondary-900: #111827;
+  --Secondary-800: #1f2937;
+  --Secondary-700: #374151;
+  --Secondary-600: #4b5563;
+  --Secondary-500: #6b7280;
+  --Secondary-400: #9ca3af;
+  --Secondary-200: #e5e7eb;
+  --Secondary-100: #f3f4f6;
+  --Secondary-50: #f9fafb;
+  --error-red: #f74747;
+  --size-max-width: 1140px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  font-family: 'Pretendard', sans-serif;
+}
+
+header {
+  background-color: #fff;
+}
+
+footer {
+  background-color: var(--Secondary-900);
+}
+
+.max-container {
+  max-width: var(--size-max-width);
+  margin: auto;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .max-container {
+    max-width: 760px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .max-container {
+    max-width: 340px;
+  }
 }

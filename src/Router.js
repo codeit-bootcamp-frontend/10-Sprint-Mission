@@ -7,13 +7,14 @@ import {
 } from "react-router-dom";
 
 import Layout from "./components/Layout";
+import ItemListPage from "./pages/secondhand/ItemListPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <Route element={<Layout />}>
         <Route index element={<h1>홈페이지</h1>} />
-        <Route path="items" element={<h1>중고마켓</h1>} />
+        <Route path="items" element={<ItemListPage />} />
       </Route>
       <Route element={<Outlet />}>
         <Route path="login" element={<h1>로그인</h1>} />

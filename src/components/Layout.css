@@ -56,10 +56,10 @@
   }
 }
 
-.header__profile {
-  width: 40px;
+.header__navItem--active {
+  color: var(--blue-100);
 }
 
-.main {
-  margin-top: 70px;
+.header__profile {
+  width: 40px;
 }

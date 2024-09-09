@@ -17,14 +17,19 @@ const AllProducts = () => {
   const [sortProduct, setSortProduct] = useState('최신순');
   const [isDropdown, setIsDropdown] = useState(false);
   const [isEmptyHeart, setIsEmptyHeart] = useState(true);
+  const [pageNumber , setPageNumber] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
 
   useEffect(() => {
     const asyncFetch = async () => {
-      const response = await fetchData(API_USEDS_GOODS_PRODUCTS, {});
-      setLatestData(response.data.list);
-      setFavoriteData([...response.data.list].sort((a, b) => b.favoriteCount - a.favoriteCount));
-      setLoading(response.loading);
-      setError(response.error);
+      const response1 = await fetchData(API_USEDS_GOODS_PRODUCTS);
+      const totalCount = response1.data.totalCount;
+      setTotalPage(Math.ceil(totalCount / 10));
+      const response2 = await fetchData(API_USEDS_GOODS_PRODUCTS, {pageSize: totalCount});
+      setLatestData(response2.data.list);
+      setFavoriteData([...response2.data.list].sort((a, b) => b.favoriteCount - a.favoriteCount));
+      setLoading(response2.loading);
+      setError(response2.error);
     }
 
     asyncFetch();
@@ -60,7 +65,7 @@ const AllProducts = () => {
         <div className={styles['all-product-list']}>
           {
             sortProduct === "최신순" &&
-            latestData.map((product) => (
+            latestData.slice((pageNumber - 1) * 10, pageNumber * 10).map((product) => (
               <div key={product.id} className={styles['all-product']}>
                 <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
                 <div className={styles['all-product-info']}>
@@ -73,7 +78,7 @@ const AllProducts = () => {
           }
           {
             sortProduct === "좋아요순" &&
-            favoriteData.map((product) => (
+            favoriteData.slice((pageNumber - 1) * 10, pageNumber * 10).map((product) => (
               <div key={product.id} className={styles['all-product']}>
                 <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
                 <div className={styles['all-product-info']}>
@@ -88,11 +93,11 @@ const AllProducts = () => {
       }
       <div className={styles['pagination']}>
         <span><PageArrowLeft /></span>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
+        {
+          Array.from({ length: totalPage }, (_, i) => i + 1).map((page) => (
+            <span key={page} onClick={() => { setPageNumber(page) }}>{page}</span>
+          ))
+        }
         <span><PageArrowRight /></span>
       </div>
     </div>

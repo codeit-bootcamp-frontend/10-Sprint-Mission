@@ -10,7 +10,8 @@ import { ReactComponent as FillHeart } from 'assets/imgs/fill_heart.svg';
 import { ReactComponent as SearchIcon } from 'assets/imgs/ic_search.svg';
 
 const AllProducts = () => {
-  const [data, setData] = useState([]);
+  const [latestData, setLatestData] = useState([]);
+  const [favoriteData, setFavoriteData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [sortProduct, setSortProduct] = useState('최신순');
@@ -20,7 +21,8 @@ const AllProducts = () => {
   useEffect(() => {
     const asyncFetch = async () => {
       const response = await fetchData(API_USEDS_GOODS_PRODUCTS, {});
-      setData(response.data.list);
+      setLatestData(response.data.list);
+      setFavoriteData([...response.data.list].sort((a, b) => b.favoriteCount - a.favoriteCount));
       setLoading(response.loading);
       setError(response.error);
     }
@@ -40,7 +42,7 @@ const AllProducts = () => {
           </div>
           <button className={styles['search-button']}>상품 등록하기</button>
           <div className={styles['search-dropdown']}>
-            <span className={styles['search-dropdown-selected']} onClick={()=> {setIsDropdown(!isDropdown)}}>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'} /></span>
+            <span className={styles['search-dropdown-selected']} onClick={() => { setIsDropdown(!isDropdown) }}>{sortProduct}<DropdownArrowDown width={'24px'} height={'24px'} /></span>
             {
               isDropdown &&
               <ul className={styles['search-dropdown-list']}>
@@ -54,18 +56,33 @@ const AllProducts = () => {
       {loading && <p>로딩 중...</p>}
       {error && <p>에러 발생</p>}
       {
-        data &&
+        latestData &&
         <div className={styles['all-product-list']}>
-          {data.map((product) => (
-            <div key={product.id} className={styles['all-product']}>
-              <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
-              <div className={styles['all-product-info']}>
-                <p className={styles['product-title']}>{product.name}</p>
-                <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
+          {
+            sortProduct === "최신순" &&
+            latestData.map((product) => (
+              <div key={product.id} className={styles['all-product']}>
+                <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
+                <div className={styles['all-product-info']}>
+                  <p className={styles['product-title']}>{product.name}</p>
+                  <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
+                  <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
+                </div>
               </div>
-            </div>
-          ))
+            ))
+          }
+          {
+            sortProduct === "좋아요순" &&
+            favoriteData.map((product) => (
+              <div key={product.id} className={styles['all-product']}>
+                <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
+                <div className={styles['all-product-info']}>
+                  <p className={styles['product-title']}>{product.name}</p>
+                  <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
+                  <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
+                </div>
+              </div>
+            ))
           }
         </div>
       }

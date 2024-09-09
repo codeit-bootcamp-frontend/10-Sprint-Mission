@@ -125,7 +125,7 @@ input {
 }
 
 input:focus {
-  outline: 4px solid var(--primary-100);
+  outline: 3px solid var(--primary-100);
 }
 
 input::placeholder {

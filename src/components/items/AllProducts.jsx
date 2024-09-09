@@ -34,7 +34,7 @@ const AllProducts = () => {
         if (product.name !== '상품 이름' || !product.name) {
           return true;
         } else {
-          setTotalCount((prev) => prev - 1);
+          setTotalCount(totalCount-1);
           return false;
         }
       });

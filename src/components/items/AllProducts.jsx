@@ -8,6 +8,7 @@ import { ReactComponent as PageArrowRight } from 'assets/imgs/arrow_right.svg';
 import { ReactComponent as EmptyHeart } from 'assets/imgs/empty_heart.svg';
 import { ReactComponent as FillHeart } from 'assets/imgs/fill_heart.svg';
 import { ReactComponent as SearchIcon } from 'assets/imgs/ic_search.svg';
+import { ReactComponent as SortIcon } from 'assets/imgs/ic_sort.svg';
 import { Link } from "react-router-dom";
 
 const AllProducts = () => {
@@ -93,15 +94,23 @@ const AllProducts = () => {
               className={styles['search-dropdown-selected']} 
               onClick={() => { setIsDropdown(!isDropdown) }}
             >
-              {sortProduct}
-              <DropdownArrowDown 
-                width={'24px'} 
-                height={'24px'}
-                style={{ 
-                  transition: 'transform 0.3s ease-out',
-                  transform: isDropdown ? 'rotate(180deg)' : 'rotate(0deg)' 
-                }}
-              />
+              {
+                responsiveAllProductCount !== 4 ? (
+                <>
+                  {sortProduct}
+                  <DropdownArrowDown 
+                    width={'24px'} 
+                    height={'24px'}
+                    style={{ 
+                      transition: 'transform 0.3s ease-out',
+                      transform: isDropdown ? 'rotate(180deg)' : 'rotate(0deg)' 
+                    }}
+                  />
+                </>)
+                :
+                <SortIcon />
+              }
+
             </span>
             {
               isDropdown &&

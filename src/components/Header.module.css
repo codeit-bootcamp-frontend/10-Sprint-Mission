@@ -25,7 +25,7 @@
   align-items: center;
 }
 
-.header-nav p {
+.header-nav > * {
   color: var(--secondary-600);
   font-size: 18px;
   font-style: normal;
@@ -34,9 +34,14 @@
   padding: 21px 15px;
 }
 
+.active {
+  color: var(--blue);
+}
+
 .user-icon {
   cursor: pointer;
 }
+
 
 @media (min-width: 768px) and (max-width: 1199px) {
   .header {

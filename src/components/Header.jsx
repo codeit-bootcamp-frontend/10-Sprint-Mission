@@ -1,5 +1,5 @@
 import {ReactComponent as Logo} from 'assets/imgs/logo_sm.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 import {ReactComponent as UserIcon} from 'assets/imgs/user_icon.svg';
 import { useState } from 'react';
@@ -13,8 +13,22 @@ const Header = () => {
           <div className={styles['header-container']}>
             <Link to="/"><Logo/></Link>
             <nav className={styles['header-nav']}>
-              <Link to="/free"><p>자유게시판</p></Link>
-              <Link to="/goods"><p>중고마켓</p></Link>
+              <NavLink 
+                to="/free"
+                className={({ isActive }) =>
+                  isActive ? `${styles['nav-link']} ${styles['active']}` : styles['nav-link']
+                } 
+              >
+                자유게시판
+              </NavLink>
+              <NavLink 
+                to="/items"
+                className={({ isActive }) =>
+                  isActive ? `${styles['nav-link']} ${styles['active']}` : styles['nav-link']
+                }
+              >
+                중고마켓
+              </NavLink>
             </nav>
             <UserIcon className={styles['user-icon']}/>
           </div>

@@ -17,16 +17,17 @@ const AllProducts = () => {
   const [sortProduct, setSortProduct] = useState('최신순');
   const [isDropdown, setIsDropdown] = useState(false);
   const [isEmptyHeart, setIsEmptyHeart] = useState(true);
-  const [pageNumber , setPageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+  const [maxVisiblePage, setMaxVisiblePage] = useState(5);
 
   useEffect(() => {
     const asyncFetch = async () => {
       const response1 = await fetchData(API_USEDS_GOODS_PRODUCTS);
       let totalCount = response1.data.totalCount;
-      const response2 = await fetchData(API_USEDS_GOODS_PRODUCTS, {pageSize: totalCount});
+      const response2 = await fetchData(API_USEDS_GOODS_PRODUCTS, { pageSize: totalCount });
       const responseFiltered = response2.data.list.filter((product) => {
-        if(product.name !== '상품 이름' || !product.name) {
+        if (product.name !== '상품 이름' || !product.name) {
           return true;
         } else {
           totalCount -= 1;
@@ -35,7 +36,7 @@ const AllProducts = () => {
       });
       setTotalPage(Math.ceil(totalCount / 10));
       setLatestData(responseFiltered);
-      setFavoriteData([...response2.data.list].sort((a, b) => b.favoriteCount - a.favoriteCount));
+      setFavoriteData([...responseFiltered].sort((a, b) => b.favoriteCount - a.favoriteCount));
       setLoading(response2.loading);
       setError(response2.error);
     }
@@ -43,6 +44,16 @@ const AllProducts = () => {
     asyncFetch();
   }, []);
 
+  const getVisiblePages = () => {
+    const startPage = Math.max(1, pageNumber - Math.floor(maxVisiblePage / 2));
+    const endPage = Math.min(totalPage, startPage + maxVisiblePage - 1);
+
+    if (endPage - startPage < maxVisiblePage - 1) {
+      return Array.from({ length: maxVisiblePage }, (_, i) => i + startPage).filter((page) => page <= totalPage);
+    }
+
+    return Array.from({ length: endPage - startPage + 1 }, (_, i) => i + startPage);
+  };
 
   return (
     <div className={styles['container']}>
@@ -99,14 +110,34 @@ const AllProducts = () => {
           }
         </div>
       }
+
       <div className={styles['pagination']}>
-        <span><PageArrowLeft /></span>
+        <span 
+          onClick={() => setPageNumber(prev => Math.max(1, prev - 1))} 
+          role="button"
+          style={{ cursor: pageNumber === 1 ? 'not-allowed' : 'pointer' }}
+        ><PageArrowLeft /></span>
         {
-          Array.from({ length: totalPage }, (_, i) => i + 1).map((page) => (
-            <span key={page} onClick={() => { setPageNumber(page) }}>{page}</span>
+          getVisiblePages().map((page) => (
+            <span 
+              key={page} 
+              onClick={() => { setPageNumber(page) }} 
+              style={{
+                color: pageNumber === page ? '#f9fafb' : '#6b7280', 
+                backgroundColor: pageNumber === page ? '#2f80ed' : '#fff', 
+                border: pageNumber === page ? '' : ' 1px solid #e5e7eb;', 
+                userSelect:'none'
+              }}
+            >{page}</span>
           ))
         }
-        <span><PageArrowRight /></span>
+        <span 
+          onClick={() => setPageNumber(prev => Math.min(totalPage, prev + 1))} 
+          role="button" 
+          style={{ 
+            cursor: pageNumber === totalPage ? 'not-allowed' : 'pointer' 
+          }}
+        ><PageArrowRight /></span>
       </div>
     </div>
   )

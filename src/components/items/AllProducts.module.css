@@ -161,7 +161,7 @@
   margin-bottom: 58px;
 }
 
-.pagination > span {
+.pagination span {
   width: 40px;
   height: 40px;
   display: flex;
@@ -171,4 +171,8 @@
   border-radius: 40px;
   font-size: 15px;
   cursor: pointer;
+}
+
+.pagination > span:hover {
+  background-color: var(--secondary-300);
 }

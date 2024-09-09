@@ -121,12 +121,15 @@ const AllProducts = () => {
           getVisiblePages().map((page) => (
             <span 
               key={page} 
-              onClick={() => { setPageNumber(page) }} 
+              onClick={() => { setPageNumber(page) }}
+              onMouseEnter={(e) => e.target.style.backgroundColor = pageNumber !== page ? '#e5e7eb' : '#2f80ed'}
+              onMouseLeave={(e) => e.target.style.backgroundColor = pageNumber !== page ? '#fff' : '#2f80ed'}
               style={{
                 color: pageNumber === page ? '#f9fafb' : '#6b7280', 
                 backgroundColor: pageNumber === page ? '#2f80ed' : '#fff', 
                 border: pageNumber === page ? '' : ' 1px solid #e5e7eb;', 
-                userSelect:'none'
+                userSelect:'none',
+                transition: 'background-color 0.2s linear',
               }}
             >{page}</span>
           ))

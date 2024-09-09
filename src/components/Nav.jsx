@@ -1,8 +1,14 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Container from './Container';
 import styles from './Nav.module.css';
 import logoImg from '../assets/images/logo-sm.png';
 import profileImg from '../assets/images/ic-profile.svg';
+
+function getLinkStyle({ isActive }) {
+  return {
+    color: isActive ? '#3692ff' : undefined,
+  };
+}
 
 function Nav() {
   return (
@@ -15,7 +21,9 @@ function Nav() {
           <ul className={styles.menu}>
             <li>자유게시판</li>
             <li>
-              <Link to='/items'>중고마켓</Link>
+              <NavLink to='/items' style={getLinkStyle}>
+                중고마켓
+              </NavLink>
             </li>
           </ul>
         </div>

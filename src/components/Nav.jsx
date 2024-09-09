@@ -1,0 +1,32 @@
+import { Link } from 'react-router-dom';
+import Container from './Container';
+import styles from './Nav.module.css';
+import logoImg from '../assets/images/logo-sm.png';
+import profileImg from '../assets/images/ic-profile.svg';
+
+function Nav() {
+  return (
+    <div className={styles.nav}>
+      <Container className={styles.container}>
+        <div className={styles.menuList}>
+          <Link to='/'>
+            <img src={logoImg} alt='판다마켓 로고' />
+          </Link>
+          <ul className={styles.menu}>
+            <li>자유게시판</li>
+            <li>
+              <Link to='/items'>중고마켓</Link>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.profile}>
+          <Link to={''}>
+            <img src={profileImg} alt='프로필 이미지' />
+          </Link>
+        </div>
+      </Container>
+    </div>
+  );
+}
+
+export default Nav;

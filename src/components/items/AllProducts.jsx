@@ -21,6 +21,8 @@ const AllProducts = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [maxVisiblePage, setMaxVisiblePage] = useState(5);
+  const [responsiveAllProductCount, setResponsiveAllProductCount] = useState(10);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
     const asyncFetch = async () => {
@@ -31,11 +33,10 @@ const AllProducts = () => {
         if (product.name !== '상품 이름' || !product.name) {
           return true;
         } else {
-          totalCount -= 1;
+          setTotalCount((prev) => prev - 1);
           return false;
         }
       });
-      setTotalPage(Math.ceil(totalCount / 10));
       setLatestData(responseFiltered);
       setFavoriteData([...responseFiltered].sort((a, b) => b.favoriteCount - a.favoriteCount));
       setLoading(response2.loading);
@@ -44,6 +45,27 @@ const AllProducts = () => {
 
     asyncFetch();
   }, []);
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setResponsiveAllProductCount(4);
+      } else if (window.innerWidth < 1200) {
+        setResponsiveAllProductCount(6);
+      } else {
+        setResponsiveAllProductCount(10);
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    setTotalPage(Math.ceil(totalCount / responsiveAllProductCount));
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    }
+  }, [responsiveAllProductCount, totalCount]);
+      
 
   const getVisiblePages = () => {
     const startPage = Math.max(1, pageNumber - Math.floor(maxVisiblePage / 2));
@@ -98,7 +120,7 @@ const AllProducts = () => {
         <div className={styles['all-product-list']}>
           {
             sortProduct === "최신순" &&
-            latestData.slice((pageNumber - 1) * 10, pageNumber * 10).map((product) => (
+            latestData.slice((pageNumber - 1) * responsiveAllProductCount, pageNumber * responsiveAllProductCount).map((product) => (
               <div key={product.id} className={styles['all-product']}>
                 <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
                 <div className={styles['all-product-info']}>
@@ -111,7 +133,7 @@ const AllProducts = () => {
           }
           {
             sortProduct === "좋아요순" &&
-            favoriteData.slice((pageNumber - 1) * 10, pageNumber * 10).map((product) => (
+            favoriteData.slice((pageNumber - 1) * responsiveAllProductCount, pageNumber * responsiveAllProductCount).map((product) => (
               <div key={product.id} className={styles['all-product']}>
                 <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
                 <div className={styles['all-product-info']}>

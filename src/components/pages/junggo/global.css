@@ -1,0 +1,21 @@
+.bestProductsContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.bestProducts {
+  margin-bottom: 20px;
+}
+
+.allProducts {
+  margin: 20px 50px;
+}
+
+.allProductsContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px 10px;
+  padding: 0;
+  margin: 0;
+}

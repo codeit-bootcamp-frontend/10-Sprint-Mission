@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
-import BestProductCss from "./BestProducts.css";
+import "./global.css";
 
 function BestProducts({ products }) {
   const [bestProducts, setBestProducts] = useState([]);

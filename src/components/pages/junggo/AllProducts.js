@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import ItemCard from "./ItemCard";
 import BestProducts from "./BestProducts";
 import { getProducts } from "../../../services/itemApi";
-import "./AllProducts.css";
+import "./global.css";
 
 function AllProducts() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    getProducts()
-      .then((data) => setProducts(data.list))
-      .catch((error) => console.error("Product fetching error:", error));
+    getProducts().then((data) => setProducts(data.list));
   }, []);
 
   return (

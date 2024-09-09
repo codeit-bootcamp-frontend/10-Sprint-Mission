@@ -145,7 +145,7 @@ const AllProducts = () => {
               style={{
                 color: pageNumber === page ? '#f9fafb' : '#6b7280', 
                 backgroundColor: pageNumber === page ? '#2f80ed' : '#fff', 
-                border: pageNumber === page ? '' : ' 1px solid #e5e7eb;',
+                border: pageNumber === page ? '' : '1px solid #e5e7eb',
               }}
             >{page}</span>
           ))

@@ -108,7 +108,7 @@ const AllProducts = () => {
                   />
                 </>)
                 :
-                <SortIcon />
+                <SortIcon className={styles['sort-icon']}/>
               }
 
             </span>

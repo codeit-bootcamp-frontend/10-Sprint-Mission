@@ -268,4 +268,13 @@
     margin-top: 40px;
     margin-bottom: 35px;
   }
+
+  .sort-icon {
+    transition: background-color 0.3s ease-out;
+    cursor: pointer;
+  }
+  
+  .sort-icon:hover {
+    background-color: var(--secondary-300);
+  }
 }

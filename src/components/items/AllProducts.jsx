@@ -23,10 +23,18 @@ const AllProducts = () => {
   useEffect(() => {
     const asyncFetch = async () => {
       const response1 = await fetchData(API_USEDS_GOODS_PRODUCTS);
-      const totalCount = response1.data.totalCount;
-      setTotalPage(Math.ceil(totalCount / 10));
+      let totalCount = response1.data.totalCount;
       const response2 = await fetchData(API_USEDS_GOODS_PRODUCTS, {pageSize: totalCount});
-      setLatestData(response2.data.list);
+      const responseFiltered = response2.data.list.filter((product) => {
+        if(product.name !== '상품 이름' || !product.name) {
+          return true;
+        } else {
+          totalCount -= 1;
+          return false;
+        }
+      });
+      setTotalPage(Math.ceil(totalCount / 10));
+      setLatestData(responseFiltered);
       setFavoriteData([...response2.data.list].sort((a, b) => b.favoriteCount - a.favoriteCount));
       setLoading(response2.loading);
       setError(response2.error);

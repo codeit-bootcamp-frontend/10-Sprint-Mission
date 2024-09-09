@@ -46,13 +46,13 @@
   cursor: pointer;
 }
 
-@media(min-width: 1920px) {
+@media (min-width: 1920px) {
   .header {
     padding: 9px 400px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (max-width: 1199px) {
   .header {
     padding: 10px 24px 9px;
     border-bottom: 1px #dfdfdf;

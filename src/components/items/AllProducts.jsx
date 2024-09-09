@@ -8,6 +8,7 @@ import { ReactComponent as PageArrowRight } from 'assets/imgs/arrow_right.svg';
 import { ReactComponent as EmptyHeart } from 'assets/imgs/empty_heart.svg';
 import { ReactComponent as FillHeart } from 'assets/imgs/fill_heart.svg';
 import { ReactComponent as SearchIcon } from 'assets/imgs/ic_search.svg';
+import { Link } from "react-router-dom";
 
 const AllProducts = () => {
   const [latestData, setLatestData] = useState([]);
@@ -64,7 +65,7 @@ const AllProducts = () => {
             <SearchIcon className={styles['search-icon']} />
             <input className={styles['search-input']} type="text" placeholder="검색할 상품을 입력해주세요" />
           </div>
-          <button className={styles['search-button']}>상품 등록하기</button>
+          <Link to='/additem'><button className={styles['search-button']}>상품 등록하기</button></Link>
           <div className={styles['search-dropdown']}>
             <span 
               className={styles['search-dropdown-selected']} 

@@ -103,7 +103,7 @@
   top: 50px;
 }
 
-.search-dropdown-list > li {
+.search-dropdown-list>li {
   padding-top: 9px;
   padding-bottom: 7px;
   font-size: 16px;
@@ -115,7 +115,7 @@
   user-select: none;
 }
 
-.search-dropdown-list > li:hover {
+.search-dropdown-list>li:hover {
   background-color: var(--secondary-300);
 }
 
@@ -146,7 +146,7 @@
   gap: 4px;
 }
 
-.product-heart-img > svg {
+.product-heart-img>svg {
   width: 16px;
   height: 16px;
   cursor: pointer;
@@ -167,14 +167,105 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid var(--Cool-Gray-200, #E5E7EB);;
+  border: 1px solid var(--Cool-Gray-200, #E5E7EB);
+  ;
   border-radius: 40px;
   font-size: 15px;
   cursor: pointer;
   user-select: none;
 }
 
-.pagination > span:hover {
+.pagination>span:hover {
   transition: background-color 0.3s ease-out;
   background-color: var(--secondary-300);
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding: 0 24px;
+  }
+
+  .all-product-list {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 16px;
+  }
+
+  .all-product {
+    width: 100%;
+    flex: 1 1 30%;
+  }
+
+  .all-product-info {
+    width: 100%;
+    flex: 1 1 30%;
+  }
+
+  .all-product-img {
+    width: 100%;
+    flex: 1 1 30%;
+    border-radius: 12.9px;
+  }
+
+  .search-input {
+    width: 242px;
+    padding: 9px 16px 9px 20px;
+  }
+
+  .pagination {
+    margin-top: 40px;
+    margin-bottom: 72px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding: 0 16px;
+    max-width: 400px;
+  }
+
+  .all-product-list {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  .all-product {
+    width: 100%;
+    flex: 1 1 45%;
+    height: 264px;
+  }
+
+  .all-product-info {
+    width: 100%;
+    flex: 1 1 45%;
+  }
+
+  .all-product-img {
+    width: 100%;
+    flex: 1 1 45%;
+    height: 167px;
+    border-radius: 9.82px;
+  }
+
+  .title-container {
+    margin-bottom: 16px;
+  }
+
+  .search-container {
+    display: flex;
+    gap: 14px;
+  }
+
+  .search-input {
+    width: 288px;
+    height: 42px;
+    padding: 9px 16px 9px 20px;
+  }
+
+  .pagination {
+    margin-top: 40px;
+    margin-bottom: 35px;
+  }
 }

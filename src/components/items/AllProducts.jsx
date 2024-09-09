@@ -129,7 +129,11 @@ const AllProducts = () => {
         <span 
           onClick={() => setPageNumber(prev => Math.max(1, prev - 1))} 
           role="button"
-          style={{ cursor: pageNumber === 1 ? 'not-allowed' : 'pointer' }}
+          style={{ 
+            cursor: pageNumber === 1 ? 'not-allowed' : 'pointer',
+            opacity: pageNumber === 1 ? '0.3' : '1',
+            transition: 'opacity 0.3s ease-out'
+          }}
         ><PageArrowLeft /></span>
         {
           getVisiblePages().map((page) => (
@@ -150,7 +154,9 @@ const AllProducts = () => {
           onClick={() => setPageNumber(prev => Math.min(totalPage, prev + 1))} 
           role="button" 
           style={{ 
-            cursor: pageNumber === totalPage ? 'not-allowed' : 'pointer' 
+            cursor: pageNumber === totalPage ? 'not-allowed' : 'pointer',
+            opacity: pageNumber === totalPage ? '0.3' : '1',
+            transition: 'opacity 0.3s ease-out'
           }}
         ><PageArrowRight /></span>
       </div>

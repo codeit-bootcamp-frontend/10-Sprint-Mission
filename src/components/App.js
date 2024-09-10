@@ -1,13 +1,12 @@
-import { useState, useEffect } from "react";
-import { getItems } from "../api";
+import Nav from "./Nav";
+import Footer from "./Footer";
 
-function App() {
+function App({ children }) {
   return (
     <div>
-      <Header></Header>
-      <div>
-        
-      </div>
+      <Nav></Nav>
+      <div>{children}</div>
+      <Footer></Footer>
     </div>
   );
 }

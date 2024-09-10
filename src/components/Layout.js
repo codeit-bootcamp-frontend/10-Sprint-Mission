@@ -1,10 +1,18 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 
+import { useMediaQuery } from "../hooks/useMediaQuery";
+import logo from "../assets/logo_w153x3.png";
+import logoText from "../assets/logo_w81x3.png";
 import profileImage from "../assets/profile_image_w40x3.png";
 import "./Layout.css";
 
 export default function Layout() {
   const { pathname } = useLocation();
+  const media = useMediaQuery();
+
+  const getLogo = (media) => {
+    return media !== "MOBLE" ? logo : logoText;
+  };
 
   const checkPath = (path) => {
     return pathname === path ? "header__navItem--active" : undefined;
@@ -13,7 +21,13 @@ export default function Layout() {
   return (
     <>
       <header className="header">
-        <Link className="header__logo" to="/" aria-label="판다마켓 바로가기" />
+        <Link to="/">
+          <img
+            className="header__logo"
+            src={getLogo(media)}
+            alt="판다마켓 바로가기"
+          />
+        </Link>
         <nav className="header__nav">
           <ul className="header__navList">
             <li className={checkPath("/boards")}>

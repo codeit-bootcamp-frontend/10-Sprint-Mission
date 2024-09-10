@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import Item from "./Item";
@@ -11,16 +11,18 @@ import { getProducts } from "../../apis/apis.js";
 const pageSizeTable = { PC: 10, TABLET: 6, MOBILE: 4 };
 
 export default function AllItemList() {
-  const [media] = useMediaQuery();
-  const [page, setPage] = useState(1);
-  const [orderBy, setOrderBy] = useState("recent");
-  const [search, setSearch] = useState(undefined);
-  const [isLoading, error, data] = useApi(getProducts, {
-    page,
+  const media = useMediaQuery();
+  const [paramObj, setParamObj] = useState({
+    page: 1,
     pageSize: pageSizeTable[media],
-    orderBy,
-    search,
+    orderBy: "recent",
+    search: undefined,
   });
+  const [isLoading, error, data] = useApi(getProducts, paramObj);
+
+  useEffect(() => {
+    setParamObj((prevObj) => ({ ...prevObj, pageSize: pageSizeTable[media] }));
+  }, [media]);
 
   return (
     <section>

@@ -7,9 +7,9 @@ export async function getProducts({
   keyword,
 }) {
   const url = new URL("products", baseUrl);
-  const params = { page, pageSize, orderBy };
-  if (keyword) params.append("keyword", keyword);
-  url.search = new URLSearchParams(params);
+  const paramObj = { page, pageSize, orderBy };
+  if (keyword) paramObj.append("keyword", keyword);
+  url.search = new URLSearchParams(paramObj);
 
   const response = await fetch(url);
   if (!response.ok) throw Error(`${response.status}: ${response.statusText}`);

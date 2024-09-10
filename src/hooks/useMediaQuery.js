@@ -19,5 +19,5 @@ export function useMediaQuery() {
     };
   }, []);
 
-  return [media];
+  return media;
 }

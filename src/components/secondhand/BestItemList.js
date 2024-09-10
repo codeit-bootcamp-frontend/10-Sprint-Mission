@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 import Item from "./Item";
 
 import { useMediaQuery } from "../../hooks/useMediaQuery.js";
@@ -7,11 +9,16 @@ import { getProducts } from "../../apis/apis.js";
 const pageSizeTable = { PC: 4, TABLET: 2, MOBILE: 1 };
 
 export default function BestItemList() {
-  const [media] = useMediaQuery();
-  const [isLoading, error, data] = useApi(getProducts, {
+  const media = useMediaQuery();
+  const [paramObj, setParamObj] = useState({
     pageSize: pageSizeTable[media],
     orderBy: "favorite",
   });
+  const [isLoading, error, data] = useApi(getProducts, paramObj);
+
+  useEffect(() => {
+    setParamObj({ pageSize: pageSizeTable[media], orderBy: "favorite" });
+  }, [media]);
 
   return (
     <section>

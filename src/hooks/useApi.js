@@ -1,17 +1,17 @@
 import { useState, useCallback, useEffect } from "react";
 
-export function useApi(asyncFunc, ...params) {
+export function useApi(asyncFunc, paramObj) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
   const wrrapedFunc = useCallback(
-    async (...params) => {
+    async (paramObj) => {
       let result;
       try {
         setIsLoading(true);
         setError(null);
-        result = await asyncFunc(...params);
+        result = await asyncFunc(paramObj);
         setData(result);
       } catch (error) {
         setError(error);
@@ -24,8 +24,8 @@ export function useApi(asyncFunc, ...params) {
   );
 
   useEffect(() => {
-    wrrapedFunc(...params);
-  }, []);
+    wrrapedFunc(paramObj);
+  }, [wrrapedFunc, paramObj]);
 
   return [isLoading, error, data];
 }

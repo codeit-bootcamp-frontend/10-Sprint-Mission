@@ -26,15 +26,10 @@
 
 .header__logo {
   width: 153px;
-  height: 51px;
-  background-image: url("../assets/logo_w153x3.png");
-  background-size: contain;
 }
 @media (max-width: 767px) {
   .header__logo {
     width: 81px;
-    height: 27px;
-    background-image: url("../assets/logo_w81x3.png");
   }
 }
 

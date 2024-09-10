@@ -1,7 +1,14 @@
-function HomePage () {
+import BestItem from '../components/BestItem';
+import Container from '../components/Container';
+import styles from './HomePage.module.css';
+
+function HomePage() {
   return (
-    <>홈페이지</>
-  )
+    <Container>
+      <BestItem className={styles.container} />
+      {/* <ItemList /> */}
+    </Container>
+  );
 }
 
-export default HomePage
+export default HomePage;

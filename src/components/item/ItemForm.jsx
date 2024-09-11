@@ -4,6 +4,7 @@ import InputBar from '../InputBar';
 import PrimaryButton from '../PrimaryButton';
 import TextareaBar from '../TextareaBar';
 import TagCard from './TagCard';
+import plusIcon from '../../assets/ic_plus.svg';
 
 function ItemForm() {
   const [formData, setFormData] = useState({
@@ -13,12 +14,33 @@ function ItemForm() {
     tags: [],
   });
 
+  const isFormComplete = () => {
+    return (
+      formData.title.trim() !== '' &&
+      formData.description.trim() !== '' &&
+      formData.price.trim() !== ''
+    );
+  };
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleTagKeyDown = (e) => {
+    if (e.keyCode === 13) {
+      const currentTag = e.target.value;
+
+      setFormData((prevData) => ({
+        ...prevData,
+        tags: [...prevData.tags, currentTag],
+      }));
+
+      e.target.value = '';
+    }
   };
 
   const handleOnSubmit = (e) => {
@@ -29,9 +51,18 @@ function ItemForm() {
     <div className="ItemForm">
       <div className="ItemForm-title-wrapper">
         <h3 className="ItemForm-title">상품 등록하기</h3>
-        <PrimaryButton onClick={handleOnSubmit} disable={true}>
+        <PrimaryButton onClick={handleOnSubmit} disable={!isFormComplete()}>
           등록
         </PrimaryButton>
+      </div>
+      <div>
+        <label htmlFor="file">
+          <div className="btn-upload">
+            <img src={plusIcon} alt="플러스 아이콘" />
+            <span className="btn-upload-description">이미지 등록</span>
+          </div>
+        </label>
+        <input type="file" name="file" id="file" />
       </div>
       <InputBar
         label="상품명"
@@ -60,15 +91,15 @@ function ItemForm() {
       <div>
         <InputBar
           label="태그"
-          inputId="tags"
-          name="tags"
-          value={formData?.tags}
+          inputId="tag"
+          name="tag"
           placeholder="태그를 입력해주세요"
-          onChange={handleChange}
+          onKeyDown={handleTagKeyDown}
         />
         <div className="ItemForm-tags-wrapper">
-          <TagCard name="티셔츠" />
-          <TagCard name="상의" />
+          {formData.tags.map((tag, index) => (
+            <TagCard key={index} name={tag} />
+          ))}
         </div>
       </div>
     </div>

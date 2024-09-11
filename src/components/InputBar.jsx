@@ -7,9 +7,15 @@ function InputBar({
   name,
   value,
   placeholder,
-  onChange,
   disabled = false,
+  onChange,
+  onKeyDown,
 }) {
+  const eventProps = {
+    ...(onKeyDown && { onKeyDown }),
+    ...(onChange && { onChange }),
+  };
+
   return (
     <div className="InputBar">
       {label && (
@@ -18,14 +24,14 @@ function InputBar({
         </label>
       )}
       <input
+        className="InputBar-input"
         type={type}
         id={inputId}
         name={name}
         value={value}
-        className="InputBar-input"
-        onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}
+        {...eventProps}
       />
     </div>
   );

@@ -7,6 +7,7 @@ import PagenationBar from "./PagenationBar";
 import { useMediaQuery } from "../../hooks/useMediaQuery.js";
 import { useApi } from "../../hooks/useApi.js";
 import { getProducts } from "../../apis/apis.js";
+import "./AllItemList.css";
 
 const pageSizeTable = { PC: 10, TABLET: 6, MOBILE: 4 };
 
@@ -25,9 +26,9 @@ export default function AllItemList() {
   }, [media]);
 
   return (
-    <section>
-      <div>
-        <h2>전체 상품</h2>
+    <section className="allItemList">
+      <div className="allItemList__head">
+        <h2 className="allItemList__title">전체 상품</h2>
         <input placeholder="검색할 상품을 입력해 주세요"></input>
         <Link to="/additem">상품 등록하기</Link>
         <select>
@@ -37,7 +38,7 @@ export default function AllItemList() {
       </div>
       {!isLoading && !error && (
         <>
-          <div>
+          <div className="allItemList__body">
             {data.list.map((item) => (
               <Item key={item.id} data={item} />
             ))}

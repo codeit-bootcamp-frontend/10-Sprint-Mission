@@ -5,6 +5,7 @@ import 'normalize.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ItemListPage from './pages/ItemListPage.jsx';
 import HomePage from './pages/HomePage.jsx';
+import AddItemPage from './pages/AddItemPage.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -13,6 +14,7 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='items' element={<ItemListPage />} />
+          <Route path='additem' element={<AddItemPage />} />
         </Routes>
       </App>
     </BrowserRouter>

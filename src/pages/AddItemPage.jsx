@@ -3,11 +3,11 @@ import ItemForm from '../components/item/ItemForm';
 
 function AddItemPage() {
   return (
-    <div className="AddItemPage">
+    <main className="AddItemPage">
       <div className="max-container">
         <ItemForm />
       </div>
-    </div>
+    </main>
   );
 }
 

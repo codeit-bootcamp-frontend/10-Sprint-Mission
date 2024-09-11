@@ -17,7 +17,7 @@ function InputBar({
   };
 
   return (
-    <div className="InputBar">
+    <section className="InputBar">
       {label && (
         <label htmlFor={inputId} className="InputBar-label">
           {label}
@@ -33,7 +33,7 @@ function InputBar({
         disabled={disabled}
         {...eventProps}
       />
-    </div>
+    </section>
   );
 }
 

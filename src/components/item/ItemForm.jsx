@@ -4,7 +4,7 @@ import InputBar from '../InputBar';
 import PrimaryButton from '../PrimaryButton';
 import TextareaBar from '../TextareaBar';
 import TagCard from './TagCard';
-import plusIcon from '../../assets/ic_plus.svg';
+import AddFileInputBar from './AddFileInputBar';
 
 function ItemForm() {
   const [formData, setFormData] = useState({
@@ -49,21 +49,13 @@ function ItemForm() {
 
   return (
     <div className="ItemForm">
-      <div className="ItemForm-title-wrapper">
+      <section className="ItemForm-title-wrapper">
         <h3 className="ItemForm-title">상품 등록하기</h3>
         <PrimaryButton onClick={handleOnSubmit} disable={!isFormComplete()}>
           등록
         </PrimaryButton>
-      </div>
-      <div>
-        <label htmlFor="file">
-          <div className="btn-upload">
-            <img src={plusIcon} alt="플러스 아이콘" />
-            <span className="btn-upload-description">이미지 등록</span>
-          </div>
-        </label>
-        <input type="file" name="file" id="file" />
-      </div>
+      </section>
+      <AddFileInputBar />
       <InputBar
         label="상품명"
         inputId="title"

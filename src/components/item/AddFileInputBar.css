@@ -1,0 +1,21 @@
+.btn-upload {
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-upload-description {
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#file {
+  display: none;
+}

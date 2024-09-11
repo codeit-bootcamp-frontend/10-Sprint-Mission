@@ -4,12 +4,12 @@ import './ItemsPage.css';
 
 function ItemsPage() {
   return (
-    <div className="ItemsPage">
+    <main className="ItemsPage">
       <div className="max-container">
         <BestItems />
         <AllItems />
       </div>
-    </div>
+    </main>
   );
 }
 

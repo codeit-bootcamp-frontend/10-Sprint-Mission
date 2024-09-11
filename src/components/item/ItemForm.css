@@ -1,0 +1,23 @@
+.ItemForm {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.ItemForm-title-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ItemForm-title {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.ItemForm-tags-wrapper {
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+}

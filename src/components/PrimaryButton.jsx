@@ -1,12 +1,8 @@
 import './PrimaryButton.css';
 
-function PrimaryButton({ children, handleOnClick, disable = false }) {
+function PrimaryButton({ children, onClick, disable = false }) {
   return (
-    <button
-      className="PrimaryButton"
-      onClick={handleOnClick}
-      disabled={disable}
-    >
+    <button className="PrimaryButton" onClick={onClick} disabled={disable}>
       {children}
     </button>
   );

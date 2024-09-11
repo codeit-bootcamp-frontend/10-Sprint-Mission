@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import SortDropdown from './SortDropdown';
 import PrimaryButton from '../PrimaryButton';
 import Pagination from './pagination/Pagination';
-import { getItems } from '../../services/api';
+import { getItems } from '../../services/itemApi';
 import { getAllItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';

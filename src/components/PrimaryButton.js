@@ -1,9 +1,9 @@
 import './PrimaryButton.css';
 
-function PrimaryButton({ value, handleOnClick }) {
+function PrimaryButton({ children, handleOnClick }) {
   return (
     <button className="PrimaryButton" onClick={handleOnClick}>
-      {value}
+      {children}
     </button>
   );
 }

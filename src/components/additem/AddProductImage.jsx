@@ -8,20 +8,29 @@ const AddProductImage = () => {
   useEffect(() => {
     const fileInput = document.querySelector('input[type="file"]');
     const imagePreview = document.querySelector('#image-preview');
+
+    const fileRead = (e) => {
+      imagePreview.style.display = 'block';
+      try {
+        const file = e.target.files[0];
+        const reader = new FileReader();
+        
+        reader.onload = (e) => {
+          imagePreview.src = e.target.result;
+        };
+        
+        reader.readAsDataURL(file);
+
+      } catch (error) {
+        console.error(error);
+        alert('이미지를 불러오는데 실패했습니다');
+      }
+    }
     
-    fileInput.addEventListener('change', (e) => {
-      const file = e.target.files[0];
-      const reader = new FileReader();
-      
-      reader.onload = (e) => {
-        imagePreview.src = e.target.result;
-      };
-      
-      reader.readAsDataURL(file);
-    });
+    fileInput.addEventListener('change', fileRead);
 
     return () => {
-      fileInput.removeEventListener('change', () => {});
+      fileInput.removeEventListener('change', fileRead);
     };
     
   }, []);

@@ -44,7 +44,11 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
 
   const handleTagKeyDown = (e) => {
     if (e.keyCode === 13) {
-      const currentTag = e.target.value;
+      const currentTag = e.target.value.trim();
+
+      if (!currentTag) {
+        return;
+      }
 
       setFormData((prevData) => ({
         ...prevData,
@@ -53,6 +57,13 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
 
       e.target.value = '';
     }
+  };
+
+  const handleDeleteTag = (targetIndex) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      tags: prevData.tags.filter((_, index) => index !== targetIndex),
+    }));
   };
 
   const handleOnSubmit = (e) => {
@@ -106,7 +117,12 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
         />
         <div className="ItemForm-tags-wrapper">
           {formData.tags.map((tag, index) => (
-            <TagCard key={index} name={tag} />
+            <TagCard
+              key={index}
+              name={tag}
+              index={index}
+              onDelete={handleDeleteTag}
+            />
           ))}
         </div>
       </div>

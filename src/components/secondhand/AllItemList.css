@@ -21,6 +21,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
+  margin-bottom: 40px;
 }
 @media (max-width: 1199px) {
   .allItemList__body {

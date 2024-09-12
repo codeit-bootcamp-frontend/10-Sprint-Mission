@@ -3,6 +3,7 @@ import prevPageIcon from "../../assets/arrow_left_active.svg";
 import inPrevPageIcon from "../../assets/arrow_left_inactive.svg";
 import nextPageIcon from "../../assets/arrow_right_active.svg";
 import inNextPageIcon from "../../assets/arrow_right_inactive.svg";
+import "./PagenationBar.css";
 
 const calcPageArray = (totalPage, currentPage) => {
   if (totalPage <= 5)
@@ -27,6 +28,10 @@ export default function PagenationBar({ totalPage, useParamObj }) {
     [totalPage, paramObj]
   );
 
+  const checkPage = (page) => {
+    if (page === paramObj.page) return "pagenationBar__button--current";
+  };
+
   const handlePrevClick = useCallback(() => {
     setParamObj((prevObj) => ({ ...prevObj, page: paramObj.page - 1 }));
   }, [paramObj, setParamObj]);
@@ -46,10 +51,14 @@ export default function PagenationBar({ totalPage, useParamObj }) {
   );
 
   return (
-    <nav>
-      <ul>
+    <nav className="pagenationBar">
+      <ul className="pagenationBar__wrapper">
         <li>
-          <button onClick={handlePrevClick} disabled={paramObj.page === 1}>
+          <button
+            className="pagenationBar__button"
+            onClick={handlePrevClick}
+            disabled={paramObj.page === 1}
+          >
             <img
               src={paramObj.page !== 1 ? prevPageIcon : inPrevPageIcon}
               alt="이전 페이지"
@@ -58,13 +67,18 @@ export default function PagenationBar({ totalPage, useParamObj }) {
         </li>
         {pageArray.map((page) => (
           <li key={page}>
-            <button onClick={handleNumberClick} aria-label={`${page}번 페이지`}>
+            <button
+              className={`pagenationBar__button ${checkPage(page)}`}
+              onClick={handleNumberClick}
+              aria-label={`${page}번 페이지`}
+            >
               {page}
             </button>
           </li>
         ))}
         <li>
           <button
+            className="pagenationBar__button"
             onClick={handleNextClick}
             disabled={paramObj.page === totalPage}
           >

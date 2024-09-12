@@ -3,6 +3,7 @@ import Logo from "../../assets/images/logo/logo.svg";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import "./Header.css";
 
+
 function getLinkStyle({ isActive }) {
   return { color: isActive ? "var(--blue)" : undefined };
 }
@@ -25,6 +26,8 @@ function Header() {
               </NavLink>
             </li>
             <li>
+
+
               <NavLink
                 to="/items"
                 style={({ isActive }) =>

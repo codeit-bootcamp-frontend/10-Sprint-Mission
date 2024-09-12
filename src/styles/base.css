@@ -79,7 +79,7 @@ h4 {
   line-height: 32px;
 }
 
-h5 {
+h6 {
   color: var(--primary-100);
   font-size: 18px;
   font-weight: 700;
@@ -160,7 +160,7 @@ input::placeholder {
     word-wrap: break-word
   }
 
-  h5 {
+  h6 {
     color: var(--primary-100);
     font-size: 18px;
     font-weight: 700;
@@ -195,7 +195,7 @@ input::placeholder {
     word-wrap: break-word
   }
 
-  h5 {
+  h6 {
     color: var(--primary-100);
     font-size: 16px;
     font-weight: 700;

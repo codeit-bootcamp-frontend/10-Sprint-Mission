@@ -31,7 +31,6 @@ p {
   white-space: nowrap;
 }
 
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -58,6 +57,7 @@ a {
 }
 
 button {
+  font-family: Pretendard;
   background-color: var(--primary-100);
   border: none;
   color: var(--secondary-100);
@@ -117,18 +117,27 @@ h3 {
   line-height: 56px;
 }
 
-input {
+input,
+textarea {
+  font-family: Pretendard;
   border: none;
   background: var(--secondary-200);
   border-radius: 12px;
   overflow: hidden;
+  color: var(--secondary-800);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
 }
 
-input:focus {
-  outline: 3px solid var(--primary-100);
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--primary-100);
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--secondary-400);
   font-size: 16px;
   font-weight: 400;

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, { useState } from 'react'
 import {
   Button,
   Container,
   FlexContainer,
-  SectionTitle,
-} from "../../styles/CommonStyles";
-import styled from "styled-components";
-import InputItem from "../../components/UI/InputItem";
-import TagInput from "../../components/UI/TagInput";
-import ImageUpload from "../../components/UI/ImageUpload";
+  SectionTitle
+} from '../../styles/CommonStyles'
+import styled from 'styled-components'
+import InputItem from '../../components/UI/InputItem'
+import TagInput from '../../components/UI/TagInput'
+import ImageUpload from '../../components/UI/ImageUpload'
 
 const TitleSection = styled(FlexContainer)`
   margin-bottom: 16px;
-`;
+`
 
 const InputSection = styled.div`
   display: flex;
@@ -22,69 +22,69 @@ const InputSection = styled.div`
   @media ${({ theme }) => theme.mediaQuery.tablet} {
     gap: 24px;
   }
-`;
+`
 
-function AddItemPage() {
-  const [name, setName] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState("");
-  const [tags, setTags] = useState([]);
+function AddItemPage () {
+  const [name, setName] = useState('')
+  const [description, setDescription] = useState('')
+  const [price, setPrice] = useState('')
+  const [tags, setTags] = useState([])
 
-  const addTag = (tag) => {
+  const addTag = tag => {
     if (!tags.includes(tag)) {
-      setTags([...tags, tag]);
+      setTags([...tags, tag])
     }
-  };
+  }
 
-  const removeTag = (tagToRemove) => {
-    setTags(tags.filter((tag) => tag !== tagToRemove));
-  };
+  const removeTag = tagToRemove => {
+    setTags(tags.filter(tag => tag !== tagToRemove))
+  }
 
-  const isSubmitDisabled = !name || !description || !price || !tags.length;
+  const isSubmitDisabled = !name || !description || !price || !tags.length
 
   return (
     <Container>
       <form>
         <TitleSection>
-          <SectionTitle>»óÇ° µî·ÏÇÏ±â</SectionTitle>
-          <Button type="submit" disabled={isSubmitDisabled}>
-            µî·Ï
+          <SectionTitle>ìƒí’ˆ ë“±ë¡í•˜ê¸°</SectionTitle>
+          <Button type='submit' disabled={isSubmitDisabled}>
+            ë“±ë¡
           </Button>
         </TitleSection>
 
         <InputSection>
-          <ImageUpload title="»óÇ° ÀÌ¹ÌÁö" />
+          <ImageUpload title='ìƒí’ˆ ì´ë¯¸ì§€' />
 
           <InputItem
-            id="name"
-            label="»óÇ°¸í"
+            id='name'
+            label='ìƒí’ˆëª…'
             value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="»óÇ°¸íÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä"
+            onChange={e => setName(e.target.value)}
+            placeholder='ìƒí’ˆëª…ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”'
           />
 
           <InputItem
-            id="description"
-            label="»óÇ° ¼Ò°³"
+            id='description'
+            label='ìƒí’ˆ ì„¤ëª…'
             value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="»óÇ° ¼Ò°³¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä"
+            onChange={e => setDescription(e.target.value)}
+            placeholder='ìƒí’ˆ ì„¤ëª…ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”'
             isTextArea
           />
 
           <InputItem
-            id="price"
-            label="ÆÇ¸Å °¡°İ"
+            id='price'
+            label='íŒë§¤ ê°€ê²©'
             value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            placeholder="ÆÇ¸Å °¡°İÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä"
+            onChange={e => setPrice(e.target.value)}
+            placeholder='íŒë§¤ ê°€ê²©ì„ ì…ë ¥í•´ ì£¼ì„¸ìš”'
           />
 
           <TagInput tags={tags} onAddTag={addTag} onRemoveTag={removeTag} />
         </InputSection>
       </form>
     </Container>
-  );
+  )
 }
 
-export default AddItemPage;
+export default AddItemPage

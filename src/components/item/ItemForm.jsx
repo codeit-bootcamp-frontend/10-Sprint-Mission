@@ -6,24 +6,36 @@ import TextareaBar from '../TextareaBar';
 import TagCard from './TagCard';
 import AddFileInputBar from './AddFileInputBar';
 
-function ItemForm() {
-  const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    price: '',
-    tags: [],
-  });
+const INITIAL_VALUES = {
+  title: '',
+  description: '',
+  price: '',
+  tags: [],
+  imgFile: null,
+};
+
+function ItemForm({ initialValues = INITIAL_VALUES }) {
+  const [formData, setFormData] = useState(initialValues);
 
   const isFormComplete = () => {
     return (
       formData.title.trim() !== '' &&
       formData.description.trim() !== '' &&
-      formData.price.trim() !== ''
+      formData.price.trim() !== '' &&
+      formData.tags.length > 0 &&
+      formData.imgFile !== null
     );
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleFileChange = (name, value) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
@@ -55,7 +67,11 @@ function ItemForm() {
           등록
         </PrimaryButton>
       </section>
-      <AddFileInputBar />
+      <AddFileInputBar
+        name="imgFile"
+        value={formData.imgFile}
+        onChange={handleFileChange}
+      />
       <InputBar
         label="상품명"
         inputId="title"

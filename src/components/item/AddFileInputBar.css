@@ -1,3 +1,10 @@
+.AddFileInputBar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
 .btn-upload {
   width: 282px;
   height: 282px;
@@ -18,4 +25,29 @@
 
 #file {
   display: none;
+}
+
+.preview-wrapper {
+  position: relative;
+}
+
+.preview {
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  border: 1px solid var(--Secondary-50, #f9fafb);
+  object-fit: cover;
+}
+
+.btn-file-clear {
+  background: none;
+  position: absolute;
+  transform: translate(-150%, 20%);
+}
+
+.file-upload-error {
+  flex: 100%;
+  color: var(--error-red, #f74747);
+  font-size: 16px;
+  font-weight: 400;
 }

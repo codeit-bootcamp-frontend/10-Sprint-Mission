@@ -11,7 +11,7 @@ function Header() {
           <ul className="nav-menu">
             <li>
               <NavLink
-                to="/"
+                to="/items"
                 className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 자유게시판
@@ -19,7 +19,7 @@ function Header() {
             </li>
             <li>
               <NavLink
-                to="/items"
+                to="/additem"
                 className={({ isActive }) => (isActive ? 'active' : '')}
               >
                 중고마켓

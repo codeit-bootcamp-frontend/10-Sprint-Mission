@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
-import BestProducts from 'components/items/BestProducts';
 import Home from 'components/Home';
 import Items from 'pages/items/Items';
+import AddItem from 'components/addItem/AddItems';
 
 const App = () => {
   return (
@@ -12,6 +12,7 @@ const App = () => {
         <Route path="/signup" element={<Home/>}></Route>
         <Route path="/signin" element={<Home/>}></Route>
         <Route path="/items" element={<Items/>}></Route>
+        <Route path="/additem" element={<AddItem/>}></Route>
         <Route path="/faq" element={<Home/>}></Route>
         <Route path='/privacy' element={<Home/>}></Route>
         <Route path="*" element={<Home/>}></Route>

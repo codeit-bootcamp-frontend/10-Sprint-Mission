@@ -43,13 +43,9 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
   };
 
   const handleTagKeyDown = (e) => {
-    if (e.keyCode === 13) {
-      const currentTag = e.target.value.trim();
+    const currentTag = e.target.value.trim();
 
-      if (!currentTag) {
-        return;
-      }
-
+    if (currentTag && e.key === 'Enter') {
       setFormData((prevData) => ({
         ...prevData,
         tags: [...prevData.tags, currentTag],

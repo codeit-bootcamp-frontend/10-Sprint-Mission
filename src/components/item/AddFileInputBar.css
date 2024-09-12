@@ -1,8 +1,8 @@
-.AddFileInputBar {
+.image-container {
   display: flex;
   align-items: center;
   gap: 24px;
-  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
 .btn-upload {
@@ -46,8 +46,24 @@
 }
 
 .file-upload-error {
-  flex: 100%;
   color: var(--error-red, #f74747);
   font-size: 16px;
   font-weight: 400;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .AddFileInputBar {
+    gap: 10px;
+  }
+
+  .btn-upload {
+    width: 168px;
+    height: 168px;
+  }
+
+  .preview {
+    width: 168px;
+    height: 168px;
+  }
 }

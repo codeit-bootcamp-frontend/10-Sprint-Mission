@@ -4,7 +4,7 @@ import {ReactComponent as PlusIcon} from 'assets/imgs/ic_plus.svg';
 
 const AddProductImage = () => {
   return (
-    <div className={`${commonStyles['common-container']} ${styles['container']}`}>
+    <div className={commonStyles['common-container']}>
       <h5 className={commonStyles['common-product-title']}>상품 이미지</h5>
       <div className={styles['image-container']}>
         <div className={styles['image-upload']}>

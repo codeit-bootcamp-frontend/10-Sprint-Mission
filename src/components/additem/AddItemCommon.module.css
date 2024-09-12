@@ -4,6 +4,7 @@
     flex-direction: column;
     margin: 0 auto;
     margin-bottom: 32px;
+    gap: 16px;
 }
 
 .common-product-title {

@@ -1,0 +1,13 @@
+.container {
+  width: 100%;
+  overflow-wrap: wrap;
+}
+
+.tag {
+  display: flex;
+  height: 36px;
+  padding: 6px 12px 6px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

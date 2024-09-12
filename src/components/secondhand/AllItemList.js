@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 
 import Item from "./Item";
@@ -17,9 +17,26 @@ export default function AllItemList() {
     page: 1,
     pageSize: pageSizeTable[media],
     orderBy: "recent",
-    search: undefined,
+    keyword: undefined,
   });
   const [isLoading, error, data] = useApi(getProducts, paramObj);
+
+  const handleInputEnter = useCallback((e) => {
+    if (e.key === "Enter")
+      setParamObj((prevObj) => ({
+        ...prevObj,
+        page: 1,
+        keyword: e.target.value,
+      }));
+  }, []);
+
+  const handleSelectChange = useCallback((e) => {
+    setParamObj((prevObj) => ({
+      ...prevObj,
+      page: 1,
+      orderBy: e.target.value,
+    }));
+  }, []);
 
   useEffect(() => {
     setParamObj((prevObj) => ({ ...prevObj, pageSize: pageSizeTable[media] }));
@@ -29,11 +46,14 @@ export default function AllItemList() {
     <section className="allItemList">
       <div className="allItemList__head">
         <h2 className="allItemList__title">전체 상품</h2>
-        <input placeholder="검색할 상품을 입력해 주세요"></input>
+        <input
+          onKeyUp={handleInputEnter}
+          placeholder="검색할 상품을 입력해 주세요"
+        ></input>
         <Link to="/additem">상품 등록하기</Link>
-        <select>
-          <option>최신순</option>
-          <option>좋아요순</option>
+        <select onChange={handleSelectChange}>
+          <option value="recent">최신순</option>
+          <option value="favorite">좋아요순</option>
         </select>
       </div>
       {!isLoading && !error && (
@@ -43,7 +63,10 @@ export default function AllItemList() {
               <Item key={item.id} data={item} />
             ))}
           </div>
-          <PagenationBar />
+          <PagenationBar
+            totalPage={Math.ceil(data.totalCount / pageSizeTable[media])}
+            useParamObj={[paramObj, setParamObj]}
+          />
         </>
       )}
     </section>

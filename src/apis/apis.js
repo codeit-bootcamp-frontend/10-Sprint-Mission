@@ -8,7 +8,7 @@ export async function getProducts({
 }) {
   const url = new URL("products", baseUrl);
   const paramObj = { page, pageSize, orderBy };
-  if (keyword) paramObj.append("keyword", keyword);
+  if (keyword) paramObj.keyword = keyword;
   url.search = new URLSearchParams(paramObj);
 
   const response = await fetch(url);

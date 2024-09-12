@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom';
 import Home from 'components/Home';
 import Items from 'pages/items/Items';
-import AddItem from 'components/addItem/AddItems';
+import AddItem from 'pages/additem/AddItem';
 
 const App = () => {
   return (

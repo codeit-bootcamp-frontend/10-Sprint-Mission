@@ -14,3 +14,21 @@
   font-weight: 700;
   line-height: 26px;
 }
+
+@media (max-width: 1199px) {
+  .common-container {
+    width: 100%;
+    margin: 0 24px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .common-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    margin: 0px 14px 24px 15px;
+    gap: 16px;
+}
+}

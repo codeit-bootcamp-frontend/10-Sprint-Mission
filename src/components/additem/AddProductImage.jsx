@@ -3,12 +3,10 @@ import commonStyles from "./AddItemCommon.module.css";
 import {ReactComponent as PlusIcon} from 'assets/imgs/ic_plus.svg';
 import {ReactComponent as DeleteIcon} from 'assets/imgs/ic_delete.svg';
 import { useRef } from "react";
-import { useAddItemSharedData } from "./useAddItemSharedData";
 
-const AddProductImage = () => {
+const AddProductImage = ({ productImage, setProductImage }) => {
   const imageContentRef = useRef(null);
   const errorMessageRef = useRef(null);
-  const { productImage, setProductImage } = useAddItemSharedData();
 
   const handleFileRead = (e) => {
     imageContentRef.current.style.display = 'block';

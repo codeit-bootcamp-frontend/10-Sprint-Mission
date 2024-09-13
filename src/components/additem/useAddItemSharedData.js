@@ -3,8 +3,8 @@ import { useState } from "react";
 export const useAddItemSharedData = () => {
   const [productImage, setProductImage] = useState();
   const [productTitle, setProductTitle] = useState('');
-  const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState('');
+  const [productPrice, setProductPrice] = useState(0);
   const [productTags, setProductTags] = useState([]);
 
   return {
@@ -12,10 +12,10 @@ export const useAddItemSharedData = () => {
     setProductImage,
     productTitle,
     setProductTitle,
-    productPrice,
-    setProductPrice,
     productDescription,
     setProductDescription,
+    productPrice,
+    setProductPrice,
     productTags,
     setProductTags
   };

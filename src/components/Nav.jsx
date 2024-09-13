@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Container from './Container';
 import styles from './Nav.module.css';
 import logoImg from '../assets/images/logo-sm.png';
@@ -12,7 +12,6 @@ function getLinkStyle({ isActive }) {
 }
 
 function Nav({ pathname }) {
-  
   const isActive = pathname === '/additem';
 
   const style = getLinkStyle({ isActive });

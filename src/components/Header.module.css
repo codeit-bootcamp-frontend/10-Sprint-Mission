@@ -57,6 +57,7 @@
   .header {
     padding: 10px 24px 9px;
     border-bottom: 1px #dfdfdf;
+    margin-bottom: 16px;
   }
   
   .header-container {
@@ -73,6 +74,7 @@
   .header {
     padding: 0px 16px;
     border-bottom: 1px #dfdfdf;
+    margin-bottom: 24px;
   }
   
   .header-container {

@@ -30,7 +30,7 @@ const AddItem = () => {
       <ProductTitle productTitle={productTitle} setProductTitle={setProductTitle} />
       <ProductDescription productDescription={productDescription} setProductDescription={setProductDescription}/>
       <ProductPrice productPrice={productPrice} setProductPrice={setProductPrice}/>
-      <AddProductTag setProductTags={setProductTags}/>
+      <AddProductTag productTags={productTags} setProductTags={setProductTags}/>
       <ProductTagList productTags={productTags} setProductTags={setProductTags}/>
     </div>
   );

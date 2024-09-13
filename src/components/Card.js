@@ -1,4 +1,5 @@
 import style from "./Card.module.css";
+import Favorite from "./Favorite";
 
 function Card({ item, imgSize }) {
   const { favoriteCount, images, price, name } = item;
@@ -11,9 +12,9 @@ function Card({ item, imgSize }) {
         src={images[0]}
       />
       <div className={style.cardTxt}>
-        <div>{name}</div>
-        <div>{price}</div>
-        <div>{favoriteCount}</div>
+        <div className={style.title}>{name}</div>
+        <div className={style.price}>{price}</div>
+        <Favorite favoriteCount={favoriteCount}></Favorite>
       </div>
     </div>
   );

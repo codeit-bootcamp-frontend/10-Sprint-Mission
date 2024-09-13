@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Pretendard Variable";
+  src: url("../../public/Pretendard-Regular.ttf");
+}
+
 .cardImg {
   border-radius: 16px;
 }
@@ -14,4 +19,23 @@
 
 .cardTxt {
   gap: 6px;
+  font-family: "Pretendard Variable";
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.favorite {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 18px;
 }

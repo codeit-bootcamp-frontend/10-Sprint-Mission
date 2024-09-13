@@ -1,9 +1,7 @@
 import syltes from './AddProductTag.module.css';
 import commonStyles from './AddItemCommon.module.css';
-import { useAddItemSharedData } from './useAddItemSharedData';
 
-const AddProductTag = () => {
-  const { productTags, setProductTags } = useAddItemSharedData();
+const AddProductTag = ({ productTags, setProductTags }) => {
 
   const handleKeyDown = (e) => {
     if(e.key === 'Enter') {

@@ -11,8 +11,8 @@ const ProductTagList = ({ productTags, setProductTags}) => {
     <div className={styles['container']}>
       {productTags && productTags.map((tag, index) => (
         <div className={styles['tag']} key={index}>
-          <span>#{tag}</span>
-          <DeleteIcon onClick={()=>deleteTag(tag)}/>
+          <span>{tag}</span>
+          <DeleteIcon style={{cursor:'pointer'}} onClick={()=>deleteTag(tag)}/>
         </div>
       ))}
     </div>

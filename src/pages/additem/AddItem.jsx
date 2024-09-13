@@ -25,7 +25,7 @@ const AddItem = () => {
   return (
     <div>
       <Header/>
-      <AddProduct/>
+      <AddProduct productImage={productImage} productTitle={productTitle} productDescription={productDescription} productPrice={productPrice} productTags={productTags}/>
       <AddProductImage productImage={productImage} setProductImage={setProductImage}/>
       <ProductTitle productTitle={productTitle} setProductTitle={setProductTitle} />
       <ProductDescription productDescription={productDescription} setProductDescription={setProductDescription}/>

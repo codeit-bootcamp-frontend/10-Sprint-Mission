@@ -1,4 +1,4 @@
-import syltes from './AddProductTag.module.css';
+import styles from './AddProductTag.module.css';
 import commonStyles from './AddItemCommon.module.css';
 
 const AddProductTag = ({ productTags, setProductTags }) => {
@@ -16,9 +16,9 @@ const AddProductTag = ({ productTags, setProductTags }) => {
   }
 
   return (
-    <div className={commonStyles['common-container']}>
+    <div className={styles['container']}>
       <h5 className={commonStyles['common-product-title']}>태그</h5>
-      <input type="text" className={syltes['tag-input']} onKeyDown={handleKeyDown} placeholder="태그를 입력해주세요" />
+      <input type="text" className={styles['tag-input']} onKeyDown={handleKeyDown} placeholder="태그를 입력해주세요" />
     </div>
   );
 };

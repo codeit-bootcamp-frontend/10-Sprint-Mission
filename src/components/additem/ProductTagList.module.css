@@ -1,13 +1,19 @@
 .container {
-  width: 100%;
+  width: 1200px;
+  display: flex;
   overflow-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 69px;
 }
 
 .tag {
-  display: flex;
+  border-radius: 26px;
+  background: var(--Cool-Gray-100, #F3F4F6);
   height: 36px;
   padding: 6px 12px 6px 16px;
-  flex-direction: column;
+  display: flex;
+  flex-grow: 0;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }

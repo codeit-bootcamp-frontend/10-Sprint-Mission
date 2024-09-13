@@ -1,9 +1,7 @@
 import styles from "./ProductDescription.module.css";
 import commonStyles from "./AddItemCommon.module.css";
-import { useAddItemSharedData } from "./useAddItemSharedData";
 
-const ProductDescription = () => {
-  const { productDescription, setProductDescription } = useAddItemSharedData();
+const ProductDescription = ({ productDescription, setProductDescription }) => {
 
   const handleProductDescriptionChange = (e) => {
     setProductDescription(e.target.value);

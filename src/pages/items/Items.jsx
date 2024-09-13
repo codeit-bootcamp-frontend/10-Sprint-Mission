@@ -1,6 +1,6 @@
 import Header from "components/Header";
 import AllProductsHeader from "components/items/AllProductsHeader";
-import BestProducts from "components/items/BestProducts";
+import BestProductsHeader from "components/items/BestProductsHeader";
 import ItemPageNation from "components/items/ItemPageNation";
 import ProductCard from "components/items/ProductCard";
 import { useItemsSharedData } from "components/items/useItemsSharedData";
@@ -36,7 +36,7 @@ const Items = () => {
   return (
     <div>
       <Header />
-      <BestProducts />
+      <BestProductsHeader />
       <ProductCard 
         latestData={latestData} 
         setLatestData={setLatestData} 

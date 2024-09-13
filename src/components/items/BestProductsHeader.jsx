@@ -1,6 +1,6 @@
-import styles from "./BestProducts.module.css";
+import styles from "./BestProductsHeader.module.css";
 
-const BestProducts = () => {
+const BestProductsHeader = () => {
 
   return (
     <div className={styles['container']}>
@@ -9,4 +9,4 @@ const BestProducts = () => {
   )
 }
 
-export default BestProducts
+export default BestProductsHeader

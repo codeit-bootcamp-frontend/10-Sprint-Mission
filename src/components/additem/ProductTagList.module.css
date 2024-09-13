@@ -16,4 +16,23 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  color: var(--secondary-800);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    margin: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    margin: 0 14px 69px 15px;
+  }
 }

@@ -63,3 +63,12 @@
   right: 13px;
   cursor: pointer;
 }
+
+.image-upload-error-message {
+  display: none;
+  color: var(--error-red);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}

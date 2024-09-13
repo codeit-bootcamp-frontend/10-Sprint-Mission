@@ -7,6 +7,7 @@ import { useRef } from "react";
 const AddProductImage = () => {
   const imagePreviewRef = useRef(null);
   const imageContentRef = useRef(null);
+  const errorMessageRef = useRef(null);
 
   const handleFileRead = (e) => {
     imageContentRef.current.style.display = 'block';
@@ -27,16 +28,24 @@ const AddProductImage = () => {
     }
   }
 
+  const handleShowErrorMessage = (e) => {
+    if(imageContentRef.current.style.display === 'block') {
+      e.preventDefault();
+      errorMessageRef.current.style.display = 'block';
+    }
+  }
+
   const handleDeleteImage = () => {
     imageContentRef.current.style.display = 'none';
     imagePreviewRef.current.src = '';
+    errorMessageRef.current.style.display = 'none';
   }
 
   return (
     <div className={commonStyles['common-container']}>
       <h5 className={commonStyles['common-product-title']}>상품 이미지</h5>
       <div className={styles['image-container']}>
-        <div className={styles['image-upload']}>
+        <div onClick={handleShowErrorMessage} className={styles['image-upload']}>
           <label htmlFor="file" className={styles['image-upload-label']}>
             <div className={styles['image-upload-label-content']}>
               <PlusIcon />
@@ -50,6 +59,7 @@ const AddProductImage = () => {
           <DeleteIcon className={styles['delete-icon']} onClick={handleDeleteImage}/>
         </div>
       </div>
+      <p ref={errorMessageRef} className={styles['image-upload-error-message']}>*이미지 등록은 최대 1개까지 가능합니다.</p>
     </div>
   );
 };

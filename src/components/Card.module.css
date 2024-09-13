@@ -1,0 +1,17 @@
+.cardImg {
+  border-radius: 16px;
+}
+
+.card,
+.cardTxt {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  gap: 16px;
+}
+
+.cardTxt {
+  gap: 6px;
+}

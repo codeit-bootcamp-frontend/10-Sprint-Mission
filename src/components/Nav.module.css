@@ -11,7 +11,10 @@
 
 .nav {
   font-family: "Pretendard Variable";
-  font-size: 700;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;

@@ -7,29 +7,19 @@
   }
 }
 
-.allItemList__head {
-  display: flex;
-  margin-bottom: 16px;
-}
-
-.allItemList__title {
-  font-size: var(--size-xl);
-  font-weight: bold;
-}
-
 .allItemList__body {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 24px;
+  gap: 40px 24px;
   margin-bottom: 40px;
 }
 @media (max-width: 1199px) {
   .allItemList__body {
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 32px 16px;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .allItemList__body {
     grid-template-columns: repeat(2, 1fr);
   }

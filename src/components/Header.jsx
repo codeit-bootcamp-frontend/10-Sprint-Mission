@@ -1,10 +1,14 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 import {ReactComponent as UserIcon} from 'assets/imgs/user_icon.svg';
 import { useState } from 'react';
 
 const Header = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const location = useLocation();
+
+  const isFreeBoardPath = location.pathname === '/free';
+  const isUsedMarketPath = location.pathname === '/items' || location.pathname === '/additem';
 
   return (
       <header className={styles['header']}>
@@ -14,16 +18,16 @@ const Header = () => {
             <nav className={styles['header-nav']}>
               <NavLink 
                 to="/free"
-                className={({ isActive }) =>
-                  isActive ? `${styles['nav-link']} ${styles['active']}` : styles['nav-link']
+                className={
+                  isFreeBoardPath ? `${styles['nav-link']} ${styles['active']}` : styles['nav-link']
                 } 
               >
                 자유게시판
               </NavLink>
               <NavLink 
                 to="/items"
-                className={({ isActive }) =>
-                  isActive ? `${styles['nav-link']} ${styles['active']}` : styles['nav-link']
+                className={
+                  isUsedMarketPath ? `${styles['nav-link']} ${styles['active']}` : styles['nav-link']
                 }
               >
                 중고마켓

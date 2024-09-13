@@ -45,8 +45,11 @@
   line-height: 26px;
 }
 
-.image-preview {
+.image-content {
   display: none;
+}
+
+.image-preview {
   width: 282px;
   height: 282px;
   border-radius: 12px;

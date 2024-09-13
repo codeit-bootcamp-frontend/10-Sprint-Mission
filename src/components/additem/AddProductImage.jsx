@@ -1,6 +1,7 @@
 import styles from "./AddProductImage.module.css";
 import commonStyles from "./AddItemCommon.module.css";
 import {ReactComponent as PlusIcon} from 'assets/imgs/ic_plus.svg';
+import {ReactComponent as DeleteIcon} from 'assets/imgs/ic_delete.svg';
 import { useEffect } from "react";
 
 const AddProductImage = () => {
@@ -8,9 +9,10 @@ const AddProductImage = () => {
   useEffect(() => {
     const fileInput = document.querySelector('input[type="file"]');
     const imagePreview = document.querySelector('#image-preview');
+    const imageContent = document.querySelector('#image-content');
 
     const fileRead = (e) => {
-      imagePreview.style.display = 'block';
+      imageContent.style.display = 'block';
       try {
         const file = e.target.files[0];
         const reader = new FileReader();
@@ -48,7 +50,10 @@ const AddProductImage = () => {
           </label>
           <input className={styles['image-upload-input']} type="file" id="file" accept="image/*" />
         </div>
-        <img className={styles['image-preview']} id="image-preview" src="" alt=""/>
+        <div id="image-content" className={styles['image-content']}>
+          <img className={styles['image-preview']} id="image-preview" src="" alt=""/>
+          <DeleteIcon className={styles['delete-icon']} />
+        </div>
       </div>
     </div>
   );

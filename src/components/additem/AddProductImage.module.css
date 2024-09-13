@@ -3,6 +3,7 @@
   height: 282px;
   display: flex;
   flex-direction: row;
+  gap: 24px;
 }
 
 .image-upload {
@@ -72,3 +73,35 @@
   font-weight: 400;
   line-height: 26px;
 }
+
+@media (max-width: 1199px) {
+  .image-container {
+    display: flex;
+    height: 168px;
+    gap: 10px;
+  }
+
+
+  .image-upload {
+    width: 168px;
+    height: 168px;
+  }
+
+  .image-content {
+    display: none;
+    position: relative;
+  }
+
+  .image-preview {
+    width: 168px;
+    height: 168px;
+  }
+
+  .delete-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+}
+
+@media (max-width: 767px) {}

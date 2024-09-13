@@ -3,12 +3,11 @@ import Favorite from "./Favorite";
 
 function Card({ item, imgSize }) {
   const { favoriteCount, images, price, name } = item;
-
   return (
     <div className={style.card}>
       <img
         className={style.cardImg}
-        style={{ width: imgSize }}
+        style={{ width: imgSize, height: imgSize }}
         src={images[0]}
       />
       <div className={style.cardTxt}>

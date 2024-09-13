@@ -1,10 +1,8 @@
 import styles from "./ProductTitle.module.css";
 import commonStyles from "./AddItemCommon.module.css";
-import { useAddItemSharedData } from "./useAddItemSharedData";
 
-const ProductTitle = () => {
-  const { productTitle, setProductTitle } = useAddItemSharedData();
-
+const ProductTitle = ({ productTitle, setProductTitle }) => {
+  
   const handleProductTitleChange = (e) => {
     setProductTitle(e.target.value);
   }

@@ -11,3 +11,19 @@
   height: 56px;
   padding: 16px 24px;
 }
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    margin: 0 24px;
+    margin-bottom: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px 14px 14px 15px;
+  }
+}

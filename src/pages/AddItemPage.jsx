@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import cancelBtn from '../assets/images/ic-cancel.svg';
 import plusBtn from '../assets/images/ic-plus.svg';
+import { useState } from 'react';
 
 const layout = css`
   width: 1200px;
@@ -33,6 +34,7 @@ const input = css`
   border-width: 0;
   line-height: 2.6rem;
   min-height: 2.6rem;
+  font-size: 1.6rem;
 
   &::placeholder {
     color: var(--Gray-400);
@@ -73,7 +75,6 @@ const input = css`
 
 const imageBox = css`
   background-color: var(--Gray-100);
-  padding: 1.6rem 2.4rem;
   border-radius: 1.2rem;
   border-width: 0;
   height: 28.2rem;
@@ -95,8 +96,9 @@ const imageBox = css`
     font-weight: 400;
 
     img {
-      width: 4.8rem;
-      height: 4.8rem;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 `;
@@ -140,6 +142,22 @@ const button = css`
 `;
 
 function AddItemPage() {
+  const [imageSrc, setImageSrc] = useState('');
+
+  const encodeFileToBase64 = (fileBlob) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(fileBlob);
+
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        setImageSrc(reader.result);
+
+        resolve();
+      };
+    });
+  };
+
   return (
     <div css={layout}>
       <h2 css={h2}>상품 등록하기</h2>
@@ -149,8 +167,14 @@ function AddItemPage() {
             상품 이미지
             <div css={imageBox}>
               <div>
-                <img src={plusBtn} alt='상품 이미지' />
-                <span>이미지 등록</span>
+                {imageSrc ? (
+                  <img src={imageSrc} alt='상품 이미지' />
+                ) : (
+                  <>
+                    <img src={plusBtn} alt='상품 이미지' />
+                    <span>이미지 등록</span>
+                  </>
+                )}
               </div>
             </div>
           </label>
@@ -163,9 +187,7 @@ function AddItemPage() {
             type='file'
             id='p-img'
             accept='image/png, image/jpeg'
-            // onChange={handleChange}
-            onChange={(e) => console.log(e.target.files[0])}
-            // ref={inputRef}
+            onChange={(e) => encodeFileToBase64(e.target.files[0])}
           />
         </div>
         <div css={formField}>

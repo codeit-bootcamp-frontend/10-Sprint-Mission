@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import cancelBtn from '../assets/images/ic-cancel.svg';
 import plusBtn from '../assets/images/ic-plus.svg';
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 const layout = css`
   width: 1200px;
@@ -79,7 +80,6 @@ const imageBox = css`
   border-width: 0;
   height: 28.2rem;
   width: 28.2rem;
-  margin-top: 1.6rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +111,11 @@ const formField = css`
   :not(:last-child) {
     margin-bottom: 3.2rem;
   }
+
+  .error-message {
+    color: red;
+    font-size: 1.2rem;
+  }
 `;
 
 const tagList = css`
@@ -124,7 +129,7 @@ const tagList = css`
   font-size: 1.6rem;
 `;
 
-const button = css`
+const disabledButton = css`
   background-color: var(--Gray-400);
   color: var(--Gray-100);
   border-radius: 0.8rem;
@@ -141,7 +146,19 @@ const button = css`
   right: 0;
 `;
 
+const ableButton = css`
+  ${disabledButton}
+  background-color: var(--Primary-100);
+`;
+
 function AddItemPage() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isDirty, isValid },
+  } = useForm({ mode: 'onChange' });
+  const onSubmit = (data) => console.log(data);
+
   const [imageSrc, setImageSrc] = useState('');
 
   const encodeFileToBase64 = (fileBlob) => {
@@ -161,21 +178,19 @@ function AddItemPage() {
   return (
     <div css={layout}>
       <h2 css={h2}>상품 등록하기</h2>
-      <form method='post'>
+      <form method='post' onSubmit={handleSubmit(onSubmit)}>
         <div css={formField}>
-          <label css={label} htmlFor='p-img'>
-            상품 이미지
-            <div css={imageBox}>
-              <div>
-                {imageSrc ? (
-                  <img src={imageSrc} alt='상품 이미지' />
-                ) : (
-                  <>
-                    <img src={plusBtn} alt='상품 이미지' />
-                    <span>이미지 등록</span>
-                  </>
-                )}
-              </div>
+          <span css={label}>상품 이미지</span>
+          <label css={imageBox} htmlFor='p-img'>
+            <div>
+              {imageSrc ? (
+                <img src={imageSrc} alt='상품 이미지' />
+              ) : (
+                <>
+                  <img src={plusBtn} alt='상품 이미지' />
+                  <span>이미지 등록</span>
+                </>
+              )}
             </div>
           </label>
           <input
@@ -183,9 +198,11 @@ function AddItemPage() {
               ${input};
               width: 28.2rem;
               height: 28.2rem;
+              visibility: hidden;
             `}
             type='file'
             id='p-img'
+            name='p-img'
             accept='image/png, image/jpeg'
             onChange={(e) => encodeFileToBase64(e.target.files[0])}
           />
@@ -200,7 +217,13 @@ function AddItemPage() {
             name='title'
             id='p-name'
             placeholder={'상품명을 입력해주세요'}
+            {...register('name', {
+              required: { value: true, message: '상품명은 필수 값입니다.' },
+            })}
           />
+          {errors?.name?.message && (
+            <span className='error-message'>{errors.name.message}</span>
+          )}
         </div>
         <div css={formField}>
           <label css={label} htmlFor='p-info'>
@@ -219,7 +242,13 @@ function AddItemPage() {
             name=''
             id='p-into'
             placeholder={'상품 소개를 입력해주세요'}
+            {...register('info', {
+              required: { value: true, message: '상품 소개는 필수 값입니다.' },
+            })}
           ></textarea>
+          {errors?.info?.message && (
+            <span className='error-message'>{errors.info.message}</span>
+          )}
         </div>
         <div css={formField}>
           <label css={label} htmlFor='p-price'>
@@ -231,7 +260,13 @@ function AddItemPage() {
             name='price'
             id='p-price'
             placeholder={'판매 가격을 입력해주세요'}
+            {...register('price', {
+              required: { value: true, message: '판매 가격은 필수 값입니다.' },
+            })}
           />
+          {errors?.price?.message && (
+            <span className='error-message'>{errors.price.message}</span>
+          )}
         </div>
         <div css={formField}>
           <label css={label} htmlFor='p-tag'>
@@ -243,7 +278,17 @@ function AddItemPage() {
             name='tag'
             id='p-tag'
             placeholder={'태그를 입력해주세요'}
+            {...register('tag', {
+              required: {
+                value: true,
+                message: '태그는 필수 값입니다.',
+              },
+            })}
           />
+          {errors?.tag?.message && (
+            <span className='error-message'>{errors.tag.message}</span>
+          )}
+
           <ul>
             <li css={tagList}>
               <span>#태그1</span>
@@ -298,7 +343,10 @@ function AddItemPage() {
             </li>
           </ul>
         </div>
-        <button css={button} type='submit'>
+        <button
+          css={!isDirty || !isValid ? disabledButton : ableButton}
+          type='submit'
+        >
           등록
         </button>
       </form>

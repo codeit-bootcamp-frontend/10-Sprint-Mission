@@ -1,0 +1,44 @@
+.orderSelect {
+  position: relative;
+}
+@media (max-width: 767px) {
+  .orderSelect {
+    order: 2;
+  }
+}
+
+.orderSelect__select {
+  width: 128px;
+  height: 42px;
+  padding-left: 20px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  background: url("../../assets/arrow_down.svg") no-repeat right 20px center;
+  text-align: left;
+}
+@media (max-width: 767px) {
+  .orderSelect__select {
+    order: 2;
+    width: 42px;
+    background: url("../../assets/sort.svg") no-repeat center center;
+    font-size: 0;
+  }
+}
+
+.orderSelect__optionList {
+  position: absolute;
+  top: 50px;
+  right: 0px;
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  background-color: white;
+}
+
+.orderSelect__optionListItem:not(:last-child) {
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.orderSelect__option {
+  width: 128px;
+  height: 42px;
+}

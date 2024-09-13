@@ -61,15 +61,3 @@
     order: 0;
   }
 }
-
-.itemListHead__orderSelect {
-  height: 42px;
-  padding: 8px 24px;
-  border: 1px solid var(--gray-400);
-  border-radius: 12px;
-}
-@media (max-width: 767px) {
-  .itemListHead__orderSelect {
-    order: 2;
-  }
-}

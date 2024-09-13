@@ -47,6 +47,7 @@
 
 .image-content {
   display: none;
+  position: relative;
 }
 
 .image-preview {
@@ -54,4 +55,11 @@
   height: 282px;
   border-radius: 12px;
   object-fit: cover;
+}
+
+.delete-icon {
+  position: absolute;
+  top: 14px;
+  right: 13px;
+  cursor: pointer;
 }

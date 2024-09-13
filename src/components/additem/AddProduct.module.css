@@ -11,7 +11,7 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 32px; 
+  line-height: 32px;
 }
 
 .add-button {
@@ -24,4 +24,18 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    margin: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    margin: 0 14px 24px 15px;
+  }
 }

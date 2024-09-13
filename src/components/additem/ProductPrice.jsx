@@ -1,9 +1,7 @@
 import styles from "./ProductPrice.module.css";
 import commonStyles from "./AddItemCommon.module.css";
-import { useAddItemSharedData } from "./useAddItemSharedData";
 
-const ProductPrice = () => {
-  const { productPrice, setProductPrice } = useAddItemSharedData();
+const ProductPrice = ({ productPrice, setProductPrice }) => {
 
   const handleChange = (e) => {
     if(e.target.value === '') {

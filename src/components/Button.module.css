@@ -1,0 +1,13 @@
+.button {
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: var(--blue);
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: var(--gray400);
+  cursor: auto;
+}

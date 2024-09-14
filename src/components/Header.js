@@ -1,16 +1,16 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import styles from "./Header.module.css";
 import pandaTypoImg from "assets/images/panda_typo.svg";
 import profileImg from "assets/images/ic_profile.svg";
 
-console.log(pandaTypoImg);
-console.log(profileImg);
-
-function getLinkStyle({ isActive }) {
-  return isActive ? styles.active : "";
-}
-
 const Header = () => {
+  const location = useLocation();
+
+  const isActiveForItem =
+    location.pathname === "/items" || location.pathname === "/additem"
+      ? styles.active
+      : "";
+
   return (
     <header className={styles.header}>
       <ul className={styles.menu}>
@@ -25,7 +25,7 @@ const Header = () => {
         </li>
         <li>자유게시판</li>
         <li>
-          <NavLink to="/items" className={getLinkStyle}>
+          <NavLink to="/items" className={isActiveForItem}>
             중고마켓
           </NavLink>
         </li>

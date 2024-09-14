@@ -1,5 +1,12 @@
+import AddProudctForm from "features/AddProduct/components/AddProductForm";
+import styles from "./AddProductPage.module.css";
+
 const AddProductPage = () => {
-  return <div>AddProductPage</div>;
+  return (
+    <div className={styles.wrapper}>
+      <AddProudctForm />
+    </div>
+  );
 };
 
 export default AddProductPage;

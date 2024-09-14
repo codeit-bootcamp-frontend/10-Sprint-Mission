@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+}
+
+.input {
+  border-radius: 12px;
+  background-color: var(--gray100);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  color: var(--gray800);
+  padding: 16px 24px;
+}
+
+.input:focus {
+  outline-color: var(--blue);
+}
+
+.input::placeholder {
+  color: var(--gray400);
+}

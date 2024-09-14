@@ -1,0 +1,41 @@
+.img-container {
+    display: flex;
+    gap:16px;
+    flex-direction: column;
+}
+.img-box {
+    width:588px;
+    display: flex;
+   
+    gap:24px;
+}
+.custom-button {
+    width: 282px;
+    height: 282px;
+    display:flex;
+    background: var(--Secondary-200, #F3F4F6);
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#add-button {
+   display: none;
+}
+.plus-icon {
+    width:48px;
+    height:48px;
+    background: none;
+}
+.button-text {
+    color: var(--Cool-Gray-400, #9CA3AF);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; 
+    background:none;
+}
+.upload {
+    width:282px;
+    height:282px;
+}

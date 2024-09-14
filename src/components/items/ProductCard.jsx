@@ -16,16 +16,13 @@ const ProductCard = ({
   setError,
   totalCount,
   setTotalCount,
-  totalPage,
   setTotalPage,
   responsiveAllProductCount,
   setResponsiveAllProductCount,
   responsiveFavoriteProductCount,
   setResponsiveFavoriteProductCount,
   sortProduct,
-  setSortProduct,
   pageNumber,
-  setPageNumber,
   isEmptyHeart,
   setIsEmptyHeart,
   isBestProduct,
@@ -51,7 +48,7 @@ const ProductCard = ({
     }
 
     asyncFetch();
-  }, []);
+  }, [ setLatestData, setFavoriteData, setLoading, setError, setTotalCount ]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -73,7 +70,7 @@ const ProductCard = ({
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  }, []);
+  }, [totalCount, setResponsiveAllProductCount, setResponsiveFavoriteProductCount, setTotalPage, responsiveAllProductCount]);
 
   return (
     <div className={styles['container']}>

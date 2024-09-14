@@ -4,10 +4,10 @@ import { ReactComponent as PageArrowRight } from 'assets/imgs/arrow_right.svg';
 
 
 const ItemPageNation = ({
-  pageNumber = 1,
+  pageNumber,
   setPageNumber,
-  totalPage = 1,
-  maxVisiblePage = 5,
+  totalPage,
+  maxVisiblePage,
 }) => {
   
   const getVisiblePages = () => {

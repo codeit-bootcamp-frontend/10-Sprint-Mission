@@ -31,6 +31,8 @@ const Items = () => {
     setIsEmptyHeart,
     isDropdown,
     setIsDropdown,
+    maxVisiblePage,
+    setMaxVisiblePage,
   } = useItemsSharedData();
 
   return (
@@ -98,6 +100,7 @@ const Items = () => {
         pageNumber={pageNumber} 
         setPageNumber={setPageNumber} 
         totalPage={totalPage} 
+        maxVisiblePage={maxVisiblePage}
       />
     </div>
   );

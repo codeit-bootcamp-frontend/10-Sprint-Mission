@@ -13,6 +13,7 @@ export const useItemsSharedData = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const [isEmptyHeart, setIsEmptyHeart] = useState(true);
   const [isDropdown, setIsDropdown] = useState(false);
+  const [maxVisiblePage, setMaxVisiblePage] = useState(5);
 
   return {
     latestData,
@@ -39,5 +40,7 @@ export const useItemsSharedData = () => {
     setIsEmptyHeart,
     isDropdown,
     setIsDropdown,
+    maxVisiblePage,
+    setMaxVisiblePage,
   };
 }

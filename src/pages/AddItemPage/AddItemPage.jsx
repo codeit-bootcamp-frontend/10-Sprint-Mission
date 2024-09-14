@@ -40,6 +40,11 @@ function AddItemPage () {
     setTags(tags.filter(tag => tag !== tagToRemove))
   }
 
+  // console.log('====================================')
+  // console.log(
+  //   `name: '${name}' description: '${description}' price: '${price}' tags: '${tags}'`
+  // )
+
   const isSubmitDisabled = !name || !description || !price || !tags.length
 
   return (

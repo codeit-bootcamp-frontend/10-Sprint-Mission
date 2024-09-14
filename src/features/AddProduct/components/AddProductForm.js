@@ -4,6 +4,7 @@ import Input from "components/Input";
 import Textarea from "components/Textarea";
 import Button from "components/Button";
 import styles from "./AddProductForm.module.css";
+import Tags from "./Tags";
 
 const INITIAL_VALUES = {
   imgFile: null,
@@ -32,7 +33,6 @@ const AddProudctForm = () => {
   };
 
   const checkFormEmpty = (values) => {
-    console.log("hi");
     const { imgFile, ...otherValues } = values;
     return Object.values(otherValues).some((value) => {
       if (Array.isArray(value)) {
@@ -40,6 +40,23 @@ const AddProudctForm = () => {
       }
       return value === "";
     });
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      const { name, value } = e.target;
+      e.target.value = "";
+      if (values.tags.includes(value) || value.trim() === "") return;
+
+      handleChange(name, [...values.tags, value]);
+    }
+  };
+
+  const handleTagRemove = (e) => {
+    e.preventDefault();
+    const removeItem = e.currentTarget.parentNode.dataset.tag;
+    const nextValue = values.tags.filter((tag) => tag !== removeItem);
+    handleChange("tags", nextValue);
   };
 
   useEffect(() => {
@@ -83,11 +100,11 @@ const AddProudctForm = () => {
       />
       <Input
         label="태그"
-        name="tag"
+        name="tags"
         placeholder="태그를 입력해주세요"
-        value={values.tags}
-        onChange={handleInputChange}
+        onKeyDown={handleKeyDown}
       />
+      <Tags tags={values.tags} onRemove={handleTagRemove} />
     </form>
   );
 };

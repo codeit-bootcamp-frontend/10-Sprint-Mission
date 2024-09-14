@@ -1,6 +1,6 @@
 import styles from "./Input.module.css";
 
-const Input = ({ name, label, onChange }) => {
+const Input = ({ name, label, placeholder, onChange, onKeyDown }) => {
   return (
     <div className={styles.container}>
       <label className={styles.label} htmlFor={name}>
@@ -11,8 +11,9 @@ const Input = ({ name, label, onChange }) => {
         type="text"
         name={name}
         id={name}
-        placeholder={`${label}를 입력해주세요`}
+        placeholder={placeholder}
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
     </div>
   );

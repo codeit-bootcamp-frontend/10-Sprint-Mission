@@ -61,8 +61,8 @@
 
 .xButton {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 4%;
+  right: 4%;
 }
 
 .errorMessage {
@@ -70,4 +70,11 @@
   font-weight: 400;
   line-height: 1.625rem;
   color: var(--red);
+}
+
+@media screen and (min-width: 1200px) {
+  .imageContainer {
+    max-width: 282px;
+    max-height: 282px;
+  }
 }

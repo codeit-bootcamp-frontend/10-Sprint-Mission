@@ -1,6 +1,6 @@
 import styles from "./Pagination.module.css";
-import arrowLeftImg from "../assets/arrow_left_gray.svg";
-import arrowRightImg from "../assets/arrow_right.svg";
+import arrowLeftImg from "assets/images/arrow_left_gray.svg";
+import arrowRightImg from "assets/images/arrow_right.svg";
 
 const Pagination = ({ totalCount, pageSize, currentPage, onChange }) => {
   const totalPages = Math.ceil(totalCount / pageSize);

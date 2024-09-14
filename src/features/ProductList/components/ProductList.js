@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { getProducts } from "../api/productApi";
-import Card from "./Card";
-import styles from "./ProductList.module.css";
-import searchImg from "../assets/ic_search.svg";
+import { getProducts } from "../services/getProducts";
+import Card from "components/Card";
 import Dropdown from "./Dropdown";
 import Pagination from "./Pagination";
+import styles from "./ProductList.module.css";
+import searchImg from "assets/images/ic_search.svg";
 
 const ProductList = ({ size }) => {
   const [products, setProducts] = useState([]);

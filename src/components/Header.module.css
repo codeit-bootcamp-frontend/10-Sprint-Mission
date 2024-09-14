@@ -49,7 +49,7 @@ ul.menu > li:not(:first-child) {
   }
 
   .logo {
-    content: url("../assets/panda_logo.svg");
+    content: url("assets/images/panda_logo.svg");
     width: 153px;
     height: 51px;
     margin-right: 5px;

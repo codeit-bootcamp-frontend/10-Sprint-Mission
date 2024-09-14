@@ -1,5 +1,5 @@
 import styles from "./Card.module.css";
-import heartImg from "../assets/ic_heart.svg";
+import heartImg from "assets/images/ic_heart.svg";
 
 const Card = ({ product }) => {
   return (

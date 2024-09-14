@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import BestProducts from "../components/BestProducts";
-import ProductList from "../components/ProductList";
+import BestProducts from "features/ProductList/components/BestProducts";
+import ProductList from "features/ProductList/components/ProductList";
 import { getResponsiveConstant } from "../constants/responsiveConstants";
 import styles from "./ProductListPage.module.css";
 

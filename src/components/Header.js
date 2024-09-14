@@ -1,7 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import styles from "./Header.module.css";
-import pandaTypoImg from "../assets/panda_typo.svg";
-import profileImg from "../assets/ic_profile.svg";
+import pandaTypoImg from "assets/images/panda_typo.svg";
+import profileImg from "assets/images/ic_profile.svg";
+
+console.log(pandaTypoImg);
+console.log(profileImg);
 
 function getLinkStyle({ isActive }) {
   return isActive ? styles.active : "";

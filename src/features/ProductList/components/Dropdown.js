@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./Dropdown.module.css";
-import sortImg from "../assets/ic_sort.svg";
+import sortImg from "assets/images/ic_sort.svg";
 
 const Dropdown = ({ order, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);

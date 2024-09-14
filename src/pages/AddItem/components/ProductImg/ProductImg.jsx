@@ -2,15 +2,17 @@ import React from 'react'
 import plusicon from '../../../../assets/images/plusicon.png'
 import './ProductImg.css';
 import { useEffect, useState, useRef } from 'react';
+import xicon from '../../../../assets/images/xicon.png'
 
 function ProductImg ({ name, value, onChange }) {  
     const [preview, setPreview] = useState();
     const inputRef = useRef();
+
     const handleChange = (e) => {
-        const nextValue = e.target.files[0];
-        onChange(name, nextValue);
+        const file = e.target.files[0];
+        onChange(name, file);
     };
-    const handleClick = () => {
+    const handleButtonClick = () => {
         document.getElementById('add-button').click();
     };
 
@@ -20,7 +22,7 @@ function ProductImg ({ name, value, onChange }) {
     
         inputNode.value = '';
         onChange(name, null);
-      };
+    };
 
     useEffect(() => {
         if (!value) return;
@@ -34,19 +36,21 @@ function ProductImg ({ name, value, onChange }) {
             <label className='title'>상품 이미지</label>
             <div className='img-box'>
                 
-                <div className='custom-button' onClick={handleClick}>
+                <div className='custom-button' onClick={handleButtonClick}>
                     <input 
                         id='add-button'
                         type='file'
+                        name={name}
                         onChange={handleChange}
+                        ref={inputRef}
                     ></input>
                     <img className='plus-icon' src={plusicon} alt='이미지 추가 아이콘' />
                     <div className='button-text'>이미지 등록</div>
                 </div>
                 
                 <div className='upload'>
-                    <img src={preview} alt="이미지 미리보기" />
-                    {value && <button onClick={handleClearClick}></button>}
+                    {value != null && <img className='preview' src={preview} alt="이미지 미리보기" />}
+                    {value && <button onClick={handleClearClick}><img src={xicon} alt="이미지 삭제"></img></button>}
                 </div>
             </div>  
         </div>

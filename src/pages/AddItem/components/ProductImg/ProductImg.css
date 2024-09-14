@@ -6,7 +6,6 @@
 .img-box {
     width:588px;
     display: flex;
-   
     gap:24px;
 }
 .custom-button {
@@ -35,7 +34,20 @@
     line-height: 26px; 
     background:none;
 }
-.upload {
+.upload > .preview {
     width:282px;
     height:282px;
+    border-radius: 12px;
+    object-fit:cover;
+}
+.upload > button {
+    background:none;
+    border:none;
+    position:relative;
+    left:248px;
+    bottom:276px;
+    cursor:pointer;
+}
+button > img {
+    background: none;
 }

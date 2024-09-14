@@ -7,7 +7,6 @@ function ItemPage() {
   return (
     <>
       <BestList></BestList>
-      <SearchBar></SearchBar>
       <ItemList></ItemList>
       <Pagination></Pagination>
     </>

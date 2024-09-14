@@ -1,5 +1,9 @@
 function Pagination() {
-  return <div>페이지네이션</div>;
+  return (
+    <div>
+      
+    </div>
+  );
 }
 
 export default Pagination;

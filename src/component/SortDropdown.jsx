@@ -1,6 +1,7 @@
 // SortMenu.js
 import polygon from "../assets/Polygon.png";
 import styled from "styled-components";
+import { useState } from "react";
 
 const SortMenu = styled.button`
   position: relative;
@@ -36,7 +37,18 @@ const SortBtn = styled.button`
   height: 42px;
 `;
 
-const SortDropdown = ({ sortOrder, DropDown, isOpen, handleSortClick }) => {
+const SortDropdown = ({ sortOrder, setSortOrder }) => {
+  const [isOpen, setOpen] = useState(false);
+
+  const handleSortClick = (order) => {
+    setSortOrder(order);
+    setOpen(false);
+  };
+
+  const DropDown = () => {
+    setOpen(!isOpen);
+  };
+
   return (
     <SortMenu onClick={DropDown}>
       {sortOrder}

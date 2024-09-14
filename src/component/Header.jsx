@@ -9,17 +9,31 @@ const HeaderStyle = styled.header`
 
 const HeaderImg = styled.img`
   margin-left: 200px;
+
+  @media (max-width: 768px) {
+    margin-left: 24px;
+  }
 `;
 
 const ProFile = styled.img`
   position: absolute;
   right: 200px;
+  width: 40px;
+  height: 40px;
+
+  @media (max-width: 768px) {
+    right: 24px;
+  }
 `;
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   margin-left: 32px;
+
+  @media (max-width: 768px) {
+    margin-left: 21px;
+  }
 `;
 
 const NavLink = styled(Link)`
@@ -42,7 +56,7 @@ const Header = () => {
       <HeaderImg src="/logo.png" alt="로고" />
       <Nav>
         <NavLink to={"/"}>자유게시판</NavLink>
-        <NavLink to={"/items"}>중고마켓</NavLink>
+        <NavLink to={"/additem"}>중고마켓</NavLink>
       </Nav>
       <ProFile src="/profile.png" alt="프로파일" />
     </HeaderStyle>

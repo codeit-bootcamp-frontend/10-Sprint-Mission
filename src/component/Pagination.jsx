@@ -1,5 +1,6 @@
 // Pagination.js
 import styled from "styled-components";
+import { useState } from "react";
 
 const PaginationContainer = styled.div`
   display: flex;
@@ -27,13 +28,45 @@ const PaginationButton = styled.button`
   }
 `;
 
-const Pagination = ({
-  pagebuttons,
-  activePage,
-  handlePageClick,
-  handleNextClick,
-  handlePreviousClick,
-}) => {
+const Pagination = ({ activePage, setActivePage, totalpage }) => {
+  const [pagebuttons, setPagebuttons] = useState([1, 2, 3, 4, 5]);
+
+  const handleNextClick = () => {
+    console.log("totalpage:", totalpage);
+    if (activePage >= totalpage) {
+      return;
+    }
+    if (activePage % 5 === 0) {
+      pagebuttons.forEach((num, index) => {
+        pagebuttons[index] = activePage + index + 1;
+      });
+      setActivePage(activePage + 1);
+      setPagebuttons(pagebuttons);
+    } else {
+      setActivePage(activePage + 1);
+    }
+  };
+
+  const handlePreviousClick = () => {
+    if (activePage === 1) {
+      return;
+    }
+    if ((activePage - 1) % 5 === 0) {
+      pagebuttons.forEach((num, index) => {
+        pagebuttons[index] = activePage - index - 1;
+      });
+      pagebuttons.reverse();
+      setActivePage(activePage - 1);
+      setPagebuttons(pagebuttons);
+    } else {
+      setActivePage(activePage - 1);
+    }
+  };
+
+  const handlePageClick = (number) => {
+    setActivePage(number);
+  };
+
   const getButtonStyle = (number) => ({
     backgroundColor: activePage === number ? "#2F80ED" : "white",
     color: activePage === number ? "white" : "black",

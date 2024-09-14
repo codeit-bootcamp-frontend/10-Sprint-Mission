@@ -8,6 +8,11 @@ const EntirePicture = styled.div`
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, auto);
   gap: 24px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+  }
 `;
 
 const ItemTitle = styled.p`

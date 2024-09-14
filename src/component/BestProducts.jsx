@@ -10,6 +10,16 @@ const BestProduct = styled.section`
   width: 100%;
 `;
 
+const BestProductImg = styled.img`
+  width: 282px;
+  height: 282px;
+
+  @media (max-width: 768px) {
+    width: 343px;
+    height: 343px;
+  }
+`;
+
 const ItemTitle = styled.p`
   font-size: 14px;
   line-height: 24px;
@@ -41,12 +51,7 @@ const BestProducts = ({ bestProducts }) => {
         bestProducts.map((product) => (
           <BestProductDiv key={product.id}>
             {product.images.length > 0 ? (
-              <img
-                src={product.images[0]}
-                alt={product.name}
-                width={282}
-                height={282}
-              />
+              <BestProductImg src={product.images[0]} alt={product.name} />
             ) : (
               <p>No image available</p>
             )}

@@ -34,9 +34,13 @@
     line-height: 26px; 
     background:none;
 }
-.upload > .preview {
+.upload {
     width:282px;
     height:282px;
+}
+.upload > .preview {
+    width:100%;
+    height:100%;
     border-radius: 12px;
     object-fit:cover;
 }
@@ -47,7 +51,42 @@
     left:248px;
     bottom:276px;
     cursor:pointer;
+    border:none;
 }
 button > img {
     background: none;
 }
+.error-message{
+    color: var(--error-red, #F74747);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; 
+}
+
+
+@media (max-width:1199px) {
+    .img-box {
+        width:346px;
+        gap:10px;
+    }
+    .plus-icon {
+        width:24px;
+        height:24px;
+        background: none;
+    }
+    .custom-button {
+        width:168px;
+        height:168px;
+    }
+    .upload {
+        width:168px;
+        height:168px;
+    }
+    .upload > button {
+        position:relative;
+        bottom:160px;
+        left:130px;
+    }
+
+}
+

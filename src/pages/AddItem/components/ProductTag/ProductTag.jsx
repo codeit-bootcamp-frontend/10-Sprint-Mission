@@ -7,7 +7,6 @@ function ProductTag({ name, value, onChange }) {
 
     const addTag = (e) => {
         if (e.key !== "Enter") return;
-        const inputValue = e.target.value;
         if (!value.trim()) return;
 
         const updatedTags = [...tags, value.trim()];

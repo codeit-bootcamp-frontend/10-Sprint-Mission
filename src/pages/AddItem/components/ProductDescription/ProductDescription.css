@@ -25,3 +25,12 @@
     
     align-items: top;
 }
+
+@media (max-width:1199px) {
+    
+}
+
+/* mobile */
+@media (max-width:767px) {
+    
+}

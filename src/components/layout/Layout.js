@@ -1,9 +1,9 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 
-import { useMediaQuery } from "../hooks/useMediaQuery";
-import logo from "../assets/logo_w153x3.png";
-import logoText from "../assets/logo_w81x3.png";
-import profileImage from "../assets/profile_image_w40x3.png";
+import { useMediaQuery } from "../../hooks/useMediaQuery.js";
+import logo from "../../assets/logo_w153x3.png";
+import logoText from "../../assets/logo_w81x3.png";
+import profileImage from "../../assets/profile_image_w40x3.png";
 import "./Layout.css";
 
 export default function Layout() {

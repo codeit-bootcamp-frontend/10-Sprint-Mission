@@ -13,14 +13,14 @@
   padding-left: 20px;
   border: 1px solid var(--gray-200);
   border-radius: 12px;
-  background: url("../../assets/arrow_down.svg") no-repeat right 20px center;
+  background: url("../assets/arrow_down.svg") no-repeat right 20px center;
   text-align: left;
 }
 @media (max-width: 767px) {
   .orderSelect__select {
     order: 2;
     width: 42px;
-    background: url("../../assets/sort.svg") no-repeat center center;
+    background: url("../assets/sort.svg") no-repeat center center;
     font-size: 0;
   }
 }

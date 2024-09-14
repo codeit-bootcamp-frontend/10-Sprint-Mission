@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 
-import ItemListHead from "./ItemListHead.js";
-import Item from "./Item";
-import PagenationBar from "./PagenationBar";
+import ItemListHead from "./components/ItemListHead.js";
+import Item from "./components/Item.js";
+import PagenationBar from "../../components/PagenationBar.js";
 
 import { useMediaQuery } from "../../hooks/useMediaQuery.js";
 import { useApi } from "../../hooks/useApi.js";
 import { getProducts } from "../../apis/apis.js";
-import "./AllItemList.css";
+import "./AllItemListSection.css";
 
 const pageSizeTable = { PC: 10, TABLET: 6, MOBILE: 4 };
 
-export default function AllItemList() {
+export default function AllItemListSection() {
   const media = useMediaQuery();
   const [paramObj, setParamObj] = useState({
     page: 1,

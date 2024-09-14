@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
-import OrderSelect from "./OrderSelect.js";
+import Dropdown from "../../../components/Dropdown.js";
 import "./ItemListHead.css";
 
 export default function ItemListHead({ setParamObj }) {
@@ -27,7 +27,7 @@ export default function ItemListHead({ setParamObj }) {
       <Link className="itemListHead__addButton" to="/additem">
         상품 등록하기
       </Link>
-      <OrderSelect setParamObj={setParamObj} />
+      <Dropdown setParamObj={setParamObj} />
     </div>
   );
 }

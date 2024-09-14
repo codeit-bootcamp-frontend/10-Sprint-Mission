@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import "./OrderSelect.css";
+import "./Dropdown.css";
 
-export default function OrderSelect({ setParamObj }) {
+export default function Dropdown({ setParamObj }) {
   const [isActive, setIsActive] = useState(false);
   const [value, setValue] = useState("recent");
 

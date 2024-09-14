@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-import Item from "./Item";
+import Item from "./components/Item.js";
 
 import { useMediaQuery } from "../../hooks/useMediaQuery.js";
 import { useApi } from "../../hooks/useApi.js";
 import { getProducts } from "../../apis/apis.js";
-import "./BestItemList.css";
+import "./BestItemListSection.css";
 
 const pageSizeTable = { PC: 4, TABLET: 2, MOBILE: 1 };
 
-export default function BestItemList() {
+export default function BestItemListSection() {
   const media = useMediaQuery();
   const [paramObj, setParamObj] = useState({
     pageSize: pageSizeTable[media],

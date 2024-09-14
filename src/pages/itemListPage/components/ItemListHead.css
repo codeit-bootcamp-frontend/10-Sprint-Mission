@@ -25,7 +25,7 @@
   border-radius: 12px;
   border: 1px solid var(--gray-100);
   outline: none;
-  background: url("../../assets/search.svg") no-repeat 12px center;
+  background: url("../../../assets/search.svg") no-repeat 12px center;
   background-color: var(--gray-100);
 }
 @media (max-width: 1199px) {

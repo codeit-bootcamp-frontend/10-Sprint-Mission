@@ -1,8 +1,8 @@
 import { useMemo, useCallback } from "react";
-import prevPageIcon from "../../assets/arrow_left_active.svg";
-import inPrevPageIcon from "../../assets/arrow_left_inactive.svg";
-import nextPageIcon from "../../assets/arrow_right_active.svg";
-import inNextPageIcon from "../../assets/arrow_right_inactive.svg";
+import prevPageIcon from "../assets/arrow_left_active.svg";
+import inPrevPageIcon from "../assets/arrow_left_inactive.svg";
+import nextPageIcon from "../assets/arrow_right_active.svg";
+import inNextPageIcon from "../assets/arrow_right_inactive.svg";
 import "./PagenationBar.css";
 
 const calcPageArray = (totalPage, currentPage) => {

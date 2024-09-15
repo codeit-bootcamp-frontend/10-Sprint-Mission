@@ -19,3 +19,13 @@ export async function getItems(
   const body = await response.json();
   return body;
 }
+
+// // 1페이지 10개 최신순 줘
+// const 1페이지10개 = getItems(1,10,"recent")
+// const 2페이지10개 = getItems(2,10,"recent")
+// const 3페이지10개 = getItems(3,10,"recent")
+
+// // 최신순으로 1페이지 1개 줘
+// const 1페이지10개 = getItems(1,10,"favorite")
+// const 2페이지10개 = getItems(2,10,"favorite")
+// const 3페이지10개 = getItems(3,10,"favorite")

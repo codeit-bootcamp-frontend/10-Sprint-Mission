@@ -1,6 +1,5 @@
 import Nav from "./Nav";
 
-
 function App({ children }) {
   return (
     <div>

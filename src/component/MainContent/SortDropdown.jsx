@@ -1,5 +1,5 @@
 // SortMenu.js
-import polygon from "../assets/Polygon.png";
+import polygon from "../../assets/Polygon.png";
 import styled from "styled-components";
 import { useState } from "react";
 

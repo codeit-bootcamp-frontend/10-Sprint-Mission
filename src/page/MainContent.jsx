@@ -1,7 +1,7 @@
-import BestProducts from "../component/BestProducts";
-import ProductList from "../component/ProductList";
-import Pagination from "../component/Pagination";
-import SortDropdown from "../component/SortDropdown";
+import BestProducts from "../component/MainContent/BestProducts";
+import ProductList from "../component/MainContent/ProductList";
+import Pagination from "../component/MainContent/Pagination";
+import SortDropdown from "../component/MainContent/SortDropdown";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 

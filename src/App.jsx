@@ -2,10 +2,11 @@ import "./App.css";
 import { fetchProducts } from "./api";
 import { useEffect, useState } from "react";
 
-import Header from "./component/Header";
+import Header from "./component/MainContent/Header";
 import { Routes, Route } from "react-router-dom";
 import Additem from "./page/additem";
 import MainContent from "./page/MainContent";
+import DetailPage from "./page/DetailPage";
 
 function App() {
   const [bestProducts, setBestProducts] = useState([]);
@@ -64,6 +65,7 @@ function App() {
             />
           }
         />
+        <Route path="/item/:id" element={<DetailPage />} />
       </Routes>
     </>
   );

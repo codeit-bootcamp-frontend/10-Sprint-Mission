@@ -13,3 +13,13 @@ export const fetchProducts = async (page, sortOrder, pageSize) => {
     throw error;
   }
 };
+
+export const fetchDetailProduct = async (id) => {
+  try {
+    const response = await axios.get(`${BackEndUrl}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.log("Error fetching products:", error);
+    throw error;
+  }
+};

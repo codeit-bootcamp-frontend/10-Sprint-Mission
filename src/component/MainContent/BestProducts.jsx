@@ -1,5 +1,6 @@
-import favoriteIcon from "../assets/Icon.png";
+import favoriteIcon from "../../assets/Icon.png";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const BestProductDiv = styled.div`
   margin-right: 24px;
@@ -13,6 +14,7 @@ const BestProduct = styled.section`
 const BestProductImg = styled.img`
   width: 282px;
   height: 282px;
+  cursor: pointer;
 
   @media (max-width: 768px) {
     width: 343px;
@@ -43,6 +45,11 @@ const Price = styled.p`
 `;
 
 const BestProducts = ({ bestProducts }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate(`/item/${id}`);
+  };
   return (
     <BestProduct>
       {!bestProducts ? (
@@ -51,7 +58,11 @@ const BestProducts = ({ bestProducts }) => {
         bestProducts.map((product) => (
           <BestProductDiv key={product.id}>
             {product.images.length > 0 ? (
-              <BestProductImg src={product.images[0]} alt={product.name} />
+              <BestProductImg
+                src={product.images[0]}
+                alt={product.name}
+                onClick={() => handleClick(product.id)}
+              />
             ) : (
               <p>No image available</p>
             )}

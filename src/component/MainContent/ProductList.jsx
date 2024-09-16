@@ -1,5 +1,5 @@
 // ProductList.js
-import favoriteIcon from "../assets/Icon.png";
+import favoriteIcon from "../../assets/Icon.png";
 import styled from "styled-components";
 
 const EntirePicture = styled.div`

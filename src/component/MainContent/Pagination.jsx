@@ -32,7 +32,6 @@ const Pagination = ({ activePage, setActivePage, totalpage }) => {
   const [pagebuttons, setPagebuttons] = useState([1, 2, 3, 4, 5]);
 
   const handleNextClick = () => {
-    console.log("totalpage:", totalpage);
     if (activePage >= totalpage) {
       return;
     }

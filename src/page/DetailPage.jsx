@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchDetailProduct, fetchProductsComments } from "../api";
+import { fetchDetailProduct, fetchProductsComments } from "../api.js";
 import styled from "styled-components";
 import HeartImage from "../assets/Heart.png";
 import commentPatchRmbtn from "../assets/commentPatchRmbtn.png";

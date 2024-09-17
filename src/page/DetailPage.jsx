@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchDetailProduct } from "../api";
+import { fetchDetailProduct, fetchProductsComments } from "../api";
 import styled from "styled-components";
+import HeartImage from "../assets/Heart.png";
+import commentPatchRmbtn from "../assets/commentPatchRmbtn.png";
 import ProfileImg from "../assets/profile.png";
+
 const Container = styled.div`
   margin-top: 24px;
   margin-left: 360px;
@@ -18,6 +21,7 @@ const ProductImg = styled.img`
 
 const ProductIntro = styled.div`
   display: flex;
+  margin-bottom: 40px;
 `;
 
 const ProductDes = styled.div`
@@ -71,6 +75,88 @@ const ProductTagTitle = styled.p`
   line-height: 26px;
 `;
 
+const ProductTag = styled.p`
+  display: inline-block;
+  margin-top: 16px;
+  height: 36px;
+  padding: 6px 16px 6px 16px;
+  border-radius: 26px;
+  background-color: #f3f4f6;
+`;
+
+const ProductAuthor = styled.p`
+  margin-top: 62px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const NameUpdateAt = styled.p`
+  margin-left: 16px;
+`;
+
+const AuthorName = styled.p`
+  margin-bottom: 2px;
+`;
+
+const Favorite = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  width: 87px;
+  height: 40px;
+  border-radius: 20px;
+`;
+
+const HeartImg = styled.img`
+  width: 26.8px;
+  height: 23.3px;
+  margin-right: 4px;
+`;
+const LeftlineFavorite = styled.div`
+  width: 111px;
+  border-left: 1px solid #e5e7eb;
+  padding-left: 24px;
+`;
+const InquiryHagi = styled.p`
+  margin-top: 40px;
+  width: 56px;
+  height: 26px;
+  font-size: 16px;
+`;
+const InquiryArea = styled.textarea`
+  width: 100%;
+  height: 104px;
+  border-radius: 12px;
+  background-color: #f3f4f6;
+  padding: 16px 24px;
+  color: 9ca3af;
+  border: 1px solid #ffffff;
+  resize: none;
+`;
+
+const InquiryButton = styled.button`
+  margin-top: 16px;
+  width: 74px;
+  height: 42px;
+  color: #ffffff;
+  background-color: #9ca3af;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+`;
+
+const InquiryProfile = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+`;
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  if (!dateString) return "";
+  return date.toISOString().split("T")[0];
+};
+
 const DetailPage = () => {
   // useParams 훅을 사용하여 URL 파라미터를 추출
   const { id } = useParams();
@@ -86,17 +172,37 @@ const DetailPage = () => {
     updatedAt: "",
     isFavorite: false,
   });
+
+  const [comments, setComments] = useState({
+    list: [],
+    nextCursor: null,
+  });
+
   useEffect(() => {
-    const fetchBestProducts = async () => {
+    const fetchProductsDes = async () => {
       try {
         const data = await fetchDetailProduct(id);
         setProduct(data);
       } catch (error) {
-        console.error("Error fetching best products:", error);
+        console.error("Error fetching ProductDes:", error);
       }
     };
-    fetchBestProducts();
+    fetchProductsDes();
   }, [id]);
+
+  useEffect(() => {
+    const fetchComments = async () => {
+      try {
+        const data = await fetchProductsComments(id);
+        console.log("data:", data.list[0].content);
+        setComments(data);
+      } catch (error) {
+        console.error("Error fetching ProductDes:", error);
+      }
+    };
+    fetchComments();
+  }, [id]);
+
   return (
     <Container>
       <main>
@@ -110,18 +216,67 @@ const DetailPage = () => {
               <ProductDetailIntro>상품 소개</ProductDetailIntro>
               <ProductDetailDes>{product.description}입니다.</ProductDetailDes>
               <ProductTagTitle>상품 태그</ProductTagTitle>
-              {!product.tags ? (
-                <p>태그 없음</p>
+              {product.tags.length === 0 ? (
+                <ProductTag>태그 없음</ProductTag>
               ) : (
-                product.tags.map((tag, index) => <p key={index}>{tag}</p>)
+                product.tags.map((tag, index) => (
+                  <ProductTag key={index}>#{tag}</ProductTag>
+                ))
               )}
 
-              <div></div>
+              <ProductAuthor>
+                <div style={{ display: "flex" }}>
+                  <img src={ProfileImg} alt="Profile" />
+                  <NameUpdateAt>
+                    <AuthorName>총명한판다</AuthorName>
+                    <p>{formatDate(product.updatedAt)}</p>
+                  </NameUpdateAt>
+                </div>
+                <LeftlineFavorite>
+                  <Favorite>
+                    <HeartImg src={HeartImage} alt="좋아요버튼" />
+                    {product.favoriteCount}
+                  </Favorite>
+                </LeftlineFavorite>
+              </ProductAuthor>
             </ProductDes>
           </ProductIntro>
+          <hr></hr>
         </section>
-        <section></section>
-        <section></section>
+        <section>
+          <InquiryHagi>문의하기</InquiryHagi>
+          <InquiryArea placeholder="개인정보를 공유 및 요청하거나, 명예 훼손, 무단광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며,이에 대한 민형사상 책임은 게시자에게 있습니다."></InquiryArea>
+          <div style={{ display: "flex", justifyContent: "flex-end" }}>
+            <InquiryButton>등록</InquiryButton>
+          </div>
+        </section>
+        <section>
+          <div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "24px",
+              }}
+            >
+              {comments && comments.list && comments.list[0] && (
+                <p>{comments.list[0].content}</p>
+              )}
+
+              <img src={commentPatchRmbtn}></img>
+            </div>
+            <div style={{ display: "flex", marginTop: "24px" }}>
+              <img src={ProfileImg} />
+              <InquiryProfile>
+                {comments &&
+                  comments.list &&
+                  comments.list[0] &&
+                  comments.list[0].writer.nickname}
+                <p style={{ marginTop: "4px" }}>1시간 전</p>
+              </InquiryProfile>
+            </div>
+          </div>
+        </section>
       </main>
     </Container>
   );

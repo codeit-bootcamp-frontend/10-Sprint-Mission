@@ -26,7 +26,6 @@ const ItemButton = styled.button`
 `;
 
 const Additemheader = ({ isButtonActive }) => {
-  console.log("isButtonActive :", isButtonActive);
   return (
     <AdditemHeader>
       <ItemRegist>상품 등록하기</ItemRegist>

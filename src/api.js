@@ -23,3 +23,14 @@ export const fetchDetailProduct = async (id) => {
     throw error;
   }
 };
+
+export const fetchProductsComments = async (id) => {
+  try {
+    console.log(`${BackEndUrl}/${id}/comments?limit=3`);
+    const response = await axios.get(`${BackEndUrl}/${id}/comments?limit=3`);
+    return response.data;
+  } catch (error) {
+    console.log("Error fetching products:", error);
+    throw error;
+  }
+};

@@ -1,6 +1,7 @@
 // ProductList.js
 import favoriteIcon from "../../assets/Icon.png";
 import styled from "styled-components";
+import { useNavigate } from "react-router-dom";
 
 const EntirePicture = styled.div`
   margin-top: 24px;
@@ -38,7 +39,18 @@ const FavoriteImg = styled.img`
   margin-right: 3px;
 `;
 
+const ProductImg = styled.img`
+  width: 221px;
+  height: 221px;
+  cursor: pointer;
+`;
+
 const ProductList = ({ sortedProducts }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (id) => {
+    navigate(`/item/${id}`);
+  };
   return (
     <EntirePicture>
       {!sortedProducts ? (
@@ -49,11 +61,10 @@ const ProductList = ({ sortedProducts }) => {
             {!product.images ? (
               <p>No image available</p>
             ) : (
-              <img
+              <ProductImg
                 src={product.images[0]}
                 alt={product.name}
-                width={221}
-                height={221}
+                onClick={() => handleClick(product.id)}
               />
             )}
             <ItemTitle>{product.name} 팝니다</ItemTitle>

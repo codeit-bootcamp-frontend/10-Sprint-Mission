@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import ProfileImg from "../../assets/profile.png";
 
 const HeaderStyle = styled.header`
   display: flex;
@@ -58,7 +59,7 @@ const Header = () => {
         <NavLink to={"/"}>자유게시판</NavLink>
         <NavLink to={"/additem"}>중고마켓</NavLink>
       </Nav>
-      <ProFile src="/profile.png" alt="프로파일" />
+      <ProFile src={ProfileImg} alt="프로파일" />
     </HeaderStyle>
   );
 };

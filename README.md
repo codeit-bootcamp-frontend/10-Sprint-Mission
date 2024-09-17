@@ -9,12 +9,20 @@ https://leafy-profiterole-1b850b.netlify.app/
 
 # 1.mainpage
 
-axios로 제품 json 데이터를 받아온다음 제품사진 이름 가격 좋아요갯수 정보를 가져온다음 화면처럼 배치합니다. 그리고 해당 제품을 클릭하면 상세화면이 나타납니다.
+After receiving product json data with axios, it retrieves product photo, name, price, and number of likes information and arranges them as shown on the screen. Then, when you click on the product, the detailed screen appears.
 
 # 2.Sort
 
-최신순 및 좋아요 순으로 배치합니다. 벡엔드에서 파라미터를 설정해 최신순으로 가져오거나 좋아요 순으로 가져옵니다 그리고 배치합니다. 상품 등록하기는 백엔드 기능을 제공하지않아 설정을 못하였습니다.
+Sort by latest and likes. Set parameters in backend to retrieve by latest or likes and then arrange. Registering a product could not be set because backend function is not provided.
 
 # 3.Detialpage
 
-해당 제품을 클릭하면 상세화면으로 넘어갑니다. 이 또한 백엔드 api 서버에서 json 데이터를 가져와 배치하였습니다. 그리고 댓글 또한 백엔드 api 서버에서 가져왔습니다.
+Clicking on the product will take you to the details screen. This is also arranged by fetching JSON data from the backend API server. And the comments are also fetched from the backend API server.
+
+# 4.Product Registration
+
+When you click the second-hand market navigation button, the product registration page appears. You can register an image, enter the product name, product introduction, sales price, and tags. After entering the tag and pressing Enter, the tag below appears. When all inputs are completed, the background color of the registration button in the upper right corner changes.
+
+# 5.Pagination
+
+Below is the pagination. When you click on the number button, it is passed as a url parameter, and the corresponding url json data is fetched, and then the products are arranged again. Once you go through all the pages, it will not go any further. For example, if there are 139 products, a total of 14 pages will be composed, and it will not go beyond page 14.

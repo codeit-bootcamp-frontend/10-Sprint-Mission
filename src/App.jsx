@@ -1,105 +1,70 @@
-import './App.css';
-import {Link} from 'react-router-dom';
-import axios from 'axios';
-import { useEffect, useState } from 'react';
+import "./App.css";
+import { fetchProducts } from "./api";
+import { useEffect, useState } from "react";
 
-import Header from './component/Header';
-import BestProducts from './component/BestProducts';
-import ProductList from './component/ProductList';
-import Pagination from './component/Pagination';
-import SortMenu from './component/SortMenu';
+import Header from "./component/Header";
+import { Routes, Route } from "react-router-dom";
+import Additem from "./page/additem";
+import MainContent from "./page/MainContent";
 
 function App() {
-  const [bestProducts, setBestProducts] = useState([]); 
-  const [isOpen, setOpen] = useState(false);
-  const [sortbtntext, setSortbtntext] = useState('최신순');
+  const [bestProducts, setBestProducts] = useState([]);
   const [sortedProducts, setSortedProducts] = useState([]);
-  const pagebuttons = [1, 2, 3, 4, 5];
-  const [activePage, setActivePage] = useState(1);
-  const [sortOrder, setSortOrder] = useState('recent'); 
 
- 
+  const [totalpage, setTotalpage] = useState(0);
+  const [activePage, setActivePage] = useState(1);
+  const [sortOrder, setSortOrder] = useState("recent");
+
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     const fetchBestProducts = async () => {
+      const pageSize = mediaQuery.matches ? 2 : 4;
       try {
-        const response = await axios.get(`https://panda-market-api.vercel.app/products?page=1&orderBy=favorite`);
-        const bestProducts = response.data.list.slice(0, 4); 
-        setBestProducts(bestProducts);
+        const data = await fetchProducts(1, "favorite", pageSize);
+        const totalpage = Math.ceil(data.totalCount / 10);
+        setTotalpage(totalpage);
+        setBestProducts(data.list);
       } catch (error) {
-        console.log('Error fetching best products:', error);
+        console.error("Error fetching best products:", error);
       }
     };
     fetchBestProducts();
-  }, []); 
+  }, []);
 
- 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 768px)");
     const fetchData = async () => {
+      const pageSize = mediaQuery.matches ? 6 : 10;
       try {
-        const response = await axios.get(`https://panda-market-api.vercel.app/products?page=${activePage}`);
-        const sortedProducts = response.data.list.sort((a, b) => {
-          return sortOrder === 'favorite'
-            ? b.favoriteCount - a.favoriteCount
-            : new Date(b.updatedAt) - new Date(a.updatedAt);
-        });
-        setSortedProducts(sortedProducts);
+        const data = await fetchProducts(activePage, sortOrder, pageSize);
+        setSortedProducts(data.list);
       } catch (error) {
-        console.log('error:', error);
+        console.error("error:", error);
       }
     };
     fetchData();
-  }, [activePage, sortOrder]); 
-
-  const handlePageClick = (number) => {
-    setActivePage(number);
-  };
-
-  const handleSortClick = (order) => {
-    setSortOrder(order);
-    setSortbtntext(order === 'recent' ? '최신순' : '좋아요순');
-    setOpen(false);
-  };
-
-
-  const DropDown = () => {
-    setOpen(!isOpen);
-  };
+  }, [activePage, sortOrder]);
 
   return (
     <>
       <Header />
-      <main>
-        <h1>베스트 상품</h1>
-        <BestProducts bestProducts={bestProducts} />
-
-        <section>
-          <div className="entireHeader">
-            <h1>전체상품</h1>
-            <div>
-              <input
-                type="text"
-                className="searchInput"
-                placeholder="검색할 상품을 입력해주세요"
-              />
-              <Link className="RegistButton" to={"/additem"}>상품 등록하기</Link>
-              <SortMenu
-                sortbtntext={sortbtntext}
-                DropDown={DropDown}
-                isOpen={isOpen}
-                handleSortClick={handleSortClick}
-              />
-            </div>
-          </div>
-
-          <ProductList sortedProducts={sortedProducts} />
-        </section>
-
-        <Pagination
-          pagebuttons={pagebuttons}
-          activePage={activePage}
-          handlePageClick={handlePageClick}
+      <Routes>
+        <Route path="/additem" element={<Additem />} />
+        <Route
+          path="/"
+          element={
+            <MainContent
+              bestProducts={bestProducts}
+              sortedProducts={sortedProducts}
+              sortOrder={sortOrder}
+              setSortOrder={setSortOrder}
+              activePage={activePage}
+              setActivePage={setActivePage}
+              totalpage={totalpage}
+            />
+          }
         />
-      </main>
+      </Routes>
     </>
   );
 }

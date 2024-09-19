@@ -19,19 +19,16 @@ function AllItem() {
     const [itemList, setItemList] = useState([]);
     const [pageSize, setPageSize] = useState(getPageSize());
     const [order, setOrder] = useState('recent');
-    const [selected, setSelected] = useState('최신순');
-    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [isdropdownOpen, setIsDropdownOpen] = useState(false);
 
     const handleNewestClick = () => {
         setOrder('recent');
-        setSelected('최신순');
-        setDropdownOpen(false);
+        setIsDropdownOpen(false);
     };
 
     const handleFavoriteClick = () => {
         setOrder('favorite');
-        setSelected('좋아요순');
-        setDropdownOpen(false);
+        setIsDropdownOpen(false);
     };
 
     const fetchSortedData = useCallback(async () => {
@@ -50,7 +47,7 @@ function AllItem() {
     },[fetchSortedData])
 
     const toggleDropdown = () => {
-        setDropdownOpen(!dropdownOpen);
+        setIsDropdownOpen(!isdropdownOpen);
     };
 
     return (
@@ -66,9 +63,9 @@ function AllItem() {
                         <Link className="additem-button" to="/additem">상품 등록하기</Link>
                         <div className="dropdown-container">
                             <button className="dropdown-button" onClick={toggleDropdown}>
-                                {selected} <span className="dropdown-arrow">▼</span>
+                                {order === 'recent' ? '최신순' : '인기순'} <span className="dropdown-arrow">▼</span>
                             </button>
-                            <ul className={`dropdown-menu ${dropdownOpen ? 'show' : ''}`}>
+                            <ul className={`dropdown-menu ${isdropdownOpen ? 'show' : ''}`}>
                                 <li className="dropdown-option" onClick={handleNewestClick}>최신순</li>
                                 <li className="dropdown-option" onClick={handleFavoriteClick}>좋아요순</li>
                             </ul>

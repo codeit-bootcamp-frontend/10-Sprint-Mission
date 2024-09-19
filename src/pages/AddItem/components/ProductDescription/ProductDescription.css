@@ -1,0 +1,36 @@
+.description-container {
+    display: flex;
+    gap:16px;
+    flex-direction: column;
+}
+.description {
+    color: var(--Secondary-800, #1F2937);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px; 
+}
+.description-input {
+    height: 282px;
+    padding: 24px 16px;
+    border:none;
+    border-radius: 12px;
+    background: var(--Cool-Gray-100, #F3F4F6);
+
+}
+.description-input::placeholder {
+    color: var(--Secondary-400, #9CA3AF);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; 
+    
+    align-items: top;
+}
+
+@media (max-width:1199px) {
+    
+}
+
+/* mobile */
+@media (max-width:767px) {
+    
+}

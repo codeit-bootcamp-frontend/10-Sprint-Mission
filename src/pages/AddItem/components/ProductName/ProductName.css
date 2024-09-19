@@ -1,0 +1,26 @@
+.name-container {
+    display: flex;
+    gap:16px;
+    flex-direction: column;
+}
+.name {
+    color: var(--Secondary-800, #1F2937);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px; 
+}
+.name-input {
+    height: 56px;
+    padding: 24px 16px;
+    border:none;
+    border-radius: 12px;
+    background: var(--Cool-Gray-100, #F3F4F6);
+
+    
+}
+.name-input::placeholder{
+    color: var(--Secondary-400, #9CA3AF);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; 
+}

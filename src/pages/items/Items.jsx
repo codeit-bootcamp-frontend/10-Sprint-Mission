@@ -4,6 +4,7 @@ import BestProductsHeader from "components/items/BestProductsHeader";
 import ItemPageNation from "components/items/ItemPageNation";
 import ProductCard from "components/items/ProductCard";
 import { useItemsSharedData } from "components/items/useItemsSharedData";
+import { Outlet } from "react-router-dom";
 
 const Items = () => {
   const {

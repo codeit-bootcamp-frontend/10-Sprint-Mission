@@ -1,0 +1,49 @@
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-display: swap;
+  src: local('Pretendard Bold'),
+    url(./assets/fonts/pretendard-bold.woff2) format('woff2'),
+    url(./assets/fonts/pretendard-bold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-display: swap;
+  src: local('Pretendard SemiBold'),
+    url(./assets/fonts/pretendard-semibold.woff2) format('woff2'),
+    url(./assets/fonts/pretendard-semibold.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-display: swap;
+  src: local('Pretendard Medium'),
+    url(./assets/fonts/pretendard-medium.woff2) format('woff2'),
+    url(./assets/fonts/pretendard-medium.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-display: swap;
+  src: local('Pretendard Regular'),
+    url(./assets/fonts/pretendard-regular.woff2) format('woff2'),
+    url(./assets/fonts/pretendard-regular.woff) format('woff');
+}
+
+html {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 62.5%;
+}

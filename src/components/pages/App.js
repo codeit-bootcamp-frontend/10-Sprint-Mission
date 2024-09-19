@@ -1,16 +1,16 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Header from "./Header";
-import AllProducts from "./junggo/AllProducts";
 import AddAllItems from "./additem/AddAllItems";
+import MarketPage from "./junggo/MarketPage";
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/items" element={<AllProducts />} />
-        <Route path="/additems" element={<AddAllItems />} />
+        <Route path="/items" element={<MarketPage />} />
+        <Route path="/additem" element={<AddAllItems />} />
       </Routes>
     </>
   );

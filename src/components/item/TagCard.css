@@ -7,3 +7,9 @@
   gap: 8px;
   padding: 6px 12px 6px 16px;
 }
+
+.TagCard-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

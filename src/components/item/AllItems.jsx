@@ -54,9 +54,7 @@ function AllItems() {
         <div className="AllItems-control-panel">
           <h3 className="AllItems-title">전체상품</h3>
           <SearchBar />
-          <PrimaryButton onClick={handleButtonClick}>
-            상품등록하기
-          </PrimaryButton>
+          <PrimaryButton text="상품등록하기" onClick={handleButtonClick} />
           <SortDropdown handleSortClick={handleSortClick} />
         </div>
       </div>

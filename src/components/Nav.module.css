@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "Pretendard Variable";
+  src: url("../../public/Pretendard-Regular.ttf");
+}
+
+.spaceDiv {
+  width: 200px;
+  flex: 1;
+  height: 70px;
+}
+
+.nav {
+  font-family: "Pretendard Variable";
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-align: center;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.leftSide {
+  display: flex;
+  gap: 47px;
+  flex: 3;
+  white-space: nowrap;
+}
+
+.rightSide {
+  flex: 3;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigateUi {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}

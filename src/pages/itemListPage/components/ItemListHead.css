@@ -1,0 +1,63 @@
+.itemListHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.itemListHead__title {
+  flex: 1 0 0;
+  font-size: var(--size-xl);
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .itemListHead__title {
+    flex: 1 0 50%;
+  }
+}
+
+.itemListHead__searchInput {
+  width: 320px;
+  height: 42px;
+  padding: 7px 16px 7px 40px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+  outline: none;
+  background: url("../../../assets/search.svg") no-repeat 12px center;
+  background-color: var(--gray-100);
+}
+@media (max-width: 1199px) {
+  .itemListHead__searchInput {
+    width: 240px;
+  }
+}
+@media (max-width: 767px) {
+  .itemListHead__searchInput {
+    order: 1;
+    flex: 1 0 50%;
+  }
+}
+
+.itemListHead__searchInput:focus {
+  border: 1px solid var(--blue-100);
+}
+
+.itemListHead__searchInput::placeholder {
+  color: var(--gray-400);
+}
+
+.itemListHead__addButton {
+  height: 42px;
+  padding: 8px 24px;
+  border-radius: 8px;
+  background-color: var(--blue-100);
+  font-weight: 500;
+  color: var(--gray-100);
+}
+@media (max-width: 767px) {
+  .itemListHead__addButton {
+    order: 0;
+  }
+}

@@ -1,0 +1,7 @@
+.icon {
+  cursor: pointer;
+}
+
+.icon:hover circle {
+  fill: var(--blue);
+}

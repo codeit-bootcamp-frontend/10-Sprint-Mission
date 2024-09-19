@@ -1,0 +1,39 @@
+.itemCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.item-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.itemImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.itemName {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.itemPrice {
+  font-family: Pretendard;
+  font-size: 16px;
+  font-style: board;
+  font-weight: 700;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+}

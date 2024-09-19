@@ -58,7 +58,6 @@ function ProductImg ({ name, value, onChange }) {
                         ref={inputRef}
                     ></input>
                     <img className='plus-icon' src={plusicon} alt='이미지 추가 아이콘' />
-                    {/* <div className='button-text'>이미지 등록</div> */}
                 </div>
                 
                 <div className='upload'>

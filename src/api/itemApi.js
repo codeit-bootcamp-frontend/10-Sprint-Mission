@@ -25,16 +25,3 @@ export async function getProducts(params = {}) {
         throw error;
     }
 }
-
-export async function createFood(formData) {
-    const response = await fetch(`${BASE_URL}/products`, {
-      method: 'POST',
-      body: formData,
-    });
-    if (!response.ok) {
-      throw new Error('데이터를 생성하는데 실패했습니다');
-    }
-    const body = await response.json();
-    return body;
-  }
-  

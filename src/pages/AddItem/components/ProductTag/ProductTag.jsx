@@ -3,23 +3,26 @@ import './ProductTag.css';
 import xIcon from '../../../../assets/images/xicon.png';
 
 function ProductTag({ name, value, onChange }) {
+    const [inputValue, setInputValue] = useState("");
     const [tags, setTags] = useState([]);
 
     const addTag = (e) => {
-        if (e.key !== "Enter") return;
-        if (!value.trim()) return;
-
-        const updatedTags = [...tags, value.trim()];
-        setTags(updatedTags);
-        onChange(name, updatedTags);
-        e.target.value = "";
+        e.preventDefault();
+        if (!inputValue.trim()) return;
+        if (e.isComposing ||e.keyCode === 13 ){
+            const updatedTags = [...tags, inputValue.trim()];
+            setTags(updatedTags);
+            onChange(name, updatedTags);
+            setInputValue("");
+        }
     };
 
     const removeTag = (tagIdx) => {
-        setTags(tags.filter((tag, idx) => idx !== tagIdx));
+        const updatedTags = tags.filter((tag, idx) => idx !== tagIdx);
+        setTags(updatedTags);
     };
     const handleChange = (e) => {
-        onChange(name, e.target.value);
+        setInputValue(e.target.value);
     };
     
     return (
@@ -30,7 +33,7 @@ function ProductTag({ name, value, onChange }) {
                 type='text'
                 placeholder="태그를 입력해주세요"
                 name={name}
-                value={value}
+                value={inputValue}
                 onChange={handleChange}
                 onKeyDown={addTag}
             ></input>

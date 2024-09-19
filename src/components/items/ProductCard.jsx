@@ -83,22 +83,17 @@ const ProductCard = ({
           {
             favoriteData.slice(0, responsiveFavoriteProductCount).map((product) => (
               <div key={product.id} className={styles['best-product']}>
-                <Link 
+                <Link
                   to={`/items/${product.id}`}
-                  state={{product}}
+                  state={{ product }}
                 >
                   <img className={styles['best-product-img']} src={product.images} alt="제품 이미지" />
                 </Link>
                 <div className={styles['best-product-info']}>
-                  <Link to={{
-                    pathname: `/items/${product.id}`,
-                    state: {
-                      productImages: product.images,
-                      productName: product.name,
-                      productPrice: product.price,
-                      productFavoriteCount: product.favoriteCount
-                    }
-                  }}>
+                  <Link
+                    to={`/items/${product.id}`}
+                    state={{ product }}
+                  >
                     <p className={styles['product-title']}>{product.name}</p>
                   </Link>
                   <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
@@ -116,19 +111,19 @@ const ProductCard = ({
             sortProduct === "최신순" &&
             latestData.slice((pageNumber - 1) * responsiveAllProductCount, pageNumber * responsiveAllProductCount).map((product) => (
               <div key={product.id} className={styles['all-product']}>
-                <Link 
+                <Link
                   to={`/items/${product.id}`}
-                  state={{product}}
+                  state={{ product }}
                 >
                   <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
                 </Link>
                 <div className={styles['all-product-info']}>
-                <Link 
-                  to={`/items/${product.id}`}
-                  state={{product}}
-                >
-                  <p className={styles['product-title']}>{product.name}</p>
-                </Link>
+                  <Link
+                    to={`/items/${product.id}`}
+                    state={{ product }}
+                  >
+                    <p className={styles['product-title']}>{product.name}</p>
+                  </Link>
                   <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
                   <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
                 </div>
@@ -139,19 +134,19 @@ const ProductCard = ({
             sortProduct === "좋아요순" &&
             favoriteData.slice((pageNumber - 1) * responsiveAllProductCount, pageNumber * responsiveAllProductCount).map((product) => (
               <div key={product.id} className={styles['all-product']}>
-                <Link 
+                <Link
                   to={`/items/${product.id}`}
-                  state={{product}}
+                  state={{ product }}
                 >
                   <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
                 </Link>
                 <div className={styles['all-product-info']}>
-                <Link 
-                  to={`/items/${product.id}`}
-                  state={{product}}
-                >
-                  <p className={styles['product-title']}>{product.name}</p>
-                </Link>
+                  <Link
+                    to={`/items/${product.id}`}
+                    state={{ product }}
+                  >
+                    <p className={styles['product-title']}>{product.name}</p>
+                  </Link>
                   <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
                   <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
                 </div>

@@ -1,6 +1,6 @@
 import './BestItems.css';
 import Item from './Item';
-import { getItems } from '../../services/api';
+import { getItems } from '../../services/itemApi';
 import { getBestItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 

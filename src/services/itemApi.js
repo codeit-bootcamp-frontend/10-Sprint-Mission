@@ -1,4 +1,4 @@
-const API_URL = 'https://panda-market-api.vercel.app';
+const BASE_URL = 'https://panda-market-api.vercel.app';
 
 async function fetchFromAPI(endpoint) {
   try {
@@ -28,6 +28,6 @@ export async function getItems({
     queryParams.append('keyword', keyword);
   }
 
-  const endpoint = `${API_URL}/products?${queryParams.toString()}`;
+  const endpoint = `${BASE_URL}/products?${queryParams.toString()}`;
   return await fetchFromAPI(endpoint);
 }

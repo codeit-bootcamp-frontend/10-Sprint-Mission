@@ -1,0 +1,9 @@
+.TagCard {
+  border-radius: 26px;
+  background: var(--Secondary-100, #f3f4f6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 16px;
+}

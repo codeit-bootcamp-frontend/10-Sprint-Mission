@@ -8,3 +8,8 @@
   font-weight: 600;
   white-space: nowrap;
 }
+
+.PrimaryButton:disabled {
+  background-color: var(--Secondary-400, #9ca3af);
+  cursor: auto;
+}

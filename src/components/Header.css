@@ -39,6 +39,10 @@
   font-weight: 700;
 }
 
+.nav-menu .active {
+  color: var(--Primary-100);
+}
+
 /* tablet */
 @media screen and (max-width: 1199px) {
   .header-container {

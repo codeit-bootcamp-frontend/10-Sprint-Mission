@@ -1,0 +1,25 @@
+.InputBar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.InputBar-label {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.InputBar-input {
+  height: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+}
+
+.InputBar-input::placeholder {
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 16px;
+  font-weight: 400;
+}

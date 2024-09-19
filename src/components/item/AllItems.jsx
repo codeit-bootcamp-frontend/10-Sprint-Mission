@@ -4,7 +4,7 @@ import SearchBar from './SearchBar';
 import SortDropdown from './SortDropdown';
 import PrimaryButton from '../PrimaryButton';
 import Pagination from './pagination/Pagination';
-import { getItems } from '../../services/api';
+import { getItems } from '../../services/itemApi';
 import { getAllItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -54,10 +54,9 @@ function AllItems() {
         <div className="AllItems-control-panel">
           <h3 className="AllItems-title">전체상품</h3>
           <SearchBar />
-          <PrimaryButton
-            value="상품등록하기"
-            handleOnClick={handleButtonClick}
-          />
+          <PrimaryButton onClick={handleButtonClick}>
+            상품등록하기
+          </PrimaryButton>
           <SortDropdown handleSortClick={handleSortClick} />
         </div>
       </div>

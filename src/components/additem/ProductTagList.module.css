@@ -1,0 +1,39 @@
+.container {
+  width: 1200px;
+  display: flex;
+  overflow-wrap: wrap;
+  margin: 0 auto;
+  margin-bottom: 69px;
+}
+
+.tag {
+  border-radius: 26px;
+  background: var(--Cool-Gray-100, #F3F4F6);
+  height: 36px;
+  padding: 6px 12px 6px 16px;
+  display: flex;
+  flex-grow: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-800);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    width: 100%;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    max-width: 400px;
+    padding: 0 14px 69px 15px;
+  }
+}

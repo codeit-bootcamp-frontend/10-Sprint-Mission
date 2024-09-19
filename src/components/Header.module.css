@@ -1,0 +1,92 @@
+.header-logo {
+  content: url('assets/imgs/logo_sm.svg');
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-color);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 200px;
+  border-bottom: 1px #dfdfdf;
+  width: 100vw;
+  z-index: 1000;
+  margin-bottom: 24px;
+}
+
+.header-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header-nav {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+}
+
+.header-nav > * {
+  color: var(--secondary-600);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 26px;
+  padding: 21px 15px;
+}
+
+.active {
+  color: var(--blue);
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+@media (min-width: 1920px) {
+  .header {
+    padding: 9px 400px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    padding: 10px 24px 9px;
+    border-bottom: 1px #dfdfdf;
+    margin-bottom: 16px;
+  }
+  
+  .header-container {
+    display: flex;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-logo {
+    content: url('assets/imgs/logo_typo.png');
+  }
+
+  .header {
+    padding: 0px 16px;
+    border-bottom: 1px #dfdfdf;
+    margin-bottom: 24px;
+  }
+  
+  .header-container {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .header-nav > * {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+  }
+  
+}

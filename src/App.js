@@ -3,6 +3,7 @@ import Root from './pages/Root';
 import ItemsPage from './pages/ItemsPage';
 import HomePage from './pages/HomePage';
 import AddItemPage from './pages/AddItemPage';
+import ItemDetailPage from './pages/ItemDetailPage';
 
 const router = createBrowserRouter([
   {
@@ -11,6 +12,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'items', element: <ItemsPage /> },
+      { path: 'items/:itemId', element: <ItemDetailPage /> },
       { path: 'addItem', element: <AddItemPage /> },
     ],
   },

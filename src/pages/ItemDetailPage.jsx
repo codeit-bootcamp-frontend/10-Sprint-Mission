@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import './ItemDetailPage.css';
 import ItemDetails from '../components/item/ItemDetails';
+import Enquiry from '../components/item/Enquiry';
 
 export default function ItemDetailPage() {
   const { itemId } = useParams();
@@ -9,6 +10,7 @@ export default function ItemDetailPage() {
     <main className="ItemDetailPage">
       <div className="max-container">
         <ItemDetails itemId={itemId} />
+        <Enquiry />
       </div>
     </main>
     // <div className="ItemDetailPage">

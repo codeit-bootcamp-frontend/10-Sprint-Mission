@@ -10,6 +10,7 @@ function Textarea({
   placeholder,
   onChange,
   disabled = false,
+  heightSize = '',
 }) {
   const id = useId();
 
@@ -25,7 +26,7 @@ function Textarea({
         id={inputId || id}
         name={name}
         value={value}
-        className="Textarea-input"
+        className={`Textarea-input ${heightSize}`}
         onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}

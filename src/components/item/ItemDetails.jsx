@@ -39,14 +39,16 @@ export default function ItemDetails({ itemId }) {
                 <h4>상품소개</h4>
                 <p>{item.description}</p>
               </section>
-              <section className="item-tags">
-                <h4>상품태그</h4>
-                <div className="item-tags-wrapper">
-                  {item.tags.map((tag, index) => (
-                    <TagCard key={index} name={tag} />
-                  ))}
-                </div>
-              </section>
+              {item.tags.length > 0 && (
+                <section className="item-tags">
+                  <h4>상품태그</h4>
+                  <div className="item-tags-wrapper">
+                    {item.tags.map((tag, index) => (
+                      <TagCard key={index} name={tag} />
+                    ))}
+                  </div>
+                </section>
+              )}
               <section className="item-etc">
                 <div className="item-etc-wrapper">
                   <div className="item-etc-left">

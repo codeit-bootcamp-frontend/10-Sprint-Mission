@@ -6,3 +6,10 @@
   margin-top: 16px;
   text-align: end;
 }
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .Enquiry {
+    margin-top: 24px;
+  }
+}

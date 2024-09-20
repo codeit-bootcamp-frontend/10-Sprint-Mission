@@ -32,8 +32,10 @@ export default function ItemDetails({ itemId }) {
           <div className="item-info-container">
             <div className="item-info-wrapper">
               <section className="item-title">
-                <h2>{item.name}</h2>
-                <p>{formatNumberWithCommas(item.price)}원</p>
+                <h2 className="item-name">{item.name}</h2>
+                <p className="item-price">
+                  {formatNumberWithCommas(item.price)}원
+                </p>
               </section>
               <section className="item-content">
                 <h4>상품소개</h4>

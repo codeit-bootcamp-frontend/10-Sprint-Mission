@@ -1,27 +1,30 @@
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import './ItemDetailPage.css';
 import ItemDetails from '../components/item/ItemDetails';
 import Enquiry from '../components/item/Enquiry';
+import PrimaryRoundButton from '../components/PrimaryRoundButton';
+import returnIcon from '../assets/ic_return.svg';
 
 export default function ItemDetailPage() {
   const { itemId } = useParams();
+  const nav = useNavigate();
+
+  const handleReturnListOnClick = () => {
+    nav('/items');
+  };
 
   return (
     <main className="ItemDetailPage">
       <div className="max-container">
         <ItemDetails itemId={itemId} />
         <Enquiry />
+        <div className="return-btn-wrapper">
+          <PrimaryRoundButton onClick={handleReturnListOnClick}>
+            목록으로 돌아가기
+            <img src={returnIcon} alt="돌아가기 아이콘" />
+          </PrimaryRoundButton>
+        </div>
       </div>
     </main>
-    // <div className="ItemDetailPage">
-    //   ItemDetailPage {itemId}
-    //   <TagCard index="1" name="test1" />
-    //   <TagCard index="2" name="test2" />
-    //   <TagCard index="3" name="test3" />
-    //   <PrimaryRoundButton onClick={handleReturnListOnClick}>
-    //     목록으로 돌아가기
-    //     <img src={returnIcon} alt="돌아가기 아이콘" />
-    //   </PrimaryRoundButton>
-    // </div>
   );
 }

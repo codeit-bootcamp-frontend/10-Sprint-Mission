@@ -1,0 +1,18 @@
+.PrimaryRoundButton {
+  border-radius: 40px;
+  background-color: var(--Primary-100, #3692ff);
+  height: 42px;
+  padding: 12px 30px;
+  color: var(--Cool-Gray-100, #f3f4f6);
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.PrimaryRoundButton:disabled {
+  background-color: var(--Secondary-400, #9ca3af);
+  cursor: auto;
+}

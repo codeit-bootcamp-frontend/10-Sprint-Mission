@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import Nav from './components/Nav';
 import styles from './App.module.css';
 import './App.font.css';

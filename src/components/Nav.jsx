@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { Link, NavLink } from 'react-router-dom';
 import Container from './Container';
 import styles from './Nav.module.css';

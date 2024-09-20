@@ -1,10 +1,9 @@
-/* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import Card from './Card';
 import { getProductList } from '../api';
 import styles from './BestItem.module.css';
 
-function BestItem({className}) {
+function BestItem({ className }) {
   const [items, setItems] = useState([]);
 
   useEffect(() => {

@@ -35,6 +35,7 @@ export default [
       ],
       'react/function-component-definition': 'off',
       'react/no-unknown-property': ['error', { ignore: ['css'] }],
+      'react/prop-types': 'off',
     },
   },
 ];

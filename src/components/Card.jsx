@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import likeButton from '../assets/images/ic-heart.svg'
+import likeButton from '../assets/images/ic-heart.svg';
 import styles from './Card.module.css';
 
 function Card({ image, title, price, like }) {

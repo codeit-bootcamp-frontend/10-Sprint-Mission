@@ -21,7 +21,6 @@ export default function ItemDetails({ itemId }) {
     fetchItem();
   }, [itemId]);
 
-  console.log({ item });
   return (
     <div className="ItemDetails">
       {item && (

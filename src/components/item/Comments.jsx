@@ -16,8 +16,6 @@ export default function Comments({ itemId }) {
     fetchComments();
   }, [itemId]);
 
-  console.log({ comments });
-
   return (
     <section className="Comments">
       {comments.length > 0 ? (

@@ -1,5 +1,5 @@
 import Nav from './components/Nav';
-import styles from './App.module.css';
+import './App.css';
 import './App.font.css';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -9,7 +9,7 @@ import AddItemPage from './pages/AddItemPage';
 function App() {
   return (
     <>
-      <Nav className={styles.nav} />
+      <Nav />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='items' element={<ItemListPage />} />

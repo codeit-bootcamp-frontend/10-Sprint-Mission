@@ -1,4 +1,4 @@
-const BASE_URL = "https://panda-market-api.vercel.app/products";
+import { BASE_URL } from "constants/api";
 
 export const getProducts = async ({
   page = 1,

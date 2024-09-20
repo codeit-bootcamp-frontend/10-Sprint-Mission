@@ -4,6 +4,7 @@ import ItemDetails from '../components/item/ItemDetails';
 import Enquiry from '../components/item/Enquiry';
 import PrimaryRoundButton from '../components/PrimaryRoundButton';
 import returnIcon from '../assets/ic_return.svg';
+import Comments from '../components/item/Comments';
 
 export default function ItemDetailPage() {
   const { itemId } = useParams();
@@ -18,6 +19,7 @@ export default function ItemDetailPage() {
       <div className="max-container">
         <ItemDetails itemId={itemId} />
         <Enquiry />
+        <Comments />
         <div className="return-btn-wrapper">
           <PrimaryRoundButton onClick={handleReturnListOnClick}>
             목록으로 돌아가기

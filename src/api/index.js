@@ -5,10 +5,12 @@ const instance = axios.create({
   timeout: 10000,
 });
 
-export async function getProductList(params = {}) {
+export async function getBestProductList(params = {}) {
   try {
     const response = await instance.get('/products', { params });
-    return response.data;
+    return response.data.list
+      .sort((a, b) => b.favoriteCount - a.favoriteCount)
+      .slice(0, 4);
   } catch (error) {
     console.error(error);
     throw error;

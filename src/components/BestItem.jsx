@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Card from './Card';
-import { getProductList } from '../api';
+import { getBestProductList } from '../api';
 import styles from './BestItem.module.css';
 
 function BestItem({ className }) {
@@ -9,12 +9,9 @@ function BestItem({ className }) {
   useEffect(() => {
     const getProducts = async () => {
       try {
-        const { list } = await getProductList();
-        const sortedItems = list
-          .sort((a, b) => b.favoriteCount - a.favoriteCount)
-          .slice(0, 4);
+        const list = await getBestProductList();
 
-        setItems(sortedItems);
+        setItems(list);
       } catch (error) {
         console.error('Failed to fetch products:', error);
       }

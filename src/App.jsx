@@ -2,14 +2,21 @@
 import Nav from './components/Nav';
 import styles from './App.module.css';
 import './App.font.css';
-import { useLocation } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ItemListPage from './pages/ItemListPage';
+import AddItemPage from './pages/AddItemPage';
 
-function App({ children }) {
+function App() {
   const location = useLocation();
   return (
     <>
       <Nav className={styles.nav} pathname={location.pathname} />
-      <div className={styles.body}>{children}</div>
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='items' element={<ItemListPage />} />
+        <Route path='additem' element={<AddItemPage />} />
+      </Routes>
     </>
   );
 }

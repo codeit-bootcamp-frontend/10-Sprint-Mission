@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import Container from './Container';
 import styles from './Nav.module.css';
 import logoImg from '../assets/images/logo-sm.png';
@@ -10,8 +10,10 @@ function getLinkStyle({ isActive }) {
   };
 }
 
-function Nav({ pathname }) {
-  const isActive = pathname === '/additem';
+function Nav() {
+  const location = useLocation();
+
+  const isActive = location.pathname === '/additem';
 
   const style = getLinkStyle({ isActive });
 
@@ -25,7 +27,7 @@ function Nav({ pathname }) {
           <ul className={styles.menu}>
             <li>자유게시판</li>
             <li>
-              <NavLink to='/items' style={style}>
+              <NavLink to='/additem' style={style}>
                 중고마켓
               </NavLink>
             </li>

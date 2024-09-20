@@ -19,7 +19,7 @@ export default function ItemDetailPage() {
       <div className="max-container">
         <ItemDetails itemId={itemId} />
         <Enquiry />
-        <Comments />
+        <Comments itemId={itemId} />
         <div className="return-btn-wrapper">
           <PrimaryRoundButton onClick={handleReturnListOnClick}>
             목록으로 돌아가기

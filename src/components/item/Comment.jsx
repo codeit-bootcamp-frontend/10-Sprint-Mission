@@ -1,15 +1,16 @@
 import './Comment.css';
 import avatar from '../../assets/avatar.svg';
+import { formatDateToTimeAgo } from '../../utils/dateFormat';
 
-export default function Comment() {
+export default function Comment({ content, createdAt, writer }) {
   return (
     <div className="Comment">
-      <p className="Comment-content">혹시 사용기간이 어떻게 되실까요?</p>
-      <div className="Comment-avatar-wrapper">
-        <img src={avatar} alt="아바타" />
-        <div className="Comment-etc">
-          <span className="Comment-writer-nickname">똑똑한판다</span>
-          <span className="Comment-created-at">1시간 전</span>
+      <p className="content">{content}</p>
+      <div className="avatar-wrapper">
+        <img className="avatar-img" src={writer.image || avatar} alt="아바타" />
+        <div className="etc">
+          <span className="writer-nickname">{writer.nickname}</span>
+          <span className="created-at">{formatDateToTimeAgo(createdAt)}</span>
         </div>
       </div>
     </div>

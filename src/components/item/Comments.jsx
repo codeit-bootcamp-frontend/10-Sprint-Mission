@@ -18,7 +18,7 @@ export default function Comments({ itemId }) {
 
   return (
     <section className="Comments">
-      {comments.length > 0 ? (
+      {comments.length ? (
         comments.map((comment) => <Comment key={comment.id} {...comment} />)
       ) : (
         <div className="empty">

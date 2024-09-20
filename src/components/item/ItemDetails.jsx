@@ -40,7 +40,7 @@ export default function ItemDetails({ itemId }) {
                 <h4>상품소개</h4>
                 <p>{item.description}</p>
               </section>
-              {item.tags.length > 0 && (
+              {item.tags.length && (
                 <section className="item-tags">
                   <h4>상품태그</h4>
                   <div className="item-tags-wrapper">

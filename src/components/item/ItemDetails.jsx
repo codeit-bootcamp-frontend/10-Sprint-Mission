@@ -30,7 +30,7 @@ export default function ItemDetails({ itemId }) {
             <img className="item-img" src={item.images[0]} alt={item.name} />
           </div>
           <div className="item-info-container">
-            <div>
+            <div className="item-info-wrapper">
               <section className="item-title">
                 <h2>{item.name}</h2>
                 <p>{formatNumberWithCommas(item.price)}원</p>

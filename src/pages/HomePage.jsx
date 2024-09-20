@@ -6,7 +6,6 @@ function HomePage() {
   return (
     <Container>
       <BestItem className={styles.container} />
-      {/* <ItemList /> */}
     </Container>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import './ProductTag.css';
 import xIcon from '../../../../assets/images/xicon.png';
 
@@ -7,9 +7,10 @@ function ProductTag({ name, value, onChange }) {
     const [tags, setTags] = useState([]);
 
     const addTag = (e) => {
-        e.preventDefault();
-        if (!inputValue.trim()) return;
-        if (e.isComposing ||e.keyCode === 13 ){
+        if (e.key === "Enter") {
+            e.preventDefault();
+            if (!inputValue.trim()) return;
+
             const updatedTags = [...tags, inputValue.trim()];
             setTags(updatedTags);
             onChange(name, updatedTags);
@@ -20,11 +21,13 @@ function ProductTag({ name, value, onChange }) {
     const removeTag = (tagIdx) => {
         const updatedTags = tags.filter((tag, idx) => idx !== tagIdx);
         setTags(updatedTags);
+        onChange(name, updatedTags); 
     };
+
     const handleChange = (e) => {
         setInputValue(e.target.value);
     };
-    
+
     return (
         <div className='tag-container'>
             <label className='tag'>태그</label>
@@ -36,21 +39,24 @@ function ProductTag({ name, value, onChange }) {
                 value={inputValue}
                 onChange={handleChange}
                 onKeyDown={addTag}
-            ></input>
+            />
             <div className='tag-list'>
                 {tags.map((tag, idx) => (
                     <div className='tag-item' key={idx}>
                         <div className='tag-content'>
                             <span>#{tag}</span>
-                            <img className='x-icon' src={xIcon} onClick={() => removeTag(idx)} alt="태그 삭제"></img>
+                            <img 
+                                className='x-icon' 
+                                src={xIcon} 
+                                onClick={() => removeTag(idx)} 
+                                alt="태그 삭제"
+                            />
                         </div>
-                        
                     </div>
                 ))}
             </div>
-            
         </div>
-    )
+    );
 }
 
-export default ProductTag
+export default ProductTag;

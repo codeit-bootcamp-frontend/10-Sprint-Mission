@@ -1,21 +1,22 @@
 import React from 'react';
-import likeicon from '../../../assets/images/likeicon.png';
-import '../Market.css';
-function ItemCard( { item }) {
+import likeIcon from '../../../assets/images/likeicon.png';
+import styles from '../Market.module.css';
+import { Link } from 'react-router-dom';
+
+function ItemCard({ item }) {
     return (
-        <div className="card-container">
-            <img className="item-img" src={item.images[0]} alt={item.name}></img>
-            <div className="item-info">
-                <div className="title">{item.name}</div>
-                <div className="price">{item.price.toLocaleString('ko-KR')}원</div>
-                <div className="like-wrap">
-                    <img className="like-icon" src={likeicon} alt="좋아요 아이콘"></img>
-                    <div className="like-count">{item.favoriteCount}</div>
+        <Link to={`/items/${item.id}`} className={styles.cardContainer}>
+            <img className={styles.itemImg} src={item.images[0]} alt={item.name} />
+            <div className={styles.itemInfo}>
+                <div className={styles.title}>{item.name}</div>
+                <div className={styles.price}>{item.price.toLocaleString('ko-KR')}원</div>
+                <div className={styles.likeWrap}>
+                    <img className={styles.likeIcon} src={likeIcon} alt="좋아요 아이콘" />
+                    <div className={styles.likeCount}>{item.favoriteCount}</div>
                 </div>
             </div>
-            
-        </div>
-    )
+        </Link>
+    );
 }
 
 export default ItemCard;

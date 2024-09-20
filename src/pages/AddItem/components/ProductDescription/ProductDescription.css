@@ -15,7 +15,7 @@
     border:none;
     border-radius: 12px;
     background: var(--Cool-Gray-100, #F3F4F6);
-
+    resize:none;
 }
 .description-input::placeholder {
     color: var(--Secondary-400, #9CA3AF);

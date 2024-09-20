@@ -41,6 +41,8 @@ function TagInput ({ tags, onAddTag, onRemoveTag }) {
       onAddTag(inputString)
       setInput('')
     }
+
+    // 입력 포커스를 잃었을때, 이전 까지 입력된 값으로 태그를 추가하도록 변경 ???
   }
 
   return (

@@ -10,6 +10,11 @@ export const useProductIdState = () => {
   const [productFavoriteCount, setProductFavoriteCount] = useState();
   const [commentCount, setCommentCount] = useState();
   const [commentData, setCommentData] = useState();
+  const [createAt, setCreateAt] = useState();
+  const [updateAt, setUpdateAt] = useState();
+  const [ownerId, setOwnerId] = useState();
+  const [ownerIamge, setOwnerImage] = useState();
+  const [ownerNickname, setOwnerNickname] = useState();
 
   return {
     productId,
@@ -21,6 +26,11 @@ export const useProductIdState = () => {
     productFavoriteCount,
     commentCount,
     commentData,
+    createAt,
+    updateAt,
+    ownerId,
+    ownerIamge,
+    ownerNickname,
     setProductId,
     setProductName,
     setProductPrice,
@@ -30,5 +40,10 @@ export const useProductIdState = () => {
     setProductFavoriteCount,
     setCommentCount,
     setCommentData,
+    setCreateAt,
+    setUpdateAt,
+    setOwnerId,
+    setOwnerImage,
+    setOwnerNickname,
   }
 }

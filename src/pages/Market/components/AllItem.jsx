@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import SearchIcon from '../../../assets/images/searchicon.png';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ItemCard from './ItemCard';
-import { getProducts, getProductDetail } from '../../../api/itemApi';
+import { getProducts } from '../../../api/itemApi';
 import styles from '../Market.module.css';
 
 const getPageSize = () => {
@@ -21,8 +21,6 @@ function AllItem() {
     const [pageSize, setPageSize] = useState(getPageSize());
     const [order, setOrder] = useState('recent');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const { productId } = useParams();
-    const product = getProductDetail(productId);
 
     const handleNewestClick = () => {
         setOrder('recent');

@@ -1,0 +1,11 @@
+.commentContainer {
+    width:100%;
+}
+label {
+    color: var(--Cool-Gray-900, #111827);
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px; 
+}

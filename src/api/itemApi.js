@@ -26,29 +26,35 @@ export async function getProducts(params = {}) {
     }
 }
 
-export async function getProductDetail(params = {}) {
-
-    const query = new URLSearchParams(params).toString();
-    const allowedParams = ["productId"];
-    const invalidParams = Object.keys(params)
-        .filter(key => !allowedParams.includes(key));
-        
-    if (invalidParams.length > 0) {
-        console.error(`Invalid parameters detected: ${invalidParams.join(", ")}`);
-    }
-
+export async function getProductDetail(productId) {
     try {
         const response = await fetch(
-        `${BASE_URL}/products?${query}`
+            `${BASE_URL}/products/${productId}` 
         );
         if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
+            throw new Error(`HTTP error: ${response.status}`);
         }
+        
         const body = await response.json();
         return body;
     } catch (error) {
-        console.error("Failed to fetch products:", error);
+        console.error("Failed to fetch product details:", error);
         throw error;
     }
 }
-
+export async function getOwner(productId) {
+    try {
+        const response = await fetch(
+            `${BASE_URL}/products/${productId}` 
+        );
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        
+        const body = await response.json();
+        return body;
+    } catch (error) {
+        console.error("Failed to fetch product details:", error);
+        throw error;
+    }
+}

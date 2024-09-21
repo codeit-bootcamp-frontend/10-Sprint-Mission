@@ -8,7 +8,7 @@ function Router() {
     <BrowserRouter>
         <Routes>
             <Route path="/items"element={<Market />} />
-            <Route path="/items/:productid" element={<ProductDetail />} /> 
+            <Route path="/items/:productId" element={<ProductDetail />} /> 
             <Route path="/addItem" element={<AddItem />} />
         </Routes>
     </BrowserRouter>

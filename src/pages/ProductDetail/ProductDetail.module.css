@@ -1,16 +1,22 @@
 .product {
     width:100%;
-    width:100%;
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top:24px;
+    gap:40px;
 }
-.content-container {
+.contentContainer {
     max-width:1200px;
     width:100%;
     height:100%;
     display: flex;
     flex-direction: column;
     gap:40px;
+}
+hr {
+    width:100%;
+    stroke-width: 1px;
+    stroke: var(--Cool-Gray-200, #E5E7EB);
 }

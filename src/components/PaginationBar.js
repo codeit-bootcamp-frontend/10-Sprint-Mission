@@ -3,7 +3,7 @@ import prevPageIcon from "../assets/arrow_left_active.svg";
 import inPrevPageIcon from "../assets/arrow_left_inactive.svg";
 import nextPageIcon from "../assets/arrow_right_active.svg";
 import inNextPageIcon from "../assets/arrow_right_inactive.svg";
-import "./PagenationBar.css";
+import "./PaginationBar.css";
 
 const calcPageArray = (totalPage, currentPage) => {
   if (totalPage <= 5)
@@ -20,47 +20,43 @@ const calcPageArray = (totalPage, currentPage) => {
     .map((start, idx) => start + idx);
 };
 
-export default function PagenationBar({ totalPage, useParamObj }) {
-  const [paramObj, setParamObj] = useParamObj;
-
+export default function PaginationBar({ totalPage, currentPage, onChange }) {
   const pageArray = useMemo(
-    () => calcPageArray(totalPage, paramObj.page),
-    [totalPage, paramObj]
+    () => calcPageArray(totalPage, currentPage),
+    [totalPage, currentPage]
   );
 
   const checkPage = (page) => {
-    if (page === paramObj.page) return "pagenationBar__button--current";
+    if (page === currentPage) return "paginationBar__button--current";
   };
 
   const handlePrevClick = useCallback(() => {
-    setParamObj((prevObj) => ({ ...prevObj, page: paramObj.page - 1 }));
-  }, [paramObj, setParamObj]);
+    onChange(Math.max(currentPage - 5, 1));
+  }, [onChange, currentPage]);
 
   const handleNextClick = useCallback(() => {
-    setParamObj((prevObj) => ({ ...prevObj, page: paramObj.page + 1 }));
-  }, [paramObj, setParamObj]);
+    onChange(Math.min(currentPage + 5, totalPage));
+  }, [onChange, currentPage, totalPage]);
 
   const handleNumberClick = useCallback(
     (e) => {
-      setParamObj((prevObj) => ({
-        ...prevObj,
-        page: Number(e.target.textContent),
-      }));
+      onChange(Number(e.target.textContent));
     },
-    [setParamObj]
+    [onChange]
   );
 
   return (
-    <nav className="pagenationBar">
-      <ul className="pagenationBar__wrapper">
+    <nav className="paginationBar">
+      <ul className="paginationBar__wrapper">
         <li>
           <button
-            className="pagenationBar__button"
+            className="paginationBar__button"
+            type="button"
             onClick={handlePrevClick}
-            disabled={paramObj.page === 1}
+            disabled={currentPage === 1}
           >
             <img
-              src={paramObj.page !== 1 ? prevPageIcon : inPrevPageIcon}
+              src={currentPage !== 1 ? prevPageIcon : inPrevPageIcon}
               alt="이전 페이지"
             />
           </button>
@@ -68,7 +64,8 @@ export default function PagenationBar({ totalPage, useParamObj }) {
         {pageArray.map((page) => (
           <li key={page}>
             <button
-              className={`pagenationBar__button ${checkPage(page)}`}
+              className={`paginationBar__button ${checkPage(page)}`}
+              type="button"
               onClick={handleNumberClick}
               aria-label={`${page}번 페이지`}
             >
@@ -78,12 +75,13 @@ export default function PagenationBar({ totalPage, useParamObj }) {
         ))}
         <li>
           <button
-            className="pagenationBar__button"
+            className="paginationBar__button"
+            type="button"
             onClick={handleNextClick}
-            disabled={paramObj.page === totalPage}
+            disabled={currentPage === totalPage}
           >
             <img
-              src={paramObj.page !== totalPage ? nextPageIcon : inNextPageIcon}
+              src={currentPage !== totalPage ? nextPageIcon : inNextPageIcon}
               alt="다음 페이지"
             />
           </button>

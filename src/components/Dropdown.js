@@ -1,54 +1,50 @@
 import { useState, useEffect } from "react";
 import "./Dropdown.css";
 
-export default function Dropdown({ setParamObj }) {
+export default function Dropdown({ onSelect, children }) {
   const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState("recent");
+  const [value, setValue] = useState(children[0].props.value);
 
   const handleSelectClick = () => {
     setIsActive((prev) => !prev);
   };
   const handleSelectBlur = (e) => {
-    if (e.relatedTarget?.className === "orderSelect__option") return;
+    if (e.relatedTarget?.className === "dropdown__option") return;
     setIsActive(false);
   };
-  const handleRecentClick = () => {
-    setValue("recent");
-    setIsActive(false);
-  };
-  const handleFavoriteClick = () => {
-    setValue("favorite");
+  const handleOptionClick = (e) => {
+    setValue(e.target.value);
     setIsActive(false);
   };
 
   useEffect(() => {
-    setParamObj((prevObj) => ({ ...prevObj, page: 1, orderBy: value }));
-  }, [setParamObj, value]);
+    onSelect(value);
+  }, [onSelect, value]);
 
   return (
-    <div className="orderSelect">
+    <div className="dropdown">
       <button
-        className="orderSelect__select"
+        className="dropdown__select"
+        type="button"
         onClick={handleSelectClick}
         onBlur={handleSelectBlur}
       >
-        {value === "recent" ? "최신순" : "좋아요순"}
+        {children.find((child) => value === child.props.value).props.children}
       </button>
       {isActive && (
-        <ul className="orderSelect__optionList">
-          <li className="orderSelect__optionListItem">
-            <button className="orderSelect__option" onClick={handleRecentClick}>
-              최신순
-            </button>
-          </li>
-          <li className="orderSelect__optionListItem">
-            <button
-              className="orderSelect__option"
-              onClick={handleFavoriteClick}
-            >
-              좋아요순
-            </button>
-          </li>
+        <ul className="dropdown__optionList">
+          {children.map((child) => (
+            <li key={child.props.value} className="dropdown__optionListItem">
+              <button
+                className="dropdown__option"
+                type="button"
+                onClick={handleOptionClick}
+                value={child.props.value}
+              >
+                {child.props.children}
+              </button>
+            </li>
+          ))}
         </ul>
       )}
     </div>

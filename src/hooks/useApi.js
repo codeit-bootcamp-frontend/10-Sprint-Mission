@@ -5,13 +5,12 @@ export function useApi(asyncFunc, paramObj) {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
 
-  const wrrapedFunc = useCallback(
+  const wrappedFunc = useCallback(
     async (paramObj) => {
-      let result;
       try {
         setIsLoading(true);
         setError(null);
-        result = await asyncFunc(paramObj);
+        const result = await asyncFunc(paramObj);
         setData(result);
       } catch (error) {
         setError(error);
@@ -24,8 +23,8 @@ export function useApi(asyncFunc, paramObj) {
   );
 
   useEffect(() => {
-    wrrapedFunc(paramObj);
-  }, [wrrapedFunc, paramObj]);
+    wrappedFunc(paramObj);
+  }, [wrappedFunc, paramObj]);
 
   return [isLoading, error, data];
 }

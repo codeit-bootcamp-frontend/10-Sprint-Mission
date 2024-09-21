@@ -1,16 +1,16 @@
-.pagenationBar {
+.paginationBar {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.pagenationBar__wrapper {
+.paginationBar__wrapper {
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
-.pagenationBar__button {
+.paginationBar__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +22,7 @@
   color: var(--gray-600);
 }
 
-.pagenationBar__button--current {
+.paginationBar__button--current {
   background-color: var(--blue-100);
   border: 1px solid var(--blue-100);
   border-radius: 100%;

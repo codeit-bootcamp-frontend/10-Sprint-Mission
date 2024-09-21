@@ -11,6 +11,7 @@ import { fetchData } from "api/fetchData";
 import { API_USEDS_PRODUCT_INFORMATION, API_USER_COMMENTS } from "config/api";
 import styles from './ProductId.module.css';
 import Line from "components/items/productId/Line";
+import { ReactComponent as NoInquire } from 'assets/imgs/no_inquire.svg';
 
 const ProductId = () => {
   const {
@@ -91,10 +92,15 @@ const ProductId = () => {
               userNickname={user.writer.nickname}
               userImage={user.writer.image}
               updateAt={user.updatedAt}
+              commentData={commentData}
+              setCommentData={setCommentData}
               />
             <Line marginTop={12} marginBottom={24}/>
           </>
         ))
+      }
+      {
+        commentData.length <= 0 && <div className={styles['no-inquire']}><NoInquire />아직 문의가 없어요</div>
       }
       <BackButton />
     </div>

@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import styles from './InquireItem.module.css';
 import { ReactComponent as EllipsisIcon } from 'assets/imgs/ic_ellipsis.svg';
 
-const InquireItem = ({content, userNickname, userImage ='assets/imgs/user_icon.svg', updateAt}) => {
+const InquireItem = ({setCommentData, commentData, content, userNickname, userImage ='assets/imgs/user_icon.svg', updateAt}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [patchComment, setPatchComment] = useState(content);
   const [isPatchClicked, setIsPatchClicked] = useState(false);
@@ -37,7 +37,7 @@ const InquireItem = ({content, userNickname, userImage ='assets/imgs/user_icon.s
 
   const handleDelete = () => {
     setIsDropdownOpen(false);
-    containerRef.current.style.display = 'none';
+    setCommentData(commentData.filter((comment) => comment.content !== content));
   }
 
   const handlePatchComment = () => {

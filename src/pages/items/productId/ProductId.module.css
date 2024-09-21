@@ -6,6 +6,19 @@
   margin: 0 auto;
 }
 
+.no-inquire {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--Cool-Gray-400, #9CA3AF);
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+}
+
 @media (max-width: 1199px) {
   .card-container {
     width: 100%;

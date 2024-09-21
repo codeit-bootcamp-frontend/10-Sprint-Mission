@@ -62,6 +62,10 @@
   gap: 16px;
 }
 
+.authorInfo > div {
+  gap: 2px;
+}
+
 .authorInfo img {
   width: 40px;
   height: 40px;
@@ -71,11 +75,13 @@
 .authorInfo span {
   font-size: 0.875rem;
   font-weight: 500;
+  line-height: 1.5rem;
 }
 
 .authorInfo time {
   font-size: 0.875rem;
   font-weight: 400;
+  line-height: 1.5rem;
 }
 
 .heartButtonContainer {

@@ -1,18 +1,31 @@
 import { useState, useEffect, useCallback } from "react";
 import { getComments } from "../services/getProudct";
 import { formatDate } from "utils/commonUtils";
+import Dropdown from "./Dropdown";
 import inquiryEmptyImg from "assets/images/img_inquiry_empty.svg";
 import styles from "./Comments.module.css";
-import kebabIcon from "assets/images/ic_kebab.svg";
 import AuthorInfo from "./AuthorInfo";
+import Textarea from "components/Textarea";
+import Button from "components/Button";
 
 const Comments = ({ itemId }) => {
   const [comments, setComments] = useState([]);
+  const [editingId, setEditingId] = useState(null);
 
   const handleLoad = useCallback(async () => {
     const { list } = await getComments(itemId);
     setComments(list);
   }, [itemId]);
+
+  const handleSelect = (id, option) => {
+    if (option === "edit") {
+      setEditingId(id);
+    }
+  };
+
+  const handleCancel = () => {
+    setEditingId(null);
+  };
 
   useEffect(() => {
     handleLoad();
@@ -24,24 +37,51 @@ const Comments = ({ itemId }) => {
     <section>
       {comments.length ? (
         <ul className={styles.comments}>
-          {comments.map(({ content, id, createdAt, writer }) => (
-            <li key={id} className={styles.comment}>
-              <div className={styles.contentContainer}>
-                <p className={styles.content}>{content}</p>
-                <img
-                  src={kebabIcon}
-                  alt="수정/삭제 드롭다운 보이기"
-                  className={styles.kebab}
+          {comments.map(({ content, id, createdAt, writer }) => {
+            if (id === editingId) {
+              return (
+                <li key={id} className={styles.comment}>
+                  <Textarea value={content} className={styles.textarea} />
+                  <div className={styles.editContainer}>
+                    <AuthorInfo
+                      className={styles.authorInfo}
+                      nickname={writer.nickname}
+                      image={writer.image}
+                      date={formatDate(createdAt)}
+                    />
+                    <div className={styles.buttonContainer}>
+                      <button
+                        type="button"
+                        className={styles.cancelButton}
+                        onClick={handleCancel}
+                      >
+                        취소
+                      </button>
+                      <Button className={styles.editButton}>수정완료</Button>
+                    </div>
+                  </div>
+                </li>
+              );
+            }
+
+            return (
+              <li key={id} className={styles.comment}>
+                <div className={styles.contentContainer}>
+                  <p className={styles.content}>{content}</p>
+                  <Dropdown
+                    className={styles.dropdown}
+                    onSelect={(option) => handleSelect(id, option)}
+                  />
+                </div>
+                <AuthorInfo
+                  className={styles.authorInfo}
+                  nickname={writer.nickname}
+                  image={writer.image}
+                  date={formatDate(createdAt)}
                 />
-              </div>
-              <AuthorInfo
-                className={styles.authorInfo}
-                nickname={writer.nickname}
-                image={writer.image}
-                date={formatDate(createdAt)}
-              />
-            </li>
-          ))}
+              </li>
+            );
+          })}
         </ul>
       ) : (
         <div className={styles.inquiryEmpty}>

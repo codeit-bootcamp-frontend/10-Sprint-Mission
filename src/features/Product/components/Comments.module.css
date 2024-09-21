@@ -23,12 +23,54 @@
   color: var(--gray800);
 }
 
+.dropdownContainer {
+  position: relative;
+}
+
 .kebab {
   cursor: pointer;
 }
 
+.textarea textarea {
+  height: 80px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--gray800);
+}
+
+.editContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 12px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 4px;
+}
+
+.cancelButton {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  padding: 14px 20px 7px;
+  cursor: pointer;
+}
+
+.editButton {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  padding: 8px 23px;
+}
+
 .authorInfo {
   gap: 8px;
+}
+
+.authorInfo > div {
+  gap: 4px;
 }
 
 .authorInfo img {

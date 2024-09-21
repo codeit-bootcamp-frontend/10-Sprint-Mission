@@ -50,6 +50,11 @@
   padding: 9px 0 7px;
 }
 
+.dropdownMenu button {
+  width: 100%;
+  cursor: pointer;
+}
+
 .dropdownMenu li:first-child {
   border-bottom: 1px solid var(--gray200);
 }

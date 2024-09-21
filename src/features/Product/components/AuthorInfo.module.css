@@ -1,11 +1,11 @@
 .authorInfo {
   display: flex;
+  align-items: center;
 }
 
 .user {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .nickname {

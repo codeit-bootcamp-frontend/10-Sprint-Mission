@@ -14,8 +14,8 @@ const Dropdown = ({ order, onChange }) => {
     setIsOpen(!isOpen);
   };
 
-  const handleSelect = (option) => {
-    onChange(option);
+  const handleSelect = (event) => {
+    onChange(event.target.value);
     setIsOpen(false);
   };
 
@@ -29,8 +29,10 @@ const Dropdown = ({ order, onChange }) => {
         <ul className={styles.dropdownMenu}>
           {Object.keys(options).map((option) => {
             return (
-              <li key={option} onClick={() => handleSelect(option)}>
-                {options[option]}
+              <li key={option}>
+                <button type="button" value={option} onClick={handleSelect}>
+                  {options[option]}
+                </button>
               </li>
             );
           })}

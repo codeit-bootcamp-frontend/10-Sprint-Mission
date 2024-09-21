@@ -5,6 +5,7 @@ const Textarea = ({
   label = "",
   className = "",
   placeholder = "",
+  value = "",
   onChange,
 }) => {
   return (
@@ -18,6 +19,7 @@ const Textarea = ({
         id={name}
         placeholder={placeholder}
         onChange={onChange}
+        value={value}
       ></textarea>
     </div>
   );

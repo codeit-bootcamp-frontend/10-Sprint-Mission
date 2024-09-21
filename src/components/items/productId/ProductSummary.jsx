@@ -39,7 +39,7 @@ const ProductSummary = ({
             <p className={styles['owner-updateAt']}>{updateAt}</p>
           </div>
         </div>
-        <button className={styles['product-favorite-button']} onClick={onClick}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>} {productFavoriteCount}</button>
+        <span className={styles['product-favorite-count']} onClick={onClick}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>} {productFavoriteCount}</span>
       </div>
     </div>
   );

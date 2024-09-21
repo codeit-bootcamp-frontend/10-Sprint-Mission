@@ -76,6 +76,7 @@
 
 .owner-card {
   display: flex;
+  gap: 16px;
   justify-content: space-between;
 }
 
@@ -104,13 +105,12 @@
   line-height: 24px;
 }
 
-.product-favorite-button {
-  all: unset;
+.product-favorite-count {
   display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
   padding: 4px 12px;
-  flex-direction: column;
-  align-items: flex-start;
   gap: 4px;
   border-radius: 35px;
   border: 1px solid var(--secondary-200);
@@ -119,13 +119,9 @@
   font-style: normal;
   font-weight: 500;
   line-height: 26px;
+  user-select: none;
 }
 
-.product-favorite-button:hover,
-.product-favorite-button:active,
-.product-favorite-button:focus {
-  all: unset;
-}
 
 @media (max-width: 1199px) {
   .product-name {

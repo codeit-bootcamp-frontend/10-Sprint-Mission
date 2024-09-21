@@ -10,6 +10,7 @@ import { useLocation } from "react-router-dom";
 import { fetchData } from "api/fetchData";
 import { API_USEDS_PRODUCT_INFORMATION, API_USER_COMMENTS } from "config/api";
 import styles from './ProductId.module.css';
+import Line from "components/items/productId/Line";
 
 const ProductId = () => {
   const {
@@ -79,15 +80,20 @@ const ProductId = () => {
           updateAt={updateAt}
         />
       </div>
+      <Line marginTop={40} marginBottom={40}/>
       <Inquire />
       {
         commentData && commentData.map((user, index) => (
-          <InquireItem
-            key={index}
-            userNickname={user.writer.nickname}
-            userImage={user.writer.image}
-            updateTime={user.updatedAt}
-          />
+          <>
+            <InquireItem
+              key={index}
+              content={user.content}
+              userNickname={user.writer.nickname}
+              userImage={user.writer.image}
+              updateAt={user.updatedAt}
+              />
+            <Line marginTop={12} marginBottom={24}/>
+          </>
         ))
       }
       <BackButton />

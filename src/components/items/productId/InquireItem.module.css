@@ -1,0 +1,45 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  color: var(--secondary-800);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.user-image {
+  content: url('assets/imgs/user_icon.svg');
+}
+
+.user-info-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-nickname {
+  color: var(--secondary-600);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.updateAt {
+  color: var(--secondary-400);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}

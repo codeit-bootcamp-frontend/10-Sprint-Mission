@@ -12,6 +12,7 @@
 .product-text-container {
     width:690px;
     display:flex;
+    justify-content: space-between;
     gap:62px;
     flex-direction: column;
 }

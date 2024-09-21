@@ -42,19 +42,42 @@ export async function getProductDetail(productId) {
         throw error;
     }
 }
-export async function getOwner(productId) {
+
+export async function postProductComment(productId, formData) {
     try {
         const response = await fetch(
-            `${BASE_URL}/products/${productId}` 
+            `${BASE_URL}/products/${productId}/comments`,
+            {
+                method:'POST',
+                body:formData,
+            } 
         );
         if (!response.ok) {
             throw new Error(`HTTP error: ${response.status}`);
         }
-        
         const body = await response.json();
         return body;
     } catch (error) {
-        console.error("Failed to fetch product details:", error);
+        console.error("Failed to fetch product comments:", error);
+        throw error;
+    }
+}
+
+export async function getProductComments(productId, params = {}) {
+    const { limit, cursor } = params;
+    const query = new URLSearchParams({ limit, cursor }).toString(); // limit과 cursor만 query로 사용
+
+    try {
+        const response = await fetch(
+            `${BASE_URL}/products/${productId}/comments?${query}`
+        );
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        const body = await response.json();
+        return body;
+    } catch (error) {
+        console.error("Failed to fetch product comments:", error);
         throw error;
     }
 }

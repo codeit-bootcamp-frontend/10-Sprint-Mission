@@ -14,7 +14,8 @@ const PaginationButton = styled.button`
   border-radius: 50px;
   width: 40px;
   height: 40px;
-  background-color: #ffffff;
+  background-color: ${(props) => (props.$clicked ? "#2F80ED" : "white")};
+  color: ${(props) => (props.$clicked ? "white" : "black")};
   border: 1px solid #e5e7e8;
   margin-left: 4px;
   margin-top: 40px;
@@ -28,35 +29,29 @@ const PaginationButton = styled.button`
   }
 `;
 
-const Pagination = ({ activePage, setActivePage, totalpage }) => {
-  const [pagebuttons, setPagebuttons] = useState([1, 2, 3, 4, 5]);
+const Pagination = ({ activePage, setActivePage, totalPage }) => {
+  const [pageButtons, setPageButtons] = useState([1, 2, 3, 4, 5]);
 
   const handleNextClick = () => {
-    if (activePage >= totalpage) {
-      return;
-    }
     if (activePage % 5 === 0) {
-      pagebuttons.forEach((num, index) => {
-        pagebuttons[index] = activePage + index + 1;
+      pageButtons.forEach((num, index) => {
+        pageButtons[index] = activePage + index + 1;
       });
       setActivePage(activePage + 1);
-      setPagebuttons(pagebuttons);
+      setPageButtons(pageButtons);
     } else {
       setActivePage(activePage + 1);
     }
   };
 
   const handlePreviousClick = () => {
-    if (activePage === 1) {
-      return;
-    }
     if ((activePage - 1) % 5 === 0) {
-      pagebuttons.forEach((num, index) => {
-        pagebuttons[index] = activePage - index - 1;
+      pageButtons.forEach((num, index) => {
+        pageButtons[index] = activePage - index - 1;
       });
-      pagebuttons.reverse();
+      pageButtons.reverse();
       setActivePage(activePage - 1);
-      setPagebuttons(pagebuttons);
+      setPageButtons(pageButtons);
     } else {
       setActivePage(activePage - 1);
     }
@@ -66,26 +61,29 @@ const Pagination = ({ activePage, setActivePage, totalpage }) => {
     setActivePage(number);
   };
 
-  const getButtonStyle = (number) => ({
-    backgroundColor: activePage === number ? "#2F80ED" : "white",
-    color: activePage === number ? "white" : "black",
-  });
-
   return (
     <PaginationContainer>
-      <PaginationButton onClick={() => handlePreviousClick()} type="button">
+      <PaginationButton
+        onClick={handlePreviousClick}
+        type="button"
+        disabled={activePage === 1}
+      >
         &lt;
       </PaginationButton>
-      {pagebuttons.map((number) => (
+      {pageButtons.map((number) => (
         <PaginationButton
           key={number}
           onClick={() => handlePageClick(number)}
-          style={getButtonStyle(number)}
+          $clicked={activePage === number}
         >
           {number}
         </PaginationButton>
       ))}
-      <PaginationButton onClick={() => handleNextClick()} type="button">
+      <PaginationButton
+        onClick={handleNextClick}
+        type="button"
+        disabled={activePage >= totalPage}
+      >
         &gt;
       </PaginationButton>
     </PaginationContainer>

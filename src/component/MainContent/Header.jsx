@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import ProfileImg from "../../assets/profile.png";
 
 const HeaderStyle = styled.header`
@@ -37,7 +37,7 @@ const Nav = styled.nav`
   }
 `;
 
-const NavLink = styled(Link)`
+const Link = styled(NavLink)`
   font-size: 18px;
   font-weight: 700;
   text-decoration: none;
@@ -49,6 +49,10 @@ const NavLink = styled(Link)`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  &.active {
+    color: #3692ff;
+  }
 `;
 
 const Header = () => {
@@ -56,8 +60,8 @@ const Header = () => {
     <HeaderStyle>
       <HeaderImg src="/logo.png" alt="로고" />
       <Nav>
-        <NavLink to={"/"}>자유게시판</NavLink>
-        <NavLink to={"/additem"}>중고마켓</NavLink>
+        <Link to={"/"}>자유게시판</Link>
+        <Link to={"/additem"}>중고마켓</Link>
       </Nav>
       <ProFile src={ProfileImg} alt="프로파일" />
     </HeaderStyle>

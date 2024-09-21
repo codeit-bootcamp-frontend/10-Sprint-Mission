@@ -24,6 +24,10 @@ const ItemContent = styled.textarea`
     top: 16px;
     left: 16px;
   }
+  &:focus {
+    border: 1px solid #3692ff;
+    outline: none;
+  }
 `;
 
 const Itemintro = ({ setItem }) => {

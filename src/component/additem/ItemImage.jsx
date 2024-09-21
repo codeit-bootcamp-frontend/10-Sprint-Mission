@@ -57,14 +57,21 @@ const ItemImage = ({ setItem }) => {
         setErrorMessage("최대 1개까지만 등록할 수 있습니다");
         return;
       }
+
       const reader = new FileReader();
+
       reader.onloadend = () => {
         setImage(reader.result);
-        setErrorMessage("");
         setItem((prev) => ({ ...prev, image: true }));
-        console.log("img");
+        setErrorMessage("");
       };
-      reader.readAsDataURL(file);
+
+      if (file.type === "image/png" || file.type === "image/jpeg") {
+        reader.readAsDataURL(file);
+      } else {
+        alert("이미지 파일이 아닙니다.");
+        setErrorMessage("이미지 파일이 아닙니다.");
+      }
     }
   };
 

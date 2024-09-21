@@ -16,10 +16,13 @@ const ItemTag = styled.input`
   padding: 16px 24px;
   background-color: #f3f4f6;
   border: 1px solid #ffffff;
+  &:focus {
+    border: 1px solid #3692ff;
+    outline: none;
+  }
 `;
 
 const TextDisplay = styled.div`
-  width: 110px;
   height: 36px;
   margin-top: 16px;
   font-size: 16px;
@@ -31,6 +34,7 @@ const TextDisplay = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: 10px;
   position: relative;
 `;
 

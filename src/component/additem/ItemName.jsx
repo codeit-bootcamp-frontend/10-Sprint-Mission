@@ -15,6 +15,11 @@ const ItemName = styled.input`
   padding: 16px 24px;
   background-color: #f3f4f6;
   border: 1px solid #ffffff;
+
+  &:focus {
+    border: 1px solid #3692ff;
+    outline: none;
+  }
 `;
 
 const handleNameChange = (e, setItem) => {

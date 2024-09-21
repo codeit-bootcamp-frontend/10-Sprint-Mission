@@ -67,7 +67,7 @@ const ProductList = ({ sortedProducts }) => {
                 onClick={() => handleClick(product.id)}
               />
             )}
-            <ItemTitle>{product.name} 팝니다</ItemTitle>
+            <ItemTitle>{product.name}</ItemTitle>
             <Price>{product.price.toLocaleString()} 원</Price>
             <FavoriteIcon>
               <FavoriteImg src={favoriteIcon} alt="좋아요" />

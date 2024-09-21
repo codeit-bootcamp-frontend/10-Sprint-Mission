@@ -41,8 +41,6 @@ const Comments = ({ itemId }) => {
     handleLoad();
   }, [handleLoad]);
 
-  console.log(comments);
-
   return (
     <section>
       {comments.length ? (

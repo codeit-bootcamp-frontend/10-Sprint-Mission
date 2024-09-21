@@ -1,0 +1,17 @@
+.authorInfo {
+  display: flex;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nickname {
+  color: var(--gray600);
+}
+
+.date {
+  color: var(--gray400);
+}

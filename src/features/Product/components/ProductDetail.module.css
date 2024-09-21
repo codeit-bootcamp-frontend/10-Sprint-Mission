@@ -58,27 +58,24 @@
   padding: 16px 0 24px;
 }
 
-.profile {
-  display: flex;
+.authorInfo {
   gap: 16px;
 }
 
-.user {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.authorInfo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
-.author {
+.authorInfo span {
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--gray600);
 }
 
-.date {
+.authorInfo time {
   font-size: 0.875rem;
   font-weight: 400;
-  color: var(--gray400);
 }
 
 .heartButtonContainer {

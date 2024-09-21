@@ -2,7 +2,9 @@ import styles from "./Button.module.css";
 
 const Button = ({ type, className = "", disabled, children }) => {
   const handleClick = (event) => {
-    event.preventDefault();
+    if (type === "submit") {
+      event.preventDefault();
+    }
   };
 
   return (

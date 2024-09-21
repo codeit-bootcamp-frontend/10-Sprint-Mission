@@ -12,6 +12,7 @@ const Inquiry = () => {
       setIsDisabled(false);
       return;
     }
+
     setIsDisabled(true);
   };
 

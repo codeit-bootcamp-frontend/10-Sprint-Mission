@@ -1,16 +1,14 @@
 import { useState, useEffect, useCallback } from "react";
-import { useParams } from "react-router-dom";
 import Tags from "components/Tags";
 import HeartButton from "components/HeartButton";
 import { checkObjectIsEmpty, formatDate } from "utils/commonUtils";
 import { getProudct } from "../services/getProudct";
 import styles from "./ProductDetail.module.css";
-import { ReactComponent as ProfileIcon } from "assets/images/ic_profile.svg";
 import kebabIcon from "assets/images/ic_kebab.svg";
+import AuthorInfo from "./AuthorInfo";
 
-const ProductDetail = () => {
+const ProductDetail = ({ itemId }) => {
   const [product, setProudct] = useState({});
-  const { itemId } = useParams();
 
   const handleLoad = useCallback(async () => {
     const item = await getProudct(itemId);
@@ -51,15 +49,11 @@ const ProductDetail = () => {
               </div>
             </div>
             <div className={styles.userInfo}>
-              <div className={styles.profile}>
-                <ProfileIcon />
-                <div className={styles.user}>
-                  <div className={styles.author}>{product.ownerId}</div>
-                  <div className={styles.date}>
-                    {formatDate(product.createdAt)}
-                  </div>
-                </div>
-              </div>
+              <AuthorInfo
+                className={styles.authorInfo}
+                nickname={product.ownerId}
+                date={formatDate(product.createdAt)}
+              />
               <div className={styles.heartButtonContainer}>
                 <HeartButton favoriteCount={product.favoriteCount} />
               </div>

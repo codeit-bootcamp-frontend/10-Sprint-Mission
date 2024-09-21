@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "panda-market-react",
+=======
+  "name": "fe10-sprint-mission5",
+>>>>>>> e111b83193dc81d62f53e6fa3f018212039172c6
   "version": "0.1.0",
   "private": true,
   "dependencies": {

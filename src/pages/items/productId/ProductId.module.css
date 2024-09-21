@@ -15,7 +15,10 @@
 
 @media (max-width: 767px) {
   .card-container {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     max-width: 400px;
+    padding: 0 16px;
   }
 }

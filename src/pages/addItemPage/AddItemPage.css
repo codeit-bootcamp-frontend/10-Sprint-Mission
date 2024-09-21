@@ -1,7 +1,6 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 40px;
   align-items: center;
   margin-top: 70px;
   padding: 24px 0 48px;
@@ -9,13 +8,11 @@
 }
 @media (max-width: 1199px) {
   .main {
-    gap: 32px;
     padding: 24px 24px 48px;
   }
 }
 @media (max-width: 767px) {
   .main {
-    gap: 24px;
-    padding: 16px 16px 48px;
+    padding: 24px 16px 48px;
   }
 }

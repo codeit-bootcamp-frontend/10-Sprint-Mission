@@ -1,0 +1,58 @@
+.addItemForm {
+  width: 1200px;
+}
+@media (max-width: 1199px) {
+  .addItemForm {
+    width: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form__title {
+  font-size: var(--size-xl);
+  font-weight: bold;
+}
+
+.form__submitButton {
+  padding: 10px 24px;
+  background-color: var(--gray-400);
+  border-radius: 8px;
+  font-size: var(--size-lg);
+  font-weight: 500;
+  color: var(--gray-100);
+}
+
+.form__label {
+  display: block;
+  font-size: var(--size-2lg);
+  font-weight: bold;
+}
+
+.form__imageInput {
+  width: 282px;
+  height: 282px;
+  border-radius: 12px;
+  background-color: var(--gray-100);
+  color: var(--gray-400);
+}
+
+.form__input {
+  width: 100%;
+  padding: 16px 24px;
+  border-radius: 12px;
+  background-color: var(--gray-100);
+}
+.form__input::placeholder {
+  color: var(--gray-400);
+}

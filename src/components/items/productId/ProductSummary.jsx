@@ -31,7 +31,7 @@ const ProductSummary = ({
       ))}
       <div className={styles['owner-container']}>
         <div className={styles['owner-card']}>
-          <img className={styles['owner-image']} src={ownerImage} alt="owner" />
+          <img className={styles['owner-image']} src='assets/imgs/user_icon.svg' alt="owner" />
           <div className={styles['owner-content']}>
             <p className={styles['owner-nickname']}>{ownerNickname}</p>
             <p className={styles['owner-updateAt']}>{updateAt}</p>

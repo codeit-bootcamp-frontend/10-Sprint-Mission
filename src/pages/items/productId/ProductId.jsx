@@ -12,19 +12,14 @@ import { API_USEDS_PRODUCT_INFORMATION, API_USER, API_USER_COMMENTS } from "conf
 
 const ProductId = () => {
   const {
-    productId,
     productName,
     productPrice,
     productDescription,
     productImage,
     productTags,
     productFavoriteCount,
-    commentCount,
     commentData,
-    setProductId,
-    createAt,
     updateAt,
-    ownerId,
     ownerIamge,
     ownerNickname,
     setProductName,
@@ -35,21 +30,15 @@ const ProductId = () => {
     setProductFavoriteCount,
     setCommentCount,
     setCommentData,
-    setCreateAt,
-    setUpdateAt,
-    setOwnerId,
-    setOwnerImage,
-    setOwnerNickname,
   } = useProductIdState();
 
   const location = useLocation();
   const id = location.state.product.id;
-  setOwnerId(location.state.product.ownerId);
 
   useEffect(() => {
     const asyncFunction = async () => {
-      const response = await fetchData(`${API_USEDS_PRODUCT_INFORMATION}/${id}`);
-      const product = response.data.list[0];
+      const response = await fetchData(`${API_USEDS_PRODUCT_INFORMATION}/${id}`, {productId: id});
+      const product = response.data;
       setProductName(product.name);
       setProductPrice(product.price);
       setProductDescription(product.description);
@@ -64,20 +53,7 @@ const ProductId = () => {
 
   useEffect(() => {
     const asyncFunction = async () => {
-      const responseUser = await fetchData(`${API_USER}`);
-      setOwnerNickname(responseUser.data.nickname);
-      setOwnerImage(responseUser.data.image);
-      setCreateAt(responseUser.data.createdAt);
-      setUpdateAt(responseUser.data.updatedAt);
-    }
-
-    asyncFunction();
-
-  }, [setOwnerNickname, setOwnerImage, setCreateAt, setUpdateAt]);
-
-  useEffect(() => {
-    const asyncFunction = async () => {
-      const response = await fetchData(`${API_USER_COMMENTS}/${id}/comments`);
+      const response = await fetchData(`${API_USER_COMMENTS}/${id}/comments`, {productId: id, limit: 3});
       setCommentCount(response.data.list.length);
       setCommentData(response.data.list);
     }

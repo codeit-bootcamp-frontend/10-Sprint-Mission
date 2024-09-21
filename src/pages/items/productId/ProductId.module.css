@@ -1,0 +1,7 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 1200px;
+  margin: 0 auto;
+}

@@ -8,7 +8,8 @@ import { useProductIdState } from "components/items/productId/useProductIdState"
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchData } from "api/fetchData";
-import { API_USEDS_PRODUCT_INFORMATION, API_USER, API_USER_COMMENTS } from "config/api";
+import { API_USEDS_PRODUCT_INFORMATION, API_USER_COMMENTS } from "config/api";
+import styles from './ProductId.module.css';
 
 const ProductId = () => {
   const {
@@ -65,17 +66,19 @@ const ProductId = () => {
   return (
     <div>
       <Header />
-      <ProductImage productImage={productImage} />
-      <ProductSummary
-        productName={productName}
-        productPrice={productPrice}
-        productDescription={productDescription}
-        productTags={productTags}
-        productFavoriteCount={productFavoriteCount}
-        ownerNickname={ownerNickname}
-        ownerIamge={ownerIamge}
-        updateAt={updateAt}
-      />
+      <div className={styles['card-container']}>
+        <ProductImage productImage={productImage} />
+        <ProductSummary
+          productName={productName}
+          productPrice={productPrice}
+          productDescription={productDescription}
+          productTags={productTags}
+          productFavoriteCount={productFavoriteCount}
+          ownerNickname={ownerNickname}
+          ownerIamge={ownerIamge}
+          updateAt={updateAt}
+        />
+      </div>
       <Inquire />
       {
         commentData && commentData.map((user, index) => (

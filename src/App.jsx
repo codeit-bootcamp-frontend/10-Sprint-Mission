@@ -2,7 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 import Home from 'components/Home';
 import Items from 'pages/items/Items';
 import AddItem from 'pages/additem/AddItem';
-import ProductInformation from 'components/items/ProductInformation';
+import ProductInformation from 'components/items/productId/ProductInformation';
 
 const App = () => {
   return (

@@ -11,6 +11,7 @@ import Button from "components/Button";
 const Comments = ({ itemId }) => {
   const [comments, setComments] = useState([]);
   const [editingId, setEditingId] = useState(null);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleLoad = useCallback(async () => {
     const { list } = await getComments(itemId);
@@ -27,6 +28,15 @@ const Comments = ({ itemId }) => {
     setEditingId(null);
   };
 
+  const handleTextareaChange = (event) => {
+    if (event.target.value !== "") {
+      setIsDisabled(false);
+      return;
+    }
+
+    setIsDisabled(true);
+  };
+
   useEffect(() => {
     handleLoad();
   }, [handleLoad]);
@@ -41,7 +51,11 @@ const Comments = ({ itemId }) => {
             if (id === editingId) {
               return (
                 <li key={id} className={styles.comment}>
-                  <Textarea value={content} className={styles.textarea} />
+                  <Textarea
+                    value={content}
+                    className={styles.textarea}
+                    onChange={handleTextareaChange}
+                  />
                   <div className={styles.editContainer}>
                     <AuthorInfo
                       className={styles.authorInfo}
@@ -57,7 +71,13 @@ const Comments = ({ itemId }) => {
                       >
                         취소
                       </button>
-                      <Button className={styles.editButton}>수정완료</Button>
+                      <Button
+                        className={styles.editButton}
+                        type="submit"
+                        disabled={isDisabled}
+                      >
+                        수정완료
+                      </Button>
                     </div>
                   </div>
                 </li>

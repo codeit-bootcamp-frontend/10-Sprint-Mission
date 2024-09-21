@@ -37,13 +37,15 @@ label {
     gap: 10px;
     border:none;
     border-radius: 8px;
-    background: var(--Cool-Gray-400, #9CA3AF);
+    background: #3692FF;
 
     color: var(--Cool-Gray-100, #F3F4F6);
     font-size: 16px;
     font-weight: 600;
     line-height: 26px; 
-
+}
+.submitButton:disabled {
+    background: var(--Cool-Gray-400, #9CA3AF);
 }
 .commentList {
     margin-top:24px;

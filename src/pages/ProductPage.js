@@ -1,8 +1,9 @@
 import ProductDetail from "features/Product/components/ProductDetail";
+import styles from "./ProductPage.module.css";
 
 const ProductPage = () => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <ProductDetail />
     </div>
   );

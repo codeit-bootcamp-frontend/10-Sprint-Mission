@@ -1,13 +1,13 @@
 import styles from "./Button.module.css";
 
-const Button = ({ className, isDisabled, children }) => {
+const Button = ({ type, className, isDisabled, children }) => {
   const handleClick = (event) => {
     event.preventDefault();
   };
 
   return (
     <button
-      type="submit"
+      type={type}
       className={`${styles.button} ${className}`}
       onClick={handleClick}
       disabled={isDisabled}

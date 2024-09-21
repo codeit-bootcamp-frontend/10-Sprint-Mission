@@ -22,7 +22,7 @@ const ProductSummary = ({
   return (
     <div className={styles['container']}>
       <h4 className={styles['product-name']}>{productName}</h4>
-      <p className={styles['product-price']}>{productPrice}</p>
+      <p className={styles['product-price']}>{Number(productPrice).toLocaleString()}</p>
       <hr className={styles['line']} />
       <p className={styles['product-description-title']}>상품 소개</p>
       <p className={styles['product-description']}>{productDescription}</p>

@@ -48,6 +48,11 @@
   height: 104px;
 }
 
+.product-tag-container {
+  display: flex;
+  flex-grow: 0;
+}
+
 .product-tag {
   border-radius: 26px;
   background: var(--Cool-Gray-100, #F3F4F6);
@@ -121,7 +126,6 @@
   line-height: 26px;
   user-select: none;
 }
-
 
 @media (max-width: 1199px) {
   .product-name {

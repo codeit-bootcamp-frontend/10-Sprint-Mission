@@ -72,7 +72,7 @@ const InquireItem = ({content, userNickname, userImage ='assets/imgs/user_icon.s
         :
         <>
           {patchComment} 
-          <span onClick={()=>setIsDropdownOpen(!isDropdownOpen)}><EllipsisIcon /></span>
+          <span className={styles['ellipsis']} onClick={()=>setIsDropdownOpen(!isDropdownOpen)}><EllipsisIcon /></span>
         </>
         }
         </div>

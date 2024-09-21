@@ -27,9 +27,11 @@ const ProductSummary = ({
       <p className={styles['product-description-title']}>상품 소개</p>
       <p className={styles['product-description']}>{productDescription}</p>
       <p className={styles['product-tag-title']}>상품 태그</p>
-      {productTags.map((tag, index) => (
-        <span key={index}className={styles['product-tag']}>#{tag}</span>
-      ))}
+      <div className={styles['product-tag-container']}>
+        {productTags.map((tag, index) => (
+          <span key={index}className={styles['product-tag']}>#{tag}</span>
+        ))}
+      </div>
       {productTags.length === 0 && <span className={styles['empty-tag']}></span>}
       <div className={styles['owner-container']}>
         <div className={styles['owner-card']}>

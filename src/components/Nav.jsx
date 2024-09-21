@@ -12,7 +12,7 @@ function getLinkStyle({ isActive }) {
 function Nav() {
   const location = useLocation();
 
-  const isActive = location.pathname === '/additem';
+  const isActive = location.pathname === '/items';
 
   const style = getLinkStyle({ isActive });
 
@@ -25,7 +25,7 @@ function Nav() {
         <ul css={menu}>
           <li>자유게시판</li>
           <li>
-            <NavLink to='/additem' style={style}>
+            <NavLink to='items' style={style}>
               중고마켓
             </NavLink>
           </li>
@@ -63,7 +63,7 @@ const menu = css`
     margin-right: 30px;
   }
 
-  li:first-child {
+  li:first-of-type {
     margin-left: 3.2rem;
   }
 

@@ -16,3 +16,13 @@ export async function getBestProductList(params = {}) {
     throw error;
   }
 }
+
+export async function getProduct(productId) {
+  try {
+    const response = await instance.get(`/products/${productId}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}

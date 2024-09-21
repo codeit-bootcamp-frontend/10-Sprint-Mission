@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Card from './Card';
 import { getBestProductList } from '../api';
 import { css } from '@emotion/react';
+import { Link } from 'react-router-dom';
 
 function BestItem({ css }) {
   const [items, setItems] = useState([]);
@@ -24,13 +25,15 @@ function BestItem({ css }) {
       <h2 css={h2}>베스트 상품</h2>
       <div css={container}>
         {items.map((product) => (
-          <Card
-            key={product.id}
-            title={product.name}
-            image={product.images}
-            price={product.price}
-            like={product.favoriteCount}
-          ></Card>
+          <Link to={`/items/${product.id}`} key={product.id}>
+            <Card
+              key={product.id}
+              title={product.name}
+              image={product.images}
+              price={product.price}
+              like={product.favoriteCount}
+            ></Card>
+          </Link>
         ))}
       </div>
     </div>

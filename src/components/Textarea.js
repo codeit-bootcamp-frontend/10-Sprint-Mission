@@ -19,8 +19,9 @@ const Textarea = ({
         id={name}
         placeholder={placeholder}
         onChange={onChange}
-        value={value}
-      ></textarea>
+      >
+        {value}
+      </textarea>
     </div>
   );
 };

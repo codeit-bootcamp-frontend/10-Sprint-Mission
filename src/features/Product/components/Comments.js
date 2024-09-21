@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { getComments } from "../services/getProudct";
-import { formatDate } from "utils/commonUtils";
+import { timeAgo } from "utils/commonUtils";
 import Dropdown from "./Dropdown";
 import inquiryEmptyImg from "assets/images/img_inquiry_empty.svg";
 import styles from "./Comments.module.css";
@@ -47,7 +47,7 @@ const Comments = ({ itemId }) => {
                       className={styles.authorInfo}
                       nickname={writer.nickname}
                       image={writer.image}
-                      date={formatDate(createdAt)}
+                      date={timeAgo(createdAt)}
                     />
                     <div className={styles.buttonContainer}>
                       <button
@@ -77,7 +77,7 @@ const Comments = ({ itemId }) => {
                   className={styles.authorInfo}
                   nickname={writer.nickname}
                   image={writer.image}
-                  date={formatDate(createdAt)}
+                  date={timeAgo(createdAt)}
                 />
               </li>
             );

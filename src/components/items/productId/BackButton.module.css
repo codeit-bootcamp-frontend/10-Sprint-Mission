@@ -4,6 +4,7 @@
   align-items: center;
   width: 1200px;
   margin: 0 auto;
+  margin-top: 64px;
   margin-bottom: 222px;
 }
 
@@ -22,6 +23,7 @@
   .container {
     width: 100%;
     padding: 0 24px;
+    margin-top: 56px;
     margin-bottom: 243px;
   }
 }
@@ -30,6 +32,7 @@
   .container {
     max-width: 400px;
     padding: 0 16px;
+    margin-top: 40px;
     margin-bottom: 65px;
   }
 }

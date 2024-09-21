@@ -11,7 +11,6 @@ const INITIAL_VALUES = {
   product: "",
   description: "",
   price: "",
-  tag: "",
   tags: [],
 };
 
@@ -67,7 +66,7 @@ const AddProuductForm = () => {
     <form className={styles.form}>
       <header className={styles.header}>
         <h2 className={styles.title}>상품 등록하기</h2>
-        <Button type="submit" className={styles.button} isDisabled={isDisabled}>
+        <Button type="submit" className={styles.button} disabled={isDisabled}>
           등록
         </Button>
       </header>

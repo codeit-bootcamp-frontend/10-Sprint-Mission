@@ -1,6 +1,6 @@
 import styles from "./Button.module.css";
 
-const Button = ({ type, className, isDisabled, children }) => {
+const Button = ({ type, className = "", disabled, children }) => {
   const handleClick = (event) => {
     event.preventDefault();
   };
@@ -10,7 +10,7 @@ const Button = ({ type, className, isDisabled, children }) => {
       type={type}
       className={`${styles.button} ${className}`}
       onClick={handleClick}
-      disabled={isDisabled}
+      disabled={disabled}
     >
       {children}
     </button>

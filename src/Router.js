@@ -8,6 +8,7 @@ import {
 
 import Layout from "./components/layout/Layout.js";
 import ItemListPage from "./pages/itemListPage/ItemListPage.js";
+import AddItemPage from "./pages/addItemPage/AddItemPage.js";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
       <Route element={<Layout />}>
         <Route index element={<h1>홈페이지</h1>} />
         <Route path="items" element={<ItemListPage />} />
+        <Route path="additem" element={<AddItemPage />} />
       </Route>
       <Route element={<Outlet />}>
         <Route path="login" element={<h1>로그인</h1>} />

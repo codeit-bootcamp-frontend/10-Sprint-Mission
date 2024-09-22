@@ -1,5 +1,4 @@
 import './SortDropdown.css';
-import arrowIcon from '../../assets/ic_arrow_down.svg';
 import { useState } from 'react';
 
 function SortDropdown({ handleSortClick }) {

@@ -15,6 +15,12 @@ export default function ItemListHead({ setParamObj }) {
     },
     [setParamObj]
   );
+  const handleDropdownSelect = useCallback(
+    (value) => {
+      setParamObj((prevObj) => ({ ...prevObj, page: 1, orderBy: value }));
+    },
+    [setParamObj]
+  );
 
   return (
     <div className="itemListHead">
@@ -27,7 +33,10 @@ export default function ItemListHead({ setParamObj }) {
       <Link className="itemListHead__addButton" to="/additem">
         상품 등록하기
       </Link>
-      <Dropdown setParamObj={setParamObj} />
+      <Dropdown onSelect={handleDropdownSelect}>
+        <option value="recent">최신순</option>
+        <option value="favorite">좋아요순</option>
+      </Dropdown>
     </div>
   );
 }

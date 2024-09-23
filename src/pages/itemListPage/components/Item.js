@@ -6,7 +6,7 @@ import "./Item.css";
 export default function Item({ data }) {
   const { id, name, description, price, images, favoriteCount } = data;
   return (
-    <Link className="item" to={`/item/${id}`}>
+    <Link className="item" to={`/items/${id}`}>
       <img className="item__image" src={images[0]} alt={description} />
       <div className="item__content">
         <span className="item__title">{name}</span>

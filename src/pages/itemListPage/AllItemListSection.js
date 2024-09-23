@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import ItemListHead from "./components/ItemListHead.js";
 import Item from "./components/Item.js";
-import PagenationBar from "../../components/PagenationBar.js";
+import PaginationBar from "../../components/PaginationBar.js";
 
 import { useMediaQuery } from "../../hooks/useMediaQuery.js";
 import { useApi } from "../../hooks/useApi.js";
@@ -21,8 +21,16 @@ export default function AllItemListSection() {
   });
   const [isLoading, error, data] = useApi(getProducts, paramObj);
 
+  const handlePageChange = (page) => {
+    setParamObj((prevObj) => ({ ...prevObj, page }));
+  };
+
   useEffect(() => {
-    setParamObj((prevObj) => ({ ...prevObj, pageSize: pageSizeTable[media] }));
+    setParamObj((prevObj) => ({
+      ...prevObj,
+      page: 1,
+      pageSize: pageSizeTable[media],
+    }));
   }, [media]);
 
   return (
@@ -35,9 +43,10 @@ export default function AllItemListSection() {
               <Item key={item.id} data={item} />
             ))}
           </div>
-          <PagenationBar
+          <PaginationBar
             totalPage={Math.ceil(data.totalCount / pageSizeTable[media])}
-            useParamObj={[paramObj, setParamObj]}
+            currentPage={paramObj.page}
+            onChange={handlePageChange}
           />
         </>
       )}

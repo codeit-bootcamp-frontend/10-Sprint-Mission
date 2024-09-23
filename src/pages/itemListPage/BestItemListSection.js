@@ -18,7 +18,7 @@ export default function BestItemListSection() {
   const [isLoading, error, data] = useApi(getProducts, paramObj);
 
   useEffect(() => {
-    setParamObj({ pageSize: pageSizeTable[media], orderBy: "favorite" });
+    setParamObj((prevObj) => ({ ...prevObj, pageSize: pageSizeTable[media] }));
   }, [media]);
 
   return (

@@ -26,15 +26,58 @@ export async function getProducts(params = {}) {
     }
 }
 
-export async function createFood(formData) {
-    const response = await fetch(`${BASE_URL}/products`, {
-      method: 'POST',
-      body: formData,
-    });
-    if (!response.ok) {
-      throw new Error('데이터를 생성하는데 실패했습니다');
+export async function getProductDetail(productId) {
+    try {
+        const response = await fetch(
+            `${BASE_URL}/products/${productId}` 
+        );
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        
+        const body = await response.json();
+        return body;
+    } catch (error) {
+        console.error("Failed to fetch product details:", error);
+        throw error;
     }
-    const body = await response.json();
-    return body;
-  }
-  
+}
+
+export async function postProductComment(productId, formData) {
+    try {
+        const response = await fetch(
+            `${BASE_URL}/products/${productId}/comments`,
+            {
+                method:'POST',
+                body:formData,
+            } 
+        );
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        const body = await response.json();
+        return body;
+    } catch (error) {
+        console.error("Failed to fetch product comments:", error);
+        throw error;
+    }
+}
+
+export async function getProductComments(productId, params = {}) {
+    const { limit, cursor } = params;
+    const query = new URLSearchParams({ limit, cursor }).toString(); // limit과 cursor만 query로 사용
+
+    try {
+        const response = await fetch(
+            `${BASE_URL}/products/${productId}/comments?${query}`
+        );
+        if (!response.ok) {
+            throw new Error(`HTTP error: ${response.status}`);
+        }
+        const body = await response.json();
+        return body;
+    } catch (error) {
+        console.error("Failed to fetch product comments:", error);
+        throw error;
+    }
+}

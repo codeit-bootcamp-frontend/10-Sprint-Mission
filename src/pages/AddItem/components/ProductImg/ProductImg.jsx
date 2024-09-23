@@ -49,7 +49,7 @@ function ProductImg ({ name, value, onChange }) {
             <label className='title'>상품 이미지</label>
             <div className='img-box'>
                 
-                <div className='custom-button' onClick={handleButtonClick}>
+                <label className='custom-button' onClick={handleButtonClick}>
                     <input 
                         id='add-button'
                         type='file'
@@ -58,8 +58,7 @@ function ProductImg ({ name, value, onChange }) {
                         ref={inputRef}
                     ></input>
                     <img className='plus-icon' src={plusicon} alt='이미지 추가 아이콘' />
-                    {/* <div className='button-text'>이미지 등록</div> */}
-                </div>
+                </label>
                 
                 <div className='upload'>
                     {value != null && <img className='preview' src={preview} alt="이미지 미리보기" />}

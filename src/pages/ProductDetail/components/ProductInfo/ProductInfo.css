@@ -1,0 +1,140 @@
+.info-container {
+    width:100%;
+    display:flex;
+    gap: 24px;
+
+}
+.product-img {
+    width:485px;
+    height:485px;
+    border-radius: 30px;
+}
+.product-text-container {
+    width:690px;
+    display:flex;
+    justify-content: space-between;
+    gap:62px;
+    flex-direction: column;
+}
+.product-text-box {
+    display:flex;
+    flex-direction: column;
+    gap:24px;
+}
+.main-box {
+    width:100%;
+    display:flex;
+    gap:12px;
+    flex-direction: column;
+}
+.name {
+    width:100%;
+    color: var(--Secondary-800, #1F2937);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px; 
+}
+.price {
+    width:100%;
+    color: var(--Secondary-800, #1F2937);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: normal;
+}
+.description {
+    color: var(--Secondary-600, #4B5563);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px; 
+}
+.sub-box {
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap:16px;
+}
+.sub-box label {
+    color: var(--Secondary-600, #4B5563);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px; 
+}
+.tag-container {
+    display:flex;
+    width:100%;
+    gap:8px;
+}
+.tag {
+    display: inline-flex;
+    height: 36px;
+    padding: 6px 16px;
+    border-radius: 26px;
+    background: var(--Cool-Gray-100, #F3F4F6);
+}
+.tag span {
+    background: none;
+    color: var(--Secondary-800, #1F2937);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.profile-container {
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+}
+.profile-box {
+   display:inline-flex;
+   gap:16px;
+   align-items: center;
+}
+.profile-box img {
+    width:40px;
+    height:40px;
+}
+.profile-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+.username {
+    color: var(--Secondary-600, #4B5563);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px; 
+}
+.date {
+    color: var(--Cool-Gray-400, #9CA3AF);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+}
+.like-box {
+    display: inline-flex;
+    border-radius: 35px;
+    border: 1px solid var(--Secondary-200, #E5E7EB);
+    background: #FFF;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+.hearticon {
+    width: 32px;
+    height: 32px;
+}
+.like-num {
+    height:26px;
+    color: var(--Cool-Gray-500, #6B7280);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+}
+.like-box div {
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:4px;
+
+}

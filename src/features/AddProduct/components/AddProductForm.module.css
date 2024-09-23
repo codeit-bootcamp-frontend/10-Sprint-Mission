@@ -17,4 +17,9 @@
 
 .button {
   padding: 12px 23px 12px 23px;
+  line-height: 1.125rem;
+}
+
+.tags {
+  margin-top: -10px;
 }

@@ -1,0 +1,130 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.comment {
+  border-bottom: 1px solid var(--gray200);
+  padding-bottom: 12px;
+}
+
+.contentContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.content {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--gray800);
+}
+
+.dropdownContainer {
+  position: relative;
+}
+
+.kebab {
+  cursor: pointer;
+}
+
+.textarea textarea {
+  height: 80px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: var(--gray800);
+}
+
+.editContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0 12px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 4px;
+}
+
+.cancelButton {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  padding: 14px 20px 7px;
+  cursor: pointer;
+}
+
+.editButton {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  padding: 8px 23px;
+}
+
+.authorInfo {
+  gap: 8px;
+}
+
+.authorInfo > div {
+  gap: 4px;
+}
+
+.authorInfo img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.authorInfo span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.authorInfo time {
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+}
+
+.inquiryEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.inquiryEmptyImg {
+  width: 140px;
+  height: 140px;
+}
+
+.inquiryEmptyMessage {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  color: var(--gray400);
+}
+
+@media screen and (min-width: 768px) {
+  .comments {
+    margin-bottom: 56px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .comments {
+    margin-bottom: 64px;
+  }
+
+  .inquiryEmptyImg {
+    width: 196px;
+    height: 196px;
+  }
+}

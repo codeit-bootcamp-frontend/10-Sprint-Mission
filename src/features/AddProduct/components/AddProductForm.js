@@ -3,8 +3,8 @@ import FileInput from "./FileInput";
 import Input from "components/Input";
 import Textarea from "components/Textarea";
 import Button from "components/Button";
+import Tags from "components/Tags";
 import styles from "./AddProductForm.module.css";
-import Tags from "./Tags";
 
 const INITIAL_VALUES = {
   imgFile: null,
@@ -14,7 +14,7 @@ const INITIAL_VALUES = {
   tags: [],
 };
 
-const AddProudctForm = () => {
+const AddProuductForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [values, setValues] = useState(INITIAL_VALUES);
 
@@ -42,7 +42,7 @@ const AddProudctForm = () => {
     });
   };
 
-  const handleKeyDown = (e) => {
+  const handleKeyUp = (e) => {
     if (e.key === "Enter") {
       const { name, value } = e.target;
       e.target.value = "";
@@ -52,10 +52,9 @@ const AddProudctForm = () => {
     }
   };
 
-  const handleTagRemove = (e) => {
-    e.preventDefault();
-    const removeItem = e.currentTarget.parentNode.dataset.tag;
-    const nextValue = values.tags.filter((tag) => tag !== removeItem);
+  const handleTagRemove = (event, target) => {
+    event.preventDefault();
+    const nextValue = values.tags.filter((tag) => tag !== target);
     handleChange("tags", nextValue);
   };
 
@@ -67,7 +66,7 @@ const AddProudctForm = () => {
     <form className={styles.form}>
       <header className={styles.header}>
         <h2 className={styles.title}>상품 등록하기</h2>
-        <Button className={styles.button} isDisabled={isDisabled}>
+        <Button type="submit" className={styles.button} disabled={isDisabled}>
           등록
         </Button>
       </header>
@@ -78,6 +77,7 @@ const AddProudctForm = () => {
         onChange={handleChange}
       />
       <Input
+        type="text"
         label="상품명"
         name="product"
         placeholder="상품명을 입력해주세요"
@@ -92,6 +92,7 @@ const AddProudctForm = () => {
         onChange={handleInputChange}
       />
       <Input
+        type="text"
         label="판매가격"
         name="price"
         placeholder="판매가격을 입력해주세요"
@@ -99,14 +100,16 @@ const AddProudctForm = () => {
         onChange={handleInputChange}
       />
       <Input
+        type="text"
         label="태그"
         name="tags"
         placeholder="태그를 입력해주세요"
-        onKeyDown={handleKeyDown}
+        onKeyUp={handleKeyUp}
+        className={styles.tags}
       />
       <Tags tags={values.tags} onRemove={handleTagRemove} />
     </form>
   );
 };
 
-export default AddProudctForm;
+export default AddProuductForm;

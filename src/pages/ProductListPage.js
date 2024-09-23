@@ -4,11 +4,10 @@ import ProductList from "features/ProductList/components/ProductList";
 import { getResponsiveConstant } from "../constants/responsiveConstants";
 import styles from "./ProductListPage.module.css";
 
-const { bestProudctsSize, productListSize } = getResponsiveConstant(
-  window.innerWidth
-);
-
 const ProductListPage = () => {
+  const { bestProudctsSize, productListSize } = getResponsiveConstant(
+    window.innerWidth
+  );
   const [bestProductsLimit, setBestProductsLimit] = useState(bestProudctsSize);
   const [productListLimit, setProductListLimit] = useState(productListSize);
 

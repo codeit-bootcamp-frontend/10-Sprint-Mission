@@ -53,7 +53,7 @@ const FileInput = ({ label, name, value, onChange }) => {
         <input
           className={styles.input}
           type="file"
-          accept="image/png image/jpeg"
+          accept="image/png, image/jpeg"
           name={name}
           id={name}
           onChange={handleChange}

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './ItemForm.css';
 import InputBar from '../InputBar';
 import PrimaryButton from '../PrimaryButton';
-import TextareaBar from '../TextareaBar';
+import Textarea from '../Textarea';
 import TagCard from './TagCard';
 import AddFileInputBar from './AddFileInputBar';
 
@@ -17,7 +17,7 @@ const INITIAL_VALUES = {
 function ItemForm({ initialValues = INITIAL_VALUES }) {
   const [formData, setFormData] = useState(initialValues);
 
-  const isFormComplete = () => {
+  const checkFormIsValid = () => {
     return (
       formData.title.trim() !== '' &&
       formData.description.trim() !== '' &&
@@ -43,6 +43,8 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
   };
 
   const handleTagKeyDown = (e) => {
+    if (e.nativeEvent.isComposing) return;
+
     const currentTag = e.target.value.trim();
 
     if (currentTag && e.key === 'Enter') {
@@ -70,9 +72,11 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
     <div className="ItemForm">
       <section className="ItemForm-title-wrapper">
         <h3 className="ItemForm-title">상품 등록하기</h3>
-        <PrimaryButton onClick={handleOnSubmit} disable={!isFormComplete()}>
-          등록
-        </PrimaryButton>
+        <PrimaryButton
+          text="등록"
+          onClick={handleOnSubmit}
+          disabled={!checkFormIsValid()}
+        />
       </section>
       <AddFileInputBar
         name="imgFile"
@@ -87,7 +91,7 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
         placeholder="상품명을 입력해주세요"
         onChange={handleChange}
       />
-      <TextareaBar
+      <Textarea
         label="상품 소개"
         inputId="description"
         name="description"

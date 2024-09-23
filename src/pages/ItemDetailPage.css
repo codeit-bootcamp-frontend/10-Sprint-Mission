@@ -1,0 +1,25 @@
+.ItemDetailPage {
+  margin-top: 75px;
+  height: 100%;
+  padding: 20px 0;
+}
+
+.return-btn-wrapper {
+  margin-top: 64px;
+  display: flex;
+  justify-content: center;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .return-btn-wrapper {
+    margin-top: 56px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .return-btn-wrapper {
+    margin-top: 40px;
+  }
+}

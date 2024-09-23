@@ -7,8 +7,6 @@ function Pagination({ total, page, setPage }) {
   const numPages = Math.ceil(total / LIMIT);
   const [startPage, setStartPage] = useState(1);
 
-  console.log({ startPage });
-
   const handlePageChange = (newPage) => {
     if (
       newPage > DISPLAY_PAGINATION_NUMBER &&

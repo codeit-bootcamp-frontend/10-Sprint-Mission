@@ -1,28 +1,32 @@
-import './TextareaBar.css';
+import { useId } from 'react';
+import './Textarea.css';
 
-function TextareaBar({
+function Textarea({
   type = 'text',
   label,
-  inputId = 'input',
+  inputId,
   name,
   value,
   placeholder,
   onChange,
   disabled = false,
+  heightSize = '',
 }) {
+  const id = useId();
+
   return (
-    <div className="TextareaBar">
+    <div className="Textarea">
       {label && (
-        <label htmlFor={inputId} className="TextareaBar-label">
+        <label htmlFor={inputId || id} className="Textarea-label">
           {label}
         </label>
       )}
       <textarea
         type={type}
-        id={inputId}
+        id={inputId || id}
         name={name}
         value={value}
-        className="TextareaBar-input"
+        className={`Textarea-input ${heightSize}`}
         onChange={onChange}
         placeholder={placeholder}
         disabled={disabled}
@@ -31,4 +35,4 @@ function TextareaBar({
   );
 }
 
-export default TextareaBar;
+export default Textarea;

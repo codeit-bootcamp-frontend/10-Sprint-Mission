@@ -1,0 +1,18 @@
+.Favorite {
+  border-left: 1px solid var(--Secondary-200);
+}
+
+.Favorite-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  color: var(--Secondary-500, #6b7280);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 35px;
+  border: 1px solid var(--Secondary-200);
+  background: #fff;
+  margin-left: 24px;
+}

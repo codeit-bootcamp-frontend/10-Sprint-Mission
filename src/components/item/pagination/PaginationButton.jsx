@@ -9,7 +9,7 @@ function PaginationButton({
 }) {
   return (
     <button
-      className={`PaginationButton ${isActive ? 'active' : ''}`}
+      className={`PaginationButton ${isActive && 'active'}`}
       onClick={onClick}
       disabled={disabled}
       aria-current={ariaCurrent}

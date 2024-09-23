@@ -1,0 +1,43 @@
+.Comment {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  border-bottom: 1px solid var(--Secondary-200);
+}
+
+.content {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.avatar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.avatar-img {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+}
+
+.etc {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.writer-nickname {
+  color: var(--Secondary-600, #4b5563);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.created-at {
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 12px;
+  font-weight: 400;
+}

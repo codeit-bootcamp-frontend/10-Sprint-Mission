@@ -1,0 +1,140 @@
+.ItemDetails {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--Secondary-200);
+}
+
+.item-img {
+  border-radius: 28.588px;
+  width: 486px;
+  height: 486px;
+  object-fit: cover;
+}
+
+.item-info-container {
+  flex: 1;
+}
+
+.item-info-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.item-title {
+  width: 100%;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--Secondary-200);
+}
+
+.item-name {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.item-price {
+  margin-top: 16px;
+  color: var(--Secondary-800, #1f2937);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.item-content {
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-content h4 {
+  color: var(--Secondary-600, #4b5563);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.item-content p {
+  color: var(--Secondary-600, #4b5563);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.item-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item-tags-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+.item-etc {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  margin-top: 40px;
+}
+
+.item-etc-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-etc-left {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.item-owner-name {
+  color: var(--Secondary-600);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.item-created-at {
+  color: var(--Secondary-400);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .ItemDetails {
+    padding-bottom: 32px;
+  }
+
+  .item-img {
+    width: 360px;
+    height: 360px;
+  }
+
+  .item-name {
+    font-size: 20px;
+  }
+
+  .item-price {
+    font-size: 32px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .ItemDetails {
+    padding-bottom: 24px;
+  }
+
+  .item-name {
+    font-size: 16px;
+  }
+
+  .item-price {
+    font-size: 24px;
+  }
+}

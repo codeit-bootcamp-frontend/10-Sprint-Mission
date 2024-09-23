@@ -3,13 +3,21 @@ import deleteIcon from '../../assets/ic_X.svg';
 
 function TagCard({ index, name, onDelete }) {
   const handleOnClick = () => {
-    onDelete(index);
+    if (onDelete) onDelete(index);
   };
 
   return (
     <div className="TagCard">
       <span>#{name}</span>
-      <img src={deleteIcon} alt="삭제 아이콘" onClick={handleOnClick} />
+      {onDelete && (
+        <button
+          className="TagCard-btn"
+          onClick={handleOnClick}
+          aria-label="삭제"
+        >
+          <img src={deleteIcon} alt="삭제 아이콘" />
+        </button>
+      )}
     </div>
   );
 }

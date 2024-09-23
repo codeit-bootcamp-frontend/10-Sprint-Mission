@@ -1,17 +1,17 @@
-.TextareaBar {
+.Textarea {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
 }
 
-.TextareaBar-label {
+.Textarea-label {
   color: var(--Secondary-800, #1f2937);
   font-size: 18px;
   font-weight: 700;
 }
 
-.TextareaBar-input {
+.Textarea-input {
   height: 282px;
   padding: 16px 24px;
   border-radius: 12px;
@@ -19,7 +19,11 @@
   resize: none;
 }
 
-.TextareaBar-input::placeholder {
+.Textarea-input.small {
+  height: 130px;
+}
+
+.Textarea-input::placeholder {
   color: var(--Secondary-400, #9ca3af);
   font-size: 16px;
   font-weight: 400;

@@ -30,7 +30,11 @@ const Pagination = ({ totalCount, pageSize, currentPage, onChange }) => {
 
   return (
     <div className={styles.pagination}>
-      <button onClick={handleLeftButton} disabled={currentPage === 1}>
+      <button
+        type="button"
+        onClick={handleLeftButton}
+        disabled={currentPage === 1}
+      >
         <img src={arrowLeftImg} alt="왼쪽 버튼" />
       </button>
       {generatePageNumbers().map((number) => {
@@ -44,7 +48,11 @@ const Pagination = ({ totalCount, pageSize, currentPage, onChange }) => {
           </button>
         );
       })}
-      <button onClick={handleRightButton} disabled={currentPage === totalPages}>
+      <button
+        type="button"
+        onClick={handleRightButton}
+        disabled={currentPage === totalPages}
+      >
         <img src={arrowRightImg} alt="오른쪽 버튼" />
       </button>
     </div>

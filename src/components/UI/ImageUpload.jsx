@@ -35,8 +35,8 @@ const squareStyles = css`
 
 // file input과 연관 짓기 위해 버튼이 대신 label로 설정
 const UploadButton = styled.label`
-  background-color: ${({ theme }) => theme.colors.gray[1]};
-  color: ${({ theme }) => theme.colors.gray[0]};
+  background-color: ${({ theme }) => theme.colors.gray[100]};
+  color: ${({ theme }) => theme.colors.gray[400]};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,7 +46,7 @@ const UploadButton = styled.label`
   cursor: pointer; // 버튼이 아닌 label을 사용한 경우 별도로 추가해 주세요
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.gray[2]};
+    background-color: ${({ theme }) => theme.colors.gray[50]};
   }
 
   ${squareStyles}

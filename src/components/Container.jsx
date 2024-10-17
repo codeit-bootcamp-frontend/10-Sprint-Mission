@@ -1,11 +1,12 @@
-/* eslint-disable react/prop-types */
-import classNames from 'classnames';
-import styles from './Container.module.css';
+import { css } from '@emotion/react';
 
-function Container({ className, children }) {
-  return (
-    <div className={classNames(styles.container, className)}>{children}</div>
-  );
+function Container({ css, children }) {
+  return <div css={[container, css]}>{children}</div>;
 }
+
+const container = css`
+  width: 100%;
+  margin: 0 auto;
+`;
 
 export default Container;

@@ -1,9 +1,7 @@
-/* eslint-disable react/prop-types */
-import { Link, NavLink } from 'react-router-dom';
-import Container from './Container';
-import styles from './Nav.module.css';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import logoImg from '../assets/images/logo-sm.png';
 import profileImg from '../assets/images/ic-profile.svg';
+import { css } from '@emotion/react';
 
 function getLinkStyle({ isActive }) {
   return {
@@ -11,35 +9,77 @@ function getLinkStyle({ isActive }) {
   };
 }
 
-function Nav({ pathname }) {
-  const isActive = pathname === '/additem';
+function Nav() {
+  const location = useLocation();
+
+  const isActive = location.pathname === '/items';
 
   const style = getLinkStyle({ isActive });
 
   return (
-    <div className={styles.nav}>
-      <Container className={styles.container}>
-        <div className={styles.menuList}>
-          <Link to='/'>
-            <img src={logoImg} alt='판다마켓 로고' />
-          </Link>
-          <ul className={styles.menu}>
-            <li>자유게시판</li>
-            <li>
-              <NavLink to='/items' style={style}>
-                중고마켓
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-        <div className={styles.profile}>
-          <Link to={''}>
-            <img src={profileImg} alt='프로필 이미지' />
-          </Link>
-        </div>
-      </Container>
+    <div css={[nav, container]}>
+      <div css={container}>
+        <Link to='/'>
+          <img src={logoImg} alt='판다마켓 로고' />
+        </Link>
+        <ul css={menu}>
+          <li>자유게시판</li>
+          <li>
+            <NavLink to='items' style={style}>
+              중고마켓
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+      <div css={profile}>
+        <Link to={''}>
+          <img src={profileImg} alt='프로필 이미지' />
+        </Link>
+      </div>
     </div>
   );
 }
+
+const nav = css`
+  background-color: #fff;
+  border-bottom: 1px solid #dfdfdf;
+  padding: 1rem 20rem;
+`;
+
+const container = css`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const menu = css`
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  > li:not(:last-child) {
+    margin-right: 30px;
+  }
+
+  li:first-of-type {
+    margin-left: 3.2rem;
+  }
+
+  > li,
+  > li > a {
+    color: var(--Gray-600);
+    font-weight: 700;
+    font-size: 1.8rem;
+  }
+`;
+
+const profile = css`
+  background-color: #d1d5db;
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+`;
 
 export default Nav;

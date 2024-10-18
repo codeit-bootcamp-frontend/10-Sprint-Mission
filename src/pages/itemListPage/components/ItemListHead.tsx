@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "../../../components/Dropdown.js";
+import Dropdown from "../../../components/Dropdown";
 import "./ItemListHead.css";
 
 export default function ItemListHead({ setParamObj }) {

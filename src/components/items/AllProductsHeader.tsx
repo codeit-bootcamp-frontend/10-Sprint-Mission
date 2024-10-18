@@ -3,12 +3,21 @@ import styles from './AllProductsHeader.module.css';
 import { ReactComponent as SearchIcon } from 'assets/imgs/ic_search.svg';
 import { ReactComponent as DropdownArrowDown } from 'assets/imgs/ic_arrow_down.svg';
 import { ReactComponent as SortIcon } from 'assets/imgs/ic_sort.svg';
+import React from 'react';
 
-const AllProductsHeader = ({
+interface AllProductsHeaderProps {
+  responsiveAllProductCount: number;
+  isDropdown?: boolean;
+  setIsDropdown: (value: boolean) => void;
+  sortProduct?: string;
+  setSortProduct: (value: string) => void;
+}
+
+const AllProductsHeader: React.FC<AllProductsHeaderProps> = ({
   responsiveAllProductCount,
-  isDropdown,
+  isDropdown = false,
   setIsDropdown,
-  sortProduct,
+  sortProduct = '최신순',
   setSortProduct,
 }) => {
 
@@ -59,4 +68,5 @@ const AllProductsHeader = ({
 
   );
 };
+
 export default AllProductsHeader;

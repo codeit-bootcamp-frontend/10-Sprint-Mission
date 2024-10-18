@@ -1,9 +1,17 @@
 import styles from './ProductTagList.module.css';
 import {ReactComponent as DeleteIcon} from 'assets/imgs/ic_delete.svg';
 
-const ProductTagList = ({ productTags, setProductTags}) => {
+interface ProductTagListProps {
+  productTags?: string[];
+  setProductTags?: (tags: string[]) => void;
+}
 
-  const deleteTag = (tag) => {
+const ProductTagList: React.FC<ProductTagListProps> = ({
+  productTags = [],
+  setProductTags = () => {},
+}) => {
+
+  const deleteTag = (tag: string) => {
     setProductTags(productTags.filter((e) => e !== tag));
   }
 
@@ -18,4 +26,5 @@ const ProductTagList = ({ productTags, setProductTags}) => {
     </div>
   );
 };
+
 export default ProductTagList;

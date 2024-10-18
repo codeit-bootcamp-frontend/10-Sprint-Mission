@@ -3,15 +3,26 @@ import { useState } from 'react';
 import { ReactComponent as EmptyHeart } from 'assets/imgs/empty_heart.svg';
 import { ReactComponent as FillHeart } from 'assets/imgs/fill_heart.svg';
 
-const ProductSummary = ({
-  productName, 
-  productPrice, 
-  productDescription, 
-  productTags,
-  productFavoriteCount,
-  ownerNickname,
-  ownerImage,
-  updateAt,
+interface ProductSummaryProps {
+  productName?: string;
+  productPrice?: number;
+  productDescription?: string;
+  productTags?: string[];
+  productFavoriteCount?: number;
+  ownerNickname?: string;
+  ownerImage?: string;
+  updateAt?: string;
+}
+
+const ProductSummary: React.FC<ProductSummaryProps> = ({
+  productName = '', 
+  productPrice = 0, 
+  productDescription = '', 
+  productTags = [],
+  productFavoriteCount = 0,
+  ownerNickname = '',
+  ownerImage = '',
+  updateAt = '',
 }) => {
   const [isEmptyHeart, setIsEmptyHeart] = useState(true);
 
@@ -29,7 +40,7 @@ const ProductSummary = ({
       <p className={styles['product-tag-title']}>상품 태그</p>
       <div className={styles['product-tag-container']}>
         {productTags.map((tag, index) => (
-          <span key={index}className={styles['product-tag']}>#{tag}</span>
+          <span key={index} className={styles['product-tag']}>#{tag}</span>
         ))}
       </div>
       {productTags.length === 0 && <span className={styles['empty-tag']}></span>}
@@ -41,9 +52,16 @@ const ProductSummary = ({
             <p className={styles['owner-updateAt']}>{updateAt}</p>
           </div>
         </div>
-        <span className={styles['product-favorite-count']} onClick={onClick}>{isEmptyHeart ? <EmptyHeart/> : <FillHeart/>} {productFavoriteCount}</span>
+        <span
+          className={styles['product-favorite-count']}
+          onClick={onClick}
+        >
+          {isEmptyHeart ? <EmptyHeart/> : <FillHeart/>}
+          {productFavoriteCount}
+        </span>
       </div>
     </div>
   );
 };
+
 export default ProductSummary;

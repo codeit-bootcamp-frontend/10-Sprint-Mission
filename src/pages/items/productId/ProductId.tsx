@@ -13,6 +13,24 @@ import styles from './ProductId.module.css';
 import Line from "components/items/productId/Line";
 import { ReactComponent as NoInquire } from 'assets/imgs/no_inquire.svg';
 
+interface Comment {
+  content: string;
+  writer: {
+    nickname: string;
+    image: string;
+  };
+  updatedAt: string;
+}
+
+interface Product {
+  name: string;
+  price: number;
+  description: string;
+  images: string;
+  tags: string[];
+  favoriteCount: number;
+}
+
 const ProductId = () => {
   const {
     productName,
@@ -23,7 +41,7 @@ const ProductId = () => {
     productFavoriteCount,
     commentData,
     updateAt,
-    ownerIamge,
+    ownerImage,
     ownerNickname,
     setProductName,
     setProductPrice,
@@ -36,33 +54,31 @@ const ProductId = () => {
   } = useProductIdState();
 
   const location = useLocation();
-  const id = location.state.product.id;
+  const id = (location.state as { product: { id: string } }).product.id;
 
   useEffect(() => {
     const asyncFunction = async () => {
-      const response = await fetchData(`${API_USEDS_PRODUCT_INFORMATION}/${id}`, {productId: id});
-      const product = response.data;
+      const response = await fetchData({ url: `${API_USEDS_PRODUCT_INFORMATION}/${id}`, query: { productId: id } });
+      const product: Product = response.data;
       setProductName(product.name);
       setProductPrice(product.price);
       setProductDescription(product.description);
       setProductImage(product.images);
       setProductTags(product.tags);
       setProductFavoriteCount(product.favoriteCount);
-    }
+    };
 
     asyncFunction();
-
   }, [id, setProductName, setProductPrice, setProductDescription, setProductImage, setProductTags, setProductFavoriteCount]);
 
   useEffect(() => {
     const asyncFunction = async () => {
-      const response = await fetchData(`${API_USER_COMMENTS}/${id}/comments`, {productId: id, limit: 3});
+      const response = await fetchData({ url: `${API_USER_COMMENTS}/${id}/comments`, query: { productId: id, limit: 3 } });
       setCommentCount(response.data.list.length);
       setCommentData(response.data.list);
-    }
+    };
 
     asyncFunction();
-
   }, [id, setCommentCount, setCommentData]);
 
   return (
@@ -77,14 +93,14 @@ const ProductId = () => {
           productTags={productTags}
           productFavoriteCount={productFavoriteCount}
           ownerNickname={ownerNickname}
-          ownerIamge={ownerIamge}
+          ownerImage={ownerImage}
           updateAt={updateAt}
         />
       </div>
-      <Line marginTop={40} marginBottom={40}/>
+      <Line marginTop={40} marginBottom={40} />
       <Inquire />
       {
-        commentData && commentData.map((user, index) => (
+        commentData && commentData.map((user: any, index: number) => (
           <>
             <InquireItem
               key={index}
@@ -94,8 +110,8 @@ const ProductId = () => {
               updateAt={user.updatedAt}
               commentData={commentData}
               setCommentData={setCommentData}
-              />
-            <Line marginTop={12} marginBottom={24}/>
+            />
+            <Line marginTop={12} marginBottom={24} />
           </>
         ))
       }
@@ -106,4 +122,5 @@ const ProductId = () => {
     </div>
   );
 };
+
 export default ProductId;

@@ -1,9 +1,31 @@
-export const fetchData = async (url, query = {}, method = 'GET', body = null, headers = {}) => {
+interface FetchDataOptions {
+  url: string;
+  query?: Record<string, any>;
+  method?: string;
+  body?: any;
+  headers?: Record<string, string>;
+}
+
+interface FetchDataResult {
+  data: any;
+  loading: boolean;
+  error: any;
+}
+
+export const fetchData = async ({
+  url,
+  query = {},
+  method = 'GET',
+  body = null,
+  headers = {}
+}: FetchDataOptions): Promise<FetchDataResult> => {
   const queryString = new URLSearchParams(query).toString();
-  let data, error, loading = true;
+  let data: any = null;
+  let error: any = null;
+  let loading: boolean = true;
 
   try {
-    const options = {
+    const options: RequestInit = {
       method,
       headers: {
         'Content-Type': 'application/json',
@@ -28,3 +50,5 @@ export const fetchData = async (url, query = {}, method = 'GET', body = null, he
 
   return { data, loading, error };
 };
+
+export default fetchData;

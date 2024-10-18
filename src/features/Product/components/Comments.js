@@ -1,17 +1,13 @@
 import { useState, useEffect, useCallback } from "react";
 import { getComments } from "../services/getProudct";
-import { timeAgo } from "utils/commonUtils";
-import Dropdown from "./Dropdown";
 import inquiryEmptyImg from "assets/images/img_inquiry_empty.svg";
 import styles from "./Comments.module.css";
-import AuthorInfo from "./AuthorInfo";
-import Textarea from "components/Textarea";
-import Button from "components/Button";
+import EditingComment from "./EditingComment";
+import Comment from "./Comment";
 
 const Comments = ({ itemId }) => {
   const [comments, setComments] = useState([]);
   const [editingId, setEditingId] = useState(null);
-  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleLoad = useCallback(async () => {
     const { list } = await getComments(itemId);
@@ -28,15 +24,6 @@ const Comments = ({ itemId }) => {
     setEditingId(null);
   };
 
-  const handleTextareaChange = (event) => {
-    if (event.target.value !== "") {
-      setIsDisabled(false);
-      return;
-    }
-
-    setIsDisabled(true);
-  };
-
   useEffect(() => {
     handleLoad();
   }, [handleLoad]);
@@ -45,61 +32,17 @@ const Comments = ({ itemId }) => {
     <section>
       {comments.length ? (
         <ul className={styles.comments}>
-          {comments.map(({ content, id, createdAt, writer }) => {
-            if (id === editingId) {
-              return (
-                <li key={id} className={styles.comment}>
-                  <Textarea
-                    value={content}
-                    className={styles.textarea}
-                    onChange={handleTextareaChange}
-                  />
-                  <div className={styles.editContainer}>
-                    <AuthorInfo
-                      className={styles.authorInfo}
-                      nickname={writer.nickname}
-                      image={writer.image}
-                      date={timeAgo(createdAt)}
-                    />
-                    <div className={styles.buttonContainer}>
-                      <button
-                        type="button"
-                        className={styles.cancelButton}
-                        onClick={handleCancel}
-                      >
-                        취소
-                      </button>
-                      <Button
-                        className={styles.editButton}
-                        type="submit"
-                        disabled={isDisabled}
-                      >
-                        수정완료
-                      </Button>
-                    </div>
-                  </div>
-                </li>
-              );
-            }
-
-            return (
-              <li key={id} className={styles.comment}>
-                <div className={styles.contentContainer}>
-                  <p className={styles.content}>{content}</p>
-                  <Dropdown
-                    className={styles.dropdown}
-                    onSelect={(option) => handleSelect(id, option)}
-                  />
-                </div>
-                <AuthorInfo
-                  className={styles.authorInfo}
-                  nickname={writer.nickname}
-                  image={writer.image}
-                  date={timeAgo(createdAt)}
-                />
-              </li>
-            );
-          })}
+          {comments.map(({ id, ...comment }) =>
+            id === editingId ? (
+              <EditingComment key={id} onCancel={handleCancel} {...comment} />
+            ) : (
+              <Comment
+                key={id}
+                onSelect={(option) => handleSelect(id, option)}
+                {...comment}
+              />
+            )
+          )}
         </ul>
       ) : (
         <div className={styles.inquiryEmpty}>

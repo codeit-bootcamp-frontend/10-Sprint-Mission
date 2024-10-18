@@ -20,9 +20,7 @@ const Tags = ({ tags, onRemove, className = "" }) => {
             );
           })}
         </ul>
-      ) : (
-        ""
-      )}
+      ) : null}
     </>
   );
 };

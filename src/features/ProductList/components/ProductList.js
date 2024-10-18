@@ -2,16 +2,22 @@ import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { getProducts } from "../services/getProducts";
 import Card from "components/Card";
-import Dropdown from "./Dropdown";
+import Dropdown from "components/Dropdown";
 import Pagination from "./Pagination";
 import styles from "./ProductList.module.css";
 import searchImg from "assets/images/ic_search.svg";
+import sortImg from "assets/images/ic_sort.svg";
 
 const ProductList = ({ size }) => {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState("recent");
   const [totalCount, setTotalCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
+  const options = {
+    recent: "최신순",
+    favorite: "좋아요순",
+  };
+
   const handleLoad = useCallback(async () => {
     const { list, totalCount } = await getProducts({
       orderBy: order,
@@ -41,7 +47,14 @@ const ProductList = ({ size }) => {
         <Link to="/additem" className={styles.button}>
           상품등록하기
         </Link>
-        <Dropdown order={order} onChange={setOrder} />
+        <Dropdown
+          className={styles.dropdown}
+          onSelect={setOrder}
+          options={options}
+        >
+          <span>{options[order]}</span>
+          <img src={sortImg} alt="드롭다운" />
+        </Dropdown>
       </div>
       {products.length ? (
         <ul className={styles.products}>

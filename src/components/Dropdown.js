@@ -1,29 +1,27 @@
 import { useState } from "react";
 import styles from "./Dropdown.module.css";
-import sortImg from "assets/images/ic_sort.svg";
 
-const Dropdown = ({ order, onChange }) => {
+const DropDown = ({
+  className = "",
+  options = {},
+  onSelect = () => {},
+  children,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const options = {
-    recent: "최신순",
-    favorite: "좋아요순",
-  };
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
   const handleSelect = (event) => {
-    onChange(event.target.value);
+    onSelect(event.target.value);
     setIsOpen(false);
   };
 
   return (
-    <div className={styles.dropdown}>
+    <div className={`${styles.dropdown} ${className}`}>
       <div className={styles.dropdownButton} onClick={toggleDropdown}>
-        <span>{options[order]}</span>
-        <img src={sortImg} alt="드롭다운" />
+        {children}
       </div>
       {isOpen && (
         <ul className={styles.dropdownMenu}>
@@ -42,4 +40,4 @@ const Dropdown = ({ order, onChange }) => {
   );
 };
 
-export default Dropdown;
+export default DropDown;

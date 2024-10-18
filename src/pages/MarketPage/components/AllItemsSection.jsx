@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getProducts } from '../../../api/itemApi';
 import ItemCard from './ItemCard';
 import SearchIcon from '../../../assets/images/icons/ic_search.svg?react';

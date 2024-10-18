@@ -18,7 +18,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "types": ["vite-plugin-svgr/client"],
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]

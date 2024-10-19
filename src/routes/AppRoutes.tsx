@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MainLayout from "shared/layouts/MainLayout";
-import HomePage from "pages/HomePage";
+import LandingPage from "pages/LandingPage";
 import ProductListPage from "pages/ProductListPage";
 import AddProductPage from "pages/AddProductPage";
 import ProductPage from "pages/ProductPage";
@@ -10,7 +10,7 @@ const AppRoutes = () => {
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<LandingPage />} />
           <Route path="items">
             <Route index element={<ProductListPage />} />
             <Route path=":itemId" element={<ProductPage />} />

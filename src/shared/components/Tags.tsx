@@ -1,7 +1,14 @@
+import { MouseEvent } from "react";
 import XButton from "./XButton";
 import styles from "./Tags.module.css";
 
-const Tags = ({ tags, onRemove, className = "" }) => {
+interface Props {
+  className: string;
+  tags: string[];
+  onRemove: (e: MouseEvent<HTMLButtonElement>, value: string) => void;
+}
+
+const Tags = ({ className = "", tags, onRemove = () => {} }: Props) => {
   return (
     <>
       {tags.length ? (
@@ -13,7 +20,9 @@ const Tags = ({ tags, onRemove, className = "" }) => {
                 {onRemove && (
                   <XButton
                     className={styles.icon}
-                    onClick={(event) => onRemove(event, tag)}
+                    onClick={(e: MouseEvent<HTMLButtonElement>) =>
+                      onRemove(e, tag)
+                    }
                   />
                 )}
               </li>

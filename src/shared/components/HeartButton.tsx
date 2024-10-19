@@ -1,7 +1,7 @@
 import { ReactComponent as HeartIcon } from "assets/images/ic_heart.svg";
 import styles from "./HeartButton.module.css";
 
-const HeartButton = ({ favoriteCount }) => {
+const HeartButton = ({ favoriteCount }: { favoriteCount: number }) => {
   return (
     <button
       type="button"

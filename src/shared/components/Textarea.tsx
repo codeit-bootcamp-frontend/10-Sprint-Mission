@@ -1,18 +1,26 @@
+import Label from "./Label";
 import styles from "./Textarea.module.css";
 
+interface Props {
+  className?: string;
+  name: string;
+  label?: string;
+  placeholder?: string;
+  value?: string;
+  onChange: () => void;
+}
+
 const Textarea = ({
-  name,
-  label = "",
   className = "",
+  name = "",
+  label = "",
   placeholder = "",
   value = "",
-  onChange,
-}) => {
+  onChange = () => {},
+}: Props) => {
   return (
     <div className={`${styles.container}  ${className}`}>
-      <label className={styles.label} htmlFor={name}>
-        {label}
-      </label>
+      <Label htmlFor={name}>{label}</Label>
       <textarea
         className={styles.textarea}
         name={name}

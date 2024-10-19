@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import FileInput from "./FileInput";
-import Input from "components/Input";
-import Textarea from "components/Textarea";
-import Button from "components/Button";
-import Tags from "components/Tags";
+import Input from "shared/components/Input";
+import Textarea from "shared/components/Textarea";
+import Button from "shared/components/Button";
+import Tags from "shared/components/Tags";
 import styles from "./AddProductForm.module.css";
 
 const INITIAL_VALUES = {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import Tags from "components/Tags";
-import HeartButton from "components/HeartButton";
+import Tags from "shared/components/Tags";
+import HeartButton from "shared/components/HeartButton";
 import { checkObjectIsEmpty, formatDate } from "utils/commonUtils";
 import { getProudct } from "../services/getProudct";
 import styles from "./ProductDetail.module.css";

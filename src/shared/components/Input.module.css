@@ -1,16 +1,16 @@
 .container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 16px;
 }
 
 .label {
-  font-size: 1.125rem;
-  font-weight: 700;
   line-height: 1.625rem;
 }
 
 .input {
+  width: 100%;
   border-radius: 12px;
   background-color: var(--gray100);
   font-size: 1rem;

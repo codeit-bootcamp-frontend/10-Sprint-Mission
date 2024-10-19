@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { getProducts } from "../services/getProducts";
-import Card from "components/Card";
+import Card from "shared/components/Card";
 import styles from "./BestProducts.module.css";
 
 const BestProducts = ({ size }) => {

@@ -6,10 +6,8 @@ import profileImg from "assets/images/ic_profile.svg";
 const Header = () => {
   const location = useLocation();
 
-  const isActiveForItem =
-    location.pathname === "/items" || location.pathname === "/additem"
-      ? styles.active
-      : "";
+  const isActiveForItem = ({ isActive }: { isActive: boolean }) =>
+    isActive || location.pathname === "/additem" ? styles.active : "";
 
   return (
     <header className={styles.header}>

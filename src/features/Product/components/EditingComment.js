@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { timeAgo } from "utils/commonUtils";
 import AuthorInfo from "./AuthorInfo";
-import Textarea from "components/Textarea";
-import Button from "components/Button";
+import Textarea from "shared/components/Textarea";
+import Button from "shared/components/Button";
 import styles from "./EditingComment.module.css";
 
 const EditingComment = ({ content, createdAt, writer, onCancel }) => {

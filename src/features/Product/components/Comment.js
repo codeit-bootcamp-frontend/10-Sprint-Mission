@@ -1,5 +1,5 @@
 import { timeAgo } from "utils/commonUtils";
-import Dropdown from "components/Dropdown";
+import Dropdown from "shared/components/Dropdown";
 import AuthorInfo from "./AuthorInfo";
 import styles from "./Comment.module.css";
 import kebabIcon from "assets/images/ic_kebab.svg";

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import styles from "./FileInput.module.css";
 import plusImg from "assets/images/ic_plus.svg";
-import XButton from "components/XButton";
+import XButton from "shared/components/XButton";
 
 const FileInput = ({ label, name, value, onChange }) => {
   const [preview, setPreview] = useState("");

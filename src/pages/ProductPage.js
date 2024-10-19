@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import ProductDetail from "features/Product/components/ProductDetail";
 import Inquiry from "features/Product/components/Inquiry";
 import Comments from "features/Product/components/Comments";
-import Button from "components/Button";
+import Button from "shared/components/Button";
 import styles from "./ProductPage.module.css";
 import backIcon from "assets/images/ic_back.svg";
 

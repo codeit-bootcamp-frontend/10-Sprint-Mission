@@ -1,20 +1,28 @@
-import { useState } from "react";
+import { MouseEvent, ReactNode, useState } from "react";
+import { Options } from "shared/types/components";
 import styles from "./Dropdown.module.css";
 
-const DropDown = ({
+interface Props {
+  className: string;
+  options: Options;
+  onSelect: (value: string) => void;
+  children: ReactNode;
+}
+
+const Dropdown = ({
   className = "",
   options = {},
   onSelect = () => {},
   children,
-}) => {
+}: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleSelect = (event) => {
-    onSelect(event.target.value);
+  const handleSelect = (event: MouseEvent<HTMLButtonElement>) => {
+    onSelect(event.currentTarget.value);
     setIsOpen(false);
   };
 
@@ -40,4 +48,4 @@ const DropDown = ({
   );
 };
 
-export default DropDown;
+export default Dropdown;

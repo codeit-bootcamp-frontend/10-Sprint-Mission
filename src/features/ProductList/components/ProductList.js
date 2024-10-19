@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { getProducts } from "../services/getProducts";
-import Card from "components/Card";
-import Dropdown from "components/Dropdown";
+import Card from "shared/components/Card";
+import Dropdown from "shared/components/Dropdown";
 import Pagination from "./Pagination";
 import styles from "./ProductList.module.css";
 import searchImg from "assets/images/ic_search.svg";

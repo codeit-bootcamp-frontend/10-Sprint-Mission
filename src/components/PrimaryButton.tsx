@@ -3,7 +3,11 @@ import './PrimaryButton.css';
 interface PrimaryButtonProps {
   text: string;
   type?: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?(
+    event:
+      | React.MouseEvent<HTMLButtonElement>
+      | React.FormEvent<HTMLFormElement>
+  ): void;
   disabled: boolean;
 }
 

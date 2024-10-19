@@ -9,7 +9,7 @@ interface TextareaProps {
   placeholder?: string;
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
   disabled?: boolean;
-  heightSize: string;
+  heightSize?: string;
 }
 
 function Textarea({

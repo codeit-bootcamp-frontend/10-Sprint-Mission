@@ -2,11 +2,11 @@ import './InputBar.css';
 import { v4 as uuidv4 } from 'uuid';
 
 interface InputBarProps {
-  type: string;
+  type?: string;
   label?: string;
   inputId?: string;
   name: string;
-  value: string;
+  value?: string;
   placeholder?: string;
   disabled?: boolean;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;

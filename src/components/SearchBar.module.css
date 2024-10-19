@@ -1,0 +1,31 @@
+.btnStyle {
+  color: #f3f4f6;
+  background-color: #3692ff;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.utilBox {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.searchBar {
+  width: 325px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #f3f4f6;
+  background-color: #f3f4f6;
+  padding-left: 16px;
+}
+
+.searchBar::placeholder {
+  background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+  background-position: 0px center;
+  background-size: 24px;
+  background-repeat: no-repeat;
+  text-indent: 24px;
+}
+
+.dropBox {
+}

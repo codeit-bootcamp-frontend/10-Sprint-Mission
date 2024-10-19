@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import CloseIcon from '../../assets/images/icons/ic_x.svg';
 
@@ -16,7 +15,7 @@ const Button = styled.button`
   }
 `;
 
-function DeleteButton({ onClick, label }) {
+function DeleteButton({ onClick, label }: { onClick: () => void; label: string }) {
   return (
     <Button aria-label={`${label} 삭제`} onClick={onClick}>
       <CloseIcon />

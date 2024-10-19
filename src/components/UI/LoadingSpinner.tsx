@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { PulseLoader } from "react-spinners";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { PulseLoader } from 'react-spinners';
 
 // 렌더링 중인 컴포넌트들을 가리기 위해 불투명한 흰색 바탕 위에 반투명한 검정 바탕의 overlay를 씌웠어요
 const MaskedBackground = styled.div`
@@ -32,11 +32,17 @@ const SpinnerOverlay = styled.div`
 // - 이번 미션에서는 `react-spinners`라는 라이브러리를 이용해 간단한 로딩 스피너를 적용해 볼게요.
 
 const LoadingSpinner = ({
+  isLoading,
   size = 20,
-  color = "var(--blue)",
+  color = 'var(--blue)',
   minLoadTime = 500,
+}: {
+  isLoading: boolean;
+  size?: number;
+  color?: string;
+  minLoadTime?: number;
 }) => {
-  const [isVisible, setIsVisible] = useState(true);
+  const [isVisible, setIsVisible] = useState(isLoading);
 
   // 로딩이 너무 빨라서 로딩 스피너가 순간적으로 나타났다 사라지는 것을 방지하기 위해 설정된 최소시간 동안은 스피너가 떠있도록 했어요.
   useEffect(() => {

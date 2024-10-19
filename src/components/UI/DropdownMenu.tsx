@@ -1,8 +1,12 @@
-import React, { useState } from "react";
-import "./DropdownMenu.css";
-import SortIcon from "../../assets/images/icons/ic_sort.svg?react";
+import { useState } from 'react';
+import './DropdownMenu.css';
+import SortIcon from '../../assets/images/icons/ic_sort.svg?react';
 
-function DropdownMenu({ onSortSelection }) {
+function DropdownMenu({
+  onSortSelection,
+}: {
+  onSortSelection: (sortOption: string) => void;
+}) {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 
   const toggleDropdown = () => {
@@ -10,26 +14,26 @@ function DropdownMenu({ onSortSelection }) {
   };
 
   return (
-    <div className="sortButtonWrapper">
-      <button className="sortDropdownTriggerButton" onClick={toggleDropdown}>
+    <div className='sortButtonWrapper'>
+      <button className='sortDropdownTriggerButton' onClick={toggleDropdown}>
         <SortIcon />
       </button>
 
       {isDropdownVisible && (
-        <div className="dropdownMenu">
+        <div className='dropdownMenu'>
           <div
-            className="dropdownItem"
+            className='dropdownItem'
             onClick={() => {
-              onSortSelection("recent");
+              onSortSelection('recent');
               setIsDropdownVisible(false);
             }}
           >
             최신순
           </div>
           <div
-            className="dropdownItem"
+            className='dropdownItem'
             onClick={() => {
-              onSortSelection("favorite");
+              onSortSelection('favorite');
               setIsDropdownVisible(false);
             }}
           >

@@ -12,15 +12,15 @@ export async function getProducts(params = {}) {
     const body = await response.json();
     return body;
   } catch (error) {
-    console.error("Failed to fetch products:", error);
+    console.error('Failed to fetch products:', error);
     throw error;
   }
 }
 
-export async function getProductDetail(productId) {
+export async function getProductDetail(productId: number) {
   // Parameter로 넣어줄 상품 아이디가 존재하는지 또는 정상적인지 확인 후에 호출하면 더 안전해요
   if (!productId) {
-    throw new Error("Invalid product ID");
+    throw new Error('Invalid product ID');
   }
 
   try {
@@ -33,20 +33,28 @@ export async function getProductDetail(productId) {
     const body = await response.json();
     return body;
   } catch (error) {
-    console.error("Failed to fetch product detail:", error);
+    console.error('Failed to fetch product detail:', error);
     throw error;
   }
 }
 
 // 상품 댓글 목록 조회 API에는 path parameter 'productId'와 함께 페이지당 보여줄 댓글 개수를 나타내는 'limit'을 query parameter로 보내주고 있어요.
-export async function getProductComments({ productId, params }) {
+export async function getProductComments({
+  productId,
+  params,
+}: {
+  productId: number;
+  params: { limit: number };
+}) {
   // Parameter로 넣어줄 상품 아이디가 존재하는지 또는 정상적인지 확인 후에 호출하면 더 안전해요
   if (!productId) {
-    throw new Error("Invalid product ID");
+    throw new Error('Invalid product ID');
   }
 
   try {
-    const query = new URLSearchParams(params).toString();
+    const query = new URLSearchParams({
+      limit: params.limit.toString(),
+    }).toString();
     const response = await fetch(
       `https://panda-market-api.vercel.app/products/${productId}/comments?${query}`
     );
@@ -56,7 +64,7 @@ export async function getProductComments({ productId, params }) {
     const body = await response.json();
     return body;
   } catch (error) {
-    console.error("Failed to fetch product comments:", error);
+    console.error('Failed to fetch product comments:', error);
     throw error;
   }
 }

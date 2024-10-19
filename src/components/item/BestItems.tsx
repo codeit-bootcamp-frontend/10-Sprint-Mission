@@ -3,9 +3,10 @@ import Item from './Item';
 import { getItems } from '../../services/itemApi';
 import { getBestItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
+import { Product } from '../../services/itemApiTypes';
 
 function BestItems() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
   const [pageSize, setPageSize] = useState(getBestItemsPageSize());
 
   useEffect(() => {

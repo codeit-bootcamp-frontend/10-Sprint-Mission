@@ -1,8 +1,15 @@
 import React from 'react';
 import './ProductDescription.css';
+import { AddItemValues } from '../../AddItem';     
 
-function ProductDescription({ name, value, onChange }) {
-  const handleChange = (e) => {
+interface ProductDescriptionProps {
+  name: keyof AddItemValues;
+  value:string;
+  onChange : (name:keyof AddItemValues, value:string | null) => void;
+}
+
+const ProductDescription:React.FC<ProductDescriptionProps> = ({ name, value, onChange }) => {
+  const handleChange = (e:React.ChangeEvent<HTMLTextAreaElement>) => {
     onChange(name, e.target.value);
   };
   return (

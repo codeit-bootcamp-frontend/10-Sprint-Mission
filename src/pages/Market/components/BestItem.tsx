@@ -14,32 +14,60 @@ const getPageSize = () => {
     }
 };
 
+interface Item {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    tags: string[];
+    images: string[];
+    ownerId: number;
+    ownerNickname: string;
+    favoriteCount: number;
+    createdAt: string;
+}
+
+interface ItemList {
+    totalCount: number;
+    list: Item[];
+}
+
 function BestItem() {
-    const [itemList, setItemList] = useState([]);
+    const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
     const [pageSize, setPageSize] = useState(getPageSize());
 
     const fetchSortedData = useCallback(async () => {
-        const products = await getProducts({ orderBy: "favorite", pageSize });
-        setItemList(products.list);
+        try {
+            const products = await getProducts({ orderBy: "favorite", pageSize });
+            setItemList(products); 
+        } catch (error) {
+            console.error('Error fetching best products:', error);
+        }
     }, [pageSize]);
 
     useEffect(() => {
+        fetchSortedData(); 
+    }, [fetchSortedData]);
+
+    useEffect(() => {
         const handleResize = () => {
-            setPageSize(getPageSize());
+            const newPageSize = getPageSize();
+            if (newPageSize !== pageSize) {
+                setPageSize(newPageSize);
+            }
         };
         window.addEventListener("resize", handleResize);
-        fetchSortedData();
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, [fetchSortedData]);
+    }, [pageSize]);
 
     return (
         <div className={styles.bestItem}>
             <div className={styles.bestItemContainer}>
                 <h3 className={styles.listTitle}>베스트 상품</h3>
                 <div className={styles.cardList}>
-                    {itemList?.map((item) => (
+                    {itemList.list.map((item) => (
                         <ItemCard key={item.id} item={item} />
                     ))}
                 </div>

@@ -1,8 +1,8 @@
+import axios from 'axios';
+
 const BASE_URL = 'https://panda-market-api.vercel.app';
 
 export async function getProducts(params = {}) {
-
-    const query = new URLSearchParams(params).toString();
     const allowedParams = ["orderBy", "pageSize", "page", "keyword"];
     const invalidParams = Object.keys(params)
         .filter(key => !allowedParams.includes(key));
@@ -12,70 +12,49 @@ export async function getProducts(params = {}) {
     }
 
     try {
-        const response = await fetch(
-        `${BASE_URL}/products?${query}`
-        );
-        if (!response.ok) {
-        throw new Error(`HTTP error: ${response.status}`);
-        }
-        const body = await response.json();
-        return body;
+        const response = await axios.get(`${BASE_URL}/products`, {
+            params
+        });
+        return response.data; 
     } catch (error) {
         console.error("Failed to fetch products:", error);
         throw error;
     }
 }
 
-export async function getProductDetail(productId) {
+export async function getProductDetail(productId: number) {
     try {
-        const response = await fetch(
-            `${BASE_URL}/products/${productId}` 
-        );
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-        
-        const body = await response.json();
-        return body;
+        const response = await axios.get(`${BASE_URL}/products/${productId}`);
+        return response.data; 
     } catch (error) {
         console.error("Failed to fetch product details:", error);
         throw error;
     }
 }
 
-export async function postProductComment(productId, formData) {
+export async function postProductComment(productId: number, formData: FormData) {
     try {
-        const response = await fetch(
-            `${BASE_URL}/products/${productId}/comments`,
-            {
-                method:'POST',
-                body:formData,
-            } 
-        );
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-        const body = await response.json();
-        return body;
+        const response = await axios.post(`${BASE_URL}/products/${productId}/comments`, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+        return response.data; 
     } catch (error) {
-        console.error("Failed to fetch product comments:", error);
+        console.error("Failed to post product comment:", error);
         throw error;
     }
 }
 
-export async function getProductComments(productId, params = {}) {
-    const { limit, cursor } = params;
-    const query = new URLSearchParams({ limit, cursor }).toString(); // limit과 cursor만 query로 사용
-
+export async function getProductComments(productId: number, params = { limit: 10, cursor: 0 }) {
     try {
-        const response = await fetch(
-            `${BASE_URL}/products/${productId}/comments?${query}`
-        );
-        if (!response.ok) {
-            throw new Error(`HTTP error: ${response.status}`);
-        }
-        const body = await response.json();
-        return body;
+        const response = await axios.get(`${BASE_URL}/products/${productId}/comments`, {
+            params: {
+                limit: params.limit,
+                cursor: params.cursor
+            }
+        });
+        return response.data; 
     } catch (error) {
         console.error("Failed to fetch product comments:", error);
         throw error;

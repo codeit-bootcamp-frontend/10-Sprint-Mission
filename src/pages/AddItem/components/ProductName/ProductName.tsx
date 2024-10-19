@@ -1,8 +1,14 @@
 import React from 'react';
 import './ProductName.css';
+import { AddItemValues } from '../../AddItem';
+interface ProductName {
+  name: keyof AddItemValues;
+  value:string;
+  onChange:(name:keyof AddItemValues, value:string) => void;
+}
 
-function ProductName({ name, value, onChange }) {
-  const handleChange = (e) => {
+const ProductName:React.FC<ProductName> = ({ name, value, onChange })  => {
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     onChange(name, e.target.value);
   };
 

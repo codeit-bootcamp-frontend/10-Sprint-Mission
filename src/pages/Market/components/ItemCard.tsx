@@ -3,7 +3,24 @@ import likeIcon from '../../../assets/images/likeicon.png';
 import styles from '../Market.module.css';
 import { Link } from 'react-router-dom';
 
-function ItemCard({ item }) {
+interface Item {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    tags: string[];
+    images: string[];
+    ownerId: number;
+    ownerNickname: string;
+    favoriteCount: number;
+    createdAt: string;
+}
+
+interface ItemCardProps {
+    item: Item; 
+}
+
+const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
     return (
         <Link to={`/items/${item.id}`} className={styles.cardContainer}>
             <img className={styles.itemImg} src={item.images[0]} alt={item.name} />

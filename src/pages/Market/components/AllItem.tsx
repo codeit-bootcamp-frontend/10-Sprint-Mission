@@ -16,8 +16,26 @@ const getPageSize = () => {
     }
 };
 
+interface Item {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    tags: string[];
+    images: string[];
+    ownerId: number;
+    ownerNickname: string;
+    favoriteCount: number;
+    createdAt: string;
+}
+
+interface ItemList {
+    totalCount: number;
+    list: Item[];
+}
+
 function AllItem() {
-    const [itemList, setItemList] = useState([]);
+    const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
     const [pageSize, setPageSize] = useState(getPageSize());
     const [order, setOrder] = useState('recent');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -33,16 +51,25 @@ function AllItem() {
     };
 
     const fetchSortedData = useCallback(async () => {
-        const products = await getProducts({ orderBy: order, pageSize });
-        setItemList(products.list);
+        try {
+            const products = await getProducts({ orderBy: order, pageSize });
+            setItemList(products); 
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
     }, [order, pageSize]);
+
+    useEffect(() => {
+        fetchSortedData(); 
+    }, [fetchSortedData]);
 
     useEffect(() => {
         const handleResize = () => {
             setPageSize(getPageSize());
+            fetchSortedData(); 
         };
+
         window.addEventListener('resize', handleResize);
-        fetchSortedData();
         return () => {
             window.removeEventListener('resize', handleResize);
         };
@@ -75,7 +102,7 @@ function AllItem() {
                     </div>
                 </div>
                 <div className={styles.cardList}>
-                    {itemList?.map((item) => (
+                    {itemList.list.map((item) => (
                         <ItemCard key={item.id} item={item} />
                     ))}
                 </div>

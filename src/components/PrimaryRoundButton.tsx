@@ -2,9 +2,9 @@ import './PrimaryRoundButton.css';
 
 interface PrimaryRoundButtonProps {
   children: React.ReactNode;
-  type: 'button' | 'submit' | 'reset';
-  onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
-  disabled: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?(event?: React.MouseEvent<HTMLButtonElement>): void;
+  disabled?: boolean;
 }
 
 function PrimaryRoundButton({

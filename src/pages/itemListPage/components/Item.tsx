@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import heartIcon from "../../../assets/heart_inactive.svg";
+import heartIcon from "@/assets/heart_inactive.svg";
 import "./Item.css";
 
 export default function Item({ data }) {

@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 import ItemListHead from "./components/ItemListHead";
 import Item from "./components/Item";
-import PaginationBar from "../../components/PaginationBar";
+import PaginationBar from "@/components/PaginationBar";
 
-import { useMediaQuery } from "../../hooks/useMediaQuery";
-import { useApi } from "../../hooks/useApi";
-import { getProducts } from "../../apis/apis";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useApi } from "@/hooks/useApi";
+import { getProducts } from "@/apis/apis";
 import "./AllItemListSection.css";
 
 const pageSizeTable = { PC: 10, TABLET: 6, MOBILE: 4 };

@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 import Item from "./components/Item";
 
-import { useMediaQuery } from "../../hooks/useMediaQuery";
-import { useApi } from "../../hooks/useApi";
-import { getProducts } from "../../apis/apis";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useApi } from "@/hooks/useApi";
+import { getProducts } from "@/apis/apis";
 import "./BestItemListSection.css";
 
 const pageSizeTable = { PC: 4, TABLET: 2, MOBILE: 1 };

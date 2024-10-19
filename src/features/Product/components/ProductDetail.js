@@ -1,18 +1,21 @@
 import { useState, useEffect, useCallback } from "react";
 import Tags from "shared/components/Tags";
 import HeartButton from "shared/components/HeartButton";
-import { checkObjectIsEmpty, formatDate } from "utils/commonUtils";
-import { getProudct } from "../services/getProudct";
+import AuthorInfo from "./AuthorInfo";
+import { checkObjectIsEmpty } from "shared/utils/commonUtils";
+import { formatDate } from "shared/utils/formatDate";
+import { BASE_URL } from "shared/constants/url";
+import { fetchData } from "shared/services/fetchData";
 import styles from "./ProductDetail.module.css";
 import kebabIcon from "assets/images/ic_kebab.svg";
-import AuthorInfo from "./AuthorInfo";
 
 const ProductDetail = ({ itemId }) => {
-  const [product, setProudct] = useState({});
+  const [product, setProduct] = useState({});
 
   const handleLoad = useCallback(async () => {
-    const item = await getProudct(itemId);
-    setProudct(item);
+    const url = `${BASE_URL}/${itemId}`;
+    const item = await fetchData(url);
+    setProduct(item);
   }, [itemId]);
 
   useEffect(() => {

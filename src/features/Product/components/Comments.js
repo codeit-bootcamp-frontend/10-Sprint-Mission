@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import { getComments } from "../services/getProudct";
+import { BASE_URL } from "shared/constants/url";
+import { fetchData } from "shared/services/fetchData";
 import inquiryEmptyImg from "assets/images/img_inquiry_empty.svg";
 import styles from "./Comments.module.css";
 import EditingComment from "./EditingComment";
@@ -10,7 +11,12 @@ const Comments = ({ itemId }) => {
   const [editingId, setEditingId] = useState(null);
 
   const handleLoad = useCallback(async () => {
-    const { list } = await getComments(itemId);
+    const url = `${BASE_URL}/${itemId}/comments`;
+    const { list } = await fetchData(url, {
+      query: {
+        limit: 5,
+      },
+    });
     setComments(list);
   }, [itemId]);
 

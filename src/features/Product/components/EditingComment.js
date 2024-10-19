@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { timeAgo } from "utils/commonUtils";
+import { timeAgo } from "shared/utils/formatDate";
 import AuthorInfo from "./AuthorInfo";
 import Textarea from "shared/components/Textarea";
 import Button from "shared/components/Button";

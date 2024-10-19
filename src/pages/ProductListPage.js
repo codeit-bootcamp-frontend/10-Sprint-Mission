@@ -1,21 +1,21 @@
 import { useState, useEffect } from "react";
 import BestProducts from "features/ProductList/components/BestProducts";
 import ProductList from "features/ProductList/components/ProductList";
-import { getResponsiveConstant } from "../constants/responsiveConstants";
+import { getResponsiveConstant } from "../shared/constants/responsiveConstants";
 import styles from "./ProductListPage.module.css";
 
 const ProductListPage = () => {
-  const { bestProudctsSize, productListSize } = getResponsiveConstant(
+  const { bestProductsSize, productListSize } = getResponsiveConstant(
     window.innerWidth
   );
-  const [bestProductsLimit, setBestProductsLimit] = useState(bestProudctsSize);
+  const [bestProductsLimit, setBestProductsLimit] = useState(bestProductsSize);
   const [productListLimit, setProductListLimit] = useState(productListSize);
 
   const handleResize = () => {
-    const { bestProudctsSize, productListSize } = getResponsiveConstant(
+    const { bestProductsSize, productListSize } = getResponsiveConstant(
       window.innerWidth
     );
-    setBestProductsLimit(bestProudctsSize);
+    setBestProductsLimit(bestProductsSize);
     setProductListLimit(productListSize);
   };
 

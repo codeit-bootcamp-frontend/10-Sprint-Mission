@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
-import { getProducts } from "../services/getProducts";
+import { BASE_URL } from "shared/constants/url";
+import { fetchData } from "shared/services/fetchData";
 import Card from "shared/components/Card";
 import styles from "./BestProducts.module.css";
 
@@ -7,7 +8,9 @@ const BestProducts = ({ size }) => {
   const [products, setProducts] = useState([]);
 
   const handleLoad = useCallback(async () => {
-    const { list } = await getProducts({ orderBy: "favorite", pageSize: size });
+    const { list } = await fetchData(BASE_URL, {
+      query: { orderBy: "favorite", pageSize: size },
+    });
     setProducts(list);
   }, [size]);
 

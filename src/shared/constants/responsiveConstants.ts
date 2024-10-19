@@ -7,23 +7,23 @@ const PRODUCT_LIST_MOBILE = 4;
 const PRODUCT_LIST_TABLET = 6;
 const PRODUCT_LIST_DESKTOP = 10;
 
-export const getResponsiveConstant = (width) => {
+export const getResponsiveConstant = (width: number) => {
   if (width < BREAKPOINT_TABLET) {
     return {
-      bestProudctsSize: BEST_PRODUCTS_MOBILE,
+      bestProductsSize: BEST_PRODUCTS_MOBILE,
       productListSize: PRODUCT_LIST_MOBILE,
     };
   }
 
   if (width < BREAKPOINT_DESKTOP) {
     return {
-      bestProudctsSize: BEST_PRODUCTS_TABLET,
+      bestProductsSize: BEST_PRODUCTS_TABLET,
       productListSize: PRODUCT_LIST_TABLET,
     };
   }
 
   return {
-    bestProudctsSize: BEST_PRODUCTS_DESKTOP,
+    bestProductsSize: BEST_PRODUCTS_DESKTOP,
     productListSize: PRODUCT_LIST_DESKTOP,
   };
 };

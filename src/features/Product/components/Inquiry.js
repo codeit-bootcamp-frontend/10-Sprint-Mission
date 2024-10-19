@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Textarea from "shared/components/Textarea";
-import { INQUIRY_PLACEHOLDER } from "constants/message";
-import styles from "./Inquiry.module.css";
 import Button from "shared/components/Button";
+import { INQUIRY_PLACEHOLDER } from "shared/constants/message";
+import styles from "./Inquiry.module.css";
 
 const Inquiry = () => {
   const [isDisabled, setIsDisabled] = useState(true);

@@ -1,9 +1,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { getProducts } from "../services/getProducts";
 import Card from "shared/components/Card";
 import Dropdown from "shared/components/Dropdown";
 import Pagination from "./Pagination";
+import { BASE_URL } from "shared/constants/url";
+import { fetchData } from "shared/services/fetchData";
 import styles from "./ProductList.module.css";
 import searchImg from "assets/images/ic_search.svg";
 import sortImg from "assets/images/ic_sort.svg";
@@ -19,10 +20,12 @@ const ProductList = ({ size }) => {
   };
 
   const handleLoad = useCallback(async () => {
-    const { list, totalCount } = await getProducts({
-      orderBy: order,
-      pageSize: size,
-      page: currentPage,
+    const { list, totalCount } = await fetchData(BASE_URL, {
+      query: {
+        orderBy: order,
+        pageSize: size,
+        page: currentPage,
+      },
     });
     setProducts(list);
     setTotalCount(totalCount);

@@ -5,10 +5,10 @@ import styles from "./Tags.module.css";
 interface Props {
   className: string;
   tags: string[];
-  onRemove: (e: MouseEvent<HTMLButtonElement>, value: string) => void;
+  onRemove?: (e: MouseEvent<HTMLButtonElement>, value: string) => void;
 }
 
-const Tags = ({ className = "", tags, onRemove = () => {} }: Props) => {
+const Tags = ({ className = "", tags, onRemove }: Props) => {
   return (
     <>
       {tags.length ? (

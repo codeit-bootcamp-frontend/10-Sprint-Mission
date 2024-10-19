@@ -1,4 +1,4 @@
-import { timeAgo } from "utils/commonUtils";
+import { timeAgo } from "shared/utils/formatDate";
 import Dropdown from "shared/components/Dropdown";
 import AuthorInfo from "./AuthorInfo";
 import styles from "./Comment.module.css";

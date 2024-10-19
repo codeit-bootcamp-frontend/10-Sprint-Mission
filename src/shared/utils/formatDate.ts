@@ -1,14 +1,11 @@
-export const checkObjectIsEmpty = (obj) =>
-  Object.keys(obj).length === 0 && obj.constructor === Object;
-
-export const formatDate = (date) =>
+export const formatDate = (date: string) =>
   new Date(date).toLocaleDateString("ko-kr", {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
   });
 
-export const formatDateWithTime = (date) =>
+export const formatDateWithTime = (date: string) =>
   new Date(date).toLocaleDateString("ko-kr", {
     year: "numeric",
     month: "2-digit",
@@ -18,10 +15,10 @@ export const formatDateWithTime = (date) =>
     hour12: true,
   });
 
-export const timeAgo = (date) => {
-  const now = new Date();
-  const past = new Date(date);
-  const diffMs = now - past;
+export const timeAgo = (date: string) => {
+  const now: Date = new Date();
+  const past: Date = new Date(date);
+  const diffMs = now.getTime() - past.getTime();
   const diffSec = Math.floor(diffMs / 1000);
 
   const minute = 60;

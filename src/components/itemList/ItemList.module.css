@@ -1,0 +1,55 @@
+@font-face {
+	font-family: "Pretendard Variable";
+	src: url("../../../public/Pretendard-Regular.ttf");
+}
+
+.label {
+	font-family: "Pretendard Variable";
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 32px;
+	text-align: left;
+	color: #111827;
+}
+
+.itemList {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr); /* 5개의 열 설정 */
+	gap: 24px;
+}
+
+.itemListBlock {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	width: fit-content;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+}
+
+.buttonBox {
+	display: flex;
+	justify-content: center;
+	margin-top: 42px;
+}
+
+.button {
+	border: none;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	background-color: #f0f0f0;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: #e0e0e0;
+}
+
+.active {
+	background-color: #007bff;
+	color: white;
+}

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Pretendard';
+  src: url('../../../public/Pretendard-Regular.ttf');
+}
+
+.btnStyle {
+	color: #f3f4f6;
+	background-color: #3692ff;
+	border: 1px solid;
+	border-radius: 8px;
+  font-family: 'Pretendard';
+}
+
+.utilBox {
+	display: flex;
+	justify-content: flex-end;
+  margin-top: 40px;;
+	margin-right: 360px;
+  gap: 12px;
+}
+
+.searchBar {
+	width: 325px;
+	height: 42px;
+	border-radius: 12px;
+	border: 1px solid #f3f4f6;
+	background-color: #f3f4f6;
+	padding-left: 16px;
+  font-family: 'Pretendard';
+}
+
+.searchBar::placeholder {
+	background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png);
+	background-position: 0px center;
+	background-size: 24px;
+	background-repeat: no-repeat;
+	text-indent: 24px;
+}
+
+.dropBox select {
+  width: 130px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid #E5E7EB;
+  font-family: 'Pretendard';
+}

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Pretendard Variable";
-  src: url("../../public/Pretendard-Regular.ttf");
+  src: url("../../../public/Pretendard-Regular.ttf");
 }
 
 .label {
@@ -12,13 +12,13 @@
   color: #111827;
 }
 
-.itemList {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5개의 열 설정 */
+.bestList {
+  display: flex;
+  justify-content: center;
   gap: 24px;
 }
 
-.itemListBlock {
+.bestListBlock {
   display: flex;
   flex-direction: column;
   gap: 16px;

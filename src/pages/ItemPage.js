@@ -1,13 +1,13 @@
-import BestList from "../components/BestList";
-import ItemList from "../components/ItemList";
+import BestList from "../components/itemList/BestList";
+import ItemList from "../components/itemList/ItemList";
 
 function ItemPage() {
-  return (
-    <>
-      <BestList></BestList>
-      <ItemList></ItemList>
-    </>
-  );
+	return (
+		<>
+			<BestList></BestList>
+			<ItemList></ItemList>
+		</>
+	);
 }
 
 export default ItemPage;

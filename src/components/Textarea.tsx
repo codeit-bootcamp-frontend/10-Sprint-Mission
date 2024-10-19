@@ -8,7 +8,7 @@ interface TextareaProps {
   value: string;
   placeholder?: string;
   onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
-  disabled: boolean;
+  disabled?: boolean;
   heightSize: string;
 }
 

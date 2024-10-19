@@ -4,6 +4,15 @@ import heart from '../../assets/ic_heart.svg';
 import { formatNumberWithCommas } from '../../utils/numberFormat';
 import { Link } from 'react-router-dom';
 
+interface ItemProps {
+  id: string;
+  images: string[];
+  name: string;
+  price: number;
+  favoriteCount: number;
+  imgSize: 'small' | 'large';
+}
+
 function Item({
   id,
   images = [testImg],
@@ -11,7 +20,7 @@ function Item({
   price,
   favoriteCount,
   imgSize = 'small',
-}) {
+}: ItemProps) {
   const additionalClass = imgSize === 'large' ? 'large-img' : 'small-img';
 
   const imgClassName = `Item-img ${additionalClass}`;

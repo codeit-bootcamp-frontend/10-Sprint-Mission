@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import PrimaryButton from '../PrimaryButton';
 import Textarea from '../Textarea';
 import './Enquiry.css';
 
 export default function Enquiry() {
-  const [enquiry, setEnquiry] = useState(null);
+  const [enquiry, setEnquiry] = useState<string>('');
 
-  const handelOnChange = (e) => {
+  const handelOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setEnquiry(e.target.value);
   };
 

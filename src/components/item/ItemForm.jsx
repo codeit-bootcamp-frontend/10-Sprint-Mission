@@ -72,17 +72,9 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
     <div className="ItemForm">
       <section className="ItemForm-title-wrapper">
         <h3 className="ItemForm-title">상품 등록하기</h3>
-        <PrimaryButton
-          text="등록"
-          onClick={handleOnSubmit}
-          disabled={!checkFormIsValid()}
-        />
+        <PrimaryButton text="등록" onClick={handleOnSubmit} disabled={!checkFormIsValid()} />
       </section>
-      <AddFileInputBar
-        name="imgFile"
-        value={formData.imgFile}
-        onChange={handleFileChange}
-      />
+      <AddFileInputBar name="imgFile" file={formData.imgFile} onChange={handleFileChange} />
       <InputBar
         label="상품명"
         inputId="title"
@@ -117,12 +109,7 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
         />
         <div className="ItemForm-tags-wrapper">
           {formData.tags.map((tag, index) => (
-            <TagCard
-              key={index}
-              name={tag}
-              index={index}
-              onDelete={handleDeleteTag}
-            />
+            <TagCard key={index} name={tag} index={index} onDelete={handleDeleteTag} />
           ))}
         </div>
       </div>

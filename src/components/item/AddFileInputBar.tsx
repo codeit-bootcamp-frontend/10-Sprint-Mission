@@ -4,17 +4,23 @@ import deleteIcon from '../../assets/ic_X.svg';
 import { useEffect, useRef, useState } from 'react';
 import { IMAGE_UPLOAD_LIMIT } from '../../constants/errorMessage';
 
-function AddFileInputBar({ name, value, onChange }) {
-  const [preview, setPreview] = useState(null);
-  const [error, setError] = useState(null);
-  const inputRef = useRef();
+interface AddFileInputBarProps {
+  name: string;
+  file: File | null;
+  onChange: (name: string, file: File | null) => void;
+}
 
-  const handleChange = (e) => {
-    const nextValue = e.target.files[0];
+function AddFileInputBar({ name, file, onChange }: AddFileInputBarProps) {
+  const [preview, setPreview] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const nextValue = e.target.files?.[0] || null;
     onChange(name, nextValue);
   };
 
-  const handleOnClick = (e) => {
+  const handleOnClick = (e: React.MouseEvent<HTMLDivElement>) => {
     if (preview) {
       setError(IMAGE_UPLOAD_LIMIT);
       e.preventDefault();
@@ -31,14 +37,14 @@ function AddFileInputBar({ name, value, onChange }) {
   };
 
   useEffect(() => {
-    if (!value) return;
-    const nextPreview = URL.createObjectURL(value);
+    if (!file) return;
+    const nextPreview = URL.createObjectURL(file);
     setPreview(nextPreview);
 
     return () => {
       URL.revokeObjectURL(nextPreview);
     };
-  }, [value]);
+  }, [file]);
 
   return (
     <section className="AddFileInputBar">

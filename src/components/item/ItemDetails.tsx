@@ -6,9 +6,14 @@ import { formatNumberWithCommas } from '../../utils/numberFormat';
 import TagCard from './TagCard';
 import avatar from '../../assets/avatar.svg';
 import { formatDateWithDot } from '../../utils/dateFormat';
+import { Product } from '../../services/itemApiTypes';
 
-export default function ItemDetails({ itemId }) {
-  const [item, setItem] = useState(null);
+interface ItemDetailsProps {
+  itemId: number;
+}
+
+export default function ItemDetails({ itemId }: ItemDetailsProps) {
+  const [item, setItem] = useState<Product>();
 
   useEffect(() => {
     window.scrollTo(0, 0);

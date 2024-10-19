@@ -8,7 +8,7 @@ interface PrimaryButtonProps {
       | React.MouseEvent<HTMLButtonElement>
       | React.FormEvent<HTMLFormElement>
   ): void;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 function PrimaryButton({

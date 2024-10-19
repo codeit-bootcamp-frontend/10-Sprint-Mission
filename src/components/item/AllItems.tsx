@@ -8,9 +8,10 @@ import { getItems } from '../../services/itemApi';
 import { getAllItemsPageSize } from '../../utils/paging';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Product } from '../../services/itemApiTypes';
 
 function AllItems() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
   const [totalCount, setTotalCount] = useState(1);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(getAllItemsPageSize());
@@ -22,7 +23,7 @@ function AllItems() {
     navigate('/addItem');
   };
 
-  const handleSortClick = (orderBy) => {
+  const handleSortClick = (orderBy: string) => {
     setOrderBy(orderBy);
   };
 

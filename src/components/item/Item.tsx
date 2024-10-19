@@ -3,13 +3,10 @@ import testImg from '../../assets/test_img.png';
 import heart from '../../assets/ic_heart.svg';
 import { formatNumberWithCommas } from '../../utils/numberFormat';
 import { Link } from 'react-router-dom';
+import { Product } from '../../services/itemApiTypes';
 
-interface ItemProps {
-  id: string;
-  images: string[];
-  name: string;
-  price: number;
-  favoriteCount: number;
+interface ItemProps
+  extends Pick<Product, 'id' | 'images' | 'name' | 'price' | 'favoriteCount'> {
   imgSize: 'small' | 'large';
 }
 

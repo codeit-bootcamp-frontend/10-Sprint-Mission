@@ -3,11 +3,17 @@ import { LIMIT, DISPLAY_PAGINATION_NUMBER } from '../../../utils/paging';
 import PaginationButton from './PaginationButton';
 import { useState } from 'react';
 
-function Pagination({ total, page, setPage }) {
+interface PaginationProps {
+  total: number;
+  page: number;
+  setPage: (page: number) => void;
+}
+
+function Pagination({ total, page, setPage }: PaginationProps) {
   const numPages = Math.ceil(total / LIMIT);
   const [startPage, setStartPage] = useState(1);
 
-  const handlePageChange = (newPage) => {
+  const handlePageChange = (newPage: number) => {
     if (
       newPage > DISPLAY_PAGINATION_NUMBER &&
       newPage % DISPLAY_PAGINATION_NUMBER === 1

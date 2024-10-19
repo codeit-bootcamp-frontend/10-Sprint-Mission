@@ -3,7 +3,7 @@ import './PrimaryRoundButton.css';
 interface PrimaryRoundButtonProps {
   children: React.ReactNode;
   type: 'button' | 'submit' | 'reset';
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onClick?(event: React.MouseEvent<HTMLButtonElement>): void;
   disabled: boolean;
 }
 
@@ -14,7 +14,12 @@ function PrimaryRoundButton({
   disabled = false,
 }: PrimaryRoundButtonProps) {
   return (
-    <button type={type} className="PrimaryRoundButton" onClick={onClick} disabled={disabled}>
+    <button
+      type={type}
+      className="PrimaryRoundButton"
+      onClick={onClick}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

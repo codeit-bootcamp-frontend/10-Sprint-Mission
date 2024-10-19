@@ -32,7 +32,7 @@ const INITIAL_PRODUCT = {
   favoriteCount: 0,
 };
 
-const ProductDetail = ({ itemId }: { itemId: number }) => {
+const ProductDetail = ({ itemId }: { itemId: string | undefined }) => {
   const [product, setProduct] = useState<Product>(INITIAL_PRODUCT);
 
   const handleLoad = useCallback(async () => {

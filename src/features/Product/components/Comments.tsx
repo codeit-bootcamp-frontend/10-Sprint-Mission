@@ -13,7 +13,7 @@ interface CommentType {
   createdAt: string;
 }
 
-const Comments = ({ itemId }: { itemId: number }) => {
+const Comments = ({ itemId }: { itemId: string | undefined }) => {
   const [comments, setComments] = useState([]);
   const [editingId, setEditingId] = useState<number | null>(null);
 

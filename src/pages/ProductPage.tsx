@@ -15,7 +15,7 @@ const ProductPage = () => {
       <Inquiry />
       <Comments itemId={itemId} />
       <Link to="/items" className={styles.link}>
-        <Button className={styles.button}>
+        <Button type="button" className={styles.button}>
           <div>목록으로 되돌아가기</div>
           <img src={backIcon} alt="되돌아가기 아이콘" />
         </Button>

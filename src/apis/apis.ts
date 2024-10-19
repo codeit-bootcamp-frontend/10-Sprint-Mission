@@ -1,6 +1,19 @@
-const baseUrl = "https://panda-market-api.vercel.app/";
+type ObjType = Record<string, unknown>;
 
-async function processResponse(response) {
+export interface GetProductsParams extends ObjType {
+  page: number;
+  pageSize: number;
+  orderBy: "recent" | "favorite";
+  keyword?: string;
+}
+
+const BASE_URL = "https://panda-market-api.vercel.app/";
+
+const PATH = {
+  PRODUCTS: "products",
+};
+
+async function processResponse(response: Response) {
   if (!response.ok) throw Error(`${response.status}: ${response.statusText}`);
   return await response.json();
 }
@@ -10,11 +23,15 @@ export async function getProducts({
   pageSize = 10,
   orderBy = "recent",
   keyword,
-}) {
-  const url = new URL("products", baseUrl);
-  const paramObj = { page, pageSize, orderBy };
+}: GetProductsParams): Promise<ObjType> {
+  const url = new URL(PATH.PRODUCTS, BASE_URL);
+  const paramObj: Record<string, string> = {
+    page: String(page),
+    pageSize: String(pageSize),
+    orderBy,
+  };
   if (keyword) paramObj.keyword = keyword;
-  url.search = new URLSearchParams(paramObj);
+  url.search = String(new URLSearchParams(paramObj));
 
   const response = await fetch(url);
 

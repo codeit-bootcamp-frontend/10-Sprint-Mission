@@ -1,19 +1,30 @@
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect,
+  ReactElement,
+  FocusEvent,
+  MouseEvent,
+} from "react";
 import "./Dropdown.css";
 
-export default function Dropdown({ onSelect, children }) {
-  const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState(children[0].props.value);
+interface Props {
+  onSelect: (value: string) => void;
+  children: ReactElement[];
+}
+
+export default function Dropdown({ onSelect, children }: Props) {
+  const [isActive, setIsActive] = useState<boolean>(false);
+  const [value, setValue] = useState<string>(children[0].props.value);
 
   const handleSelectClick = () => {
     setIsActive((prev) => !prev);
   };
-  const handleSelectBlur = (e) => {
+  const handleSelectBlur = (e: FocusEvent<HTMLButtonElement>) => {
     if (e.relatedTarget?.className === "dropdown__option") return;
     setIsActive(false);
   };
-  const handleOptionClick = (e) => {
-    setValue(e.target.value);
+  const handleOptionClick = (e: MouseEvent<HTMLButtonElement>) => {
+    setValue(e.currentTarget.value);
     setIsActive(false);
   };
 
@@ -29,7 +40,7 @@ export default function Dropdown({ onSelect, children }) {
         onClick={handleSelectClick}
         onBlur={handleSelectBlur}
       >
-        {children.find((child) => value === child.props.value).props.children}
+        {children.find((child) => value === child.props.value)?.props.children}
       </button>
       {isActive && (
         <ul className="dropdown__optionList">

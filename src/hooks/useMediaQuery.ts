@@ -1,13 +1,15 @@
 import { useState, useEffect } from "react";
 
-function checkMedia(width) {
+export type MediaType = "PC" | "TABLET" | "MOBILE";
+
+function checkMedia(width: number): MediaType {
   if (width >= 1200) return "PC";
   if (width >= 768) return "TABLET";
   return "MOBILE";
 }
 
 export function useMediaQuery() {
-  const [media, setMedia] = useState(checkMedia(window.innerWidth));
+  const [media, setMedia] = useState<MediaType>(checkMedia(window.innerWidth));
 
   useEffect(() => {
     const handleWindowResize = () => {

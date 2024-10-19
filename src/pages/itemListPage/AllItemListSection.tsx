@@ -19,7 +19,7 @@ export default function AllItemListSection() {
     orderBy: "recent",
     keyword: undefined,
   });
-  const [isLoading, error, data] = useApi(getProducts, paramObj);
+  const { isLoading, error, data } = useApi(getProducts, paramObj);
 
   const handlePageChange = (page) => {
     setParamObj((prevObj) => ({ ...prevObj, page }));

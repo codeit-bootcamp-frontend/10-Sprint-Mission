@@ -1,20 +1,27 @@
 import { useState, useCallback, useEffect } from "react";
 
-export function useApi(asyncFunc, paramObj) {
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [data, setData] = useState(null);
+type ObjType = Record<string, unknown>;
+
+export function useApi(
+  asyncFunc: (paramObj: ObjType) => Promise<ObjType>,
+  paramObj: ObjType
+) {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [error, setError] = useState<Error | null>(null);
+  const [data, setData] = useState<ObjType | null>(null);
 
   const wrappedFunc = useCallback(
-    async (paramObj) => {
+    async (paramObj: ObjType) => {
       try {
         setIsLoading(true);
         setError(null);
         const result = await asyncFunc(paramObj);
         setData(result);
       } catch (error) {
-        setError(error);
-        console.error(error.message);
+        if (error instanceof Error) {
+          setError(error);
+          console.error(error.message);
+        }
       } finally {
         setIsLoading(false);
       }
@@ -26,5 +33,5 @@ export function useApi(asyncFunc, paramObj) {
     wrappedFunc(paramObj);
   }, [wrappedFunc, paramObj]);
 
-  return [isLoading, error, data];
+  return { isLoading, error, data };
 }

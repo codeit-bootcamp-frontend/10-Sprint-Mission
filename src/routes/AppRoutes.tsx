@@ -4,6 +4,8 @@ import LandingPage from "pages/LandingPage";
 import ProductListPage from "pages/ProductListPage";
 import AddProductPage from "pages/AddProductPage";
 import ProductPage from "pages/ProductPage";
+import LoginPage from "pages/LoginPage";
+import SignupPage from "pages/SignupPage";
 
 const AppRoutes = () => {
   return (
@@ -17,6 +19,8 @@ const AppRoutes = () => {
           </Route>
           <Route path="additem" element={<AddProductPage />} />
         </Route>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
       </Routes>
     </Router>
   );

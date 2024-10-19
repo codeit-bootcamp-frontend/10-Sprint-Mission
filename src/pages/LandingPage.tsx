@@ -93,8 +93,8 @@ const LandingPage = () => {
       <footer className={styles.footerContainer}>
         <div className={styles.footerInfo}>©codeit - 2024</div>
         <div className={styles.footerLinks}>
-          <a href="/privacy">Privacy Policy</a>
-          <a href="/faq">FAQ</a>
+          <Link to="/privacy">Privacy Policy</Link>
+          <Link to="/faq">FAQ</Link>
         </div>
         <div className={styles.footerSocial}>
           <a

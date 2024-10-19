@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import { timeAgo } from "shared/utils/formatDate";
 import AuthorInfo from "./AuthorInfo";
 import Textarea from "shared/components/Textarea";
 import Button from "shared/components/Button";
 import styles from "./EditingComment.module.css";
 
-const EditingComment = ({ content, createdAt, writer, onCancel }) => {
+interface Props {
+  content: string;
+  writer: { nickname: string; image: string };
+  createdAt: string;
+  onCancel: () => void;
+}
+
+const EditingComment = ({ content, createdAt, writer, onCancel }: Props) => {
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const handleTextareaChange = (event) => {
-    if (event.target.value !== "") {
+  const handleTextareaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    if (e.target.value !== "") {
       setIsDisabled(false);
       return;
     }

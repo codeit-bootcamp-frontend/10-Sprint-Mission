@@ -1,13 +1,14 @@
+import { ChangeEvent } from "react";
 import Label from "./Label";
 import styles from "./Textarea.module.css";
 
 interface Props {
   className?: string;
-  name: string;
+  name?: string;
   label?: string;
   placeholder?: string;
   value?: string;
-  onChange: () => void;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
 }
 
 const Textarea = ({

@@ -3,7 +3,7 @@ import XButton from "./XButton";
 import styles from "./Tags.module.css";
 
 interface Props {
-  className: string;
+  className?: string;
   tags: string[];
   onRemove?: (e: MouseEvent<HTMLButtonElement>, value: string) => void;
 }

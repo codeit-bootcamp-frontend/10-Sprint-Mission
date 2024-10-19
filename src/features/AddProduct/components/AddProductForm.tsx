@@ -1,10 +1,26 @@
-import { useState, useEffect } from "react";
+import {
+  useState,
+  useEffect,
+  ChangeEvent,
+  KeyboardEvent,
+  MouseEvent,
+} from "react";
 import FileInput from "./FileInput";
 import Input from "shared/components/Input";
 import Textarea from "shared/components/Textarea";
 import Button from "shared/components/Button";
 import Tags from "shared/components/Tags";
 import styles from "./AddProductForm.module.css";
+
+interface Values {
+  imgFile: File | null;
+  product: string;
+  description: string;
+  price: string;
+  tags: string[];
+}
+
+type ChangeValue = string | string[] | File | null;
 
 const INITIAL_VALUES = {
   imgFile: null,
@@ -14,11 +30,11 @@ const INITIAL_VALUES = {
   tags: [],
 };
 
-const AddProuductForm = () => {
+const AddProductForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
-  const [values, setValues] = useState(INITIAL_VALUES);
+  const [values, setValues] = useState<Values>(INITIAL_VALUES);
 
-  const handleChange = (name, value) => {
+  const handleChange = (name: string, value: ChangeValue) => {
     setValues((prevValues) => {
       return {
         ...prevValues,
@@ -27,13 +43,16 @@ const AddProuductForm = () => {
     });
   };
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (
+    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     handleChange(name, value);
   };
 
-  const checkFormEmpty = (values) => {
+  const checkFormEmpty = (values: Values) => {
     const { imgFile, ...otherValues } = values;
+
     return Object.values(otherValues).some((value) => {
       if (Array.isArray(value)) {
         return value.length === 0;
@@ -42,19 +61,22 @@ const AddProuductForm = () => {
     });
   };
 
-  const handleKeyUp = (e) => {
+  const handleKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
-      const { name, value } = e.target;
-      e.target.value = "";
+      const { name, value } = e.currentTarget;
+      e.currentTarget.value = "";
       if (values.tags.includes(value) || value.trim() === "") return;
 
       handleChange(name, [...values.tags, value]);
     }
   };
 
-  const handleTagRemove = (event, target) => {
-    event.preventDefault();
-    const nextValue = values.tags.filter((tag) => tag !== target);
+  const handleTagRemove = (
+    e: MouseEvent<HTMLButtonElement>,
+    target: string
+  ) => {
+    e.preventDefault();
+    const nextValue: string[] = values.tags.filter((tag) => tag !== target);
     handleChange("tags", nextValue);
   };
 
@@ -112,4 +134,4 @@ const AddProuductForm = () => {
   );
 };
 
-export default AddProuductForm;
+export default AddProductForm;

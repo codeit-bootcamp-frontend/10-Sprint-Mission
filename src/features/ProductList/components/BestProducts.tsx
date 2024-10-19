@@ -1,10 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
+import Card from "shared/components/Card";
 import { BASE_URL } from "shared/constants/url";
 import { fetchData } from "shared/services/fetchData";
-import Card from "shared/components/Card";
+import { Product } from "shared/types/components";
 import styles from "./BestProducts.module.css";
 
-const BestProducts = ({ size }) => {
+const BestProducts = ({ size }: { size: number }) => {
   const [products, setProducts] = useState([]);
 
   const handleLoad = useCallback(async () => {
@@ -23,7 +24,7 @@ const BestProducts = ({ size }) => {
       <h2 className={styles.title}>베스트 상품</h2>
       <ul className={styles.products}>
         {products.length ? (
-          products.map((product) => {
+          products.map((product: Product) => {
             return <Card key={product.id} product={product} />;
           })
         ) : (

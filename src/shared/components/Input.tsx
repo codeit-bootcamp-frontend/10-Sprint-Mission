@@ -1,20 +1,25 @@
+import { ChangeEvent, KeyboardEvent } from "react";
 import styles from "./Input.module.css";
 import Label from "./Label";
 
 interface Props {
+  className?: string;
   type: string;
   name: string;
   label?: string;
   placeholder?: string;
-  onChange: () => void;
-  onKeyUp: () => void;
+  value?: string;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: KeyboardEvent<HTMLInputElement>) => void;
 }
 
 const Input = ({
+  className = "",
   type = "text",
   name = "",
   label = "",
   placeholder = "",
+  value = "",
   onChange = () => {},
   onKeyUp = () => {},
 }: Props) => {
@@ -29,6 +34,7 @@ const Input = ({
         name={name}
         id={name}
         placeholder={placeholder}
+        value={value}
         onChange={onChange}
         onKeyUp={onKeyUp}
       />

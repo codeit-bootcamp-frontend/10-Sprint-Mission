@@ -1,16 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Product } from "shared/types/components";
 import styles from "./Card.module.css";
 import { ReactComponent as HeartIcon } from "assets/images/ic_heart.svg";
 import emptyImg from "assets/images/img_empty.svg";
-
-interface Product {
-  id: number;
-  images: string[];
-  name: string;
-  price: number;
-  favoriteCount: number;
-}
 
 interface Props {
   product: Product;

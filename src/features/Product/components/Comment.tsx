@@ -4,7 +4,14 @@ import AuthorInfo from "./AuthorInfo";
 import styles from "./Comment.module.css";
 import kebabIcon from "assets/images/ic_kebab.svg";
 
-const Comment = ({ content, writer, createdAt, onSelect }) => {
+interface Props {
+  content: string;
+  writer: { nickname: string; image: string };
+  createdAt: string;
+  onSelect: (option: string) => void;
+}
+
+const Comment = ({ content, writer, createdAt, onSelect }: Props) => {
   const options = {
     edit: "수정하기",
     remove: "삭제하기",

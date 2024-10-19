@@ -5,16 +5,17 @@ import Dropdown from "shared/components/Dropdown";
 import Pagination from "./Pagination";
 import { BASE_URL } from "shared/constants/url";
 import { fetchData } from "shared/services/fetchData";
+import { Options, Product } from "shared/types/components";
 import styles from "./ProductList.module.css";
 import searchImg from "assets/images/ic_search.svg";
 import sortImg from "assets/images/ic_sort.svg";
 
-const ProductList = ({ size }) => {
+const ProductList = ({ size }: { size: number }) => {
   const [products, setProducts] = useState([]);
   const [order, setOrder] = useState("recent");
   const [totalCount, setTotalCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const options = {
+  const options: Options = {
     recent: "최신순",
     favorite: "좋아요순",
   };
@@ -61,7 +62,7 @@ const ProductList = ({ size }) => {
       </div>
       {products.length ? (
         <ul className={styles.products}>
-          {products.map((product) => {
+          {products.map((product: Product) => {
             return <Card key={product.id} product={product} />;
           })}
         </ul>

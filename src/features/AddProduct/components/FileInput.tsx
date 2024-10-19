@@ -1,27 +1,39 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, ChangeEvent, MouseEvent } from "react";
 import styles from "./FileInput.module.css";
 import plusImg from "assets/images/ic_plus.svg";
 import XButton from "shared/components/XButton";
 
-const FileInput = ({ label, name, value, onChange }) => {
+interface Props {
+  label: string;
+  name: string;
+  value: File | null;
+  onChange: (name: string, value: File | null) => void;
+}
+
+const FileInput = ({ label, name, value, onChange }: Props) => {
   const [preview, setPreview] = useState("");
   const [isExist, setIsExist] = useState(false);
 
-  const inputRef = useRef();
+  const inputRef = useRef<HTMLInputElement>(null);
 
-  const handleChange = (e) => {
-    const nextValue = e.target.files[0];
-    onChange(name, nextValue);
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files && files.length > 0) {
+      const nextValue = files[0];
+      const allowedTypes = ["image/png", "image/jpeg"];
+      if (!allowedTypes.includes(nextValue.type)) return;
+      onChange(name, nextValue);
+    }
   };
 
-  const handleUploadClick = (e) => {
+  const handleUploadClick = (e: MouseEvent<HTMLLabelElement>) => {
     if (value) {
       e.preventDefault();
       setIsExist(true);
     }
   };
 
-  const handleClearClick = (e) => {
+  const handleClearClick = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const inputNode = inputRef.current;
     if (!inputNode) return;

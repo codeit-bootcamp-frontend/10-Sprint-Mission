@@ -9,8 +9,31 @@ import { fetchData } from "shared/services/fetchData";
 import styles from "./ProductDetail.module.css";
 import kebabIcon from "assets/images/ic_kebab.svg";
 
-const ProductDetail = ({ itemId }) => {
-  const [product, setProduct] = useState({});
+interface Product {
+  images: string[];
+  name: string;
+  price: number;
+  description: string;
+  tags: string[];
+  ownerId: string;
+  createdAt: string;
+  favoriteCount: number;
+  [key: string]: unknown;
+}
+
+const INITIAL_PRODUCT = {
+  images: [],
+  name: "",
+  price: 0,
+  description: "",
+  tags: [],
+  ownerId: "",
+  createdAt: "",
+  favoriteCount: 0,
+};
+
+const ProductDetail = ({ itemId }: { itemId: number }) => {
+  const [product, setProduct] = useState<Product>(INITIAL_PRODUCT);
 
   const handleLoad = useCallback(async () => {
     const url = `${BASE_URL}/${itemId}`;

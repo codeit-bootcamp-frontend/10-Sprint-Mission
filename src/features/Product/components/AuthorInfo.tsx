@@ -1,7 +1,14 @@
 import styles from "./AuthorInfo.module.css";
 import profileIcon from "assets/images/ic_profile.svg";
 
-const AuthorInfo = ({ className, nickname, image, date }) => {
+interface Props {
+  className?: string;
+  nickname: string;
+  image?: string;
+  date: string;
+}
+
+const AuthorInfo = ({ className, nickname, image, date }: Props) => {
   return (
     <div className={`${styles.authorInfo} ${className}`}>
       <img

@@ -1,14 +1,21 @@
 import { useState, useEffect, useCallback } from "react";
-import { BASE_URL } from "shared/constants/url";
-import { fetchData } from "shared/services/fetchData";
-import inquiryEmptyImg from "assets/images/img_inquiry_empty.svg";
-import styles from "./Comments.module.css";
 import EditingComment from "./EditingComment";
 import Comment from "./Comment";
+import { BASE_URL } from "shared/constants/url";
+import { fetchData } from "shared/services/fetchData";
+import styles from "./Comments.module.css";
+import inquiryEmptyImg from "assets/images/img_inquiry_empty.svg";
 
-const Comments = ({ itemId }) => {
+interface CommentType {
+  id: number;
+  content: string;
+  writer: { nickname: string; image: string };
+  createdAt: string;
+}
+
+const Comments = ({ itemId }: { itemId: number }) => {
   const [comments, setComments] = useState([]);
-  const [editingId, setEditingId] = useState(null);
+  const [editingId, setEditingId] = useState<number | null>(null);
 
   const handleLoad = useCallback(async () => {
     const url = `${BASE_URL}/${itemId}/comments`;
@@ -20,7 +27,7 @@ const Comments = ({ itemId }) => {
     setComments(list);
   }, [itemId]);
 
-  const handleSelect = (id, option) => {
+  const handleSelect = (id: number, option: string) => {
     if (option === "edit") {
       setEditingId(id);
     }
@@ -38,13 +45,13 @@ const Comments = ({ itemId }) => {
     <section>
       {comments.length ? (
         <ul className={styles.comments}>
-          {comments.map(({ id, ...comment }) =>
+          {comments.map(({ id, ...comment }: CommentType) =>
             id === editingId ? (
               <EditingComment key={id} onCancel={handleCancel} {...comment} />
             ) : (
               <Comment
                 key={id}
-                onSelect={(option) => handleSelect(id, option)}
+                onSelect={(option: string) => handleSelect(id, option)}
                 {...comment}
               />
             )

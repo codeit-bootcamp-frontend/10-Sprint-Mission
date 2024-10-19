@@ -6,10 +6,6 @@ import './Enquiry.css';
 export default function Enquiry() {
   const [enquiry, setEnquiry] = useState(null);
 
-  const isEnquiryEmpty = () => {
-    return !enquiry;
-  };
-
   const handelOnChange = (e) => {
     setEnquiry(e.target.value);
   };
@@ -25,7 +21,7 @@ export default function Enquiry() {
         heightSize="small"
       />
       <div className="Enquiry-btn-wrapper">
-        <PrimaryButton text="등록" disabled={isEnquiryEmpty()} />
+        <PrimaryButton text="등록" disabled={!enquiry} />
       </div>
     </section>
   );

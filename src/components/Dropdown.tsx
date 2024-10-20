@@ -5,16 +5,17 @@ import {
   FocusEvent,
   MouseEvent,
 } from "react";
+import { OrderBy } from "@/apis/apis.type";
 import "./Dropdown.css";
 
 interface Props {
-  onSelect: (value: string) => void;
+  onSelect: (value: OrderBy) => void;
   children: ReactElement[];
 }
 
 export default function Dropdown({ onSelect, children }: Props) {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const [value, setValue] = useState<string>(children[0].props.value);
+  const [value, setValue] = useState<OrderBy>(children[0].props.value);
 
   const handleSelectClick = () => {
     setIsActive((prev) => !prev);
@@ -24,7 +25,7 @@ export default function Dropdown({ onSelect, children }: Props) {
     setIsActive(false);
   };
   const handleOptionClick = (e: MouseEvent<HTMLButtonElement>) => {
-    setValue(e.currentTarget.value);
+    setValue(e.currentTarget.value as OrderBy);
     setIsActive(false);
   };
 

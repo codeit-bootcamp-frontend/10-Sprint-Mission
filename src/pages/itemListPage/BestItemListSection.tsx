@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
-import { getProducts, GetProductsParams } from "@/apis/apis";
+import { getProducts } from "@/apis/apis";
+import { GetProductsParams, GetProductsRes } from "@/apis/apis.type";
 import { useApi } from "@/hooks/useApi";
 import Item from "./components/Item";
 import "./BestItemListSection.css";
@@ -14,7 +15,10 @@ export default function BestItemListSection() {
     pageSize: pageSizeTable[media],
     orderBy: "favorite",
   });
-  const { isLoading, error, data } = useApi(getProducts, paramObj);
+  const { isLoading, error, data } = useApi<GetProductsParams, GetProductsRes>(
+    getProducts,
+    paramObj
+  );
 
   useEffect(() => {
     setParamObj((prevObj) => ({ ...prevObj, pageSize: pageSizeTable[media] }));
@@ -27,7 +31,7 @@ export default function BestItemListSection() {
       </div>
       {!isLoading && !error && data && (
         <div className="bestItemList__body">
-          {(data.list as object[]).map((item) => (
+          {data.list.map((item) => (
             <Item key={item.id} data={item} />
           ))}
         </div>

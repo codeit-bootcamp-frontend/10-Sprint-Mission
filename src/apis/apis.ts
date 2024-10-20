@@ -1,11 +1,4 @@
-type ObjType = Record<string, unknown>;
-
-export interface GetProductsParams extends ObjType {
-  page: number;
-  pageSize: number;
-  orderBy: "recent" | "favorite";
-  keyword?: string;
-}
+import { StringObj, GetProductsParams, GetProductsRes } from "./apis.type";
 
 const BASE_URL = "https://panda-market-api.vercel.app/";
 
@@ -23,9 +16,9 @@ export async function getProducts({
   pageSize = 10,
   orderBy = "recent",
   keyword,
-}: GetProductsParams): Promise<ObjType> {
+}: GetProductsParams): Promise<GetProductsRes> {
   const url = new URL(PATH.PRODUCTS, BASE_URL);
-  const paramObj: Record<string, string> = {
+  const paramObj: StringObj = {
     page: String(page),
     pageSize: String(pageSize),
     orderBy,

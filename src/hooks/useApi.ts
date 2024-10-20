@@ -1,32 +1,30 @@
 import { useState, useCallback, useEffect } from "react";
+import { Obj } from "@/apis/apis.type";
 
-type ObjType = Record<string, unknown>;
-
-export function useApi(
-  asyncFunc: (paramObj: ObjType) => Promise<ObjType>,
-  paramObj: ObjType
+export function useApi<Params extends Obj, Response extends Obj>(
+  fetchFunc: (paramObj: Params) => Promise<Response>,
+  paramObj: Params
 ) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
-  const [data, setData] = useState<ObjType | null>(null);
+  const [data, setData] = useState<Response | null>(null);
 
   const wrappedFunc = useCallback(
-    async (paramObj: ObjType) => {
+    async (paramObj: Params) => {
       try {
         setIsLoading(true);
         setError(null);
-        const result = await asyncFunc(paramObj);
+        const result = await fetchFunc(paramObj);
         setData(result);
-      } catch (error) {
-        if (error instanceof Error) {
-          setError(error);
-          console.error(error.message);
-        }
+      } catch (e) {
+        const error = e as Error;
+        setError(error);
+        console.error(error.message);
       } finally {
         setIsLoading(false);
       }
     },
-    [asyncFunc]
+    [fetchFunc]
   );
 
   useEffect(() => {

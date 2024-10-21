@@ -1,9 +1,19 @@
 import { Link } from "react-router-dom";
-
-import heartIcon from "../../../assets/heart_inactive.svg";
+import heartIcon from "@/assets/heart_inactive.svg";
 import "./Item.css";
 
-export default function Item({ data }) {
+interface Props {
+  data: {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    images: string[];
+    favoriteCount: number;
+  };
+}
+
+export default function Item({ data }: Props) {
   const { id, name, description, price, images, favoriteCount } = data;
   return (
     <Link className="item" to={`/items/${id}`}>

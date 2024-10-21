@@ -1,22 +1,27 @@
-import { useCallback } from "react";
+import { Dispatch, SetStateAction, KeyboardEvent, useCallback } from "react";
 import { Link } from "react-router-dom";
-import Dropdown from "../../../components/Dropdown.js";
+import { GetProductsParams, OrderBy } from "@/apis/apis.type";
+import Dropdown from "@/components/Dropdown";
 import "./ItemListHead.css";
 
-export default function ItemListHead({ setParamObj }) {
+interface Props {
+  setParamObj: Dispatch<SetStateAction<GetProductsParams>>;
+}
+
+export default function ItemListHead({ setParamObj }: Props) {
   const handleInputEnter = useCallback(
-    (e) => {
+    (e: KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "Enter")
         setParamObj((prevObj) => ({
           ...prevObj,
           page: 1,
-          keyword: e.target.value,
+          keyword: (e.target as HTMLInputElement).value,
         }));
     },
     [setParamObj]
   );
   const handleDropdownSelect = useCallback(
-    (value) => {
+    (value: OrderBy) => {
       setParamObj((prevObj) => ({ ...prevObj, page: 1, orderBy: value }));
     },
     [setParamObj]

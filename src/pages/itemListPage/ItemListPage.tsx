@@ -1,5 +1,5 @@
-import BestItemListSection from "./BestItemListSection.js";
-import AllItemListSection from "./AllItemListSection.js";
+import BestItemListSection from "./BestItemListSection";
+import AllItemListSection from "./AllItemListSection";
 
 import "./ItemListPage.css";
 

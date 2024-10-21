@@ -1,11 +1,11 @@
-import { useMemo, useCallback } from "react";
-import prevPageIcon from "../assets/arrow_left_active.svg";
-import inPrevPageIcon from "../assets/arrow_left_inactive.svg";
-import nextPageIcon from "../assets/arrow_right_active.svg";
-import inNextPageIcon from "../assets/arrow_right_inactive.svg";
+import { useMemo, useCallback, MouseEvent } from "react";
+import prevPageIcon from "@/assets/arrow_left_active.svg";
+import inPrevPageIcon from "@/assets/arrow_left_inactive.svg";
+import nextPageIcon from "@/assets/arrow_right_active.svg";
+import inNextPageIcon from "@/assets/arrow_right_inactive.svg";
 import "./PaginationBar.css";
 
-const calcPageArray = (totalPage, currentPage) => {
+const calcPageArray = (totalPage: number, currentPage: number): number[] => {
   if (totalPage <= 5)
     return Array(totalPage)
       .fill(1)
@@ -20,14 +20,24 @@ const calcPageArray = (totalPage, currentPage) => {
     .map((start, idx) => start + idx);
 };
 
-export default function PaginationBar({ totalPage, currentPage, onChange }) {
+interface Props {
+  totalPage: number;
+  currentPage: number;
+  onChange: (value: number) => void;
+}
+
+export default function PaginationBar({
+  totalPage,
+  currentPage,
+  onChange,
+}: Props) {
   const pageArray = useMemo(
     () => calcPageArray(totalPage, currentPage),
     [totalPage, currentPage]
   );
 
-  const checkPage = (page) => {
-    if (page === currentPage) return "paginationBar__button--current";
+  const isCurrentPage = (page: number): boolean => {
+    return page === currentPage;
   };
 
   const handlePrevClick = useCallback(() => {
@@ -39,8 +49,8 @@ export default function PaginationBar({ totalPage, currentPage, onChange }) {
   }, [onChange, currentPage, totalPage]);
 
   const handleNumberClick = useCallback(
-    (e) => {
-      onChange(Number(e.target.textContent));
+    (e: MouseEvent<HTMLButtonElement>) => {
+      onChange(Number(e.currentTarget.textContent));
     },
     [onChange]
   );
@@ -64,7 +74,9 @@ export default function PaginationBar({ totalPage, currentPage, onChange }) {
         {pageArray.map((page) => (
           <li key={page}>
             <button
-              className={`paginationBar__button ${checkPage(page)}`}
+              className={`paginationBar__button${
+                isCurrentPage(page) ? " paginationBar__button--current" : ""
+              }`}
               type="button"
               onClick={handleNumberClick}
               aria-label={`${page}번 페이지`}

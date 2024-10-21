@@ -6,9 +6,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import Layout from "./components/layout/Layout.js";
-import ItemListPage from "./pages/itemListPage/ItemListPage.js";
-import AddItemPage from "./pages/addItemPage/AddItemPage.js";
+import Layout from "@/components/layout/Layout";
+import ItemListPage from "@/pages/itemListPage/ItemListPage";
+import AddItemPage from "@/pages/addItemPage/AddItemPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

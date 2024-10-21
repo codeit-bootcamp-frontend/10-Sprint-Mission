@@ -1,15 +1,15 @@
 import { Link, NavLink } from "react-router-dom";
-import { useMediaQuery } from "../../hooks/useMediaQuery.js";
-import logo from "../../assets/logo_w153x3.png";
-import logoText from "../../assets/logo_w81x3.png";
-import profileImage from "../../assets/profile_image_w40x3.png";
+import { MediaType, useMediaQuery } from "@/hooks/useMediaQuery";
+import logo from "@/assets/logo_w153x3.png";
+import logoText from "@/assets/logo_w81x3.png";
+import profileImage from "@/assets/profile_image_w40x3.png";
 import "./Header.css";
 
 export default function Header() {
   const media = useMediaQuery();
 
-  const getLogo = (media) => {
-    return media !== "MOBLE" ? logo : logoText;
+  const getLogo = (media: MediaType) => {
+    return media !== "MOBILE" ? logo : logoText;
   };
 
   return (

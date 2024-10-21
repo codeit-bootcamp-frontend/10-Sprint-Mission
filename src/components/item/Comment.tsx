@@ -1,8 +1,12 @@
 import './Comment.css';
 import avatar from '../../assets/avatar.svg';
 import { formatDateToTimeAgo } from '../../utils/dateFormat';
+import { Comment as CommentData } from '../../services/itemApiTypes';
 
-export default function Comment({ content, createdAt, writer }) {
+interface CommentProps
+  extends Pick<CommentData, 'id' | 'content' | 'createdAt' | 'writer'> {}
+
+export default function Comment({ content, createdAt, writer }: CommentProps) {
   return (
     <div className="Comment">
       <p className="content">{content}</p>

@@ -1,9 +1,17 @@
 import './TagCard.css';
 import deleteIcon from '../../assets/ic_X.svg';
 
-function TagCard({ index, name, onDelete }) {
+interface TagCardProps {
+  index?: number;
+  name: string;
+  onDelete?: (index: number) => void;
+}
+
+function TagCard({ index, name, onDelete }: TagCardProps) {
   const handleOnClick = () => {
-    if (onDelete) onDelete(index);
+    if (onDelete && index !== undefined) {
+      onDelete(index);
+    }
   };
 
   return (

@@ -1,5 +1,5 @@
-export function formatDateWithDot(dateStr) {
-  const date = new Date(dateStr);
+export function formatDateWithDot(targetDate: string): string {
+  const date = new Date(targetDate);
 
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, '0');
@@ -8,10 +8,14 @@ export function formatDateWithDot(dateStr) {
   return `${year}.${month}.${day}`;
 }
 
-export function formatDateToTimeAgo(dateStr) {
-  const date = new Date(dateStr);
+export function formatDateToTimeAgo(targetDate: string): string {
+  const date = new Date(targetDate);
 
-  const seconds = Math.floor((new Date() - date) / 1000);
+  if (isNaN(date.getTime())) {
+    return '유효하지 않은 날짜';
+  }
+
+  const seconds = Math.floor((Date.now() - date.getTime()) / 1000);
 
   if (seconds < 60) return '방금 전';
 
@@ -27,4 +31,6 @@ export function formatDateToTimeAgo(dateStr) {
       return `${time}${interval.label} 전`;
     }
   }
+
+  return '오래 전';
 }

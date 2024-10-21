@@ -3,6 +3,12 @@ import testImg from '../../assets/test_img.png';
 import heart from '../../assets/ic_heart.svg';
 import { formatNumberWithCommas } from '../../utils/numberFormat';
 import { Link } from 'react-router-dom';
+import { Product } from '../../services/itemApiTypes';
+
+interface ItemProps
+  extends Pick<Product, 'id' | 'images' | 'name' | 'price' | 'favoriteCount'> {
+  imgSize: 'small' | 'large';
+}
 
 function Item({
   id,
@@ -11,7 +17,7 @@ function Item({
   price,
   favoriteCount,
   imgSize = 'small',
-}) {
+}: ItemProps) {
   const additionalClass = imgSize === 'large' ? 'large-img' : 'small-img';
 
   const imgClassName = `Item-img ${additionalClass}`;

@@ -1,8 +1,18 @@
 import { useId } from 'react';
 import './Textarea.css';
 
+interface TextareaProps {
+  label?: string;
+  inputId?: string;
+  name: string;
+  value: string;
+  placeholder?: string;
+  onChange?: (event: React.ChangeEvent<HTMLTextAreaElement>) => void;
+  disabled?: boolean;
+  heightSize?: string;
+}
+
 function Textarea({
-  type = 'text',
   label,
   inputId,
   name,
@@ -11,7 +21,7 @@ function Textarea({
   onChange,
   disabled = false,
   heightSize = '',
-}) {
+}: TextareaProps) {
   const id = useId();
 
   return (
@@ -22,7 +32,6 @@ function Textarea({
         </label>
       )}
       <textarea
-        type={type}
         id={inputId || id}
         name={name}
         value={value}

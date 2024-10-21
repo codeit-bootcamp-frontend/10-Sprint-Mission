@@ -3,9 +3,14 @@ import Comment from './Comment';
 import { getItemComments } from '../../services/itemApi';
 import { useEffect, useState } from 'react';
 import panda from '../../assets/enquiry_empty.svg';
+import { Comment as CommentData } from '../../services/itemApiTypes';
 
-export default function Comments({ itemId }) {
-  const [comments, setComments] = useState([]);
+interface CommentsProps {
+  itemId: number;
+}
+
+export default function Comments({ itemId }: CommentsProps) {
+  const [comments, setComments] = useState<CommentData[]>([]);
 
   useEffect(() => {
     const fetchComments = async () => {

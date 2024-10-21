@@ -1,13 +1,17 @@
 import './SortDropdown.css';
 import { useState } from 'react';
 
-function SortDropdown({ handleSortClick }) {
-  const [selected, setSelected] = useState('최신순');
-  const [isActive, setIsActive] = useState(false);
+interface SortDropdownProps {
+  handleSortClick: (sortType: string) => void;
+}
+
+function SortDropdown({ handleSortClick }: SortDropdownProps) {
+  const [selected, setSelected] = useState<string>('최신순');
+  const [isActive, setIsActive] = useState<boolean>(false);
 
   const toggleDropdown = () => setIsActive((prev) => !prev);
 
-  const handleOptionClick = (sortType, label) => {
+  const handleOptionClick = (sortType: string, label: string) => {
     handleSortClick(sortType);
     setSelected(label);
     setIsActive(false);

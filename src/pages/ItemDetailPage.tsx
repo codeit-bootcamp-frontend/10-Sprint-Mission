@@ -7,7 +7,8 @@ import returnIcon from '../assets/ic_return.svg';
 import Comments from '../components/item/Comments';
 
 export default function ItemDetailPage() {
-  const { itemId } = useParams();
+  const { itemId: itemIdParam } = useParams();
+  const itemId = Number(itemIdParam);
   const nav = useNavigate();
 
   const handleReturnListOnClick = () => {

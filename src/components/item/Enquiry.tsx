@@ -1,16 +1,12 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import PrimaryButton from '../PrimaryButton';
 import Textarea from '../Textarea';
 import './Enquiry.css';
 
 export default function Enquiry() {
-  const [enquiry, setEnquiry] = useState(null);
+  const [enquiry, setEnquiry] = useState<string>('');
 
-  const isEnquiryEmpty = () => {
-    return !enquiry;
-  };
-
-  const handelOnChange = (e) => {
+  const handelOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setEnquiry(e.target.value);
   };
 
@@ -25,7 +21,7 @@ export default function Enquiry() {
         heightSize="small"
       />
       <div className="Enquiry-btn-wrapper">
-        <PrimaryButton text="등록" disabled={isEnquiryEmpty()} />
+        <PrimaryButton text="등록" disabled={!enquiry} />
       </div>
     </section>
   );

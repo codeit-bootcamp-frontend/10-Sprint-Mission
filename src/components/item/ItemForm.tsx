@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, ChangeEvent, KeyboardEvent, FormEvent } from 'react';
 import './ItemForm.css';
 import InputBar from '../InputBar';
 import PrimaryButton from '../PrimaryButton';
@@ -6,7 +6,15 @@ import Textarea from '../Textarea';
 import TagCard from './TagCard';
 import AddFileInputBar from './AddFileInputBar';
 
-const INITIAL_VALUES = {
+interface ItemFormValues {
+  title: string;
+  description: string;
+  price: string;
+  tags: string[];
+  imgFile: File | null;
+}
+
+const INITIAL_VALUES: ItemFormValues = {
   title: '',
   description: '',
   price: '',
@@ -15,7 +23,7 @@ const INITIAL_VALUES = {
 };
 
 function ItemForm({ initialValues = INITIAL_VALUES }) {
-  const [formData, setFormData] = useState(initialValues);
+  const [formData, setFormData] = useState<ItemFormValues>(initialValues);
 
   const checkFormIsValid = () => {
     return (
@@ -27,7 +35,9 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
     );
   };
 
-  const handleChange = (e) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -35,17 +45,18 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
     }));
   };
 
-  const handleFileChange = (name, value) => {
+  const handleFileChange = (name: string, value: File | null) => {
     setFormData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
   };
 
-  const handleTagKeyDown = (e) => {
+  const handleTagKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (e.nativeEvent.isComposing) return;
 
-    const currentTag = e.target.value.trim();
+    const currentTarget = e.currentTarget as HTMLInputElement;
+    const currentTag = currentTarget.value.trim();
 
     if (currentTag && e.key === 'Enter') {
       setFormData((prevData) => ({
@@ -53,19 +64,20 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
         tags: [...prevData.tags, currentTag],
       }));
 
-      e.target.value = '';
+      currentTarget.value = '';
     }
   };
 
-  const handleDeleteTag = (targetIndex) => {
+  const handleDeleteTag = (targetIndex: number) => {
     setFormData((prevData) => ({
       ...prevData,
       tags: prevData.tags.filter((_, index) => index !== targetIndex),
     }));
   };
 
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    console.log('등록버튼 클릭');
   };
 
   return (
@@ -80,7 +92,7 @@ function ItemForm({ initialValues = INITIAL_VALUES }) {
       </section>
       <AddFileInputBar
         name="imgFile"
-        value={formData.imgFile}
+        file={formData.imgFile}
         onChange={handleFileChange}
       />
       <InputBar

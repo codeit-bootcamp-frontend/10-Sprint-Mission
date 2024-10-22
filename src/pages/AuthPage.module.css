@@ -1,0 +1,38 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.login {
+  padding: 80px 16px;
+}
+
+.signup {
+  padding: 24px 16px;
+}
+
+.authLogo > img {
+  width: 198px;
+  height: 66px;
+}
+
+@media screen and (min-width: 768px) {
+  .auth {
+    gap: 40px;
+  }
+
+  .login {
+    padding-top: 190px;
+  }
+
+  .signup {
+    padding-top: 48px;
+  }
+
+  .authLogo > img {
+    width: 396px;
+    height: 132px;
+  }
+}

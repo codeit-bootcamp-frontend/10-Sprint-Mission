@@ -1,0 +1,124 @@
+.authForm {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input {
+  gap: 8px;
+}
+
+.authForm label {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+}
+
+.btnEye {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.btnEye.show {
+  content: url("assets/images/btn_show.svg");
+}
+
+.button {
+  padding: 12px 145px;
+  border-radius: 40px;
+  font-size: 1.25rem;
+  line-height: 2rem;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.button.active {
+  background-color: var(--blue);
+}
+
+.validationFocus {
+  outline: 1px solid var(--red);
+}
+
+.validationMessage {
+  display: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--red);
+  padding-left: 16px;
+  margin-top: 8px;
+}
+
+.otherAccount {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6f2ff;
+  padding: 16px 23px;
+  gap: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+  color: var(--gary800);
+  margin-bottom: 8px;
+}
+
+.otherAccount img {
+  width: 42px;
+  height: 42px;
+}
+
+.iconContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.authLink {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: center;
+  color: var(--gary800);
+}
+
+.authLink > a {
+  color: var(--blue);
+  text-decoration: underline;
+  padding-left: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .authForm {
+    max-width: 100%;
+    width: 640px;
+    gap: 24px;
+  }
+
+  .input {
+    gap: 16px;
+  }
+
+  .authForm label {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+  }
+
+  .authForm .authInput {
+    padding: 16px 24px;
+  }
+
+  .button {
+    padding: 16px 124px;
+    margin-bottom: 0;
+  }
+
+  .authForm > .otherAccount {
+    margin-bottom: 0;
+  }
+}

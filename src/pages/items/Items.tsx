@@ -4,7 +4,33 @@ import BestProductsHeader from "components/items/BestProductsHeader";
 import ItemPageNation from "components/items/ItemPageNation";
 import ProductCard from "components/items/ProductCard";
 import { useItemsSharedData } from "components/items/useItemsSharedData";
-import { Outlet } from "react-router-dom";
+
+interface ProductCardProps {
+  latestData: any;
+  setLatestData: (data: any) => void;
+  favoriteData: any;
+  setFavoriteData: (data: any) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
+  error: any;
+  setError: (error: any) => void;
+  totalCount: number;
+  setTotalCount: (count: number) => void;
+  totalPage: number;
+  setTotalPage: (page: number) => void;
+  responsiveAllProductCount: number;
+  setResponsiveAllProductCount: (count: number) => void;
+  responsiveFavoriteProductCount: number;
+  setResponsiveFavoriteProductCount: (count: number) => void;
+  sortProduct: string;
+  setSortProduct: (sort: string) => void;
+  pageNumber: number;
+  setPageNumber: (page: number) => void;
+  isEmptyHeart: boolean;
+  setIsEmptyHeart: (isEmpty: boolean) => void;
+  isBestProduct: boolean;
+}
+
 
 const Items = () => {
   const {
@@ -41,27 +67,24 @@ const Items = () => {
       <Header />
       <BestProductsHeader />
       <ProductCard 
-        latestData={latestData} 
-        setLatestData={setLatestData} 
-        favoriteData={favoriteData} 
-        setFavoriteData={setFavoriteData} 
-        loading={loading} 
-        setLoading={setLoading} 
-        error={error} 
-        setError={setError} 
-        totalCount={totalCount} 
-        setTotalCount={setTotalCount} 
-        totalPage={totalPage} 
-        setTotalPage={setTotalPage} 
+        latestData={latestData}
+        setLatestData={setLatestData}
+        favoriteData={favoriteData}
+        setFavoriteData={setFavoriteData}
+        loading={loading}
+        setLoading={setLoading}
+        error={error}
+        setError={setError}
+        totalCount={totalCount}
+        setTotalCount={setTotalCount}
+        setTotalPage={setTotalPage}
         responsiveAllProductCount={responsiveAllProductCount} 
         setResponsiveAllProductCount={setResponsiveAllProductCount}
         responsiveFavoriteProductCount={responsiveFavoriteProductCount}
         setResponsiveFavoriteProductCount={setResponsiveFavoriteProductCount}
-        sortProduct={sortProduct} 
-        setSortProduct={setSortProduct} 
-        pageNumber={pageNumber} 
-        setPageNumber={setPageNumber} 
-        isEmptyHeart={isEmptyHeart} 
+        sortProduct={sortProduct}
+        pageNumber={pageNumber}
+        isEmptyHeart={isEmptyHeart}
         setIsEmptyHeart={setIsEmptyHeart}
         isBestProduct={true}
       />
@@ -73,27 +96,24 @@ const Items = () => {
         setSortProduct={setSortProduct} 
       />
       <ProductCard 
-        latestData={latestData} 
-        setLatestData={setLatestData} 
-        favoriteData={favoriteData} 
-        setFavoriteData={setFavoriteData} 
-        loading={loading} 
-        setLoading={setLoading} 
-        error={error} 
-        setError={setError} 
-        totalCount={totalCount} 
-        setTotalCount={setTotalCount} 
-        totalPage={totalPage} 
-        setTotalPage={setTotalPage} 
-        responsiveAllProductCount={responsiveAllProductCount} 
+        latestData={latestData}
+        setLatestData={setLatestData}
+        favoriteData={favoriteData}
+        setFavoriteData={setFavoriteData}
+        loading={loading}
+        setLoading={setLoading}
+        error={error}
+        setError={setError}
+        totalCount={totalCount}
+        setTotalCount={setTotalCount}
+        setTotalPage={setTotalPage}
+        responsiveAllProductCount={responsiveAllProductCount}
         setResponsiveAllProductCount={setResponsiveAllProductCount}
         responsiveFavoriteProductCount={responsiveFavoriteProductCount}
         setResponsiveFavoriteProductCount={setResponsiveFavoriteProductCount}
-        sortProduct={sortProduct} 
-        setSortProduct={setSortProduct} 
-        pageNumber={pageNumber} 
-        setPageNumber={setPageNumber} 
-        isEmptyHeart={isEmptyHeart} 
+        sortProduct={sortProduct}
+        pageNumber={pageNumber}
+        isEmptyHeart={isEmptyHeart}
         setIsEmptyHeart={setIsEmptyHeart}
         isBestProduct={false}
       />

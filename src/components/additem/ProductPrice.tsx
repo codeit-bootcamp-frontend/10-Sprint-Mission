@@ -1,9 +1,18 @@
 import styles from "./ProductPrice.module.css";
 import commonStyles from "./AddItemCommon.module.css";
+import { ChangeEvent } from "react";
 
-const ProductPrice = ({ productPrice, setProductPrice }) => {
+interface ProductPriceProps {
+  productPrice?: string;
+  setProductPrice?: (price: string) => void;
+}
 
-  const handleChange = (e) => {
+const ProductPrice: React.FC<ProductPriceProps> = ({
+  productPrice = '',
+  setProductPrice = () => {},
+}) => {
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if(e.target.value === '') {
       setProductPrice('');
       return;
@@ -21,8 +30,15 @@ const ProductPrice = ({ productPrice, setProductPrice }) => {
   return (
     <div className={commonStyles['common-container']}>
       <h5 className={commonStyles['common-product-title']}>판매가격</h5>
-      <input type="text" value={productPrice} onChange={handleChange} className={styles['price-input']} placeholder="판매 가격을 입력해주세요" />
+      <input 
+        type="text"
+        value={productPrice}
+        onChange={handleChange}
+        className={styles['price-input']}
+        placeholder="판매 가격을 입력해주세요"
+      />
     </div>
   );
 };
+
 export default ProductPrice;

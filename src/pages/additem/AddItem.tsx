@@ -8,6 +8,19 @@ import ProductTitle from "components/additem/ProductTitle";
 import Header from "components/Header";
 import { useAddItemSharedData } from "components/additem/useAddItemSharedData";
 
+interface AddItemProps {
+  productImage: string;
+  productTitle: string;
+  productDescription: string;
+  productPrice: string;
+  productTags: string[];
+  setProductImage: (image: string) => void;
+  setProductTitle: (title: string) => void;
+  setProductDescription: (description: string) => void;
+  setProductPrice: (price: string) => void;
+  setProductTags: (tags: string[]) => void;
+}
+
 const AddItem = () => {
   const { 
     productImage, 
@@ -20,7 +33,7 @@ const AddItem = () => {
     setProductDescription,
     setProductPrice,
     setProductTags
-  } = useAddItemSharedData();
+  } = useAddItemSharedData() as AddItemProps;
 
   return (
     <div>

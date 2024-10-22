@@ -2,23 +2,39 @@ import { useRef, useState } from 'react';
 import styles from './InquireItem.module.css';
 import { ReactComponent as EllipsisIcon } from 'assets/imgs/ic_ellipsis.svg';
 
-const InquireItem = ({setCommentData, commentData, content, userNickname, userImage ='assets/imgs/user_icon.svg', updateAt}) => {
+interface InquireItemProps {
+  setCommentData: React.Dispatch<React.SetStateAction<string[]>>;
+  commentData: string[];
+  content: string;
+  userNickname: string;
+  userImage?: string;
+  updateAt: string;
+}
+
+const InquireItem: React.FC<InquireItemProps> = ({
+  setCommentData,
+  commentData,
+  content,
+  userNickname,
+  userImage = 'assets/imgs/user_icon.svg',
+  updateAt,
+}) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [patchComment, setPatchComment] = useState(content);
   const [isPatchClicked, setIsPatchClicked] = useState(false);
-  const textAreaRef = useRef(null);
-  const containerRef = useRef(null);
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
-  const  timeDifferenceFromNow = (pastTime) => {
+  const timeDifferenceFromNow = (pastTime: string): string => {
     const now = new Date();
     const pastDate = new Date(pastTime);
-  
-    const diffInMs = now - pastDate;
-  
+
+    const diffInMs = now.getTime() - pastDate.getTime();
+
     const diffInMinutes = Math.floor(diffInMs / (1000 * 60));
     const diffInHours = Math.floor(diffInMs / (1000 * 60 * 60));
     const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  
+
     if (diffInMinutes < 1) {
       return "방금 전";
     } else if (diffInMinutes < 60) {
@@ -37,12 +53,14 @@ const InquireItem = ({setCommentData, commentData, content, userNickname, userIm
 
   const handleDelete = () => {
     setIsDropdownOpen(false);
-    setCommentData(commentData.filter((comment) => comment.content !== content));
+    setCommentData(commentData.filter((comment: any) => comment.content !== content));
   }
 
   const handlePatchComment = () => {
     setIsPatchClicked(false);
-    setPatchComment(textAreaRef.current.value);
+    if (textAreaRef.current) {
+      setPatchComment(textAreaRef.current.value);
+    }
   }
 
   const handleCancelPatch = () => {
@@ -53,28 +71,28 @@ const InquireItem = ({setCommentData, commentData, content, userNickname, userIm
     <div ref={containerRef} className={styles['container']}>
       <div className={styles['content-wrapper']}>
         <div className={styles['content']}>
-        {isPatchClicked ? 
-        <div className={styles['patch-container']}>
-          <textarea
-            ref={textAreaRef}
-            className={styles['patch-text']}
-            placeholder='개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
-            value={patchComment}
-            onChange={(e) => setPatchComment(e.target.value)}
-          />
-          <div className={styles['patch-content']}>
-            <span  className={styles['patch-cancel']} onClick={handleCancelPatch}>취소</span>
-            <button className={styles['patch-button']} onClick={handlePatchComment}>
-              수정완료
-            </button>
+          {isPatchClicked ? 
+          <div className={styles['patch-container']}>
+            <textarea
+              ref={textAreaRef}
+              className={styles['patch-text']}
+              placeholder='개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.'
+              value={patchComment}
+              onChange={(e) => setPatchComment(e.target.value)}
+            />
+            <div className={styles['patch-content']}>
+              <span className={styles['patch-cancel']} onClick={handleCancelPatch}>취소</span>
+              <button className={styles['patch-button']} onClick={handlePatchComment}>
+                수정완료
+              </button>
+            </div>
           </div>
-        </div>
-        :
-        <>
-          {patchComment} 
-          <span className={styles['ellipsis']} onClick={()=>setIsDropdownOpen(!isDropdownOpen)}><EllipsisIcon /></span>
-        </>
-        }
+          :
+          <>
+            {patchComment} 
+            <span className={styles['ellipsis']} onClick={() => setIsDropdownOpen(!isDropdownOpen)}><EllipsisIcon /></span>
+          </>
+          }
         </div>
         {isDropdownOpen && (
           <div className={styles['dropdown']}>
@@ -93,4 +111,5 @@ const InquireItem = ({setCommentData, commentData, content, userNickname, userIm
     </div>
   );
 };
+
 export default InquireItem;

@@ -1,14 +1,18 @@
-import { useRef } from 'react';
+import { ChangeEvent, useRef } from 'react';
 import styles from './Inquire.module.css';
 
 const Inquire = () => {
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const onChange = (e) => {
+  const onChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length > 0) {
-      buttonRef.current.disabled = false;
+      if(buttonRef.current) {
+        buttonRef.current.disabled = false;
+      }
     } else {
-      buttonRef.current.disabled = true;
+      if(buttonRef.current) {
+        buttonRef.current.disabled = true;
+      }
     }
   }
 
@@ -24,4 +28,5 @@ const Inquire = () => {
     </div>
   );
 };
+
 export default Inquire;

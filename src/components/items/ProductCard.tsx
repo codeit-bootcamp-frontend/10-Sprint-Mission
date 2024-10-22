@@ -6,7 +6,38 @@ import { ReactComponent as EmptyHeart } from 'assets/imgs/empty_heart.svg';
 import { ReactComponent as FillHeart } from 'assets/imgs/fill_heart.svg';
 import { Link } from "react-router-dom";
 
-const ProductCard = ({
+interface Product {
+  id: string;
+  name: string;
+  images: string;
+  price: number;
+  favoriteCount: number;
+}
+
+interface ProductCardProps {
+  latestData: Product[];
+  setLatestData: (data: Product[]) => void;
+  favoriteData: Product[];
+  setFavoriteData: (data: Product[]) => void;
+  loading: boolean;
+  setLoading: (loading: boolean) => void;
+  error: string | null;
+  setError: (error: string | null) => void;
+  totalCount: number;
+  setTotalCount: (count: number) => void;
+  setTotalPage: (page: number) => void;
+  responsiveAllProductCount: number;
+  setResponsiveAllProductCount: (count: number) => void;
+  responsiveFavoriteProductCount: number;
+  setResponsiveFavoriteProductCount: (count: number) => void;
+  sortProduct: string;
+  pageNumber: number;
+  isEmptyHeart: boolean;
+  setIsEmptyHeart: (isEmpty: boolean) => void;
+  isBestProduct: boolean;
+}
+
+const ProductCard: React.FC<ProductCardProps> = ({
   latestData,
   setLatestData,
   favoriteData,
@@ -31,10 +62,10 @@ const ProductCard = ({
 
   useEffect(() => {
     const asyncFetch = async () => {
-      const response1 = await fetchData(API_USEDS_GOODS_PRODUCTS);
+      const response1 = await fetchData({ url: API_USEDS_GOODS_PRODUCTS });
       let totalCount = response1.data.totalCount;
-      const response2 = await fetchData(API_USEDS_GOODS_PRODUCTS, { pageSize: totalCount });
-      const responseFiltered = response2.data.list.filter((product) => {
+      const response2 = await fetchData({ url: API_USEDS_GOODS_PRODUCTS, query: { pageSize: totalCount } });
+      const responseFiltered = response2.data.list.filter((product: Product) => {
         if (product.name !== '상품 이름' || !product.name) {
           return true;
         } else {
@@ -49,7 +80,13 @@ const ProductCard = ({
     }
 
     asyncFetch();
-  }, [setLatestData, setFavoriteData, setLoading, setError, setTotalCount]);
+  }, [
+    setLatestData,
+    setFavoriteData,
+    setLoading,
+    setError,
+    setTotalCount
+  ]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -71,7 +108,13 @@ const ProductCard = ({
     return () => {
       window.removeEventListener('resize', handleResize);
     }
-  }, [totalCount, setResponsiveAllProductCount, setResponsiveFavoriteProductCount, setTotalPage, responsiveAllProductCount]);
+  }, [
+    totalCount,
+    setResponsiveAllProductCount,
+    setResponsiveFavoriteProductCount,
+    setTotalPage,
+    responsiveAllProductCount
+  ]);
 
   return (
     <div className={styles['container']}>
@@ -97,7 +140,15 @@ const ProductCard = ({
                     <p className={styles['product-title']}>{product.name}</p>
                   </Link>
                   <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                  <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
+                  <p className={styles['product-favorite-count']}>
+                    <span
+                      className={styles['product-heart-img']}
+                      onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}
+                    >
+                      {isEmptyHeart ? <EmptyHeart /> : <FillHeart />}
+                    </span>
+                    {product.favoriteCount}
+                    </p>
                 </div>
               </div>
             ))
@@ -125,7 +176,15 @@ const ProductCard = ({
                     <p className={styles['product-title']}>{product.name}</p>
                   </Link>
                   <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                  <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
+                  <p className={styles['product-favorite-count']}>
+                    <span 
+                      className={styles['product-heart-img']} 
+                      onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}
+                    >
+                      {isEmptyHeart ? <EmptyHeart /> : <FillHeart />}
+                    </span>
+                    {product.favoriteCount}
+                    </p>
                 </div>
               </div>
             ))
@@ -138,7 +197,11 @@ const ProductCard = ({
                   to={`/items/${product.id}`}
                   state={{ product }}
                 >
-                  <img className={styles['all-product-img']} src={product.images} alt="제품 이미지" />
+                  <img 
+                    className={styles['all-product-img']}
+                    src={product.images}
+                    alt="제품 이미지"
+                  />
                 </Link>
                 <div className={styles['all-product-info']}>
                   <Link
@@ -148,7 +211,15 @@ const ProductCard = ({
                     <p className={styles['product-title']}>{product.name}</p>
                   </Link>
                   <p className={styles['product-price']}>{Number(product.price)?.toLocaleString()}</p>
-                  <p className={styles['product-favorite-count']}><span className={styles['product-heart-img']} onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}>{isEmptyHeart ? <EmptyHeart /> : <FillHeart />}</span>{product.favoriteCount}</p>
+                  <p className={styles['product-favorite-count']}>
+                    <span
+                      className={styles['product-heart-img']}
+                      onClick={() => { setIsEmptyHeart(!isEmptyHeart) }}
+                    >
+                      {isEmptyHeart ? <EmptyHeart /> : <FillHeart />}
+                    </span>
+                    {product.favoriteCount}
+                    </p>
                 </div>
               </div>
             ))
@@ -158,4 +229,5 @@ const ProductCard = ({
     </div>
   );
 };
+
 export default ProductCard;

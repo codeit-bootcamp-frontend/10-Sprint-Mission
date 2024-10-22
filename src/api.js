@@ -7,25 +7,35 @@
  * @returns
  */
 export async function getItems(
-  page = 1,
-  pageSize = 10,
-  orderBy = "recent",
-  keyword
+
+	page = 1,
+	pageSize = 10,
+	orderBy = "recent",
+	keyword
 ) {
-  const searchQuery = keyword ? `keyword=${keyword}` : "";
-  const response = await fetch(
-    `https://panda-market-api.vercel.app/products?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&${searchQuery}`
-  );
-  const body = await response.json();
-  return body;
+	const searchQuery = keyword ? `keyword=${keyword}` : "";
+	const response = await fetch(
+		`https://panda-market-api.vercel.app/products?page=${page}&pageSize=${pageSize}&orderBy=${orderBy}&${searchQuery}`
+	);
+	const body = await response.json();
+	return body;
 }
 
-// // 1페이지 10개 최신순 줘
-// const 1페이지10개 = getItems(1,10,"recent")
-// const 2페이지10개 = getItems(2,10,"recent")
-// const 3페이지10개 = getItems(3,10,"recent")
 
-// // 최신순으로 1페이지 1개 줘
-// const 1페이지10개 = getItems(1,10,"favorite")
-// const 2페이지10개 = getItems(2,10,"favorite")
-// const 3페이지10개 = getItems(3,10,"favorite")
+
+export async function addItem(requestBody) {
+	const response = await fetch("https://panda-market-api.vercel.app/products", {
+		method: "POST",
+		body: JSON.stringify({
+			images: requestBody.images, 
+			tags: requestBody.tags,
+			price: requestBody.price, 
+			description: requestBody.description,
+			name: requestBody.name, 
+		}),
+	});
+	return response;
+}
+
+
+

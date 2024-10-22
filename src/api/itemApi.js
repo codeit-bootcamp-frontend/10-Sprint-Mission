@@ -1,5 +1,4 @@
 export async function getProducts(params = {}) {
-  // Using URLSearchParams allows for easy automatic encoding of parameter values.
   const query = new URLSearchParams(params).toString();
 
   try {

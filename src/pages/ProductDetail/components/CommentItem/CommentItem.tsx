@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './CommentItem.module.css';
 
-const elapsedTime = (date) => {
+const elapsedTime = (date:string) => {
 	const start = new Date(date);
 	const end = new Date();
 
@@ -18,7 +18,21 @@ const elapsedTime = (date) => {
 	return `${Math.floor(days)}일 전`;
 };
 
-function CommentItem({item}) {
+interface Comment {
+    id:number;
+    writer:Writer;
+    content:string;
+    createdAt:string;
+    updatedAt:string;
+  }
+
+interface Writer {
+    image: string;
+    nickname:string;
+    id:number;
+}
+  
+const CommentItem:React.FC<{ item: Comment }> = ({item}) => {
     
   return (
     <>

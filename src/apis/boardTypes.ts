@@ -7,7 +7,7 @@ export interface Board {
   id: number;
   title: string;
   content: string;
-  image: string | null;
+  image: string; // TODO image null 처리
   likeCount: number;
   createdAt: string;
   updatedAt: string;

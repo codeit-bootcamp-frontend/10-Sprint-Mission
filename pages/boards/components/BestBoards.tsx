@@ -1,14 +1,19 @@
+import { Board } from '@/src/apis/boardTypes';
 import BestBoardCard from './BestBoardCard';
 import styles from './BestBoards.module.css';
 
-export default function BestBoards() {
+interface BestBoardsProps {
+  boards: Board[];
+}
+
+export default function BestBoards({ boards }: BestBoardsProps) {
   return (
     <section>
       <h3 className={styles.title}>베스트 게시글</h3>
       <div className={styles.bestBoards}>
-        <BestBoardCard />
-        <BestBoardCard />
-        <BestBoardCard />
+        {boards.map((board) => (
+          <BestBoardCard key={board.id} {...board} />
+        ))}
       </div>
     </section>
   );

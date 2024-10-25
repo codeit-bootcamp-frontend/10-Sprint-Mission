@@ -34,6 +34,6 @@ export async function getBoards({
     queryParams.append('keyword', keyword);
   }
 
-  const endpoint = `${BASE_URL}/products?${queryParams.toString()}`;
+  const endpoint = `${BASE_URL}/articles?${queryParams.toString()}`;
   return await fetchFromAPI<GetBoardsResponse>(endpoint);
 }

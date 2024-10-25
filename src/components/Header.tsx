@@ -5,7 +5,7 @@ import Image from 'next/image';
 export default function Header() {
   return (
     <header className={styles.header}>
-      <div className={`${styles.headerContainer} max-container`}>
+      <div className={`${styles.headerContainer}`}>
         <Link
           href={'/'}
           className={styles.logoWrapper}

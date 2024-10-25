@@ -11,6 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 1300px;
+  margin: auto;
 }
 
 .logoWrapper {
@@ -38,4 +40,17 @@
   position: relative;
   width: 40px;
   height: 40px;
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .logoWrapper {
+    width: 81px;
+    height: 40px;
+    background-image: url('../assets/logo_sm.png');
+  }
+
+  .nav {
+    font-size: 16px;
+  }
 }

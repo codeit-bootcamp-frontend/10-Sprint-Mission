@@ -8,25 +8,6 @@
 # testing
 /coverage
 
-<<<<<<< HEAD
-# production
-/build
-
-# backup
-.bak
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.vercel
-=======
 # next.js
 /.next/
 /out/
@@ -52,4 +33,3 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
->>>>>>> 8d163dd7d66bd121fdc5a1e4251aa42a4ff61e27

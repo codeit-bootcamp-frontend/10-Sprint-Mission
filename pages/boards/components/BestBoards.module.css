@@ -4,6 +4,14 @@
   gap: 24px;
 }
 
+.title {
+  color: var(--Secondary-900, #111827);
+  font-size: 20px;
+  font-weight: 700;
+
+  padding: 24px 0;
+}
+
 /* tablet */
 @media screen and (max-width: 1199px) {
   .bestBoards {
@@ -16,5 +24,9 @@
 @media screen and (max-width: 767px) {
   .bestBoards {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .title {
+    padding: 16px 0;
   }
 }

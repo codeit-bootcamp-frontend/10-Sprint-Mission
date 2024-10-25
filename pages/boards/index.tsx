@@ -2,6 +2,7 @@ import { GetStaticProps } from 'next';
 import BestBoards from './components/BestBoards';
 import { Board } from '@/src/apis/boardTypes';
 import { getBoards } from '@/src/apis/boardsApi';
+import Boards from './components/Boards';
 
 interface BoardsIndexProps {
   boards: Board[];
@@ -11,6 +12,7 @@ export default function BoardsIndex({ boards }: BoardsIndexProps) {
   return (
     <div>
       <BestBoards boards={boards} />
+      <Boards />
     </div>
   );
 }

@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+
+  margin-bottom: 40px;
 }
 
 .title {
@@ -17,6 +19,7 @@
   .bestBoards {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    margin-bottom: 24px;
   }
 
   .bestBoards > *:nth-child(n + 3) {

@@ -120,6 +120,10 @@ export const PostListHeader = styled.div`
     width: 1200px;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width:1199px){
+        width:696px;
+    }
 `;
 
 export const PostButton = styled.div`
@@ -149,6 +153,10 @@ export const SearchBox = styled.input`
     border : none; 
     border-radius: 12px;
     background: var(--Secondary-100, #F3F4F6);
+
+    @media(max-width:1199px){
+        width:560px;
+    }
 `;
 
 export const DropdownButtonContainer = styled.div`
@@ -172,10 +180,10 @@ export const DropdownButton = styled.button`
     line-height: 26px; 
 `;
 
-export const DropdownMenu = styled.ul<{ isOpen: boolean }>`
+export const DropdownMenu = styled.ul<{ $isOpen: boolean }>`
     z-index: 10;
     list-style: none;
-    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; 
+    display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')}; 
     border-radius: 12px;
     border: 1px solid var(--Cool-Gray-200, #E5E7EB);
     background: #FFF;

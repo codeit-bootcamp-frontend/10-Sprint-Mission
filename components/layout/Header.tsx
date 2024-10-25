@@ -14,7 +14,7 @@ export default function Header() {
             <HS.HeaderContainer>
                 <HS.HeaderWrap>
                     <Link href="/" passHref>
-                        <HS.PandaLogo src={PandaLogo} alt="판다마켓로고" />
+                        <HS.PandaLogo src={PandaLogo} alt="판다마켓로고"  priority />
                     </Link>
                     <HS.NavContainer>
                         <Link href="/boards" passHref>

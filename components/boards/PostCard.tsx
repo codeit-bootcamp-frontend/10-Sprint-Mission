@@ -4,6 +4,7 @@ import DefaultImg from '../common/images/default.png';
 import LikeIcon from '../common/images/ic_heart.png';
 import ProfileImg from '../common/images/profile.png';
 import { Item } from './PostList';
+import formatDate from '../common/function/formatDate';
 
 interface ItemCardProps {
     item: Item; 
@@ -29,7 +30,7 @@ const PostCard: React.FC<ItemCardProps> = ({ item }) => {
                         alt="프로필 이미지" 
                     />
                     <PS.Writer>{item.writer.nickname}</PS.Writer>
-                    <PS.PostDate>{item.createdAt}</PS.PostDate>
+                    <PS.PostDate>{formatDate(item.createdAt)}</PS.PostDate>
                 </PS.InfoContainer>
                 <PS.InfoContainer>
                     <PS.LikeIcon 

@@ -17,8 +17,8 @@ export default function Header() {
                         <HS.PandaLogo src={PandaLogo} alt="판다마켓로고" />
                     </Link>
                     <HS.NavContainer>
-                        <Link href="/community" passHref>
-                            <HS.NavLink className={router.pathname === '/community' ? 'active' : ''}>
+                        <Link href="/boards" passHref>
+                            <HS.NavLink className={router.pathname === '/boards' ? 'active' : ''}>
                                 자유게시판
                             </HS.NavLink>
                         </Link>

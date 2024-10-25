@@ -15,10 +15,11 @@ export default function BestPostCard() {
                 <BS.BestPostImg src={PostImg} alt="게시물 이미지"></BS.BestPostImg>
             </BS.BestPostContentContainer>
             <BS.SubContainer>
-                <BS.WriterLikeContainer>
+                <BS.InfoContainer>
                     <BS.Writer>총명한 판다</BS.Writer>
                     <BS.LikeIcon src={LikeIcon} alt="좋아요 아이콘"></BS.LikeIcon>
-                </BS.WriterLikeContainer>
+                    <BS.LikeCount>999</BS.LikeCount>
+                </BS.InfoContainer>
                 <BS.PostDate>2024. 04. 16</BS.PostDate>
             </BS.SubContainer>
         </BS.BestCardContainer>

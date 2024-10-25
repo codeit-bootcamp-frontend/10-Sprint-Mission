@@ -14,4 +14,11 @@ export const BoardPageContainer = styled.div`
     display:flex;
     gap:40px;
     flex-direction:column;
+
+    @media(max-width:1199px){
+        max-width:696px;
+    }
+    @media(max-width:767px){
+        max-width:343px;
+    }
 `;

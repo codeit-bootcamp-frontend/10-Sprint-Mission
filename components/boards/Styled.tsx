@@ -55,7 +55,7 @@ export const BestText = styled.div`
     color: #FFF;
     font-size: 16px;
     font-weight: 600;
-    line-height: 26px; /* 162.5% */
+    line-height: 26px;
 `;
 export const BestPostContentContainer = styled.div`
     width:100%;
@@ -117,13 +117,9 @@ export const PostListContainer = styled.div`
 
 export const PostListHeader = styled.div`
     display: flex;
-    width: 1200px;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
-
-    @media(max-width:1199px){
-        width:696px;
-    }
 `;
 
 export const PostButton = styled.div`
@@ -156,6 +152,9 @@ export const SearchBox = styled.input`
 
     @media(max-width:1199px){
         width:560px;
+    }
+    @media(max-width:767px){
+        width: 288px;
     }
 `;
 

@@ -14,9 +14,12 @@
 }
 
 .logoWrapper {
-  position: relative;
   width: 153px;
   height: 51px;
+  background-image: url('../assets/logo_lg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .nav {

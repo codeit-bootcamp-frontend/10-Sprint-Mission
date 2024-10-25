@@ -18,6 +18,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
+
+  .bestBoards > *:nth-child(n + 3) {
+    display: none;
+  }
 }
 
 /* mobile */
@@ -28,5 +32,9 @@
 
   .title {
     padding: 16px 0;
+  }
+
+  .bestBoards > *:nth-child(n + 2) {
+    display: none;
   }
 }

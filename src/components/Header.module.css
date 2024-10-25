@@ -1,0 +1,38 @@
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.headerContainer {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrapper {
+  position: relative;
+  width: 153px;
+  height: 51px;
+}
+
+.nav {
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+
+  display: flex;
+  gap: 30px;
+  margin-left: 30px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}

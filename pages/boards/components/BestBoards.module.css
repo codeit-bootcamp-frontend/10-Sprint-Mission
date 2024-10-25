@@ -1,0 +1,20 @@
+.bestBoards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .bestBoards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .bestBoards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './Header.module.css';
 import Image from 'next/image';
+import avatarSvg from '@/src/assets/avatar.svg';
 
 export default function Header() {
   return (
@@ -16,7 +17,7 @@ export default function Header() {
           <Link href={'/'}>중고마켓</Link>
         </nav>
         <div className={styles.avatarWrapper}>
-          <Image fill src="/images/avatar.svg" alt="avatar" />
+          <Image fill src={avatarSvg} alt="avatar" />
         </div>
       </div>
     </header>

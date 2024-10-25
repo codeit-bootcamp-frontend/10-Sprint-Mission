@@ -3,6 +3,7 @@
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
+<<<<<<< HEAD
     "checkJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -18,4 +19,22 @@
   },
 
   "include": ["src/**/*", "declarations.d.ts"]
+=======
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
+>>>>>>> 8d163dd7d66bd121fdc5a1e4251aa42a4ff61e27
 }

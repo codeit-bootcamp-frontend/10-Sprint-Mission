@@ -1,7 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect,useCallback } from 'react';
 import * as BS from './Styled';
 import PostCard from './PostCard';
+import { getArticles } from '@/pages/api/api';
+
+export interface Item {
+    id: number;
+    title:string;
+    content: string;
+    image: string;
+    writer: Writer;
+    likeCount:number;
+    updatedAt: string;
+    createdAt:string;
+}
+
+interface Writer {
+    nickname: string;
+    id:number;
+}
+
+interface ItemList {
+    totalCount: number;
+    list: Item[];
+}
+
 export default function PostList() {
+    const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
+    const [pageSize, setPageSize] = useState(10);
     const [order, setOrder] = useState('recent');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -14,10 +39,45 @@ export default function PostList() {
         setIsDropdownOpen(false);
     };
 
-    const handleFavoriteClick = () => {
-        setOrder('favorite');
+    const handleLikeClick = () => {
+        setOrder('like');
         setIsDropdownOpen(false);
     };
+
+    const fetchSortedData = useCallback(async () => {
+        try {
+            const articles = await getArticles({ orderBy: order, pageSize });
+            setItemList(articles); 
+            console.log(articles);
+        } catch (error) {
+            console.error('Error fetching articles:', error);
+        }
+    }, [order, pageSize]);
+
+    useEffect(() => {
+        fetchSortedData(); 
+    }, [fetchSortedData]);
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 767) {
+                setPageSize(4);
+            } else if (width < 1280) {
+                setPageSize(6);
+            } else {
+                setPageSize(10);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        handleResize(); 
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
 
     return (
         <BS.PostListContainer>
@@ -35,11 +95,13 @@ export default function PostList() {
                     </BS.DropdownButton>
                     <BS.DropdownMenu isOpen={isDropdownOpen}>
                         <BS.DropdownOption onClick={handleNewestClick}>최신순</BS.DropdownOption>
-                        <BS.DropdownOption onClick={handleFavoriteClick}>좋아요순</BS.DropdownOption>
+                        <BS.DropdownOption onClick={handleLikeClick}>좋아요순</BS.DropdownOption>
                     </BS.DropdownMenu>
                 </BS.DropdownButtonContainer>
             </BS.SearchContainer>
-            <PostCard />
+            {itemList.list.map((item) => (
+                <PostCard key={item.id} item={item} />
+            ))}
         </BS.PostListContainer>
     );
 }

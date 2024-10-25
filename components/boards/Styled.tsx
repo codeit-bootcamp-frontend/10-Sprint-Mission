@@ -175,7 +175,7 @@ export const DropdownButton = styled.button`
 export const DropdownMenu = styled.ul<{ isOpen: boolean }>`
     z-index: 10;
     list-style: none;
-    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};  /* 'show'를 'isOpen'으로 변경 */
+    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; 
     border-radius: 12px;
     border: 1px solid var(--Cool-Gray-200, #E5E7EB);
     background: #FFF;

@@ -62,7 +62,6 @@ const CommentItem: React.FC<CommentItemProps> = ({ item }) => {
   return (
     <>
       <CommentContainer>
-        {/* 참고: 더보기 버튼 기능은 추후 요구사항에 따라 추가 예정 */}
         <SeeMoreButton>
           <SeeMoreIcon />
         </SeeMoreButton>

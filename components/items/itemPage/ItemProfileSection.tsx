@@ -110,7 +110,6 @@ interface ItemProfileSectionProps {
 const ItemProfileSection: React.FC<ItemProfileSectionProps> = ({ product }) => {
   return (
     <SectionContainer>
-      {/* 참고: 호출된 상품 데이터의 images는 여러 개의 이미지 URL 문자열로 구성된 배열의 형태이지만, 디자인 요구사항에 슬라이더 등 여러 장의 사진을 보여주는 UI가 없기 때문에 가장 첫 번째 이미지만 선택해서 보여줄게요 */}
       <ItemImageContainer>
         <ImageWrapper>
           <Image
@@ -124,7 +123,6 @@ const ItemProfileSection: React.FC<ItemProfileSectionProps> = ({ product }) => {
 
       <ItemDetailsContainer>
         <MainDetails>
-          {/* 참고: 더보기 버튼 기능은 추후 요구사항에 따라 추가 예정 */}
           <SeeMoreButton>
             <SeeMoreIcon />
           </SeeMoreButton>

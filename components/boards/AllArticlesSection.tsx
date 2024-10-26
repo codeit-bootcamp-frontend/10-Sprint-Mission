@@ -6,7 +6,6 @@ import {
   StyledLink,
 } from "@/styles/CommonStyles";
 import { Article, ArticleSortOption } from "@/types/articleTypes";
-import styled from "styled-components";
 import {
   ArticleInfo,
   ArticleThumbnail,
@@ -17,8 +16,6 @@ import {
 } from "@/styles/BoardsStyles";
 import Image from "next/image";
 import { format } from "date-fns";
-import Link from "next/link";
-import ProfilePlaceholder from "@/public/images/ui/ic_profile.svg";
 import SearchBar from "@/components/ui/SearchBar";
 import DropdownMenu from "@/components/ui/DropdownMenu";
 import { useEffect, useState } from "react";
@@ -26,13 +23,7 @@ import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 import EmptyState from "@/components/ui/EmptyState";
 import { useRouter } from "next/router";
 
-const ItemContainer = styled(Link)``;
-
-const ArticleInfoDiv = styled(FlexRowCentered)`
-  gap: 8px;
-  color: var(--gray-600);
-  font-size: 14px;
-`;
+import { ItemContainer, ArticleInfoDiv, AddArticleLink } from "./AllArticlesSection.styles";
 
 interface ArticleItemProps {
   article: Article;
@@ -48,8 +39,6 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
           <ArticleTitle>{article.title}</ArticleTitle>
           {article.image && (
             <ArticleThumbnail>
-              {/* Next Image의 width, height을 설정해줄 것이 아니라면 부모 div 내에서 fill, objectFit 설정으로 비율 유지하면서 유연하게 크기 조정 */}
-              {/* 프로젝트 내에 있는 이미지 파일을 사용하는 게 아니라면 next.config.mjs에 이미지 주소 설정 필요 */}
               <ImageWrapper>
                 <Image
                   fill
@@ -64,8 +53,6 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
 
         <ArticleInfo>
           <ArticleInfoDiv>
-            {/* ProfilePlaceholder 아이콘의 SVG 파일에서 고정된 width, height을 삭제했어요 */}
-            {/* <ProfilePlaceholder width={24} height={24} /> */}
             {article.writer.nickname} <Timestamp>{dateString}</Timestamp>
           </ArticleInfoDiv>
 
@@ -77,8 +64,6 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
     </>
   );
 };
-
-const AddArticleLink = styled(StyledLink)``;
 
 interface AllArticlesSectionProps {
   initialArticles: Article[];

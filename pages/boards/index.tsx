@@ -32,7 +32,7 @@ const Board: React.FC = () => {
   useEffect(() => {
     const getArticles = async () => {
       try {
-        const response = await axios.get("/articles");
+        const response = await axios.get(`articles`);
         setArticles(response.data.list);
         setError(null);
       } catch (error) {

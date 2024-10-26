@@ -46,7 +46,7 @@ const BestArticles: React.FC = () => {
   useEffect(() => {
     const getBestArticles = async () => {
       try {
-        const response = await axios.get(`/articles`);
+        const response = await axios.get(`articles?orderBy=like`);
         setArticles(response.data.list);
       } catch (error) {
         console.error("Error fetching best articles:", error);

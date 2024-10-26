@@ -3,6 +3,7 @@ import styles from "./BestArticles.module.css";
 import Image from "next/image";
 import bestbadge from "./assets/images/ui/best_badge.svg";
 import axios from "@/lib/axios";
+import heart from "./assets/images/icons/ic_heart.svg";
 
 interface Article {
   updatedAt: string;
@@ -77,11 +78,12 @@ const BestArticles: React.FC = () => {
             </div>
           </div>
           <div className={styles.meta}>
-            <div>
+            <div className={styles.metaItem}>
               <span> {article.writer.nickname} </span>
-              <span> ♡ {article.likeCount}+ </span>
+              <Image width={16} height={16} src={heart} alt={heart} />
+              <span> {article.likeCount}+ </span>
             </div>
-            <div>
+            <div className={styles.metaItem}>
               <span> {new Date(article.createdAt).toLocaleDateString()} </span>
             </div>
           </div>

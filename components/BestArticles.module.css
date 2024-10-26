@@ -26,6 +26,9 @@
   display: flex;
   justify-content: space-between;
   margin: 16px 24px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
 }
 
 .image {
@@ -37,9 +40,21 @@
 
 .meta {
   display: flex;
-  flex-direction: space-between;
+  justify-content: space-between;
+  align-items: center;
   gap: 16px;
   margin-left: 24px;
+  margin-right: 24px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.metaItem span {
+  margin-left: 4px;
 }
 
 .bestbadge {

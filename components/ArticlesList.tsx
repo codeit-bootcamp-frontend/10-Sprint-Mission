@@ -3,6 +3,7 @@ import Link from "next/link";
 import styles from "./ArticlesList.module.css";
 import Image from "next/image";
 import profile from "./assets/images/ui/ic_profile.svg";
+import heart from "./assets/images/icons/ic_heart.svg";
 
 interface Article {
   updatedAt: string;
@@ -44,10 +45,10 @@ const ArticlesList: React.FC<ArticlesListProps> = ({ articles }) => {
               <span> {new Date(article.updatedAt).toLocaleDateString()} </span>
             </div>
             <div>
-              <span>♡ {article.likeCount}+</span>
+              <Image width={24} height={24} src={heart} alt={heart} />
+              <span> {article.likeCount}+</span>
             </div>
           </div>
-          <p>{article.content}</p>
         </div>
       ))}
     </div>

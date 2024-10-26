@@ -47,7 +47,7 @@ const Dropdown: React.FC<DropdownProps> = ({ value, onChange }) => {
         onClick={() => setIsOpen(!isOpen)}
         className={styles.dropdownButton}
       >
-        {selected ? selected.label : "Select an option"}
+        {selected ? selected.label : "Select an option"} ▼
       </button>
       {isOpen && (
         <ul className={styles.dropdownMenu}>

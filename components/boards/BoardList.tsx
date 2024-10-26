@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Board from "./Board";
 import Button from "../ui/Button";
@@ -13,24 +14,35 @@ import { ArticleProps } from "@/types/articleTypes";
 const BoardList = () => {
   const [boards, setBoards] = useState([]);
   const [order, setOrder] = useState("recent");
+  const router = useRouter();
+  const { keyword } = router.query;
+
   const BASE_URL = "https://panda-market-api.vercel.app/articles";
   const options: DropdownOptions = {
     recent: "최신순",
     like: "인기순",
   };
 
-  const handleLoad = useCallback(async () => {
-    const { list } = await fetchData(BASE_URL, {
-      query: {
-        orderBy: order,
-      },
-    });
-    setBoards(list);
-  }, [order]);
+  const handleLoad = useCallback(
+    async (keyword: string = "") => {
+      const { list } = await fetchData(BASE_URL, {
+        query: {
+          orderBy: order,
+          keyword,
+        },
+      });
+      setBoards(list);
+    },
+    [order]
+  );
 
   useEffect(() => {
-    handleLoad();
-  }, [handleLoad]);
+    if (typeof keyword === "string") {
+      handleLoad(keyword);
+    } else {
+      handleLoad();
+    }
+  }, [handleLoad, keyword]);
 
   return (
     <section className={styles.wrapper}>
@@ -39,7 +51,7 @@ const BoardList = () => {
         <Button className={styles.button}>글쓰기</Button>
       </div>
       <div className={styles.toolbar}>
-        <SearchBar />
+        <SearchBar initialValue={typeof keyword === "string" ? keyword : ""} />
         <Dropdown
           className={styles.dropdown}
           options={options}

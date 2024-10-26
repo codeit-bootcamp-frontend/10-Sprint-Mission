@@ -1,0 +1,80 @@
+.globalHeader {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #dfdfdf;
+  margin: 0 auto;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo {
+  margin-right: 16px;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .headerLogo {
+    margin-right: 20px;
+  }
+  .globalHeader {
+    width: 343px;
+  }
+}
+
+@media (min-width: 768px) {
+  .headerLogo {
+    margin-right: 35px;
+  }
+  .globalHeader {
+    width: 696px;
+  }
+  .navList {
+    gap: 36px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .headerLogo {
+    margin-right: 47px;
+  }
+
+  .globalHeader {
+    width: 1200px;
+  }
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  color: var(--gray-600);
+}
+
+.navItem span:hover {
+  color: var(--blue);
+}
+
+.loginLink {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 11.5px 23px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.loginLink:hover {
+  background-color: var(--blue-hover);
+}
+
+.loginLink:focus {
+  background-color: var(--blue-focus);
+}

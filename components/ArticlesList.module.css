@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.Article {
+  display: flex;
+  flex-direction: space-between;
+}
+
 .image {
   position: relative;
   z-index: 0;

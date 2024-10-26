@@ -1,9 +1,26 @@
 import React from "react";
 import Link from "next/link";
-import styles from "@/styles/ArticlesList.module.css";
+import styles from "./ArticlesList.module.css";
 import Image from "next/image";
+import profile from "./assets/images/ui/ic_profile.svg";
 
-const ArticlesList = ({ articles }) => {
+interface Article {
+  id: number;
+  title: string;
+  image: string;
+  writer: {
+    nickname: string;
+  };
+  likeCount: number;
+  updatedAt: string;
+  content: string;
+}
+
+interface ArticlesListProps {
+  articles: Article[];
+}
+
+const ArticlesList: React.FC<ArticlesListProps> = ({ articles }) => {
   if (!articles || articles.length === 0) {
     return <div>No articles available</div>;
   }
@@ -11,8 +28,8 @@ const ArticlesList = ({ articles }) => {
   return (
     <div className={styles.ArticlesList}>
       {articles.map((article) => (
-        <div key={article.id} className={styles.ArticlesList}>
-          <div>
+        <div key={article.id}>
+          <div className={styles.Article}>
             <h3>{article.title}</h3>
             <div className={styles.image}>
               <Image fill src={article.image} alt={article.image} />
@@ -20,8 +37,9 @@ const ArticlesList = ({ articles }) => {
           </div>
           <div>
             <div>
-              <span>{article.writer.nickname}</span>
-              <span>{new Date(article.updatedAt).toLocaleDateString()}</span>
+              <Image width={24} height={24} src={profile} alt={profile} />
+              <span> {article.writer.nickname} </span>
+              <span> {new Date(article.updatedAt).toLocaleDateString()} </span>
             </div>
             <div>
               <span>♡ {article.likeCount}+</span>

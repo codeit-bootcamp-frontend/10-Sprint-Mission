@@ -1,15 +1,31 @@
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import BestArticles from "@/components/BestArticles";
 import CreateArticle from "@/components/CreateArticle";
 import SearchForm from "@/components/SearchForm";
 import Dropdown from "@/components/Dropdown";
 import ArticlesList from "@/components/ArticlesList";
 import axios from "@/lib/axios";
-import styles from "@/styles/Board.module.css";
+import styles from "./Board.module.css";
 
-const Board = () => {
-  const [articles, setArticles] = useState([]);
+interface Article {
+  updatedAt: string;
+  createdAt: string;
+  likeCount: number;
+  writer: {
+    nickname: string;
+    id: number;
+  };
+  id: number;
+  title: string;
+  image: string;
+  content: string;
+}
+
+const Board: React.FC = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const getArticles = async () => {

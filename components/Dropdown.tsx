@@ -41,17 +41,17 @@ const Dropdown: React.FC<DropdownProps> = ({ value, onChange }) => {
   };
 
   return (
-    <div ref={inputRef} className="dropdown-container">
-      <button onClick={() => setIsOpen(!isOpen)} className="dropdown-button">
+    <div ref={inputRef} className="">
+      <button onClick={() => setIsOpen(!isOpen)} className="">
         {selected ? selected.label : "Select an option"}
       </button>
       {isOpen && (
-        <ul className="dropdown-options">
+        <ul className="">
           {options.map((option) => (
             <li
               key={option.value}
               onClick={() => handleOptionClick(option)}
-              className="dropdown-option"
+              className=""
             >
               {option.label}
             </li>

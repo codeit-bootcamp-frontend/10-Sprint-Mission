@@ -16,6 +16,14 @@ export default function Container({
     page ? styles.page : ""
   } ${className}`;
 
+  if (page) {
+    return (
+      <main className={classNames} {...props}>
+        {children}
+      </main>
+    );
+  }
+
   return (
     <div className={classNames} {...props}>
       {children}

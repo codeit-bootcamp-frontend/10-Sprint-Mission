@@ -1,0 +1,32 @@
+.container {
+  position: relative;
+  flex: 1;
+}
+
+.image {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  left: 16px;
+  transform: translateY(-50%);
+}
+
+.input {
+  width: 100%;
+  background-color: var(--gray100);
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.625rem;
+  color: var(--gray800);
+  padding: 9px 0 9px 44px;
+}
+
+.input:focus {
+  outline-color: var(--blue);
+}
+
+.input::placeholder {
+  color: var(--gray400);
+}

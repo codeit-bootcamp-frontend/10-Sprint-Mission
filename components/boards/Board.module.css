@@ -1,47 +1,53 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  background-color: var(--gray50);
-  padding: 0 24px 16px;
+  background-color: #fcfcfc;
+  border-bottom: 1px solid var(--gray200);
+  padding-bottom: 24px;
 }
 
 .content {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.625rem;
   color: var(--gray800);
-  margin-top: 16px;
-  margin-bottom: 8px;
 }
 
 .info {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+}
+
+.authorInfo {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5rem;
 }
 
-.user {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.authorInfo img {
+  width: 24px;
+  height: 24px;
 }
 
-.nickname {
+.authorInfo span {
   color: var(--gray600);
 }
 
-.date {
+.authorInfo time {
   color: var(--gray400);
 }
 
-@media screen and (min-width: 1200px) {
+.like img {
+  width: 24px;
+  height: 24px;
+}
+
+.like span {
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
+
+@media screen and (min-width: 768px) {
   .content {
     font-size: 1.25rem;
     line-height: 2rem;

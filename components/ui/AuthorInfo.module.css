@@ -1,0 +1,19 @@
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nickname {
+  color: var(--gray600);
+}
+
+.date {
+  color: var(--gray400);
+}

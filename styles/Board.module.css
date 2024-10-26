@@ -1,0 +1,28 @@
+.boardContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.CreateArticle {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .boardContainer {
+    width: 343px;
+  }
+}
+
+@media (min-width: 768px) {
+  .boardContainer {
+    width: 696px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .boardContainer {
+    width: 1200px;
+  }
+}

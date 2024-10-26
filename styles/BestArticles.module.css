@@ -1,0 +1,15 @@
+.BestArticles {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.title {
+  display: flex;
+}
+
+.image {
+  position: relative;
+  z-index: 0;
+  width: 72px;
+  height: 72px;
+}

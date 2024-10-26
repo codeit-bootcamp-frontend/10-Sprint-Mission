@@ -27,7 +27,7 @@ export function useQuery<Params extends object, Response extends object>(
     [fetchFunc]
   );
 
-  const update = wrappedFunc(paramObj);
+  const update = () => wrappedFunc(paramObj);
 
   useEffect(() => {
     wrappedFunc(paramObj);

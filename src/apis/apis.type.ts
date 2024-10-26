@@ -1,11 +1,9 @@
 export type StringObj = Record<string, string>;
 
-export type OrderByType = "recent" | "favorite";
-
-interface GetListParams {
+interface GetListParams<ItemOrder> {
   page: number;
   pageSize: number;
-  orderBy: OrderByType;
+  orderBy: ItemOrder;
   keyword?: string;
 }
 interface GetListRes<ItemProps> {
@@ -13,7 +11,8 @@ interface GetListRes<ItemProps> {
   list: ItemProps[];
 }
 
-interface ArticleProps {
+export type ArticleOrderType = "recent" | "like";
+export interface ArticleProps {
   id: number;
   title: string;
   content: string;
@@ -26,5 +25,5 @@ interface ArticleProps {
     nickname: string;
   };
 }
-export type GetArticlesParams = GetListParams;
-export type getArticlesRes = GetListRes<ArticleProps>;
+export type GetArticlesParams = GetListParams<ArticleOrderType>;
+export type GetArticlesRes = GetListRes<ArticleProps>;

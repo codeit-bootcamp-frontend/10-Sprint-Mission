@@ -1,4 +1,4 @@
-import { StringObj, getArticlesRes, GetArticlesParams } from "./apis.type";
+import { StringObj, GetArticlesRes, GetArticlesParams } from "./apis.type";
 
 const BASE_URL = "https://panda-market-api.vercel.app/";
 
@@ -17,7 +17,7 @@ export async function getArticles({
   pageSize = 10,
   orderBy = "recent",
   keyword,
-}: GetArticlesParams): Promise<getArticlesRes> {
+}: GetArticlesParams): Promise<GetArticlesRes> {
   const url = new URL(PATH.ARTICLE, BASE_URL);
   const paramObj: StringObj = {
     page: String(page),

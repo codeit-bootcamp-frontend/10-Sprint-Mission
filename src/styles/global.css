@@ -1,0 +1,45 @@
+/* 텍스트 요소 자동 줄바꿈 서식 설정 */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p,
+a,
+li {
+  text-wrap: wrap;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* address 요소 스타일링 초기화 */
+
+address {
+  font-style: inherit;
+}
+
+/* 웹 접근성 고려 요소 은폐 */
+
+.blind {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+/* 뷰포트 y축 스크롤바 표시 */
+
+body {
+  overflow-y: scroll;
+}
+
+/* 화면의 최소 너비 제한 */
+
+body {
+  min-width: 375px;
+}

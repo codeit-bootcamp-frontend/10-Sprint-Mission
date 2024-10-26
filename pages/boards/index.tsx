@@ -26,6 +26,7 @@ const Board: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [sortOption, setSortOption] = useState<string>("latest");
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const router = useRouter();
 
   useEffect(() => {
@@ -52,6 +53,10 @@ const Board: React.FC = () => {
     return 0;
   });
 
+  const filteredArticles = sortedArticles.filter((article) =>
+    article.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className={styles.boardContainer}>
       {error && <div className="error-message">{error}</div>}
@@ -64,7 +69,7 @@ const Board: React.FC = () => {
         <CreateArticle />
       </div>
       <div>
-        <SearchForm />
+        <SearchForm onSearch={(term) => setSearchTerm(term)} />
         <Dropdown
           value={{
             value: sortOption,
@@ -74,7 +79,7 @@ const Board: React.FC = () => {
         />
       </div>
       <div>
-        <ArticlesList articles={sortedArticles} />
+        <ArticlesList articles={filteredArticles} />
       </div>
     </div>
   );

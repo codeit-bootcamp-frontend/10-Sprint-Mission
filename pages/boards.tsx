@@ -1,5 +1,11 @@
+import BestBoards from "@/components/boards/BestBoards";
+
 const Boards = () => {
-  return <div>boards</div>;
+  return (
+    <main>
+      <BestBoards />
+    </main>
+  );
 };
 
 export default Boards;

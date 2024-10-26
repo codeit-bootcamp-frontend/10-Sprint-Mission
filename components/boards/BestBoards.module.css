@@ -1,0 +1,27 @@
+.wrapper h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+  color: var(--gray900);
+  margin-bottom: 16px;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+  /* justify-content: space-between; */
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper h2 {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    margin-bottom: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    gap: 24px;
+  }
+}

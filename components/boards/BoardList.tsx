@@ -11,8 +11,8 @@ import sortIcon from "@/public/ic_sort.svg";
 import Container from "../layout/Container";
 import { ArticleProps } from "@/types/articleTypes";
 
-const BoardList = () => {
-  const [boards, setBoards] = useState([]);
+const BoardList = ({ initialBoards }: { initialBoards: ArticleProps[] }) => {
+  const [boards, setBoards] = useState(initialBoards);
   const [order, setOrder] = useState("recent");
   const router = useRouter();
   const { keyword } = router.query;

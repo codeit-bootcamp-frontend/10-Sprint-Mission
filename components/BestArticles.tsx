@@ -62,19 +62,27 @@ const BestArticles: React.FC = () => {
   return (
     <div className={styles.BestArticles}>
       {bestArticles.map((article) => (
-        <div key={article.id} className="best-article">
-          <Image width={102} height={30} src={bestbadge} alt={bestbadge} />
+        <div key={article.id}>
+          <Image
+            className={styles.bestbadge}
+            width={102}
+            height={30}
+            src={bestbadge}
+            alt={bestbadge}
+          />
           <div className={styles.title}>
             <h3>{article.title}</h3>
             <div className={styles.image}>
               <Image fill src={article.image} alt={article.image} />
             </div>
           </div>
-          <div className="article-meta">
-            <span>{article.writer.nickname} </span>
-            <span>♡ {article.likeCount}+</span>
+          <div className={styles.meta}>
             <div>
-              <span>{new Date(article.createdAt).toLocaleDateString()} </span>
+              <span> {article.writer.nickname} </span>
+              <span> ♡ {article.likeCount}+ </span>
+            </div>
+            <div>
+              <span> {new Date(article.createdAt).toLocaleDateString()} </span>
             </div>
           </div>
         </div>

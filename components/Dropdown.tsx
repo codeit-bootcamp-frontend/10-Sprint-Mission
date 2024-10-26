@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import styles from "./Dropdown.module.css";
 
 const options = [
   { value: "latest", label: "최신순" },
@@ -41,17 +42,20 @@ const Dropdown: React.FC<DropdownProps> = ({ value, onChange }) => {
   };
 
   return (
-    <div ref={inputRef} className="">
-      <button onClick={() => setIsOpen(!isOpen)} className="">
+    <div ref={inputRef} className={styles.dropdown}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={styles.dropdownButton}
+      >
         {selected ? selected.label : "Select an option"}
       </button>
       {isOpen && (
-        <ul className="">
+        <ul className={styles.dropdownMenu}>
           {options.map((option) => (
             <li
               key={option.value}
               onClick={() => handleOptionClick(option)}
-              className=""
+              className={styles.dropdownItem}
             >
               {option.label}
             </li>

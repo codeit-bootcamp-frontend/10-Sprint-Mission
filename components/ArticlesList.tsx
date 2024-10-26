@@ -37,7 +37,7 @@ const ArticlesList: React.FC<ArticlesListProps> = ({ articles }) => {
               <Image fill src={article.image} alt={article.image} />
             </div>
           </div>
-          <div>
+          <div className={styles.meta}>
             <div>
               <Image width={24} height={24} src={profile} alt={profile} />
               <span> {article.writer.nickname} </span>

@@ -7,11 +7,22 @@
 .CreateArticle {
   display: flex;
   justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.SearchDrop {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
   .boardContainer {
     width: 343px;
+  }
+  .CreateArticle {
+    margin-bottom: 16px;
   }
 }
 
@@ -24,5 +35,8 @@
 @media (min-width: 1280px) {
   .boardContainer {
     width: 1200px;
+  }
+  .CreateArticle {
+    margin-top: 40px;
   }
 }

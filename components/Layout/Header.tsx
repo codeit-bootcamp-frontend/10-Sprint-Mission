@@ -17,7 +17,7 @@ const Header: React.FC = () => {
     <header className={styles.globalHeader}>
       <div className={styles.headerLeft}>
         <Link href="/" passHref>
-          <div className={styles.headerLogo}>
+          <div>
             <Image width={153} height={51} src={Logo} alt="판다마켓 로고" />
           </div>
         </Link>

@@ -68,15 +68,19 @@ const Board: React.FC = () => {
         <h3>게시글</h3>
         <CreateArticleButton />
       </div>
-      <div>
-        <SearchForm onSearch={(term) => setSearchTerm(term)} />
-        <Dropdown
-          value={{
-            value: sortOption,
-            label: sortOption === "latest" ? "최신순" : "좋아요순",
-          }}
-          onChange={(option) => setSortOption(option.value)}
-        />
+      <div className={styles.SearchDrop}>
+        <div>
+          <SearchForm onSearch={(term) => setSearchTerm(term)} />
+        </div>
+        <div>
+          <Dropdown
+            value={{
+              value: sortOption,
+              label: sortOption === "latest" ? "최신순" : "좋아요순",
+            }}
+            onChange={(option) => setSortOption(option.value)}
+          />
+        </div>
       </div>
       <div>
         <ArticlesList articles={filteredArticles} />

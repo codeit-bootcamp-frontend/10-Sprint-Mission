@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import styles from "./SearchForm.module.css";
+import Image from "next/image";
+import searchIcon from "./assets/images/icons/ic_search.svg";
 
 interface SearchFormProps {
   onSearch: (term: string) => void;
@@ -13,12 +16,16 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSearch }) => {
   };
 
   return (
-    <input
-      type="text"
-      value={search}
-      onChange={handleChange}
-      placeholder="검색할 상품을 입력해주세요"
-    />
+    <div>
+      <Image src={searchIcon} alt={searchIcon} />
+      <input
+        className={styles.searchForm}
+        type="text"
+        value={search}
+        onChange={handleChange}
+        placeholder="검색할 상품을 입력해주세요"
+      />
+    </div>
   );
 };
 

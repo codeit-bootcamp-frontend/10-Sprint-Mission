@@ -25,6 +25,7 @@ interface Article {
 const Board: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [sortOption, setSortOption] = useState<string>("latest");
   const router = useRouter();
 
   useEffect(() => {
@@ -42,6 +43,15 @@ const Board: React.FC = () => {
     getArticles();
   }, []);
 
+  const sortedArticles = [...articles].sort((a, b) => {
+    if (sortOption === "latest") {
+      return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
+    } else if (sortOption === "most_liked") {
+      return b.likeCount - a.likeCount;
+    }
+    return 0;
+  });
+
   return (
     <div className={styles.boardContainer}>
       {error && <div className="error-message">{error}</div>}
@@ -55,10 +65,16 @@ const Board: React.FC = () => {
       </div>
       <div>
         <SearchForm />
-        <Dropdown />
+        <Dropdown
+          value={{
+            value: sortOption,
+            label: sortOption === "latest" ? "최신순" : "좋아요순",
+          }}
+          onChange={(option) => setSortOption(option.value)}
+        />
       </div>
       <div>
-        <ArticlesList articles={articles} />
+        <ArticlesList articles={sortedArticles} />
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import BestArticles from "@/components/BestArticles";
-import CreateArticle from "@/components/CreateArticle";
+import CreateArticleButton from "@/components/CreateArticleButton";
 import SearchForm from "@/components/SearchForm";
 import Dropdown from "@/components/Dropdown";
 import ArticlesList from "@/components/ArticlesList";
@@ -62,11 +62,11 @@ const Board: React.FC = () => {
       {error && <div className="error-message">{error}</div>}
       <div>
         <h3>베스트 게시글</h3>
-        <BestArticles articles={articles} />
+        <BestArticles />
       </div>
       <div className={styles.CreateArticle}>
         <h3>게시글</h3>
-        <CreateArticle />
+        <CreateArticleButton />
       </div>
       <div>
         <SearchForm onSearch={(term) => setSearchTerm(term)} />

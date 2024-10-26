@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 
 const options = [
   { value: "latest", label: "최신순" },
-  { value: "most_liked", label: "like가 높은 순" },
+  { value: "most_liked", label: "좋아요순" },
 ];
 
 interface DropdownProps {

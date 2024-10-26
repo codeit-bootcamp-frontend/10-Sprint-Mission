@@ -1,11 +1,13 @@
 .ArticlesList {
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
 }
 
 .Article {
   display: flex;
   flex-direction: space-between;
+  width: 100%;
 }
 
 .image {
@@ -13,4 +15,22 @@
   z-index: 0;
   width: 72px;
   height: 72px;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .ArticlesList {
+    width: 343px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ArticlesList {
+    width: 696px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ArticlesList {
+    width: 1200px;
+  }
 }

@@ -5,14 +5,16 @@ import Image from "next/image";
 import profile from "./assets/images/ui/ic_profile.svg";
 
 interface Article {
+  updatedAt: string;
+  createdAt: string;
+  likeCount: number;
+  writer: {
+    nickname: string;
+    id: number;
+  };
   id: number;
   title: string;
   image: string;
-  writer: {
-    nickname: string;
-  };
-  likeCount: number;
-  updatedAt: string;
   content: string;
 }
 

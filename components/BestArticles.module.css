@@ -1,6 +1,22 @@
-.BestArticles {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+@media (min-width: 375px) and (max-width: 767px) {
+  .BestArticles {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 768px) {
+  .BestArticles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1280px) {
+  .BestArticles {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .title {

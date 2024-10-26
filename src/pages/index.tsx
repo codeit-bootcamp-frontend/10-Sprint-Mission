@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>판다마켓</title>
       </Head>
-      <main>Next.js</main>
+      <main>홈페이지</main>
     </>
   );
 }

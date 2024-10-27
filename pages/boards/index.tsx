@@ -25,35 +25,27 @@ interface Article {
 const Board: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [sortOption, setSortOption] = useState<string>("latest");
+  const [sortOption, setSortOption] = useState<string>("recent");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const router = useRouter();
 
-  useEffect(() => {
-    const getArticles = async () => {
-      try {
-        const response = await axios.get(`articles`);
-        setArticles(response.data.list);
-        setError(null);
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-        setError("게시글을 불러오는 중 오류가 발생했습니다.");
-      }
-    };
-
-    getArticles();
-  }, []);
-
-  const sortedArticles = [...articles].sort((a, b) => {
-    if (sortOption === "latest") {
-      return new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime();
-    } else if (sortOption === "most_liked") {
-      return b.likeCount - a.likeCount;
+  const getArticles = async (sortOption: string) => {
+    try {
+      const orderBy = sortOption === "most_liked" ? "like" : "recent";
+      const response = await axios.get(`articles?orderBy=${orderBy}`);
+      setArticles(response.data.list);
+      setError(null);
+    } catch (error) {
+      console.error("Error fetching articles:", error);
+      setError("게시글을 불러오는 중 오류가 발생했습니다.");
     }
-    return 0;
-  });
+  };
 
-  const filteredArticles = sortedArticles.filter((article) =>
+  useEffect(() => {
+    getArticles(sortOption);
+  }, [sortOption]);
+
+  const filteredArticles = articles.filter((article) =>
     article.title.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -76,7 +68,7 @@ const Board: React.FC = () => {
           <Dropdown
             value={{
               value: sortOption,
-              label: sortOption === "latest" ? "최신순" : "좋아요순",
+              label: sortOption === "recent" ? "최신순" : "좋아요순",
             }}
             onChange={(option) => setSortOption(option.value)}
           />

@@ -1,18 +1,8 @@
 import React from "react";
-import styled from "styled-components";
 import HeartIcon from "@/public/images/icons/ic_heart.svg";
-import { FlexRowCentered } from "@/styles/CommonStyles";
+import { LikeCountWrapper } from "./LikeCountDisplay.styles";
 
-const LikeCountWrapper = styled(FlexRowCentered)<{
-  $fontSize: number;
-  $gap: number;
-}>`
-  color: var(--gray-500);
-  font-size: ${({ $fontSize }) => `${$fontSize}px`};
-  gap: ${({ $gap }) => `${$gap}px`};
-`;
-
-interface LikeCountDisplayProps {
+type LikeCountDisplayProps = {
   count: number;
   iconWidth?: number;
   fontSize?: number;
@@ -20,13 +10,13 @@ interface LikeCountDisplayProps {
   className?: string;
 }
 
-const LikeCountDisplay: React.FC<LikeCountDisplayProps> = ({
+const LikeCountDisplay = ({
   count,
   iconWidth = 16,
   fontSize = 16,
   gap = 4,
   className,
-}) => {
+}: LikeCountDisplayProps) => {
   const displayCount = count >= 10000 ? "9999+" : count.toString();
 
   return (

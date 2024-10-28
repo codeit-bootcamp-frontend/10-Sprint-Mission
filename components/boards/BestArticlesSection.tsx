@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import Image from "next/image";
-import Link from "next/link";
 import { format } from "date-fns";
+
 import {
-  FlexRowCentered,
   SectionHeader,
   SectionTitle,
 } from "@/styles/CommonStyles";
@@ -22,26 +20,7 @@ import MedalIcon from "@/public/images/icons/ic_medal.svg";
 import useViewport from "@/hooks/useViewport";
 import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 
-const CardContainer = styled(Link)`
-  background-color: var(--gray-50);
-  border-radius: 8px;
-`;
-
-const ContentWrapper = styled.div`
-  padding: 16px 24px;
-`;
-
-const BestSticker = styled(FlexRowCentered)`
-  background-color: var(--blue);
-  border-radius: 0 0 32px 32px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  gap: 4px;
-  padding: 6px 24px 8px 24px;
-  margin-left: 24px;
-  display: inline-flex;
-`;
+import { CardContainer, ContentWrapper, BestSticker, BestArticlesCardSection } from "./BestArticlesSection.styles";
 
 const BestArticleCard = ({ article }: { article: Article }) => {
   const dateString = format(article.createdAt, "yyyy. MM. dd");
@@ -81,21 +60,6 @@ const BestArticleCard = ({ article }: { article: Article }) => {
     </CardContainer>
   );
 };
-
-const BestArticlesCardSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-
-  @media ${({ theme }) => theme.mediaQuery.tablet} {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  @media ${({ theme }) => theme.mediaQuery.desktop} {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-`;
 
 /**
  * Determines the appropriate page size for the best articles section based on the viewport width.

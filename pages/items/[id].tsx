@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
-import { Container, LineDivider, StyledLink } from "@/styles/CommonStyles";
+import { Container, LineDivider } from "@/styles/CommonStyles";
 import { getProductDetail } from "@/api/itemApi";
 import ItemProfileSection from "../../components/items/itemPage/ItemProfileSection";
 import ItemCommentSection from "../../components/items/itemPage/ItemCommentSection";
@@ -8,17 +7,9 @@ import BackIcon from "@/public/images/icons/ic_back.svg";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { Product } from "@/types/productTypes";
 import { useRouter } from "next/router";
+import { BackToMarketPageLink } from "./[id].styles";
 
-const BackToMarketPageLink = styled(StyledLink)`
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 auto;
-`;
-
-const ItemPage: React.FC = () => {
+const ItemPage = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

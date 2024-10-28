@@ -1,14 +1,9 @@
 import React from "react";
-import styled from "styled-components";
-import { Container } from "@/styles/CommonStyles";
 import BestArticlesSection from "../../components/boards/BestArticlesSection";
 import AllArticlesSection from "../../components/boards/AllArticlesSection";
 import { GetStaticProps } from "next";
 import { Article, ArticleListResponse } from "@/types/articleTypes";
-
-const PageContainer = styled(Container)`
-  gap: 40px;
-`;
+import { PageContainer } from "./index.styles";
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch(

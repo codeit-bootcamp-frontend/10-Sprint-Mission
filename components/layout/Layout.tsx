@@ -2,11 +2,11 @@ import React, { ReactNode } from "react";
 import Header from "./Header";
 import { useRouter } from "next/router";
 
-interface LayoutProps {
+type LayoutProps = {
   children: ReactNode;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout = ({ children }: LayoutProps) => {
   const router = useRouter();
   const isAuthPage =
     router.pathname === "/login" || router.pathname === "/signup";

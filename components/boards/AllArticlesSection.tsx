@@ -25,11 +25,11 @@ import { useRouter } from "next/router";
 
 import { ItemContainer, ArticleInfoDiv, AddArticleLink } from "./AllArticlesSection.styles";
 
-interface ArticleItemProps {
+type ArticleItemProps = {
   article: Article;
 }
 
-const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
+const ArticleItem = ({ article }: ArticleItemProps) => {
   const dateString = format(article.createdAt, "yyyy. MM. dd");
 
   return (
@@ -65,13 +65,11 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
   );
 };
 
-interface AllArticlesSectionProps {
+type AllArticlesSectionProps = {
   initialArticles: Article[];
 }
 
-const AllArticlesSection: React.FC<AllArticlesSectionProps> = ({
-  initialArticles,
-}) => {
+const AllArticlesSection = ({initialArticles}: AllArticlesSectionProps) => {
   const [orderBy, setOrderBy] = useState<ArticleSortOption>("recent");
   const [articles, setArticles] = useState(initialArticles);
 

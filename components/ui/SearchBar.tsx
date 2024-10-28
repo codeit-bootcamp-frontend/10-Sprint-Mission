@@ -1,41 +1,17 @@
-import styled from "styled-components";
-import { FlexRowCentered } from "@/styles/CommonStyles";
 import SearchIcon from "@/public/images/icons/ic_search.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import  { Container, SearchBarInput } from "./SearchBar.styles";
 
-const Container = styled(FlexRowCentered)`
-  background-color: var(--gray-100);
-  border-radius: 12px;
-  padding: 9px 16px;
-  flex: 1;
-`;
-
-const SearchBarInput = styled.input`
-  border: none;
-  flex: 1;
-  background-color: inherit;
-  margin-left: 4px;
-
-  &::placeholder {
-    color: var(--gray-400);
-    font-size: 16px;
-  }
-
-  &:focus {
-    outline: none;
-  }
-`;
-
-interface SearchBarProps {
+type SearchBarProps = {
   onSearch: (keyword: string) => void;
   placeholder?: string;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({
+const SearchBar = ({
   onSearch,
   placeholder = "검색할 키워드를 입력해 주세요",
-}) => {
+}: SearchBarProps) => {
   const router = useRouter();
   const [keyword, setKeyword] = useState("");
 

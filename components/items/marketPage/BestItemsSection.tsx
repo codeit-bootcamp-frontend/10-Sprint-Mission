@@ -3,33 +3,13 @@ import ItemCard from "./ItemCard";
 import { getProducts } from "@/api/itemApi";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { Product, ProductListResponse } from "@/types/productTypes";
-import styled from "styled-components";
 import { MarketSectionTitle } from "@/styles/MarketStyles";
 import useViewport from "@/hooks/useViewport";
 
-const BestItemsContainer = styled.div`
-  padding-top: 17px;
-  padding-bottom: 24px;
-
-  @media ${({ theme }) => theme.mediaQuery.tablet} {
-    margin-bottom: 40px;
-  }
-`;
-
-const BestItemsCardSection = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 32px 8px;
-
-  @media ${({ theme }) => theme.mediaQuery.tablet} {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  @media ${({ theme }) => theme.mediaQuery.desktop} {
-    grid-template-columns: repeat(4, 1fr);
-  }
-`;
+import {
+  BestItemsContainer,
+  BestItemsCardSection,
+} from "./BestItemsSection.styles";
 
 /**
  * Determines the appropriate page size for displaying product items based on the viewport width.

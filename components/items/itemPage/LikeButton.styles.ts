@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { FlexRowCentered } from "@/styles/CommonStyles";
 
 const PillButton = styled.button`
   color: var(--gray-500);

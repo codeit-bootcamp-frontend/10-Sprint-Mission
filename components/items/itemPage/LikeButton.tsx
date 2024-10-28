@@ -1,5 +1,4 @@
 import HeartSvg from "@/public/images/icons/ic_heart.svg";
-import { FlexRowCentered } from "@/styles/CommonStyles";
 import Icon from "@/components/ui/Icon";
 import { PillButton, ButtonContent } from "./LikeButton.styles";
 

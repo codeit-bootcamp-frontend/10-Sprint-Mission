@@ -1,24 +1,10 @@
-import styled from "styled-components";
+import { TagsDisplaySection, Tag } from "./TagDisplay.styles"
 
-const TagsDisplaySection = styled.div`
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-`;
-
-const Tag = styled.div`
-  background-color: ${({ theme }) => theme.colors.gray[50]};
-  color: ${({ theme }) => theme.colors.gray[800]};
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 16px;
-`;
-
-interface TagDisplayProps {
+type TagDisplayProps = {
   tags: string[];
 }
 
-const TagDisplay: React.FC<TagDisplayProps> = ({ tags }) => {
+const TagDisplay = ({ tags }: TagDisplayProps) => {
   if (!tags || tags.length === 0) return null;
 
   return (

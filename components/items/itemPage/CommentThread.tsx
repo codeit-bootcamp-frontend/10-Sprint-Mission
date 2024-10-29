@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { getProductComments } from "@/api/itemApi";
-import styled from "styled-components";
 import SeeMoreIcon from "@/public/images/icons/ic_kebab.svg";
 import DefaultProfileImage from "@/public/images/ui/ic_profile.svg";
 import { LineDivider } from "@/styles/CommonStyles";
@@ -11,58 +10,28 @@ import {
 } from "@/types/commentTypes";
 import EmptyState from "@/components/ui/EmptyState";
 
-const CommentContainer = styled.div`
-  padding: 24px 0;
-  position: relative;
-`;
+import {
+  CommentContainer,
+  SeeMoreButton,
+  CommentContent,
+  AuthorProfile,
+  UserProfileImage,
+  Username,
+  Timestamp,
+  ThreadContainer,
+} from "./CommentThread.styles";
 
-const SeeMoreButton = styled.button`
-  position: absolute;
-  right: 0;
-`;
-
-const CommentContent = styled.p`
-  font-size: 16px;
-  line-height: 140%;
-  margin-bottom: 24px;
-`;
-
-const AuthorProfile = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-`;
-
-const UserProfileImage = styled.img`
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-`;
-
-const Username = styled.p`
-  color: var(--gray-600);
-  font-size: 14px;
-  margin-bottom: 4px;
-`;
-
-const Timestamp = styled.p`
-  color: ${({ theme }) => theme.colors.gray[400]};
-  font-size: 12px;
-`;
-
-interface CommentItemProps {
+type CommentItemProps = {
   item: ProductComment;
 }
 
-const CommentItem: React.FC<CommentItemProps> = ({ item }) => {
+const CommentItem = ({ item }: CommentItemProps) => {
   const authorInfo = item.writer;
   const formattedTimestamp = formatUpdatedAt(item.updatedAt);
 
   return (
     <>
       <CommentContainer>
-        {/* 참고: 더보기 버튼 기능은 추후 요구사항에 따라 추가 예정 */}
         <SeeMoreButton>
           <SeeMoreIcon />
         </SeeMoreButton>
@@ -87,15 +56,11 @@ const CommentItem: React.FC<CommentItemProps> = ({ item }) => {
   );
 };
 
-const ThreadContainer = styled.div`
-  margin-bottom: 40px;
-`;
-
-interface CommentThreadProps {
+type CommentThreadProps = {
   productId: number;
 }
 
-const CommentThread: React.FC<CommentThreadProps> = ({ productId }) => {
+const CommentThread = ({ productId }: CommentThreadProps) => {
   const [comments, setComments] = useState<ProductComment[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);

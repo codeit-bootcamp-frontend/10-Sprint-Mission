@@ -19,9 +19,11 @@ interface Article {
   content: string;
 }
 
+type PageSizeByScreen = 1 | 2 | 3;
+
 const BestArticles: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [pageSize, setPageSize] = useState<number>(1);
+  const [pageSize, setPageSize] = useState<PageSizeByScreen>(1);
 
   useEffect(() => {
     const updatePageSize = () => {

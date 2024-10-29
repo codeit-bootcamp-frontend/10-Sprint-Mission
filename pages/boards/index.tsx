@@ -22,16 +22,26 @@ interface Article {
   content: string;
 }
 
+enum SortOption {
+  RECENT = "recent",
+  MOST_LIKED = "most_liked",
+}
+
 const Board: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [error, setError] = useState<string | null>(null);
-  const [sortOption, setSortOption] = useState<string>("recent");
+  const [sortOption, setSortOption] = useState<SortOption>(SortOption.RECENT);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const router = useRouter();
 
+  const handleSortChange = (option: { value: string; label: string }) => {
+    setSortOption(option.value as SortOption);
+  };
+
   const getArticles = async (sortOption: string) => {
     try {
-      const orderBy = sortOption === "most_liked" ? "like" : "recent";
+      const orderBy =
+        sortOption === "most_liked" ? SortOption.MOST_LIKED : SortOption.RECENT;
       const response = await axios.get(`articles?orderBy=${orderBy}`);
       setArticles(response.data.list);
       setError(null);
@@ -65,13 +75,7 @@ const Board: React.FC = () => {
           <SearchForm onSearch={(term) => setSearchTerm(term)} />
         </div>
         <div>
-          <Dropdown
-            value={{
-              value: sortOption,
-              label: sortOption === "recent" ? "최신순" : "좋아요순",
-            }}
-            onChange={(option) => setSortOption(option.value)}
-          />
+          <Dropdown onChange={handleSortChange} />
         </div>
       </div>
       <div>

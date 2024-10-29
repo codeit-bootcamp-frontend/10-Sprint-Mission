@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./Dropdown.module.css";
+import { SortOption } from "../pages/boards/index";
 
 const options = [
   { value: "latest", label: "최신순" },

@@ -15,7 +15,7 @@ function getLinkStyle(isActive: boolean) {
   return { color: isActive ? "var(--blue)" : undefined };
 }
 
-const Header: React.FC = () => {
+const Header = () => {
   const { pathname } = useRouter();
 
   return (
@@ -33,12 +33,8 @@ const Header: React.FC = () => {
               </Link>
             </NavItem>
             <NavItem>
-              <Link
-                href="/items"
-                style={getLinkStyle(
-                  pathname.includes("/items") || pathname === "/additem"
-                )}
-              >
+              <Link href="/items" style={getLinkStyle(pathname.includes("/items")
+                || pathname === "/additem")}>
                 중고마켓
               </Link>
             </NavItem>

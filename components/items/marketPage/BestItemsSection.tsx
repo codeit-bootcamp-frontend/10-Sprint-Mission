@@ -27,7 +27,7 @@ const getPageSize = (width: number) => {
   }
 };
 
-const BestItemsSection: React.FC = () => {
+const BestItemsSection = () => {
   const [itemList, setItemList] = useState<Product[]>([]);
   const [pageSize, setPageSize] = useState<number | null>(null);
   const [isLoading, setIsLoading] = useState(true);

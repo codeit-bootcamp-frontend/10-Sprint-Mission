@@ -1,0 +1,56 @@
+.header {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.headerContainer {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.logoWrapper {
+  width: 153px;
+  height: 51px;
+  background-image: url('../assets/logo_lg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.nav {
+  color: var(--Secondary-600, #4b5563);
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  flex: 1;
+
+  display: flex;
+  gap: 30px;
+  margin-left: 30px;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .logoWrapper {
+    width: 81px;
+    height: 40px;
+    background-image: url('../assets/logo_sm.png');
+  }
+
+  .nav {
+    font-size: 16px;
+  }
+}

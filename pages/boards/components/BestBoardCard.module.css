@@ -1,0 +1,80 @@
+.bestBoardCardContainer {
+  border-radius: 8px;
+  background: var(--Secondary-50, #f9fafb);
+  padding: 0px 24px;
+  padding-bottom: 15px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bestBoardBadge {
+  width: 102px;
+  height: 30px;
+  text-align: center;
+  padding: 2px 24px;
+  background: var(--Primary-100, #3692ff);
+  border-radius: 0px 0px 16px 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bestText {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contentContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.contentTitle {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 20px;
+  font-weight: 600;
+  max-width: 256px;
+}
+
+.contentImgWrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+
+  border-radius: 6px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+}
+
+.additionalInfo {
+  color: var(--Secondary-600, #4b5563);
+  font-size: 14px;
+  font-weight: 400;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.likeCountWrapper {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .contentTitle {
+    gap: 40px;
+    max-width: 180px;
+  }
+}

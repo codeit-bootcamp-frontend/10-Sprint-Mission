@@ -1,0 +1,46 @@
+.boardsHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.title {
+  color: var(--Secondary-800, #1f2937);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.searchBar {
+  padding: 9px 20px 9px 16px;
+  border-radius: 12px;
+  background: var(--Secondary-100, #f3f4f6);
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.searchData {
+  font-size: 16px;
+  font-weight: 400;
+  background: transparent;
+}
+
+.searchData::placeholder {
+  color: var(--Secondary-400, #9ca3af);
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .boardsHeader {
+    margin-bottom: 48px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .boardsHeader {
+    margin-bottom: 16px;
+  }
+}

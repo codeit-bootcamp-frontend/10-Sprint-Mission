@@ -1,0 +1,43 @@
+.bestBoards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  margin-bottom: 40px;
+}
+
+.title {
+  color: var(--Secondary-900, #111827);
+  font-size: 20px;
+  font-weight: 700;
+
+  padding: 24px 0;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .bestBoards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+
+  .bestBoards > *:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .bestBoards {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .title {
+    padding: 16px 0;
+  }
+
+  .bestBoards > *:nth-child(n + 2) {
+    display: none;
+  }
+}

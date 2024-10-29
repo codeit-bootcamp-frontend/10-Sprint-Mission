@@ -1,4 +1,4 @@
-export interface Product {
+export type Product = {
   createdAt: Date;
   favoriteCount: number;
   ownerId: number;
@@ -11,14 +11,14 @@ export interface Product {
   isFavorite: boolean;
 }
 
-export interface ProductListResponse {
+export type ProductListResponse = {
   totalCount: number;
   list: Product[];
 }
 
 export type ProductSortOption = "recent" | "favorite";
 
-export interface ProductListFetcherParams {
+export type ProductListFetcherParams = {
   orderBy: ProductSortOption;
   pageSize: number;
   page?: number;

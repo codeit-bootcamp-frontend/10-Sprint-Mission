@@ -8,8 +8,7 @@ type LayoutProps = {
 
 const Layout = ({ children }: LayoutProps) => {
   const router = useRouter();
-  const isAuthPage =
-    router.pathname === "/login" || router.pathname === "/signup";
+  const isAuthPage = router.pathname === "/login" || router.pathname === "/signup";
 
   return (
     <>

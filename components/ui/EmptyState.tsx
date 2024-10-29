@@ -1,9 +1,9 @@
 import EmptyStateImage from "@/public/images/ui/empty-comments.svg";
 import { EmptyStateContainer, EmptyStateText } from "./EmptyState.styles";
 
-interface EmptyStateProps {
+type EmptyStateProps = {
   text: string;
-  imageComponent?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  imageComponent?: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
 const EmptyState = ({

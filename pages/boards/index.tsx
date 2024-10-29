@@ -4,12 +4,12 @@ import AllArticlesSection from "../../components/boards/AllArticlesSection";
 import { GetStaticProps } from "next";
 import { Article, ArticleListResponse } from "@/types/articleTypes";
 import { PageContainer } from "./index.styles";
+import axios from "axios";
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(
+  const { data } = await axios.get<ArticleListResponse>(
     `https://panda-market-api.vercel.app/articles?orderBy=recent`
   );
-  const data: ArticleListResponse = await response.json();
 
   return {
     props: {
@@ -18,7 +18,7 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-interface BoardsPageProps {
+type BoardsPageProps = {
   initialArticles: Article[];
 }
 

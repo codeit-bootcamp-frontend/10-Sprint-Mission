@@ -1,6 +1,6 @@
 import { Container } from "@/styles/CommonStyles";
 import { useRouter } from "next/router";
-import React from "react";
+// import React from "react";
 
 const BoardsThreadPage = () => {
   const router = useRouter();

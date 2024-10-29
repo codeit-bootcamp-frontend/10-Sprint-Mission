@@ -21,6 +21,7 @@ import useViewport from "@/hooks/useViewport";
 import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 
 import { CardContainer, ContentWrapper, BestSticker, BestArticlesCardSection } from "./BestArticlesSection.styles";
+import axios from "axios";
 
 const BestArticleCard = ({ article }: { article: Article }) => {
   const dateString = format(article.createdAt, "yyyy. MM. dd");
@@ -28,9 +29,7 @@ const BestArticleCard = ({ article }: { article: Article }) => {
   return (
     <CardContainer href={`/boards/${article.id}`}>
       <BestSticker>
-        <MedalIcon alt="베스트 게시글" />
-        Best
-      </BestSticker>
+        <MedalIcon alt="베스트 게시글" />Best</BestSticker>
 
       <ContentWrapper>
         <MainContent>
@@ -62,7 +61,7 @@ const BestArticleCard = ({ article }: { article: Article }) => {
 };
 
 /**
- * Determines the appropriate page size for the best articles section based on the viewport width.
+ * Determines appropriate best articles section counts based on the viewport width max 3.
  *
  * @param width - The current viewport width in pixels.
  * @returns The recommended page size (1:Mobile, 2:Tablet, or 3:Desktop) based on the viewport width.
@@ -93,11 +92,10 @@ const BestArticlesSection = () => {
 
       const fetchBestArticles = async (size: number) => {
         try {
-          const response = await fetch(
+          const response = await axios.get<ArticleListResponse>(
             `https://panda-market-api.vercel.app/articles?orderBy=like&pageSize=${size}`
           );
-          const data: ArticleListResponse = await response.json();
-          setArticles(data.list);
+          setArticles(response.data.list);
         } catch (error) {
           console.error("Failed to fetch best articles:", error);
         }

@@ -24,6 +24,7 @@ import EmptyState from "@/components/ui/EmptyState";
 import { useRouter } from "next/router";
 
 import { ItemContainer, ArticleInfoDiv, AddArticleLink } from "./AllArticlesSection.styles";
+import axios from "axios";
 
 type ArticleItemProps = {
   article: Article;
@@ -95,18 +96,17 @@ const AllArticlesSection = ({initialArticles}: AllArticlesSectionProps) => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      let url = `https://panda-market-api.vercel.app/articles?orderBy=${orderBy}`;
-      if (keyword.trim()) {
-        url += `&keyword=${encodeURIComponent(keyword)}`;
-      }
-      const response = await fetch(url);
-      const data = await response.json();
+      let url = `https://panda-market-api.vercel.app/articles`;
+      const params = {
+        orderBy,
+        ...(keyword.trim() && { keyword })
+      };
+      const { data } = await axios.get(url, { params });
       setArticles(data.list);
     };
 
     fetchArticles();
   }, [orderBy, keyword]);
-
   return (
     <div>
       <SectionHeader>

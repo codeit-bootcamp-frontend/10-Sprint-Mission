@@ -1,3 +1,4 @@
+import axios from "axios";
 import { ProductListFetcherParams } from "@/types/productTypes";
 
 export async function getProducts({
@@ -12,15 +13,15 @@ export async function getProducts({
   });
 
   try {
-    const response = await fetch(
-      `https://panda-market-api.vercel.app/products?${params}`
+    const response = await axios.get(
+      `https://panda-market-api.vercel.app/products`,
+      { params }
     );
 
-    if (!response.ok) {
+    if (response.status !== 200) {
       throw new Error(`HTTP error: ${response.status}`);
     }
-    const body = await response.json();
-    return body;
+    return response.data;
   } catch (error) {
     console.error("Failed to fetch products:", error);
     throw error;
@@ -33,14 +34,13 @@ export async function getProductDetail(productId: number) {
   }
 
   try {
-    const response = await fetch(
+    const response = await axios.get(
       `https://panda-market-api.vercel.app/products/${productId}`
     );
-    if (!response.ok) {
+    if (response.status !== 200) {
       throw new Error(`HTTP error: ${response.status}`);
     }
-    const body = await response.json();
-    return body;
+    return response.data;
   } catch (error) {
     console.error("Failed to fetch product detail:", error);
     throw error;
@@ -63,17 +63,15 @@ export async function getProductComments({
   };
 
   try {
-    const query = new URLSearchParams(params).toString();
-    const response = await fetch(
-      `https://panda-market-api.vercel.app/products/${productId}/comments?${query}`
+    const response = await axios.get(
+      `https://panda-market-api.vercel.app/products/${productId}/comments`,
+      { params }
     );
-    if (!response.ok) {
+    if (response.status !== 200) {
       throw new Error(`HTTP error: ${response.status}`);
     }
-    const body = await response.json();
-    return body;
+    return response.data;
   } catch (error) {
     console.error("Failed to fetch product comments:", error);
     throw error;
-  }
-}
+  }}

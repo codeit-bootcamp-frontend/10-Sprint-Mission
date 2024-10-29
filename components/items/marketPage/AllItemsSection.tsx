@@ -37,7 +37,7 @@ const getPageSize = (width: number) => {
   }
 };
 
-const AllItemsSection: React.FC = () => {
+const AllItemsSection = () => {
   const [orderBy, setOrderBy] = useState<ProductSortOption>("recent");
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState<number | null>(null);

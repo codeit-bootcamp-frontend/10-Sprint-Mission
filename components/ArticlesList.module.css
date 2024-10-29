@@ -1,0 +1,47 @@
+.ArticlesList {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.Article {
+  display: flex;
+  justify-content: space-between;
+  margin: 16px;
+  font-size: 20px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+.image {
+  position: relative;
+  z-index: 0;
+  width: 72px;
+  height: 72px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-left: 24px;
+}
+
+@media (min-width: 375px) and (max-width: 767px) {
+  .ArticlesList {
+    width: 343px;
+  }
+}
+
+@media (min-width: 768px) {
+  .ArticlesList {
+    width: 696px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ArticlesList {
+    width: 1200px;
+  }
+}

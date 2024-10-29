@@ -1,0 +1,97 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 16px 24px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+    padding: 24px 0;
+    margin: 0 auto;
+  }
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--gray-800);
+}
+
+@media screen and (min-width: 768px) {
+  .sectionTitle {
+    font-size: 28px;
+  }
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 11.5px 23px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--blue-hover);
+}
+
+.button:focus {
+  background-color: var(--blue-focus);
+}
+
+.button:disabled {
+  background-color: var(--gray-400);
+  cursor: default;
+  pointer-events: none;
+}
+
+.styledLink {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 11.5px 23px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.styledLink-pill {
+  border-radius: 999px;
+}
+
+.styledLink:hover {
+  background-color: var(--blue-hover);
+}
+
+.styledLink:focus {
+  background-color: var(--blue-focus);
+}
+
+.styledLink:disabled {
+  background-color: var(--gray-400);
+  cursor: default;
+  pointer-events: none;
+}
+
+.lineDivider {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background-color: var(--gray-200);
+  margin: 16px 0;
+}

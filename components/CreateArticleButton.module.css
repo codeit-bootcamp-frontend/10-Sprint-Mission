@@ -1,0 +1,23 @@
+.button {
+  background-color: var(--blue);
+  color: #fff;
+  padding: 11.5px 23px;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 88px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 16px;
+}
+
+.button:hover {
+  background-color: var(--blue-hover);
+}
+
+.button:focus {
+  background-color: var(--blue-focus);
+}

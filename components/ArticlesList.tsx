@@ -2,8 +2,8 @@ import React from "react";
 import Link from "next/link";
 import styles from "./ArticlesList.module.css";
 import Image from "next/image";
-import profile from "./assets/images/ui/ic_profile.svg";
-import heart from "./assets/images/icons/ic_heart.svg";
+import profile from "../public/images/ui/ic_profile.svg";
+import heart from "../public/images/icons/ic_heart.svg";
 
 interface Article {
   updatedAt: string;

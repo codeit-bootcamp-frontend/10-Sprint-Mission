@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./SearchForm.module.css";
 import Image from "next/image";
-import searchIcon from "./assets/images/icons/ic_search.svg";
+import searchIcon from "../public/images/icons/ic_search.svg";
 
 interface SearchFormProps {
   onSearch: (term: string) => void;

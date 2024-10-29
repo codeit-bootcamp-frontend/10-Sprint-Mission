@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import styles from "./BestArticles.module.css";
 import Image from "next/image";
-import bestbadge from "./assets/images/ui/best_badge.svg";
+import bestbadge from "../public/images/ui/best_badge.svg";
 import axios from "@/lib/axios";
-import heart from "./assets/images/icons/ic_heart.svg";
+import heart from "../public/images/icons/ic_heart.svg";
 
 interface Article {
   updatedAt: string;

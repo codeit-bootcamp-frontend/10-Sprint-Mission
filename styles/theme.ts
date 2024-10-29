@@ -1,10 +1,5 @@
 /**
- * Defines a set of colors used throughout the application.
- * The colors are organized into several groups, including:
- * - `gray`: A set of grayscale colors ranging from dark to light.
- * - `blue`: Primary and hover/focus colors for the application's blue accents.
- * - `red`: A single red color.
- * - `white` and `black`: The standard white and black colors.
+ * Defines a set of colors and media-query used throughout the application.
  */
 const colors = {
   gray: {

@@ -1,0 +1,19 @@
+.badge {
+  width: 102px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: var(--blue);
+  border-radius: 0px 0px 16px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  color: #ffffff;
+  padding: 2px 24px;
+}
+
+.medal {
+  width: 16px;
+  height: 16px;
+}

@@ -1,0 +1,56 @@
+.container {
+  background-color: #fcfcfc;
+  border-bottom: 1px solid var(--gray200);
+  padding-bottom: 24px;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  color: var(--gray800);
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.authorInfo {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+
+.authorInfo img {
+  width: 24px;
+  height: 24px;
+}
+
+.authorInfo span {
+  color: var(--gray600);
+}
+
+.authorInfo time {
+  color: var(--gray400);
+}
+
+.like img {
+  width: 24px;
+  height: 24px;
+}
+
+.like span {
+  font-size: 1rem;
+  line-height: 1.625rem;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    font-size: 1.25rem;
+    line-height: 2rem;
+    margin-bottom: 18px;
+  }
+}

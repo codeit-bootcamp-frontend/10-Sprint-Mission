@@ -1,0 +1,37 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdownButton {
+  cursor: pointer;
+}
+
+.dropdownButton > span {
+  display: none;
+}
+
+.dropdownButton > img {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  border: 1px solid var(--gray200);
+  border-radius: 12px;
+  background-color: #ffffff;
+  right: 0;
+  top: 120%;
+  z-index: 1;
+}
+
+.dropdownMenu li {
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdownMenu button {
+  width: 100%;
+  cursor: pointer;
+}

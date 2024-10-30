@@ -1,5 +1,7 @@
 {
+
   "name": "panda-market",
+
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+
     "@svgr/webpack": "^8.1.0",
     "axios": "^1.7.7",
     "next": "14.2.15",
@@ -18,5 +21,6 @@
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.2.15"
+
   }
 }

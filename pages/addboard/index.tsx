@@ -1,8 +1,34 @@
 import IconPlus from '@/public/images/icons/ic_plus.svg';
 import { Container, SectionHeader, SectionTitle } from '@/styles/CommonStyles';
+import Image from 'next/image';
+import { ChangeEvent, useState } from 'react';
 import styled from 'styled-components';
 
 const AddBoardPage = () => {
+  const [imageSrc, setImageSrc] = useState('');
+
+  const encodeFileToBase64 = (fileBlob: File) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(fileBlob);
+
+    return new Promise((resolve) => {
+      reader.onload = () => {
+        if (typeof reader.result === 'string') {
+          setImageSrc(reader.result);
+        }
+
+        resolve(reader.result);
+      };
+    });
+  };
+
+  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files[0]) {
+      encodeFileToBase64(e.target.files[0]);
+    }
+  };
+
   return (
     <Container>
       <SectionHeader>
@@ -19,10 +45,23 @@ const AddBoardPage = () => {
           <textarea placeholder='내용을 입력해주세요' />
         </StyledBox>
         <StyledBoxTitle>이미지</StyledBoxTitle>
-        <StyledFileUpload htmlFor='file-upload'>
-          <input id='file-upload' type='file' />
-          <IconPlus />
-          <span>이미지 등록</span>
+        <StyledFileUpload htmlFor='file-upload' hasImage={!!imageSrc}>
+          <input onChange={handleImageUpload} id='file-upload' type='file' />
+          {!imageSrc ? (
+            <>
+              <IconPlus />
+              <span>이미지 등록</span>
+            </>
+          ) : (
+            <Image
+              src={imageSrc}
+              width={0}
+              height={0}
+              sizes='100vw'
+              style={{ width: '100%', height: 'auto' }}
+              alt='preview-img'
+            />
+          )}
         </StyledFileUpload>
       </StyledFormContainer>
     </Container>
@@ -99,7 +138,7 @@ const StyledBox = styled.div`
   }
 `;
 
-const StyledFileUpload = styled.label`
+const StyledFileUpload = styled.label<{ hasImage: boolean }>`
   > input[type='file'] {
     display: none;
   }
@@ -110,11 +149,14 @@ const StyledFileUpload = styled.label`
   height: 282px;
   background-color: ${({ theme }) => theme.colors.gray[100]};
   border-radius: 12px;
+  overflow: hidden;
   color: ${({ theme }) => theme.colors.gray[400]};
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border: ${({ hasImage, theme }) =>
+    hasImage ? `1px solid ${theme.colors.gray[200]}` : 'none'};
 `;
 
 export default AddBoardPage;

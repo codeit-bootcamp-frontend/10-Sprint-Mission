@@ -1,0 +1,11 @@
+.moreButton {
+  display: flex;
+  height: 42px;
+  padding: 12px 23px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  border: none;
+  color: #fff;
+  background: #3692ff;
+}

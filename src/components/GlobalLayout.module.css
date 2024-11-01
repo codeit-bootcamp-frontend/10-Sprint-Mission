@@ -2,3 +2,22 @@
   margin-top: 75px;
   width: 100%;
 }
+
+.maxContainer {
+  max-width: var(--size-max-width);
+  margin: auto;
+}
+
+/* tablet */
+@media screen and (max-width: 1199px) {
+  .maxContainer {
+    max-width: 760px;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 767px) {
+  .maxContainer {
+    max-width: 360px;
+  }
+}

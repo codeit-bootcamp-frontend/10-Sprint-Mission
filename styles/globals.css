@@ -29,22 +29,3 @@ header {
 footer {
   background-color: var(--Secondary-900);
 }
-
-.max-container {
-  max-width: var(--size-max-width);
-  margin: auto;
-}
-
-/* tablet */
-@media screen and (max-width: 1199px) {
-  .max-container {
-    max-width: 760px;
-  }
-}
-
-/* mobile */
-@media screen and (max-width: 767px) {
-  .max-container {
-    max-width: 360px;
-  }
-}

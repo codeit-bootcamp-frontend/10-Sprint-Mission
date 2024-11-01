@@ -5,14 +5,16 @@ import LikeIcon from '../common/images/ic_heart.png';
 import DefaultImg from '../common/images/default.png';
 import { Item } from './PostList';
 import formatDate from '../common/function/formatDate';
-
+import Link from 'next/link';
 interface ItemCardProps {
     item:Item;
 }
 
 
 const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
+    
     return (
+        <Link href={`/board/${item.id}`}>
         <BS.BestCardContainer>
             <BS.BestBadgeContainer>
                 <BS.MedalIcon src={MedalIcon} alt="메달아이콘" />
@@ -36,6 +38,7 @@ const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
                 <BS.PostDate>{formatDate(item.createdAt)}</BS.PostDate>
             </BS.SubContainer>
         </BS.BestCardContainer>
+        </Link>
     );
 }
 export default BestPostCard;

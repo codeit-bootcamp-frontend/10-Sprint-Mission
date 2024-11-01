@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import Image from 'next/image';
 
+
+//BoardContent
 export const ContentContainer = styled.div`
     width:100%;
     display:flex;
@@ -58,4 +60,94 @@ export const LikeCount = styled.div`
     font-size: 16px;
     font-weight: 500;
     line-height: 26px; 
+`;
+export const Line = styled.hr`
+    size:1px;
+    width:100%;
+    color:#E5E7EB;
+`;
+
+export const ArticleText = styled.div`
+    width:100%;
+    color: #1F2937;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26px;
+`;
+
+//Content
+export const CommentContainer = styled.div`
+    display:flex;
+    flex-direction: column;
+    gap:40px;
+`;
+
+export const WriteCommentContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+`;
+export const CommentTitle = styled.div`
+    color: #111827;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px;
+`;
+export const CommentTextarea = styled.textarea`
+    height: 96px;
+    padding: 16px 24px;
+    border:none;
+    border-radius: 12px;
+    background: var(--Cool-Gray-100, #F3F4F6);
+    resize:none;
+    &::placeholder {
+        color: #9CA3AF;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+    }
+`;
+export const CommentList = styled.div`
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+`;
+export const CommentWrapper = styled.div`
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+`;
+export const CommentText = styled.div`
+    color:  #1F2937;
+    font-family: Pretendard;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px; 
+`;
+export const CommentInfoContainer = styled.div`
+    display:flex;
+    gap:8px;
+`;
+export const CommentWriterImg = styled(Image)`
+    width:32px;
+    height:32px;
+`;
+export const CommentInfoWrapper = styled.div`
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+`;
+export const CommentUser = styled.div`
+    color: #4B5563;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px; 
+`;
+export const CommentDate = styled.div`
+    color:  #9CA3AF;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
 `;

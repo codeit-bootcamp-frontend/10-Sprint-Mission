@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import * as AS from './Styled';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 export interface AddItemValues {
@@ -70,7 +69,7 @@ export default function AddBoard() {
         return (
           values.title.trim() !== '' &&
           values.description.trim() !== '' &&
-          values.image !== null // Check for image being null
+          values.image !== null 
         );
     };
     
@@ -80,7 +79,7 @@ export default function AddBoard() {
           return;
         }
         console.log(values);
-        // Perform further actions like API calls or form submission
+       
     };
 
     useEffect(() => {
@@ -88,10 +87,10 @@ export default function AddBoard() {
     }, [values]);
 
     return (
-        <AS.AddBoardForm onSubmit={handleSubmit}> {/* Wrap the form with onSubmit */}
+        <AS.AddBoardForm onSubmit={handleSubmit}> 
             <AS.TitleContainer>
                 <AS.Title>게시물 쓰기</AS.Title>
-                <AS.AddButton type="submit" disabled={!isValid}>등록</AS.AddButton> {/* Remove onChange */}
+                <AS.AddButton type="submit" disabled={!isValid}>등록</AS.AddButton> 
             </AS.TitleContainer>
             <AS.InputFormContainer>
                 <AS.InputContainer>

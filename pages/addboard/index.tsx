@@ -1,10 +1,16 @@
 import IconPlus from '@/public/images/icons/ic_plus.svg';
 import { Container, SectionHeader, SectionTitle } from '@/styles/CommonStyles';
+import axios, { HttpStatusCode } from 'axios';
+import { copyFileSync } from 'fs';
 import Image from 'next/image';
-import { ChangeEvent, useState } from 'react';
+import { useRouter } from 'next/router';
+import { ChangeEvent, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 
 const AddBoardPage = () => {
+  const router = useRouter();
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
   const [imageSrc, setImageSrc] = useState('');
 
   const encodeFileToBase64 = (fileBlob: File) => {
@@ -29,20 +35,63 @@ const AddBoardPage = () => {
     }
   };
 
+  const formSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (title.length === 0 || content.length === 0) {
+      alert('제목과 내용은 필수 입력사항입니다.');
+    } else {
+      try {
+        if (window.confirm('게시글을 등록하시겠습니까?')) {
+          const token = process.env.NEXT_PUBLIC_API_TOKEN; // TODO: 토큰은 추후에 수정해야 합니다.
+
+          const res = await axios.post(
+            'https://panda-market-api.vercel.app/articles',
+            {
+              title,
+              content,
+            },
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
+
+          if (res.status === HttpStatusCode.Created) {
+            alert('게시글이 등록되었습니다.');
+            router.push(`/boards/${res.data.id}`);
+          } else {
+            alert('게시글 등록에 실패했습니다.');
+          }
+        }
+      } catch (err) {
+        console.error(err);
+        alert('게시글 등록에 실패했습니다.');
+      }
+    }
+  };
   return (
     <Container>
       <SectionHeader>
         <SectionTitle>게시글 쓰기</SectionTitle>
-        <PostStyleButton>등록</PostStyleButton>
+        <PostStyleButton onClick={formSubmit}>등록</PostStyleButton>
       </SectionHeader>
       <StyledFormContainer>
         <StyledBoxTitle>*제목</StyledBoxTitle>
         <StyledBox>
-          <input placeholder='제목을 입력해주세요' type='text' />
+          <input
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder='제목을 입력해주세요'
+            type='text'
+          />
         </StyledBox>
         <StyledBoxTitle>*내용</StyledBoxTitle>
         <StyledBox>
-          <textarea placeholder='내용을 입력해주세요' />
+          <textarea
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            placeholder='내용을 입력해주세요'
+          />
         </StyledBox>
         <StyledBoxTitle>이미지</StyledBoxTitle>
         <StyledFileUpload htmlFor='file-upload' hasImage={!!imageSrc}>

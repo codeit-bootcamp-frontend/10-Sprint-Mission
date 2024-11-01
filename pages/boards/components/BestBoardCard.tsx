@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './BestBoardCard.module.css';
 import medalSvg from '@/src/assets/ic_medal.svg';
 import heardSvg from '@/src/assets/ic_heart.svg';
-import { Board } from '@/src/apis/boardTypes';
+import type { Board } from '@/src/apis/boardTypes';
 
 interface BestBoardCardProps
   extends Pick<

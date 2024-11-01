@@ -26,6 +26,7 @@ const SearchBar = ({ initialValue = "" }: { initialValue: string }) => {
       <Image src={searchIcon} alt="검색" className={styles.image} />
       <input
         className={styles.input}
+        value={value}
         type="text"
         placeholder="검색할 상품을 입력해주세요"
         onChange={handleChange}

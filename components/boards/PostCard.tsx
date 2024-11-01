@@ -5,12 +5,19 @@ import LikeIcon from '../common/images/ic_heart.png';
 import ProfileImg from '../common/images/profile.png';
 import { Item } from './PostList';
 import formatDate from '../common/function/formatDate';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 interface ItemCardProps {
     item: Item; 
 }
 
 const PostCard: React.FC<ItemCardProps> = ({ item }) => {
+    const router = useRouter();
+    const handleCardClick = () => {
+        router.push(`board/${item.id}`)
+    }
+
     return (
         <PS.PostCardContainer>
             <PS.PostContentContainer>
@@ -26,7 +33,6 @@ const PostCard: React.FC<ItemCardProps> = ({ item }) => {
                 <PS.InfoContainer>
                     <PS.ProfileImg 
                         src={ProfileImg} 
-
                         alt="프로필 이미지" 
                     />
                     <PS.Writer>{item.writer.nickname}</PS.Writer>

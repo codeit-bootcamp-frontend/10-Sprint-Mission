@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback} from 'react';
 import * as BS from './Styled';
 import BestPostCard from './BestPostCard';
 import { Item, ItemList } from './PostList';
-import { getArticles } from '@/pages/api/api';
+import { getArticles } from '@/components/api/api';
 
 interface ItemCardProps {
     item: Item; 

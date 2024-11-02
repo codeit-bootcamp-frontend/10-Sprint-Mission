@@ -1,4 +1,3 @@
-// src/hooks/useBoards.ts
 import { useEffect, useRef, useState } from 'react';
 import { getBoards } from '@/src/apis/boardsApi';
 import type { Board } from '@/src/apis/boardTypes';

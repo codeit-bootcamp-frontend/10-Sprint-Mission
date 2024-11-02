@@ -52,7 +52,7 @@ const BestBoards = () => {
       <Container className={styles.container}>
         {articles.map((article: ArticleProps) => (
           <Link key={article.id} href={`/board/${article.id}`}>
-            <BestBoard article={article} />
+            <BestBoard {...article} />
           </Link>
         ))}
       </Container>

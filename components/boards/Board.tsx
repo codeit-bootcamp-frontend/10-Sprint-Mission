@@ -6,20 +6,27 @@ import AuthorInfo from "../ui/AuthorInfo";
 import { formatDate } from "@/lib/formatDate";
 import styles from "./Board.module.css";
 
-const Board = ({ board }: { board: ArticleProps }) => {
+const Board = ({
+  id,
+  title,
+  image,
+  writer,
+  createdAt,
+  likeCount,
+}: ArticleProps) => {
   return (
     <Container className={styles.container}>
       <div className={styles.content}>
-        {board.title}
-        <ArticleImage src={board.image} alt={`${board.id} 이미지`} />
+        {title}
+        <ArticleImage src={image} alt={`${id} 이미지`} />
       </div>
       <div className={styles.info}>
         <AuthorInfo
           className={styles.authorInfo}
-          nickname={board.writer.nickname}
-          date={formatDate(board.createdAt)}
+          nickname={writer.nickname}
+          date={formatDate(createdAt)}
         />
-        <LikeCount className={styles.like} likeCount={board.likeCount} />
+        <LikeCount className={styles.like} likeCount={likeCount} />
       </div>
     </Container>
   );

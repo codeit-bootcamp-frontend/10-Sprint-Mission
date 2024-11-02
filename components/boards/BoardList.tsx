@@ -84,7 +84,7 @@ const BoardList = ({ initialBoards, initialKeyword }: BoardListProps) => {
       <Container className={styles.container}>
         {boards.map((board: ArticleProps) => (
           <Link key={board.id} href={`/board/${board.id}`}>
-            <Board board={board} />
+            <Board {...board} />
           </Link>
         ))}
       </Container>

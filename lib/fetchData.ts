@@ -17,20 +17,25 @@ export const fetchData = async (url: string, options: FetchOptions = {}) => {
     }
 
     const { method = "GET", headers = {}, body } = options;
-
     const isFormData = body instanceof FormData;
+
+    const requestHeaders = {
+      ...(isFormData
+        ? headers
+        : { "Content-Type": "application/json", ...headers }),
+    };
+
+    const requestBody =
+      method !== "GET" && body
+        ? isFormData
+          ? body
+          : JSON.stringify(body)
+        : null;
+
     const response = await fetch(fullUrl, {
       method,
-      headers: {
-        ...(!isFormData && { "Content-Type": "application/json" }),
-        ...headers,
-      },
-      body:
-        method !== "GET" && body
-          ? isFormData
-            ? body
-            : JSON.stringify(body)
-          : null,
+      headers: requestHeaders,
+      body: requestBody,
     });
 
     if (!response.ok) {

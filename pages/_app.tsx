@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>판다 마켓</title>
       </Head>
       <Header />
-      <Container page>
+      <Container isPage>
         <Component {...pageProps} />
       </Container>
     </AuthProvider>

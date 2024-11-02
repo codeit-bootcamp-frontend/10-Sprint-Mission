@@ -11,7 +11,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 
 .replyEmptyImg {
@@ -31,6 +31,10 @@
   .comments {
     margin-bottom: 56px;
   }
+
+  .replyEmpty {
+    margin-bottom: 56px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -38,8 +42,7 @@
     margin-bottom: 64px;
   }
 
-  .inquiryEmptyImg {
-    width: 196px;
-    height: 196px;
+  .replyEmpty {
+    margin-bottom: 48px;
   }
 }

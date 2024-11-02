@@ -21,27 +21,35 @@ export default function Boards() {
   const [boards, setBoards] = useState<Board[]>([]);
   const [isFetching, setIsFetching] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
-  const { data, isLoading, error, makeRequest } = useApi<
-    GetBoardsResponse,
-    GetBoardsRequestParams
-  >(getBoards, {
-    page,
-    pageSize: PAGE_SIZE,
-    orderBy,
-  });
-
-  useEffect(() => {
-    if (data) {
-      setBoards((prevBoards) => [...prevBoards, ...data.list]);
+  const fetchBoards = async () => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const response = await getBoards({
+        page,
+        pageSize: PAGE_SIZE,
+        orderBy,
+      });
+      setBoards((prevBoards) => [...prevBoards, ...response.list]);
       setIsFetching(false);
 
-      if (data.list.length < PAGE_SIZE) {
+      if (response.list.length < PAGE_SIZE) {
         setHasMore(false);
       }
+    } catch (err) {
+      setError('Failed to fetch boards');
+    } finally {
+      setIsLoading(false);
     }
-  }, [data]);
+  };
+
+  useEffect(() => {
+    fetchBoards();
+  }, [page, orderBy]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -49,7 +57,6 @@ export default function Boards() {
         if (entries[0].isIntersecting && !isFetching && hasMore) {
           setIsFetching(true);
           setPage((prevPage) => prevPage + 1);
-          makeRequest({ page: page + 1, pageSize: PAGE_SIZE, orderBy });
         }
       },
       { threshold: 0.5 }
@@ -61,7 +68,7 @@ export default function Boards() {
     return () => {
       if (current) observer.unobserve(current);
     };
-  }, [isFetching, page, orderBy, hasMore]);
+  }, [isFetching, hasMore]);
 
   const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newOrder = e.target.value;
@@ -69,7 +76,6 @@ export default function Boards() {
     setHasMore(true);
     setBoards([]);
     setPage(1);
-    makeRequest({ page: 1, pageSize: PAGE_SIZE, orderBy: newOrder });
   };
 
   return (

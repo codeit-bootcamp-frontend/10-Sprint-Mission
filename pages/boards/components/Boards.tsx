@@ -9,33 +9,67 @@ import type {
   GetBoardsRequestParams,
 } from '@/src/apis/boardTypes';
 import { useApi } from '@/src/hooks/useApi';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import BoardCard from './BoardCard';
+import Link from 'next/link';
 
 const PAGE_SIZE = 10;
 
 export default function Boards() {
   const [orderBy, setOrderBy] = useState('recent');
-
-  const requestParams: GetBoardsRequestParams = {
-    page: 1,
-    pageSize: PAGE_SIZE,
-    orderBy: orderBy,
-  };
+  const [page, setPage] = useState(1);
+  const [boards, setBoards] = useState<Board[]>([]);
+  const [isFetching, setIsFetching] = useState(false);
+  const [hasMore, setHasMore] = useState(true);
+  const observerRef = useRef<HTMLDivElement | null>(null);
 
   const { data, isLoading, error, makeRequest } = useApi<
     GetBoardsResponse,
     GetBoardsRequestParams
-  >(getBoards, requestParams);
+  >(getBoards, {
+    page,
+    pageSize: PAGE_SIZE,
+    orderBy,
+  });
 
-  const handelOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  useEffect(() => {
+    if (data) {
+      setBoards((prevBoards) => [...prevBoards, ...data.list]);
+      setIsFetching(false);
+
+      if (data.list.length < PAGE_SIZE) {
+        setHasMore(false);
+      }
+    }
+  }, [data]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !isFetching && hasMore) {
+          setIsFetching(true);
+          setPage((prevPage) => prevPage + 1);
+          makeRequest({ page: page + 1, pageSize: PAGE_SIZE, orderBy });
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    if (observerRef.current) observer.observe(observerRef.current);
+
+    return () => {
+      if (observerRef.current) observer.unobserve(observerRef.current);
+    };
+  }, [isFetching, page, orderBy, hasMore]);
+
+  const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newOrder = e.target.value;
     setOrderBy(newOrder);
-    makeRequest({ ...requestParams, orderBy: newOrder });
+    setHasMore(true);
+    setBoards([]);
+    setPage(1);
+    makeRequest({ page: 1, pageSize: PAGE_SIZE, orderBy: newOrder });
   };
-
-  const boards = data?.list || [];
-  console.log(boards);
 
   return (
     <div>
@@ -57,7 +91,7 @@ export default function Boards() {
           <select
             className={styles.options}
             id="options"
-            onChange={handelOptionChange}
+            onChange={handleOptionChange}
           >
             <option value="recent">최신순</option>
             <option value="like">좋아요순</option>
@@ -65,14 +99,15 @@ export default function Boards() {
         </div>
       </section>
       <section className={styles.boardsContainer}>
-        {isLoading ? (
-          <div>Loading</div>
-        ) : error ? (
-          <div>{error}</div>
-        ) : (
-          boards.map((board) => <BoardCard key={board.id} {...board} />)
-        )}
+        {boards.map((board) => (
+          <Link key={board.id} href={`/boards/${board.id}`}>
+            <BoardCard {...board} />
+          </Link>
+        ))}
+        {isLoading && <div>Loading...</div>}
+        {error && <div>{error}</div>}
       </section>
+      <div ref={observerRef} style={{ height: '1px' }}></div>
     </div>
   );
 }

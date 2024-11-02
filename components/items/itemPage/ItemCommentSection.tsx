@@ -36,7 +36,6 @@ const ItemCommentSection: React.FC<ItemCommentSectionProps> = ({
           onChange={handleInputChange}
         />
 
-        {/* 참고: 요구사항에 따라 추후 댓글 등록 API 추가 예정 */}
         <PostCommentButton
           onClick={handlePostComment}
           disabled={!comment.trim()}

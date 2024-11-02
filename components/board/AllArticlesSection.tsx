@@ -37,8 +37,6 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
           <ArticleTitle>{article.title}</ArticleTitle>
           {article.image && (
             <ArticleThumbnail>
-              {/* Next Image의 width, height을 설정해줄 것이 아니라면 부모 div 내에서 fill, objectFit 설정으로 비율 유지하면서 유연하게 크기 조정 */}
-              {/* 프로젝트 내에 있는 이미지 파일을 사용하는 게 아니라면 next.config.mjs에 이미지 주소 설정 필요 */}
               <ImageWrapper>
                 <Image
                   fill
@@ -113,7 +111,6 @@ const AllArticlesSection: React.FC<AllArticlesSectionProps> = ({
     <div>
       <SectionHeader>
         <SectionTitle>게시글</SectionTitle>
-        {/* 참고: 임의로 /addArticle 이라는 pathname으로 게시글 작성 페이지를 추가했어요 */}
         <AddArticleLink href="/addArticle">글쓰기</AddArticleLink>
       </SectionHeader>
 

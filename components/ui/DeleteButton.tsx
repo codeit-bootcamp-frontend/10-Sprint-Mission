@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as CloseIcon } from "../../public/images/icons/ic_x.svg";
+import { ReactComponent as CloseIcon } from "@/public/images/icons/ic_x.svg";
 
 const Button = styled.button`
   background-color: ${({ theme }) => theme.colors.gray[400]};

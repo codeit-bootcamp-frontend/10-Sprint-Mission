@@ -55,7 +55,6 @@ export default function PostList() {
             const totalCount = articles.totalCount;
             const allArticles = await getArticles({ orderBy: order, pageSize: totalCount, keyword:search});
             setItemList(allArticles);
-            console.log(allArticles);
         } catch (error) {
             console.error('Error fetching articles:', error);
         }

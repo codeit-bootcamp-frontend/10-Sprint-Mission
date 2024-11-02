@@ -75,7 +75,7 @@ export const ArticleText = styled.div`
     line-height: 26px;
 `;
 
-//Content
+//Comment
 export const CommentContainer = styled.div`
     display:flex;
     flex-direction: column;
@@ -150,4 +150,25 @@ export const CommentDate = styled.div`
     font-size: 12px;
     font-weight: 400;
     line-height: 18px;
+`;
+export const CommentSubmitButton = styled.button`
+    display: flex;
+    height: 42px;
+    padding: 12px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #3692FF;
+    color:#F3F4F6;
+    border:none;
+
+    &:disabled {
+        background: #9CA3AF;
+    }
+`;
+export const CommentSubmitButtonWrapper = styled.div`
+    display:flex;
+    width:100%;
+    justify-content:right;
 `;

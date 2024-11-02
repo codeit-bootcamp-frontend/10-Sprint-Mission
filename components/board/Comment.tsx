@@ -1,7 +1,6 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import * as CS from './Styled';
-import Profileimg from '@/components/common/images/default.png';
 import { getArticleComment } from '../api/api';
 import CommentItem from './CommentItem';
 
@@ -26,7 +25,6 @@ export interface CommentListResponse {
 export default function Comment() {
     const [value, setValue] = useState("");
     const [isValid, setIsValid] = useState(false);
-    const [loading, setLoading] = useState(true);
     const router = useRouter();
     const id = router.query['id'];
     const [itemList, setItemList] = useState<CommentListResponse>({ nextCursor: 0, list: [] });
@@ -38,14 +36,10 @@ export default function Comment() {
 
     const handleLoad = useCallback(async () => {
         try {
-            setLoading(true);
-            const comments = await getArticleComment(Number(id));
+            const comments = await getArticleComment(Number(id),{ limit: LIMIT, cursor: 0 });
             setItemList({ nextCursor: comments.nextCursor, list: comments.list });
-            console.log(comments.list);
         } catch (error) {
             console.error("Failed to load comments:", error);
-        } finally {
-            setLoading(false);
         }
     }, [id]);
 
@@ -57,10 +51,6 @@ export default function Comment() {
         handleLoad();
     }, [handleLoad]);
 
-    if (loading) {
-        return <p>Loading comments...</p>;
-    }
-
     return (
         <CS.CommentContainer>
             <CS.WriteCommentContainer>
@@ -71,6 +61,9 @@ export default function Comment() {
                     placeholder="댓글을 입력해주세요"
                     onChange={handleTextareaChange}
                 />
+                <CS.CommentSubmitButtonWrapper>
+                    <CS.CommentSubmitButton type="submit" disabled={!isValid}>등록</CS.CommentSubmitButton>
+                </CS.CommentSubmitButtonWrapper>
             </CS.WriteCommentContainer>
             <CS.CommentList>
                 {itemList.list.map((item) => (

@@ -1,21 +1,23 @@
 import React from 'react';
 import * as BS from './Styled';
+import { useRouter } from 'next/router';
 import MedalIcon from '../common/images/ic_medal.png';
 import LikeIcon from '../common/images/ic_heart.png';
 import DefaultImg from '../common/images/default.png';
 import { Item } from './PostList';
 import formatDate from '../common/function/formatDate';
-import Link from 'next/link';
 interface ItemCardProps {
     item:Item;
 }
 
 
 const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
-    
+    const router = useRouter();
+    const handleCardClick = () => {
+        router.push(`/board/${item.id}`);
+    };
     return (
-        <Link href={`/board/${item.id}`}>
-        <BS.BestCardContainer>
+        <BS.BestCardContainer onClick={handleCardClick}>
             <BS.BestBadgeContainer>
                 <BS.MedalIcon src={MedalIcon} alt="메달아이콘" />
                 <BS.BestText>Best</BS.BestText>
@@ -38,7 +40,7 @@ const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
                 <BS.PostDate>{formatDate(item.createdAt)}</BS.PostDate>
             </BS.SubContainer>
         </BS.BestCardContainer>
-        </Link>
+
     );
 }
 export default BestPostCard;

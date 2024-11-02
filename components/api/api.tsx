@@ -16,7 +16,7 @@ export async function getArticles(params = {}) {
         });
         return response.data; 
     } catch (error) {
-        console.error("Failed to fetch products:", error);
+        console.error("Failed to fetch articles:", error);
         throw error;
     }
 }
@@ -26,17 +26,22 @@ export async function getArticleDetail(articleId: number) {
         const response = await axios.get(`${BASE_URL}/articles/${articleId}`);
         return response.data; 
     } catch (error) {
-        console.error("Failed to fetch product details:", error);
+        console.error("Failed to fetch article details:", error);
         throw error;
     }
 }
 
-export async function getArticleComment(articleId: number) {
+export async function getArticleComment(articleId: number, params = { limit: 10, cursor: 0 }) {
     try {
-        const response = await axios.get(`${BASE_URL}/articles/${articleId}/comments`);
+        const response = await axios.get(`${BASE_URL}/articles/${articleId}/comments`, {
+                params: {
+                    limit: params.limit,
+                    cursor: params.cursor
+                }
+        });
         return response.data; 
     } catch (error) {
-        console.error("Failed to fetch product details:", error);
+        console.error("Failed to fetch comment details:", error);
         throw error;
     }
 }

@@ -23,22 +23,17 @@ export interface Writer {
 export default function Article() {
     const router = useRouter();
     const id = router.query['id'];
-    const [loading, setLoading] = useState(true);
     const [item, setItem] = useState<Item | undefined>(undefined);
 
     const fetchArticleData = useCallback(async () => {
         try {
-            setLoading(true);
             if (id) { 
                 const product = await getArticleDetail(Number(id)); 
                 setItem(product);
-                console.log(product);
             }
         } catch (err) {
             console.error(err);
-        } finally {
-            setLoading(false);
-        }
+        } 
     }, [id]);
 
     useEffect(() => {
@@ -46,10 +41,6 @@ export default function Article() {
             fetchArticleData();
         }
     }, [fetchArticleData, id]);
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
 
     if (!item) {
         return ;

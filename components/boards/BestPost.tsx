@@ -4,14 +4,6 @@ import BestPostCard from './BestPostCard';
 import { Item, ItemList } from './PostList';
 import { getArticles } from '@/components/api/api';
 
-interface ItemCardProps {
-    item: Item; 
-}
-
-interface ItemListProps {
-    itemList : ItemList;
-}
-
 export default function BestPost() {
     const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
     const [pageSize, setPageSize] = useState(4);
@@ -20,7 +12,6 @@ export default function BestPost() {
         try {
             const articles = await getArticles({ orderBy: order, pageSize });
             setItemList(articles); 
-            console.log(articles);
         } catch (error) {
             console.error('Error fetching articles:', error);
         }

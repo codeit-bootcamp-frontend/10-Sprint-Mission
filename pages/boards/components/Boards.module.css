@@ -50,6 +50,14 @@
     center;
 }
 
+.boardsContainer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
 /* tablet */
 @media screen and (max-width: 1199px) {
   .boardsHeader {

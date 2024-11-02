@@ -1,8 +1,4 @@
-import type {
-  Board,
-  GetBoardsResponse,
-  GetBoardsRequestParams,
-} from './boardTypes';
+import type { GetBoardsResponse, GetBoardsRequestParams } from './boardTypes';
 
 const BASE_URL = 'https://panda-market-api.vercel.app';
 

@@ -35,7 +35,7 @@ export function useApi<T, P extends object>(
 
   useEffect(() => {
     wrappedFunction(params);
-  }, [params, wrappedFunction]);
+  }, [JSON.stringify(params), wrappedFunction]);
 
   return { data, isLoading, error, makeRequest: wrappedFunction };
 }

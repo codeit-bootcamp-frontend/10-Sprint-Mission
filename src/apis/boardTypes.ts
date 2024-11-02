@@ -22,6 +22,6 @@ export interface GetBoardsResponse {
 export interface GetBoardsRequestParams {
   page?: number;
   pageSize?: number;
-  orderBy?: 'recent' | 'like';
+  orderBy?: string;
   keyword?: string;
 }

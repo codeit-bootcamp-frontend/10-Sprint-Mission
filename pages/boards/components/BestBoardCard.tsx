@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './BestBoardCard.module.css';
 import medalSvg from '@/src/assets/ic_medal.svg';
-import heardSvg from '@/src/assets/ic_heart.svg';
+import heartSvg from '@/src/assets/ic_heart.svg';
 import type { Board } from '@/src/apis/boardTypes';
 
 interface BestBoardCardProps
@@ -26,13 +26,18 @@ export default function BestBoardCard({
       <div className={styles.contentContainer}>
         <h4 className={styles.contentTitle}>{title}</h4>
         <div className={styles.contentImgWrapper}>
-          <Image src={image} alt="medal" fill style={{ objectFit: 'cover' }} />
+          <Image
+            src={image}
+            alt="게시판 첨부이미지"
+            fill
+            style={{ objectFit: 'cover' }}
+          />
         </div>
       </div>
       <div className={styles.additionalInfo}>
         <span>{writer.nickname}</span>
         <div className={styles.likeCountWrapper}>
-          <Image src={heardSvg} alt="heardIcon" width={16} height={16} />
+          <Image src={heartSvg} alt="heartIcon" width={16} height={16} />
           <span>{likeCount}</span>
         </div>
         <span>{new Date(createdAt).toLocaleDateString()}</span>

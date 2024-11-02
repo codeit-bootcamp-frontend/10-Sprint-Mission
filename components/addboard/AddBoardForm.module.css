@@ -1,0 +1,39 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: var(--gray800);
+}
+
+.button {
+  line-height: 1.625rem;
+  padding: 8px 23px;
+}
+
+.input {
+  gap: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    gap: 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header h2 {
+    line-height: 2rem;
+  }
+}

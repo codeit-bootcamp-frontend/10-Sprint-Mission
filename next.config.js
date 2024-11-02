@@ -6,6 +6,7 @@ const nextConfig = {
       "sprint-fe-project.s3.ap-northeast-2.amazonaws.com",
       "via.placeholder.com",
       "flexible.img.hani.co.kr",
+      "example.com",
     ],
   },
 };

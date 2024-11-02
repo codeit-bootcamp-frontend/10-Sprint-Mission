@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import Image from "next/image";
 import Board from "./Board";
 import Button from "../ui/Button";
@@ -65,7 +66,9 @@ const BoardList = ({ initialBoards, initialKeyword }: BoardListProps) => {
     <section className={styles.wrapper}>
       <div className={styles.header}>
         <h2>게시글</h2>
-        <Button className={styles.button}>글쓰기</Button>
+        <Link href="/addboard">
+          <Button className={styles.button}>글쓰기</Button>
+        </Link>
       </div>
       <div className={styles.toolbar}>
         <SearchBar initialValue={keyword} />
@@ -83,7 +86,7 @@ const BoardList = ({ initialBoards, initialKeyword }: BoardListProps) => {
           <Board key={board.id} board={board} />
         ))}
       </Container>
-      <div id="end-of-list"></div>
+      {isLoading ? <p>Loading...</p> : <div id="end-of-list"></div>}
     </section>
   );
 };

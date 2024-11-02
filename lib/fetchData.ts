@@ -4,7 +4,7 @@ type FetchOptions = {
   query?: Record<string, string | number | boolean | undefined | null>;
   method?: "GET" | "POST" | "PUT" | "DELETE";
   headers?: Record<string, string>;
-  body?: Record<string, unknown> | string | null;
+  body?: Record<string, unknown> | string | FormData | null;
 };
 
 export const fetchData = async (url: string, options: FetchOptions = {}) => {
@@ -18,13 +18,19 @@ export const fetchData = async (url: string, options: FetchOptions = {}) => {
 
     const { method = "GET", headers = {}, body } = options;
 
+    const isFormData = body instanceof FormData;
     const response = await fetch(fullUrl, {
       method,
       headers: {
-        "Content-Type": "application/json",
+        ...(!isFormData && { "Content-Type": "application/json" }),
         ...headers,
       },
-      body: method !== "GET" && body ? JSON.stringify(options.body) : null,
+      body:
+        method !== "GET" && body
+          ? isFormData
+            ? body
+            : JSON.stringify(body)
+          : null,
     });
 
     if (!response.ok) {

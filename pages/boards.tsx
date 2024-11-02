@@ -2,6 +2,8 @@ import BestBoards from "@/components/boards/BestBoards";
 import BoardList, { BoardListProps } from "@/components/boards/BoardList";
 import { fetchData } from "@/lib/fetchData";
 import { GetServerSidePropsContext } from "next";
+import { useAuth } from "@/contexts/AuthProvider";
+import { useEffect } from "react";
 
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
@@ -22,6 +24,12 @@ export const getServerSideProps = async (
 };
 
 const Boards = ({ initialBoards, initialKeyword }: BoardListProps) => {
+  const { login } = useAuth();
+
+  useEffect(() => {
+    login();
+  }, [login]);
+
   return (
     <>
       <BestBoards />

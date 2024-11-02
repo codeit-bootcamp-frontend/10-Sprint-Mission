@@ -6,9 +6,9 @@ import Image from "next/image";
 
 interface FileProps {
   label: string;
-  name: string;
+  name: "imgFile";
   value: File | null;
-  onChange: (name: string, value: File | null) => void;
+  onChange: (name: "imgFile", value: File | null) => void;
   className?: string;
 }
 

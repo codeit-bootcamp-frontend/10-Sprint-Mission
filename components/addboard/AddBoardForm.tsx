@@ -15,7 +15,7 @@ interface Board {
   content: string;
 }
 
-type ChangeValue = string | File | null;
+type BoardField = keyof Board;
 
 const INITIAL_BOARD: Board = {
   imgFile: null,
@@ -25,10 +25,11 @@ const INITIAL_BOARD: Board = {
 
 const AddBoardForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
-  const [values, setValues] = useState(INITIAL_BOARD);
+  const [values, setValues] = useState<Board>(INITIAL_BOARD);
   const { accessToken } = useAuth();
   const router = useRouter();
-  const handleChange = (name: string, value: ChangeValue) => {
+
+  const handleChange = (name: BoardField, value: Board[BoardField]): void => {
     setValues((prevValues) => {
       return {
         ...prevValues,
@@ -41,13 +42,17 @@ const AddBoardForm = () => {
     e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    handleChange(name, value);
+    handleChange(name as BoardField, value);
   };
 
-  const handleSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = async (
+    e: MouseEvent<HTMLButtonElement>
+  ): Promise<void> => {
     e.preventDefault();
+
     const { imgFile, ...otherValues } = values;
     let url = null;
+
     if (imgFile) {
       const formData = new FormData();
       formData.append("image", imgFile);
@@ -72,10 +77,10 @@ const AddBoardForm = () => {
     router.push(`/board/${id}`);
   };
 
-  const checkFormEmpty = (values: Board) => {
-    const { imgFile, ...otherValues } = values;
+  const checkFormEmpty = (values: Board): boolean => {
+    const { title, content } = values;
 
-    return Object.values(otherValues).some((value) => value === "");
+    return !title || !content;
   };
 
   useEffect(() => {

@@ -1,7 +1,6 @@
 import IconPlus from '@/public/images/icons/ic_plus.svg';
 import { Container, SectionHeader, SectionTitle } from '@/styles/CommonStyles';
 import axios, { HttpStatusCode } from 'axios';
-import { copyFileSync } from 'fs';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ChangeEvent, MouseEvent, useState } from 'react';
@@ -11,7 +10,8 @@ const AddBoardPage = () => {
   const router = useRouter();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [imageSrc, setImageSrc] = useState('');
+  const [previewImageSrc, setPreviewImageSrc] = useState('');
+  const [imageFile, setImageFile] = useState<File | null>(null);
 
   const encodeFileToBase64 = (fileBlob: File) => {
     const reader = new FileReader();
@@ -21,7 +21,7 @@ const AddBoardPage = () => {
     return new Promise((resolve) => {
       reader.onload = () => {
         if (typeof reader.result === 'string') {
-          setImageSrc(reader.result);
+          setPreviewImageSrc(reader.result);
         }
 
         resolve(reader.result);
@@ -29,9 +29,34 @@ const AddBoardPage = () => {
     });
   };
 
-  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
+  const uploadImage = async (file: File): Promise<string | null> => {
+    try {
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const res = await axios.post(
+        'https://panda-market-api.vercel.app/images/upload',
+        formData,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+          },
+        }
+      );
+
+      return res.data.url;
+    } catch (error) {
+      console.error('이미지 업로드에 실패했습니다......', error);
+      return null;
+    }
+  };
+
+  const handleImagePreview = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
-      encodeFileToBase64(e.target.files[0]);
+      const selectedFile = e.target.files[0];
+      setImageFile(selectedFile);
+      encodeFileToBase64(selectedFile);
     }
   };
 
@@ -44,12 +69,23 @@ const AddBoardPage = () => {
       try {
         if (window.confirm('게시글을 등록하시겠습니까?')) {
           const token = process.env.NEXT_PUBLIC_API_TOKEN; // TODO: 토큰은 추후에 수정해야 합니다.
+          let imageUrl = '';
+          if (imageFile) {
+            const uploadImageUrl = await uploadImage(imageFile);
+            if (uploadImageUrl) {
+              imageUrl = uploadImageUrl;
+            } else {
+              alert('이미지 업로드에 실패했습니다.');
+              return;
+            }
+          }
 
           const res = await axios.post(
             'https://panda-market-api.vercel.app/articles',
             {
               title,
               content,
+              image: imageUrl,
             },
             {
               headers: { Authorization: `Bearer ${token}` },
@@ -58,6 +94,7 @@ const AddBoardPage = () => {
 
           if (res.status === HttpStatusCode.Created) {
             alert('게시글이 등록되었습니다.');
+            console.log(res.data);
             router.push(`/boards/${res.data.id}`);
           } else {
             alert('게시글 등록에 실패했습니다.');
@@ -94,16 +131,16 @@ const AddBoardPage = () => {
           />
         </StyledBox>
         <StyledBoxTitle>이미지</StyledBoxTitle>
-        <StyledFileUpload htmlFor='file-upload' hasImage={!!imageSrc}>
-          <input onChange={handleImageUpload} id='file-upload' type='file' />
-          {!imageSrc ? (
+        <StyledFileUpload htmlFor='file-upload' hasImage={!!previewImageSrc}>
+          <input onChange={handleImagePreview} id='file-upload' type='file' />
+          {!previewImageSrc ? (
             <>
               <IconPlus />
               <span>이미지 등록</span>
             </>
           ) : (
             <Image
-              src={imageSrc}
+              src={previewImageSrc}
               width={0}
               height={0}
               sizes='100vw'

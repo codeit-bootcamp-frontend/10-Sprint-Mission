@@ -2,19 +2,10 @@ import Image from 'next/image';
 import Button from '@/src/components/Button';
 import styles from './Boards.module.css';
 import searchSvg from '@/src/assets/ic_search.svg';
-import { getBoards } from '@/src/apis/boardsApi';
-import type {
-  Board,
-  GetBoardsResponse,
-  GetBoardsRequestParams,
-} from '@/src/apis/boardTypes';
-import { useApi } from '@/src/hooks/useApi';
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import BoardCard from './BoardCard';
 import Link from 'next/link';
 import { useBoards } from '@/src/hooks/useBoards';
-
-const PAGE_SIZE = 10;
 
 export default function Boards() {
   const [orderBy, setOrderBy] = useState('recent');

@@ -18,6 +18,7 @@ const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
     };
     return (
         <BS.BestCardContainer onClick={handleCardClick}>
+
             <BS.BestBadgeContainer>
                 <BS.MedalIcon src={MedalIcon} alt="메달아이콘" />
                 <BS.BestText>Best</BS.BestText>
@@ -40,7 +41,6 @@ const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
                 <BS.PostDate>{formatDate(item.createdAt)}</BS.PostDate>
             </BS.SubContainer>
         </BS.BestCardContainer>
-
     );
 }
 export default BestPostCard;

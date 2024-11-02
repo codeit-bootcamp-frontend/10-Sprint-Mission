@@ -1,9 +1,10 @@
 import { ArticleProps } from "@/types/articleTypes";
 import Container from "../layout/Container";
-import styles from "./Board.module.css";
 import ArticleImage from "./ArticleImage";
 import LikeCount from "../ui/LikeCount";
 import AuthorInfo from "../ui/AuthorInfo";
+import { formatDate } from "@/lib/formatDate";
+import styles from "./Board.module.css";
 
 const Board = ({ board }: { board: ArticleProps }) => {
   return (
@@ -16,7 +17,7 @@ const Board = ({ board }: { board: ArticleProps }) => {
         <AuthorInfo
           className={styles.authorInfo}
           nickname={board.writer.nickname}
-          date={board.createdAt}
+          date={formatDate(board.createdAt)}
         />
         <LikeCount className={styles.like} likeCount={board.likeCount} />
       </div>

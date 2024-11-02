@@ -1,0 +1,41 @@
+.form {
+  margin-bottom: 40px;
+}
+
+.textarea > textarea {
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  height: 104px;
+}
+
+.textarea > label {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.625rem;
+  color: var(--gary800);
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+  padding: 8px 23px;
+  line-height: 1.625rem;
+  margin-top: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .textarea {
+    gap: 9px;
+  }
+
+  .textarea > textarea {
+    font-size: 1rem;
+    line-height: 1.625rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .form {
+    margin-bottom: 24px;
+  }
+}

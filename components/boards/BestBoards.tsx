@@ -5,17 +5,27 @@ import useResize from "@/hooks/useResize";
 import { fetchData } from "@/lib/fetchData";
 import { ArticleProps } from "@/types/articleTypes";
 import styles from "./BestBoards.module.css";
+import Link from "next/link";
 
-const getPageSize = (width: number) => {
-  if (width < 768) return 1;
-  if (width < 1200) return 2;
+const PAGE_SIZE_BY_SCREEN = {
+  PC: 3,
+  TABLET: 2,
+  MOBILE: 1,
+} as const;
 
-  return 3;
+type PageSizeType =
+  (typeof PAGE_SIZE_BY_SCREEN)[keyof typeof PAGE_SIZE_BY_SCREEN];
+
+const getPageSize = (width: number): PageSizeType => {
+  if (width < 768) return PAGE_SIZE_BY_SCREEN.MOBILE;
+  if (width < 1200) return PAGE_SIZE_BY_SCREEN.TABLET;
+
+  return PAGE_SIZE_BY_SCREEN.PC;
 };
 
 const BestBoards = () => {
   const [articles, setArticles] = useState([]);
-  const [pageSize, setPageSize] = useState<number>();
+  const [pageSize, setPageSize] = useState<PageSizeType>();
   const viewportWidth = useResize();
   const BASE_URL = "https://panda-market-api.vercel.app/articles";
 
@@ -41,7 +51,9 @@ const BestBoards = () => {
       <h2>베스트 게시글</h2>
       <Container className={styles.container}>
         {articles.map((article: ArticleProps) => (
-          <BestBoard key={article.id} article={article} />
+          <Link key={article.id} href={`/board/${article.id}`}>
+            <BestBoard article={article} />
+          </Link>
         ))}
       </Container>
     </section>

@@ -62,14 +62,14 @@ const AddBoardForm = () => {
       url = response.url;
     }
 
-    await fetchData(ARTICLE_URL, {
+    const { id } = await fetchData(ARTICLE_URL, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
       body: url ? { image: url, ...otherValues } : { ...otherValues },
     });
-    router.push("/boards");
+    router.push(`/board/${id}`);
   };
 
   const checkFormEmpty = (values: Board) => {

@@ -29,7 +29,7 @@ const Textarea = ({
         id={name}
         placeholder={placeholder}
         onChange={onChange}
-        defaultValue={value}
+        value={value}
       ></textarea>
     </Container>
   );

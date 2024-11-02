@@ -83,7 +83,9 @@ const BoardList = ({ initialBoards, initialKeyword }: BoardListProps) => {
       </div>
       <Container className={styles.container}>
         {boards.map((board: ArticleProps) => (
-          <Board key={board.id} board={board} />
+          <Link key={board.id} href={`/board/${board.id}`}>
+            <Board board={board} />
+          </Link>
         ))}
       </Container>
       {isLoading ? <p>Loading...</p> : <div id="end-of-list"></div>}

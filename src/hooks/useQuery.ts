@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 export function useQuery<Params extends object, Response extends object>(
   fetchFunc: (paramObj: Params) => Promise<Response>,
@@ -28,10 +28,6 @@ export function useQuery<Params extends object, Response extends object>(
   );
 
   const update = () => wrappedFunc(paramObj);
-
-  useEffect(() => {
-    wrappedFunc(paramObj);
-  }, [wrappedFunc, paramObj]);
 
   return { isLoading, error, data, update };
 }

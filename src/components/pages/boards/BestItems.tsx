@@ -15,7 +15,7 @@ export default function BestItems() {
     pageSize: pageSizeTable[media],
     orderBy: "like",
   });
-  const { isLoading, error, data } = useQuery<
+  const { isLoading, error, data, update } = useQuery<
     GetArticlesParams,
     GetArticlesRes
   >(getArticles, paramObj);
@@ -25,7 +25,8 @@ export default function BestItems() {
       ...prevObj,
       pageSize: pageSizeTable[media],
     }));
-  }, [media]);
+    update();
+  }, [media, update]);
 
   return (
     <section className={styles.section}>

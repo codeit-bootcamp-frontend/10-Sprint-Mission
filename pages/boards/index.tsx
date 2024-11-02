@@ -1,6 +1,6 @@
 import { GetStaticProps } from 'next';
 import BestBoards from './components/BestBoards';
-import type { Board } from '@/src/apis/boardTypes';
+import type { Board, GetBoardsRequestParams } from '@/src/apis/boardTypes';
 import { getBoards } from '@/src/apis/boardsApi';
 import Boards from './components/Boards';
 

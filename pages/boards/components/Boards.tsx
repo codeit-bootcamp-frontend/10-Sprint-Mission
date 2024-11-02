@@ -20,6 +20,12 @@ export default function Boards() {
             placeholder="검색할 상품을 입력해주세요"
           />
         </div>
+        <div>
+          <select className={styles.options} id="options">
+            <option value="recent">최신순</option>
+            <option value="like">좋아요순</option>
+          </select>
+        </div>
       </div>
     </div>
   );

@@ -27,7 +27,7 @@ export interface ItemList {
 
 export default function PostList() {
     const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
-    const [order, setOrder] = useState('recent');
+    const [order, setOrder] = useState<'recent' | 'like'>('recent');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [search, setSearch] = useState('');
 

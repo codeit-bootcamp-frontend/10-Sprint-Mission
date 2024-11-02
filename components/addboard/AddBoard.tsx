@@ -46,10 +46,14 @@ export default function AddBoard() {
         const file: File | null = e.target.files?.[0] || null;
 
         if (file) {
+            if (values.image) {
+                setErrorMessage("이미지 파일이 이미 선택되었습니다.");
+                return;
+            }
             onChange("image", file);
             const objectUrl = URL.createObjectURL(file); 
             setPreview(objectUrl); 
-            setErrorMessage("");
+          
         } else {
             onChange("image", null);
             setPreview(null);
@@ -134,6 +138,7 @@ export default function AddBoard() {
                                 <AS.DeleteButton icon={faXmark} onClick={handleClearClick} />
                             )}
                         </AS.Upload>
+                        
                     </AS.ImgBox>
                     {errorMessage && <AS.ErrorMessage>{errorMessage}</AS.ErrorMessage>}
                 </AS.InputContainer>

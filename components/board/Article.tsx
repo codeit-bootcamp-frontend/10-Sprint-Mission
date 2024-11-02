@@ -5,7 +5,7 @@ import LikeIcon from '@/components/common/images/ic_heart.png';
 import ProfileImg from '@/components/common/images/profile.png';
 import { getArticleDetail } from '../api/api';
 import formatDate from '../common/function/formatDate';
-export interface Item {
+export interface Article {
     id: number;
     title: string;
     content: string;
@@ -23,7 +23,7 @@ export interface Writer {
 export default function Article() {
     const router = useRouter();
     const id = router.query['id'];
-    const [item, setItem] = useState<Item | undefined>(undefined);
+    const [item, setItem] = useState<Article | undefined>(undefined);
 
     const fetchArticleData = useCallback(async () => {
         try {

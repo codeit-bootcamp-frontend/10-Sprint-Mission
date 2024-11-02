@@ -182,4 +182,8 @@ export const DeleteButton = styled(FontAwesomeIcon)`
     position:relative;
     bottom:270px;
     left:240px;
+    @media(max-width:1199px) {
+        bottom:160px;
+        left:130px;
+    }
 `;

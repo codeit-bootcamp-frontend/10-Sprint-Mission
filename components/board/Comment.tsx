@@ -17,7 +17,7 @@ export interface Comment {
     id: number;
 }
 
-export interface CommentListResponse {
+export interface CommentList{
     nextCursor: number;
     list: Comment[];
 }
@@ -27,7 +27,7 @@ export default function Comment() {
     const [isValid, setIsValid] = useState(false);
     const router = useRouter();
     const id = router.query['id'];
-    const [itemList, setItemList] = useState<CommentListResponse>({ nextCursor: 0, list: [] });
+    const [itemList, setItemList] = useState<CommentList>({ nextCursor: 0, list: [] });
     const LIMIT = 6;
 
     const handleTextareaChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {

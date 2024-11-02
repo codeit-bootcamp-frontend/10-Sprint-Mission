@@ -1,4 +1,4 @@
-export type Article = {
+export interface Article {
   updatedAt: Date;
   createdAt: Date;
   likeCount: number;
@@ -9,7 +9,7 @@ export type Article = {
   id: number;
 }
 
-export type ArticleListResponse = {
+export interface ArticleListResponse {
   totalCount: number;
   list: Article[];
 }

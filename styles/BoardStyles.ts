@@ -17,7 +17,7 @@ export const MainContent = styled.div`
   min-height: 72px;
 `;
 
-export const ArticleInfo = styled(SpaceBetween)`
+export const ArticleInfoWrapper = styled(SpaceBetween)`
   margin-top: 16px;
 `;
 

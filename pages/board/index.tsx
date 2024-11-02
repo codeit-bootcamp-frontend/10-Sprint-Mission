@@ -1,15 +1,20 @@
 import React from "react";
-import BestArticlesSection from "../../components/boards/BestArticlesSection";
-import AllArticlesSection from "../../components/boards/AllArticlesSection";
+import styled from "styled-components";
+import { Container } from "@/styles/CommonStyles";
+import BestArticlesSection from "@/components/board/BestArticlesSection";
+import AllArticlesSection from "@/components/board/AllArticlesSection";
 import { GetStaticProps } from "next";
 import { Article, ArticleListResponse } from "@/types/articleTypes";
-import { PageContainer } from "./index.styles";
-import axios from "axios";
+
+const PageContainer = styled(Container)`
+  gap: 40px;
+`;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get<ArticleListResponse>(
+  const response = await fetch(
     `https://panda-market-api.vercel.app/articles?orderBy=recent`
   );
+  const data: ArticleListResponse = await response.json();
 
   return {
     props: {
@@ -18,11 +23,11 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-type BoardsPageProps = {
+interface BoardPageProps {
   initialArticles: Article[];
 }
 
-export default function BoardsPage({ initialArticles }: BoardsPageProps) {
+export default function BoardPage({ initialArticles }: BoardPageProps) {
   return (
     <PageContainer>
       <BestArticlesSection />

@@ -1,5 +1,5 @@
+import styled from "styled-components";
 import {
-  FlexRowCentered,
   LineDivider,
   SectionHeader,
   SectionTitle,
@@ -7,39 +7,38 @@ import {
 } from "@/styles/CommonStyles";
 import { Article, ArticleSortOption } from "@/types/articleTypes";
 import {
-  ArticleInfo,
+  ArticleInfoWrapper,
   ArticleThumbnail,
   ArticleTitle,
   ImageWrapper,
   MainContent,
-  Timestamp,
-} from "@/styles/BoardsStyles";
+} from "@/styles/BoardStyles";
 import Image from "next/image";
-import { format } from "date-fns";
+import Link from "next/link";
 import SearchBar from "@/components/ui/SearchBar";
 import DropdownMenu from "@/components/ui/DropdownMenu";
 import { useEffect, useState } from "react";
 import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 import EmptyState from "@/components/ui/EmptyState";
 import { useRouter } from "next/router";
+import ArticleInfo from "@/components/board/ArticleInfo";
 
-import { ItemContainer, ArticleInfoDiv, AddArticleLink } from "./AllArticlesSection.styles";
-import axios from "axios";
+const ItemContainer = styled(Link)``;
 
-type ArticleItemProps = {
+interface ArticleItemProps {
   article: Article;
 }
 
-const ArticleItem = ({ article }: ArticleItemProps) => {
-  const dateString = format(article.createdAt, "yyyy. MM. dd");
-
+const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
   return (
     <>
-      <ItemContainer href={`/boards/${article.id}`}>
+      <ItemContainer href={`/board/${article.id}`}>
         <MainContent>
           <ArticleTitle>{article.title}</ArticleTitle>
           {article.image && (
             <ArticleThumbnail>
+              {/* Next Image의 width, height을 설정해줄 것이 아니라면 부모 div 내에서 fill, objectFit 설정으로 비율 유지하면서 유연하게 크기 조정 */}
+              {/* 프로젝트 내에 있는 이미지 파일을 사용하는 게 아니라면 next.config.mjs에 이미지 주소 설정 필요 */}
               <ImageWrapper>
                 <Image
                   fill
@@ -52,13 +51,11 @@ const ArticleItem = ({ article }: ArticleItemProps) => {
           )}
         </MainContent>
 
-        <ArticleInfo>
-          <ArticleInfoDiv>
-            {article.writer.nickname} <Timestamp>{dateString}</Timestamp>
-          </ArticleInfoDiv>
+        <ArticleInfoWrapper>
+          <ArticleInfo article={article} />
 
           <LikeCountDisplay count={article.likeCount} iconWidth={24} gap={8} />
-        </ArticleInfo>
+        </ArticleInfoWrapper>
       </ItemContainer>
 
       <LineDivider $margin="24px 0" />
@@ -66,11 +63,15 @@ const ArticleItem = ({ article }: ArticleItemProps) => {
   );
 };
 
-type AllArticlesSectionProps = {
+const AddArticleLink = styled(StyledLink)``;
+
+interface AllArticlesSectionProps {
   initialArticles: Article[];
 }
 
-const AllArticlesSection = ({initialArticles}: AllArticlesSectionProps) => {
+const AllArticlesSection: React.FC<AllArticlesSectionProps> = ({
+  initialArticles,
+}) => {
   const [orderBy, setOrderBy] = useState<ArticleSortOption>("recent");
   const [articles, setArticles] = useState(initialArticles);
 
@@ -96,21 +97,23 @@ const AllArticlesSection = ({initialArticles}: AllArticlesSectionProps) => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      let url = `https://panda-market-api.vercel.app/articles`;
-      const params = {
-        orderBy,
-        ...(keyword.trim() && { keyword })
-      };
-      const { data } = await axios.get(url, { params });
+      let url = `https://panda-market-api.vercel.app/articles?orderBy=${orderBy}`;
+      if (keyword.trim()) {
+        url += `&keyword=${encodeURIComponent(keyword)}`;
+      }
+      const response = await fetch(url);
+      const data = await response.json();
       setArticles(data.list);
     };
 
     fetchArticles();
   }, [orderBy, keyword]);
+
   return (
     <div>
       <SectionHeader>
         <SectionTitle>게시글</SectionTitle>
+        {/* 참고: 임의로 /addArticle 이라는 pathname으로 게시글 작성 페이지를 추가했어요 */}
         <AddArticleLink href="/addArticle">글쓰기</AddArticleLink>
       </SectionHeader>
 

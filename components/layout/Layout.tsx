@@ -1,14 +1,15 @@
 import React, { ReactNode } from "react";
-import Header from "./Header";
+import Header from "@/components/layout/Header";
 import { useRouter } from "next/router";
 
-type LayoutProps = {
+interface LayoutProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const router = useRouter();
-  const isAuthPage = router.pathname === "/login" || router.pathname === "/signup";
+  const isAuthPage =
+    router.pathname === "/login" || router.pathname === "/signup";
 
   return (
     <>

@@ -1,6 +1,3 @@
-/**
- * Defines a set of colors and media-query used throughout the application.
- */
 const colors = {
   gray: {
     900: "#111827",

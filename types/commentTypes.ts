@@ -1,4 +1,4 @@
-export type ProductComment = {
+export interface Comment {
   writer: {
     image: string;
     nickname: string;
@@ -10,7 +10,7 @@ export type ProductComment = {
   id: number;
 }
 
-export type ProductCommentListResponse = {
+export interface CommentListResponse {
   nextCursor: number;
-  list: ProductComment[];
+  list: Comment[];
 }

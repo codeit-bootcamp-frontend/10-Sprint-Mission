@@ -1,35 +1,57 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import Image from "next/image";
+import Link from "next/link";
 import { format } from "date-fns";
-
 import {
+  FlexRowCentered,
   SectionHeader,
   SectionTitle,
 } from "@/styles/CommonStyles";
 import { Article, ArticleListResponse } from "@/types/articleTypes";
 import {
-  ArticleInfo,
   ArticleInfoDiv,
+  ArticleInfoWrapper,
   ArticleThumbnail,
   ArticleTitle,
   ImageWrapper,
   MainContent,
   Timestamp,
-} from "@/styles/BoardsStyles";
+} from "@/styles/BoardStyles";
 import MedalIcon from "@/public/images/icons/ic_medal.svg";
 import useViewport from "@/hooks/useViewport";
 import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 
-import { CardContainer, ContentWrapper, BestSticker, BestArticlesCardSection } from "./BestArticlesSection.styles";
-import axios from "axios";
+const CardContainer = styled(Link)`
+  background-color: var(--gray-50);
+  border-radius: 8px;
+`;
+
+const ContentWrapper = styled.div`
+  padding: 16px 24px;
+`;
+
+const BestSticker = styled(FlexRowCentered)`
+  background-color: var(--blue);
+  border-radius: 0 0 32px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  gap: 4px;
+  padding: 6px 24px 8px 24px;
+  margin-left: 24px;
+  display: inline-flex;
+`;
 
 const BestArticleCard = ({ article }: { article: Article }) => {
   const dateString = format(article.createdAt, "yyyy. MM. dd");
 
   return (
-    <CardContainer href={`/boards/${article.id}`}>
+    <CardContainer href={`/board/${article.id}`}>
       <BestSticker>
-        <MedalIcon alt="베스트 게시글" />Best</BestSticker>
+        <MedalIcon alt="베스트 게시글" />
+        Best
+      </BestSticker>
 
       <ContentWrapper>
         <MainContent>
@@ -48,24 +70,33 @@ const BestArticleCard = ({ article }: { article: Article }) => {
           )}
         </MainContent>
 
-        <ArticleInfo>
+        <ArticleInfoWrapper>
           <ArticleInfoDiv>
             {article.writer.nickname}
             <LikeCountDisplay count={article.likeCount} fontSize={14} />
           </ArticleInfoDiv>
           <Timestamp>{dateString}</Timestamp>
-        </ArticleInfo>
+        </ArticleInfoWrapper>
       </ContentWrapper>
     </CardContainer>
   );
 };
 
-/**
- * Determines appropriate best articles section counts based on the viewport width max 3.
- *
- * @param width - The current viewport width in pixels.
- * @returns The recommended page size (1:Mobile, 2:Tablet, or 3:Desktop) based on the viewport width.
- */
+const BestArticlesCardSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  @media ${({ theme }) => theme.mediaQuery.tablet} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  @media ${({ theme }) => theme.mediaQuery.desktop} {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+`;
+
 const getPageSize = (width: number): number => {
   if (width < 768) {
     return 1;
@@ -79,7 +110,6 @@ const getPageSize = (width: number): number => {
 const BestArticlesSection = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [pageSize, setPageSize] = useState<number | null>(null);
-
   const viewportWidth = useViewport();
 
   useEffect(() => {
@@ -92,10 +122,11 @@ const BestArticlesSection = () => {
 
       const fetchBestArticles = async (size: number) => {
         try {
-          const response = await axios.get<ArticleListResponse>(
+          const response = await fetch(
             `https://panda-market-api.vercel.app/articles?orderBy=like&pageSize=${size}`
           );
-          setArticles(response.data.list);
+          const data: ArticleListResponse = await response.json();
+          setArticles(data.list);
         } catch (error) {
           console.error("Failed to fetch best articles:", error);
         }

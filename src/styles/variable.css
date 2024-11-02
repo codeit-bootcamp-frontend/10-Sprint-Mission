@@ -44,4 +44,7 @@
   --line-md: 24px;
   --line-sm: 22px;
   --line-xs: 18px;
+
+  /* Font - Weight */
+  --semibold: 600;
 }

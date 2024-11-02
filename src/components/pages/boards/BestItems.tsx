@@ -37,8 +37,8 @@ export default function BestItems() {
       </div>
       {!isLoading && !error && data && (
         <div className={styles.body}>
-          {data.list.map((item) => (
-            <BestItem key={item.id} data={item} />
+          {data.list.map((article) => (
+            <BestItem key={article.id} article={article} />
           ))}
         </div>
       )}

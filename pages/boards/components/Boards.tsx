@@ -55,10 +55,11 @@ export default function Boards() {
       { threshold: 0.5 }
     );
 
-    if (observerRef.current) observer.observe(observerRef.current);
+    const current = observerRef.current;
+    if (current) observer.observe(current);
 
     return () => {
-      if (observerRef.current) observer.unobserve(observerRef.current);
+      if (current) observer.unobserve(current);
     };
   }, [isFetching, page, orderBy, hasMore]);
 

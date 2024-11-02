@@ -1,14 +1,13 @@
 import { useState, useCallback } from "react";
 
 export function useQuery<Params extends object, Response extends object>(
-  fetchFunc: (paramObj: Params) => Promise<Response>,
-  paramObj: Params
+  fetchFunc: (paramObj: Params) => Promise<Response>
 ) {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<Error | null>(null);
   const [data, setData] = useState<Response | null>(null);
 
-  const wrappedFunc = useCallback(
+  const query = useCallback(
     async (paramObj: Params) => {
       try {
         setIsLoading(true);
@@ -27,7 +26,5 @@ export function useQuery<Params extends object, Response extends object>(
     [fetchFunc]
   );
 
-  const update = () => wrappedFunc(paramObj);
-
-  return { isLoading, error, data, update };
+  return { isLoading, error, data, query };
 }

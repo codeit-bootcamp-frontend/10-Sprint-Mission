@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
+import { useMedia } from "@/hooks/useMedia";
 import { getArticles } from "@/apis/apis";
 import { GetArticlesParams, GetArticlesRes } from "@/apis/apis.type";
 import { useQuery } from "@/hooks/useQuery";
@@ -9,24 +9,26 @@ import styles from "./BestItems.module.css";
 const pageSizeTable = { PC: 3, TABLET: 2, MOBILE: 1 };
 
 export default function BestItems() {
-  const media = useMediaQuery();
-  const [paramObj, setParamObj] = useState<GetArticlesParams>({
-    page: 1,
-    pageSize: pageSizeTable[media],
-    orderBy: "like",
-  });
-  const { isLoading, error, data, update } = useQuery<
+  const media = useMedia();
+  const [paramObj, setParamObj] = useState<GetArticlesParams>();
+  const { isLoading, error, data, query } = useQuery<
     GetArticlesParams,
     GetArticlesRes
-  >(getArticles, paramObj);
+  >(getArticles);
 
   useEffect(() => {
-    setParamObj((prevObj) => ({
-      ...prevObj,
-      pageSize: pageSizeTable[media],
-    }));
-    update();
-  }, [media, update]);
+    if (!media) return;
+    setParamObj((prevObj) =>
+      !prevObj
+        ? { page: 1, pageSize: pageSizeTable[media], orderBy: "like" }
+        : { ...prevObj, pageSize: pageSizeTable[media] }
+    );
+  }, [media]);
+
+  useEffect(() => {
+    if (!paramObj) return;
+    query(paramObj);
+  }, [query, paramObj]);
 
   return (
     <section className={styles.section}>

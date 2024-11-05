@@ -3,12 +3,11 @@ import styles from './Button.module.css';
 
 interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  className?: string;
 }
 
 export default function Button({
   children,
-  className,
+  className = '',
   ...props
 }: PrimaryButtonProps) {
   return (

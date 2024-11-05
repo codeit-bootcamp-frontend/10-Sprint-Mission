@@ -7,7 +7,7 @@ export default function GlobalLayout({ children }: { children: ReactNode }) {
     <>
       <Header />
       <main className={styles.main}>
-        <div className={'max-container'}>{children}</div>
+        <div className={styles.maxContainer}>{children}</div>
       </main>
     </>
   );

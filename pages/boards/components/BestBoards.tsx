@@ -1,4 +1,4 @@
-import { Board } from '@/src/apis/boardTypes';
+import type { Board } from '@/src/apis/boardTypes';
 import BestBoardCard from './BestBoardCard';
 import styles from './BestBoards.module.css';
 

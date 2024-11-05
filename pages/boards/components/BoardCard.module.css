@@ -1,0 +1,74 @@
+.boardCard {
+  background: #fcfcfc;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.boardCard::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--Secondary-200);
+}
+
+.contentContainer {
+  display: flex;
+  gap: 8px;
+  min-height: 72px;
+}
+
+.title {
+  color: var(--Secondary-800);
+  font-size: 20px;
+  font-weight: 600;
+
+  flex: 1;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 72px;
+  height: 72px;
+
+  border-radius: 6px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+  background: #fff;
+}
+
+.additionalInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.infoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nickname {
+  color: var(--Secondary-600, #4b5563);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.date {
+  color: var(--Secondary-400, #9ca3af);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.likeCountWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--Secondary-500, #6b7280);
+  font-size: 16px;
+  font-weight: 400;
+}

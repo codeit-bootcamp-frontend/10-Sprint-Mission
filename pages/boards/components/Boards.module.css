@@ -11,10 +11,16 @@
   font-weight: 700;
 }
 
+.filter {
+  display: flex;
+  gap: 20px;
+}
+
 .searchBar {
   padding: 9px 20px 9px 16px;
   border-radius: 12px;
   background: var(--Secondary-100, #f3f4f6);
+  flex: 1;
 
   display: flex;
   align-items: center;
@@ -29,6 +35,27 @@
 
 .searchData::placeholder {
   color: var(--Secondary-400, #9ca3af);
+}
+
+.options {
+  height: 100%;
+  padding: 12px 20px;
+  padding-right: 50px;
+
+  border-radius: 12px;
+  border: 1px solid var(--Secondary-200, #e5e7eb);
+
+  appearance: none;
+  background: url('../../../src/assets/ic_arrow_down.svg') no-repeat right 10px
+    center;
+}
+
+.boardsContainer {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
 }
 
 /* tablet */

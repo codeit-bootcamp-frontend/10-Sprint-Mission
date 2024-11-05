@@ -99,3 +99,26 @@ export const LineDivider = styled.hr<{ $margin?: string }>`
   background-color: var(--gray-200);
   margin: ${(props) => props.$margin || "16px 0"};
 `;
+
+export const TextArea = styled.textarea`
+  background-color: ${({ theme }) => theme.colors.gray[100]};
+  border: none;
+  border-radius: 12px;
+  padding: 16px 24px;
+  height: 104px;
+  resize: none;
+
+  &::placeholder {
+    color: ${({ theme }) => theme.colors.gray[400]};
+    font-size: 14px;
+    line-height: 24px;
+
+    @media ${({ theme }) => theme.mediaQuery.tablet} {
+      font-size: 16px;
+    }
+  }
+
+  &:focus {
+    outline-color: ${({ theme }) => theme.colors.blue.primary};
+  }
+`;

@@ -1,0 +1,8 @@
+GET https://panda-market-api.vercel.app/articles
+
+###
+
+GET https://panda-market-api.vercel.app/articles?orderBy=like&pageSize=10&page=1
+
+###
+

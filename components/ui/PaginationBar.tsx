@@ -26,17 +26,17 @@ const PaginationButton = styled.button<{ $isActive?: boolean }>`
   opacity: ${({ disabled }) => (disabled ? 0.5 : 1)};
 `;
 
-type PaginationBarProps = {
+interface PaginationBarProps {
   totalPageNum: number;
   activePageNum: number;
   onPageChange: (pageNumber: number) => void;
 }
 
-const PaginationBar = ({
+const PaginationBar: React.FC<PaginationBarProps> = ({
   totalPageNum,
   activePageNum,
   onPageChange,
-}: PaginationBarProps) => {
+}) => {
   const maxVisiblePages = 5;
   let startPage: number;
 

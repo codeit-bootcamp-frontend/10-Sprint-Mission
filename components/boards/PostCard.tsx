@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import * as PS from './Styled';
 import DefaultImg from '../common/images/default.png';
 import LikeIcon from '../common/images/ic_heart.png';
@@ -11,8 +12,14 @@ interface ItemCardProps {
 }
 
 const PostCard: React.FC<ItemCardProps> = ({ item }) => {
+    const router = useRouter();
+
+    const handleCardClick = () => {
+        router.push(`/board/${item.id}`);
+    };
+
     return (
-        <PS.PostCardContainer>
+        <PS.PostCardContainer onClick={handleCardClick}>
             <PS.PostContentContainer>
                 <PS.BestPostContentText>{item.title}</PS.BestPostContentText>
                 <PS.BestPostImg 
@@ -26,7 +33,6 @@ const PostCard: React.FC<ItemCardProps> = ({ item }) => {
                 <PS.InfoContainer>
                     <PS.ProfileImg 
                         src={ProfileImg} 
-
                         alt="프로필 이미지" 
                     />
                     <PS.Writer>{item.writer.nickname}</PS.Writer>

@@ -2,7 +2,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/router';
 import * as BS from './Styled';
 import PostCard from './PostCard';
-import { getArticles } from '@/pages/api/api';
+import { getArticles } from '@/components/api/api';
+
 
 export interface Item {
     id: number;
@@ -27,8 +28,7 @@ export interface ItemList {
 
 export default function PostList() {
     const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
-    const [pageSize, setPageSize] = useState(4); 
-    const [order, setOrder] = useState('recent');
+    const [order, setOrder] = useState<'recent' | 'like'>('recent');
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [search, setSearch] = useState('');
 
@@ -56,7 +56,6 @@ export default function PostList() {
             const totalCount = articles.totalCount;
             const allArticles = await getArticles({ orderBy: order, pageSize: totalCount, keyword:search});
             setItemList(allArticles);
-            console.log(allArticles);
         } catch (error) {
             console.error('Error fetching articles:', error);
         }

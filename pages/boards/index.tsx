@@ -1,5 +1,7 @@
 import React from 'react';
-import * as BS from "../../components/_styled/boardStyled";
+import { useRouter } from 'next/router'; 
+import * as BS from "../../components/_styled/boardsStyled";
+
 import Header from "@/components/layout/Header";
 import BestPost from '@/components/boards/BestPost';
 import PostList from '@/components/boards/PostList';

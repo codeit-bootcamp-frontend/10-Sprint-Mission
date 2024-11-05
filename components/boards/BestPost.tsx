@@ -2,15 +2,7 @@ import React, { useState, useEffect, useCallback} from 'react';
 import * as BS from './Styled';
 import BestPostCard from './BestPostCard';
 import { Item, ItemList } from './PostList';
-import { getArticles } from '@/pages/api/api';
-
-interface ItemCardProps {
-    item: Item; 
-}
-
-interface ItemListProps {
-    itemList : ItemList;
-}
+import { getArticles } from '@/components/api/api';
 
 export default function BestPost() {
     const [itemList, setItemList] = useState<ItemList>({ totalCount: 0, list: [] });
@@ -20,7 +12,6 @@ export default function BestPost() {
         try {
             const articles = await getArticles({ orderBy: order, pageSize });
             setItemList(articles); 
-            console.log(articles);
         } catch (error) {
             console.error('Error fetching articles:', error);
         }

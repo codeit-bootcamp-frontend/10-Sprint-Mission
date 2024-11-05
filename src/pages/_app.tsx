@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import Head from "next/head";
+import { MediaProvider } from "@/store/MediaContext";
 import Layout from "@/components/layout/Layout";
 import "@/styles/reset.css";
 import "@/styles/variable.css";
@@ -23,13 +24,15 @@ export default function App({ Component, pageProps }: MyAppProps) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      {Component.isNotLayout ? (
-        <Component {...pageProps} />
-      ) : (
-        <Layout>
+      <MediaProvider>
+        {Component.isNotLayout ? (
           <Component {...pageProps} />
-        </Layout>
-      )}
+        ) : (
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        )}
+      </MediaProvider>
     </>
   );
 }

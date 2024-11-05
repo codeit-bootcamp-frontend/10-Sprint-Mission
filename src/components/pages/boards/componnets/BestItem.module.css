@@ -2,6 +2,39 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding: 0 24px 16px;
+  border-radius: 8px;
+  background-color: var(--gray-50);
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  width: 100px;
+  height: 30px;
+  border-radius: 0 0 15px 15px;
+  background-color: var(--blue-100);
+  font-size: var(--size-lg);
+  font-weight: var(--semibold);
+  color: white;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: var(--size-xl);
+  font-weight: var(--semibold);
+}
+@media (max-width: 1199px) {
+  .title {
+    font-size: var(--size-2gl);
+  }
 }
 
 .imageWrapper {
@@ -16,29 +49,30 @@
   object-fit: contain;
 }
 
-.content {
+.info {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.title {
+  align-items: center;
+  gap: 8px;
   font-size: var(--size-md);
 }
 
-.price {
-  font-size: var(--size-lg);
-  font-weight: bold;
+.nickname {
+  color: var(--gray-600);
 }
 
 .like {
+  flex-grow: 1;
   display: flex;
   align-items: center;
   gap: 4px;
-  font-size: var(--size-xs);
+  color: var(--gray-500);
 }
 
 .likeIcon {
   width: 16px;
   height: 16px;
+}
+
+.date {
+  color: var(--gray-400);
 }

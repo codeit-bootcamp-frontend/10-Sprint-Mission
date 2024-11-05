@@ -3,26 +3,18 @@ import styles from "./Container.module.css";
 
 interface ContainerProps {
   className?: string;
-  page?: boolean;
+  isPage?: boolean;
 }
 
 export default function Container({
   className = "",
-  page,
+  isPage,
   children,
   ...props
 }: PropsWithChildren<ContainerProps>) {
   const classNames = `${styles.container} ${
-    page ? styles.page : ""
+    isPage ? styles.page : ""
   } ${className}`;
-
-  if (page) {
-    return (
-      <main className={classNames} {...props}>
-        {children}
-      </main>
-    );
-  }
 
   return (
     <div className={classNames} {...props}>

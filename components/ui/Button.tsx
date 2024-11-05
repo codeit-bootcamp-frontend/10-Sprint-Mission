@@ -10,7 +10,8 @@ const Button = ({
   className = "",
   disabled = false,
   children,
-  onClick = () => {},
+  onClick,
+  ...props
 }: PropsWithChildren<ButtonProps>) => {
   return (
     <button

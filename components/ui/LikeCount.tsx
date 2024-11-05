@@ -4,8 +4,8 @@ import styles from "./LikeCount.module.css";
 import Container from "../layout/Container";
 
 interface LikeCountProps {
-  className?: string;
   likeCount: number;
+  className?: string;
 }
 
 const LikeCount = ({ className = "", likeCount }: LikeCountProps) => {

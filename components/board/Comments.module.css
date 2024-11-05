@@ -1,0 +1,48 @@
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.replyEmpty {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.replyEmptyImg {
+  width: 140px;
+  height: 140px;
+}
+
+.replyEmptyMessage {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.625rem;
+  color: var(--gray400);
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .comments {
+    margin-bottom: 56px;
+  }
+
+  .replyEmpty {
+    margin-bottom: 56px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .comments {
+    margin-bottom: 64px;
+  }
+
+  .replyEmpty {
+    margin-bottom: 48px;
+  }
+}

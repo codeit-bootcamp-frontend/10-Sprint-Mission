@@ -1,23 +1,19 @@
 import { MouseEvent, ReactNode, useState } from "react";
 import styles from "./Dropdown.module.css";
 
-export interface DropdownOptions {
-  [key: string]: string;
-}
-
-interface Props {
+interface DropdownProps {
   className: string;
-  options: DropdownOptions;
+  options: Record<string, string>;
   onSelect: (value: string) => void;
   children: ReactNode;
 }
 
 const Dropdown = ({
-  className = "",
-  options = {},
+  className,
+  options,
   onSelect,
   children,
-}: Props) => {
+}: DropdownProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -36,11 +32,11 @@ const Dropdown = ({
       </div>
       {isOpen && (
         <ul className={styles.dropdownMenu}>
-          {Object.keys(options).map((option) => {
+          {Object.entries(options).map(([key, label]) => {
             return (
-              <li key={option}>
-                <button type="button" value={option} onClick={handleSelect}>
-                  {options[option]}
+              <li key={key}>
+                <button type="button" value={key} onClick={handleSelect}>
+                  {label}
                 </button>
               </li>
             );

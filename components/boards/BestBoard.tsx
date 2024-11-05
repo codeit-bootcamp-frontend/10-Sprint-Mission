@@ -6,20 +6,27 @@ import styles from "./BestBoard.module.css";
 import LikeCount from "../ui/LikeCount";
 import { formatDate } from "@/lib/formatDate";
 
-const BestBoard = ({ article }: { article: ArticleProps }) => {
+const BestBoard = ({
+  id,
+  title,
+  image,
+  writer,
+  likeCount,
+  createdAt,
+}: ArticleProps) => {
   return (
     <Container className={styles.container}>
       <Badge />
       <div className={styles.content}>
-        {article.title}
-        <ArticleImage src={article.image} alt={`${article.id} 이미지`} />
+        {title}
+        <ArticleImage src={image} alt={`${id} 이미지`} />
       </div>
       <div className={styles.info}>
         <div className={styles.user}>
-          <div className={styles.nickname}>{article.writer.nickname}</div>
-          <LikeCount likeCount={article.likeCount} />
+          <div className={styles.nickname}>{writer.nickname}</div>
+          <LikeCount likeCount={likeCount} />
         </div>
-        <div className={styles.date}>{formatDate(article.createdAt)}</div>
+        <div className={styles.date}>{formatDate(createdAt)}</div>
       </div>
     </Container>
   );

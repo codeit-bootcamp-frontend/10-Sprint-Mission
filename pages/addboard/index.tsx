@@ -1,9 +1,10 @@
 import axios, { HttpStatusCode } from 'axios';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ChangeEvent, MouseEvent, useState } from 'react';
+import { MouseEvent, useState } from 'react';
 import styled from 'styled-components';
 
+import useImageUpload from '@/hooks/useImageUpload';
 import IconPlus from '@/public/images/icons/ic_plus.svg';
 import { Container, SectionHeader, SectionTitle } from '@/styles/CommonStyles';
 
@@ -11,55 +12,9 @@ const AddBoardPage = () => {
   const router = useRouter();
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [previewImageSrc, setPreviewImageSrc] = useState('');
-  const [imageFile, setImageFile] = useState<File | null>(null);
 
-  const encodeFileToBase64 = (fileBlob: File) => {
-    const reader = new FileReader();
-
-    reader.readAsDataURL(fileBlob);
-
-    return new Promise((resolve) => {
-      reader.onload = () => {
-        if (typeof reader.result === 'string') {
-          setPreviewImageSrc(reader.result);
-        }
-
-        resolve(reader.result);
-      };
-    });
-  };
-
-  const uploadImage = async (file: File): Promise<string | null> => {
-    try {
-      const formData = new FormData();
-      formData.append('image', file);
-
-      const res = await axios.post(
-        'https://panda-market-api.vercel.app/images/upload',
-        formData,
-        {
-          headers: {
-            'Content-Type': 'multipart/form-data',
-            Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
-          },
-        }
-      );
-
-      return res.data.url;
-    } catch (error) {
-      console.error('이미지 업로드에 실패했습니다......', error);
-      return null;
-    }
-  };
-
-  const handleImagePreview = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      const selectedFile = e.target.files[0];
-      setImageFile(selectedFile);
-      encodeFileToBase64(selectedFile);
-    }
-  };
+  const { previewImageSrc, handleImagePreview, uploadImage, imageFile } =
+    useImageUpload();
 
   const formSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -242,7 +197,9 @@ const StyledFileUpload = styled.label<{ $hasImage: boolean }>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: 1px solid ${({ $hasImage, theme }) => ($hasImage ? theme.colors.gray[200] : 'transparent')};
+  border: 1px solid
+    ${({ $hasImage, theme }) =>
+      $hasImage ? theme.colors.gray[200] : 'transparent'};
 `;
 
 export default AddBoardPage;

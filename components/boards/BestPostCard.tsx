@@ -40,7 +40,6 @@ const BestPostCard:React.FC<ItemCardProps> = ({ item }) => {
                 <BS.PostDate>{formatDate(item.createdAt)}</BS.PostDate>
             </BS.SubContainer>
         </BS.BestCardContainer>
-
     );
 }
 export default BestPostCard;

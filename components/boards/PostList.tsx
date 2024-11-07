@@ -4,6 +4,7 @@ import * as BS from './Styled';
 import PostCard from './PostCard';
 import { getArticles } from '@/components/api/api';
 
+
 export interface Item {
     id: number;
     title: string;

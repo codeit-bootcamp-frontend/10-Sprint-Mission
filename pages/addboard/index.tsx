@@ -1,10 +1,11 @@
-import IconPlus from '@/public/images/icons/ic_plus.svg';
-import { Container, SectionHeader, SectionTitle } from '@/styles/CommonStyles';
 import axios, { HttpStatusCode } from 'axios';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { ChangeEvent, MouseEvent, useState } from 'react';
 import styled from 'styled-components';
+
+import IconPlus from '@/public/images/icons/ic_plus.svg';
+import { Container, SectionHeader, SectionTitle } from '@/styles/CommonStyles';
 
 const AddBoardPage = () => {
   const router = useRouter();
@@ -131,7 +132,7 @@ const AddBoardPage = () => {
           />
         </StyledBox>
         <StyledBoxTitle>이미지</StyledBoxTitle>
-        <StyledFileUpload htmlFor='file-upload' hasImage={!!previewImageSrc}>
+        <StyledFileUpload htmlFor='file-upload' $hasImage={!!previewImageSrc}>
           <input onChange={handleImagePreview} id='file-upload' type='file' />
           {!previewImageSrc ? (
             <>
@@ -224,7 +225,7 @@ const StyledBox = styled.div`
   }
 `;
 
-const StyledFileUpload = styled.label<{ hasImage: boolean }>`
+const StyledFileUpload = styled.label<{ $hasImage: boolean }>`
   > input[type='file'] {
     display: none;
   }
@@ -241,8 +242,7 @@ const StyledFileUpload = styled.label<{ hasImage: boolean }>`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border: ${({ hasImage, theme }) =>
-    hasImage ? `1px solid ${theme.colors.gray[200]}` : 'none'};
+  border: 1px solid ${({ $hasImage, theme }) => ($hasImage ? theme.colors.gray[200] : 'transparent')};
 `;
 
 export default AddBoardPage;

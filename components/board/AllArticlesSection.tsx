@@ -1,9 +1,7 @@
-import styled from "styled-components";
 import {
   LineDivider,
   SectionHeader,
   SectionTitle,
-  StyledLink,
 } from "@/styles/CommonStyles";
 import { Article, ArticleSortOption } from "@/types/articleTypes";
 import {
@@ -14,7 +12,6 @@ import {
   MainContent,
 } from "@/styles/BoardStyles";
 import Image from "next/image";
-import Link from "next/link";
 import SearchBar from "@/components/ui/SearchBar";
 import DropdownMenu from "@/components/ui/DropdownMenu";
 import { useEffect, useState } from "react";
@@ -22,8 +19,7 @@ import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 import EmptyState from "@/components/ui/EmptyState";
 import { useRouter } from "next/router";
 import ArticleInfo from "@/components/board/ArticleInfo";
-
-const ItemContainer = styled(Link)``;
+import {  ItemContainer, AddArticleLink } from "@/styles/BoardStyles";
 
 interface ArticleItemProps {
   article: Article;
@@ -60,8 +56,6 @@ const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
     </>
   );
 };
-
-const AddArticleLink = styled(StyledLink)``;
 
 interface AllArticlesSectionProps {
   initialArticles: Article[];

@@ -26,12 +26,11 @@ const InputSection = styled.div`
 const AddArticlePage = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-
   const isSubmitDisabled = !title.trim() || !content.trim();
-
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
+  
   return (
     <Container>
       <form onSubmit={handleSubmit}>

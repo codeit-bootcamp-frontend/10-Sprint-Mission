@@ -1,46 +1,16 @@
-import styled from "styled-components";
 import { FlexRowCentered, LineDivider } from "@/styles/CommonStyles";
 import { Article } from "@/types/articleTypes";
 import SeeMoreIcon from "@/public/images/icons/ic_kebab.svg";
 import ArticleInfo from "@/components/board/ArticleInfo";
 import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
-
-const SectionContainer = styled.div`
-  margin-bottom: 40px;
-
-  @media ${({ theme }) => theme.mediaQuery.tablet} {
-    margin-bottom: 64px;
-  }
-`;
-
-const ArticleHeaderContainer = styled.div`
-  position: relative;
-`;
-
-const SeeMoreButton = styled.button`
-  position: absolute;
-  top: 0;
-  right: 0;
-`;
-
-const Title = styled.h1`
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 16px;
-`;
-
-const ArticleInfoWrapper = styled(FlexRowCentered)`
-  gap: 16px;
-`;
-
-const VerticalDivider = styled.div`
-  border-left: 1px solid var(--gray-200);
-  height: 24px;
-`;
-
-const Content = styled.p`
-  font-size: 16px;
-`;
+import {
+  SectionContainer,
+  ArticleHeaderContainer,
+  SeeMoreButton,
+  Title,
+  ArticleInfoWrapper,
+  VerticalDivider,
+  Content } from  "@/styles/BoardStyles";
 
 interface ArticleContentSectionProps {
   article: Article;

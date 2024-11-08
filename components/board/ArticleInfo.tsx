@@ -1,15 +1,8 @@
-import styled from "styled-components";
 import { FlexRowCentered } from "@/styles/CommonStyles";
 import ProfilePlaceholder from "@/public/images/ui/ic_profile.svg";
 import { Article } from "@/types/articleTypes";
 import { formatDate } from "date-fns";
-import { Timestamp } from "@/styles/BoardStyles";
-
-const Container = styled(FlexRowCentered)`
-  gap: 8px;
-  color: var(--gray-600);
-  font-size: 14px;
-`;
+import { Timestamp, Container } from "@/styles/BoardStyles";
 
 interface ArticleInfoProps {
   article: Article;

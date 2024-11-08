@@ -91,7 +91,7 @@ const AddBoardPage = () => {
           <input onChange={handleImagePreview} id='file-upload' type='file' />
           {!previewImageSrc ? (
             <>
-              <IconPlus />
+              <Image src={IconPlus} alt='icon-plus' />
               <span>이미지 등록</span>
             </>
           ) : (

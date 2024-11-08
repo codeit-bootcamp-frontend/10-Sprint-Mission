@@ -1,8 +1,9 @@
-import Logo from "@/public/images/logo/logo.svg";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styled from "styled-components";
-import { StyledLink } from "@/styles/CommonStyles";
+import Logo from '@/public/images/logo/logo.svg';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import styled from 'styled-components';
+import { StyledLink } from '@/styles/CommonStyles';
+import Image from 'next/image';
 
 const GlobalHeader = styled.header`
   display: flex;
@@ -52,7 +53,7 @@ const NavItem = styled.li`
 const LoginLink = styled(StyledLink)``;
 
 function getLinkStyle(isActive: boolean) {
-  return { color: isActive ? "var(--blue)" : undefined };
+  return { color: isActive ? 'var(--blue)' : undefined };
 }
 
 const Header: React.FC = () => {
@@ -61,22 +62,22 @@ const Header: React.FC = () => {
   return (
     <GlobalHeader>
       <HeaderLeft>
-        <HeaderLogo href="/" aria-label="홈으로 이동">
-          <Logo alt="판다마켓 로고" width="153" />
+        <HeaderLogo href='/' aria-label='홈으로 이동'>
+          <Image src={Logo} alt='leftBtn' width={153} height={51} />
         </HeaderLogo>
 
         <nav>
           <NavList>
             <NavItem>
-              <Link href="/boards" style={getLinkStyle(pathname === "/boards")}>
+              <Link href='/boards' style={getLinkStyle(pathname === '/boards')}>
                 자유게시판
               </Link>
             </NavItem>
             <NavItem>
               <Link
-                href="/items"
+                href='/items'
                 style={getLinkStyle(
-                  pathname.includes("/items") || pathname === "/additem"
+                  pathname.includes('/items') || pathname === '/additem'
                 )}
               >
                 중고마켓
@@ -86,7 +87,7 @@ const Header: React.FC = () => {
         </nav>
       </HeaderLeft>
 
-      <LoginLink href="/login">로그인</LoginLink>
+      <LoginLink href='/login'>로그인</LoginLink>
     </GlobalHeader>
   );
 };

@@ -49,7 +49,8 @@ const BestArticleCard = ({ article }: { article: Article }) => {
   return (
     <CardContainer href={`/boards/${article.id}`}>
       <BestSticker>
-        <MedalIcon alt="베스트 게시글" />
+        {/* <MedalIcon alt="베스트 게시글" /> */}
+        <Image src={MedalIcon} alt="베스트 게시글" />
         Best
       </BestSticker>
 

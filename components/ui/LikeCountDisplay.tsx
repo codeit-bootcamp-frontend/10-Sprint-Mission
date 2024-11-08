@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import HeartIcon from "@/public/images/icons/ic_heart.svg";
 import { FlexRowCentered } from "@/styles/CommonStyles";
+import Image from "next/image";
 
 const LikeCountWrapper = styled(FlexRowCentered)<{
   $fontSize: number;
@@ -37,7 +38,8 @@ const LikeCountDisplay: React.FC<LikeCountDisplayProps> = ({
 
   return (
     <LikeCountWrapper className={className} $fontSize={fontSize} $gap={gap}>
-      <HeartIcon width={iconWidth} alt="좋아요 아이콘" />
+      {/* <HeartIcon width={iconWidth} alt="좋아요 아이콘" /> */}
+      <Image src={HeartIcon} width={iconWidth} alt="좋아요 아이콘"  />
       {displayCount}
     </LikeCountWrapper>
   );

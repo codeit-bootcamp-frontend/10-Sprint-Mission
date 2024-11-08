@@ -126,7 +126,8 @@ const ItemProfileSection: React.FC<ItemProfileSectionProps> = ({ product }) => {
         <MainDetails>
           {/* 참고: 더보기 버튼 기능은 추후 요구사항에 따라 추가 예정 */}
           <SeeMoreButton>
-            <SeeMoreIcon />
+            {/* <SeeMoreIcon /> */}
+            <Image src={SeeMoreIcon} alt="더보기" />
           </SeeMoreButton>
 
           <div>

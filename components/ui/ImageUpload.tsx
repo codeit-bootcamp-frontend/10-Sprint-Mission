@@ -1,8 +1,8 @@
 import { ChangeEvent, useState } from "react";
+import { Label } from "./InputItem";
 import styled, { css } from "styled-components";
-import { Label } from "@/components/ui/InputItem";
-import PlusIcon from "@/public/images/icons/ic_plus.svg";
-import DeleteButton from "@/components/ui/DeleteButton";
+import { ReactComponent as PlusIcon } from "@/public/images/icons/ic_plus.svg";
+import DeleteButton from "./DeleteButton";
 
 const ImageUploadContainer = styled.div`
   display: flex;
@@ -77,7 +77,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ title }) => {
   const [imagePreviewUrl, setImagePreviewUrl] = useState("");
 
   const handleImageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0]; // Optional chaining을 사용해 선택된 파일이 있을 경우에만 접근하도록 안전하게 처리
+    const file = event.target.files?.[0];
 
     if (file) {
       const imageUrl = URL.createObjectURL(file);

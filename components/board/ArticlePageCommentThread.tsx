@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
 import { Comment, CommentListResponse } from "@/types/commentTypes";
 import EmptyState from "@/components/ui/EmptyState";
 import CommentItem from "@/components/thread/CommentItem";
 import { getArticleComments } from "@/api/articleApi";
-import { ThreadContainer } from "@/styles/BoardStyles";
+
+const ThreadContainer = styled.div`
+  margin-bottom: 40px;
+`;
 
 interface ArticlePageCommentThreadProps {
   articleId: number;

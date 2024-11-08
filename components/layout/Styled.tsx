@@ -91,3 +91,52 @@ export const ProfileImg = styled(Image)`
     width: 40px; 
     border-radius: 50%; 
 `;
+
+//Footer
+export const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  gap: 10px;
+  flex-shrink: 0;
+  background: #111827;
+  position: relative;
+  top: 138px;
+`;
+
+export const FooterWrap = styled.div`
+  padding: 34px 400px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const FooterLink = styled.a`
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+`;
+
+export const FooterCenter = styled.div`
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+`;
+
+export const SnsWrap = styled.div`
+  display: flex;
+  width: 116px;
+  gap: 12px;
+  justify-content: space-between;
+  cursor: pointer;
+`;
+
+export const SnsIcon = styled.img`
+  width: 20px;
+  height: 20px;
+`;

@@ -37,7 +37,8 @@ function LoginPage(): React.ReactElement {
       if (res.status === 200) {
         alert('로그인 성공!');
         setLoginCheck(true);
-        sessionStorage.setItem('token', result.accessToken); // 여기서 토큰을 저장합니다.
+        // 여기서 토큰을 저장합니다.
+        sessionStorage.setItem('token', result.accessToken); 
 
         router.push('/');
       } else {

@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { StyledLink } from '@/styles/CommonStyles';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import DefaultProfile from '@/public/images/ui/ic_profile.svg';
 
 const GlobalHeader = styled.header`
   display: flex;
@@ -16,8 +18,7 @@ const HeaderLeft = styled.div`
   align-items: center;
 `;
 
-// Next.js에서는 next/link의 Link 컴포넌트를 사용해 주세요.
-// 참고: Next.js 버전 13부터는 Link 자체가 anchor 태그의 역할을 해요. Link 요소 내에 <a> 태그가 중첩되어 있으면 hydration 오류가 발생하니 주의해 주세요.
+
 const HeaderLogo = styled(Link)`
   margin-right: 16px;
 
@@ -58,6 +59,13 @@ function getLinkStyle(isActive: boolean) {
 
 const Header: React.FC = () => {
   const { pathname } = useRouter();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // 컴포넌트가 마운트될 때 sessionStorage에서 토큰을 확인
+    const token = sessionStorage.getItem('token');
+    setIsLoggedIn(!!token); // 토큰이 있으면 true, 없으면 false 설정
+  }, []);
 
   return (
     <GlobalHeader>
@@ -86,8 +94,12 @@ const Header: React.FC = () => {
           </NavList>
         </nav>
       </HeaderLeft>
-
-      <LoginLink href='/login'>로그인</LoginLink>
+      {isLoggedIn ? (
+        // 로그인이 되어 있으면 판다 이미지 렌더링
+        <Image src={DefaultProfile} alt='판다마켓 기본 프로필' width={40} height={40} />
+      ) : (
+        <LoginLink href='/login'>로그인</LoginLink>
+      )}
     </GlobalHeader>
   );
 };

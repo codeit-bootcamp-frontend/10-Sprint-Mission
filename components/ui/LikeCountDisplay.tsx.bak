@@ -31,7 +31,7 @@ const LikeCountDisplay: React.FC<LikeCountDisplayProps> = ({
 
   return (
     <LikeCountWrapper className={className} $fontSize={fontSize} $gap={gap}>
-      <HeartIcon width={iconWidth} alt="좋아요" />
+      <HeartIcon />
       {displayCount}
     </LikeCountWrapper>
   );

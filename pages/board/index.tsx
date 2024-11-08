@@ -1,9 +1,14 @@
 import React from "react";
-import BestArticlesSection from "../../components/boards/BestArticlesSection";
-import AllArticlesSection from "../../components/boards/AllArticlesSection";
+import styled from "styled-components";
+import { Container } from "@/styles/CommonStyles";
+import BestArticlesSection from "@/components/board/BestArticlesSection";
+import AllArticlesSection from "@/components/board/AllArticlesSection";
 import { GetStaticProps } from "next";
 import { Article, ArticleListResponse } from "@/types/articleTypes";
-import { PageContainer } from "./index.styles";
+
+const PageContainer = styled(Container)`
+  gap: 40px;
+`;
 
 export const getStaticProps: GetStaticProps = async () => {
   const response = await fetch(
@@ -18,11 +23,11 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-interface BoardsPageProps {
+interface BoardPageProps {
   initialArticles: Article[];
 }
 
-export default function BoardsPage({ initialArticles }: BoardsPageProps) {
+export default function BoardPage({ initialArticles }: BoardPageProps) {
   return (
     <PageContainer>
       <BestArticlesSection />

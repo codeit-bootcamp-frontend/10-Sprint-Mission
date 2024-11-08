@@ -13,11 +13,6 @@ const nextConfig = {
     });
     return config;
   },
-  compiler: {
-    styledComponents: {
-      cssProp: true,
-    },
-  },
 };
 
 export default nextConfig;

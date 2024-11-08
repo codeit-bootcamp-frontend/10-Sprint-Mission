@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getProducts } from "@/api/itemApi";
-import ItemCard from "./ItemCard";
+import ItemCard from "@/components/items/marketPage/ItemCard";
 import DropdownMenu from "@/components/ui/DropdownMenu";
 import PaginationBar from "@/components/ui/PaginationBar";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
@@ -10,23 +10,31 @@ import {
   ProductSortOption,
 } from "@/types/productTypes";
 import { MarketSectionTitle } from "@/styles/MarketStyles";
-import { SectionHeader } from "@/styles/CommonStyles";
+import styled from "styled-components";
+import { SectionHeader, StyledLink } from "@/styles/CommonStyles";
 import useViewport from "@/hooks/useViewport";
 import { useRouter } from "next/router";
 import SearchBar from "@/components/ui/SearchBar";
 
-import {
-  AllItemsCardSection,
-  AddItemLink,
-  PaginationBarWrapper,
-} from "./AllItemsSection.styles";
+const AddItemLink = styled(StyledLink)``;
 
-/**
- * Calculates the appropriate page size for the given viewport width.
- *
- * @param width - The current viewport width.
- * @returns The recommended page size(4:Mobile, 6:Tablet, 10:Desktop) based on the viewport width.
- */
+const AllItemsCardSection = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px 8px;
+
+  @media ${({ theme }) => theme.mediaQuery.desktop} {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 40px 24px;
+  }
+`;
+
+const PaginationBarWrapper = styled.div`
+  padding-top: 40px;
+  padding-bottom: 80px;
+`;
+
 const getPageSize = (width: number) => {
   if (width < 768) {
     return 4;

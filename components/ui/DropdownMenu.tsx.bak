@@ -54,7 +54,7 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({
   return (
     <SortButtonWrapper>
       <SortDropdownTriggerButton onClick={toggleDropdown}>
-        <SortIcon alt="정렬" />
+        <SortIcon />
       </SortDropdownTriggerButton>
 
       {isDropdownVisible && (

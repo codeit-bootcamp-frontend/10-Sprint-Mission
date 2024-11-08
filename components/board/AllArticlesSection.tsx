@@ -1,5 +1,5 @@
+import styled from "styled-components";
 import {
-  FlexRowCentered,
   LineDivider,
   SectionHeader,
   SectionTitle,
@@ -7,34 +7,32 @@ import {
 } from "@/styles/CommonStyles";
 import { Article, ArticleSortOption } from "@/types/articleTypes";
 import {
-  ArticleInfo,
+  ArticleInfoWrapper,
   ArticleThumbnail,
   ArticleTitle,
   ImageWrapper,
   MainContent,
-  Timestamp,
-} from "@/styles/BoardsStyles";
+} from "@/styles/BoardStyles";
 import Image from "next/image";
-import { format } from "date-fns";
+import Link from "next/link";
 import SearchBar from "@/components/ui/SearchBar";
 import DropdownMenu from "@/components/ui/DropdownMenu";
 import { useEffect, useState } from "react";
 import LikeCountDisplay from "@/components/ui/LikeCountDisplay";
 import EmptyState from "@/components/ui/EmptyState";
 import { useRouter } from "next/router";
+import ArticleInfo from "@/components/board/ArticleInfo";
 
-import { ItemContainer, ArticleInfoDiv, AddArticleLink } from "./AllArticlesSection.styles";
+const ItemContainer = styled(Link)``;
 
-type ArticleItemProps = {
+interface ArticleItemProps {
   article: Article;
 }
 
-const ArticleItem = ({ article }: ArticleItemProps) => {
-  const dateString = format(article.createdAt, "yyyy. MM. dd");
-
+const ArticleItem: React.FC<ArticleItemProps> = ({ article }) => {
   return (
     <>
-      <ItemContainer href={`/boards/${article.id}`}>
+      <ItemContainer href={`/board/${article.id}`}>
         <MainContent>
           <ArticleTitle>{article.title}</ArticleTitle>
           {article.image && (
@@ -51,13 +49,11 @@ const ArticleItem = ({ article }: ArticleItemProps) => {
           )}
         </MainContent>
 
-        <ArticleInfo>
-          <ArticleInfoDiv>
-            {article.writer.nickname} <Timestamp>{dateString}</Timestamp>
-          </ArticleInfoDiv>
+        <ArticleInfoWrapper>
+          <ArticleInfo article={article} />
 
           <LikeCountDisplay count={article.likeCount} iconWidth={24} gap={8} />
-        </ArticleInfo>
+        </ArticleInfoWrapper>
       </ItemContainer>
 
       <LineDivider $margin="24px 0" />
@@ -65,11 +61,15 @@ const ArticleItem = ({ article }: ArticleItemProps) => {
   );
 };
 
-type AllArticlesSectionProps = {
+const AddArticleLink = styled(StyledLink)``;
+
+interface AllArticlesSectionProps {
   initialArticles: Article[];
 }
 
-const AllArticlesSection = ({initialArticles}: AllArticlesSectionProps) => {
+const AllArticlesSection: React.FC<AllArticlesSectionProps> = ({
+  initialArticles,
+}) => {
   const [orderBy, setOrderBy] = useState<ArticleSortOption>("recent");
   const [articles, setArticles] = useState(initialArticles);
 

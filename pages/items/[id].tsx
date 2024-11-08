@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { Container, LineDivider } from "@/styles/CommonStyles";
 import { getProductDetail } from "@/api/itemApi";
-import ItemProfileSection from "../../components/items/itemPage/ItemProfileSection";
-import ItemCommentSection from "../../components/items/itemPage/ItemCommentSection";
-import BackIcon from "@/public/images/icons/ic_back.svg";
+import ItemProfileSection from "@/components/items/itemPage/ItemProfileSection";
+import ItemCommentSection from "@/components/items/itemPage/ItemCommentSection";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { Product } from "@/types/productTypes";
 import { useRouter } from "next/router";
-import { BackToMarketPageLink } from "./[id].styles";
+import GoBackToIndexPageLink from "@/components/thread/GoBackToIndexPageLink";
 
-const ItemPage = () => {
+const ItemPage: React.FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -59,14 +58,15 @@ const ItemPage = () => {
   return (
     <>
       <LoadingSpinner isLoading={isLoading} />
+
       <Container>
         <ItemProfileSection product={product} />
+
         <LineDivider />
+
         <ItemCommentSection productId={productId} />
-        <BackToMarketPageLink $pill href="/items">
-          목록으로 돌아가기
-          <BackIcon />
-        </BackToMarketPageLink>
+
+        <GoBackToIndexPageLink pathname="/items" />
       </Container>
     </>
   );

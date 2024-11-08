@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useEffect, useState }from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import PandaLogo from '../common/images/pandalogo.png';
@@ -7,7 +7,17 @@ import * as HS from './Styled';
 
 
 export default function Header() {
+    const [isLogin, setIsLogin] = useState(false);
     const router = useRouter();
+
+    const handleOnClick = () => {
+        router.push('/sign/in')
+    }
+    useEffect(()=>{
+        const accessToken = localStorage.getItem('accessToken')
+        setIsLogin(!accessToken);
+    })
+
 
     return (
         <HS.Header>
@@ -29,7 +39,8 @@ export default function Header() {
                         </Link>
                     </HS.NavContainer>
                 </HS.HeaderWrap>
-                <HS.ProfileImg src={ProfileImg} alt="프로필 이미지" />
+                {isLogin ? (<HS.LoginButton onClick={handleOnClick}>로그인</HS.LoginButton>):
+                (<HS.ProfileImg src={ProfileImg} alt="프로필 이미지" />)}
             </HS.HeaderContainer>
         </HS.Header>
     );

@@ -22,7 +22,7 @@ export const Header = styled.header`
     z-index: 10;
     height: 70px;
     justify-content: center;
-    align-items: center;
+    align-items: centr;
     flex-shrink: 0;
     border-bottom: 1px solid #DFDFDF;
     background: #FFF;
@@ -136,7 +136,24 @@ export const SnsWrap = styled.div`
   cursor: pointer;
 `;
 
-export const SnsIcon = styled.img`
+export const SnsIcon = styled(Image)`
   width: 20px;
   height: 20px;
+`;
+
+export const LoginButton = styled.button`
+    display: flex;
+    width: 128px;
+    height: 48px;
+    padding: 12px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #3692FF;
+    border: none;
+    color: #F3F4F6;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px; 
 `;

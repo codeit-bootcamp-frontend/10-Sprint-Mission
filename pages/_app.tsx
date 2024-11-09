@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   const isHideHeader = ["/login", "/signup"].includes(router.pathname);
+  const isHomePage = router.pathname === "/";
 
   return (
     <>
@@ -17,9 +18,13 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>판다 마켓</title>
       </Head>
       {!isHideHeader && <Header />}
-      <Container isPage>
+      {isHomePage ? (
         <Component {...pageProps} />
-      </Container>
+      ) : (
+        <Container isPage>
+          <Component {...pageProps} />
+        </Container>
+      )}
     </>
   );
 }

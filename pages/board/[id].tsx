@@ -1,6 +1,7 @@
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import useAuth from "@/hooks/useAuth";
 import { GetServerSidePropsContext } from "next";
 import BoardDetail from "@/components/board/BoardDetail";
 import AddCommentForm from "@/components/board/AddCommentForm";
@@ -39,6 +40,7 @@ const BoardDetailPage = ({
   const [board, setBoard] = useState<ArticleProps | undefined>(undefined);
   const [comments, setComments] = useState(initialComments);
   const [comment, setComment] = useState("");
+  const { accessToken } = useAuth(true);
 
   const router = useRouter();
   const { id } = router.query;
@@ -46,15 +48,17 @@ const BoardDetailPage = ({
   const getBoard = useCallback(async () => {
     const response = await fetchData<ArticleProps>(`${ARTICLE_URL}/${id}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        Authorization: `Bearer ${accessToken}`,
       },
     });
     setBoard(response);
-  }, [id]);
+  }, [accessToken, id]);
 
   useEffect(() => {
-    getBoard();
-  }, [getBoard]);
+    if (accessToken) {
+      getBoard();
+    }
+  }, [accessToken, getBoard]);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -63,7 +67,7 @@ const BoardDetailPage = ({
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: { content: comment },
       }

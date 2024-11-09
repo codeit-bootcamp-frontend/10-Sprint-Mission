@@ -41,7 +41,6 @@ const LoginForm = () => {
       router.push("/login");
     } catch (err: unknown) {
       if (err instanceof Error) {
-        console.log(err.message);
         if (err.message === "이미 사용중인 이메일입니다.") {
           setError("email", { type: "manual", message: err.message });
         }

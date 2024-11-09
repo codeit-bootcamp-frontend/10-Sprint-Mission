@@ -1,5 +1,6 @@
 import { ChangeEvent, useState, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
+import useAuth from "@/hooks/useAuth";
 import FileInput from "../ui/FileInput";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
@@ -26,6 +27,7 @@ const AddBoardForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [values, setValues] = useState<Board>(INITIAL_BOARD);
   const router = useRouter();
+  const { accessToken } = useAuth(true);
 
   const handleChange = (name: BoardField, value: Board[BoardField]): void => {
     setValues((prevValues) => {
@@ -58,7 +60,7 @@ const AddBoardForm = () => {
       const response = await fetchData<Record<string, string>>(IMAGE_URL, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          Authorization: `Bearer ${accessToken}`,
         },
         body: formData,
       });
@@ -68,7 +70,7 @@ const AddBoardForm = () => {
     const { id } = await fetchData<Record<string, string>>(ARTICLE_URL, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        Authorization: `Bearer ${accessToken}`,
       },
       body: url ? { image: url, ...otherValues } : { ...otherValues },
     });

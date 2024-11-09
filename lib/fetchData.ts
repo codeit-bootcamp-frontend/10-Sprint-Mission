@@ -3,7 +3,7 @@ import { REFRESH_URL } from "@/constants/url";
 
 type FetchOptions = {
   query?: Record<string, string | number | boolean | undefined | null>;
-  method?: "GET" | "POST" | "PUT" | "DELETE";
+  method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   headers?: Record<string, string>;
   body?: Record<string, unknown> | string | FormData | null;
 };

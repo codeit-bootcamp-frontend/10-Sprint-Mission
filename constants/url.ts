@@ -4,3 +4,4 @@ export const LOGIN_URL = "https://panda-market-api.vercel.app/auth/signIn";
 export const REFRESH_URL =
   "https://panda-market-api.vercel.app/auth/refresh-token";
 export const SIGNUP_URL = "https://panda-market-api.vercel.app/auth/signUp";
+export const COMMENT_URL = "https://panda-market-api.vercel.app/comments";

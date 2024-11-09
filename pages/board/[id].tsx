@@ -1,4 +1,4 @@
-import { FormEvent, useCallback, useEffect, useState } from "react";
+import { FormEvent, MouseEvent, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import useAuth from "@/hooks/useAuth";
@@ -7,7 +7,7 @@ import BoardDetail from "@/components/board/BoardDetail";
 import AddCommentForm from "@/components/board/AddCommentForm";
 import Comments from "@/components/board/Comments";
 import Button from "@/components/ui/Button";
-import { ARTICLE_URL } from "@/constants/url";
+import { ARTICLE_URL, COMMENT_URL } from "@/constants/url";
 import { fetchData } from "@/lib/fetchData";
 import { ArticleProps, CommentProps } from "@/types/articleTypes";
 import styles from "@/styles/Board.module.css";
@@ -76,6 +76,23 @@ const BoardDetailPage = ({
     setComments((prevComments) => [newComment, ...prevComments]);
   };
 
+  const handleUpdate = async (id: number | null, content: string) => {
+    if (!id) return;
+
+    const newComment = await fetchData<CommentProps>(`${COMMENT_URL}/${id}`, {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+      body: { content },
+    });
+    setComments((prevComments) =>
+      prevComments.map((comment) =>
+        comment.id === newComment.id ? newComment : comment
+      )
+    );
+  };
+
   return (
     <>
       {board && <BoardDetail {...board} />}
@@ -84,7 +101,7 @@ const BoardDetailPage = ({
         onChange={setComment}
         value={comment}
       />
-      <Comments comments={comments} />
+      <Comments comments={comments} onUpdate={handleUpdate} />
       <Link href="/boards" className={styles.link}>
         <Button type="button" className={styles.button}>
           <div>목록으로 되돌아가기</div>

@@ -5,12 +5,11 @@ import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import useAuth from "@/hooks/useAuth";
 import FormInput from "../ui/FormInput";
+import SocialLogin from "./SocialLogin";
 import Button from "../ui/Button";
 import styles from "./AuthForm.module.css";
 import hideIcon from "@/public/btn_hide.svg";
 import showIcon from "@/public/btn_show.svg";
-import kakaoIcon from "@/public/ic_kakao.svg";
-import googleIcon from "@/public/ic_google.svg";
 
 interface FormValues extends Record<string, string> {
   email: string;
@@ -132,25 +131,7 @@ const LoginForm = () => {
       <Button className={styles.button} type="submit" disabled={!isValid}>
         회원가입
       </Button>
-      <div className={styles.otherAccount}>
-        <span>간편 로그인하기</span>
-        <div className={styles.iconContainer}>
-          <a
-            href="https://www.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={googleIcon} alt="구글 로그인" />
-          </a>
-          <a
-            href="https://www.kakaocorp.com/page"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={kakaoIcon} alt="카카오 로그인" />
-          </a>
-        </div>
-      </div>
+      <SocialLogin />
       <span className={styles.authLink}>
         이미 회원이신가요?
         <Link href="/login">로그인</Link>

@@ -8,7 +8,7 @@ import instagramIcon from "@/public/ic_instagram.svg";
 
 const Home = () => {
   return (
-    <>
+    <main className={styles.home}>
       <section className={styles.banner}>
         <div
           className={`${styles.bannerContainer} ${styles.bannerContainerTop}`}
@@ -124,7 +124,7 @@ const Home = () => {
           </a>
         </div>
       </footer>
-    </>
+    </main>
   );
 };
 

@@ -2,8 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 16px;
+  position: fixed;
+  z-index: 100;
+  inset: 0 0 auto 0;
+  background-color: #ffffff;
   border-bottom: 1px solid #dfdfdf;
+  padding: 9.5px 16px;
 }
 
 ul.menu {
@@ -27,17 +31,32 @@ ul.menu > li:not(:first-child) {
 
 .profile {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
 }
 
 .active {
   color: var(--blue);
 }
 
+.dropdown li button {
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1rem;
+  text-align: center;
+  color: var(--gray500);
+  padding: 16px 26.5px;
+  white-space: nowrap;
+}
+
+.button {
+  line-height: 1.625rem;
+  padding: 11px 43px;
+}
+
 @media screen and (min-width: 768px) {
   .header {
-    padding: 15px 24px;
+    padding: 9.5px 24px;
   }
 
   ul.menu {
@@ -58,16 +77,21 @@ ul.menu > li:not(:first-child) {
 
 @media screen and (min-width: 1200px) {
   .header {
-    padding: 15px 200px;
+    padding: 9.5px 200px;
   }
 
   .logo {
     margin-right: 17px;
   }
+
+  .profile {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media screen and (min-width: 1920px) {
   .header {
-    padding: 15px 400px;
+    padding: 9.5px 400px;
   }
 }

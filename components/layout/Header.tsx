@@ -1,12 +1,20 @@
-import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import useAuth from "@/hooks/useAuth";
+import Dropdown from "../ui/Dropdown";
+import LinkButton from "../ui/LinkButton";
+import styles from "./Header.module.css";
 import pandaTypoImg from "@/public/panda_typo.svg";
 import profileImg from "@/public/ic_profile.svg";
-import styles from "./Header.module.css";
+
+const options = {
+  logout: "로그아웃",
+} as const;
 
 const Header = () => {
   const router = useRouter();
+  const { accessToken, logout } = useAuth();
 
   return (
     <header className={styles.header}>
@@ -41,9 +49,19 @@ const Header = () => {
           </Link>
         </li>
       </ul>
-      <Link href="/login">
-        <Image src={profileImg} className={styles.profile} alt="프로필" />
-      </Link>
+      {accessToken ? (
+        <Dropdown
+          className={styles.dropdown}
+          onSelect={logout}
+          options={options}
+        >
+          <Image src={profileImg} className={styles.profile} alt="프로필" />
+        </Dropdown>
+      ) : (
+        <LinkButton href="/login" className={styles.button}>
+          로그인
+        </LinkButton>
+      )}
     </header>
   );
 };

@@ -6,12 +6,8 @@ const getAccessToken = () => localStorage.getItem("accessToken");
 const getRefreshToken = () => localStorage.getItem("refreshToken");
 
 const useAuth = () => {
-  const [accessToken, setAccessToken] = useState<string | null>(
-    getAccessToken()
-  );
-  const [refreshToken, setRefreshToken] = useState<string | null>(
-    getRefreshToken()
-  );
+  const [accessToken, setAccessToken] = useState<string | null>(null);
+  const [refreshToken, setRefreshToken] = useState<string | null>(null);
 
   const refreshAccessToken = useCallback(async () => {
     if (!refreshToken) return;
@@ -71,6 +67,11 @@ const useAuth = () => {
       }
     }
   };
+
+  useEffect(() => {
+    setAccessToken(getAccessToken());
+    setRefreshToken(getRefreshToken());
+  }, []);
 
   useEffect(() => {
     const refreshInterval = setInterval(refreshAccessToken, 15 * 60 * 1000);

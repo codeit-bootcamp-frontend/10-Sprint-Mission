@@ -5,6 +5,7 @@ import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import Header from "@/components/layout/Header";
 import Container from "@/components/layout/Container";
+import styles from "@/styles/App.module.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
       {isHomePage ? (
         <Component {...pageProps} />
       ) : (
-        <Container isPage>
+        <Container className={!isHideHeader ? styles.container : ""} isPage>
           <Component {...pageProps} />
         </Container>
       )}

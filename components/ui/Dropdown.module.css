@@ -10,12 +10,6 @@
   display: none;
 }
 
-.dropdownButton > img {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-
 .dropdownMenu {
   position: absolute;
   border: 1px solid var(--gray200);

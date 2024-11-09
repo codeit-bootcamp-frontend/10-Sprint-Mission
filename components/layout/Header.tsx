@@ -84,7 +84,7 @@ const Header: React.FC = () => {
         </nav>
       </HeaderLeft>
 
-      <LoginLink href="/login">로그인</LoginLink>
+      <LoginLink href="/auth/login">로그인</LoginLink>
     </GlobalHeader>
   );
 };

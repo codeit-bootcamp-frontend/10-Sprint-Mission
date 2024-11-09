@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { fetchData } from "@/lib/fetchData";
-import { LOGIN_URL, REFRESH_URL } from "@/constants/url";
+import { LOGIN_URL, REFRESH_URL, SIGNUP_URL } from "@/constants/url";
 
 const getAccessToken = () => localStorage.getItem("accessToken");
 const getRefreshToken = () => localStorage.getItem("refreshToken");
@@ -54,12 +54,30 @@ const useAuth = () => {
     setRefreshToken(null);
   };
 
+  const signup = async ({
+    email,
+    nickname,
+    password,
+    passwordConfirmation,
+  }: Record<string, string>) => {
+    try {
+      await fetchData(SIGNUP_URL, {
+        method: "POST",
+        body: { email, nickname, password, passwordConfirmation },
+      });
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        throw new Error(error.message);
+      }
+    }
+  };
+
   useEffect(() => {
     const refreshInterval = setInterval(refreshAccessToken, 15 * 60 * 1000);
     return () => clearInterval(refreshInterval);
   }, [refreshAccessToken]);
 
-  return { accessToken, login, logout };
+  return { accessToken, login, logout, signup };
 };
 
 export default useAuth;

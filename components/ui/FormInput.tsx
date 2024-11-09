@@ -9,6 +9,10 @@ import {
   Path,
 } from "react-hook-form";
 
+type ValidatePropertyType = (
+  value: string
+) => boolean | string | Promise<boolean | string> | undefined;
+
 interface FormInputProps<T extends FieldValues> {
   type: string;
   name: Path<T>;
@@ -20,6 +24,10 @@ interface FormInputProps<T extends FieldValues> {
   required?: string;
   pattern?: { value: RegExp; message: string };
   minLength?: { value: number; message: string };
+  validate?: {
+    matchesPassword: ValidatePropertyType;
+    required: ValidatePropertyType;
+  };
   error?: FieldError;
 }
 
@@ -34,6 +42,7 @@ const FormInput = <T extends FieldValues>({
   required,
   pattern,
   minLength,
+  validate,
   error,
 }: FormInputProps<T>) => {
   return (
@@ -47,9 +56,10 @@ const FormInput = <T extends FieldValues>({
           type={type}
           placeholder={placeholder}
           {...register(name, {
-            required: required,
-            pattern: pattern,
-            minLength: minLength,
+            required,
+            pattern,
+            minLength,
+            validate,
           })}
         />
         {children}

@@ -9,7 +9,7 @@ import Container from "@/components/layout/Container";
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
-  const isHideHeader = ["/login", "/logout"].includes(router.pathname);
+  const isHideHeader = ["/login", "/signup"].includes(router.pathname);
 
   return (
     <>

@@ -1,11 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
+import Link from "next/link";
 import BestBoard from "./BestBoard";
 import Container from "../layout/Container";
 import useResize from "@/hooks/useResize";
 import { fetchData } from "@/lib/fetchData";
 import { ArticleProps } from "@/types/articleTypes";
+import { ARTICLE_URL } from "@/constants/url";
 import styles from "./BestBoards.module.css";
-import Link from "next/link";
 
 const PAGE_SIZE_BY_SCREEN = {
   PC: 3,
@@ -24,15 +25,17 @@ const getPageSize = (width: number): PageSizeType => {
 };
 
 const BestBoards = () => {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState<ArticleProps[]>([]);
   const [pageSize, setPageSize] = useState<PageSizeType>();
   const viewportWidth = useResize();
-  const BASE_URL = "https://panda-market-api.vercel.app/articles";
 
   const handleLoad = useCallback(async (size: number) => {
-    const { list } = await fetchData(BASE_URL, {
-      query: { pageSize: size, orderBy: "like" },
-    });
+    const { list } = await fetchData<Record<string, ArticleProps[]>>(
+      ARTICLE_URL,
+      {
+        query: { pageSize: size, orderBy: "like" },
+      }
+    );
     setArticles(list);
   }, []);
 

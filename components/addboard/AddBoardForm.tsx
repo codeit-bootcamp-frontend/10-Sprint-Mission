@@ -6,7 +6,6 @@ import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
 import { fetchData } from "@/lib/fetchData";
 import { ARTICLE_URL, IMAGE_URL } from "@/constants/url";
-import useAuth from "@/hooks/useAuth";
 import styles from "./AddBoardForm.module.css";
 
 interface Board {
@@ -26,7 +25,6 @@ const INITIAL_BOARD: Board = {
 const AddBoardForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [values, setValues] = useState<Board>(INITIAL_BOARD);
-  const { accessToken } = useAuth();
   const router = useRouter();
 
   const handleChange = (name: BoardField, value: Board[BoardField]): void => {
@@ -57,20 +55,20 @@ const AddBoardForm = () => {
       const formData = new FormData();
       formData.append("image", imgFile);
 
-      const response = await fetchData(IMAGE_URL, {
+      const response = await fetchData<Record<string, string>>(IMAGE_URL, {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
         body: formData,
       });
       url = response.url;
     }
 
-    const { id } = await fetchData(ARTICLE_URL, {
+    const { id } = await fetchData<Record<string, string>>(ARTICLE_URL, {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
       body: url ? { image: url, ...otherValues } : { ...otherValues },
     });

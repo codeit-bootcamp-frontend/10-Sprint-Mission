@@ -8,7 +8,6 @@ import Comments from "@/components/board/Comments";
 import Button from "@/components/ui/Button";
 import { ARTICLE_URL } from "@/constants/url";
 import { fetchData } from "@/lib/fetchData";
-import useAuth from "@/hooks/useAuth";
 import { ArticleProps, CommentProps } from "@/types/articleTypes";
 import styles from "@/styles/Board.module.css";
 import Image from "next/image";
@@ -18,9 +17,12 @@ export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
   const id = context.params?.["id"];
-  const { list } = await fetchData(`${ARTICLE_URL}/${id}/comments`, {
-    query: { limit: 5 },
-  });
+  const { list } = await fetchData<Record<string, string>>(
+    `${ARTICLE_URL}/${id}/comments`,
+    {
+      query: { limit: 5 },
+    }
+  );
 
   return {
     props: {
@@ -34,22 +36,21 @@ const BoardDetailPage = ({
 }: {
   comments: CommentProps[];
 }) => {
-  const [board, setBoard] = useState<ArticleProps>();
+  const [board, setBoard] = useState<ArticleProps | undefined>(undefined);
   const [comments, setComments] = useState(initialComments);
   const [comment, setComment] = useState("");
-  const { accessToken } = useAuth();
 
   const router = useRouter();
   const { id } = router.query;
 
   const getBoard = useCallback(async () => {
-    const response = await fetchData(`${ARTICLE_URL}/${id}`, {
+    const response = await fetchData<ArticleProps>(`${ARTICLE_URL}/${id}`, {
       headers: {
-        Authorization: `Bearer ${accessToken}`,
+        Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
       },
     });
     setBoard(response);
-  }, [accessToken, id]);
+  }, [id]);
 
   useEffect(() => {
     getBoard();
@@ -57,13 +58,16 @@ const BoardDetailPage = ({
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const newComment = await fetchData(`${ARTICLE_URL}/${id}/comments`, {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-      body: { content: comment },
-    });
+    const newComment = await fetchData<CommentProps>(
+      `${ARTICLE_URL}/${id}/comments`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        },
+        body: { content: comment },
+      }
+    );
     setComment("");
     setComments((prevComments) => [newComment, ...prevComments]);
   };

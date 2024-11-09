@@ -6,7 +6,7 @@ import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
 import { fetchData } from "@/lib/fetchData";
 import { ARTICLE_URL, IMAGE_URL } from "@/constants/url";
-import { useAuth } from "@/contexts/AuthProvider";
+import useAuth from "@/hooks/useAuth";
 import styles from "./AddBoardForm.module.css";
 
 interface Board {

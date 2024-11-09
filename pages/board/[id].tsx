@@ -1,10 +1,4 @@
-import {
-  ChangeEvent,
-  FormEvent,
-  useCallback,
-  useEffect,
-  useState,
-} from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { GetServerSidePropsContext } from "next";
@@ -14,7 +8,7 @@ import Comments from "@/components/board/Comments";
 import Button from "@/components/ui/Button";
 import { ARTICLE_URL } from "@/constants/url";
 import { fetchData } from "@/lib/fetchData";
-import { useAuth } from "@/contexts/AuthProvider";
+import useAuth from "@/hooks/useAuth";
 import { ArticleProps, CommentProps } from "@/types/articleTypes";
 import styles from "@/styles/Board.module.css";
 import Image from "next/image";

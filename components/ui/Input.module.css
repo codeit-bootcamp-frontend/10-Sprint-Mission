@@ -32,3 +32,17 @@
 .input::placeholder {
   color: var(--gray400);
 }
+
+.validationFocus {
+  outline: 1px solid var(--red);
+}
+
+.validationMessage {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  color: var(--red);
+  padding-left: 16px;
+  margin-top: 8px;
+}

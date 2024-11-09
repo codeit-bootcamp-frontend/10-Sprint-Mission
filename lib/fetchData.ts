@@ -39,14 +39,17 @@ export const fetchData = async (url: string, options: FetchOptions = {}) => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      const errorData = await response.json();
+      throw new Error(
+        errorData.message || `HTTP error! status: ${response.status}`
+      );
     }
 
     const responseBody = await response.json();
     return responseBody;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      throw new Error(`Fetch failed: ${error.message}`);
+      throw new Error(error.message);
     }
     throw new Error("Unknown error occurred during fetch");
   }

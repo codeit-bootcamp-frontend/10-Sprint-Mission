@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -6,6 +7,10 @@ import styles from "./Header.module.css";
 
 export default function Header() {
   const path = useRouter().pathname;
+  const [token, setToken] = useState<string | null>(null);
+  useEffect(() => {
+    setToken(window.localStorage.getItem("accessToken"));
+  }, []);
 
   return (
     <header className={styles.header}>
@@ -30,7 +35,17 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <Image className={styles.profile} src={profileImage} alt="프로필 사진" />
+      {token ? (
+        <Image
+          className={styles.profile}
+          src={profileImage}
+          alt="프로필 사진"
+        />
+      ) : (
+        <Link className={styles.logInButton} href="/login">
+          로그인
+        </Link>
+      )}
     </header>
   );
 }

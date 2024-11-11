@@ -3,6 +3,7 @@ import { FlexRowCentered } from "@/styles/CommonStyles";
 import SearchIcon from "@/public/images/icons/ic_search.svg";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Container = styled(FlexRowCentered)`
   background-color: var(--gray-100);
@@ -57,7 +58,8 @@ const SearchBar: React.FC<SearchBarProps> = ({
 
   return (
     <Container>
-      <SearchIcon alt="검색" />
+      {/* <SearchIcon alt="검색" /> */}
+      <Image src={SearchIcon} alt="검색" />
       <SearchBarInput
         value={keyword}
         onChange={handleInputChange}

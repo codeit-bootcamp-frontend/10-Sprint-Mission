@@ -8,6 +8,7 @@ import BackIcon from "@/public/images/icons/ic_back.svg";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { Product } from "@/types/productTypes";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const BackToMarketPageLink = styled(StyledLink)`
   display: flex;
@@ -80,7 +81,8 @@ const ItemPage: React.FC = () => {
 
         <BackToMarketPageLink $pill href="/items">
           목록으로 돌아가기
-          <BackIcon />
+          {/* <BackIcon /> */}
+          <Image src={BackIcon} alt="목록으로 돌아가기"/>
         </BackToMarketPageLink>
       </Container>
     </>

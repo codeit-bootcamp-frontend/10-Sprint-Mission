@@ -10,6 +10,7 @@ import {
   ProductCommentListResponse,
 } from "@/types/commentTypes";
 import EmptyState from "@/components/ui/EmptyState";
+import Image from "next/image";
 
 const CommentContainer = styled.div`
   padding: 24px 0;
@@ -64,7 +65,8 @@ const CommentItem: React.FC<CommentItemProps> = ({ item }) => {
       <CommentContainer>
         {/* 참고: 더보기 버튼 기능은 추후 요구사항에 따라 추가 예정 */}
         <SeeMoreButton>
-          <SeeMoreIcon />
+          {/* <SeeMoreIcon /> */}
+          <Image src={SeeMoreIcon} alt="더보기" />
         </SeeMoreButton>
 
         <CommentContent>{item.content}</CommentContent>

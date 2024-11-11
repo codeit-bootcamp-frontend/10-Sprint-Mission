@@ -37,6 +37,7 @@ const SocialLoginLink: React.FC<SocialLoginLinkProps> = ({
 }) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer" aria-label={name}>
+      {/* TODO: PNG 여기는 잘 표시됨 */}
       <Image 
         src={logoSrc === 'google' ? GoogleLogo.src : KakaoLogo.src}
         alt={name}

@@ -25,7 +25,7 @@ interface PasswordInputProps {
   id: string;
   label: string;
   placeholder: string;
-  register: UseFormRegisterReturn; // react-hook-form의 register 함수 사용
+  register: UseFormRegisterReturn;
   errorMessage?: string;
 }
 
@@ -59,12 +59,14 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
           onClick={togglePasswordVisibility}
           aria-label="비밀번호 보기"
         >
-          <Image
+          {/* TODO: SVG 표시가 안됨 */}
+          {/* <Image
             className="password-toggle-icon"
-            src={showPassword ? EyeVisibleIcon.src : EyeInvisibleIcon.src}
-            alt={showPassword ? "비밀번호 표시 상태 아이콘" : "비밀번호 숨김 상태 아이콘"
-            }
-          />
+            src={showPassword ? EyeVisibleIcon.src : EyeInvisibleIcon.src }
+            alt={showPassword ? "비밀번호 표시 상태 아이콘" : "비밀번호 숨김 상태 아이콘"}
+          /> */}
+          { showPassword ? <EyeVisibleIcon alt = "비밀번호 표시 상태 아이콘"/> : <EyeInvisibleIcon alt = "비밀번호 숨김 상태 아이콘"/>  }
+          
         </PasswordToggleButton>
       </InputWrapper>
 

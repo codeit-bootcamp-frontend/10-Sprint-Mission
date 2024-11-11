@@ -18,11 +18,9 @@ import { requestLogin } from "@/api/authApi";
 import Image from "next/image";
 
 const LoginPage: React.FC = () => {
-  // 답안 해설은 회원가입 페이지 컴포넌트를 참고해 주세요!
 
   const router = useRouter();
 
-  // 만약 로그인 컴포넌트 마운트 시 localStorage에 accessToken가 존재한다면 이미 로그인 상태라는 의미이므로 홈페이지로 리라우팅
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
     if (accessToken) {
@@ -47,7 +45,6 @@ const LoginPage: React.FC = () => {
     try {
       const result = await requestLogin(trimmedData);
       console.log(result);
-      // 로그인 API 호출 후 응답 성공 시, localStorage에 accessToken 저장 후 홈페이지로 이동
       localStorage.setItem("accessToken", result.accessToken);
       router.push("/");
     } catch (error) {

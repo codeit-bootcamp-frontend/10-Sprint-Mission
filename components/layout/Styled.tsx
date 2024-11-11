@@ -22,7 +22,7 @@ export const Header = styled.header`
     z-index: 10;
     height: 70px;
     justify-content: center;
-    align-items: center;
+    align-items: centr;
     flex-shrink: 0;
     border-bottom: 1px solid #DFDFDF;
     background: #FFF;
@@ -90,4 +90,70 @@ export const PandaLogo = styled(Image)`
 export const ProfileImg = styled(Image)`
     width: 40px; 
     border-radius: 50%; 
+`;
+
+//Footer
+export const Footer = styled.footer`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 160px;
+  gap: 10px;
+  flex-shrink: 0;
+  background: #111827;
+  position: relative;
+  top: 138px;
+`;
+
+export const FooterWrap = styled.div`
+  padding: 34px 400px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const FooterLink = styled.a`
+  color: #9ca3af;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+`;
+
+export const FooterCenter = styled.div`
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+`;
+
+export const SnsWrap = styled.div`
+  display: flex;
+  width: 116px;
+  gap: 12px;
+  justify-content: space-between;
+  cursor: pointer;
+`;
+
+export const SnsIcon = styled(Image)`
+  width: 20px;
+  height: 20px;
+`;
+
+export const LoginButton = styled.button`
+    display: flex;
+    width: 128px;
+    height: 48px;
+    padding: 12px 23px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 8px;
+    background: #3692FF;
+    border: none;
+    color: #F3F4F6;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 26px; 
 `;

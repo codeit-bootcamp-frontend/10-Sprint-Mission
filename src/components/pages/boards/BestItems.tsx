@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useMedia } from "@/hooks/useMedia";
+import { useMedia } from "@/store/MediaContext";
 import { getArticles } from "@/apis/apis";
 import { GetArticlesParams, GetArticlesRes } from "@/apis/apis.type";
 import { useQuery } from "@/hooks/useQuery";

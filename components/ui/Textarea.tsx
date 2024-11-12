@@ -16,9 +16,7 @@ const Textarea = ({
   className = "",
   name = "",
   label = "",
-  placeholder = "",
-  value = "",
-  onChange = () => {},
+  ...textareaProps
 }: Props) => {
   return (
     <Container className={`${styles.container}  ${className}`}>
@@ -27,9 +25,7 @@ const Textarea = ({
         className={styles.textarea}
         name={name}
         id={name}
-        placeholder={placeholder}
-        onChange={onChange}
-        value={value}
+        {...textareaProps}
       ></textarea>
     </Container>
   );

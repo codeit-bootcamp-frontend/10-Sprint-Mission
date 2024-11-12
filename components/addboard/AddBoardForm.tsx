@@ -1,12 +1,12 @@
 import { ChangeEvent, useState, useEffect, MouseEvent } from "react";
 import { useRouter } from "next/router";
+import useAuth from "@/hooks/useAuth";
 import FileInput from "../ui/FileInput";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
 import { fetchData } from "@/lib/fetchData";
 import { ARTICLE_URL, IMAGE_URL } from "@/constants/url";
-import { useAuth } from "@/contexts/AuthProvider";
 import styles from "./AddBoardForm.module.css";
 
 interface Board {
@@ -26,8 +26,8 @@ const INITIAL_BOARD: Board = {
 const AddBoardForm = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [values, setValues] = useState<Board>(INITIAL_BOARD);
-  const { accessToken } = useAuth();
   const router = useRouter();
+  const { accessToken } = useAuth(true);
 
   const handleChange = (name: BoardField, value: Board[BoardField]): void => {
     setValues((prevValues) => {
@@ -57,7 +57,7 @@ const AddBoardForm = () => {
       const formData = new FormData();
       formData.append("image", imgFile);
 
-      const response = await fetchData(IMAGE_URL, {
+      const response = await fetchData<Record<string, string>>(IMAGE_URL, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -67,7 +67,7 @@ const AddBoardForm = () => {
       url = response.url;
     }
 
-    const { id } = await fetchData(ARTICLE_URL, {
+    const { id } = await fetchData<Record<string, string>>(ARTICLE_URL, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${accessToken}`,

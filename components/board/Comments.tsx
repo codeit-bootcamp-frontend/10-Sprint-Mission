@@ -6,7 +6,12 @@ import replyEmptyImg from "@/public/Img_reply_empty.svg";
 import Image from "next/image";
 import { CommentProps } from "@/types/articleTypes";
 
-const Comments = ({ comments }: { comments: CommentProps[] }) => {
+interface CommentsProps {
+  comments: CommentProps[];
+  onUpdate: (id: number | null, value: string) => void;
+}
+
+const Comments = ({ comments, onUpdate }: CommentsProps) => {
   const [editingId, setEditingId] = useState<number | null>(null);
 
   const handleSelect = (id: number, option: string) => {
@@ -19,13 +24,23 @@ const Comments = ({ comments }: { comments: CommentProps[] }) => {
     setEditingId(null);
   };
 
+  const handleUpdate = (value: string) => {
+    onUpdate(editingId, value);
+    setEditingId(null);
+  };
+
   return (
     <section>
       {comments.length ? (
         <ul className={styles.comments}>
           {comments.map(({ id, ...comment }: CommentProps) =>
             id === editingId ? (
-              <EditCommentForm key={id} onCancel={handleCancel} {...comment} />
+              <EditCommentForm
+                key={id}
+                onCancel={handleCancel}
+                onUpdate={handleUpdate}
+                {...comment}
+              />
             ) : (
               <Comment
                 key={id}

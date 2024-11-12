@@ -19,6 +19,7 @@
 
 .buttonContainer {
   display: flex;
+  align-items: center;
   gap: 4px;
 }
 
@@ -26,8 +27,9 @@
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.625rem;
-  padding: 14px 20px 7px;
-  cursor: pointer;
+  background-color: #ffffff;
+  color: var(--gray500);
+  padding: 8px 23px;
 }
 
 .editButton {

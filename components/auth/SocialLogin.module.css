@@ -1,0 +1,25 @@
+.socialLogin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #e6f2ff;
+  padding: 16px 23px;
+  gap: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625rem;
+  color: var(--gary800);
+  margin-bottom: 8px;
+}
+
+.socialLogin img {
+  display: block;
+  width: 42px;
+  height: 42px;
+}
+
+.container {
+  display: flex;
+  gap: 16px;
+}

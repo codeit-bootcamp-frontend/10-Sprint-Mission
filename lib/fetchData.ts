@@ -1,13 +1,39 @@
 import { createURLSearchParams } from "./urlParams";
+import { REFRESH_URL } from "@/constants/url";
 
 type FetchOptions = {
   query?: Record<string, string | number | boolean | undefined | null>;
-  method?: "GET" | "POST" | "PUT" | "DELETE";
+  method?: "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
   headers?: Record<string, string>;
   body?: Record<string, unknown> | string | FormData | null;
 };
 
-export const fetchData = async (url: string, options: FetchOptions = {}) => {
+const refreshAccessToken = async () => {
+  const refreshToken = localStorage.getItem("refreshToken");
+
+  if (!refreshToken) return;
+
+  const refreshResponse = await fetch(REFRESH_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ refreshToken }),
+  });
+
+  if (!refreshResponse.ok) {
+    throw new Error("Failed to refresh token");
+  }
+
+  const refreshData = await refreshResponse.json();
+  localStorage.setItem("accessToken", refreshData.accessToken);
+
+  return refreshData.accessToken;
+};
+
+export const fetchData = async <T>(
+  url: string,
+  options: FetchOptions = {},
+  retry: boolean = false
+): Promise<T> => {
   try {
     let fullUrl = url;
 
@@ -25,12 +51,11 @@ export const fetchData = async (url: string, options: FetchOptions = {}) => {
         : { "Content-Type": "application/json", ...headers }),
     };
 
-    const requestBody =
-      method !== "GET" && body
-        ? isFormData
-          ? body
-          : JSON.stringify(body)
-        : null;
+    let requestBody = null;
+
+    if (method !== "GET" && body) {
+      requestBody = isFormData ? body : JSON.stringify(body);
+    }
 
     const response = await fetch(fullUrl, {
       method,
@@ -39,14 +64,32 @@ export const fetchData = async (url: string, options: FetchOptions = {}) => {
     });
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      if (response.status === 401 && retry === false) {
+        const newAccessToken = await refreshAccessToken();
+
+        return await fetchData(
+          url,
+          {
+            ...options,
+            headers: {
+              Authorization: `Bearer ${newAccessToken}`,
+            },
+          },
+          true
+        );
+      }
+
+      const errorData = await response.json();
+      throw new Error(
+        errorData.message || `HTTP error! status: ${response.status}`
+      );
     }
 
     const responseBody = await response.json();
     return responseBody;
   } catch (error: unknown) {
     if (error instanceof Error) {
-      throw new Error(`Fetch failed: ${error.message}`);
+      throw new Error(error.message);
     }
     throw new Error("Unknown error occurred during fetch");
   }

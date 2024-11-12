@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, MouseEvent, useState } from "react";
 import AuthorInfo from "../ui/AuthorInfo";
 import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
@@ -8,24 +8,34 @@ import styles from "./EditCommentForm.module.css";
 
 interface Props extends Omit<CommentProps, "id" | "updatedAt"> {
   onCancel: VoidFunction;
+  onUpdate: (value: string) => void;
 }
 
-const EditingComment = ({ content, createdAt, writer, onCancel }: Props) => {
+const EditingComment = ({
+  content,
+  createdAt,
+  writer,
+  onCancel,
+  onUpdate,
+}: Props) => {
   const [isDisabled, setIsDisabled] = useState(false);
+  const [value, setValue] = useState(content);
 
   const handleTextareaChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    if (e.target.value !== "") {
-      setIsDisabled(false);
-      return;
-    }
+    const isEmpty = !e.target.value.trim();
+    setValue(e.target.value);
+    setIsDisabled(isEmpty);
+  };
 
-    setIsDisabled(true);
+  const handleSubmit = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    onUpdate(value);
   };
 
   return (
     <li className={styles.comment}>
       <Textarea
-        value={content}
+        value={value}
         className={styles.textarea}
         onChange={handleTextareaChange}
       />
@@ -37,17 +47,18 @@ const EditingComment = ({ content, createdAt, writer, onCancel }: Props) => {
           date={timeAgo(createdAt)}
         />
         <div className={styles.buttonContainer}>
-          <button
+          <Button
             type="button"
             className={styles.cancelButton}
             onClick={onCancel}
           >
             취소
-          </button>
+          </Button>
           <Button
             className={styles.editButton}
             type="submit"
             disabled={isDisabled}
+            onClick={handleSubmit}
           >
             수정완료
           </Button>

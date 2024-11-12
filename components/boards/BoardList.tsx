@@ -10,10 +10,10 @@ import Container from "../layout/Container";
 import { fetchData } from "@/lib/fetchData";
 import { ArticleProps } from "@/types/articleTypes";
 import useObserver from "@/hooks/useObserver";
+import { ARTICLE_URL } from "@/constants/url";
 import styles from "./BoardLIst.module.css";
 import sortIcon from "@/public/ic_sort.svg";
 
-const BASE_URL = "https://panda-market-api.vercel.app/articles";
 const options = {
   recent: "최신순",
   like: "인기순",
@@ -38,13 +38,16 @@ const BoardList = ({ initialBoards, initialKeyword }: BoardListProps) => {
   const handleLoad = useCallback(async () => {
     if (isLoading || !hasMore) return;
     setIsLoading(true);
-    const { list } = await fetchData(BASE_URL, {
-      query: {
-        orderBy: order,
-        keyword,
-        page,
-      },
-    });
+    const { list } = await fetchData<Record<string, ArticleProps[]>>(
+      ARTICLE_URL,
+      {
+        query: {
+          orderBy: order,
+          keyword,
+          page,
+        },
+      }
+    );
     setBoards((prevBoards) => (page === 1 ? list : [...prevBoards, ...list]));
     setPage((prevPage) => prevPage + 1);
     setHasMore(list.length > 0);

@@ -1,0 +1,25 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.button {
+  padding: 12px 23px 12px 23px;
+  line-height: 1.125rem;
+}
+
+.tags {
+  margin-top: -10px;
+}

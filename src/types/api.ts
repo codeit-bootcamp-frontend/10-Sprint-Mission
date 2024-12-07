@@ -6,6 +6,31 @@ export interface GetMeRes {
   createdAt: string;
 }
 
+export interface GetProductsParams {
+  page: number;
+  pageSize: number;
+  orderBy: "favorite" | "recent";
+  keyword?: string;
+}
+
+export interface GetProductsRes {
+  totalCount: number;
+  list: [
+    {
+      createdAt: string;
+      favoriteCount: number;
+      ownerNickname: string;
+      ownerId: number;
+      images: string[];
+      tags: string[];
+      price: number;
+      description: string;
+      name: string;
+      id: number;
+    }
+  ];
+}
+
 export interface PostSignUpParams {
   email: string;
   nickname: string;

@@ -2,6 +2,7 @@ import { ReactNode, Fragment } from "react";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
 import Head from "next/head";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { UserProvider } from "@/store/UserContext";
 import { MediaProvider } from "@/store/MediaContext";
 import Layout from "@/components/layout/Layout";
@@ -15,10 +16,16 @@ export const pretendard = localFont({
   weight: "45 920",
 });
 
+const queryClient = new QueryClient();
+
 function ProviderComponent({ children }: { children: ReactNode }) {
   return (
     <UserProvider>
-      <MediaProvider>{children}</MediaProvider>
+      <MediaProvider>
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
+      </MediaProvider>
     </UserProvider>
   );
 }

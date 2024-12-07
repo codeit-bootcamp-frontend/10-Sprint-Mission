@@ -1,7 +1,9 @@
-export const ARTICLE_URL = "https://panda-market-api.vercel.app/articles";
-export const IMAGE_URL = "https://panda-market-api.vercel.app/images/upload";
-export const LOGIN_URL = "https://panda-market-api.vercel.app/auth/signIn";
-export const REFRESH_URL =
-  "https://panda-market-api.vercel.app/auth/refresh-token";
-export const SIGNUP_URL = "https://panda-market-api.vercel.app/auth/signUp";
-export const COMMENT_URL = "https://panda-market-api.vercel.app/comments";
+const BASE_URL = "https://panda-market-api.vercel.app";
+
+export const ARTICLE_URL = `${BASE_URL}/articles`;
+export const IMAGE_URL = `${BASE_URL}//images/upload`;
+export const LOGIN_URL = `${BASE_URL}//auth/signIn`;
+export const REFRESH_URL = `${BASE_URL}/auth/refresh-token`;
+export const SIGNUP_URL = `${BASE_URL}/auth/signUp`;
+export const COMMENT_URL = `${BASE_URL}/comments`;
+export const PRODUCT_URL = `${BASE_URL}/products`;

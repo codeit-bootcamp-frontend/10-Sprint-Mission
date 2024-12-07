@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import Card from "./Card";
 import useResize from "@/hooks/useResize";
-import { ProductProps } from "@/types/product";
+import { GetProductsResponseType, ProductProps } from "@/types/product";
 import { fetchData } from "@/lib/fetchData";
 import { PRODUCT_URL } from "@/constants/url";
 import styles from "./BestItems.module.css";
@@ -24,12 +24,9 @@ const getPageSize = (width: number): PageSizeType => {
 };
 
 const fetchProducts = async (pageSize: number) => {
-  const { list } = await fetchData<Record<string, ProductProps[]>>(
-    PRODUCT_URL,
-    {
-      query: { pageSize, orderBy: "favorite" },
-    }
-  );
+  const { list } = await fetchData<GetProductsResponseType>(PRODUCT_URL, {
+    query: { pageSize, orderBy: "favorite" },
+  });
   return list;
 };
 

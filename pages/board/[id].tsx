@@ -93,6 +93,20 @@ const BoardDetailPage = ({
     );
   };
 
+  const handleDelete = async (id: number | null) => {
+    if (!id) return;
+
+    await fetchData(`${COMMENT_URL}/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    });
+    setComments((prevComments) =>
+      prevComments.filter((comment) => comment.id !== id)
+    );
+  };
+
   return (
     <>
       {board && <BoardDetail {...board} />}
@@ -101,7 +115,11 @@ const BoardDetailPage = ({
         onChange={setComment}
         value={comment}
       />
-      <Comments comments={comments} onUpdate={handleUpdate} />
+      <Comments
+        comments={comments}
+        onUpdate={handleUpdate}
+        onDelete={handleDelete}
+      />
       <Link href="/boards" className={styles.link}>
         <Button type="button" className={styles.button}>
           <div>목록으로 되돌아가기</div>

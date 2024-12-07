@@ -4,6 +4,10 @@ export interface ProductProps {
   name: string;
   price: number;
   favoriteCount: number;
+  description: string;
+  tags: string[];
+  ownerId: string;
+  createdAt: string;
 }
 
 export interface GetProductsResponseType {

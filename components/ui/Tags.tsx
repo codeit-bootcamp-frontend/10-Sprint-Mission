@@ -11,7 +11,7 @@ interface Props {
 const Tags = ({ className = "", tags, onRemove }: Props) => {
   return (
     <>
-      {tags.length ? (
+      {tags?.length ? (
         <ul className={`${styles.tags} ${className}`}>
           {tags.map((tag) => {
             return (

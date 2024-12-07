@@ -3,6 +3,17 @@ import { fetchData } from "./fetchData";
 import { CreateProductRequestBody } from "@/components/additem/AddItemForm";
 import { ProductProps } from "@/types/product";
 
+export const getProduct = async (id: string) => {
+  if (!id) return;
+  const accessToken = localStorage.getItem("accessToken");
+  const response = await fetchData<ProductProps>(`${PRODUCT_URL}/${id}`, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
+  return response;
+};
+
 export const addProduct = async ({
   imgUrl,
   product,

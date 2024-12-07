@@ -1,22 +1,26 @@
 import { useState } from "react";
+import Image from "next/image";
 import EditCommentForm from "./EditCommentForm";
 import Comment from "./Comment";
+import { CommentProps } from "@/types/articleTypes";
 import styles from "./Comments.module.css";
 import replyEmptyImg from "@/public/Img_reply_empty.svg";
-import Image from "next/image";
-import { CommentProps } from "@/types/articleTypes";
 
 interface CommentsProps {
   comments: CommentProps[];
   onUpdate: (id: number | null, value: string) => void;
+  onDelete: (id: number | null) => void;
 }
 
-const Comments = ({ comments, onUpdate }: CommentsProps) => {
+const Comments = ({ comments, onUpdate, onDelete }: CommentsProps) => {
   const [editingId, setEditingId] = useState<number | null>(null);
 
   const handleSelect = (id: number, option: string) => {
     if (option === "edit") {
       setEditingId(id);
+    }
+    if (option === "remove") {
+      onDelete(id);
     }
   };
 

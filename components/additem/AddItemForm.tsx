@@ -11,7 +11,7 @@ import FileInput from "../ui/FileInput";
 import Input from "../ui/Input";
 import Textarea from "../ui/Textarea";
 import Button from "../ui/Button";
-import Tags from "./Tags";
+import Tags from "../ui/Tags";
 import { uploadImage } from "@/lib/imageService";
 import { addProduct } from "@/lib/productService";
 import styles from "./AddItemForm.module.css";
@@ -27,7 +27,7 @@ interface ProductFormValues {
 type ProductField = keyof ProductFormValues;
 
 export type CreateProductRequestBody = Omit<ProductFormValues, "imgFile"> & {
-  imgUrl: string | null;
+  imgUrl: string;
 };
 
 const INITIAL_PRODUCT = {
@@ -91,7 +91,7 @@ const AddItemForm = () => {
     e.preventDefault();
 
     const { imgFile, ...otherValues } = values;
-    let imgUrl = null;
+    let imgUrl = "https://example.com/...";
 
     if (imgFile) {
       imgUrl = await uploadImageMutation.mutateAsync(imgFile);

@@ -12,18 +12,20 @@ interface InputProps {
   value?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
   onKeyUp?: (e: KeyboardEvent<HTMLInputElement>) => void;
+  onKeyDown?: (e: KeyboardEvent<HTMLInputElement>) => void;
   children?: ReactNode;
 }
 
 const Input = ({
   type = "text",
-  name = "",
+  name,
   className = "",
   label = "",
   placeholder = "",
-  value = "",
-  onChange = () => {},
-  onKeyUp = () => {},
+  value,
+  onChange,
+  onKeyUp,
+  onKeyDown,
   children,
 }: InputProps) => {
   return (
@@ -41,6 +43,7 @@ const Input = ({
           value={value}
           onChange={onChange}
           onKeyUp={onKeyUp}
+          onKeyDown={onKeyDown}
         />
         {children}
       </div>

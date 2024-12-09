@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.imageWrapper {
+  width: 100%;
+  aspect-ratio: 1;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.productImg {
+  border-radius: 19px;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  text-align: left;
+  color: var(--gray800);
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.625rem;
+  text-align: left;
+  color: var(--gray800);
+}
+
+.favorite {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.125rem;
+  text-align: left;
+  color: var(--gray600);
+}
+
+@media screen and (min-width: 1200px) {
+  .imageWrapper {
+    margin-bottom: 10px;
+  }
+}
